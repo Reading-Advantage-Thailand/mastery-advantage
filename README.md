@@ -1,275 +1,206 @@
-# GSE Knowledge Space
+# Mastery Advantage
 
-This repository contains the data layer, mapping files, and visualization tools that power **adaptive questioning** in the [Reading Advantage](https://reading-advantage.com) and [Primary Advantage](https://primary-advantage.com) apps.
+> *Know exactly where every student is. Know exactly what they're ready to learn next.*
 
-> **Goal:** Use the [Global Scale of English (GSE)](https://www.english.com/gse) together with [Knowledge Space Theory (KST)](https://en.wikipedia.org/wiki/Knowledge_space) to present each student with questions that sit exactly on the edge of their current ability — not too easy, not too hard, but in the **outer fringe** of what they are ready to learn next.
+**Mastery Advantage** is the adaptive learning engine shared across the Advantage suite of educational apps. It combines [Knowledge Space Theory (KST)](https://en.wikipedia.org/wiki/Knowledge_space) with spaced repetition to build a precise, personalized map of each student's progress through a domain — and to surface the next skill they are ready to learn.
+
+This repository is the single source of truth for all Mastery Advantage data, theory, and implementation planning across every subject domain.
 
 ---
 
-## The Big Idea
+## The Science
 
-Both apps teach English by asking students to read passages and answer comprehension questions. The challenge is selecting the *right* passage at the *right* difficulty.
+### Knowledge Space Theory
 
-**Knowledge Space Theory (KST)** models learning as a structured space of skills (or "objectives"). A student's "knowledge state" is the set of objectives they have already mastered. The **outer fringe** of that state is the set of objectives they have not yet mastered, but for which they possess all the prerequisite skills. These are the objectives a student is *ready* to learn — the "edge of their ability."
+Developed by Doignon & Falmagne (1985), KST models a learning domain as a directed graph of skills where edges represent prerequisite relationships. A student's **knowledge state** is the set of skills they have mastered. The **outer fringe** of that state — skills not yet mastered but whose prerequisites are all met — is the exact set of things a student is ready to learn right now.
 
-This repository:
-1. **Maps** every GSE objective to our app's internal level system (PA levels for primary students, RA levels for secondary students).
-2. **Models** prerequisite relationships between GSE objectives as a directed graph.
-3. **Visualizes** that graph so we can reason about learning paths and validate the structure.
+This is fundamentally different from linear level systems or random practice queues. It means:
+- Every student gets a unique learning path based on what *they specifically* know.
+- The system never asks a student to learn something for which they are not yet ready.
+- There are no arbitrary level barriers — readiness is determined by mastery, not time.
 
-The Next.js apps (TypeScript) consume the CSV mapping files and the knowledge-space graph to decide which question to show next.
+### Spaced Repetition
+
+Once a skill enters a student's knowledge state, it is scheduled for review using spaced repetition — review intervals that expand as the skill is retained. This ensures that mastered skills stay mastered, rather than decaying quietly in the background.
+
+### The Combination
+
+KST determines *what* to learn next. Spaced repetition determines *when* to review what has already been learned. Together they produce a system where students are always working at the exact edge of their ability — the optimal zone for learning — while never losing ground on what they have already built.
 
 ---
 
 ## The Apps
 
-| App | Audience | GSE Framework | Level System | GSE Range |
-|-----|----------|---------------|--------------|-----------|
-| **Primary Advantage** | Primary school students (ages 6–11) | Young Learners | PA (Primary Advantage) | 10–70 |
-| **Reading Advantage** | Secondary school students (ages 11–18) | Adult Learners | RA (Reading Advantage) | 10–90 |
+Mastery Advantage is implemented across the Advantage suite. Each app has its own domain knowledge graph built on the same underlying engine.
+
+| App | Domain | Audience | Knowledge Framework | Status |
+|-----|--------|----------|---------------------|--------|
+| **Reading Advantage** | English (Reading) | Secondary students, ages 11–18 | Pearson GSE — Adult Learners (CEFR A1–C2) | Production |
+| **Primary Advantage** | English (Reading) | Primary students, ages 6–11 | Pearson GSE — Young Learners (CEFR Pre-A1–B1) | Production |
+| **Math Advantage** | Mathematics | K–12 | Thai national math curriculum | Planning |
+| **Science Advantage** | Science | K–12 | Thai national science curriculum | Planning |
+| **Code Advantage** | Programming | Secondary+ | Computational thinking / CS fundamentals | Planning |
 
 ---
 
-## File Structure
+## Repository Structure
+
+General theory, brand assets, and cross-domain shared resources live at the root. Each subject domain has its own subdirectory containing the knowledge graph data, level mappings, implementation notes, and visualizations specific to that domain.
 
 ```
-.
-├── assets/                                   # Images for visualizations
-│   ├── adults-cover.png
-│   ├── adults-group.png
-│   ├── illustration.png
-│   └── yl-cover.png
+mastery-advantage/
 │
-├── gse-md/                                   # Source GSE data (human-readable)
-│   ├── adult-learners/
-│   │   ├── listening.md                      # Adult Listening objectives by GSE range
-│   │   ├── reading.md                        # Adult Reading objectives by GSE range
-│   │   ├── speaking.md                       # Adult Speaking objectives by GSE range
-│   │   └── writing.md                        # Adult Writing objectives by GSE range
-│   ├── young-learners/
-│   │   ├── listening.md                      # Young Learner Listening objectives
-│   │   ├── reading.md                        # Young Learner Reading objectives
-│   │   ├── speaking.md                       # Young Learner Speaking objectives
-│   │   └── writing.md                        # Young Learner Writing objectives
-│   └── gse-all.json                          # All objectives as a single JSON array
-│                                               (the canonical source for generation scripts)
+├── README.md                        ← This file — overview and theory
+├── README-th.md                     ← Thai-language version
 │
-├── scripts/
-│   ├── generate-knowledge-space.js           # Builds gse-knowledge-space.json from gse-all.json
-│   └── build-standalone-viz.js               # Inlines the JSON into the standalone HTML viz
+├── assets/                          ← Brand and marketing assets
+│   ├── mastery-advantage-graph.svg  ← Master knowledge graph SVG (multi-theme)
+│   ├── mastery-advantage-demo.html  ← Interactive demo (domain themes + layer toggles)
+│   └── ...                          ← Photography and illustration assets
 │
-├── gse-to-primary-advantage.csv              # Maps each GSE score (10–70) to a PA level (1–14)
-├── gse-to-reading-advantage.csv              # Maps each GSE score (10–90) to an RA level (1–18)
+├── english/                         ← English domain (Reading Advantage + Primary Advantage)
+│   ├── README.md
+│   ├── gse-md/                      ← GSE learning objectives (human-readable markdown)
+│   ├── gse-knowledge-space.json     ← Full KST graph: ~2,000 skill nodes + edges
+│   ├── gse-to-reading-advantage.csv ← GSE score → RA level mapping
+│   ├── gse-to-primary-advantage.csv ← GSE score → PA level mapping
+│   ├── scripts/                     ← Graph generation + visualization build tools
+│   ├── index.html                   ← GSE Learning Objectives Explorer
+│   ├── knowledge-space-viz.html     ← Interactive D3 graph visualization
+│   └── knowledge-space-viz-standalone.html
 │
-├── gse-knowledge-space.json                  # The full KST graph: nodes (skills, units, standards)
-│                                               and edges (prerequisite_for, supports, contains, etc.)
+├── math/                            ← Math domain (Math Advantage) — in planning
+│   └── README.md
 │
-├── index.html                                # GSE Learning Objectives Explorer (browse/filter all objectives)
-├── knowledge-space-viz.html                  # Interactive D3 visualization of the knowledge-space graph
-├── knowledge-space-viz-standalone.html       # Same viz, but with the JSON data inlined (no server needed)
+├── science/                         ← Science domain (Science Advantage) — in planning
+│   └── README.md
 │
-├── GSE-Adults.pdf                            # Original Pearson PDF (Adult Learners, 2019)
-├── gse-learning-objectives-young-learners.pdf # Original Pearson PDF (Young Learners, 2022)
-│
-└── README.md                                 # This file
+└── code/                            ← Code domain (Code Advantage) — in planning
+    └── README.md
 ```
 
 ---
 
-## GSE → App Level Mapping
+## The Mastery Advantage Visual Language
 
-The two CSV files are the simplest and most important files for the apps. They provide a direct lookup from any GSE score to the student's current app level.
+The knowledge graph visualization is the signature brand element of Mastery Advantage. The master SVG lives in `assets/mastery-advantage-graph.svg` and is designed to flex across every context: website hero, TikTok B-roll, sales decks, school demos, and in-app UI.
 
-### Primary Advantage (Young Learner GSE)
+**Node states:**
 
-| PA Level | GSE Range |
-|----------|-----------|
-| 1 | 10–13 |
-| 2 | 14–17 |
-| 3 | 18–21 |
-| 4 | 22–23 |
-| 5 | 24–26 |
-| 6 | 27–29 |
-| 7 | 30–33 |
-| 8 | 34–38 |
-| 9 | 39–42 |
-| 10 | 43–47 |
-| 11 | 48–53 |
-| 12 | 54–58 |
-| 13 | 59–64 |
-| 14 | 65–70 |
+| State | Color | Meaning |
+|-------|-------|---------|
+| Mastered | Green | Student has demonstrated mastery |
+| You are here | White | Current focus skill |
+| Ready to learn | Amber | Prerequisites met, ready to unlock |
+| Locked | Dark blue | Prerequisites not yet complete |
 
-**File:** `gse-to-primary-advantage.csv`  
-**Format:** `gse,pa_level` (one row per GSE score)
+**Domain themes** — the same SVG, recolored by `data-domain` attribute:
 
-### Reading Advantage (Adult GSE)
+| Domain | Accent color |
+|--------|-------------|
+| English (Reading/Primary) | Emerald green |
+| Math | Rose red |
+| Science | Violet |
+| Code | Cyan |
 
-| RA Level | GSE Range |
-|----------|-----------|
-| 1 | 10–16 |
-| 2 | 17–23 |
-| 3 | 24–29 |
-| 4 | 30–33 |
-| 5 | 34–38 |
-| 6 | 39–42 |
-| 7 | 43–47 |
-| 8 | 48–53 |
-| 9 | 54–58 |
-| 10 | 59–64 |
-| 11 | 65–70 |
-| 12 | 71–75 |
-| 13 | 76–78 |
-| 14 | 79–81 |
-| 15 | 82–84 |
-| 16 | 85–86 |
-| 17 | 87–88 |
-| 18 | 89–90 |
-
-**File:** `gse-to-reading-advantage.csv`  
-**Format:** `gse,ra_level` (one row per GSE score)
+Open `assets/mastery-advantage-demo.html` in a browser to see all themes and layer toggles live.
 
 ---
 
-## Knowledge Space Graph
+## The Outer Fringe Algorithm
 
-`gse-knowledge-space.json` is a directed graph that models the learning domain.
-
-### Node Types
-
-| Kind | Description | Count |
-|------|-------------|-------|
-| `domain` | The root: "Pearson GSE" | 1 |
-| `content_group` | A (age_group, skill) pair, e.g. "Adults — Reading" | 8 |
-| `standard` | A CEFR level (Below A1, A1, A2, B1, etc.) | 10 |
-| `instructional_unit` | A band of GSE scores within a content group, e.g. "Adults Reading — A1 (22–29)" | ~40 |
-| `skill` | An individual "Can do" objective | ~2,000+ |
-
-### Edge Types
-
-| Type | Meaning |
-|------|---------|
-| `contains` | Structural: a domain contains content groups, which contain units, which contain skills. |
-| `appears_in_context` | Reverse of `contains`: a skill appears within a specific unit. |
-| `aligned_to_standard` | A skill is aligned to a CEFR level. |
-| `supports` | Co-competency: skills at the *same* GSE score within the same track support each other. |
-| `prerequisite_for` | **The key edge.** Skill A must be mastered before Skill B is reachable. These are generated probabilistically based on GSE score distance (looking back 1–4 points). |
-
-### How the Graph Is Built
-
-Run:
-
-```bash
-node scripts/generate-knowledge-space.js
-```
-
-This reads `gse-md/gse-all.json` and generates `gse-knowledge-space.json`.
-
-The script creates prerequisite edges using deterministic seeded sampling:
-- For each skill at score X, it looks at skills in the same (age, skill) track with scores X-4 to X-1.
-- It selects 3–5 predecessors, weighted so that closer scores are more likely to be prerequisites.
-- At least one predecessor must come from X-1 (the immediately preceding score).
-- Edge weights decay with distance, and confidence is marked `high` / `medium` / `low` accordingly.
-
-The script validates the graph (no duplicate IDs, no dangling edges) and detects prerequisite cycles (there should be none).
-
----
-
-## For Developers (Next.js / TypeScript)
-
-### Using the Level Mappings
-
-The simplest integration is to import the CSV files into your app and use them to convert a student's app level to a GSE range (or vice versa) when fetching passages or questions.
+This is the core computation shared across all domain implementations. The same TypeScript logic runs in every Advantage app.
 
 ```typescript
-// Example: load the mapping into a Map<number, number>
-import { parse } from 'csv-parse/sync';
-import fs from 'fs';
-
-const csv = fs.readFileSync('./gse-to-primary-advantage.csv', 'utf-8');
-const records = parse(csv, { columns: true, skip_empty_lines: true });
-
-const gseToPa = new Map<number, number>();
-for (const row of records) {
-  gseToPa.set(parseInt(row.gse), parseInt(row.pa_level));
-}
-
-// Get the PA level for a student who scored GSE 34
-const level = gseToPa.get(34); // => 8
-```
-
-### Using the Knowledge Space Graph
-
-For adaptive questioning, you will want to:
-
-1. **Track the student's knowledge state** — a set of skill IDs they have demonstrated mastery of.
-2. **Compute the outer fringe** — all skills whose prerequisites are fully contained in the student's knowledge state, but which the student has not yet mastered.
-3. **Filter by GSE range** — narrow the outer fringe to skills within the student's current app level (using the CSV mapping).
-4. **Select a passage/question** — pick a passage that exercises one of those skills.
-
-The graph format is straightforward JSON. Each `skill` node has a unique `id`, a `difficulty` field (0–1, normalized from GSE 10–90), and `metadata.gseScore`. Edges are flat arrays with `sourceId`, `targetId`, and `type`.
-
-```typescript
-// Pseudo-code for computing the outer fringe
-function getOuterFringe(studentState: Set<string>, graph: Graph): SkillNode[] {
-  const mastered = studentState;
-  const skills = graph.nodes.filter(n => n.kind === 'skill');
+function getOuterFringe(
+  masteredSkills: Set<string>,
+  graph: { nodes: SkillNode[]; edges: Edge[] }
+): SkillNode[] {
   const prereqEdges = graph.edges.filter(e => e.type === 'prerequisite_for');
 
-  // Build a map: skillId -> set of prerequisite skillIds
+  // Build: skillId → set of prerequisite skillIds
   const prereqsFor = new Map<string, Set<string>>();
   for (const edge of prereqEdges) {
     if (!prereqsFor.has(edge.targetId)) prereqsFor.set(edge.targetId, new Set());
     prereqsFor.get(edge.targetId)!.add(edge.sourceId);
   }
 
-  return skills.filter(skill => {
-    if (mastered.has(skill.id)) return false; // Already mastered
-    const prereqs = prereqsFor.get(skill.id);
-    if (!prereqs) return true; // No prerequisites = fringe candidate
-    return [...prereqs].every(p => mastered.has(p)); // All prereqs mastered
-  });
+  return graph.nodes
+    .filter(n => n.kind === 'skill')
+    .filter(skill => {
+      if (masteredSkills.has(skill.id)) return false;
+      const prereqs = prereqsFor.get(skill.id);
+      if (!prereqs || prereqs.size === 0) return true;
+      return [...prereqs].every(p => masteredSkills.has(p));
+    });
+}
+```
+
+Each domain's knowledge graph uses the same node/edge schema so this function works unchanged across Reading Advantage, Math Advantage, Science Advantage, and Code Advantage.
+
+---
+
+## Domain Knowledge Graph Schema
+
+All domain graphs share this schema, making it possible to use the same visualization, query logic, and app integration code across subjects.
+
+### Node
+
+```json
+{
+  "id": "string (unique, semantic — e.g. 'en-reading-b1-inference-3')",
+  "kind": "domain | content_group | standard | instructional_unit | skill",
+  "label": "string",
+  "difficulty": "number (0–1, normalized)",
+  "metadata": {
+    "domain": "english | math | science | code",
+    "cefr": "a1 | a2 | b1 | b2 | c1 | c2  (English domains only)",
+    "gradeLevel": "number (Math/Science domains)",
+    "score": "number (domain-specific raw score)"
+  }
+}
+```
+
+### Edge
+
+```json
+{
+  "sourceId": "string",
+  "targetId": "string",
+  "type": "prerequisite_for | contains | supports | aligned_to_standard",
+  "weight": "number (0–1)",
+  "confidence": "high | medium | low"
 }
 ```
 
 ---
 
-## Visualizations
+## Adding a New Domain
 
-### GSE Learning Objectives Explorer
+To add a new subject domain to Mastery Advantage:
 
-Open `index.html` in a browser to browse, search, and filter all GSE objectives. This is useful for content teams and curriculum designers.
-
-### Knowledge Space Graph Visualization
-
-Open `knowledge-space-viz.html` (requires a local server so it can fetch `gse-knowledge-space.json`) or `knowledge-space-viz-standalone.html` (works from `file://` since the data is inlined).
-
-This is an interactive D3 force-directed graph that shows the prerequisite structure. It is useful for:
-- Validating that the generated edges make sense.
-- Identifying orphaned skills or unexpected clusters.
-- Demonstrating the KST concept to stakeholders.
-
-To rebuild the standalone version after updating the graph:
-
-```bash
-node scripts/build-standalone-viz.js
-```
+1. **Create the subdirectory** — `mkdir <domain>` (e.g. `math/`, `science/`).
+2. **Define the skill taxonomy** — the list of discrete learnable skills, each with a unique ID and difficulty score. Source from the relevant curriculum framework (Thai national curriculum, international standards, etc.).
+3. **Map prerequisite relationships** — define which skills require other skills. This can be done manually for small domains, or generated from the curriculum structure + expert review.
+4. **Build the knowledge graph** — output a `<domain>-knowledge-space.json` file conforming to the schema above.
+5. **Create level mappings** — a CSV mapping internal app levels to difficulty ranges within the graph.
+6. **Write `<domain>/README.md`** — document the curriculum source, skill count, level mappings, and any domain-specific decisions.
+7. **Add a row to the apps table** in this README.
 
 ---
 
-## Source Data
+## Research Foundation
 
-All objectives are sourced from Pearson's **Global Scale of English Learning Objectives**:
-- **Adult Learners** — 2019 edition (`GSE-Adults.pdf`)
-- **Young Learners** — 2022 edition (`gse-learning-objectives-young-learners.pdf`)
-
-The markdown files in `gse-md/` were created from these PDFs for easier maintenance. `gse-all.json` is the machine-readable compilation of all four skills for both frameworks.
+- Doignon, J.-P., & Falmagne, J.-C. (1985). Spaces for the assessment of knowledge. *International Journal of Man-Machine Studies*, 23(2), 175–196.
+- Falmagne, J.-C., & Doignon, J.-P. (2011). *Learning Spaces: Interdisciplinary Applied Mathematics*. Springer.
+- Ebbinghaus, H. (1885). *Über das Gedächtnis*. (The forgetting curve — basis for spaced repetition scheduling.)
+- Pearson (2019). *Global Scale of English Learning Objectives for Adult Learners*.
+- Pearson (2022). *Global Scale of English Learning Objectives for Young Learners*.
 
 ---
 
 ## Contributing
 
-- **To update GSE data:** Edit the relevant `.md` files in `gse-md/`, then regenerate `gse-all.json` and the knowledge space graph.
-- **To change level mappings:** Edit the CSV files directly, or regenerate them from the level definitions.
-- **To modify prerequisite logic:** Edit `scripts/generate-knowledge-space.js` (e.g. adjust `PREREQ_DISTANCE_MAX`, `PREREQ_MIN`, or the weighting function).
-
-Always validate the graph after generation — the script will fail if cycles or dangling edges are detected.
+- **Domain data:** Each domain subdirectory is self-contained. See `<domain>/README.md` for contribution guidelines specific to that domain.
+- **Shared algorithm changes:** Changes to the outer fringe algorithm or graph schema affect all domains — document the migration path in this README before merging.
+- **Brand assets:** The master SVG in `assets/` is the single source of truth for the Mastery Advantage visual. Edit it in Figma, export with IDs preserved, and replace the file here.

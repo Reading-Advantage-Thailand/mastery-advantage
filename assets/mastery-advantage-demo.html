@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mastery Advantage — Knowledge Graph</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0e0e12;
+    color: #e8e4d8;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    min-height: 100vh;
+  }
+
+  header {
+    padding: 56px 48px 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  header h1 {
+    font-size: clamp(32px, 5vw, 60px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .accent { color: #34d399; font-style: italic; }
+  header p { font-size: 16px; color: rgba(255,255,255,0.5); max-width: 560px; line-height: 1.6; }
+
+  /* Tab controls */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    padding: 24px 48px 0;
+    flex-wrap: wrap;
+  }
+  .tab {
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .tab:hover { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); }
+  .tab.active { background: #34d399; border-color: #34d399; color: #0b1220; }
+  .tab[data-theme="math"].active    { background: #fb7185; border-color: #fb7185; }
+  .tab[data-theme="science"].active { background: #a78bfa; border-color: #a78bfa; }
+  .tab[data-theme="code"].active    { background: #22d3ee; border-color: #22d3ee; }
+
+  /* Main canvas */
+  .canvas {
+    padding: 32px 48px 48px;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .main-frame {
+    flex: 1;
+    min-width: 300px;
+    max-width: 700px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .main-frame svg { width: 100%; height: auto; display: block; }
+
+  /* Sidebar controls */
+  .sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .control-group h3 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 10px;
+  }
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+  }
+  .toggle-row:last-child { border-bottom: none; }
+  .toggle {
+    width: 32px;
+    height: 18px;
+    border-radius: 9px;
+    background: rgba(255,255,255,0.12);
+    position: relative;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .toggle::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.2s;
+  }
+  .toggle.on { background: #34d399; }
+  .toggle.on::after { transform: translateX(14px); }
+
+  /* Legend */
+  .legend { display: flex; flex-direction: column; gap: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.65); }
+  .legend-dot {
+    width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
+    border: 2px solid transparent;
+  }
+  .legend-dot.mastered { background: #34d399; border-color: #6ee7b7; }
+  .legend-dot.ready    { background: #f5b942; border-color: #ffd27a; }
+  .legend-dot.current  { background: #ffffff; border-color: #a5f3fc; }
+  .legend-dot.locked   { background: #2a3552; border-color: #3a4870; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Mastery <span class="accent">Advantage</span></h1>
+  <p>The knowledge graph for Reading Advantage — CEFR A1 through C2. Switch domains and toggle layers using the controls below.</p>
+</header>
+
+<div class="tabs">
+  <button class="tab active" data-theme="reading" onclick="setTheme(this)">Reading (CEFR)</button>
+  <button class="tab" data-theme="math" onclick="setTheme(this)">Math Advantage</button>
+  <button class="tab" data-theme="science" onclick="setTheme(this)">Science Advantage</button>
+  <button class="tab" data-theme="code" onclick="setTheme(this)">Code Advantage</button>
+</div>
+
+<div class="canvas">
+
+  <!-- SVG inlined directly — no iframe, no object tag -->
+  <div class="main-frame" id="graph-frame">
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1000 1000"
+      preserveAspectRatio="xMidYMid meet"
+      id="ma-svg"
+      class="mastery-advantage-graph"
+      data-animate="true"
+      data-domain="reading"
+    >
+      <style>
+        .mastery-advantage-graph {
+          --ma-bg:               #0b1220;
+          --ma-bg-soft:          #131c30;
+          --ma-grid:             rgba(255,255,255,0.04);
+          --ma-node-locked:      #2a3552;
+          --ma-node-locked-ring: #3a4870;
+          --ma-node-ready:       #f5b942;
+          --ma-node-ready-ring:  #ffd27a;
+          --ma-node-mastered:    #34d399;
+          --ma-node-mastered-ring:#6ee7b7;
+          --ma-node-current:     #ffffff;
+          --ma-node-current-ring:#a5f3fc;
+          --ma-edge:             rgba(255,255,255,0.08);
+          --ma-edge-active:      #a5f3fc;
+          --ma-cluster-fill:     rgba(255,255,255,0.025);
+          --ma-cluster-stroke:   rgba(255,255,255,0.08);
+          --ma-label:            rgba(255,255,255,0.85);
+          --ma-label-muted:      rgba(255,255,255,0.45);
+          --ma-cluster-label:    rgba(255,255,255,0.5);
+        }
+
+        /* Domain themes */
+        .mastery-advantage-graph[data-domain="math"] {
+          --ma-node-mastered: #fb7185; --ma-node-mastered-ring: #fda4af;
+          --ma-edge-active: #fda4af;   --ma-node-current-ring: #fecdd3;
+        }
+        .mastery-advantage-graph[data-domain="science"] {
+          --ma-node-mastered: #a78bfa; --ma-node-mastered-ring: #c4b5fd;
+          --ma-edge-active: #c4b5fd;   --ma-node-current-ring: #ddd6fe;
+        }
+        .mastery-advantage-graph[data-domain="code"] {
+          --ma-node-mastered: #22d3ee; --ma-node-mastered-ring: #67e8f9;
+          --ma-edge-active: #67e8f9;   --ma-node-current-ring: #a5f3fc;
+        }
+
+        /* Layer toggles */
+        .mastery-advantage-graph[data-hide-background] #ma-layer-background { display: none; }
+        .mastery-advantage-graph[data-hide-clusters]   #ma-layer-clusters,
+        .mastery-advantage-graph[data-hide-clusters]   #ma-layer-cluster-labels { display: none; }
+        .mastery-advantage-graph[data-hide-labels]     #ma-layer-labels { display: none; }
+        .mastery-advantage-graph[data-hide-path]       #ma-layer-active-path { display: none; }
+
+        /* Node states */
+        .ma-node circle.ma-node-fill { fill: var(--ma-node-locked); transition: fill .4s; }
+        .ma-node circle.ma-node-ring { fill: none; stroke: var(--ma-node-locked-ring); stroke-width: 1.5; transition: stroke .4s, stroke-width .4s; }
+        .ma-node .ma-node-icon       { fill: var(--ma-label-muted); opacity: 0.5; transition: fill .4s, opacity .4s; }
+
+        .ma-node[data-state="ready"] circle.ma-node-fill   { fill: var(--ma-node-ready); }
+        .ma-node[data-state="ready"] circle.ma-node-ring   { stroke: var(--ma-node-ready-ring); stroke-width: 2; }
+        .ma-node[data-state="ready"] .ma-node-icon         { fill: #1a1208; opacity: 1; }
+
+        .ma-node[data-state="mastered"] circle.ma-node-fill { fill: var(--ma-node-mastered); }
+        .ma-node[data-state="mastered"] circle.ma-node-ring { stroke: var(--ma-node-mastered-ring); stroke-width: 2; }
+        .ma-node[data-state="mastered"] .ma-node-icon       { fill: #0a2018; opacity: 1; }
+
+        .ma-node[data-state="current"] circle.ma-node-fill  { fill: var(--ma-node-current); }
+        .ma-node[data-state="current"] circle.ma-node-ring  { stroke: var(--ma-node-current-ring); stroke-width: 3; }
+        .ma-node[data-state="current"] .ma-node-icon        { fill: #0b1220; opacity: 1; }
+
+        .ma-node-label    { fill: var(--ma-label); font-size: 13px; font-weight: 600; }
+        .ma-cluster-label { fill: var(--ma-cluster-label); font-size: 16px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+
+        .ma-edge { stroke: var(--ma-edge); stroke-width: 1.25; fill: none; }
+        .ma-edge-active-line {
+          stroke: var(--ma-edge-active);
+          stroke-width: 2.5; fill: none;
+          stroke-linecap: round;
+          filter: url(#ma-glow-soft);
+        }
+
+        /* Animations */
+        .mastery-advantage-graph[data-animate="true"] .ma-node[data-state="ready"] circle.ma-node-ring {
+          animation: ma-pulse 2.4s ease-in-out infinite;
+          transform-origin: center; transform-box: fill-box;
+        }
+        .mastery-advantage-graph[data-animate="true"] .ma-node[data-state="current"] circle.ma-node-ring {
+          animation: ma-pulse-strong 1.8s ease-in-out infinite;
+          transform-origin: center; transform-box: fill-box;
+        }
+        .mastery-advantage-graph[data-animate="true"] .ma-edge-active-line {
+          stroke-dasharray: 8 6;
+          animation: ma-flow 1.8s linear infinite;
+        }
+
+        @keyframes ma-pulse {
+          0%,100% { stroke-opacity:.6; stroke-width:2; }
+          50%      { stroke-opacity:1;  stroke-width:4; }
+        }
+        @keyframes ma-pulse-strong {
+          0%,100% { stroke-opacity:.8; stroke-width:3; }
+          50%      { stroke-opacity:1;  stroke-width:6; }
+        }
+        @keyframes ma-flow { to { stroke-dashoffset: -28; } }
+
+        @media (prefers-reduced-motion: reduce) {
+          .mastery-advantage-graph[data-animate="true"] * { animation: none !important; }
+        }
+      </style>
+
+      <defs>
+        <radialGradient id="ma-bg-gradient" cx="50%" cy="40%" r="70%">
+          <stop offset="0%"   stop-color="var(--ma-bg-soft)"/>
+          <stop offset="100%" stop-color="var(--ma-bg)"/>
+        </radialGradient>
+        <pattern id="ma-grid-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--ma-grid)" stroke-width="1"/>
+        </pattern>
+        <filter id="ma-glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="ma-glow-strong" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="8" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <linearGradient id="ma-active-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="var(--ma-node-mastered)"/>
+          <stop offset="100%" stop-color="var(--ma-node-current-ring)"/>
+        </linearGradient>
+        <symbol id="ma-icon-check" viewBox="0 0 20 20">
+          <path d="M5 10.5 L8.5 14 L15 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="ma-icon-spark" viewBox="0 0 20 20">
+          <path d="M10 3 L11.5 8.5 L17 10 L11.5 11.5 L10 17 L8.5 11.5 L3 10 L8.5 8.5 Z" fill="currentColor"/>
+        </symbol>
+        <symbol id="ma-icon-lock" viewBox="0 0 20 20">
+          <rect x="6" y="9" width="8" height="7" rx="1.2" fill="currentColor"/>
+          <path d="M7.5 9 V7 a2.5 2.5 0 0 1 5 0 V9" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        </symbol>
+      </defs>
+
+      <!-- LAYER 1: Background -->
+      <g id="ma-layer-background">
+        <rect width="1000" height="1000" fill="url(#ma-bg-gradient)"/>
+        <rect width="1000" height="1000" fill="url(#ma-grid-pattern)"/>
+      </g>
+
+      <!-- LAYER 2: Cluster regions -->
+      <g id="ma-layer-clusters">
+        <ellipse cx="170" cy="780" rx="140" ry="120" fill="var(--ma-cluster-fill)" stroke="var(--ma-cluster-stroke)" stroke-dasharray="3 5"/>
+        <ellipse cx="320" cy="560" rx="150" ry="130" fill="var(--ma-cluster-fill)" stroke="var(--ma-cluster-stroke)" stroke-dasharray="3 5"/>
+        <ellipse cx="500" cy="380" rx="160" ry="135" fill="var(--ma-cluster-fill)" stroke="var(--ma-cluster-stroke)" stroke-dasharray="3 5"/>
+        <ellipse cx="720" cy="430" rx="150" ry="125" fill="var(--ma-cluster-fill)" stroke="var(--ma-cluster-stroke)" stroke-dasharray="3 5"/>
+        <ellipse cx="830" cy="660" rx="130" ry="115" fill="var(--ma-cluster-fill)" stroke="var(--ma-cluster-stroke)" stroke-dasharray="3 5"/>
+        <ellipse cx="700" cy="850" rx="120" ry="100" fill="var(--ma-cluster-fill)" stroke="var(--ma-cluster-stroke)" stroke-dasharray="3 5"/>
+        <!-- Cluster labels inside the cluster group -->
+        <text class="ma-cluster-label" x="170" y="895" text-anchor="middle">A1 · Beginner</text>
+        <text class="ma-cluster-label" x="320" y="434" text-anchor="middle">A2 · Elementary</text>
+        <text class="ma-cluster-label" x="500" y="244" text-anchor="middle">B1 · Intermediate</text>
+        <text class="ma-cluster-label" x="720" y="304" text-anchor="middle">B2 · Upper-Int.</text>
+        <text class="ma-cluster-label" x="830" y="776" text-anchor="middle">C1 · Advanced</text>
+        <text class="ma-cluster-label" x="700" y="954" text-anchor="middle">C2 · Proficient</text>
+      </g>
+
+      <!-- LAYER 3: Edges -->
+      <g id="ma-layer-edges">
+        <path class="ma-edge" d="M 200 720 Q 270 660 290 600"/>
+        <path class="ma-edge" d="M 140 740 Q 200 640 280 580"/>
+        <path class="ma-edge" d="M 220 820 Q 290 720 340 620"/>
+        <path class="ma-edge" d="M 360 510 Q 420 440 460 380"/>
+        <path class="ma-edge" d="M 300 500 Q 380 420 470 360"/>
+        <path class="ma-edge" d="M 380 610 Q 440 500 500 420"/>
+        <path class="ma-edge" d="M 560 360 Q 620 380 680 400"/>
+        <path class="ma-edge" d="M 540 420 Q 620 430 700 440"/>
+        <path class="ma-edge" d="M 520 320 Q 620 350 720 380"/>
+        <path class="ma-edge" d="M 760 480 Q 800 560 820 620"/>
+        <path class="ma-edge" d="M 720 500 Q 780 580 830 640"/>
+        <path class="ma-edge" d="M 800 720 Q 760 790 720 830"/>
+        <path class="ma-edge" d="M 830 730 Q 780 820 730 860"/>
+        <path class="ma-edge" d="M 280 540 Q 320 530 360 560"/>
+        <path class="ma-edge" d="M 470 350 Q 500 370 540 380"/>
+      </g>
+
+      <!-- LAYER 4: Active path -->
+      <g id="ma-layer-active-path">
+        <path class="ma-edge-active-line"
+          d="M 170 800 Q 240 700 290 600 Q 360 500 460 380 Q 540 360 680 400"
+          stroke="url(#ma-active-gradient)"/>
+      </g>
+
+      <!-- LAYER 5: Nodes -->
+      <g id="ma-layer-nodes">
+
+        <!-- A1: mastered -->
+        <g class="ma-node" data-state="mastered" data-cefr="a1" transform="translate(170 800)">
+          <circle class="ma-node-fill" r="18"/><circle class="ma-node-ring" r="22"/>
+          <use href="#ma-icon-check" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="mastered" data-cefr="a1" transform="translate(100 740)">
+          <circle class="ma-node-fill" r="16"/><circle class="ma-node-ring" r="20"/>
+          <use href="#ma-icon-check" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="mastered" data-cefr="a1" transform="translate(230 720)">
+          <circle class="ma-node-fill" r="16"/><circle class="ma-node-ring" r="20"/>
+          <use href="#ma-icon-check" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="mastered" data-cefr="a1" transform="translate(160 870)">
+          <circle class="ma-node-fill" r="15"/><circle class="ma-node-ring" r="19"/>
+          <use href="#ma-icon-check" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+
+        <!-- A2: mastered -->
+        <g class="ma-node" data-state="mastered" data-cefr="a2" transform="translate(290 600)">
+          <circle class="ma-node-fill" r="18"/><circle class="ma-node-ring" r="22"/>
+          <use href="#ma-icon-check" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="mastered" data-cefr="a2" transform="translate(370 560)">
+          <circle class="ma-node-fill" r="16"/><circle class="ma-node-ring" r="20"/>
+          <use href="#ma-icon-check" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="mastered" data-cefr="a2" transform="translate(260 510)">
+          <circle class="ma-node-fill" r="15"/><circle class="ma-node-ring" r="19"/>
+          <use href="#ma-icon-check" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="mastered" data-cefr="a2" transform="translate(380 620)">
+          <circle class="ma-node-fill" r="14"/><circle class="ma-node-ring" r="18"/>
+          <use href="#ma-icon-check" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+
+        <!-- B1: current + ready + locked -->
+        <g class="ma-node" data-state="current" data-cefr="b1" transform="translate(460 380)" filter="url(#ma-glow-strong)">
+          <circle class="ma-node-fill" r="22"/><circle class="ma-node-ring" r="28"/>
+          <use href="#ma-icon-spark" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="ready" data-cefr="b1" transform="translate(540 340)">
+          <circle class="ma-node-fill" r="17"/><circle class="ma-node-ring" r="21"/>
+          <use href="#ma-icon-spark" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="ready" data-cefr="b1" transform="translate(500 460)">
+          <circle class="ma-node-fill" r="16"/><circle class="ma-node-ring" r="20"/>
+          <use href="#ma-icon-spark" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="locked" data-cefr="b1" transform="translate(430 310)">
+          <circle class="ma-node-fill" r="14"/><circle class="ma-node-ring" r="18"/>
+          <use href="#ma-icon-lock" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+
+        <!-- B2: one ready, rest locked -->
+        <g class="ma-node" data-state="ready" data-cefr="b2" transform="translate(680 400)">
+          <circle class="ma-node-fill" r="18"/><circle class="ma-node-ring" r="22"/>
+          <use href="#ma-icon-spark" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="locked" data-cefr="b2" transform="translate(760 440)">
+          <circle class="ma-node-fill" r="16"/><circle class="ma-node-ring" r="20"/>
+          <use href="#ma-icon-lock" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="locked" data-cefr="b2" transform="translate(720 480)">
+          <circle class="ma-node-fill" r="15"/><circle class="ma-node-ring" r="19"/>
+          <use href="#ma-icon-lock" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="locked" data-cefr="b2" transform="translate(740 370)">
+          <circle class="ma-node-fill" r="14"/><circle class="ma-node-ring" r="18"/>
+          <use href="#ma-icon-lock" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+
+        <!-- C1: all locked -->
+        <g class="ma-node" data-state="locked" data-cefr="c1" transform="translate(820 640)">
+          <circle class="ma-node-fill" r="16"/><circle class="ma-node-ring" r="20"/>
+          <use href="#ma-icon-lock" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="locked" data-cefr="c1" transform="translate(870 680)">
+          <circle class="ma-node-fill" r="15"/><circle class="ma-node-ring" r="19"/>
+          <use href="#ma-icon-lock" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="locked" data-cefr="c1" transform="translate(790 720)">
+          <circle class="ma-node-fill" r="14"/><circle class="ma-node-ring" r="18"/>
+          <use href="#ma-icon-lock" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+
+        <!-- C2: all locked -->
+        <g class="ma-node" data-state="locked" data-cefr="c2" transform="translate(700 850)">
+          <circle class="ma-node-fill" r="16"/><circle class="ma-node-ring" r="20"/>
+          <use href="#ma-icon-lock" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="locked" data-cefr="c2" transform="translate(660 890)">
+          <circle class="ma-node-fill" r="14"/><circle class="ma-node-ring" r="18"/>
+          <use href="#ma-icon-lock" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+        <g class="ma-node" data-state="locked" data-cefr="c2" transform="translate(740 820)">
+          <circle class="ma-node-fill" r="13"/><circle class="ma-node-ring" r="17"/>
+          <use href="#ma-icon-lock" x="-10" y="-10" width="20" height="20" class="ma-node-icon"/>
+        </g>
+      </g>
+
+      <!-- LAYER 6: Labels -->
+      <g id="ma-layer-labels">
+        <text class="ma-node-label" x="460" y="342" text-anchor="middle">You are here</text>
+      </g>
+
+    </svg>
+  </div>
+
+  <!-- Sidebar controls -->
+  <div class="sidebar">
+
+    <div class="control-group">
+      <h3>Layers</h3>
+      <div class="toggle-row" onclick="toggleLayer('background')">
+        Background <span class="toggle on" id="toggle-background"></span>
+      </div>
+      <div class="toggle-row" onclick="toggleLayer('clusters')">
+        Clusters <span class="toggle on" id="toggle-clusters"></span>
+      </div>
+      <div class="toggle-row" onclick="toggleLayer('path')">
+        Active Path <span class="toggle on" id="toggle-path"></span>
+      </div>
+      <div class="toggle-row" onclick="toggleLayer('labels')">
+        Labels <span class="toggle on" id="toggle-labels"></span>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <h3>Legend</h3>
+      <div class="legend">
+        <div class="legend-item"><span class="legend-dot mastered"></span> Mastered</div>
+        <div class="legend-item"><span class="legend-dot current"></span> You are here</div>
+        <div class="legend-item"><span class="legend-dot ready"></span> Ready to learn</div>
+        <div class="legend-item"><span class="legend-dot locked"></span> Not yet unlocked</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const svg = document.getElementById('ma-svg');
+  const layerState = { background: true, clusters: true, path: true, labels: true };
+
+  function setTheme(btn) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    svg.setAttribute('data-domain', btn.dataset.theme);
+  }
+
+  function toggleLayer(layer) {
+    layerState[layer] = !layerState[layer];
+    const attr = 'data-hide-' + layer;
+    if (layerState[layer]) {
+      svg.removeAttribute(attr);
+    } else {
+      svg.setAttribute(attr, '');
+    }
+    document.getElementById('toggle-' + layer).classList.toggle('on', layerState[layer]);
+  }
+</script>
+
+</body>
+</html>
