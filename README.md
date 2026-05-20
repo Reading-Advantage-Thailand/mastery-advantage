@@ -33,13 +33,27 @@ KST determines *what* to learn next. Spaced repetition determines *when* to revi
 
 Mastery Advantage is implemented across the Advantage suite. Each app has its own domain knowledge graph built on the same underlying engine.
 
-| App | Domain | Audience | Knowledge Framework | Status |
-|-----|--------|----------|---------------------|--------|
-| **Reading Advantage** | English (Reading) | Secondary students, ages 11–18 | Pearson GSE — Adult Learners (CEFR A1–C2) | Production |
-| **Primary Advantage** | English (Reading) | Primary students, ages 6–11 | Pearson GSE — Young Learners (CEFR Pre-A1–B1) | Production |
-| **Math Advantage** | Mathematics | K–12 | Thai national math curriculum | Planning |
-| **Science Advantage** | Science | K–12 | Thai national science curriculum | Planning |
-| **Code Advantage** | Programming | Secondary+ | Computational thinking / CS fundamentals | Planning |
+### Reading Suite
+
+Three apps form a continuous English reading progression from ages 5 through 18:
+
+| App | Audience | Framework | Brand | Status |
+|-----|----------|-----------|-------|--------|
+| **Storytime Advantage** | Lower primary, ages 5–8 | Early literacy / phonics + lower GSE YL | Amber `#fbbf24` | Planning |
+| **Primary Advantage** | Upper primary, ages 8–11 | Pearson GSE — Young Learners (Pre-A1–B2) | Cyan `#22d3ee` | Production |
+| **Reading Advantage** | Secondary, ages 11–18 | Pearson GSE — Adult Learners (A1–C2) | Sky `#38bdf8` | Production |
+
+All three share the same English knowledge domain in [`english/`](english/). Students progress through Storytime → Primary → Reading Advantage along a single continuous skill continuum.
+
+### Other Subject Apps
+
+| App | Domain | Audience | Framework | Brand | Status |
+|-----|--------|----------|-----------|-------|--------|
+| **Math Advantage** | Mathematics | K–12 | Thai national math curriculum | Orange `#fb923c` | Planning |
+| **Science Advantage** | Science | K–12 | Thai national science curriculum | Rose `#fb7185` | Planning |
+| **STEM Advantage** | Integrated STEM | Upper primary / secondary | Cross-domain (Math + Science + Engineering) | Indigo `#818cf8` | Planning |
+| **Zhongwen Advantage** | Chinese language | All ages | HSK framework | Fuchsia `#e879f9` | Planning |
+| **Tutor Advantage** | Cross-domain AI tutoring | All ages | Operates on all domain graphs | Emerald `#34d399` | Planning |
 
 ---
 
@@ -54,28 +68,39 @@ mastery-advantage/
 ├── README-th.md                     ← Thai-language version
 │
 ├── assets/                          ← Brand and marketing assets
-│   ├── mastery-advantage-graph.svg  ← Master knowledge graph SVG (multi-theme)
-│   ├── mastery-advantage-demo.html  ← Interactive demo (domain themes + layer toggles)
-│   └── ...                          ← Photography and illustration assets
+│   ├── mastery-advantage-graph.svg  ← Master knowledge graph SVG (all domain themes)
+│   ├── mastery-advantage-demo.html  ← Interactive demo (8 app themes + layer toggles)
+│   └── logos/                       ← App logo files
 │
-├── english/                         ← English domain (Reading Advantage + Primary Advantage)
+├── english/                         ← English reading domain (Storytime + Primary + Reading Advantage)
 │   ├── README.md
 │   ├── gse-md/                      ← GSE learning objectives (human-readable markdown)
 │   ├── gse-knowledge-space.json     ← Full KST graph: ~2,000 skill nodes + edges
-│   ├── gse-to-reading-advantage.csv ← GSE score → RA level mapping
-│   ├── gse-to-primary-advantage.csv ← GSE score → PA level mapping
+│   ├── gse-to-reading-advantage.csv ← GSE score → RA level mapping (levels 1–18)
+│   ├── gse-to-primary-advantage.csv ← GSE score → PA level mapping (levels 1–14)
 │   ├── scripts/                     ← Graph generation + visualization build tools
 │   ├── index.html                   ← GSE Learning Objectives Explorer
-│   ├── knowledge-space-viz.html     ← Interactive D3 graph visualization
 │   └── knowledge-space-viz-standalone.html
 │
-├── math/                            ← Math domain (Math Advantage) — in planning
+├── storytime/                       ← Storytime Advantage (lower primary) — planning
 │   └── README.md
 │
-├── science/                         ← Science domain (Science Advantage) — in planning
+├── math/                            ← Math Advantage — planning
 │   └── README.md
 │
-└── code/                            ← Code domain (Code Advantage) — in planning
+├── science/                         ← Science Advantage — planning
+│   └── README.md
+│
+├── stem/                            ← STEM Advantage (integrated) — planning
+│   └── README.md
+│
+├── zhongwen/                        ← Zhongwen Advantage (Chinese) — planning
+│   └── README.md
+│
+├── tutor/                           ← Tutor Advantage (cross-domain AI tutoring) — planning
+│   └── README.md
+│
+└── code/                            ← Code Advantage — planning
     └── README.md
 ```
 

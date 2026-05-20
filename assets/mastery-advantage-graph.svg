@@ -26,14 +26,14 @@
       --ma-node-locked-ring:#3a4870;
       --ma-node-ready:      #f5b942;
       --ma-node-ready-ring: #ffd27a;
-      --ma-node-mastered:   #34d399;
-      --ma-node-mastered-ring:#6ee7b7;
+      --ma-node-mastered:   #38bdf8;
+      --ma-node-mastered-ring:#7dd3fc;
       --ma-node-current:    #ffffff;
-      --ma-node-current-ring:#a5f3fc;
+      --ma-node-current-ring:#bae6fd;
 
       /* Edges */
       --ma-edge:            rgba(255,255,255,0.08);
-      --ma-edge-active:     #a5f3fc;
+      --ma-edge-active:     #7dd3fc;
 
       /* Clusters */
       --ma-cluster-fill:    rgba(255,255,255,0.025);
@@ -62,10 +62,15 @@
        }
     */
 
-    /* Per-app theme example — apply data-domain="math" or "science" etc.
-       .mastery-advantage-graph[data-domain="math"]    { --ma-node-mastered:#fb7185; --ma-edge-active:#fda4af; }
-       .mastery-advantage-graph[data-domain="science"] { --ma-node-mastered:#a78bfa; --ma-edge-active:#c4b5fd; }
-       .mastery-advantage-graph[data-domain="code"]    { --ma-node-mastered:#22d3ee; --ma-edge-active:#67e8f9; }
+    /* Per-app domain themes — set data-domain="<value>" on the root element
+       reading  (Reading Advantage)   sky:     --ma-node-mastered:#38bdf8; --ma-edge-active:#7dd3fc;  (default)
+       primary  (Primary Advantage)   cyan:    --ma-node-mastered:#22d3ee; --ma-edge-active:#67e8f9;
+       storytime(Storytime Advantage) amber:   --ma-node-mastered:#fbbf24; --ma-edge-active:#fcd34d;
+       math     (Math Advantage)      orange:  --ma-node-mastered:#fb923c; --ma-edge-active:#fdba74;
+       science  (Science Advantage)   rose:    --ma-node-mastered:#fb7185; --ma-edge-active:#fda4af;
+       stem     (STEM Advantage)      indigo:  --ma-node-mastered:#818cf8; --ma-edge-active:#a5b4fc;
+       zhongwen (Zhongwen Advantage)  fuchsia: --ma-node-mastered:#e879f9; --ma-edge-active:#f0abfc;
+       tutor    (Tutor Advantage)     emerald: --ma-node-mastered:#34d399; --ma-edge-active:#6ee7b7;
     */
 
     /* Layer toggles — hide by adding data-hide-* attrs on the root */

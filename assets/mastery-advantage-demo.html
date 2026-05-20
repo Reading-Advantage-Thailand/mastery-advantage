@@ -25,7 +25,7 @@
     line-height: 1;
     margin-bottom: 12px;
   }
-  .accent { color: #34d399; font-style: italic; }
+  .accent { color: #38bdf8; font-style: italic; }
   header p { font-size: 16px; color: rgba(255,255,255,0.5); max-width: 560px; line-height: 1.6; }
 
   /* Tab controls */
@@ -49,10 +49,15 @@
     transition: all 0.2s;
   }
   .tab:hover { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); }
-  .tab.active { background: #34d399; border-color: #34d399; color: #0b1220; }
-  .tab[data-theme="math"].active    { background: #fb7185; border-color: #fb7185; }
-  .tab[data-theme="science"].active { background: #a78bfa; border-color: #a78bfa; }
-  .tab[data-theme="code"].active    { background: #22d3ee; border-color: #22d3ee; }
+  /* Brand colors per app */
+  .tab[data-theme="reading"].active  { background: #38bdf8; border-color: #38bdf8; color: #0c4a6e; }
+  .tab[data-theme="primary"].active  { background: #22d3ee; border-color: #22d3ee; color: #155e75; }
+  .tab[data-theme="math"].active     { background: #fb923c; border-color: #fb923c; color: #9a3412; }
+  .tab[data-theme="science"].active  { background: #fb7185; border-color: #fb7185; color: #9f1239; }
+  .tab[data-theme="stem"].active     { background: #818cf8; border-color: #818cf8; color: #1e1b4b; }
+  .tab[data-theme="zhongwen"].active { background: #e879f9; border-color: #e879f9; color: #4a044e; }
+  .tab[data-theme="storytime"].active{ background: #fbbf24; border-color: #fbbf24; color: #92400e; }
+  .tab[data-theme="tutor"].active    { background: #34d399; border-color: #34d399; color: #065f46; }
 
   /* Main canvas */
   .canvas {
@@ -130,7 +135,7 @@
     width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
     border: 2px solid transparent;
   }
-  .legend-dot.mastered { background: #34d399; border-color: #6ee7b7; }
+  .legend-dot.mastered { background: #38bdf8; border-color: #7dd3fc; }
   .legend-dot.ready    { background: #f5b942; border-color: #ffd27a; }
   .legend-dot.current  { background: #ffffff; border-color: #a5f3fc; }
   .legend-dot.locked   { background: #2a3552; border-color: #3a4870; }
@@ -140,14 +145,18 @@
 
 <header>
   <h1>Mastery <span class="accent">Advantage</span></h1>
-  <p>The knowledge graph for Reading Advantage — CEFR A1 through C2. Switch domains and toggle layers using the controls below.</p>
+  <p>The Mastery Advantage knowledge graph — one visual language across the entire Advantage suite. Switch apps to see each domain's brand theme.</p>
 </header>
 
 <div class="tabs">
-  <button class="tab active" data-theme="reading" onclick="setTheme(this)">Reading (CEFR)</button>
-  <button class="tab" data-theme="math" onclick="setTheme(this)">Math Advantage</button>
-  <button class="tab" data-theme="science" onclick="setTheme(this)">Science Advantage</button>
-  <button class="tab" data-theme="code" onclick="setTheme(this)">Code Advantage</button>
+  <button class="tab active" data-theme="reading"  onclick="setTheme(this)">Reading Advantage</button>
+  <button class="tab" data-theme="primary"          onclick="setTheme(this)">Primary Advantage</button>
+  <button class="tab" data-theme="storytime"        onclick="setTheme(this)">Storytime Advantage</button>
+  <button class="tab" data-theme="math"             onclick="setTheme(this)">Math Advantage</button>
+  <button class="tab" data-theme="science"          onclick="setTheme(this)">Science Advantage</button>
+  <button class="tab" data-theme="stem"             onclick="setTheme(this)">STEM Advantage</button>
+  <button class="tab" data-theme="zhongwen"         onclick="setTheme(this)">Zhongwen Advantage</button>
+  <button class="tab" data-theme="tutor"            onclick="setTheme(this)">Tutor Advantage</button>
 </div>
 
 <div class="canvas">
@@ -173,12 +182,12 @@
           --ma-node-locked-ring: #3a4870;
           --ma-node-ready:       #f5b942;
           --ma-node-ready-ring:  #ffd27a;
-          --ma-node-mastered:    #34d399;
-          --ma-node-mastered-ring:#6ee7b7;
+          --ma-node-mastered:    #38bdf8;
+          --ma-node-mastered-ring:#7dd3fc;
           --ma-node-current:     #ffffff;
-          --ma-node-current-ring:#a5f3fc;
+          --ma-node-current-ring:#bae6fd;
           --ma-edge:             rgba(255,255,255,0.08);
-          --ma-edge-active:      #a5f3fc;
+          --ma-edge-active:      #7dd3fc;
           --ma-cluster-fill:     rgba(255,255,255,0.025);
           --ma-cluster-stroke:   rgba(255,255,255,0.08);
           --ma-label:            rgba(255,255,255,0.85);
@@ -186,18 +195,34 @@
           --ma-cluster-label:    rgba(255,255,255,0.5);
         }
 
-        /* Domain themes */
+        /* Domain themes — matches brand colors for each app */
+        .mastery-advantage-graph[data-domain="primary"] {
+          --ma-node-mastered: #22d3ee; --ma-node-mastered-ring: #67e8f9;
+          --ma-edge-active: #67e8f9;   --ma-node-current-ring: #a5f3fc;
+        }
+        .mastery-advantage-graph[data-domain="storytime"] {
+          --ma-node-mastered: #fbbf24; --ma-node-mastered-ring: #fcd34d;
+          --ma-edge-active: #fcd34d;   --ma-node-current-ring: #fde68a;
+        }
         .mastery-advantage-graph[data-domain="math"] {
+          --ma-node-mastered: #fb923c; --ma-node-mastered-ring: #fdba74;
+          --ma-edge-active: #fdba74;   --ma-node-current-ring: #fed7aa;
+        }
+        .mastery-advantage-graph[data-domain="science"] {
           --ma-node-mastered: #fb7185; --ma-node-mastered-ring: #fda4af;
           --ma-edge-active: #fda4af;   --ma-node-current-ring: #fecdd3;
         }
-        .mastery-advantage-graph[data-domain="science"] {
-          --ma-node-mastered: #a78bfa; --ma-node-mastered-ring: #c4b5fd;
-          --ma-edge-active: #c4b5fd;   --ma-node-current-ring: #ddd6fe;
+        .mastery-advantage-graph[data-domain="stem"] {
+          --ma-node-mastered: #818cf8; --ma-node-mastered-ring: #a5b4fc;
+          --ma-edge-active: #a5b4fc;   --ma-node-current-ring: #c7d2fe;
         }
-        .mastery-advantage-graph[data-domain="code"] {
-          --ma-node-mastered: #22d3ee; --ma-node-mastered-ring: #67e8f9;
-          --ma-edge-active: #67e8f9;   --ma-node-current-ring: #a5f3fc;
+        .mastery-advantage-graph[data-domain="zhongwen"] {
+          --ma-node-mastered: #e879f9; --ma-node-mastered-ring: #f0abfc;
+          --ma-edge-active: #f0abfc;   --ma-node-current-ring: #f5d0fe;
+        }
+        .mastery-advantage-graph[data-domain="tutor"] {
+          --ma-node-mastered: #34d399; --ma-node-mastered-ring: #6ee7b7;
+          --ma-edge-active: #6ee7b7;   --ma-node-current-ring: #a7f3d0;
         }
 
         /* Layer toggles */
