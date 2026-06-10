@@ -62,7 +62,7 @@
        }
     */
 
-    /* Per-app domain themes — set data-domain="<value>" on the root element
+    /* Per-app domain themes — set data-domain="VALUE" on the root element
        reading  (Reading Advantage)   sky:     --ma-node-mastered:#38bdf8; --ma-edge-active:#7dd3fc;  (default)
        primary  (Primary Advantage)   cyan:    --ma-node-mastered:#22d3ee; --ma-edge-active:#67e8f9;
        storytime(Storytime Advantage) amber:   --ma-node-mastered:#fbbf24; --ma-edge-active:#fcd34d;
