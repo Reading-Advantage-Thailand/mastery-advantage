@@ -56,6 +56,12 @@ english/
 ├── gse-to-reading-advantage.csv       ← GSE score (10–90) → RA level (1–18)
 ├── gse-to-primary-advantage.csv       ← GSE score (10–70) → PA level (1–14)
 │
+├── cefr-vocabulary/                    ← CEFR/Cambridge lexical knowledge graph
+│   ├── README.md                       ← Coverage, generation, and usage
+│   ├── GRAPH-DESIGN.md                 ← Lexical graph and article recommendation contract
+│   ├── SOURCES.md                      ← Official URLs, checksums, and provenance
+│   └── download-sources.sh             ← Refreshes the local source-PDF cache
+│
 ├── scripts/
 │   ├── generate-knowledge-space.js    ← Builds gse-knowledge-space.json from gse-all.json
 │   └── build-standalone-viz.js        ← Inlines JSON into standalone HTML visualization
@@ -64,6 +70,12 @@ english/
 ├── knowledge-space-viz.html           ← Interactive D3 knowledge graph visualization
 └── knowledge-space-viz-standalone.html ← Same viz, data inlined (works from file://)
 ```
+
+The CEFR vocabulary area generates a separate lexical knowledge graph from
+official Cambridge wordlists for Pre A1 Starters through B1 Preliminary for
+Schools and documents the B2 First wordlist gap. It supports vocabulary SRS and
+extensive-reading article recommendation and remains separate from
+`gse-knowledge-space.json`.
 
 ---
 
