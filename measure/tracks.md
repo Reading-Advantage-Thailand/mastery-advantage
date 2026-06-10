@@ -36,3 +36,21 @@ This registry tracks Mastery Advantage specification and domain-data work.
   *Define portable lexical matching, readability metrics, ranking contracts, and
   offline evaluation fixtures.*
   *Link: [./tracks/lexical_recommendation_contract_20260610/](./tracks/lexical_recommendation_contract_20260610/)*
+
+---
+
+- [ ] **Track: Sense-Level Lexical Identity Specification**
+  *Define when and how sense-level identity replaces form+POS for polysemous words; produce reviewed spec and 50-word sample.*
+  *Link: [./tracks/sense_level_identity_spec_20260611/](./tracks/sense_level_identity_spec_20260611/)*
+
+---
+
+- [ ] **Track: B2 Vocabulary Source Expansion**
+  *Close the B2 gap using documented alternative sources (Vocabulary in Use, etc.) without claiming false Cambridge FCE coverage.*
+  *Link: [./tracks/b2_vocabulary_source_expansion_20260611/](./tracks/b2_vocabulary_source_expansion_20260611/)*
+
+---
+
+- [ ] **Track: Frequency, Semantic and Article-Ranking Layer Design**
+  *Design reproducible frequency, semantic similarity, and article-ranking layers as additive graph extensions.*
+  *Link: [./tracks/frequency_semantic_ranking_layer_20260611/](./tracks/frequency_semantic_ranking_layer_20260611/)*
