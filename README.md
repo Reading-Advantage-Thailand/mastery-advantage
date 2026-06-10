@@ -45,6 +45,17 @@ Three apps form a continuous English reading progression from ages 5 through 18:
 
 All three share the same English knowledge domain in [`english/`](english/). Students progress through Storytime → Primary → Reading Advantage along a single continuous skill continuum.
 
+The English domain currently contains two complementary graphs:
+
+- The **GSE objective graph** models communicative learning objectives and
+  readiness relationships across reading, listening, speaking, and writing.
+- The **CEFR/Cambridge vocabulary graph** models individual lexical skills for
+  vocabulary SRS and extensive-reading recommendations.
+
+The lexical graph is a pre-implementation research artifact. It is not yet
+approved for application integration; readiness work is tracked in
+[`measure/tracks/lexical_graph_preimplementation_20260610/`](measure/tracks/lexical_graph_preimplementation_20260610/).
+
 ### Other Subject Apps
 
 | App | Domain | Audience | Framework | Brand | Status |
@@ -78,9 +89,21 @@ mastery-advantage/
 │   ├── gse-knowledge-space.json     ← Full KST graph: ~2,000 skill nodes + edges
 │   ├── gse-to-reading-advantage.csv ← GSE score → RA level mapping (levels 1–18)
 │   ├── gse-to-primary-advantage.csv ← GSE score → PA level mapping (levels 1–14)
+│   ├── cefr-vocabulary/             ← CEFR/Cambridge lexical graph research
+│   │   ├── README.md                ← Coverage, generation, and current limitations
+│   │   ├── GRAPH-DESIGN.md          ← Lexical relationships and recommendation contract
+│   │   ├── SOURCES.md               ← Source provenance and checksums
+│   │   ├── data/                    ← Normalized Cambridge lexical inventory
+│   │   └── cefr-vocabulary-knowledge-space.json
 │   ├── scripts/                     ← Graph generation + visualization build tools
 │   ├── index.html                   ← GSE Learning Objectives Explorer
 │   └── knowledge-space-viz-standalone.html
+│
+├── measure/                         ← Specification-driven project planning
+│   ├── tracks.md                    ← Active work registry
+│   └── tracks/lexical_graph_preimplementation_20260610/
+│       ├── spec.md                  ← Lexical graph readiness requirements
+│       └── plan.md                  ← Phased pre-implementation work plan
 │
 ├── storytime/                       ← Storytime Advantage (lower primary) — planning
 │   └── README.md
@@ -181,6 +204,49 @@ Edges have a typed relationship (`prerequisite_for`, `contains`, `supports`, `al
 
 ---
 
+## English Vocabulary Graph
+
+The generated lexical graph in
+[`english/cefr-vocabulary/`](english/cefr-vocabulary/) currently contains
+3,752 lexical skill nodes aligned to official Cambridge vocabulary lists from
+Pre A1 Starters through B1 Preliminary. It also includes CEFR/exam alignment,
+68 source-backed topic groups, and limited structural support relationships.
+Cambridge does not publish an official vocabulary list for B2 First, so that
+coverage gap is recorded explicitly.
+
+Vocabulary relationships do not imply a single learning sequence. The graph
+therefore does **not** infer `prerequisite_for` edges from CEFR level,
+frequency, thematic grouping, semantic similarity, or textbook order:
+
+- `contains` connects exam lists and topic groups to lexical skills.
+- `aligned_to_standard` connects lexical skills to CEFR levels.
+- `supports` currently captures same-form part-of-speech relationships and
+  known component words within multi-word expressions.
+- Frequency belongs in node metadata as a weak ranking signal.
+- Future WordNet, semantic similarity, and relatedness layers must remain typed,
+  sparse, source-versioned, and quality-reviewed.
+
+Applications should combine the graph with learner SRS state, article
+occurrence, goals, interests, and frequency to recommend next vocabulary and
+extensive-reading articles. See the
+[`lexical graph design`](english/cefr-vocabulary/GRAPH-DESIGN.md) for the full
+relationship and recommendation contract.
+
+Generate and validate the current graph:
+
+```bash
+node english/cefr-vocabulary/scripts/generate-vocabulary-graph.js
+node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js
+```
+
+Before any app implements this graph, the
+[`pre-implementation readiness track`](measure/tracks/lexical_graph_preimplementation_20260610/)
+must produce reproducible source handling, stronger lexical identity, expanded
+grouping and semantic layers, quantitative quality evidence, ranking fixtures,
+an application-consumption contract, and an explicit go/no-go decision.
+
+---
+
 ## Adding a New Domain
 
 To add a new subject domain to Mastery Advantage:
@@ -209,4 +275,5 @@ To add a new subject domain to Mastery Advantage:
 
 - **Domain data:** Each domain subdirectory is self-contained. See `<domain>/README.md` for contribution guidelines specific to that domain.
 - **Shared algorithm changes:** Changes to the outer fringe algorithm or graph schema affect all domains — document the migration path in this README before merging.
+- **Planned graph work:** Use the active registry in [`measure/tracks.md`](measure/tracks.md), and preserve requirements, validation evidence, and readiness decisions in the relevant track.
 - **Brand assets:** The master SVG in `assets/` is the single source of truth for the Mastery Advantage visual. Edit it in Figma, export with IDs preserved, and replace the file here.
