@@ -1,0 +1,11 @@
+{
+  "track_id": "lexical_recommendation_contract_20260610",
+  "type": "feature",
+  "status": "blocked",
+  "created_at": "2026-06-10T08:32:01Z",
+  "updated_at": "2026-06-10T08:32:01Z",
+  "description": "Define and evaluate portable vocabulary and extensive-reading recommendation contracts.",
+  "estimated_tasks": 22,
+  "actual_tasks": null,
+  "deviation_notes": "Blocked until the core lexical identity and application-consumption contracts are approved."
+}

@@ -1,0 +1,11 @@
+{
+  "track_id": "lexical_graph_core_release_20260610",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-06-10T04:31:47Z",
+  "updated_at": "2026-06-10T04:31:47Z",
+  "description": "Release the audited, reproducible, source-backed core English lexical graph without blocking on optional enrichment.",
+  "estimated_tasks": 24,
+  "actual_tasks": null,
+  "deviation_notes": "Restructured from a single all-enrichment readiness program into the core release track; coverage, semantic, and recommendation work moved to dependent tracks."
+}

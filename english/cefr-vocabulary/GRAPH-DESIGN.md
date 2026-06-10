@@ -58,8 +58,16 @@ without collapsing them into one generic edge.
 | Vocabulary in Use unit | unit `content_group` + `contains` | high | Pedagogical grouping |
 | Vocabulary in Use unit order | `metadata.unitNumber` | low-medium | Loose ranking only |
 | Corpus frequency | node metadata | medium | Loose default ranking |
-| WordNet typed relations | `supports`, `extends`, or `equivalent_to` with relation metadata | medium-high | Sense-aware navigation and grouping |
-| Embedding similarity | `supports` with similarity metadata | low | Candidate discovery and ranking |
+| WordNet typed relations | Quarantined semantic layer with explicit `metadata.semanticRelation` | medium-high | Sense-aware navigation and grouping |
+| Embedding similarity | Quarantined similarity layer with explicit relation metadata | low | Candidate discovery and ranking |
+
+Semantic enrichment must never make antonymy, synonymy, hypernymy, meronymy,
+morphology, similarity, and broad relatedness indistinguishable to consumers.
+Until the vocabulary semantic relation contract is approved, semantic
+candidates remain quarantined and are not part of the app-consumable core
+graph. The contract must define explicit relation kind, directionality,
+matched sense, source/model version, derivation method, score where applicable,
+confidence, and review status.
 
 ### Frequency
 
@@ -130,7 +138,8 @@ prerequisite status.
 
 For article recommendation, word-to-article embedding similarity is often more
 useful as a runtime ranking feature than permanently storing thousands of
-word-to-word similarity edges.
+word-to-word similarity edges. Embedding and broad-relatedness layers are
+optional experiments and do not block source-backed core or coverage releases.
 
 Reference implementations and datasets:
 
@@ -139,29 +148,37 @@ Reference implementations and datasets:
 - fastText English vectors: <https://fasttext.cc/docs/en/english-vectors.html>
 - ConceptNet: <https://conceptnet.io/>
 
-## Planned Enrichment Order
+## Planned Release And Enrichment Order
 
-1. Parse Vocabulary in Use frontmatter and indices into pedagogical unit groups
-   with unit-number metadata.
-2. Add corpus frequency metadata and inventory-relative frequency ranks.
-3. Add typed WordNet candidates with sense identifiers and review status.
-4. Evaluate sparse embedding-neighbor candidates against the source-backed
-   topic groups before deciding whether to persist them as edges.
-5. Calibrate vocabulary and article ranking weights from learner outcomes.
+1. Release the audited source-backed core with stable IDs, migration rules,
+   durable review decisions, and deterministic quality evidence.
+2. Independently evaluate Vocabulary in Use groups, additional coverage, and
+   frequency metadata.
+3. Independently evaluate typed WordNet candidates with sense identifiers and
+   review status.
+4. Optionally evaluate sparse embedding and broad-relatedness candidates.
+5. Define and evaluate portable vocabulary/article recommendation contracts.
+6. Calibrate production ranking weights only from suitable learner outcomes.
 
 ## Article Recommendation Contract
 
 For an article, tokenize and lemmatize its text into lexical forms, then join
 those forms to `metadata.matchForms`. Match longest multi-word expressions
-before individual words. Compute:
+before individual words. Classify proper names, numbers, punctuation, and
+unmatched lexical tokens explicitly. Compute at least:
 
 ```text
-knownCoverage = known article tokens / matched article tokens
-newWordDensity = recommended-next tokens / matched article tokens
+matchedTokenCoverage = matched eligible tokens / all eligible tokens
+eligibleKnownCoverage = known eligible tokens / all eligible tokens
+unmatchedTokenRate = unmatched eligible tokens / all eligible tokens
+targetDensity = recommended-next eligible tokens / all eligible tokens
 ```
 
-A practical extensive-reading candidate should generally have high known
-coverage and a small, deliberate set of repeated recommended-next words. Exact
+Matched-token-only known coverage may be reported diagnostically, but it must
+not be the primary readability measure because unmatched difficult words would
+disappear from its denominator. A practical extensive-reading candidate should
+generally have high eligible-token known coverage, a low unmatched-token rate,
+and a small, deliberate set of repeated recommended-next words. Exact
 thresholds are application configuration and should be calibrated from reading
 completion and comprehension outcomes.
 

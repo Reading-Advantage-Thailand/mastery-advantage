@@ -1,0 +1,5 @@
+# Track lexical_semantic_enrichment_20260610 Context
+
+- [Specification](./spec.md)
+- [Implementation Plan](./plan.md)
+- [Metadata](./metadata.json)
