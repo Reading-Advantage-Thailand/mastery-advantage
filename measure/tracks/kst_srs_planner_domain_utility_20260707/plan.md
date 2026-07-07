@@ -50,22 +50,31 @@
 
 ## Phase 2: Acceptance Examples
 
-- [ ] Task: Author normalization worked examples (FR-1)
-    - [ ] v2 dominance defect: raw unlockValue swamping weights
-    - [ ] Same graph under normalized terms with re-derived weights
-- [ ] Task: Author vocabulary-domain ranking examples (FR-2, FR-3)
-    - [ ] Degenerate fringe detection on a prerequisite-sparse graph
-    - [ ] Frequency utility provider producing a defensible top-N with
+- [x] Task: Author normalization worked examples (FR-1)
+    - [x] v2 dominance defect: raw unlockValue swamping weights
+    - [x] Same graph under normalized terms with re-derived weights
+    - Evidence: `examples.md` E1 (12.34 vs 0.452 on identical inputs)
+- [x] Task: Author vocabulary-domain ranking examples (FR-2, FR-3)
+    - [x] Degenerate fringe detection on a prerequisite-sparse graph
+    - [x] Frequency utility provider producing a defensible top-N with
           provenance
-- [ ] Task: Author diversity and budget examples (FR-4, FR-5)
-    - [ ] Five same-lesson candidates → diversified recommendedNext
-    - [ ] Review-debt scenario → new-skill throttling and surfaced guidance
-- [ ] Task: Author session composition examples (FR-6)
-    - [ ] Interleaved queue respecting reviews-first and caps
-    - [ ] Deterministic fuzz/load-smoothing across a clumped week
-- [ ] Task: Verify Phase 2
-    - [ ] Check every example against Phase 1 decisions
-    - [ ] Confirm each FR has a paired worked example
+    - Evidence: `examples.md` E2 (make/environment/hitherto with
+      UtilitySignal provenance, no synthetic edges)
+- [x] Task: Author diversity and budget examples (FR-4, FR-5)
+    - [x] Five same-lesson candidates → diversified recommendedNext
+    - [x] Review-debt scenario → new-skill throttling and surfaced guidance
+    - Evidence: `examples.md` E3a/E3b (cap 2 per group; 25.7/day > 16 →
+      saturated → review day)
+- [x] Task: Author session composition examples (FR-6)
+    - [x] Interleaved queue respecting reviews-first and caps
+    - [x] Deterministic fuzz/load-smoothing across a clumped week
+    - Evidence: `examples.md` E4a/E4b (round-robin presentation;
+      hash-deterministic fuzz to lightest day)
+- [x] Task: Verify Phase 2
+    - [x] Check every example against Phase 1 decisions
+    - [x] Confirm each FR has a paired worked example
+    - Evidence: E1↔D1, E2↔D2/D3, E3↔D4, E4↔D5; log-ratio and load
+      arithmetic verified
 
 ## Phase 3: Specification Edits
 
