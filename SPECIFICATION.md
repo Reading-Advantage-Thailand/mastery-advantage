@@ -1404,7 +1404,7 @@ Proficiency assessment combines retention strength, practice coverage, and fluen
 ```typescript
 interface PracticeVariantEvidence {
   variantKey: string;
-  retentionStrength: number;       // 0–1 correctness rate
+  retentionStrength: number;       // 0–1 corrected correctness (see below), not a raw rate
   practiceCoverage: number;        // 0–1 breadth of problem types practiced
   fluencyConfidence: EvidenceConfidence;
   baselineSampleCount: number;
@@ -1413,6 +1413,30 @@ interface PracticeVariantEvidence {
 
 type EvidenceConfidence = 'none' | 'low' | 'medium' | 'high';
 ```
+
+**Corrected correctness (v3.1).** Raw correctness rates are inflated by
+lucky guessing and permanently dragged by stale early failures. Wherever
+`retentionStrength` feeds proficiency thresholds it is computed as:
+
+1. **Recency weighting:** attempts are exponentially weighted with a
+   half-life of 10 attempts (`w = 0.5^(k/10)` for the attempt `k` positions
+   in the past); effective sample size `n_eff = (Σw)² / Σw²`.
+2. **Wilson lower bound:** one-sided 95% (z = 1.645) lower bound on the
+   weighted rate at `n_eff`.
+3. **Guess-floor rescaling:** with the format's adapter-declared guess floor
+   `g` (§15.2): `corrected = max(0, (wilsonLower − g) / (1 − g))`.
+
+**Worked examples:** 3/10 on 4-option MC (g = 0.25): raw 0.30 → Wilson
+0.127 → corrected **0** (chance performance contributes nothing). 8/10 on
+the same format: raw 0.80 → Wilson 0.541 → corrected **0.388** (not
+proficient); the same 8/10 on free response (g = 0) → **0.541**. 12 attempts
+with the oldest 6 failed and newest 6 passed: recency-weighted rate 0.60 vs
+raw 0.50.
+
+**Small-sample confidence caps:** regardless of correctness,
+`evidenceConfidence` is at most `low` when the attempt count is under 3 and
+at most `medium` when under 6 — 5/5 correct (Wilson lower 0.649) cannot read
+`high`.
 
 ### 13.2 Objective Proficiency Computation
 
@@ -1440,10 +1464,10 @@ interface ObjectiveProficiencyInput {
 **Algorithm:**
 1. If priority is `triaged`, mark as non-proficient with reason `objective_triaged`
 2. If no evidence, return non-proficient with all zeros
-3. Compute average retention and coverage across all practice variants
+3. Compute average **corrected** retention (§13.1: recency-weighted, Wilson-bounded, guess-floor-rescaled) and coverage across all practice variants
 4. Combine fluency confidences (highest among reliable variants)
-5. Resolve evidence confidence based on retention, coverage, and variant count
-6. Proficient if: not triaged AND variants >= threshold AND coverage >= threshold AND retention >= threshold
+5. Resolve evidence confidence based on retention, coverage, and variant count, then apply the small-sample caps (§13.1)
+6. Proficient if: not triaged AND variants >= threshold AND coverage >= threshold AND corrected retention >= threshold
 
 **Output:**
 ```typescript
@@ -1579,6 +1603,14 @@ A domain adapter validates:
 - Metadata value ranges and formats
 - Domain-specific node kind constraints
 - Cross-field consistency within metadata
+
+A domain adapter also declares (v3.1):
+- **Guess floors** per answer format (`g ∈ [0, 1)`; e.g. 4-option multiple
+  choice → 0.25, free response → 0), consumed by corrected correctness (§13.1)
+  and guess-corrected placement probes (§11.2)
+- **Age bands** for FSRS parameter-fitting population keys (§12.10)
+- Optionally, **high-fidelity probe instruments** whose placement estimates
+  may carry `high` confidence (§11.2)
 
 ### 15.3 Boundary Rules
 

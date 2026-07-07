@@ -99,9 +99,12 @@
     - [x] §12.3 per-priority `requestRetention` with defaults and notes
     - Evidence: requestRetentionByPriority overlay (0.95/0.90/0.80),
       backward-compatible, load note with planner-track deferral
-- [ ] Task: Amend proficiency evidence math (FR-3)
-    - [ ] §13.1–13.2 lower-bound estimator, guess floors, small-sample rules
-    - [ ] §15 adapter responsibility for format guess floors
+- [x] Task: Amend proficiency evidence math (FR-3)
+    - [x] §13.1–13.2 lower-bound estimator, guess floors, small-sample rules
+    - [x] §15 adapter responsibility for format guess floors
+    - Evidence: §13.1 corrected-correctness pipeline (recency → Wilson →
+      guess floor) with E1/E2 examples; §13.2 algorithm steps 3/5/6 updated;
+      §15.2 adapter declarations (guess floors, age bands, probe instruments)
 - [ ] Task: Rewrite placement decision rule (FR-4)
     - [ ] §11.2 multi-evidence rule, DAG traversal, stopping criteria
 - [ ] Task: Specify the rating mapper normatively (FR-5)
