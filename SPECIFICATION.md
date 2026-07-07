@@ -90,9 +90,33 @@ Each skill has a mastery level `m ∈ [0,1]`, derived as follows:
 | State | Mastery level `m` |
 |-------|-------------------|
 | **mastered** | `1.0` |
-| **decaying** | live `retention` from `stabilityToRetention(cardStability, elapsedDays)` |
+| **decaying** | live objective retention (§2.1.1) |
 | **inProgress** | objective proficiency `retentionStrength` (practiced but never mastered) |
 | **untouched** | `0` |
+
+#### 2.1.1 Objective-Level Retention Aggregation
+
+An objective has one SRS card per practice variant (§12.1), so a single
+"live retention" requires an aggregation rule. The objective's live
+retention is the **minimum** of
+`stabilityToRetention(card.stability, card.elapsedDays)` (§13.5) across the
+objective's variant cards **with review history (`reps ≥ 1`)**:
+
+- Cards with `reps = 0` (created but never reviewed) are excluded — their
+  sentinel/initial stability would spuriously tank a mastered objective.
+  Breadth across variants is enforced at mastery entry by the coverage
+  thresholds (§13.2), not here.
+- Single-card objectives: that card's retention.
+- No card with history: the objective cannot be `mastered`/`decaying`;
+  its mastery level follows the `inProgress`/`untouched` rows.
+
+Minimum (not mean) is deliberate: a well-retained variant must not mask a
+fully decayed variant category, or downstream readiness overstates usable
+mastery. **Worked example:** cards V1 (S=20, t=5 → R=0.972), V2 (S=8, t=12
+→ R=0.860), V3 (reps=0, excluded) → objective retention `min(0.972, 0.860)
+= 0.860`; inside the hysteresis band `[masteryExit, masteryEnter)`, so a
+currently-mastered objective stays mastered (m = 1.0) while one already
+`decaying` reports m = 0.860.
 
 ### 2.2 Mastery with Hysteresis
 
@@ -1367,8 +1391,12 @@ Proficiency results are projected into role-specific views:
 ### 13.5 SRS Proficiency Utilities
 
 ```typescript
-// Convert FSRS stability to retention probability
-function stabilityToRetention(stability: number): number;
+// Convert FSRS stability + elapsed time to retention probability.
+// Retention is undefined without elapsed time. Using the FSRS power curve:
+//   R(t, S) = (1 + FACTOR · t / S) ^ DECAY   (FACTOR = 19/81, DECAY = −0.5)
+// which yields R(S, S) = 0.9 exactly. Constants must match the FSRS version in use.
+// Example: S = 10 → R(0) = 1.0, R(10) = 0.9, R(30) ≈ 0.766.
+function stabilityToRetention(stability: number, elapsedDays: number): number;
 
 // Aggregate multiple card states into evidence per practice variant
 function aggregateCardsToEvidence(

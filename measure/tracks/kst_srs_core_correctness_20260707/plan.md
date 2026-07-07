@@ -89,9 +89,11 @@
     - [x] §6.5 self-selection bias note with deferral pointer
     - Evidence: §6.4 embeds E2 worked example (false-confirm vs untested vs
       refuted); §6.5 notes ability adjustment deferral
-- [ ] Task: Reconcile retention signature and aggregation (FR-3)
-    - [ ] §13.5 signature fix
-    - [ ] §2.1 objective-level aggregation rule
+- [x] Task: Reconcile retention signature and aggregation (FR-3)
+    - [x] §13.5 signature fix
+    - [x] §2.1 objective-level aggregation rule
+    - Evidence: §13.5 two-arg signature with FSRS power curve; new §2.1.1
+      min-over-reviewed-cards rule with E3 worked example
 - [ ] Task: Add placement seeding contract and closure semantics (FR-4)
     - [ ] §11 seeding subsection with initial-stability mapping
     - [ ] §2.1–2.3 direct vs inferred mastery; §12.4 `createCard` note
