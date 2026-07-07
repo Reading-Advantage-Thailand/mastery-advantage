@@ -141,6 +141,10 @@ getKnowledgeState(student, now) → {
 }
 ```
 
+Placement-seeded skills participate through their synthesized cards
+(§11.4); estimates carry an evidence type (`direct` | `inferred`), and
+inferred estimates are replaced by the first direct evidence.
+
 ### 2.4 Engine Configuration (Thresholds)
 
 All mastery and readiness thresholds are configurable engine constants, collected here:
@@ -1105,7 +1109,7 @@ An initial knowledge state — a set of `{ nodeId, masteryEstimate, confidence }
 4. On **fail**: move toward prerequisites (upstream).
 5. On **partial**: record partial mastery and probe siblings.
 6. Converge on the mastery frontier in roughly `O(log n)` probes rather than testing everything.
-7. Placement results enter the graph as low-to-medium-confidence mastery estimates and are refined by subsequent practice. They are also a key source of edge-calibration order-variation (§6).
+7. Placement results enter the learner's knowledge state through the seeding contract (§11.4) and are refined by subsequent practice. They are also a key source of edge-calibration order-variation (§6).
 
 ### 11.3 Probe Interface
 
@@ -1125,6 +1129,50 @@ Two reference implementations:
 |--------|---------------|
 | **GSE** | A chatbot that walks the tree conversationally, one probe per turn. |
 | **Math** | A fixed bank of 20–30 problems, same traversal logic. |
+
+### 11.4 Seeding Contract
+
+Placement output has no effect until it enters the §2 lifecycle. The
+knowledge state (§2.1–2.3) is computed from proficiency verdicts and SRS
+card retention, so **placement seeds by synthesizing cards** — a seeded
+skill has a live decay curve from day one.
+
+For each result `{nodeId, masteryEstimate, confidence}` with
+`masteryEstimate > 0`, synthesize one card per objective (default variant,
+`variantKey = objectiveId`):
+
+```
+initialStability S₀ = H(confidence) × masteryEstimate   (days)
+H = { low: 5, medium: 15, high: 30 }    (engine constants, configurable)
+state = 'review', reps = 1, lapses = 0
+lastReview = placement time; dueDate per scheduler from S₀
+difficulty = FSRS initial difficulty for a first 'Good' rating
+card metadata records provenance: source = 'placement'
+```
+
+Since `R(t = S₀) = 0.9` (§13.5), a high-confidence estimate of 1.0 stays
+above `masteryEnter` for ~30 days before needing review — the intended
+semantics of "placed out". **Knowledge-state entry:** `masteryEstimate ≥
+masteryEnter` AND confidence ≥ `medium` → `mastered` (provisional);
+otherwise `inProgress` with `retentionStrength = masteryEstimate`.
+
+**Evidence closure (hard edges only).** A direct pass on `B` propagates
+*inferred* mastery to ancestors of `B` transitively via `prerequisite_for`
+edges with `w ≥ hardGateThreshold`:
+
+- Inferred `masteryEstimate` = the direct estimate; inferred `confidence` =
+  the direct confidence downgraded one level per hop (floor `low`).
+- Soft edges (`w < hardGateThreshold`) propagate nothing — compensable
+  prerequisites are not logically implied by success.
+- Evidence type is recorded per estimate (`direct` | `inferred`); any later
+  direct evidence (practice submission, probe) replaces inferred estimates
+  immediately.
+
+**Worked example:** probe pass at B (estimate 0.95, high) → card with
+S₀ = 28.5 d, provisional `mastered`, R(14) ≈ 0.947. Hard-edge ancestor A:
+inferred 0.95/`medium`, S₀ = 14.25 d — also provisional mastered but due for
+confirmation review sooner. A weak probe (0.60, low) seeds S₀ = 3 d and
+enters `inProgress` at 0.60.
 
 ---
 
@@ -1175,7 +1223,7 @@ interface SchedulerConfig {
 
 | Operation | Input | Output | Description |
 |-----------|-------|--------|-------------|
-| `createCard` | studentId, objectiveId, variantKey | SrsCardState | Initialize a new card with FSRS defaults (stability=0, difficulty=0 as sentinel, state='new') |
+| `createCard` | studentId, objectiveId, variantKey | SrsCardState | Initialize a new card with FSRS defaults (stability=0, difficulty=0 as sentinel, state='new'). Placement-synthesized cards (§11.4) instead start in state='review' with `initialStability` per the seeding contract. |
 | `reviewCard` | card, rating, now | SrsCardState | Apply a rating and return updated card state via FSRS |
 | `getDueCards` | cards[], now | SrsCardState[] | Filter cards where dueDate <= now |
 | `previewInterval` | card, rating, now | number (days) | Preview scheduled interval without mutating state |

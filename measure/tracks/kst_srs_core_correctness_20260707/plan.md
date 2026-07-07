@@ -94,9 +94,12 @@
     - [x] §2.1 objective-level aggregation rule
     - Evidence: §13.5 two-arg signature with FSRS power curve; new §2.1.1
       min-over-reviewed-cards rule with E3 worked example
-- [ ] Task: Add placement seeding contract and closure semantics (FR-4)
-    - [ ] §11 seeding subsection with initial-stability mapping
-    - [ ] §2.1–2.3 direct vs inferred mastery; §12.4 `createCard` note
+- [x] Task: Add placement seeding contract and closure semantics (FR-4)
+    - [x] §11 seeding subsection with initial-stability mapping
+    - [x] §2.1–2.3 direct vs inferred mastery; §12.4 `createCard` note
+    - Evidence: new §11.4 (S₀ = H(confidence)×estimate, provisional mastery,
+      hard-edge evidence closure) with E4 worked example; §2.3 and §12.4
+      cross-wired
 - [ ] Task: Rewrite daily queue rules (FR-5)
     - [ ] §12.7 ordering, caps, backlog policy, preserved injection rules
 - [ ] Task: Apply documentation fixes (FR-6)
