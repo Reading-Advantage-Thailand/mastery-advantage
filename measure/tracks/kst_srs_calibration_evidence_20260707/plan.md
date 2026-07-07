@@ -58,27 +58,36 @@
 
 ## Phase 2: Acceptance Examples And Evaluation Fixtures
 
-- [ ] Task: Author corrected-evidence worked examples (FR-3, FR-5)
-    - [ ] Multiple-choice guess-floor case: chance performer not proficient
-    - [ ] Small-sample 100% case: confidence capped
-    - [ ] Recency weighting: early-failure learner recovering
-    - [ ] Hint/reveal capping cases across rating boundaries
-- [ ] Task: Author fitting-loop and placement worked examples (FR-1, FR-4)
-    - [ ] Population fitting lifecycle: below-volume fallback → fit → release →
+- [x] Task: Author corrected-evidence worked examples (FR-3, FR-5)
+    - [x] Multiple-choice guess-floor case: chance performer not proficient
+    - [x] Small-sample 100% case: confidence capped
+    - [x] Recency weighting: early-failure learner recovering
+    - [x] Hint/reveal capping cases across rating boundaries
+    - Evidence: `examples.md` E1a–E1c (Wilson 0.127→0, 0.541→0.388, 0.649
+      capped medium), E2 (0.60 vs 0.50), E3 rating table
+- [x] Task: Author fitting-loop and placement worked examples (FR-1, FR-4)
+    - [x] Population fitting lifecycle: below-volume fallback → fit → release →
           card stamping
-    - [ ] Placement: lucky single pass no longer seeding a subtree; probe-budget
+    - [x] Placement: lucky single pass no longer seeding a subtree; probe-budget
           stop
-- [ ] Task: Define synthetic-learner fixtures and invariants (FR-7)
-    - [ ] Simulator parameterization (ability, forgetting, guess/slip,
+    - Evidence: `examples.md` E5 (gate/fit/release/stamp + fallback), E4
+      (guess P 0.25 → 0.06, 2-of-3 walk, budget stop)
+- [x] Task: Define synthetic-learner fixtures and invariants (FR-7)
+    - [x] Simulator parameterization (ability, forgetting, guess/slip,
           compliance)
-    - [ ] Invariant list: gating, queue caps, placement convergence
-- [ ] Task: Define replay metrics and thresholds (FR-7)
-    - [ ] Retention prediction error and calibration-curve definitions
-    - [ ] Placement accuracy, fringe stability, posterior-quality metrics
-    - [ ] Reporting format and release regression thresholds
-- [ ] Task: Verify Phase 2
-    - [ ] Check every example and fixture against Phase 1 decisions
-    - [ ] Confirm each FR has at least one paired worked example or fixture
+    - [x] Invariant list: gating, queue caps, placement convergence
+    - Evidence: `examples.md` E7 invariants; D7 generative rule
+- [x] Task: Define replay metrics and thresholds (FR-7)
+    - [x] Retention prediction error and calibration-curve definitions
+    - [x] Placement accuracy, fringe stability, posterior-quality metrics
+    - [x] Reporting format and release regression thresholds
+    - Evidence: `examples.md` E7 metrics with thresholds (+0.02 MAE, 0.10
+      max bin gap, ×1.10 flap rate)
+- [x] Task: Verify Phase 2
+    - [x] Check every example and fixture against Phase 1 decisions
+    - [x] Confirm each FR has at least one paired worked example or fixture
+    - Evidence: E1↔D3, E2/E3↔D5, E4↔D4, E5↔D1, E6↔D6, E7↔D7; FR-2 covered
+      by D2 config example in Phase 3 §12.3 edit; Wilson arithmetic verified
 
 ## Phase 3: Specification Edits
 
