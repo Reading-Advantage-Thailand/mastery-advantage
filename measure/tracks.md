@@ -58,7 +58,7 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [~] **Track: KST+SRS Core Algorithm Correctness** *(engine correctness gate — fix before other kst-srs tracks build on affected formulas)*
+- [x] **Track: KST+SRS Core Algorithm Correctness** *(engine correctness gate — COMPLETE 2026-07-07: kst-srs.v3 released; unblocks Phase 1 of the calibration and planner tracks)*
   *Fix five correctness-level defects in the kst-srs.v2 core algorithms (compensatory hard-gate readiness, miscounted calibration posterior, retention aggregation, placement seeding gap, queue ordering) and release kst-srs.v3.*
   *Link: [./tracks/kst_srs_core_correctness_20260707/](./tracks/kst_srs_core_correctness_20260707/)*
 
