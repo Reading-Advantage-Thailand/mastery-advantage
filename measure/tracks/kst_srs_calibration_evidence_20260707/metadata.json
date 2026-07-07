@@ -1,7 +1,7 @@
 {
   "track_id": "kst_srs_calibration_evidence_20260707",
   "type": "feature",
-  "status": "blocked",
+  "status": "in_progress",
   "created_at": "2026-07-07T00:00:00Z",
   "updated_at": "2026-07-07T00:00:00Z",
   "description": "Make the KST+SRS engine self-calibrating and its evidence noise-robust: FSRS parameter-fitting loop, per-priority retention targets, guess/slip-corrected proficiency, multi-evidence placement, fully specified rating mapper, ability-adjusted edge calibration, and an offline evaluation harness contract.",

@@ -12,35 +12,49 @@
 
 ## Phase 1: Estimator And Loop Decision Contracts
 
-- [ ] Task: Define the FSRS parameter-fitting loop contract (FR-1)
-    - [ ] Decide population keys, fitting cadence, and minimum log volume
-    - [ ] Define fitted-artifact versioning, provenance fields, and the
+- [x] Task: Define the FSRS parameter-fitting loop contract (FR-1)
+    - [x] Decide population keys, fitting cadence, and minimum log volume
+    - [x] Define fitted-artifact versioning, provenance fields, and the
           release-review step
-    - [ ] Define fallback-to-defaults and card parameter-version stamping
-    - [ ] Record decisions and rationale in a Phase 1 decision log
-- [ ] Task: Decide per-priority retention targets (FR-2)
-    - [ ] Set defaults per `ObjectivePriority` and document queue-load impact
-    - [ ] Define interaction with `maximumInterval`
-- [ ] Task: Decide the guess/slip correction method (FR-3)
-    - [ ] Choose Wilson score vs Beta posterior lower bound and its confidence
+    - [x] Define fallback-to-defaults and card parameter-version stamping
+    - [x] Record decisions and rationale in a Phase 1 decision log
+    - Evidence: `decisions.md` D1 — (domain, ageBand) keys, 10k/100 gate,
+      holdout log-loss, human-reviewed release
+- [x] Task: Decide per-priority retention targets (FR-2)
+    - [x] Set defaults per `ObjectivePriority` and document queue-load impact
+    - [x] Define interaction with `maximumInterval`
+    - Evidence: `decisions.md` D2 — requestRetentionByPriority overlay,
+      0.95/0.90/0.80
+- [x] Task: Decide the guess/slip correction method (FR-3)
+    - [x] Choose Wilson score vs Beta posterior lower bound and its confidence
           level
-    - [ ] Define adapter-declared per-format guess floors and rescaling rule
-    - [ ] Define small-sample evidence-confidence limits
-- [ ] Task: Decide the placement decision rule (FR-4)
-    - [ ] Choose k-probes vs posterior-over-frontier; set probe budgets and
+    - [x] Define adapter-declared per-format guess floors and rescaling rule
+    - [x] Define small-sample evidence-confidence limits
+    - Evidence: `decisions.md` D3 — one-sided 95% Wilson, guess-floor
+      rescaling, n<3/n<6 confidence caps
+- [x] Task: Decide the placement decision rule (FR-4)
+    - [x] Choose k-probes vs posterior-over-frontier; set probe budgets and
           stopping criteria
-    - [ ] Define DAG-aware traversal for wide levels and multiple parents
-    - [ ] Align output confidence semantics with the core-track seeding contract
-- [ ] Task: Decide rating-mapper thresholds (FR-5)
-    - [ ] Set hint-usage and reveal-step capping rules
-    - [ ] Choose recency weighting (decay vs last-k) and timing z-score bounds
-- [ ] Task: Decide ability adjustment for edge calibration (FR-6)
-    - [ ] Choose stratification vs covariate model; set per-stratum minimums
-    - [ ] Define mapping to confirmed/refuted/untested statuses
-- [ ] Task: Approve Phase 1 decisions
-    - [ ] Pedagogy reviewer approves evidence and placement behavior
-    - [ ] Engineering/data reviewer approves estimators, loops, and artifacts
-    - [ ] Record approvals and unresolved issues in the track
+    - [x] Define DAG-aware traversal for wide levels and multiple parents
+    - [x] Align output confidence semantics with the core-track seeding contract
+    - Evidence: `decisions.md` D4 — 2-probe + tie-break, frontier-set
+      traversal, budget 24, medium confidence cap
+- [x] Task: Decide rating-mapper thresholds (FR-5)
+    - [x] Set hint-usage and reveal-step capping rules
+    - [x] Choose recency weighting (decay vs last-k) and timing z-score bounds
+    - Evidence: `decisions.md` D5 — hint 0/1–2/≥3 tiers, reveal caps,
+      half-life-10 recency, z −1/+2 timing
+- [x] Task: Decide ability adjustment for edge calibration (FR-6)
+    - [x] Choose stratification vs covariate model; set per-stratum minimums
+    - [x] Define mapping to confirmed/refuted/untested statuses
+    - Evidence: `decisions.md` D6 — tercile stratification, ≥2 bands with
+      c+d≥5, confounded_by_ability reason
+- [x] Task: Approve Phase 1 decisions
+    - [x] Pedagogy reviewer approves evidence and placement behavior — ⚠ by
+          owner directive; constants folded into curriculum-review tech debt
+    - [x] Engineering/data reviewer approves estimators, loops, and artifacts
+    - [x] Record approvals and unresolved issues in the track
+    - Evidence: `decisions.md` Approval Record; tech-debt row updated
 
 ## Phase 2: Acceptance Examples And Evaluation Fixtures
 
