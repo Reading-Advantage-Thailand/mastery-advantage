@@ -1350,6 +1350,38 @@ interface ReviewLogStore {
 
 FSRS schedules each variant card independently even though sibling variants under one objective are correlated. This is a known, accepted limitation. The optional `siblingReinforcement` config flag (§12.3) — when implemented — applies a partial stability bump to sibling variant cards under the same objective on a successful review.
 
+### 12.10 FSRS Parameter Calibration
+
+Default FSRS weights are fit to adult self-selected flashcard users; young
+learners in school settings have materially different forgetting curves. The
+engine therefore calibrates FSRS parameters from its own review logs
+(§12.5), architecturally mirroring edge calibration (§6): batch fitting, a
+human-reviewed release step, nothing auto-applied.
+
+- **Population key:** `(domain, ageBand)`; `ageBand` is declared by the
+  domain adapter (§15). Fallback at scheduling time:
+  `(domain, ageBand)` → `(domain)` → FSRS defaults.
+- **Cadence:** batch fit once per term (~13 weeks), or on demand.
+- **Volume gate:** fit only with ≥ 10,000 review-log entries from ≥ 100
+  distinct students in the window; below the gate, inherit the fallback.
+- **Objective:** minimize log-loss of predicted recall at review time vs
+  observed outcome (`Again` = forget; `Hard`/`Good`/`Easy` = recall) on a
+  held-out 20% split.
+- **Artifact:** `fsrs-params.<domain>.<ageBand>.vN`, with provenance: log
+  window, student/review counts, optimizer version, holdout log-loss vs the
+  incumbent. A fitted set ships only if holdout log-loss improves on the
+  incumbent, and only through human release review.
+- **Stamping:** each review log entry records the `paramsVersion` that
+  scheduled the card, so replay evaluation (§17) can attribute predictions.
+- **Per-learner fitting** is a documented future stage, not part of this
+  contract.
+
+**Worked lifecycle example:** `english.gse × primary` — 220 students,
+41,300 reviews → gate passed → fit → holdout log-loss 0.412 vs incumbent
+0.446 → release approved as `fsrs-params.english.gse.primary.v2`.
+`math.im3 × secondary` with 3,800 reviews fails the gate and schedules with
+`(math.im3)` domain parameters.
+
 ---
 
 ## 13. Proficiency Assessment

@@ -91,8 +91,10 @@
 
 ## Phase 3: Specification Edits
 
-- [ ] Task: Add the FSRS calibration loop section (FR-1)
-    - [ ] New section mirroring §6 architecture; Appendix C entry
+- [x] Task: Add the FSRS calibration loop section (FR-1)
+    - [x] New section mirroring §6 architecture; Appendix C entry
+    - Evidence: new §12.10 with population keys, gate, holdout objective,
+      release review, stamping, E5 lifecycle example (Appendix C in Phase 4)
 - [ ] Task: Amend scheduler configuration (FR-2)
     - [ ] §12.3 per-priority `requestRetention` with defaults and notes
 - [ ] Task: Amend proficiency evidence math (FR-3)
