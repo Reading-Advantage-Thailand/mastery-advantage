@@ -1114,24 +1114,42 @@ The outer fringe (§2.6) returns a set — for large graphs it can be dozens wid
 
 ### 10.1 Priority Score
 
+Every term is normalized to [0,1] **before** weighting — otherwise the
+configured weights are meaningless (an unbounded downstream count at
+`b = 0.3` dwarfs every other term by an order of magnitude).
+
 ```
 priority(B) = a·readiness(B)
             + b·unlockValue(B)
             + c·goalProximity(B)
             + d·weaknessFit(B)
+            + e·utility(B)
 ```
 
-| Term | Definition |
-|------|-----------|
-| `readiness(B)` | Weighted readiness from §2.5 |
-| `unlockValue(B)` | Count (optionally weight-discounted) of skills reachable downstream from `B` via `prerequisite_for` edges. Graph-structural; precomputable. |
-| `goalProximity(B)` | Inverse graph distance from `B` to the learner's goal node(s), if a goal is set; otherwise 0. |
-| `weaknessFit(B)` | Boost if `B` is linked (via `supports` / `common_misconception_with`) to a recently-failed area or an active misconception (§11). |
-| `a, b, c, d` | Configurable engine weights (default: `a=0.4, b=0.3, c=0.2, d=0.1`). |
+| Term | Definition (all [0,1]) |
+|------|-----------------------|
+| `readiness(B)` | Gated weighted readiness from §2.5 |
+| `unlockValue(B)` | `ln(1 + reach(B)) / ln(1 + maxReach)`, where `reach(B)` counts skills downstream via `prerequisite_for` and `maxReach` is the graph maximum. Log-scaled; precomputed per graph release. |
+| `goalProximity(B)` | `1 / (1 + d)`, `d` = shortest prerequisite-path distance to any goal node; `d = 0` → 1; no goal or unreachable → 0. |
+| `weaknessFit(B)` | Noisy-OR `1 − Π(1 − s_i)` over links to active weaknesses: `s = 0.5` per active-misconception link, `s = 0.3` per recently-failed `supports` link (§13.3). |
+| `utility(B)` | Domain-supplied utility from the Domain Utility Provider (§10.3); 0 when no provider is registered. |
+| `a…e` | Configurable engine weights (default: `a=0.35, b=0.20, c=0.15, d=0.10, e=0.20`). Inert terms are not renormalized — ranking is within-domain, so a constant shift cannot change order. |
+
+**Worked example (dominance defect):** graph max reach 120; P (readiness
+0.85, reach 40) vs Q (readiness 1.0, reach 2). Raw counts: P = 0.4·0.85 +
+0.3·40 = **12.34** — unlock alone ~30× every other term. Normalized:
+u_P = ln(41)/ln(121) = 0.774 → P = 0.35·0.85 + 0.20·0.774 = **0.452** vs
+Q = **0.396**: reach still matters, readiness is competitive again.
 
 ### 10.2 recommendedNext
 
-`recommendedNext` in the student visualization (§9.4) is the top-N skills from the ready / nearly-ready set ranked by `priority(B)`, replacing the previous "first 5 ready nodes" rule.
+`recommendedNext` in the student visualization (§9.4) is the top-N skills
+from the ready / nearly-ready set ranked by `priority(B)`, then passed
+through the diversity rule: at most 2 nodes per nearest `contains` ancestor
+(instructional_unit, else content_group); overflow slots go to the
+next-highest-priority nodes from other groups. Deterministic tie-break:
+priority descending, then `nodeId` ascending. (Without the cap, top-N can be
+N near-identical skills from one lesson.)
 
 ---
 

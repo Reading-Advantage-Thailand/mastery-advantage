@@ -78,9 +78,12 @@
 
 ## Phase 3: Specification Edits
 
-- [ ] Task: Rewrite the priority score (FR-1, FR-2)
-    - [ ] §10.1 normalized terms plus `e·utility(B)`; updated defaults
-    - [ ] §10.2 recommendedNext referencing diversity rule
+- [x] Task: Rewrite the priority score (FR-1, FR-2)
+    - [x] §10.1 normalized terms plus `e·utility(B)`; updated defaults
+    - [x] §10.2 recommendedNext referencing diversity rule
+    - Evidence: §10.1 all-[0,1] table with E1 dominance example; §10.2
+      diversity cap with deterministic tie-break; stale §11 weakness ref
+      corrected to §13.3
 - [ ] Task: Add the Domain Utility Provider contract (FR-2)
     - [ ] New section following the §15 adapter pattern; registration and
           provenance rules
