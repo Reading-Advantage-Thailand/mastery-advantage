@@ -12,9 +12,10 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: English Lexical Graph Core Release**
+- [ ] **Track: English Lexical Graph Core Release** *(critical path — gates 3 blocked tracks)*
   *Release the audited, reproducible, source-backed Cambridge lexical graph
   without blocking on optional enrichment.*
+  *Status (sharpened 2026-06-21): not started — 0/95 plan tasks, metadata `new`. Note: the underlying graph **data already exists and is tracked** (`english/cefr-vocabulary/data/cambridge-vocabulary-inventory.json` 1.5MB, `english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json` 13.8MB, both `9a5d4c4` 2026-06-10; `english/gse-knowledge-space.json` 17.5MB, 2026-05-20). This track is the audit / schema-validation / provenance / reproducibility / test-gate effort **over that existing data** (per plan: "generate counts from the tracked inventory and graph"; acceptance = byte-identical reproducible outputs + durable audit decisions), not a from-scratch build. It is the release gate for the three enrichment/recommendation tracks below (metadata `blocked`).*
   *Link: [./tracks/lexical_graph_core_release_20260610/](./tracks/lexical_graph_core_release_20260610/)*
 
 ---
