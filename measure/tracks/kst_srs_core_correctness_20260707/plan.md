@@ -7,33 +7,42 @@
 
 ## Phase 1: Algorithm Decision Contracts
 
-- [ ] Task: Decide the hard-gate readiness formulation (FR-1)
-    - [ ] Enumerate candidates: min-gate × weighted-average, noisy-AND,
+- [x] Task: Decide the hard-gate readiness formulation (FR-1)
+    - [x] Enumerate candidates: min-gate × weighted-average, noisy-AND,
           threshold-partitioned hybrid
-    - [ ] Compare candidates on shared example graphs, including the
+    - [x] Compare candidates on shared example graphs, including the
           compensatory failure case and only-hard / only-soft prerequisite sets
-    - [ ] Define `hardGateThreshold` config semantics and default
-    - [ ] Record the decision and rationale in a Phase 1 decision log
-- [ ] Task: Decide objective-level retention aggregation (FR-3)
-    - [ ] Compare minimum vs stability-weighted mean across variant cards
-    - [ ] Define handling for never-practiced variants and single-card objectives
-    - [ ] Record the decision and rationale
-- [ ] Task: Decide placement seeding and mastery-closure semantics (FR-4)
-    - [ ] Define the `(masteryEstimate, confidence) → initialStability` mapping
-    - [ ] Take a position on surmise closure; define direct vs inferred mastery
+    - [x] Define `hardGateThreshold` config semantics and default
+    - [x] Record the decision and rationale in a Phase 1 decision log
+    - Evidence: `decisions.md` D1 — gated weighted readiness chosen; noisy-AND
+      rejected on fan-in sensitivity (GSE graph ≈13 edges/node)
+- [x] Task: Decide objective-level retention aggregation (FR-3)
+    - [x] Compare minimum vs stability-weighted mean across variant cards
+    - [x] Define handling for never-practiced variants and single-card objectives
+    - [x] Record the decision and rationale
+    - Evidence: `decisions.md` D2 — minimum over cards with `reps ≥ 1`
+- [x] Task: Decide placement seeding and mastery-closure semantics (FR-4)
+    - [x] Define the `(masteryEstimate, confidence) → initialStability` mapping
+    - [x] Take a position on surmise closure; define direct vs inferred mastery
           and revision by later evidence
-    - [ ] Record the decision and rationale
-- [ ] Task: Decide queue ordering and backlog policy (FR-5)
-    - [ ] Choose overdue ordering (predicted retention ascending) and confirm
+    - [x] Record the decision and rationale
+    - Evidence: `decisions.md` D3 — S₀ = H(confidence)×estimate; evidence
+      closure along hard edges only, confidence downgraded per hop
+- [x] Task: Decide queue ordering and backlog policy (FR-5)
+    - [x] Choose overdue ordering (predicted retention ascending) and confirm
           reviews-before-new
-    - [ ] Define `newCardsPerDay` enforcement and the extended-absence backlog
+    - [x] Define `newCardsPerDay` enforcement and the extended-absence backlog
           policy
-    - [ ] Record the decision and rationale
-- [ ] Task: Approve Phase 1 decisions
-    - [ ] Curriculum/pedagogy reviewer approves gating, closure, and backlog
-          behavior
-    - [ ] Engineering reviewer approves formulas, configs, and migration impact
-    - [ ] Record approvals and unresolved issues in the track
+    - [x] Record the decision and rationale
+    - Evidence: `decisions.md` D4 — reviews first, retention-ascending,
+      newCardsPerDay hard cap, backlog suppresses new cards
+- [x] Task: Approve Phase 1 decisions
+    - [x] Curriculum/pedagogy reviewer approves gating, closure, and backlog
+          behavior — ⚠ approved by owner directive; human curriculum review
+          logged as tech debt
+    - [x] Engineering reviewer approves formulas, configs, and migration impact
+    - [x] Record approvals and unresolved issues in the track
+    - Evidence: `decisions.md` Approval Record; tech-debt entry 2026-07-07
 
 ## Phase 2: Acceptance Examples (Normative Test Artifacts)
 
