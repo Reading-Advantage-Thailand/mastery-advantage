@@ -1151,6 +1151,83 @@ next-highest-priority nodes from other groups. Deterministic tie-break:
 priority descending, then `nodeId` ascending. (Without the cap, top-N can be
 N near-identical skills from one lesson.)
 
+### 10.3 Domain Utility Provider
+
+The core planner is domain-blind, but domains often hold ranking signals the
+graph structure cannot express — corpus frequency for vocabulary, curriculum
+emphasis, goal-coverage gain. These enter through a provider contract
+following the adapter pattern (§15); the engine consumes one scalar plus
+provenance.
+
+```typescript
+interface DomainUtilityProvider {
+  providerKey: string;          // e.g. "english.cefr.frequency-utility"
+  version: string;              // bump on any signal-source or formula change
+  getUtility(nodeId: string, ctx: LearnerContext): {
+    utility: number;            // [0,1]
+    signals: UtilitySignal[];   // provenance, non-empty
+  };
+}
+
+interface UtilitySignal {
+  source: string;               // e.g. "wordfreq-en", "goal-coverage"
+  sourceVersion: string;
+  value: number;                // raw signal value
+  weight: number;               // contribution weight in the composition
+}
+```
+
+Rules:
+
+1. **Deterministic** given `(nodeId, ctx, version)`; no live network calls.
+2. **Composition happens inside the provider** (weighted mean of declared
+   signal weights); multiple signals, one scalar out.
+3. **One provider per domain**, registered by the domain adapter (§15.2);
+   no provider → `utility = 0`, the term is inert.
+4. **Provenance is mandatory:** every utility score is explainable through
+   its `signals` array, consistent with the repository provenance policy.
+5. Signal data layers (frequency metadata, semantic edges, article-ranking
+   scores) are **additive graph extensions defined by the domain**, consumed
+   only through this interface — the engine never reads them directly.
+
+### 10.4 Prerequisite-Sparse Domains (Utility-Led Mode)
+
+Domains that deliberately assert no false prerequisites (e.g. the
+CEFR/Cambridge lexical graph) degenerate the fringe: readiness = 1 for every
+untouched node, and `unlockValue`/`goalProximity` collapse to ≈ 0 — the
+planner has no opinion about thousands of candidates.
+
+- **Detection (static, per graph release):** a domain is
+  *prerequisite-sparse* when < 5% of its `skill` nodes have any
+  `prerequisite_for` in-edge.
+- **Utility-led ranking:** readiness acts as a gate only (candidates
+  require `readiness ≥ readyThreshold`); ranking uses
+  `0.7·utility(B) + 0.3·weaknessFit(B)`.
+- **Synthetic prerequisite edges are prohibited** as a remedy — ranking
+  hunger is satisfied by utility signals, never by fake graph structure.
+
+**Worked example:** 4,000 untouched CEFR words, frequency-percentile
+provider: "make" (Zipf 6.2, utility 0.98) scores 0.686; "environment"
+(utility 0.71, active-confusion weakness link 0.5) scores 0.647; "hitherto"
+(utility 0.08) scores 0.056 — a defensible next-word ordering with full
+signal provenance.
+
+### 10.5 Review-Load Budget
+
+Recommending new skills creates future review debt the planner must see:
+
+- **Projected daily load** = cards due within the next 7 days ÷ 7.
+- **Budget** = `maxReviewsPerDay × loadBudgetFactor` (engine constant,
+  default 0.8).
+- Projected load > budget → the planner recommends **0 new skills** and
+  surfaces "review day" guidance; `reviewLoadState` (`normal` | `elevated`
+  at ≥ 60% of budget | `saturated`) appears in student and teacher
+  projections (§9.4).
+
+**Worked example:** 180 cards due in the next 7 days → 25.7/day against a
+budget of 20 × 0.8 = 16 → `saturated`: no new-skill recommendations until
+the backlog drains (complements the §12.7 queue backlog policy).
+
 ---
 
 ## 11. Placement
@@ -1689,6 +1766,11 @@ A domain adapter also declares (v3.1):
 - **Age bands** for FSRS parameter-fitting population keys (§12.10)
 - Optionally, **high-fidelity probe instruments** whose placement estimates
   may carry `high` confidence (§11.2)
+
+And optionally registers (v3.2):
+- A **Domain Utility Provider** (§10.3) supplying the planner's `utility`
+  term from domain signal layers (frequency, curriculum emphasis,
+  goal coverage)
 
 ### 15.3 Boundary Rules
 

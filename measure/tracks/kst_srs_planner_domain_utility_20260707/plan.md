@@ -84,11 +84,17 @@
     - Evidence: §10.1 all-[0,1] table with E1 dominance example; §10.2
       diversity cap with deterministic tie-break; stale §11 weakness ref
       corrected to §13.3
-- [ ] Task: Add the Domain Utility Provider contract (FR-2)
-    - [ ] New section following the §15 adapter pattern; registration and
+- [x] Task: Add the Domain Utility Provider contract (FR-2)
+    - [x] New section following the §15 adapter pattern; registration and
           provenance rules
-- [ ] Task: Specify the prerequisite-sparse ranking path (FR-3)
-    - [ ] Degeneracy detection and utility-led ordering in §10
+    - Evidence: new §10.3 (interface, determinism, provider-internal
+      composition, mandatory provenance, engine-never-reads-layers rule);
+      §15.2 registration line
+- [x] Task: Specify the prerequisite-sparse ranking path (FR-3)
+    - [x] Degeneracy detection and utility-led ordering in §10
+    - Evidence: new §10.4 (<5% detection, gate-only readiness, 0.7/0.3
+      split, synthetic-edge prohibition, E2 vocabulary example); §10.5
+      review-load budget added alongside (E3b example)
 - [ ] Task: Amend queue and visualization sections (FR-4, FR-5, FR-6)
     - [ ] §12.7 interleaving, fuzzing, load balancing, review-load budget
     - [ ] §9.4 recommendedNext diversity and review-day surfacing
