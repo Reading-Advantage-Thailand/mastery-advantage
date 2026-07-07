@@ -32,6 +32,7 @@ This specification defines the complete KST+SRS system. It is domain-neutral: th
 14. [Cross-Course Equivalence](#14-cross-course-equivalence)
 15. [Domain Adapter Pattern](#15-domain-adapter-pattern)
 16. [Level Projection](#16-level-projection)
+17. [Offline Evaluation Harness](#17-offline-evaluation-harness)
 
 Appendices: [A](#appendix-a-implementation-package-map) · [B](#appendix-b-synthetic-fixtures) · [C](#appendix-c-versioning)
 
@@ -1744,6 +1745,59 @@ The existing `gse-to-*-advantage.csv` files are exactly this mapping.
 
 ---
 
+## 17. Offline Evaluation Harness
+
+"Bulletproof" must be measurable. The harness makes engine quality a
+release-gated, regression-tested property rather than an assertion. It has
+two halves: simulation (invariants) and replay (metrics). Fixtures are
+synthetic only — no proprietary curriculum or real learner data (Appendix B).
+
+### 17.1 Synthetic Learners
+
+Parameterized simulators exercise the engine end-to-end:
+
+```typescript
+interface SyntheticLearner {
+  ability: number;              // 0–1 latent skill acquisition rate
+  forgetRateMultiplier: number; // scales FSRS decay (1.0 = nominal)
+  guessProb: number;            // format-level lucky-guess probability
+  slipProb: number;             // careless-error probability
+  complianceRate: number;       // probability of completing the daily queue
+}
+```
+
+Generative rule per attempt:
+`P(correct) = guessProb + (1 − guessProb − slipProb) · mastery`.
+
+**Invariants (must hold in every simulation run):**
+1. No recommendation whose hard-gate readiness (§2.5) is violated.
+2. Queue caps and `newCardsPerDay` (§12.7) are never exceeded.
+3. Placement (§11.2) terminates within its probe budget.
+4. Provisional mastery (§11.4) decays without review — no immortal mastery.
+5. Active-misconception remediation precedes normal progression (§12.7).
+
+### 17.2 Replay Metrics
+
+Computed from real review logs (§12.5), attributing predictions via the
+stamped `paramsVersion` (§12.10):
+
+| Metric | Definition | Release threshold |
+|--------|-----------|-------------------|
+| Retention prediction MAE | mean \|predicted R at review − observed recall\| | ≤ incumbent + 0.02 |
+| Calibration curve | 10 equal bins of predicted R; max \|bin mean predicted − observed\| | ≤ 0.10 |
+| Placement accuracy | share of placed nodes whose estimate agrees with first-3-attempt evidence within 0.25 | report; no gate (v3.1) |
+| Fringe stability | mastery-state flaps per student-week | ≤ incumbent × 1.10 |
+| Edge calibration quality | Brier score of edge-necessity predictions on a holdout cohort | report; no gate (v3.1) |
+
+### 17.3 Release Rule
+
+An engine or parameter release (including §12.10 fitted sets) ships only
+when all invariants pass in simulation and all gated replay metrics are
+within thresholds against the incumbent. Reports are versioned artifacts
+with provenance, alongside the release they evaluate.
+
+---
+
 ## Appendix A: Implementation Package Map
 
 | Package | Responsibility | Must Not Import |
@@ -1771,6 +1825,8 @@ normative expected values.
 | `syntheticAlgebraicBlueprint` | algebra | Tests blueprint validation and generation |
 | `syntheticGraphingBlueprint` | graphing | Tests graphing-specific blueprints |
 | `syntheticEnglishBlueprint` | english | Tests language-domain blueprints |
+| `syntheticLearnerCohort` | domain-neutral | §17.1 simulators for invariant tests (ability/forgetting/guess/slip/compliance grid) |
+| `syntheticReviewLogReplay` | domain-neutral | Synthetic review-log corpus for §17.2 metric implementations |
 
 ## Appendix C: Versioning
 

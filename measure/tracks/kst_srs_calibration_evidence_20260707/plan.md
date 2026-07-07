@@ -118,8 +118,10 @@
     - [x] §6 strata/covariate method, minimums, status mapping
     - Evidence: new §6.7 tercile stratification with E6 worked example and
       confounded_by_ability status reason
-- [ ] Task: Add the offline evaluation harness section (FR-7)
-    - [ ] Synthetic-learner contract, replay metrics, Appendix B fixture rows
+- [x] Task: Add the offline evaluation harness section (FR-7)
+    - [x] Synthetic-learner contract, replay metrics, Appendix B fixture rows
+    - Evidence: new §17 (simulators, 5 invariants, gated replay metrics,
+      release rule); TOC entry; 2 Appendix B fixture rows
 
 ## Phase 4: Consistency Verification And Release
 
