@@ -518,12 +518,24 @@ not proficient A  c  ← violations d
 
 ### 6.4 Bayesian Incremental Update
 
-Model each edge's necessity as a Beta-Bernoulli posterior `Beta(α, β)`:
+Necessity (§6.3) is a property of the **not-proficient-in-A rows only** —
+cells `c` and `d`. Model it as a Beta-Bernoulli posterior `Beta(α, β)`
+updated exclusively from those rows:
 
-- Each consistent observation (student proficient in A and B, or not proficient in A and not proficient in B) increments `α`.
-- Each violation (not proficient in A but proficient in B) increments `β`.
+- Each cell-`d` observation (not proficient in A, not proficient in B) increments `α`.
+- Each cell-`c` observation (not proficient in A but proficient in B — a violation) increments `β`.
+- Cells `a` and `b` (proficient in A) **never update the necessity posterior**; they feed informativeness (§6.3) only.
 - `weight ← posterior mean = α / (α + β)`.
-- `confidence ← bucketed from posterior variance / sample size`.
+- `confidence ← bucketed from posterior variance`, whose effective sample size is `c + d` — typically far smaller than the cohort.
+
+**Why cells `a`/`b` are excluded (v2 defect):** under normal curriculum
+sequencing nearly every student is proficient in both A and B, so counting
+cell `a` as consistent evidence inflates `α` without testing necessity.
+**Worked example** (prior `Beta(1,1)`; cohort `a=470, b=20, c=4, d=6`): the
+v2 rule gave `Beta(477, 5)` → mean 0.990, sd ≈ 0.005 → false "confirmed";
+the v3 rule gives `Beta(7, 5)` → mean 0.583, sd ≈ 0.137 on n = 10 →
+`untested`. A genuinely violated edge (`c=40, d=10`) gives `Beta(11, 41)` →
+mean 0.212 → `refuted`.
 
 **Recency decay:** Periodically multiply `α, β` by `λ < 1` (e.g. `λ = 0.95` per cohort) so the edge tracks recent cohorts.
 
@@ -536,6 +548,13 @@ Absence of violations can be an artifact of curriculum sequencing: if no student
 | `confirmed` | Sufficient observations, high necessity, high informativeness |
 | `refuted` | Sufficient observations, low necessity or low informativeness |
 | `untested` | Insufficient natural order-variation (adaptive placement, §11, is the primary source of clean signal) |
+
+**Self-selection bias:** students who reach `B` without proficiency in `A`
+are not a random sample — they are typically stronger learners, which biases
+necessity estimates downward even under the corrected update. Ability
+adjustment (stratification or an ability covariate) is specified in the
+calibration-and-evidence-quality track; until then, treat borderline
+`refuted` verdicts on small `c + d` samples with caution in the review queue.
 
 ### 6.6 Output: Human Review Queue
 

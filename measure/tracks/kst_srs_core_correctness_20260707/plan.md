@@ -84,9 +84,11 @@
     - [x] §9.4 node-state computation consistency
     - Evidence: §2.5 now "Gated Weighted Readiness" with E1 worked example
       and migration property; hardGateThreshold + trendThreshold in §2.4
-- [ ] Task: Rewrite edge-calibration update rule (FR-2)
-    - [ ] §6.4 update conditioning (¬A rows only) and confidence bucketing
-    - [ ] §6.5 self-selection bias note with deferral pointer
+- [x] Task: Rewrite edge-calibration update rule (FR-2)
+    - [x] §6.4 update conditioning (¬A rows only) and confidence bucketing
+    - [x] §6.5 self-selection bias note with deferral pointer
+    - Evidence: §6.4 embeds E2 worked example (false-confirm vs untested vs
+      refuted); §6.5 notes ability adjustment deferral
 - [ ] Task: Reconcile retention signature and aggregation (FR-3)
     - [ ] §13.5 signature fix
     - [ ] §2.1 objective-level aggregation rule
