@@ -1,6 +1,6 @@
 # Knowledge Space + SRS Specification
 
-> **Version:** kst-srs.v3
+> **Version:** kst-srs.v3.1
 > **Status:** Living specification — validated against production graph data (english/gse-knowledge-space.json: 2,172 nodes / 28,489 edges); v2 implemented in ra-math-advantage (v3 migration pending, see MIGRATION-v3.md)
 > **Scope:** Domain-neutral algorithms, data models, and contracts for any Knowledge Space Theory + Spaced Repetition system
 
@@ -9,6 +9,8 @@ This specification defines the complete KST+SRS system. It is domain-neutral: th
 **Normative status:** This document is the single source of truth for the knowledge space data model, validation rules, and system contracts. README.md's schema summary is non-normative and defers to this spec.
 
 **v2 changes:** Reconciled binary KST mastery with continuous SRS retention (hysteresis model); made `weight` a live field via weighted readiness; added edge calibration loop (Beta-Bernoulli posterior); added next-skill planner with composite priority; added placement / cold-start contract; closed the misconception loop (`remediated_by` edge, rating cap, lifecycle); renamed "problem family" → "practice variant"; added `transfers_to` edge, Level Projection, FSRS per-card limitation note; fixed `progressTrend` to real time-delta.
+
+**v3.1 changes (calibration & evidence release):** FSRS parameter calibration loop — per-population batch fitting from review logs with human-reviewed release (§12.10); per-priority retention targets via `requestRetentionByPriority` (§12.3); guess/slip-corrected proficiency evidence — recency-weighted, Wilson-bounded, guess-floor-rescaled `retentionStrength` with small-sample confidence caps (§13.1–13.2); placement rewritten as a multi-probe adaptive frontier walk with DAG traversal and stopping criteria (§11.2); fully normative rating mapper — hint/reveal/timing thresholds (§8.4); ability-stratified edge calibration with `confounded_by_ability` (§6.7); Offline Evaluation Harness — simulation invariants, gated replay metrics, release rule (§17); domain adapters now declare guess floors, age bands, and probe instruments (§15.2).
 
 **v3 changes (correctness release):** Gated weighted readiness — hard-gate prerequisites (`w ≥ hardGateThreshold`) are non-compensatory (§2.5); edge-calibration necessity posterior conditions on ¬A rows only, fixing false confirmation under curriculum sequencing (§6.4); `stabilityToRetention` takes `(stability, elapsedDays)` and objective-level retention is the minimum across variant cards with review history (§2.1.1, §13.5); placement seeds the knowledge state by synthesizing review-state cards with `S₀ = H(confidence) × masteryEstimate` and hard-edge-only evidence closure (§11.4); daily queue schedules reviews before new cards by predicted retention ascending, enforces `newCardsPerDay`, and defines a backlog policy (§12.7); misconception-cap cross-reference and symmetric `progressTrend` thresholds fixed (§8.4, §9.4). Worked v2-vs-v3 examples are embedded in each changed section.
 
@@ -1832,7 +1834,7 @@ normative expected values.
 
 | Component | Current Version | Notes |
 |-----------|----------------|-------|
-| KST+SRS Specification | `kst-srs.v3` | Correctness release: gated readiness, calibration conditioning, retention aggregation, placement seeding, queue rules |
+| KST+SRS Specification | `kst-srs.v3.1` | v3 correctness release + v3.1 calibration & evidence release (FSRS fitting loop, corrected evidence, multi-probe placement, evaluation harness) |
 | Knowledge Space Schema | `knowledge-space.v2` | Added `transfers_to`, `remediated_by` edge types; edge `weight ≥ hardGateThreshold` now interpreted as a hard gate (§2.5) |
 | SRS Contract | `srs.contract.v3` | Queue rules rewritten (§12.7); placement-synthesized cards (§11.4); `stabilityToRetention(stability, elapsedDays)` |
 | Practice Contract | `practice.v1` | Unchanged; added `misconceptionCapped` to rating result |

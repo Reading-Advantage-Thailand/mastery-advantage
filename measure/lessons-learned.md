@@ -18,6 +18,10 @@
   on the observations that actually test the hypothesis (¬A rows for edge
   necessity); counting confirming-but-uninformative cells manufactures false
   certainty under curriculum sequencing.
+- (2026-07-07, kst_srs_calibration_evidence) Raw correctness rates are not
+  evidence: correct for guess floors, bound with Wilson lower limits, and
+  recency-weight before comparing to thresholds. Fitted/calibrated artifacts
+  always ship through a human-reviewed release, never auto-applied.
 
 ## Recurring Gotchas
 

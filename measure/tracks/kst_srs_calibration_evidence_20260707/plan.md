@@ -125,14 +125,25 @@
 
 ## Phase 4: Consistency Verification And Release
 
-- [ ] Task: Run full cross-reference and terminology sweep
-    - [ ] Verify references, config fields, and estimator naming consistency
-    - [ ] Verify no conflict with kst-srs.v3 core-correctness text
-- [ ] Task: Bump version and changelog
-    - [ ] Coordinate version increment with other in-flight kst-srs tracks
-    - [ ] Update Appendix C and affected Appendix B rows
-- [ ] Task: Write downstream migration notes
-    - [ ] Enumerate evidence-math and scheduler changes consumers must adopt
-- [ ] Task: Final review gate and memory updates
-    - [ ] Verify all acceptance criteria in spec.md
-    - [ ] Update lessons-learned and tech-debt; record final approval
+- [x] Task: Run full cross-reference and terminology sweep
+    - [x] Verify references, config fields, and estimator naming consistency
+    - [x] Verify no conflict with kst-srs.v3 core-correctness text
+    - Evidence: grep sweep ("raw rate", "tree walk", "O(log n)", stale §8.4
+      phrases, §17/§12.10/§6.7 references) — no stale remnants found
+- [x] Task: Bump version and changelog
+    - [x] Coordinate version increment with other in-flight kst-srs tracks
+    - [x] Update Appendix C and affected Appendix B rows
+    - Evidence: header kst-srs.v3.1; v3.1 changelog paragraph; Appendix C
+      row updated; Appendix B fixture rows added in FR-7 task
+- [x] Task: Write downstream migration notes
+    - [x] Enumerate evidence-math and scheduler changes consumers must adopt
+    - Evidence: MIGRATION-v3.md v3→v3.1 section (items 7–12 with adoption
+      order)
+- [x] Task: Final review gate and memory updates
+    - [x] Verify all acceptance criteria in spec.md
+    - [x] Update lessons-learned and tech-debt; record final approval
+    - Evidence: acceptance criteria 1–8 verified (fitting loop end-to-end
+      §12.10; per-priority targets §12.3; E1 chance/small-sample cases in
+      §13.1; multi-probe placement §11.2; no unspecified mapper thresholds
+      §8.4; strata minimums §6.7; harness §17; v3.1 bump + migration notes);
+      pedagogy ratification tracked in existing tech-debt row

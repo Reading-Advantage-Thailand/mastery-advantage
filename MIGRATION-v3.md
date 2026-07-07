@@ -85,3 +85,65 @@ until the backlog drains (intended pedagogy; surface as "review day" in UI).
 
 Fixture expectations for all five are the embedded worked examples
 (SPECIFICATION.md Appendix B v3 note).
+
+---
+
+# v3 → v3.1 Migration Notes (Calibration & Evidence)
+
+## 7. Proficiency evidence math (§13.1–13.2)
+
+**Change:** `retentionStrength` = guess-floor-rescaled one-sided 95% Wilson
+lower bound of recency-weighted (half-life 10) correctness; small-sample
+confidence caps (n < 3 → `low`, n < 6 → `medium`).
+
+**Action:** replace raw-rate computation in the proficiency assessor; obtain
+per-format guess floors from the domain adapter. **Impact:** proficiency
+rates will drop, most sharply for multiple-choice-heavy domains — this is
+removal of inflation, not regression. Expect some previously-proficient
+objectives to revert to `in_progress`.
+
+## 8. Rating mapper (§8.4)
+
+**Change:** normative hint (0 / 1–2 / ≥3), reveal (≥1 → `Hard`, all →
+`Again`), and timing (z ≤ −1 / z ≥ +2, reliability-gated) thresholds.
+
+**Action:** replace any ad-hoc mapper logic; verify against the E3 table in
+the track's examples. Guided-mode submissions with reveals will now rate
+lower (intended).
+
+## 9. Placement (§11.2)
+
+**Change:** 2-probe decisions with guess-corrected passes, frontier-set DAG
+traversal, budget-24 stopping, `medium` confidence cap.
+
+**Action:** rewrite the walk; roughly doubles probe count per decision
+point, so revisit session UX (the GSE chatbot asks more questions or places
+fewer nodes per session).
+
+## 10. Scheduler config (§12.3)
+
+**Change:** optional `requestRetentionByPriority` (0.95/0.90/0.80 defaults).
+
+**Action:** additive and backward compatible; adopting it increases
+essential-card review frequency — monitor queue load.
+
+## 11. FSRS fitting + evaluation harness (§12.10, §17)
+
+**Change:** new batch calibration loop and release-gating harness.
+
+**Action:** new infrastructure, adoptable last; prerequisite: start stamping
+`paramsVersion` in review logs now so replay attribution works later.
+Adapters must declare `ageBand` (§15.2).
+
+## 12. Edge calibration (§6.7)
+
+**Change:** tercile ability stratification; new `confounded_by_ability`
+untested reason.
+
+**Action:** extend the §6.4 batch job; requires an overall-proficiency
+banding computation per student per cohort window.
+
+## v3.1 adoption order
+
+Items 7–8 (evidence + mapper) first — they change learner-facing truth;
+then 9–10; 11–12 are offline/batch and can trail.

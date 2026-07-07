@@ -1,11 +1,11 @@
 {
   "track_id": "kst_srs_calibration_evidence_20260707",
   "type": "feature",
-  "status": "in_progress",
+  "status": "completed",
   "created_at": "2026-07-07T00:00:00Z",
-  "updated_at": "2026-07-07T00:00:00Z",
+  "updated_at": "2026-07-07T14:00:00Z",
   "description": "Make the KST+SRS engine self-calibrating and its evidence noise-robust: FSRS parameter-fitting loop, per-priority retention targets, guess/slip-corrected proficiency, multi-evidence placement, fully specified rating mapper, ability-adjusted edge calibration, and an offline evaluation harness contract.",
   "estimated_tasks": 21,
-  "actual_tasks": null,
-  "deviation_notes": "Blocked until kst_srs_core_correctness_20260707 Phase 1 decisions are approved (builds on corrected calibration update, retention aggregation, and queue rules)."
+  "actual_tasks": 23,
+  "deviation_notes": "Gate satisfied 2026-07-07 (core track completed). Implemented as planned; estimated_tasks was a miscount at creation (plan always contained 23 top-level tasks). Released as kst-srs.v3.1. Decisions self-approved under owner directive; pedagogy ratification of v3.1 constants tracked in the shared tech-debt row. Recency weighting spec landed in the FR-3 task (13.1) rather than the FR-5 task, as the estimator lives with the evidence math."
 }
