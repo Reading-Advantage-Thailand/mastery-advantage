@@ -55,3 +55,9 @@ This registry tracks Mastery Advantage specification and domain-data work.
 - [ ] **Track: Frequency, Semantic and Article-Ranking Layer Design**
   *Design reproducible frequency, semantic similarity, and article-ranking layers as additive graph extensions.*
   *Link: [./tracks/frequency_semantic_ranking_layer_20260611/](./tracks/frequency_semantic_ranking_layer_20260611/)*
+
+---
+
+- [ ] **Track: KST+SRS Core Algorithm Correctness** *(engine correctness gate — fix before other kst-srs tracks build on affected formulas)*
+  *Fix five correctness-level defects in the kst-srs.v2 core algorithms (compensatory hard-gate readiness, miscounted calibration posterior, retention aggregation, placement seeding gap, queue ordering) and release kst-srs.v3.*
+  *Link: [./tracks/kst_srs_core_correctness_20260707/](./tracks/kst_srs_core_correctness_20260707/)*
