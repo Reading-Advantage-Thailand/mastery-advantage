@@ -865,19 +865,32 @@ interface PracticeTimingSummary {
 
 ### 8.4 SRS Rating Computation
 
-Submissions are converted to SRS ratings through a two-stage process:
+Submissions are converted to SRS ratings through a normative staged process
+(all thresholds v3.1; caps combine by taking the lowest applicable rating):
 
 1. **Base rating** from correctness across parts:
-   - All correct → `Good` or `Easy` (depends on hint usage)
+   - All correct → `Easy`-eligible (subject to caps below)
    - Partially correct → `Hard`
    - All incorrect → `Again`
 
-2. **Timing adjustment** (if timing baseline exists):
-   - Significantly faster than baseline → may upgrade rating
-   - Significantly slower than baseline → may downgrade rating
-   - No baseline → rating is based on correctness only
+2. **Hint cap** (`hintsUsed` summed across parts):
+   - `0` hints → no cap (up to `Easy`)
+   - `1–2` hints → cap `Good`
+   - `≥ 3` hints → cap `Hard`
 
-3. **Misconception cap** (§13.3): a submission that is correct but exhibits a misconception cannot map to `Easy`; cap at `Hard`, or `Again` if the misconception is severe. `misconceptionTags` is already in the review-log evidence — the mapper can see it.
+3. **Reveal cap** (guided mode): answers produced after seeing worked steps
+   are not retrieval — `revealStepsSeen ≥ 1` → cap `Hard`; **all** steps
+   revealed → `Again` (the attempt was re-study, not recall).
+
+4. **Timing adjustment** — applies only when timing confidence ≥ `medium`
+   AND `baselineSampleCount ≥ 10`; per-part z-score vs the variant baseline:
+   - `z ≤ −1` (fast): a correct, uncapped answer becomes `Easy`
+   - `z ≥ +2` (slow): downgrade one step
+   - Otherwise / no reliable baseline: correctness-and-caps only
+
+5. **Misconception cap** (§13.3), applied last and winning over all stages:
+   a correct submission exhibiting a misconception cannot exceed `Hard`, or
+   `Again` if the misconception is severe. `misconceptionTags` is already in the review-log evidence — the mapper can see it.
 
 ```typescript
 interface SrsRatingResult {

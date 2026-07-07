@@ -110,8 +110,10 @@
     - Evidence: §11.2 "Adaptive Frontier Walk" — 2-probe + tie-break with
       guess correction, frontier-set DAG traversal, budget/stability
       stopping, medium confidence cap
-- [ ] Task: Specify the rating mapper normatively (FR-5)
-    - [ ] §8.4 thresholds, reveal cap, recency weighting, timing bounds
+- [x] Task: Specify the rating mapper normatively (FR-5)
+    - [x] §8.4 thresholds, reveal cap, recency weighting, timing bounds
+    - Evidence: §8.4 five-stage mapper with numeric hint/reveal/timing
+      thresholds (E3 table); recency weighting specified in §13.1 (FR-3 task)
 - [ ] Task: Add ability adjustment to edge calibration (FR-6)
     - [ ] §6 strata/covariate method, minimums, status mapping
 - [ ] Task: Add the offline evaluation harness section (FR-7)
