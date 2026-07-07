@@ -60,17 +60,17 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 - [x] **Track: KST+SRS Core Algorithm Correctness** *(engine correctness gate — COMPLETE 2026-07-07: kst-srs.v3 released; unblocks Phase 1 of the calibration and planner tracks)*
   *Fix five correctness-level defects in the kst-srs.v2 core algorithms (compensatory hard-gate readiness, miscounted calibration posterior, retention aggregation, placement seeding gap, queue ordering) and release kst-srs.v3.*
-  *Link: [./tracks/kst_srs_core_correctness_20260707/](./tracks/kst_srs_core_correctness_20260707/)*
+  *Link: [./archive/kst_srs_core_correctness_20260707/](./archive/kst_srs_core_correctness_20260707/)*
 
 ---
 
 - [x] **Track: KST+SRS Calibration & Evidence Quality** *(COMPLETE 2026-07-07: kst-srs.v3.1 released — fitting loop, corrected evidence, multi-probe placement, evaluation harness)*
   *Make the engine self-calibrating and its evidence noise-robust: FSRS parameter fitting, per-priority retention targets, guess/slip correction, multi-evidence placement, normative rating mapper, ability-adjusted edge calibration, offline evaluation harness.*
-  *Link: [./tracks/kst_srs_calibration_evidence_20260707/](./tracks/kst_srs_calibration_evidence_20260707/)*
+  *Link: [./archive/kst_srs_calibration_evidence_20260707/](./archive/kst_srs_calibration_evidence_20260707/)*
 
 ---
 
 - [x] **Track: KST+SRS Planner & Domain Utility Extension** *(COMPLETE 2026-07-07: kst-srs.v3.2 released — normalized priority, utility provider contract, sparse-domain mode, session composition)*
   *Normalize the planner priority score, add a domain utility provider contract (vocabulary and other prerequisite-sparse domains), and add diversity, review-load budgeting, interleaving, and load smoothing.*
-  *Link: [./tracks/kst_srs_planner_domain_utility_20260707/](./tracks/kst_srs_planner_domain_utility_20260707/)*
+  *Link: [./archive/kst_srs_planner_domain_utility_20260707/](./archive/kst_srs_planner_domain_utility_20260707/)*
   *Coordination: [frequency_semantic_ranking_layer_20260611](./tracks/frequency_semantic_ranking_layer_20260611/) must express its layers as `UtilitySignal` sources per §10.3 and ship the reference English frequency provider (decision D2).*
