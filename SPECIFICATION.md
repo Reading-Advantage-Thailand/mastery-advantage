@@ -590,6 +590,29 @@ calibration-and-evidence-quality track; until then, treat borderline
 
 Edges whose calibrated posterior diverges from the authored `weight`/`confidence` beyond a threshold are flagged for human review with their contingency table attached. This reuses the existing `reviewStatus` machinery. The graph is never auto-edited.
 
+### 6.7 Ability-Stratified Calibration
+
+Students who reach `B` without proficiency in `A` are self-selected —
+typically stronger — which biases necessity estimates downward (§6.5). v3.1
+adjusts by **stratification**:
+
+- Students are banded into terciles by overall proficiency rate at
+  observation time.
+- The ¬A-row necessity posterior (§6.4) is computed per band.
+- An adjusted verdict requires ≥ 2 bands with `c + d ≥ 5`. The pooled
+  verdict stands only if band posterior means agree within 0.2; otherwise
+  the edge is `untested` with reason `confounded_by_ability`.
+
+**Worked example:** low band `c=1, d=9` (mean 0.83) and mid band `c=2, d=8`
+(mean 0.75) agree within 0.2 → pooled verdict stands. If instead the high
+band shows mean 0.30 against the low band's 0.85 (strong students skip `A`
+safely), the divergence marks the edge `confounded_by_ability` rather than
+`refuted`.
+
+Stratification was chosen over a logistic ability-covariate model for
+auditability and zero fitting infrastructure; the covariate model is a
+documented future stage.
+
 ---
 
 ## 7. Blueprint Contracts

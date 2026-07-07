@@ -114,8 +114,10 @@
     - [x] §8.4 thresholds, reveal cap, recency weighting, timing bounds
     - Evidence: §8.4 five-stage mapper with numeric hint/reveal/timing
       thresholds (E3 table); recency weighting specified in §13.1 (FR-3 task)
-- [ ] Task: Add ability adjustment to edge calibration (FR-6)
-    - [ ] §6 strata/covariate method, minimums, status mapping
+- [x] Task: Add ability adjustment to edge calibration (FR-6)
+    - [x] §6 strata/covariate method, minimums, status mapping
+    - Evidence: new §6.7 tercile stratification with E6 worked example and
+      confounded_by_ability status reason
 - [ ] Task: Add the offline evaluation harness section (FR-7)
     - [ ] Synthetic-learner contract, replay metrics, Appendix B fixture rows
 
