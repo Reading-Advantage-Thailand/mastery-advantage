@@ -46,26 +46,35 @@
 
 ## Phase 2: Acceptance Examples (Normative Test Artifacts)
 
-- [ ] Task: Author hard-gate readiness worked examples (FR-1)
-    - [ ] v2 failure case: unmastered w=1.0 prerequisite yields `nearly_ready`
-    - [ ] Same inputs under v3 formula yield `blocked`
-    - [ ] Edge cases: no prerequisites, all-hard, all-soft, mixed weights
-- [ ] Task: Author edge-calibration contingency examples (FR-2)
-    - [ ] Cell-`a`-dominated cohort: v2 posterior falsely confirms; v3 posterior
+- [x] Task: Author hard-gate readiness worked examples (FR-1)
+    - [x] v2 failure case: unmastered w=1.0 prerequisite yields `nearly_ready`
+    - [x] Same inputs under v3 formula yield `blocked`
+    - [x] Edge cases: no prerequisites, all-hard, all-soft, mixed weights
+    - Evidence: `examples.md` E1a–E1c
+- [x] Task: Author edge-calibration contingency examples (FR-2)
+    - [x] Cell-`a`-dominated cohort: v2 posterior falsely confirms; v3 posterior
           remains wide/untested
-    - [ ] Genuine violation cohort: v3 posterior converges to refuted
-- [ ] Task: Author retention and aggregation examples (FR-3)
-    - [ ] `stabilityToRetention(stability, elapsedDays)` sample values
-    - [ ] Multi-variant objective aggregated under the chosen rule, including a
+    - [x] Genuine violation cohort: v3 posterior converges to refuted
+    - Evidence: `examples.md` E2 (Beta(477,5) → 0.990 false-confirm vs
+      Beta(7,5) → 0.583 untested), E2b (Beta(11,41) → 0.212 refuted)
+- [x] Task: Author retention and aggregation examples (FR-3)
+    - [x] `stabilityToRetention(stability, elapsedDays)` sample values
+    - [x] Multi-variant objective aggregated under the chosen rule, including a
           never-practiced variant
-- [ ] Task: Author placement-seeding and queue/backlog examples (FR-4, FR-5)
-    - [ ] Seeded skill: synthesized card, initial stability, decay trajectory,
+    - Evidence: `examples.md` E3/E3b (min rule with reps=0 exclusion,
+      hysteresis interplay at R=0.860)
+- [x] Task: Author placement-seeding and queue/backlog examples (FR-4, FR-5)
+    - [x] Seeded skill: synthesized card, initial stability, decay trajectory,
           mastery classification over time
-    - [ ] 7-day-absence backlog: queue composition with `newCardsPerDay`
+    - [x] 7-day-absence backlog: queue composition with `newCardsPerDay`
           enforced and reviews first
-- [ ] Task: Verify Phase 2
-    - [ ] Check every example against the recorded Phase 1 decisions
-    - [ ] Confirm each FR-1…FR-5 defect has a v2-vs-v3 paired example
+    - Evidence: `examples.md` E4 (S₀=28.5d, provisional mastery, hard-edge
+      closure), E5/E5b/E5c (backlog mode, retention-ascending)
+- [x] Task: Verify Phase 2
+    - [x] Check every example against the recorded Phase 1 decisions
+    - [x] Confirm each FR-1…FR-5 defect has a v2-vs-v3 paired example
+    - Evidence: E1↔D1, E2↔FR-2, E3↔D2, E4↔D3, E5↔D4; arithmetic verified
+      against R(t,S)=(1+(19/81)·t/S)^(−0.5) with R(S,S)=0.9 exact
 
 ## Phase 3: Specification Edits
 
