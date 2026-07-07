@@ -1295,12 +1295,18 @@ Practice Submission
 **Output:** `QueueItem[]` (ordered)
 
 **Queue ordering rules:**
-1. Exclude cards for `triaged` objectives
-2. New cards first, ordered by objective priority: `essential` → `supporting` → `extension`
-3. Overdue review cards, sorted by days overdue descending
-4. Due review cards, sorted by due date ascending
-5. Active-misconception remediation items injected ahead of normal progression (§13.3)
-6. Cap total at `maxReviewsPerDay`
+1. Exclude cards for `triaged` objectives.
+2. Active-misconception remediation items are injected ahead of everything else (§13.3).
+3. **Reviews before new cards.** Due and overdue review cards form one pool ordered by predicted current retention ascending — `stabilityToRetention(stability, elapsedDays)` (§13.5) — most-forgotten first. (Raw days-overdue is the wrong urgency metric: a low-stability card 8 days since review at R ≈ 0.78 outranks a high-stability card 12 days since review at R ≈ 0.96.)
+4. New cards are admitted only after all due reviews are scheduled within the day's cap, are hard-capped at `newCardsPerDay`, and are ordered by objective priority: `essential` → `supporting` → `extension`.
+5. Cap the total at `maxReviewsPerDay`; reviews take precedence and new cards fill any remainder.
+6. **Backlog policy:** while the due-review count exceeds `maxReviewsPerDay`, the new-card allowance is 0 and the day's queue is the `maxReviewsPerDay` lowest-retention cards. The remainder simply stays due and drains on subsequent days — no interval penalty for backlog days.
+
+**Worked example** (7-day absence): 25 overdue reviews, 6 new candidates,
+`maxReviewsPerDay = 20`, `newCardsPerDay = 4` → backlog mode: 20
+lowest-retention reviews, 0 new; 5 reviews remain due tomorrow; new cards
+resume once the due count is at or under the cap. On a normal day (12 due,
+6 candidates): 12 reviews then 4 new (capped), total 16.
 
 ```typescript
 interface SrsSessionConfig {

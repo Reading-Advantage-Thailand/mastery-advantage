@@ -100,8 +100,10 @@
     - Evidence: new §11.4 (S₀ = H(confidence)×estimate, provisional mastery,
       hard-edge evidence closure) with E4 worked example; §2.3 and §12.4
       cross-wired
-- [ ] Task: Rewrite daily queue rules (FR-5)
-    - [ ] §12.7 ordering, caps, backlog policy, preserved injection rules
+- [x] Task: Rewrite daily queue rules (FR-5)
+    - [x] §12.7 ordering, caps, backlog policy, preserved injection rules
+    - Evidence: §12.7 reviews-first by retention ascending, newCardsPerDay
+      hard cap, backlog mode; E5 worked example embedded
 - [ ] Task: Apply documentation fixes (FR-6)
     - [ ] §8.4 cross-reference to §13.3
     - [ ] §9.4 `progressTrend` symmetric thresholds
