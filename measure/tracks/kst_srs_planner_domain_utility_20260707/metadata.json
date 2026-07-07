@@ -1,0 +1,11 @@
+{
+  "track_id": "kst_srs_planner_domain_utility_20260707",
+  "type": "feature",
+  "status": "blocked",
+  "created_at": "2026-07-07T00:00:00Z",
+  "updated_at": "2026-07-07T00:00:00Z",
+  "description": "Normalize the next-skill planner priority score, add a domain-supplied utility term with a provider contract, define ranking for prerequisite-sparse domains (vocabulary), and add diversity, review-load budgeting, interleaving, and load smoothing to session composition.",
+  "estimated_tasks": 17,
+  "actual_tasks": null,
+  "deviation_notes": "Blocked until kst_srs_core_correctness_20260707 FR-1 (gated readiness) is approved; utility-provider interface must be reconciled with frequency_semantic_ranking_layer_20260611 before spec edits."
+}

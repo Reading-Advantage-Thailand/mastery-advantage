@@ -67,3 +67,9 @@ This registry tracks Mastery Advantage specification and domain-data work.
 - [ ] **Track: KST+SRS Calibration & Evidence Quality** *(blocked by core correctness decisions)*
   *Make the engine self-calibrating and its evidence noise-robust: FSRS parameter fitting, per-priority retention targets, guess/slip correction, multi-evidence placement, normative rating mapper, ability-adjusted edge calibration, offline evaluation harness.*
   *Link: [./tracks/kst_srs_calibration_evidence_20260707/](./tracks/kst_srs_calibration_evidence_20260707/)*
+
+---
+
+- [ ] **Track: KST+SRS Planner & Domain Utility Extension** *(blocked by core correctness FR-1; interface reconciled with ranking-layer track)*
+  *Normalize the planner priority score, add a domain utility provider contract (vocabulary and other prerequisite-sparse domains), and add diversity, review-load budgeting, interleaving, and load smoothing.*
+  *Link: [./tracks/kst_srs_planner_domain_utility_20260707/](./tracks/kst_srs_planner_domain_utility_20260707/)*
