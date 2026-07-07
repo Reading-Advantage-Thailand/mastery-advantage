@@ -95,8 +95,10 @@
     - [x] New section mirroring §6 architecture; Appendix C entry
     - Evidence: new §12.10 with population keys, gate, holdout objective,
       release review, stamping, E5 lifecycle example (Appendix C in Phase 4)
-- [ ] Task: Amend scheduler configuration (FR-2)
-    - [ ] §12.3 per-priority `requestRetention` with defaults and notes
+- [x] Task: Amend scheduler configuration (FR-2)
+    - [x] §12.3 per-priority `requestRetention` with defaults and notes
+    - Evidence: requestRetentionByPriority overlay (0.95/0.90/0.80),
+      backward-compatible, load note with planner-track deferral
 - [ ] Task: Amend proficiency evidence math (FR-3)
     - [ ] §13.1–13.2 lower-bound estimator, guess floors, small-sample rules
     - [ ] §15 adapter responsibility for format guess floors

@@ -1216,11 +1216,22 @@ type SrsRating = 'Again' | 'Hard' | 'Good' | 'Easy';
 ```typescript
 interface SchedulerConfig {
   requestRetention: number;      // Target retention probability (default: 0.9)
-  maximumInterval: number;       // Maximum interval in days (default: 365)
+  requestRetentionByPriority?: Partial<Record<ObjectivePriority, number>>;
+                                 // Per-priority overrides of requestRetention.
+                                 // Defaults: essential 0.95, supporting 0.90, extension 0.80.
+                                 // Absent map = scalar behavior (backward compatible).
+  maximumInterval: number;       // Maximum interval in days (default: 365; applies after the target computation)
   enableShortTermPreview: boolean;  // Enable short-term preview (default: false)
   siblingReinforcement?: boolean;   // Optional: successful review applies partial stability bump to sibling variant cards under same objective (future)
 }
 ```
+
+A single global retention target spends review budget equally on skills that
+do not matter equally; per-priority targets concentrate reviews on
+`essential` objectives. **Load note:** FSRS intervals shrink superlinearly
+as the target approaches 1 — raising essential cards from 0.90 to 0.95
+roughly doubles their review frequency. Review-load budgeting is specified
+in the planner track.
 
 ### 12.4 Core Scheduler Operations
 
