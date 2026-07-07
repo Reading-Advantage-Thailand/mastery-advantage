@@ -95,9 +95,13 @@
     - Evidence: new §10.4 (<5% detection, gate-only readiness, 0.7/0.3
       split, synthetic-edge prohibition, E2 vocabulary example); §10.5
       review-load budget added alongside (E3b example)
-- [ ] Task: Amend queue and visualization sections (FR-4, FR-5, FR-6)
-    - [ ] §12.7 interleaving, fuzzing, load balancing, review-load budget
-    - [ ] §9.4 recommendedNext diversity and review-day surfacing
+- [x] Task: Amend queue and visualization sections (FR-4, FR-5, FR-6)
+    - [x] §12.7 interleaving, fuzzing, load balancing, review-load budget
+    - [x] §9.4 recommendedNext diversity and review-day surfacing
+    - Evidence: §12.7 session-composition block (presentation-only
+      round-robin, ±5% deterministic fuzz, lightest-day placement); §9.4
+      reviewLoadState on student viz, reviewLoadStates on teacher viz;
+      budget itself specified in §10.5
 
 ## Phase 4: Consistency Verification And Release
 

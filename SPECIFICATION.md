@@ -1057,7 +1057,8 @@ interface StudentVisualizationV1 {
   ready: VisualNodeV1[];
   blocked: VisualNodeV1[];
   reviewDue: VisualNodeV1[];
-  recommendedNext: VisualNodeV1[];  // Top-N by priority score (§10)
+  recommendedNext: VisualNodeV1[];  // Top-N by priority score, diversity-capped (§10.1–10.2)
+  reviewLoadState?: 'normal' | 'elevated' | 'saturated';  // §10.5; 'saturated' surfaces "review day" guidance
   edges: VisualEdgeV1[];
 }
 ```
@@ -1103,6 +1104,7 @@ interface TeacherVisualizationV1 {
   interventionGroups: InterventionGroup[];
   standardsCoverage: Array<{ standardId: string; title: string; proficiencyRate: number }>;
   activeMisconceptionCount: number;
+  reviewLoadStates?: Record<string, 'normal' | 'elevated' | 'saturated'>;  // studentId → §10.5 state
 }
 ```
 
@@ -1476,6 +1478,20 @@ Practice Submission
 lowest-retention reviews, 0 new; 5 reviews remain due tomorrow; new cards
 resume once the due count is at or under the cap. On a normal day (12 due,
 6 candidates): 12 reviews then 4 new (capped), total 16.
+
+**Session composition (v3.2)** — selection above decides *which* cards;
+these rules govern presentation and scheduling only:
+
+- **Interleaving:** the selected review set is presented round-robin across
+  objectives (deterministic order: objective priority, then objectiveId),
+  avoiding blocked runs of a single objective (e.g. 3×obj-A, 2×obj-B,
+  1×obj-C presents as A,B,C,A,B,A). New cards follow reviews unchanged.
+- **Interval fuzz:** scheduled intervals receive deterministic jitter of
+  ±5%: `hash(cardId, reps) → uniform[−0.05, +0.05]` — reproducible without
+  RNG state, and it prevents review clumping on fixed weekdays.
+- **Load balancing:** within the fuzz window, the due date lands on the day
+  with the lowest projected load; bounded by the window and never exceeding
+  `maximumInterval`.
 
 ```typescript
 interface SrsSessionConfig {
