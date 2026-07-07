@@ -112,17 +112,28 @@
 
 ## Phase 4: Consistency Verification And Release
 
-- [ ] Task: Run full cross-reference and terminology sweep
-    - [ ] Verify all section references resolve; no v2 formula remnants
-    - [ ] Verify config fields, type names, and vocabulary are consistent
-    - [ ] Record the sweep checklist and results in the track
-- [ ] Task: Bump versions and changelog (FR-7)
-    - [ ] Spec header and v3 changelog paragraph
-    - [ ] Appendix C rows; Appendix B fixture descriptions where affected
-- [ ] Task: Write downstream migration notes (FR-7)
-    - [ ] Enumerate behavioral changes and required implementation updates for
+- [x] Task: Run full cross-reference and terminology sweep
+    - [x] Verify all section references resolve; no v2 formula remnants
+    - [x] Verify config fields, type names, and vocabulary are consistent
+    - [x] Record the sweep checklist and results in the track
+    - Evidence: grep sweep over "weighted readiness", "stabilityToRetention",
+      "days overdue", "hardGate", "§6)" — one stale §3.4 edge-schema comment
+      found and fixed; remaining §6 references verified correct
+- [x] Task: Bump versions and changelog (FR-7)
+    - [x] Spec header and v3 changelog paragraph
+    - [x] Appendix C rows; Appendix B fixture descriptions where affected
+    - Evidence: header kst-srs.v3; v3 changes paragraph; Appendix C adds
+      KST+SRS Specification row, srs.contract.v3; Appendix B v3 fixture note
+- [x] Task: Write downstream migration notes (FR-7)
+    - [x] Enumerate behavioral changes and required implementation updates for
           ra-math-advantage and future consumers
-- [ ] Task: Final review gate and memory updates
-    - [ ] Verify all acceptance criteria in spec.md
-    - [ ] Update lessons-learned and tech-debt entries arising from this track
-    - [ ] Record final approval
+    - Evidence: MIGRATION-v3.md at repo root with per-change actions,
+      impact statements, and suggested adoption order
+- [x] Task: Final review gate and memory updates
+    - [x] Verify all acceptance criteria in spec.md
+    - [x] Update lessons-learned and tech-debt entries arising from this track
+    - [x] Record final approval
+    - Evidence: acceptance criteria 1–8 verified (worked examples embedded in
+      §2.5/§6.4/§2.1.1/§11.4/§12.7; sweep clean; Appendix C bumped;
+      approvals in decisions.md with curriculum ratification as open tech
+      debt); lessons-learned entries added 2026-07-07

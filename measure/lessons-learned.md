@@ -11,6 +11,14 @@
   semantic relatedness are distinct. Persist typed relations and source/model
   provenance instead of collapsing both into generic similarity.
 
+- (2026-07-07, kst_srs_core_correctness) Weighted averages cannot express
+  hard prerequisites — non-compensatory requirements need min/product forms.
+  Keep compensatory averaging only for genuinely soft signals.
+- (2026-07-07, kst_srs_core_correctness) Bayesian calibration must condition
+  on the observations that actually test the hypothesis (¬A rows for edge
+  necessity); counting confirming-but-uninformative cells manufactures false
+  certainty under curriculum sequencing.
+
 ## Recurring Gotchas
 
 - (2026-06-10, lexical_graph_core_release) PDF layout extraction can
