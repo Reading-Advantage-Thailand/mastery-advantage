@@ -105,8 +105,11 @@
     - Evidence: §13.1 corrected-correctness pipeline (recency → Wilson →
       guess floor) with E1/E2 examples; §13.2 algorithm steps 3/5/6 updated;
       §15.2 adapter declarations (guess floors, age bands, probe instruments)
-- [ ] Task: Rewrite placement decision rule (FR-4)
-    - [ ] §11.2 multi-evidence rule, DAG traversal, stopping criteria
+- [x] Task: Rewrite placement decision rule (FR-4)
+    - [x] §11.2 multi-evidence rule, DAG traversal, stopping criteria
+    - Evidence: §11.2 "Adaptive Frontier Walk" — 2-probe + tie-break with
+      guess correction, frontier-set DAG traversal, budget/stability
+      stopping, medium confidence cap
 - [ ] Task: Specify the rating mapper normatively (FR-5)
     - [ ] §8.4 thresholds, reveal cap, recency weighting, timing bounds
 - [ ] Task: Add ability adjustment to edge calibration (FR-6)

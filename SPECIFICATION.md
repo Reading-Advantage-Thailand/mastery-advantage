@@ -1104,15 +1104,36 @@ A new student has an empty mastered set, so the whole bottom of the graph is "re
 
 An initial knowledge state — a set of `{ nodeId, masteryEstimate, confidence }` — that seeds `getKnowledgeState` (§2.3).
 
-### 11.2 Algorithm: Adaptive Tree Walk
+### 11.2 Algorithm: Adaptive Frontier Walk
 
-1. Start at a mid-level node (domain-supplied entry point).
-2. Probe the node (§11.3).
-3. On **pass**: move toward more advanced skills (downstream in the prerequisite direction).
-4. On **fail**: move toward prerequisites (upstream).
-5. On **partial**: record partial mastery and probe siblings.
-6. Converge on the mastery frontier in roughly `O(log n)` probes rather than testing everything.
-7. Placement results enter the learner's knowledge state through the seeding contract (§11.4) and are refined by subsequent practice. They are also a key source of edge-calibration order-variation (§6).
+The graph is a DAG with wide levels, not a chain, and single probes are noisy
+(a lucky multiple-choice pass occurs at P = guess floor). The walk therefore
+maintains a **frontier set** and makes **multi-probe decisions**.
+
+1. Start at a mid-level node (domain-supplied entry point); initialize the
+   frontier with it.
+2. **Decision rule (k = 2, tie-break third):** probe each decision node
+   twice (§11.3). pass-pass → advance; fail-fail → retreat; mixed → a third
+   probe decides. `partial` counts as half a pass. For formats with guess
+   floor `g > 0` (§15.2), a probe "pass" requires guess-corrected
+   performance (§13.1), not raw correctness — by guessing alone, advancing
+   past a 4-option MC node drops from P = 0.25 (single probe) to ≈ 0.06.
+3. **DAG traversal:** a node is probe-eligible only when all of its
+   hard-edge parents (`w ≥ hardGateThreshold`) are resolved
+   (mastered / inferred / failed). On advance, add the node's children to
+   the frontier; on retreat, add its unresolved hard-edge parents. Wide
+   levels: probe at most 3 representative nodes per `content_group`,
+   selected by descending unlock value; unprobed hard-edge ancestors receive
+   `inferred` estimates per §11.4 closure (soft-edge siblings stay
+   untouched).
+4. **Stopping criteria:** probe budget exhausted (default 24), or the
+   frontier is unchanged for 4 consecutive probes, or all frontier nodes are
+   resolved.
+5. **Confidence:** direct placement estimates cap at `medium`
+   (single-session evidence) unless the domain adapter declares a
+   high-fidelity probe instrument (§15.2); inferred estimates downgrade per
+   hop (§11.4).
+6. Placement results enter the learner's knowledge state through the seeding contract (§11.4) and are refined by subsequent practice. They are also a key source of edge-calibration order-variation (§6).
 
 ### 11.3 Probe Interface
 
