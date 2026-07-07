@@ -1,11 +1,11 @@
 {
   "track_id": "kst_srs_planner_domain_utility_20260707",
   "type": "feature",
-  "status": "in_progress",
+  "status": "completed",
   "created_at": "2026-07-07T00:00:00Z",
-  "updated_at": "2026-07-07T00:00:00Z",
+  "updated_at": "2026-07-07T16:00:00Z",
   "description": "Normalize the next-skill planner priority score, add a domain-supplied utility term with a provider contract, define ranking for prerequisite-sparse domains (vocabulary), and add diversity, review-load budgeting, interleaving, and load smoothing to session composition.",
   "estimated_tasks": 17,
-  "actual_tasks": null,
-  "deviation_notes": "Blocked until kst_srs_core_correctness_20260707 FR-1 (gated readiness) is approved; utility-provider interface must be reconciled with frequency_semantic_ranking_layer_20260611 before spec edits."
+  "actual_tasks": 17,
+  "deviation_notes": "Gates satisfied 2026-07-07 (core FR-1 released in v3; ranking-layer reconciliation recorded in decisions.md D2 — that track's RANKING_LAYER_SPEC.md must express its layers as UtilitySignal sources and ship the reference English frequency provider). Released as kst-srs.v3.2. Review-load budget specified as new 10.5 (planner concern) rather than inside 12.7 as the plan sketched. Decisions self-approved under owner directive; pedagogy ratification tracked in shared tech-debt row."
 }

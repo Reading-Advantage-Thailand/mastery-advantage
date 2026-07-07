@@ -22,6 +22,10 @@
   evidence: correct for guess floors, bound with Wilson lower limits, and
   recency-weight before comparing to thresholds. Fitted/calibrated artifacts
   always ship through a human-reviewed release, never auto-applied.
+- (2026-07-07, kst_srs_planner_domain_utility) Composite scores require all
+  terms normalized to one scale before weighting; domain ranking signals
+  enter the engine only through a provenance-carrying provider contract,
+  never as synthetic graph structure.
 
 ## Recurring Gotchas
 

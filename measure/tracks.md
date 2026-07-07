@@ -70,6 +70,7 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [~] **Track: KST+SRS Planner & Domain Utility Extension** *(gates satisfied — core FR-1 released in v3; ranking-layer reconciliation in Phase 1)*
+- [x] **Track: KST+SRS Planner & Domain Utility Extension** *(COMPLETE 2026-07-07: kst-srs.v3.2 released — normalized priority, utility provider contract, sparse-domain mode, session composition)*
   *Normalize the planner priority score, add a domain utility provider contract (vocabulary and other prerequisite-sparse domains), and add diversity, review-load budgeting, interleaving, and load smoothing.*
   *Link: [./tracks/kst_srs_planner_domain_utility_20260707/](./tracks/kst_srs_planner_domain_utility_20260707/)*
+  *Coordination: [frequency_semantic_ranking_layer_20260611](./tracks/frequency_semantic_ranking_layer_20260611/) must express its layers as `UtilitySignal` sources per §10.3 and ship the reference English frequency provider (decision D2).*

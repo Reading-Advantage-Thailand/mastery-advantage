@@ -105,15 +105,28 @@
 
 ## Phase 4: Consistency Verification And Release
 
-- [ ] Task: Run full cross-reference and terminology sweep
-    - [ ] Verify references and config naming; no conflicts with core and
+- [x] Task: Run full cross-reference and terminology sweep
+    - [x] Verify references and config naming; no conflicts with core and
           calibration track text
-- [ ] Task: Bump version and changelog
-    - [ ] Coordinate version increment with other in-flight kst-srs tracks
-    - [ ] Update Appendix C and affected Appendix B rows
-- [ ] Task: Write downstream migration and coordination notes
-    - [ ] Enumerate planner/queue changes consumers must adopt
-    - [ ] Update the tech-debt registry entry to reference this track
-- [ ] Task: Final review gate and memory updates
-    - [ ] Verify all acceptance criteria in spec.md
-    - [ ] Update lessons-learned; record final approval
+    - Evidence: grep sweep ("a=0.4, b=0.3", "first 5 ready", provider/§10.x
+      references) — no stale remnants; old weight defaults fully replaced
+- [x] Task: Bump version and changelog
+    - [x] Coordinate version increment with other in-flight kst-srs tracks
+    - [x] Update Appendix C and affected Appendix B rows
+    - Evidence: header kst-srs.v3.2; v3.2 changelog paragraph; Appendix C
+      row updated (Appendix B unaffected — no new fixtures beyond v3.1's)
+- [x] Task: Write downstream migration and coordination notes
+    - [x] Enumerate planner/queue changes consumers must adopt
+    - [x] Update the tech-debt registry entry to reference this track
+    - Evidence: MIGRATION-v3.md v3.1→v3.2 section (items 13–16 with adoption
+      order, ranking-layer coordination in item 14); shared tech-debt row
+      updated for v3.2 constants
+- [x] Task: Final review gate and memory updates
+    - [x] Verify all acceptance criteria in spec.md
+    - [x] Update lessons-learned; record final approval
+    - Evidence: acceptance criteria 1–7 verified (normalized terms + E1 in
+      §10.1; provider contract reconciled and recorded in decisions.md D2;
+      sparse path §10.4 with vocabulary example and no synthetic edges;
+      diversity §10.2; budget §10.5 with throttle example; session rules
+      §12.7 preserve v3 selection; v3.2 bump + migration notes; tech-debt
+      row updated); lessons-learned entry added 2026-07-07

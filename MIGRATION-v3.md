@@ -147,3 +147,54 @@ banding computation per student per cohort window.
 
 Items 7–8 (evidence + mapper) first — they change learner-facing truth;
 then 9–10; 11–12 are offline/batch and can trail.
+
+---
+
+# v3.1 → v3.2 Migration Notes (Planner & Domain Utility)
+
+## 13. Priority score (§10.1–10.2)
+
+**Change:** all terms normalized to [0,1]; new `utility` term; defaults
+`a=0.35, b=0.20, c=0.15, d=0.10, e=0.20`; diversity cap on
+`recommendedNext`.
+
+**Action:** replace the priority computation; precompute
+`ln(1+reach)/ln(1+maxReach)` per graph release; re-derive any custom weight
+configs against the normalized scale (old weights are meaningless as-is).
+**Impact:** recommendation order changes materially wherever unlock counts
+previously dominated.
+
+## 14. Domain Utility Provider (§10.3, §15.2)
+
+**Change:** adapter-registered provider supplies `utility` with mandatory
+signal provenance; engine never reads domain signal layers directly.
+
+**Action:** additive — no provider means the term is inert. Vocabulary and
+other sparse domains should implement the reference frequency provider
+(coordinate with the `frequency_semantic_ranking_layer` deliverables, which
+must express layers as `UtilitySignal` sources).
+
+## 15. Prerequisite-sparse mode (§10.4) and review-load budget (§10.5)
+
+**Change:** static sparse detection (< 5% in-edges) switches ranking to
+`0.7·utility + 0.3·weaknessFit`; projected load above
+`maxReviewsPerDay × 0.8` recommends zero new skills with `reviewLoadState`
+surfacing (§9.4 additive fields).
+
+**Action:** compute the sparse flag at graph release; implement the 7-day
+load projection; surface `reviewLoadState` in student/teacher UIs
+("review day" messaging).
+
+## 16. Session composition (§12.7)
+
+**Change:** presentation-only round-robin interleaving; deterministic ±5%
+interval fuzz (`hash(cardId, reps)`); lightest-day load balancing.
+
+**Action:** apply after selection (selection rules from v3 are untouched);
+verify determinism — same card and rep count must always yield the same
+date.
+
+## v3.2 adoption order
+
+Item 13 first (recommendation correctness), then 15–16 (session quality);
+item 14 lands per domain as providers become available.
