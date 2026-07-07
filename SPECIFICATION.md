@@ -875,7 +875,7 @@ Submissions are converted to SRS ratings through a two-stage process:
    - Significantly slower than baseline → may downgrade rating
    - No baseline → rating is based on correctness only
 
-3. **Misconception cap** (§6): a submission that is correct but exhibits a misconception cannot map to `Easy`; cap at `Hard`, or `Again` if the misconception is severe. `misconceptionTags` is already in the review-log evidence — the mapper can see it.
+3. **Misconception cap** (§13.3): a submission that is correct but exhibits a misconception cannot map to `Easy`; cap at `Hard`, or `Again` if the misconception is severe. `misconceptionTags` is already in the review-log evidence — the mapper can see it.
 
 ```typescript
 interface SrsRatingResult {
@@ -1042,11 +1042,12 @@ interface ParentVisualizationV1 {
 }
 ```
 
-**Progress trend** (real time-delta of mastered-count over a window):
-- Compare mastered count at `now` vs `now - window` (default window: 14 days).
-- `improving`: mastered count increased by more than a threshold (e.g. +3 skills).
-- `stable`: mastered count changed within the threshold.
-- `declining`: mastered count decreased (skills left mastered set due to decay).
+**Progress trend** (real time-delta of mastered-count over a window, with
+symmetric thresholds; `Δ` = mastered count at `now` minus at `now - window`,
+default window: 14 days):
+- `improving`: `Δ ≥ +trendThreshold` (§2.4; default 3).
+- `declining`: `Δ ≤ −trendThreshold` (skills left the mastered set due to decay).
+- `stable`: `|Δ| < trendThreshold`.
 - `unknown`: insufficient history (fewer than 2 data points in the window).
 
 #### Teacher Visualization

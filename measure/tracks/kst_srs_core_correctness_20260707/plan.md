@@ -104,9 +104,11 @@
     - [x] §12.7 ordering, caps, backlog policy, preserved injection rules
     - Evidence: §12.7 reviews-first by retention ascending, newCardsPerDay
       hard cap, backlog mode; E5 worked example embedded
-- [ ] Task: Apply documentation fixes (FR-6)
-    - [ ] §8.4 cross-reference to §13.3
-    - [ ] §9.4 `progressTrend` symmetric thresholds
+- [x] Task: Apply documentation fixes (FR-6)
+    - [x] §8.4 cross-reference to §13.3
+    - [x] §9.4 `progressTrend` symmetric thresholds
+    - Evidence: misconception cap now cites §13.3; progressTrend uses
+      symmetric trendThreshold (added to MasteryConfig §2.4)
 
 ## Phase 4: Consistency Verification And Release
 
