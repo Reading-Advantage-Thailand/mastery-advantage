@@ -67,7 +67,7 @@ The raw knowledge graph is never exposed directly to users. Instead, **projectio
 |------|-----------|
 | **Node** | A learnable or reference entity in the knowledge graph |
 | **Edge** | A typed directed relationship between nodes |
-| **Weight** | How necessary a prerequisite is (0–1). 1.0 = hard gate, lower = partially compensable. Consumed by the weighted readiness formula (§2.5). |
+| **Weight** | How necessary a prerequisite is (0–1). Weights at or above `hardGateThreshold` (§2.4) are non-compensatory hard gates; lower weights are partially compensable. Consumed by the gated readiness formula (§2.5). |
 | **Confidence** | Evidence confidence for a node or edge. Ordered: `low` < `medium` < `high`. Used for filtering in cycle detection (default excludes `low`) and edge suggestion output. |
 | **Provenance** | Source reference explaining where a node or edge came from |
 | **Readiness** | Weighted composite score that a learner can productively attempt a node (§2.5) |
@@ -127,19 +127,38 @@ interface MasteryConfig {
   masteryExit: number;        // default 0.70 — retention threshold to exit mastered (must be < masteryEnter)
   readyThreshold: number;     // default 0.80 — readiness score to classify as "ready"
   nearThreshold: number;      // default 0.50 — readiness score to classify as "nearly_ready"
+  hardGateThreshold: number;  // default 1.0 — edge weight at/above which a prerequisite is a non-compensatory hard gate (§2.5)
+  trendThreshold: number;     // default 3 — mastered-count delta for progressTrend improving/declining (§9.4)
 }
 ```
 
-### 2.5 Weighted Readiness
+### 2.5 Gated Weighted Readiness
 
-The readiness score for a node `B` is the weighted average of its prerequisites' mastery levels:
+The readiness score for a node `B` treats hard-gate prerequisites
+(`w ≥ hardGateThreshold`) as non-compensatory and averages the rest:
 
 ```
-readiness(B) = Σ(w_i · m_i) / Σ(w_i)   over all prerequisite_for edges i → B
-             = 1                        if B has no prerequisites
+readiness(B) = gate(B) × comp(B)
+
+gate(B) = min(m_i : w_i ≥ hardGateThreshold)                 (1 if no hard-gate prereqs)
+comp(B) = Σ(w_j · m_j) / Σ(w_j)  over w_j < hardGateThreshold (1 if no soft prereqs)
+readiness(B) = 1                                              if B has no prerequisites
 ```
 
-where `w_i` is the edge weight and `m_i` the student's mastery level of prerequisite `i` (§2.1).
+where `w` is the `prerequisite_for` edge weight and `m` the student's mastery
+level of the prerequisite (§2.1).
+
+**Why not a plain weighted average (v2):** averaging is compensatory — an
+unmastered hard gate could be outvoted by mastered soft prerequisites.
+**Worked example:** B with prerequisites A (w=1.0, m=0), C/D/E (w=0.5, m=1):
+the v2 average gives 1.5/2.5 = 0.60 → `nearly_ready` despite the unmastered
+hard gate; v3 gives gate = 0, readiness = 0 → `blocked`. With a decaying
+hard gate A (w=1.0, m=0.92) and soft C (w=0.5, m=1.0), D (w=0.5, m=0.70):
+readiness = 0.92 × 0.85 = 0.782 → `nearly_ready`.
+
+**Migration property:** for graphs with no edges at
+`w ≥ hardGateThreshold`, v3 readiness is identical to the v2 weighted
+average.
 
 Classification:
 
@@ -159,7 +178,7 @@ getOuterFringe(student, graph, now):
   ready = []
   nearly_ready = []
   for each skill node B not in state.mastered:
-    r = readiness(B, state)              // §2.5 weighted formula
+    r = readiness(B, state)              // §2.5 gated weighted formula
     if r ≥ readyThreshold:
       ready.push({ nodeId: B.id, readiness: r })
     else if r ≥ nearThreshold:
@@ -191,11 +210,17 @@ function getOuterFringe(
 
   for (const node of graph.nodes.filter(n => n.kind === 'skill')) {
     if (state.mastered.has(node.id)) continue;
-    const prereqs = prereqsFor.get(node.id);
-    const r = prereqs && prereqs.length > 0
-      ? prereqs.reduce((sum, p) => sum + p.weight * getMasteryLevel(p.sourceId, state), 0)
-        / prereqs.reduce((sum, p) => sum + p.weight, 0)
+    const prereqs = prereqsFor.get(node.id) ?? [];
+    const hard = prereqs.filter(p => p.weight >= config.hardGateThreshold);
+    const soft = prereqs.filter(p => p.weight < config.hardGateThreshold);
+    const gate = hard.length > 0
+      ? Math.min(...hard.map(p => getMasteryLevel(p.sourceId, state)))
       : 1.0;
+    const comp = soft.length > 0
+      ? soft.reduce((sum, p) => sum + p.weight * getMasteryLevel(p.sourceId, state), 0)
+        / soft.reduce((sum, p) => sum + p.weight, 0)
+      : 1.0;
+    const r = prereqs.length > 0 ? gate * comp : 1.0;
     if (r >= config.readyThreshold) ready.push({ nodeId: node.id, readiness: r });
     else if (r >= config.nearThreshold) nearly_ready.push({ nodeId: node.id, readiness: r });
   }
@@ -949,10 +974,10 @@ interface StudentVisualizationV1 {
 }
 ```
 
-**Node state computation** (uses weighted readiness, §2.5):
+**Node state computation** (uses gated weighted readiness, §2.5):
 1. If `learnerState[nodeId]` exists with mastery level, use it
 2. If node is in `masteredIds`, state is `mastered`
-3. Compute `readiness(nodeId)` from weighted prerequisites (§2.5)
+3. Compute `readiness(nodeId)` from gated prerequisites (§2.5)
 4. If `readiness < nearThreshold`, state is `blocked`
 5. If `readiness >= readyThreshold`, state is `ready`
 6. Otherwise, state is `unknown`

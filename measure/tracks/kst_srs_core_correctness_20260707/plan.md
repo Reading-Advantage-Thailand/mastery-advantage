@@ -78,10 +78,12 @@
 
 ## Phase 3: Specification Edits
 
-- [ ] Task: Rewrite readiness sections for gated formula (FR-1)
-    - [ ] §1.4 weight definition, §2.4 config, §2.5 formula
-    - [ ] §2.6 pseudocode and TypeScript implementation
-    - [ ] §9.4 node-state computation consistency
+- [x] Task: Rewrite readiness sections for gated formula (FR-1)
+    - [x] §1.4 weight definition, §2.4 config, §2.5 formula
+    - [x] §2.6 pseudocode and TypeScript implementation
+    - [x] §9.4 node-state computation consistency
+    - Evidence: §2.5 now "Gated Weighted Readiness" with E1 worked example
+      and migration property; hardGateThreshold + trendThreshold in §2.4
 - [ ] Task: Rewrite edge-calibration update rule (FR-2)
     - [ ] §6.4 update conditioning (¬A rows only) and confidence bucketing
     - [ ] §6.5 self-selection bias note with deferral pointer
