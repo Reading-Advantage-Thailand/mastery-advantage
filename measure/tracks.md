@@ -70,6 +70,6 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: KST+SRS Planner & Domain Utility Extension** *(blocked by core correctness FR-1; interface reconciled with ranking-layer track)*
+- [~] **Track: KST+SRS Planner & Domain Utility Extension** *(gates satisfied — core FR-1 released in v3; ranking-layer reconciliation in Phase 1)*
   *Normalize the planner priority score, add a domain utility provider contract (vocabulary and other prerequisite-sparse domains), and add diversity, review-load budgeting, interleaving, and load smoothing.*
   *Link: [./tracks/kst_srs_planner_domain_utility_20260707/](./tracks/kst_srs_planner_domain_utility_20260707/)*

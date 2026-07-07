@@ -11,29 +11,42 @@
 
 ## Phase 1: Ranking And Contract Decisions
 
-- [ ] Task: Decide priority-term normalizations (FR-1)
-    - [ ] Choose the `unlockValue` normalization (log-scaled vs percentile)
-    - [ ] Define bounded `goalProximity` and combined `weaknessFit` forms
-    - [ ] Re-derive default weights `a…e` on the normalized scale
-    - [ ] Record decisions and rationale in a Phase 1 decision log
-- [ ] Task: Define the domain utility provider contract (FR-2)
-    - [ ] Specify interface, determinism, versioning, and provenance fields
-    - [ ] Define multi-signal composition and default-off behavior
-- [ ] Task: Decide the prerequisite-sparse ranking path (FR-3)
-    - [ ] Define degeneracy detection and the utility-led ordering rule
-    - [ ] Confirm zero-synthetic-prerequisite constraint with lexical tracks
-- [ ] Task: Decide diversity and review-load budget rules (FR-4, FR-5)
-    - [ ] Choose per-group cap vs MMR reranking; define tie-breaking
-    - [ ] Define review-load projection formula, budget, and throttle rule
-- [ ] Task: Decide session composition rules (FR-6)
-    - [ ] Define interleaving within core-track queue constraints
-    - [ ] Define deterministic interval fuzzing and bounded load balancing
-- [ ] Task: Reconcile with the ranking-layer track and approve Phase 1
-    - [ ] Joint review with frequency_semantic_ranking_layer_20260611 scope:
+- [x] Task: Decide priority-term normalizations (FR-1)
+    - [x] Choose the `unlockValue` normalization (log-scaled vs percentile)
+    - [x] Define bounded `goalProximity` and combined `weaknessFit` forms
+    - [x] Re-derive default weights `a…e` on the normalized scale
+    - [x] Record decisions and rationale in a Phase 1 decision log
+    - Evidence: `decisions.md` D1 — log-scaled unlock, 1/(1+d) goal,
+      noisy-OR weakness, weights .35/.20/.15/.10/.20
+- [x] Task: Define the domain utility provider contract (FR-2)
+    - [x] Specify interface, determinism, versioning, and provenance fields
+    - [x] Define multi-signal composition and default-off behavior
+    - Evidence: `decisions.md` D2 — DomainUtilityProvider + UtilitySignal,
+      provider-internal composition, inert default
+- [x] Task: Decide the prerequisite-sparse ranking path (FR-3)
+    - [x] Define degeneracy detection and the utility-led ordering rule
+    - [x] Confirm zero-synthetic-prerequisite constraint with lexical tracks
+    - Evidence: `decisions.md` D3 — <5% in-edge detection, gate-only
+      readiness, 0.7 utility / 0.3 weakness, no synthetic edges
+- [x] Task: Decide diversity and review-load budget rules (FR-4, FR-5)
+    - [x] Choose per-group cap vs MMR reranking; define tie-breaking
+    - [x] Define review-load projection formula, budget, and throttle rule
+    - Evidence: `decisions.md` D4 — cap 2 per contains-group; 7-day
+      projected load vs maxReviewsPerDay×0.8, reviewLoadState
+- [x] Task: Decide session composition rules (FR-6)
+    - [x] Define interleaving within core-track queue constraints
+    - [x] Define deterministic interval fuzzing and bounded load balancing
+    - Evidence: `decisions.md` D5 — presentation-only round-robin, ±5%
+      hash-deterministic fuzz, lightest-day placement
+- [x] Task: Reconcile with the ranking-layer track and approve Phase 1
+    - [x] Joint review with frequency_semantic_ranking_layer_20260611 scope:
           one shared utility interface, no duplicated contracts
-    - [ ] Pedagogy reviewer approves ranking behavior; engineering reviewer
-          approves contracts and performance posture
-    - [ ] Record approvals, the reconciliation decision, and unresolved issues
+    - [x] Pedagogy reviewer approves ranking behavior; engineering reviewer
+          approves contracts and performance posture — ⚠ pedagogy by owner
+          directive; constants folded into curriculum-review tech debt
+    - [x] Record approvals, the reconciliation decision, and unresolved issues
+    - Evidence: `decisions.md` D2 reconciliation + Approval Record (ranking
+      track supplies UtilitySignal sources and reference English provider)
 
 ## Phase 2: Acceptance Examples
 
