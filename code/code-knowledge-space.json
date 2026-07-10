@@ -1,19 +1,19 @@
 {
   "schemaVersion": "code-knowledge-space.v1",
   "graphId": "codecamp.core",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "releaseStatus": "reviewed",
   "provenance": {
     "authority": "Mastery Advantage Code domain",
     "authorityPath": "code/code-knowledge-space.json",
     "sourceRepository": "mastery-advantage",
-    "authoredAgainstRevision": "0c5f0c029f910deb08493a3bfee269485c6816c7",
+    "authoredAgainstRevision": "61135f1112a48c125ebd8c8f16acfd3b0aeaee34",
     "authoredAt": "2026-07-10T16:45:00.000Z"
   },
   "migration": {
-    "previousVersion": null,
+    "previousVersion": "1.0.0",
     "stableIds": true,
-    "impact": "Initial Codecamp objective graph; existing completion records are unchanged until curriculum bindings publish."
+    "impact": "Additive objectives for development environment, internationalization, and Measure workflow bindings; existing objective IDs and learner records remain unchanged."
   },
   "review": {
     "graphOwner": {
@@ -340,6 +340,21 @@
           "technology": "Next.js"
         }
       },
+      {
+        "id": "codecamp.frontend.skill.internationalization",
+        "kind": "skill",
+        "title": "Internationalize interface chrome without translating technical curriculum",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp module 14 internationalization curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "frontend",
+          "objectiveType": "application",
+          "priority": "should",
+          "lifecycle": "active",
+          "technology": "next-intl"
+        }
+      },
 
       {
         "id": "codecamp.backend.concept.http-api",
@@ -534,6 +549,21 @@
         }
       },
       {
+        "id": "codecamp.workflow.skill.development-environment",
+        "kind": "skill",
+        "title": "Operate the Codecamp terminal, Node.js, pnpm, and editor environment",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp module 1 development environment curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "workflow",
+          "objectiveType": "workflow",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "Node.js, pnpm, and VS Code"
+        }
+      },
+      {
         "id": "codecamp.workflow.skill.pull-requests",
         "kind": "skill",
         "title": "Submit a focused pull request with verification evidence",
@@ -561,6 +591,21 @@
           "priority": "must",
           "lifecycle": "active",
           "technology": "GitHub"
+        }
+      },
+      {
+        "id": "codecamp.workflow.skill.measure-development",
+        "kind": "skill",
+        "title": "Execute a contract-first Measure track with Red, Green, review, and closeout",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp module 16 Measure curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "workflow",
+          "objectiveType": "workflow",
+          "priority": "should",
+          "lifecycle": "active",
+          "technology": "Measure"
         }
       },
 
@@ -1084,6 +1129,18 @@
         "metadata": { "gate": "none" }
       },
       {
+        "id": "codecamp.edge.group-frontend-internationalization",
+        "type": "contains",
+        "sourceId": "codecamp.frontend.group",
+        "targetId": "codecamp.frontend.skill.internationalization",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Frontend cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
         "id": "codecamp.edge.group-backend-http",
         "type": "contains",
         "sourceId": "codecamp.backend.group",
@@ -1240,6 +1297,18 @@
         "metadata": { "gate": "none" }
       },
       {
+        "id": "codecamp.edge.group-workflow-environment",
+        "type": "contains",
+        "sourceId": "codecamp.workflow.group",
+        "targetId": "codecamp.workflow.skill.development-environment",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Workflow cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
         "id": "codecamp.edge.group-workflow-pr",
         "type": "contains",
         "sourceId": "codecamp.workflow.group",
@@ -1256,6 +1325,18 @@
         "type": "contains",
         "sourceId": "codecamp.workflow.group",
         "targetId": "codecamp.workflow.skill.review-response",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Workflow cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-workflow-measure",
+        "type": "contains",
+        "sourceId": "codecamp.workflow.group",
+        "targetId": "codecamp.workflow.skill.measure-development",
         "weight": 1,
         "confidence": "high",
         "sourceRefs": ["Codecamp taxonomy"],
@@ -1565,6 +1646,18 @@
         "metadata": { "gate": "hard" }
       },
       {
+        "id": "codecamp.edge.react-before-internationalization",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.frontend.skill.react-components",
+        "targetId": "codecamp.frontend.skill.internationalization",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp curriculum binding review"],
+        "reviewStatus": "approved",
+        "rationale": "Interface localization is applied after students can compose React components.",
+        "metadata": { "gate": "hard" }
+      },
+      {
         "id": "codecamp.edge.async-before-http",
         "type": "prerequisite_for",
         "sourceId": "codecamp.foundation.skill.async-flow",
@@ -1721,6 +1814,18 @@
         "metadata": { "gate": "hard" }
       },
       {
+        "id": "codecamp.edge.environment-before-git",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.workflow.skill.development-environment",
+        "targetId": "codecamp.workflow.skill.git-branches",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp curriculum binding review"],
+        "reviewStatus": "approved",
+        "rationale": "Students need a working terminal and toolchain before authentic branch work.",
+        "metadata": { "gate": "hard" }
+      },
+      {
         "id": "codecamp.edge.git-before-pr",
         "type": "prerequisite_for",
         "sourceId": "codecamp.workflow.skill.git-branches",
@@ -1730,6 +1835,18 @@
         "sourceRefs": ["Codecamp sequence review"],
         "reviewStatus": "approved",
         "rationale": "Pull requests are created from committed branches.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.git-before-measure",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.workflow.skill.git-branches",
+        "targetId": "codecamp.workflow.skill.measure-development",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp curriculum binding review"],
+        "reviewStatus": "approved",
+        "rationale": "Measure tasks preserve Red and Green evidence through commits.",
         "metadata": { "gate": "hard" }
       },
       {
@@ -2143,6 +2260,18 @@
         "metadata": { "gate": "none" }
       },
       {
+        "id": "codecamp.edge.align-internationalization",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.frontend.skill.internationalization",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.7,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Internationalized interfaces project to constructive and inclusive technology application.",
+        "metadata": { "gate": "none" }
+      },
+      {
         "id": "codecamp.edge.align-http",
         "type": "aligned_to_standard",
         "sourceId": "codecamp.backend.concept.http-api",
@@ -2299,6 +2428,18 @@
         "metadata": { "gate": "none" }
       },
       {
+        "id": "codecamp.edge.align-development-environment",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.workflow.skill.development-environment",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Operating a professional toolchain projects to effective technology application.",
+        "metadata": { "gate": "none" }
+      },
+      {
         "id": "codecamp.edge.align-pr",
         "type": "aligned_to_standard",
         "sourceId": "codecamp.workflow.skill.pull-requests",
@@ -2320,6 +2461,18 @@
         "sourceRefs": ["CSTA projection review"],
         "reviewStatus": "approved",
         "rationale": "Review response projects to collaboration and communication practices.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-measure",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.workflow.skill.measure-development",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Measure workflow projects to collaborative creation, testing, and refinement practices.",
         "metadata": { "gate": "none" }
       },
       {

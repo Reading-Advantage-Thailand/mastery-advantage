@@ -1,7 +1,7 @@
 # Mastery Advantage — Code Domain
 
 > **Status: Initial reviewed release** — `code-knowledge-space.json` is the
-> normative Codecamp graph for release `1.0.0`.
+> normative Codecamp graph for release `1.1.0`.
 
 This directory owns the versioned knowledge graph and governance source for the
 **Codecamp Advantage** consumer. Runtime schemas and validation live in the shared
