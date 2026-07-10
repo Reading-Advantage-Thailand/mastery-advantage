@@ -1,0 +1,2531 @@
+{
+  "schemaVersion": "code-knowledge-space.v1",
+  "graphId": "codecamp.core",
+  "version": "1.0.0",
+  "releaseStatus": "reviewed",
+  "provenance": {
+    "authority": "Mastery Advantage Code domain",
+    "authorityPath": "code/code-knowledge-space.json",
+    "sourceRepository": "mastery-advantage",
+    "authoredAgainstRevision": "0c5f0c029f910deb08493a3bfee269485c6816c7",
+    "authoredAt": "2026-07-10T16:45:00.000Z"
+  },
+  "migration": {
+    "previousVersion": null,
+    "stableIds": true,
+    "impact": "Initial Codecamp objective graph; existing completion records are unchanged until curriculum bindings publish."
+  },
+  "review": {
+    "graphOwner": {
+      "name": "Codecamp graph owner",
+      "status": "approved",
+      "reviewedAt": "2026-07-10"
+    },
+    "curriculumOwner": {
+      "name": "Codecamp curriculum owner",
+      "status": "approved",
+      "reviewedAt": "2026-07-10"
+    },
+    "technicalMaintainer": {
+      "name": "Codecamp technical maintainer",
+      "status": "approved",
+      "reviewedAt": "2026-07-10"
+    },
+    "standardsReviewer": {
+      "name": "Standards projection reviewer",
+      "status": "approved",
+      "reviewedAt": "2026-07-10"
+    }
+  },
+  "standardsProjections": [
+    {
+      "framework": "CSTA-2017",
+      "status": "projection",
+      "source": "https://csteachers.org/k12standards/"
+    },
+    {
+      "framework": "THAI-ICT-2008",
+      "status": "projection",
+      "source": "https://academic.obec.go.th/web/document/view/113"
+    }
+  ],
+  "knowledgeSpace": {
+    "nodes": [
+      {
+        "id": "codecamp.domain",
+        "kind": "domain",
+        "title": "Codecamp Advantage",
+        "domain": "codecamp",
+        "description": "Product-specific coding objectives for the Codecamp learning path.",
+        "sourceRefs": ["Codecamp curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "foundation",
+          "objectiveType": "container",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.foundation.group",
+        "kind": "content_group",
+        "title": "Programming foundations",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp modules 1-5"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "foundation",
+          "objectiveType": "container",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.frontend.group",
+        "kind": "content_group",
+        "title": "Frontend development",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp modules 6-9"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "frontend",
+          "objectiveType": "container",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.backend.group",
+        "kind": "content_group",
+        "title": "Backend development",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp modules 10-13"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "backend",
+          "objectiveType": "container",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.data.group",
+        "kind": "content_group",
+        "title": "Data and persistence",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp modules 11-13"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "data",
+          "objectiveType": "container",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.testing.group",
+        "kind": "content_group",
+        "title": "Testing and quality",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp modules 7-18"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "testing",
+          "objectiveType": "container",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.ai.group",
+        "kind": "content_group",
+        "title": "AI-assisted software",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp modules 14-18"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "ai",
+          "objectiveType": "container",
+          "priority": "should",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.workflow.group",
+        "kind": "content_group",
+        "title": "Professional workflow",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp GitHub workflow"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "workflow",
+          "objectiveType": "container",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.deployment.group",
+        "kind": "content_group",
+        "title": "Deployment and operations",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp deployment curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "deployment",
+          "objectiveType": "container",
+          "priority": "should",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.architecture.group",
+        "kind": "content_group",
+        "title": "Application architecture",
+        "domain": "codecamp",
+        "sourceRefs": ["Reading Advantage backend-as-code architecture"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "architecture",
+          "objectiveType": "container",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.game-development.group",
+        "kind": "content_group",
+        "title": "Advantage Play Kit game development",
+        "domain": "codecamp",
+        "sourceRefs": ["Advantage Play Kit ABI"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "game-development",
+          "objectiveType": "container",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+
+      {
+        "id": "codecamp.foundation.concept.variables",
+        "kind": "concept",
+        "title": "Model values with variables and immutable bindings",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp programming foundations"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "foundation",
+          "objectiveType": "concept",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.foundation.concept.control-flow",
+        "kind": "concept",
+        "title": "Trace selection and iteration",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp programming foundations"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "foundation",
+          "objectiveType": "concept",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.foundation.skill.functions",
+        "kind": "skill",
+        "title": "Decompose behavior into functions",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp programming foundations"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "foundation",
+          "objectiveType": "concept",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.foundation.skill.async-flow",
+        "kind": "skill",
+        "title": "Reason about asynchronous control flow",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp JavaScript curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "foundation",
+          "objectiveType": "concept",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "JavaScript"
+        }
+      },
+      {
+        "id": "codecamp.foundation.skill.typescript-contracts",
+        "kind": "skill",
+        "title": "Express program contracts with TypeScript",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp TypeScript curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "foundation",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "TypeScript"
+        }
+      },
+
+      {
+        "id": "codecamp.frontend.skill.semantic-html-css",
+        "kind": "skill",
+        "title": "Build accessible interfaces with semantic HTML and CSS",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp frontend curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "frontend",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "HTML and CSS"
+        }
+      },
+      {
+        "id": "codecamp.frontend.skill.react-components",
+        "kind": "skill",
+        "title": "Compose React components with explicit data flow",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp React curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "frontend",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "React"
+        }
+      },
+      {
+        "id": "codecamp.frontend.skill.client-state",
+        "kind": "skill",
+        "title": "Model local and shared client state",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp React curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "frontend",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "React"
+        }
+      },
+      {
+        "id": "codecamp.frontend.skill.next-routing",
+        "kind": "skill",
+        "title": "Build route-based experiences with thin Next.js surfaces",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp Next.js curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "frontend",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "Next.js"
+        }
+      },
+
+      {
+        "id": "codecamp.backend.concept.http-api",
+        "kind": "concept",
+        "title": "Explain HTTP request-response contracts",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp backend curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "backend",
+          "objectiveType": "concept",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.backend.skill.runtime-validation",
+        "kind": "skill",
+        "title": "Validate external inputs and outputs at runtime",
+        "domain": "codecamp",
+        "sourceRefs": ["Reading Advantage Zod contract policy"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "backend",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "Zod"
+        }
+      },
+      {
+        "id": "codecamp.backend.skill.authorization",
+        "kind": "skill",
+        "title": "Separate authentication from resource authorization",
+        "domain": "codecamp",
+        "sourceRefs": ["Reading Advantage permission architecture"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "backend",
+          "objectiveType": "workflow",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+
+      {
+        "id": "codecamp.data.concept.relational-model",
+        "kind": "concept",
+        "title": "Model relational data and ownership",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp database curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "data",
+          "objectiveType": "concept",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.data.skill.drizzle-queries",
+        "kind": "skill",
+        "title": "Implement typed queries and migrations with Drizzle",
+        "domain": "codecamp",
+        "sourceRefs": ["Reading Advantage database architecture"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "data",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "Drizzle ORM"
+        }
+      },
+      {
+        "id": "codecamp.data.skill.tenant-scoping",
+        "kind": "skill",
+        "title": "Scope tenant data through verified school ownership",
+        "domain": "codecamp",
+        "sourceRefs": ["Reading Advantage TenantDB contract"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "data",
+          "objectiveType": "workflow",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+
+      {
+        "id": "codecamp.testing.skill.unit-tests",
+        "kind": "skill",
+        "title": "Write focused unit tests against public behavior",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp testing curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "testing",
+          "objectiveType": "workflow",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "Vitest"
+        }
+      },
+      {
+        "id": "codecamp.testing.skill.integration-tests",
+        "kind": "skill",
+        "title": "Verify contracts across module boundaries",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp testing curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "testing",
+          "objectiveType": "workflow",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.testing.skill.browser-acceptance",
+        "kind": "skill",
+        "title": "Exercise user-visible behavior in a real browser",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp acceptance policy"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "testing",
+          "objectiveType": "workflow",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "Playwright"
+        }
+      },
+
+      {
+        "id": "codecamp.ai.concept.structured-output",
+        "kind": "concept",
+        "title": "Constrain model output with runtime schemas",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp AI curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "ai",
+          "objectiveType": "concept",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.ai.skill.provider-adapter",
+        "kind": "skill",
+        "title": "Call AI models through a provider-neutral adapter",
+        "domain": "codecamp",
+        "sourceRefs": ["Reading Advantage AI architecture"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "ai",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "AI SDK"
+        }
+      },
+      {
+        "id": "codecamp.ai.skill.evaluation",
+        "kind": "skill",
+        "title": "Evaluate prompts and structured responses with fixtures",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp AI curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "ai",
+          "objectiveType": "workflow",
+          "priority": "should",
+          "lifecycle": "active"
+        }
+      },
+
+      {
+        "id": "codecamp.workflow.skill.git-branches",
+        "kind": "skill",
+        "title": "Use commits and branches to preserve intent",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp GitHub workflow"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "workflow",
+          "objectiveType": "workflow",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "Git"
+        }
+      },
+      {
+        "id": "codecamp.workflow.skill.pull-requests",
+        "kind": "skill",
+        "title": "Submit a focused pull request with verification evidence",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp GitHub workflow"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "workflow",
+          "objectiveType": "workflow",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "GitHub"
+        }
+      },
+      {
+        "id": "codecamp.workflow.skill.review-response",
+        "kind": "skill",
+        "title": "Interpret and respond to human or LLM review feedback",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp PR review workflow"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "workflow",
+          "objectiveType": "workflow",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "GitHub"
+        }
+      },
+
+      {
+        "id": "codecamp.deployment.skill.container-build",
+        "kind": "skill",
+        "title": "Build a reproducible application container",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp deployment curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "deployment",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "Docker"
+        }
+      },
+      {
+        "id": "codecamp.deployment.skill.cloud-run",
+        "kind": "skill",
+        "title": "Deploy and verify a containerized service",
+        "domain": "codecamp",
+        "sourceRefs": ["Codecamp Cloud Run runbook"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "deployment",
+          "objectiveType": "workflow",
+          "priority": "should",
+          "lifecycle": "active",
+          "technology": "Cloud Run"
+        }
+      },
+      {
+        "id": "codecamp.deployment.skill.observability",
+        "kind": "skill",
+        "title": "Use structured logs and health checks to verify operation",
+        "domain": "codecamp",
+        "sourceRefs": ["Reading Advantage observability policy"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "deployment",
+          "objectiveType": "workflow",
+          "priority": "should",
+          "lifecycle": "active"
+        }
+      },
+
+      {
+        "id": "codecamp.architecture.skill.contract-first",
+        "kind": "skill",
+        "title": "Design Zod contracts before transport code",
+        "domain": "codecamp",
+        "sourceRefs": ["Reading Advantage backend-as-code architecture"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "architecture",
+          "objectiveType": "workflow",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.architecture.skill.backend-module",
+        "kind": "skill",
+        "title": "Keep business logic in transport-independent backend modules",
+        "domain": "codecamp",
+        "sourceRefs": ["Reading Advantage backend-as-code architecture"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "architecture",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.architecture.skill.shared-package",
+        "kind": "skill",
+        "title": "Extract reusable LMS behavior into typed packages",
+        "domain": "codecamp",
+        "sourceRefs": ["Reading Advantage monorepo architecture"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "architecture",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+
+      {
+        "id": "codecamp.game-development.concept.game-loop",
+        "kind": "concept",
+        "title": "Explain update and render work in a game loop",
+        "domain": "codecamp",
+        "sourceRefs": ["Advantage Play Kit curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "game-development",
+          "objectiveType": "concept",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.game-development.skill.game-state",
+        "kind": "skill",
+        "title": "Model deterministic game state and transitions",
+        "domain": "codecamp",
+        "sourceRefs": ["Advantage Play Kit curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "game-development",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.game-development.skill.phaser-lifecycle",
+        "kind": "skill",
+        "title": "Implement Phaser scene lifecycle methods",
+        "domain": "codecamp",
+        "sourceRefs": ["Advantage Play Kit ABI"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "game-development",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "Phaser"
+        }
+      },
+      {
+        "id": "codecamp.game-development.skill.input",
+        "kind": "skill",
+        "title": "Map keyboard and pointer input to game intentions",
+        "domain": "codecamp",
+        "sourceRefs": ["Advantage Play Kit curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "game-development",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "Phaser"
+        }
+      },
+      {
+        "id": "codecamp.game-development.skill.physics",
+        "kind": "skill",
+        "title": "Use collision and movement physics deliberately",
+        "domain": "codecamp",
+        "sourceRefs": ["Advantage Play Kit curriculum"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "game-development",
+          "objectiveType": "application",
+          "priority": "should",
+          "lifecycle": "active",
+          "technology": "Phaser"
+        }
+      },
+      {
+        "id": "codecamp.game-development.skill.apk-contract",
+        "kind": "skill",
+        "title": "Implement the Advantage Play Kit cartridge contract",
+        "domain": "codecamp",
+        "sourceRefs": ["Advantage Play Kit ABI"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "game-development",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "Advantage Play Kit"
+        }
+      },
+      {
+        "id": "codecamp.game-development.skill.react-host",
+        "kind": "skill",
+        "title": "Host a client-only Phaser cartridge from React",
+        "domain": "codecamp",
+        "sourceRefs": ["Advantage Play Kit React host contract"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "game-development",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active",
+          "technology": "React and Phaser"
+        }
+      },
+      {
+        "id": "codecamp.game-development.skill.cartridge-testing",
+        "kind": "skill",
+        "title": "Verify cartridge ABI, logic, and browser behavior",
+        "domain": "codecamp",
+        "sourceRefs": ["Advantage Play Kit quality gates"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "game-development",
+          "objectiveType": "workflow",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.game-development.skill.accessibility",
+        "kind": "skill",
+        "title": "Provide keyboard, readable, and reduced-motion game access",
+        "domain": "codecamp",
+        "sourceRefs": ["Advantage Play Kit accessibility policy"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "game-development",
+          "objectiveType": "application",
+          "priority": "must",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.game-development.skill.assets",
+        "kind": "skill",
+        "title": "Load licensed assets through explicit manifests",
+        "domain": "codecamp",
+        "sourceRefs": ["Advantage Play Kit asset policy"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "game-development",
+          "objectiveType": "workflow",
+          "priority": "should",
+          "lifecycle": "active"
+        }
+      },
+      {
+        "id": "codecamp.game-development.skill.performance",
+        "kind": "skill",
+        "title": "Measure and control cartridge performance",
+        "domain": "codecamp",
+        "sourceRefs": ["Advantage Play Kit performance policy"],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "game-development",
+          "objectiveType": "workflow",
+          "priority": "should",
+          "lifecycle": "active"
+        }
+      },
+
+      {
+        "id": "standards.csta.standard.algorithms-programming",
+        "kind": "standard",
+        "title": "CSTA Algorithms and Programming projection",
+        "domain": "standards.csta",
+        "sourceRefs": [
+          {
+            "source": "CSTA K-12 Computer Science Standards, Revised 2017",
+            "url": "https://csteachers.org/k12standards/"
+          }
+        ],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "standards",
+          "objectiveType": "projection",
+          "priority": "should",
+          "lifecycle": "active",
+          "standardsCode": "CSTA-AP"
+        }
+      },
+      {
+        "id": "standards.thai-ict.standard.technology-application",
+        "kind": "standard",
+        "title": "Thai Basic Education technology application projection",
+        "domain": "standards.thai-ict",
+        "sourceRefs": [
+          {
+            "source": "Thailand Basic Education Core Curriculum B.E. 2551",
+            "url": "https://academic.obec.go.th/web/document/view/113"
+          }
+        ],
+        "reviewStatus": "approved",
+        "metadata": {
+          "cluster": "standards",
+          "objectiveType": "projection",
+          "priority": "should",
+          "lifecycle": "active",
+          "standardsCode": "OT3.1"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "codecamp.edge.contains-foundation",
+        "type": "contains",
+        "sourceId": "codecamp.domain",
+        "targetId": "codecamp.foundation.group",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Product domain contains the foundation cluster.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.contains-frontend",
+        "type": "contains",
+        "sourceId": "codecamp.domain",
+        "targetId": "codecamp.frontend.group",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Product domain contains the frontend cluster.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.contains-backend",
+        "type": "contains",
+        "sourceId": "codecamp.domain",
+        "targetId": "codecamp.backend.group",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Product domain contains the backend cluster.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.contains-data",
+        "type": "contains",
+        "sourceId": "codecamp.domain",
+        "targetId": "codecamp.data.group",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Product domain contains the data cluster.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.contains-testing",
+        "type": "contains",
+        "sourceId": "codecamp.domain",
+        "targetId": "codecamp.testing.group",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Product domain contains the testing cluster.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.contains-ai",
+        "type": "contains",
+        "sourceId": "codecamp.domain",
+        "targetId": "codecamp.ai.group",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Product domain contains the AI cluster.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.contains-workflow",
+        "type": "contains",
+        "sourceId": "codecamp.domain",
+        "targetId": "codecamp.workflow.group",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Product domain contains the workflow cluster.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.contains-deployment",
+        "type": "contains",
+        "sourceId": "codecamp.domain",
+        "targetId": "codecamp.deployment.group",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Product domain contains the deployment cluster.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.contains-architecture",
+        "type": "contains",
+        "sourceId": "codecamp.domain",
+        "targetId": "codecamp.architecture.group",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Product domain contains the architecture cluster.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.contains-game-development",
+        "type": "contains",
+        "sourceId": "codecamp.domain",
+        "targetId": "codecamp.game-development.group",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Product domain contains the game-development cluster.",
+        "metadata": { "gate": "none" }
+      },
+
+      {
+        "id": "codecamp.edge.group-foundation-variables",
+        "type": "contains",
+        "sourceId": "codecamp.foundation.group",
+        "targetId": "codecamp.foundation.concept.variables",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Foundation cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-foundation-control-flow",
+        "type": "contains",
+        "sourceId": "codecamp.foundation.group",
+        "targetId": "codecamp.foundation.concept.control-flow",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Foundation cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-foundation-functions",
+        "type": "contains",
+        "sourceId": "codecamp.foundation.group",
+        "targetId": "codecamp.foundation.skill.functions",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Foundation cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-foundation-async",
+        "type": "contains",
+        "sourceId": "codecamp.foundation.group",
+        "targetId": "codecamp.foundation.skill.async-flow",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Foundation cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-foundation-typescript",
+        "type": "contains",
+        "sourceId": "codecamp.foundation.group",
+        "targetId": "codecamp.foundation.skill.typescript-contracts",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Foundation cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-frontend-html",
+        "type": "contains",
+        "sourceId": "codecamp.frontend.group",
+        "targetId": "codecamp.frontend.skill.semantic-html-css",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Frontend cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-frontend-react",
+        "type": "contains",
+        "sourceId": "codecamp.frontend.group",
+        "targetId": "codecamp.frontend.skill.react-components",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Frontend cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-frontend-state",
+        "type": "contains",
+        "sourceId": "codecamp.frontend.group",
+        "targetId": "codecamp.frontend.skill.client-state",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Frontend cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-frontend-next",
+        "type": "contains",
+        "sourceId": "codecamp.frontend.group",
+        "targetId": "codecamp.frontend.skill.next-routing",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Frontend cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-backend-http",
+        "type": "contains",
+        "sourceId": "codecamp.backend.group",
+        "targetId": "codecamp.backend.concept.http-api",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Backend cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-backend-validation",
+        "type": "contains",
+        "sourceId": "codecamp.backend.group",
+        "targetId": "codecamp.backend.skill.runtime-validation",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Backend cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-backend-authz",
+        "type": "contains",
+        "sourceId": "codecamp.backend.group",
+        "targetId": "codecamp.backend.skill.authorization",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Backend cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-data-relational",
+        "type": "contains",
+        "sourceId": "codecamp.data.group",
+        "targetId": "codecamp.data.concept.relational-model",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Data cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-data-drizzle",
+        "type": "contains",
+        "sourceId": "codecamp.data.group",
+        "targetId": "codecamp.data.skill.drizzle-queries",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Data cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-data-tenant",
+        "type": "contains",
+        "sourceId": "codecamp.data.group",
+        "targetId": "codecamp.data.skill.tenant-scoping",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Data cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-testing-unit",
+        "type": "contains",
+        "sourceId": "codecamp.testing.group",
+        "targetId": "codecamp.testing.skill.unit-tests",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Testing cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-testing-integration",
+        "type": "contains",
+        "sourceId": "codecamp.testing.group",
+        "targetId": "codecamp.testing.skill.integration-tests",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Testing cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-testing-browser",
+        "type": "contains",
+        "sourceId": "codecamp.testing.group",
+        "targetId": "codecamp.testing.skill.browser-acceptance",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Testing cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-ai-structured",
+        "type": "contains",
+        "sourceId": "codecamp.ai.group",
+        "targetId": "codecamp.ai.concept.structured-output",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "AI cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-ai-adapter",
+        "type": "contains",
+        "sourceId": "codecamp.ai.group",
+        "targetId": "codecamp.ai.skill.provider-adapter",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "AI cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-ai-evaluation",
+        "type": "contains",
+        "sourceId": "codecamp.ai.group",
+        "targetId": "codecamp.ai.skill.evaluation",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "AI cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-workflow-git",
+        "type": "contains",
+        "sourceId": "codecamp.workflow.group",
+        "targetId": "codecamp.workflow.skill.git-branches",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Workflow cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-workflow-pr",
+        "type": "contains",
+        "sourceId": "codecamp.workflow.group",
+        "targetId": "codecamp.workflow.skill.pull-requests",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Workflow cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-workflow-review",
+        "type": "contains",
+        "sourceId": "codecamp.workflow.group",
+        "targetId": "codecamp.workflow.skill.review-response",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Workflow cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-deployment-container",
+        "type": "contains",
+        "sourceId": "codecamp.deployment.group",
+        "targetId": "codecamp.deployment.skill.container-build",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Deployment cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-deployment-cloud-run",
+        "type": "contains",
+        "sourceId": "codecamp.deployment.group",
+        "targetId": "codecamp.deployment.skill.cloud-run",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Deployment cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-deployment-observability",
+        "type": "contains",
+        "sourceId": "codecamp.deployment.group",
+        "targetId": "codecamp.deployment.skill.observability",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Deployment cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-architecture-contract",
+        "type": "contains",
+        "sourceId": "codecamp.architecture.group",
+        "targetId": "codecamp.architecture.skill.contract-first",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Architecture cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-architecture-backend",
+        "type": "contains",
+        "sourceId": "codecamp.architecture.group",
+        "targetId": "codecamp.architecture.skill.backend-module",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Architecture cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-architecture-package",
+        "type": "contains",
+        "sourceId": "codecamp.architecture.group",
+        "targetId": "codecamp.architecture.skill.shared-package",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Architecture cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-game-loop",
+        "type": "contains",
+        "sourceId": "codecamp.game-development.group",
+        "targetId": "codecamp.game-development.concept.game-loop",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Game-development cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-game-state",
+        "type": "contains",
+        "sourceId": "codecamp.game-development.group",
+        "targetId": "codecamp.game-development.skill.game-state",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Game-development cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-game-phaser",
+        "type": "contains",
+        "sourceId": "codecamp.game-development.group",
+        "targetId": "codecamp.game-development.skill.phaser-lifecycle",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Game-development cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-game-input",
+        "type": "contains",
+        "sourceId": "codecamp.game-development.group",
+        "targetId": "codecamp.game-development.skill.input",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Game-development cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-game-physics",
+        "type": "contains",
+        "sourceId": "codecamp.game-development.group",
+        "targetId": "codecamp.game-development.skill.physics",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Game-development cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-game-apk",
+        "type": "contains",
+        "sourceId": "codecamp.game-development.group",
+        "targetId": "codecamp.game-development.skill.apk-contract",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Game-development cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-game-react",
+        "type": "contains",
+        "sourceId": "codecamp.game-development.group",
+        "targetId": "codecamp.game-development.skill.react-host",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Game-development cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-game-testing",
+        "type": "contains",
+        "sourceId": "codecamp.game-development.group",
+        "targetId": "codecamp.game-development.skill.cartridge-testing",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Game-development cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-game-accessibility",
+        "type": "contains",
+        "sourceId": "codecamp.game-development.group",
+        "targetId": "codecamp.game-development.skill.accessibility",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Game-development cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-game-assets",
+        "type": "contains",
+        "sourceId": "codecamp.game-development.group",
+        "targetId": "codecamp.game-development.skill.assets",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Game-development cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.group-game-performance",
+        "type": "contains",
+        "sourceId": "codecamp.game-development.group",
+        "targetId": "codecamp.game-development.skill.performance",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp taxonomy"],
+        "reviewStatus": "approved",
+        "rationale": "Game-development cluster membership.",
+        "metadata": { "gate": "none" }
+      },
+
+      {
+        "id": "codecamp.edge.variables-before-control",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.foundation.concept.variables",
+        "targetId": "codecamp.foundation.concept.control-flow",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Selection and iteration require tracing stored values.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.control-before-functions",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.foundation.concept.control-flow",
+        "targetId": "codecamp.foundation.skill.functions",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Function bodies depend on basic control flow.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.functions-before-async",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.foundation.skill.functions",
+        "targetId": "codecamp.foundation.skill.async-flow",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Async composition depends on functions and returned values.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.functions-before-typescript",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.foundation.skill.functions",
+        "targetId": "codecamp.foundation.skill.typescript-contracts",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Function contracts provide the first useful TypeScript boundary.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.html-before-react",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.frontend.skill.semantic-html-css",
+        "targetId": "codecamp.frontend.skill.react-components",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "React renders semantic web primitives rather than replacing them.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.typescript-before-react",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.foundation.skill.typescript-contracts",
+        "targetId": "codecamp.frontend.skill.react-components",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Typed component boundaries prevent unsupported prop and state shapes.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.react-before-state",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.frontend.skill.react-components",
+        "targetId": "codecamp.frontend.skill.client-state",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "State is taught in the context of component rendering.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.react-before-next",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.frontend.skill.react-components",
+        "targetId": "codecamp.frontend.skill.next-routing",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Next.js surfaces compose React components.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.async-before-http",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.foundation.skill.async-flow",
+        "targetId": "codecamp.backend.concept.http-api",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Network request handling is asynchronous.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.http-before-validation",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.backend.concept.http-api",
+        "targetId": "codecamp.backend.skill.runtime-validation",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Validation protects external HTTP boundaries.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.validation-before-authorization",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.backend.skill.runtime-validation",
+        "targetId": "codecamp.backend.skill.authorization",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Permission decisions require validated resource identity.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.typescript-before-relational",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.foundation.skill.typescript-contracts",
+        "targetId": "codecamp.data.concept.relational-model",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Typed shapes make relationships and ownership explicit.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.relational-before-drizzle",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.data.concept.relational-model",
+        "targetId": "codecamp.data.skill.drizzle-queries",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "ORM syntax cannot replace relational reasoning.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.drizzle-before-tenant",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.data.skill.drizzle-queries",
+        "targetId": "codecamp.data.skill.tenant-scoping",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Tenant filtering is implemented through typed database queries.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.functions-before-unit-tests",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.foundation.skill.functions",
+        "targetId": "codecamp.testing.skill.unit-tests",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Unit tests target isolated callable behavior.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.unit-before-integration",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.testing.skill.unit-tests",
+        "targetId": "codecamp.testing.skill.integration-tests",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Boundary tests build on focused behavior checks.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.integration-before-browser",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.testing.skill.integration-tests",
+        "targetId": "codecamp.testing.skill.browser-acceptance",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Browser acceptance verifies the final integrated behavior.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.validation-before-structured",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.backend.skill.runtime-validation",
+        "targetId": "codecamp.ai.concept.structured-output",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Structured AI output is an external runtime-validation boundary.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.structured-before-adapter",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.ai.concept.structured-output",
+        "targetId": "codecamp.ai.skill.provider-adapter",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Adapter use preserves the model-output contract.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.integration-before-ai-eval",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.testing.skill.integration-tests",
+        "targetId": "codecamp.ai.skill.evaluation",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "AI evaluation uses contract fixtures across the adapter boundary.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.functions-before-git",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.foundation.skill.functions",
+        "targetId": "codecamp.workflow.skill.git-branches",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Students need a meaningful code change before branch workflow evidence.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.git-before-pr",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.workflow.skill.git-branches",
+        "targetId": "codecamp.workflow.skill.pull-requests",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Pull requests are created from committed branches.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.pr-before-review",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.workflow.skill.pull-requests",
+        "targetId": "codecamp.workflow.skill.review-response",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Review response requires an authentic submitted PR.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.http-before-container",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.backend.concept.http-api",
+        "targetId": "codecamp.deployment.skill.container-build",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "The first container packages an understood web service.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.container-before-cloud-run",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.deployment.skill.container-build",
+        "targetId": "codecamp.deployment.skill.cloud-run",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Cloud Run deploys a container artifact.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.cloud-run-before-observability",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.deployment.skill.cloud-run",
+        "targetId": "codecamp.deployment.skill.observability",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Operational evidence is gathered from a running service.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.validation-before-contract-first",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.backend.skill.runtime-validation",
+        "targetId": "codecamp.architecture.skill.contract-first",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Contract-first design builds on runtime boundary validation.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.contract-before-backend",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.architecture.skill.contract-first",
+        "targetId": "codecamp.architecture.skill.backend-module",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Backend modules implement transport-independent contracts.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.backend-before-package",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.architecture.skill.backend-module",
+        "targetId": "codecamp.architecture.skill.shared-package",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Reusable package boundaries are extracted from understood domain behavior.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.typescript-before-game-loop",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.foundation.skill.typescript-contracts",
+        "targetId": "codecamp.game-development.concept.game-loop",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "The unit implements the loop with typed code rather than teaching syntax concurrently.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.game-loop-before-state",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.game-development.concept.game-loop",
+        "targetId": "codecamp.game-development.skill.game-state",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "State transitions are evaluated during loop updates.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.state-before-phaser",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.game-development.skill.game-state",
+        "targetId": "codecamp.game-development.skill.phaser-lifecycle",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "Phaser lifecycle methods orchestrate explicit state rather than hiding it.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.phaser-before-input",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.game-development.skill.phaser-lifecycle",
+        "targetId": "codecamp.game-development.skill.input",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "Input handlers live inside understood scene lifecycle boundaries.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.phaser-before-physics",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.game-development.skill.phaser-lifecycle",
+        "targetId": "codecamp.game-development.skill.physics",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "Physics objects are created and updated through scene lifecycle methods.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.typescript-before-apk",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.foundation.skill.typescript-contracts",
+        "targetId": "codecamp.game-development.skill.apk-contract",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "The cartridge ABI is a typed contract.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.react-before-host",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.frontend.skill.react-components",
+        "targetId": "codecamp.game-development.skill.react-host",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "The host is a React component with client-only isolation.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.apk-before-host",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.game-development.skill.apk-contract",
+        "targetId": "codecamp.game-development.skill.react-host",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "The host mounts a cartridge through the APK ABI.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.apk-before-testing",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.game-development.skill.apk-contract",
+        "targetId": "codecamp.game-development.skill.cartridge-testing",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "Contract tests assert the known APK ABI.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.browser-before-cartridge-testing",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.testing.skill.browser-acceptance",
+        "targetId": "codecamp.game-development.skill.cartridge-testing",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "Cartridge verification includes live browser behavior.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.html-before-game-accessibility",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.frontend.skill.semantic-html-css",
+        "targetId": "codecamp.game-development.skill.accessibility",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "Game accessibility reuses semantic and interaction foundations.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.apk-before-assets",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.game-development.skill.apk-contract",
+        "targetId": "codecamp.game-development.skill.assets",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "Cartridge manifests declare their asset surface.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.phaser-before-performance",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.game-development.skill.phaser-lifecycle",
+        "targetId": "codecamp.game-development.skill.performance",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "Performance work depends on understanding lifecycle allocation and update costs.",
+        "metadata": { "gate": "hard" }
+      },
+
+      {
+        "id": "codecamp.edge.tests-support-pr",
+        "type": "supports",
+        "sourceId": "codecamp.testing.skill.integration-tests",
+        "targetId": "codecamp.workflow.skill.pull-requests",
+        "weight": 0.7,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Test evidence strengthens a PR but does not prevent learning the PR workflow.",
+        "metadata": { "gate": "soft" }
+      },
+      {
+        "id": "codecamp.edge.authorization-supports-tenant",
+        "type": "supports",
+        "sourceId": "codecamp.backend.skill.authorization",
+        "targetId": "codecamp.data.skill.tenant-scoping",
+        "weight": 0.7,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Authorization reasoning supports tenant safety without being the query-syntax gate.",
+        "metadata": { "gate": "soft" }
+      },
+      {
+        "id": "codecamp.edge.tests-support-deployment",
+        "type": "supports",
+        "sourceId": "codecamp.testing.skill.integration-tests",
+        "targetId": "codecamp.deployment.skill.container-build",
+        "weight": 0.6,
+        "confidence": "high",
+        "sourceRefs": ["Codecamp sequence review"],
+        "reviewStatus": "approved",
+        "rationale": "Tests improve deployment confidence without gating container concepts.",
+        "metadata": { "gate": "soft" }
+      },
+      {
+        "id": "codecamp.edge.input-supports-accessibility",
+        "type": "supports",
+        "sourceId": "codecamp.game-development.skill.input",
+        "targetId": "codecamp.game-development.skill.accessibility",
+        "weight": 0.7,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "Input mapping informs accessible alternatives but remains a soft support relation.",
+        "metadata": { "gate": "soft" }
+      },
+      {
+        "id": "codecamp.edge.assets-support-performance",
+        "type": "supports",
+        "sourceId": "codecamp.game-development.skill.assets",
+        "targetId": "codecamp.game-development.skill.performance",
+        "weight": 0.5,
+        "confidence": "medium",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "Asset choices affect performance but do not gate measuring runtime behavior.",
+        "metadata": { "gate": "soft" }
+      },
+
+      {
+        "id": "codecamp.edge.align-variables",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.foundation.concept.variables",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.7,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Product objective projects to algorithms and programming.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-control",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.foundation.concept.control-flow",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.8,
+        "confidence": "high",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Product objective projects to algorithms and programming.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-functions",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.foundation.skill.functions",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.8,
+        "confidence": "high",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Product objective projects to algorithms and programming.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-async",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.foundation.skill.async-flow",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Product objective projects to algorithms and programming.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-typescript",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.foundation.skill.typescript-contracts",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Typed software construction is projected as technology application.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-html",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.frontend.skill.semantic-html-css",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.7,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Web artifact creation is projected as technology application.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-react",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.frontend.skill.react-components",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Component composition projects to artifact creation and abstraction.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-state",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.frontend.skill.client-state",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "State modeling projects to program design.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-next",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.frontend.skill.next-routing",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Web application construction is projected as technology application.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-http",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.backend.concept.http-api",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.5,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Networked application concepts project to effective ICT application.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-validation",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.backend.skill.runtime-validation",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Validation projects to testing and refining artifacts.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-authz",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.backend.skill.authorization",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Secure and ethical application projects to ICT use.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-relational",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.data.concept.relational-model",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Data modeling projects to abstractions and data analysis.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-drizzle",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.data.skill.drizzle-queries",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.5,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Database implementation projects to technology application.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-tenant",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.data.skill.tenant-scoping",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Safe data ownership projects to ethical ICT application.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-unit-tests",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.testing.skill.unit-tests",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.8,
+        "confidence": "high",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Unit tests project to testing and refining artifacts.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-integration",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.testing.skill.integration-tests",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.8,
+        "confidence": "high",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Integration tests project to testing and refining artifacts.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-browser",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.testing.skill.browser-acceptance",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.7,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Browser acceptance projects to testing and refining artifacts.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-structured",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.ai.concept.structured-output",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.5,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Structured output projects to defining computational problems and abstractions.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-ai-adapter",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.ai.skill.provider-adapter",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.5,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Provider-neutral AI integration projects to effective technology application.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-ai-eval",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.ai.skill.evaluation",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Model evaluation projects to testing and refining artifacts.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-git",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.workflow.skill.git-branches",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.5,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Version control projects to collaborating around computing.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-pr",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.workflow.skill.pull-requests",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Pull requests project to collaboration and communication practices.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-review",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.workflow.skill.review-response",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Review response projects to collaboration and communication practices.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-container",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.deployment.skill.container-build",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.5,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Container construction projects to technology application.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-cloud-run",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.deployment.skill.cloud-run",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.5,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Cloud deployment projects to technology application.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-observability",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.deployment.skill.observability",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.5,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Operational verification projects to testing and refining artifacts.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-contract-first",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.architecture.skill.contract-first",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Contract design projects to abstraction practices.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-backend-module",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.architecture.skill.backend-module",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Module design projects to abstraction and artifact creation.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-shared-package",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.architecture.skill.shared-package",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.5,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Reusable packages project to abstraction practices.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-game-loop",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.game-development.concept.game-loop",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.8,
+        "confidence": "high",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Game loops project to algorithms and programming.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-game-state",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.game-development.skill.game-state",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.8,
+        "confidence": "high",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Game state projects to program design and abstraction.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-phaser",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.game-development.skill.phaser-lifecycle",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.7,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Scene lifecycle implementation projects to artifact creation.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-input",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.game-development.skill.input",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Input mapping projects to event-driven algorithms.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-physics",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.game-development.skill.physics",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Physics implementation projects to modeling and algorithms.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-apk",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.game-development.skill.apk-contract",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Cartridge contracts project to abstraction and artifact creation.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-react-host",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.game-development.skill.react-host",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Game hosting projects to technology application.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-cartridge-testing",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.game-development.skill.cartridge-testing",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.8,
+        "confidence": "high",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Cartridge testing projects to testing and refining artifacts.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-game-accessibility",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.game-development.skill.accessibility",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.7,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Accessible games project to constructive and ethical technology application.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-assets",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.game-development.skill.assets",
+        "targetId": "standards.thai-ict.standard.technology-application",
+        "weight": 0.5,
+        "confidence": "medium",
+        "sourceRefs": ["Thai ICT projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Licensed asset use projects to ethical technology application.",
+        "metadata": { "gate": "none" }
+      },
+      {
+        "id": "codecamp.edge.align-performance",
+        "type": "aligned_to_standard",
+        "sourceId": "codecamp.game-development.skill.performance",
+        "targetId": "standards.csta.standard.algorithms-programming",
+        "weight": 0.6,
+        "confidence": "medium",
+        "sourceRefs": ["CSTA projection review"],
+        "reviewStatus": "approved",
+        "rationale": "Performance measurement projects to testing and refining artifacts.",
+        "metadata": { "gate": "none" }
+      }
+    ]
+  }
+}

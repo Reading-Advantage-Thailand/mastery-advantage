@@ -1,8 +1,12 @@
 # Mastery Advantage — Code Domain
 
-> **Status: Planning** — This domain is not yet implemented.
+> **Status: Initial reviewed release** — `code-knowledge-space.json` is the
+> normative Codecamp graph for release `1.0.0`.
 
-This directory will contain the knowledge graph, level mappings, and tools for the **Code Advantage** app.
+This directory owns the versioned knowledge graph and governance source for the
+**Codecamp Advantage** consumer. Runtime schemas and validation live in the shared
+`@reading-advantage/codecamp-knowledge` adapter package; this repository remains the
+normative curriculum authority.
 
 ---
 
@@ -14,23 +18,29 @@ This directory will contain the knowledge graph, level mappings, and tools for t
 
 ---
 
-## Open Questions
+## Authoring policy
 
-- **Curriculum framework:** CSTA K–12 Computer Science Standards, Google's CS First, or a custom framework? Code Advantage is likely to target secondary students in Thailand, so alignment to Thai ICT curriculum may be needed alongside international CS standards.
-- **Languages and paradigms:** Does the knowledge graph cover a single language (e.g. Python), or is it language-agnostic with conceptual nodes (variables, loops, functions, data structures) that apply across languages?
-- **Skill decomposition:** Programming skills are highly hierarchical and cumulative — this domain may benefit from one of the densest prerequisite graphs in the suite.
-- **Assessment:** Unlike reading comprehension (passage + questions), coding assessment requires code execution. How does Code Advantage assess mastery? Auto-graded exercises, output matching, or AI code review?
+- Language-agnostic concepts have one stable objective; technology applications
+  reference those concepts instead of duplicating them.
+- `prerequisite_for` edges marked `hard` are approved, high-confidence, and weighted
+  at least `0.8`. Non-gating relationships use `supports` with `gate: soft`.
+- CSTA 2017 and Thailand Basic Education Core Curriculum mappings are projections.
+  They do not replace Codecamp product objectives.
+- IDs are permanent once published. Graph changes require a semantic version bump and
+  a migration impact note before consumer snapshots update.
+- The graph, curriculum, technical, and standards reviewer roles are recorded in every
+  release envelope.
 
 ---
 
-## Next Steps
+## Release workflow
 
-1. Define the target learner profile and curriculum framework
-2. Map the skill taxonomy (language-agnostic concepts + language-specific syntax nodes)
-3. Define prerequisite relationships
-4. Build `code-knowledge-space.json` conforming to the [shared graph schema](../README.md#domain-knowledge-graph-schema)
-5. Design the assessment model
-6. Update this README with the completed structure
+1. Edit `code-knowledge-space.json` and bump its version.
+2. Run the consumer package validator and deterministic report.
+3. Review hard/soft relationships and the migration impact.
+4. Commit the normative release here.
+5. Copy the exact bytes into the consumer package and record this source commit plus
+   the SHA-256 digest. A digest mismatch fails publication.
 
 ---
 
