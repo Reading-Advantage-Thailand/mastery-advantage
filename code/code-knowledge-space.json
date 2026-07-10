@@ -1,19 +1,19 @@
 {
   "schemaVersion": "code-knowledge-space.v1",
   "graphId": "codecamp.core",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "releaseStatus": "reviewed",
   "provenance": {
     "authority": "Mastery Advantage Code domain",
     "authorityPath": "code/code-knowledge-space.json",
     "sourceRepository": "mastery-advantage",
-    "authoredAgainstRevision": "61135f1112a48c125ebd8c8f16acfd3b0aeaee34",
-    "authoredAt": "2026-07-10T16:45:00.000Z"
+    "authoredAgainstRevision": "4a86a526d20f9891a6c8235256abe971e17cba28",
+    "authoredAt": "2026-07-10T18:20:00.000Z"
   },
   "migration": {
-    "previousVersion": "1.0.0",
+    "previousVersion": "1.1.0",
     "stableIds": true,
-    "impact": "Additive objectives for development environment, internationalization, and Measure workflow bindings; existing objective IDs and learner records remain unchanged."
+    "impact": "Add a reviewed Git prerequisite path into the APK cartridge branch; existing objective IDs and learner records remain unchanged."
   },
   "review": {
     "graphOwner": {
@@ -2003,6 +2003,18 @@
         "sourceRefs": ["APK curriculum review"],
         "reviewStatus": "approved",
         "rationale": "The cartridge ABI is a typed contract.",
+        "metadata": { "gate": "hard" }
+      },
+      {
+        "id": "codecamp.edge.git-before-apk",
+        "type": "prerequisite_for",
+        "sourceId": "codecamp.workflow.skill.git-branches",
+        "targetId": "codecamp.game-development.skill.apk-contract",
+        "weight": 1,
+        "confidence": "high",
+        "sourceRefs": ["APK curriculum review"],
+        "reviewStatus": "approved",
+        "rationale": "Students clone tutorial repositories and submit independent cartridge pull requests through the established Git workflow.",
         "metadata": { "gate": "hard" }
       },
       {
