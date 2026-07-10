@@ -23,7 +23,8 @@ normative curriculum authority.
 - Language-agnostic concepts have one stable objective; technology applications
   reference those concepts instead of duplicating them.
 - `prerequisite_for` edges marked `hard` are approved, high-confidence, and weighted
-  at least `0.8`. Non-gating relationships use `supports` with `gate: soft`.
+  exactly `1.0`, matching the imported engine's executable hard-gate threshold.
+  Non-gating relationships use `supports` with `gate: soft`.
 - CSTA 2017 and Thailand Basic Education Core Curriculum mappings are projections.
   They do not replace Codecamp product objectives.
 - IDs are permanent once published. Graph changes require a semantic version bump and
