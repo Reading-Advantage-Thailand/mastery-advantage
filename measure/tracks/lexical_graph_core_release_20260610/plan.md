@@ -21,26 +21,21 @@
 
 ## Phase 1: Freeze Scope, Facts Inventory, And Review Rules
 
-- [x] Task: Lock freeze scope and baseline facts
-  - [x] Confirm release authority is YLE-only; A2 Key/B1 are method-later only
-  - [x] Snapshot labeled baseline counts from tracked artifacts (YLE skills,
-        Starters/Movers/Flyers membership, topic groups, support edges,
-        prerequisite count) into a draft freeze facts section
-  - [x] Cite official YLE 2025 source identity from `SOURCES.md` (URL + SHA-256)
-  - [x] Evidence: labeled integers in the draft facts section; no digit-only claims
-- [x] Task: Separate source-backed facts from derived signals
-  - [x] Catalog edge types touching YLE: `contains`, `aligned_to_standard`,
-        `supports` (and confirm `prerequisite_for` = 0)
-  - [x] Label each class as source-backed fact vs derived support signal
-  - [x] Prohibit fabricated hard prerequisites in the written freeze rules
-- [x] Task: Define durable YLE review records
-  - [x] Decision fields: reviewer role, timestamp, source location, finding
-        class (omit / false-include / bad-merge / group / support / other),
-        disposition, supersession
-  - [x] Define exception and quarantine handling for freeze blockers
-- [x] Task: Define sampling plan and plain-language thresholds
-  - [x] Alphabetical, thematic, collision/merge, and support-edge samples
-  - [x] Map samples to spec quality thresholds (labeled metrics only)
+- [x] Task: Lock freeze scope and baseline facts — commit: c8e344761411836d55b392deb542960f0f12daee
+  - [x] Confirm release authority is YLE-only; A2 Key/B1 are method-later only — commit: c8e344761411836d55b392deb542960f0f12daee
+  - [x] Snapshot labeled baseline counts from tracked artifacts (YLE skills, Starters/Movers/Flyers membership, topic groups, support edges, prerequisite count) into a draft freeze facts section — commit: c8e344761411836d55b392deb542960f0f12daee
+  - [x] Cite official YLE 2025 source identity from `SOURCES.md` (URL + SHA-256) — commit: c8e344761411836d55b392deb542960f0f12daee
+  - [x] Evidence: labeled integers in the draft facts section; no digit-only claims — commit: c8e344761411836d55b392deb542960f0f12daee
+- [x] Task: Separate source-backed facts from derived signals — commit: c8e344761411836d55b392deb542960f0f12daee
+  - [x] Catalog edge types touching YLE: `contains`, `aligned_to_standard`, `supports` (and confirm `prerequisite_for` = 0) — commit: c8e344761411836d55b392deb542960f0f12daee
+  - [x] Label each class as source-backed fact vs derived support signal — commit: c8e344761411836d55b392deb542960f0f12daee
+  - [x] Prohibit fabricated hard prerequisites in the written freeze rules — commit: c8e344761411836d55b392deb542960f0f12daee
+- [x] Task: Define durable YLE review records — commit: c8e344761411836d55b392deb542960f0f12daee
+  - [x] Decision fields: reviewer role, timestamp, source location, finding class (omit / false-include / bad-merge / group / support / other), disposition, supersession — commit: c8e344761411836d55b392deb542960f0f12daee
+  - [x] Define exception and quarantine handling for freeze blockers — commit: c8e344761411836d55b392deb542960f0f12daee
+- [x] Task: Define sampling plan and plain-language thresholds — commit: c8e344761411836d55b392deb542960f0f12daee
+  - [x] Alphabetical, thematic, collision/merge, and support-edge samples — commit: c8e344761411836d55b392deb542960f0f12daee
+  - [x] Map samples to spec quality thresholds (labeled metrics only) — commit: c8e344761411836d55b392deb542960f0f12daee
 - [b] Task: Approve Phase 1 rules — human-gate:curriculum-language
   - [b] Curriculum/language owner accepts sampling and fact-vs-signal split — human-gate:curriculum-language
   - [b] Engineering owner accepts freeze package shape and sanity-only technical gate — human-gate:engineering
