@@ -114,6 +114,19 @@ source locations from the ignored local PDF and compares the eventual full
 contents or generate fixtures from the inventory. No audit artifacts, parser
 fixes, graph data, or approval were changed.
 
+**Bounded Mid-Red retry remediation (2026-08-11):** Updated only
+`tests/yle_p2_membership.sh` to emit successful Python count/metric diagnostics
+outside validation-error capture, check each embedded Python exit status, and
+accept the absent approval artifact while the plan truthfully keeps the
+curriculum task `[b]`. `bash -n tests/yle_p2_membership.sh` exits `0`.
+`bash tests/yle_p2_membership.sh` exits `1` with `PASS=2`, `FAIL=5`: the
+remaining failures name the absent source-row fixtures, durable decisions and
+collision queues, membership report, and thematic/grammatical artifacts. The
+same run prints labeled diagnostics without classifying them as failures; a
+temporary `PLAN_OVERRIDE` with the approval task changed to `[x]` still exits
+`1` and reports that attributable approval evidence is absent. No Green
+artifacts, graph data, or Phase 2 task markers were changed.
+
 ## Phase 3: Relationship And Progression Review
 
 - [~] Task: Inventory all YLE-touching `supports` edges by derivation method

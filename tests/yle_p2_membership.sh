@@ -52,13 +52,18 @@ STARTERS_FIXTURE="$FIXTURE_DIR/starters-sample.jsonl"
 MOVERS_FIXTURE="$FIXTURE_DIR/movers-sample.jsonl"
 FLYERS_FIXTURE="$FIXTURE_DIR/flyers-sample.jsonl"
 
+# Keep successful Python diagnostics visible while capturing validation errors.
+# Each block also checks the Python exit status so real assertion failures remain
+# failures even when diagnostics are printed to stdout.
+exec 3>&1
+
 # This is deliberately a source-to-graph contract.  The JSONL rows must carry
 # only source locations (not PDF excerpts); the local ignored PDF is read at
 # test time to check those locations.  A fixture made by copying inventory
 # rows without official-list locations therefore cannot satisfy the gate.
 
 echo "=== local official YLE source identity and PDF metadata ==="
-source_identity_errors="$(python3 - "$SOURCE_PDF" "$SOURCE_SUMS" "$SOURCE_INFO" "$SOURCES" "$SOURCE_ID" "$SOURCE_URL" "$SOURCE_SHA" <<'PY' 2>&1
+source_identity_errors="$(python3 - "$SOURCE_PDF" "$SOURCE_SUMS" "$SOURCE_INFO" "$SOURCES" "$SOURCE_ID" "$SOURCE_URL" "$SOURCE_SHA" <<'PY' 2>&1 1>&3
 import hashlib
 import re
 import shutil
@@ -97,31 +102,32 @@ for required in (str(source_id), str(source_url), str(source_sha)):
     if required not in sources:
         errors.append(f"SOURCES.md lacks registered YLE source field: {required}")
 if errors:
-    print("; ".join(errors))
+    print("; ".join(errors), file=sys.stderr)
     raise SystemExit(1)
 PY
 )"
-if [[ -n "$source_identity_errors" ]]; then
-  fail "$source_identity_errors"
+source_identity_status=$?
+if [[ "$source_identity_status" -ne 0 ]]; then
+  fail "${source_identity_errors:-source identity validation failed}"
 else
   pass "local PDF hash, registry identity, and metadata are available without network access"
 fi
 
 echo "=== Phase 2 plan marker guard is non-vacuous and has no legacy [ ] tasks ==="
-phase_marker_errors="$(python3 - "$PLAN" <<'PY' 2>&1
+phase_marker_errors="$(python3 - "$PLAN" <<'PY' 2>&1 1>&3
 import re
 import sys
 from pathlib import Path
 
 plan_path = Path(sys.argv[1])
 if not plan_path.is_file():
-    print(f"missing plan: {plan_path}")
+    print(f"missing plan: {plan_path}", file=sys.stderr)
     raise SystemExit(1)
 text = plan_path.read_text(encoding="utf-8")
 phase_matches = list(re.finditer(r"^## Phase 2: YLE List Fidelity Audit[ \t]*$", text, re.MULTILINE))
 next_matches = list(re.finditer(r"^## Phase 3: Relationship And Progression Review[ \t]*$", text, re.MULTILINE))
 if len(phase_matches) != 1 or len(next_matches) != 1 or next_matches[0].start() <= phase_matches[0].end():
-    print("Phase 2/Phase 3 boundaries are not uniquely resolvable")
+    print("Phase 2/Phase 3 boundaries are not uniquely resolvable", file=sys.stderr)
     raise SystemExit(1)
 phase = text[phase_matches[0].end():next_matches[0].start()]
 legacy = re.findall(r"^[ \t]*-[ \t]*\[ \][ \t]", phase, re.MULTILINE)
@@ -143,18 +149,19 @@ print(f"Phase 2 completed task count: {completed}")
 print(f"Phase 2 in-progress task count: {in_progress}")
 print(f"Phase 2 human-gate task count: {blocked}")
 if errors:
-    print("; ".join(errors))
+    print("; ".join(errors), file=sys.stderr)
     raise SystemExit(1)
 PY
 )"
-if [[ -n "$phase_marker_errors" ]]; then
-  fail "$phase_marker_errors"
+phase_marker_status=$?
+if [[ "$phase_marker_status" -ne 0 ]]; then
+  fail "${phase_marker_errors:-Phase 2 marker validation failed}"
 else
   pass "Phase 2 has substantive completed work and uses only [x]/[~]/[b] markers"
 fi
 
 echo "=== full source-row fixtures exist with official locations and identity fields ==="
-fixture_errors="$(python3 - "$INVENTORY" "$GRAPH" "$SOURCE_PDF" "$STARTERS_FIXTURE" "$MOVERS_FIXTURE" "$FLYERS_FIXTURE" "$DECISIONS" <<'PY' 2>&1
+fixture_errors="$(python3 - "$INVENTORY" "$GRAPH" "$SOURCE_PDF" "$STARTERS_FIXTURE" "$MOVERS_FIXTURE" "$FLYERS_FIXTURE" "$DECISIONS" <<'PY' 2>&1 1>&3
 import json
 import re
 import subprocess
@@ -195,7 +202,7 @@ try:
     inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
     graph = json.loads(graph_path.read_text(encoding="utf-8"))
 except (OSError, json.JSONDecodeError) as exc:
-    print(f"cannot load tracked inventory/graph: {exc}")
+    print(f"cannot load tracked inventory/graph: {exc}", file=sys.stderr)
     raise SystemExit(1)
 decision_rows = load_jsonl(decisions_path)
 decision_ids = {row.get("decision_id") for row in decision_rows if isinstance(row, dict)}
@@ -383,20 +390,21 @@ for graph_id, exam in sorted(actual_pairs - expected_pairs):
 print(f"Mapped graph skill count: {len(matched_ids)}")
 print(f"Actual direct graph membership pairs: {len(actual_pairs)}")
 if errors:
-    print("; ".join(errors[:40]))
+    print("; ".join(errors[:40]), file=sys.stderr)
     if len(errors) > 40:
-        print(f"Additional fixture comparison failures: {len(errors) - 40}")
+        print(f"Additional fixture comparison failures: {len(errors) - 40}", file=sys.stderr)
     raise SystemExit(1)
 PY
 )"
-if [[ -n "$fixture_errors" ]]; then
-  fail "$fixture_errors"
+fixture_status=$?
+if [[ "$fixture_status" -ne 0 ]]; then
+  fail "${fixture_errors:-source-row fixture validation failed}"
 else
   pass "all direct source rows compare to graph IDs, exams, forms, POS, MWEs, variants, and local PDF locations"
 fi
 
 echo "=== durable decisions, collision queue, and omission/false-inclusion coverage ==="
-decision_errors="$(python3 - "$INVENTORY" "$GRAPH" "$DECISIONS" "$EXCEPTIONS" "$COLLISIONS" "$STARTERS_FIXTURE" "$MOVERS_FIXTURE" "$FLYERS_FIXTURE" <<'PY' 2>&1
+decision_errors="$(python3 - "$INVENTORY" "$GRAPH" "$DECISIONS" "$EXCEPTIONS" "$COLLISIONS" "$STARTERS_FIXTURE" "$MOVERS_FIXTURE" "$FLYERS_FIXTURE" <<'PY' 2>&1 1>&3
 import json
 import re
 import sys
@@ -439,7 +447,7 @@ try:
     inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
     graph = json.loads(graph_path.read_text(encoding="utf-8"))
 except (OSError, json.JSONDecodeError) as exc:
-    print(f"cannot load tracked inventory/graph: {exc}")
+    print(f"cannot load tracked inventory/graph: {exc}", file=sys.stderr)
     raise SystemExit(1)
 decisions = jsonl(decisions_path)
 exceptions = jsonl(exceptions_path)
@@ -548,20 +556,21 @@ for row in fixture_rows:
 print(f"Durable membership decision count: {len(decisions)}")
 print(f"Exception-list row count: {len(exceptions)}")
 if errors:
-    print("; ".join(errors[:50]))
+    print("; ".join(errors[:50]), file=sys.stderr)
     if len(errors) > 50:
-        print(f"Additional decision/collision failures: {len(errors) - 50}")
+        print(f"Additional decision/collision failures: {len(errors) - 50}", file=sys.stderr)
     raise SystemExit(1)
 PY
 )"
-if [[ -n "$decision_errors" ]]; then
-  fail "$decision_errors"
+decision_status=$?
+if [[ "$decision_status" -ne 0 ]]; then
+  fail "${decision_errors:-decision and collision validation failed}"
 else
   pass "omissions, false inclusions, POS/variant decisions, and every high-severity collision have durable records"
 fi
 
 echo "=== report metrics, cumulative consumption policy, and blocker count are executable ==="
-report_errors="$(python3 - "$INVENTORY" "$GRAPH" "$REPORT" "$DECISIONS" "$EXCEPTIONS" "$COLLISIONS" "$STARTERS_FIXTURE" "$MOVERS_FIXTURE" "$FLYERS_FIXTURE" <<'PY' 2>&1
+report_errors="$(python3 - "$INVENTORY" "$GRAPH" "$REPORT" "$DECISIONS" "$EXCEPTIONS" "$COLLISIONS" "$STARTERS_FIXTURE" "$MOVERS_FIXTURE" "$FLYERS_FIXTURE" <<'PY' 2>&1 1>&3
 import json
 import math
 import re
@@ -631,7 +640,7 @@ try:
     inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
     graph = json.loads(graph_path.read_text(encoding="utf-8"))
 except (OSError, json.JSONDecodeError) as exc:
-    print(f"cannot load tracked inventory/graph: {exc}")
+    print(f"cannot load tracked inventory/graph: {exc}", file=sys.stderr)
     raise SystemExit(1)
 report = read_json(report_path)
 decisions = jsonl(decisions_path)
@@ -759,20 +768,21 @@ if open_high:
 
 print(f"Unresolved high-severity blockers: {len(open_high)}")
 if errors:
-    print("; ".join(errors[:40]))
+    print("; ".join(errors[:40]), file=sys.stderr)
     if len(errors) > 40:
-        print(f"Additional report failures: {len(errors) - 40}")
+        print(f"Additional report failures: {len(errors) - 40}", file=sys.stderr)
     raise SystemExit(1)
 PY
 )"
-if [[ -n "$report_errors" ]]; then
-  fail "$report_errors"
+report_status=$?
+if [[ "$report_status" -ne 0 ]]; then
+  fail "${report_errors:-membership report validation failed}"
 else
   pass "full-population precision/recall, identity coverage, cumulative policy, and zero-blocker metrics agree with graph comparisons"
 fi
 
 echo "=== thematic memberships and grammatical-list treatment are explicitly audited ==="
-group_errors="$(python3 - "$GRAPH" "$THEMATIC" "$GRAMMATICAL" "$REPORT" "$DECISIONS" <<'PY' 2>&1
+group_errors="$(python3 - "$GRAPH" "$THEMATIC" "$GRAMMATICAL" "$REPORT" "$DECISIONS" <<'PY' 2>&1 1>&3
 import json
 import math
 import re
@@ -907,53 +917,87 @@ print(f"Thematic reviewed membership row count: {len(thematic_rows)}")
 print(f"Thematic precision numerator: {tp}")
 print(f"Thematic precision denominator: {predicted}")
 if errors:
-    print("; ".join(errors[:40]))
+    print("; ".join(errors[:40]), file=sys.stderr)
     if len(errors) > 40:
-        print(f"Additional group-treatment failures: {len(errors) - 40}")
+        print(f"Additional group-treatment failures: {len(errors) - 40}", file=sys.stderr)
     raise SystemExit(1)
 PY
 )"
-if [[ -n "$group_errors" ]]; then
-  fail "$group_errors"
+group_status=$?
+if [[ "$group_status" -ne 0 ]]; then
+  fail "${group_errors:-thematic and grammatical audit validation failed}"
 else
   pass "all 20 YLE topic groups meet the reviewed sample contract and grammatical lists have an explicit decision"
 fi
 
-echo "=== attributable curriculum approval exists for the Phase 2 fidelity audit ==="
-approval_errors="$(python3 - "$APPROVAL" <<'PY' 2>&1
+echo "=== curriculum approval evidence or truthful Phase 2 human-gate state ==="
+approval_errors="$(python3 - "$APPROVAL" "$PLAN" <<'PY' 2>&1 1>&3
 import re
 import sys
 from pathlib import Path
 
-path = Path(sys.argv[1])
-if not path.is_file():
-    print(f"missing attributable curriculum approval: {path}")
-    raise SystemExit(1)
-text = path.read_text(encoding="utf-8")
+approval_path = Path(sys.argv[1])
+plan_path = Path(sys.argv[2])
 errors = []
-if not re.search(r"\b(?:decision|recommendation)\s*:\s*(?:go|conditional-go)\b", text, re.IGNORECASE):
-    errors.append("approval must record go or conditional-go, not a draft or no-go")
-if not re.search(r"curriculum[ /-]*language", text, re.IGNORECASE):
-    errors.append("approval lacks curriculum/language owner role")
-if not re.search(r"\b(?:owner|reviewer|approved by)\s*:\s*[^\n]+", text, re.IGNORECASE):
-    errors.append("approval lacks an attributable owner/reviewer field")
-if re.search(r"\b(?:owner|reviewer|approved by)\s*:\s*(?:tbd|pending|anonymous|unknown|\[.*?\])\b", text, re.IGNORECASE):
-    errors.append("approval owner/reviewer is a placeholder")
-if not re.search(r"\b20[0-9]{2}-[0-9]{2}-[0-9]{2}\b", text):
-    errors.append("approval lacks an ISO date")
-if not re.search(r"YLE|membership|fidelity", text, re.IGNORECASE):
-    errors.append("approval does not identify the YLE fidelity scope")
+marker = None
+plan_text = ""
+if not plan_path.is_file():
+    errors.append(f"missing plan for approval-state check: {plan_path}")
+else:
+    plan_text = plan_path.read_text(encoding="utf-8")
+    phase_matches = list(re.finditer(r"^## Phase 2: YLE List Fidelity Audit[ \t]*$", plan_text, re.MULTILINE))
+    next_matches = list(re.finditer(r"^## Phase 3: Relationship And Progression Review[ \t]*$", plan_text, re.MULTILINE))
+    if len(phase_matches) != 1 or len(next_matches) != 1 or next_matches[0].start() <= phase_matches[0].end():
+        errors.append("Phase 2/Phase 3 boundaries are not uniquely resolvable for approval state")
+    else:
+        phase = plan_text[phase_matches[0].end():next_matches[0].start()]
+        task_markers = re.findall(
+            r"^- \[([~xb])\][ \t]+Task: Curriculum sign-off on YLE fidelity\b",
+            phase,
+            re.MULTILINE,
+        )
+        if len(task_markers) != 1:
+            errors.append("Phase 2 curriculum approval task marker is not uniquely resolvable")
+        else:
+            marker = task_markers[0]
+            if marker not in {"b", "x"}:
+                errors.append("Phase 2 curriculum approval task must be [b] or [x]")
+
+if not approval_path.is_file():
+    if not errors and marker == "b":
+        print("Phase 2 curriculum approval remains [b] human-gate; no approval artifact is required before owner sign-off")
+        raise SystemExit(0)
+    if marker == "x":
+        errors.append("Phase 2 curriculum approval task is [x] but phase2-approval.md is absent")
+    elif marker is not None:
+        errors.append("phase2-approval.md is absent and the Phase 2 curriculum approval task is not the truthful [b] human-gate state")
+else:
+    text = approval_path.read_text(encoding="utf-8")
+    if not re.search(r"\b(?:decision|recommendation)\s*:\s*(?:go|conditional-go)\b", text, re.IGNORECASE):
+        errors.append("approval must record go or conditional-go, not a draft or no-go")
+    if not re.search(r"curriculum[ /-]*language", text, re.IGNORECASE):
+        errors.append("approval lacks curriculum/language owner role")
+    if not re.search(r"\b(?:owner|reviewer|approved by)\s*:\s*[^\n]+", text, re.IGNORECASE):
+        errors.append("approval lacks an attributable owner/reviewer field")
+    if re.search(r"\b(?:owner|reviewer|approved by)\s*:\s*(?:tbd|pending|anonymous|unknown|\[.*?\])\b", text, re.IGNORECASE):
+        errors.append("approval owner/reviewer is a placeholder")
+    if not re.search(r"\b20[0-9]{2}-[0-9]{2}-[0-9]{2}\b", text):
+        errors.append("approval lacks an ISO date")
+    if not re.search(r"YLE|membership|fidelity", text, re.IGNORECASE):
+        errors.append("approval does not identify the YLE fidelity scope")
 if errors:
-    print("; ".join(errors))
+    print("; ".join(errors), file=sys.stderr)
     raise SystemExit(1)
 PY
 )"
-if [[ -n "$approval_errors" ]]; then
-  fail "$approval_errors"
+approval_status=$?
+if [[ "$approval_status" -ne 0 ]]; then
+  fail "${approval_errors:-curriculum approval validation failed}"
 else
-  pass "curriculum/language approval is attributable, dated, and scoped to YLE fidelity"
+  pass "curriculum approval is attributable when [x], or remains the truthful [b] human-gate until owner sign-off"
 fi
 
+exec 3>&-
 printf '%s\n' "${RESULTS[@]}"
 echo "=== Total: $((PASS_COUNT + FAIL_COUNT)) checks (PASS=$PASS_COUNT, FAIL=$FAIL_COUNT) ==="
 exit "$FAILED"
