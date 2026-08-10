@@ -1,6 +1,6 @@
 # YLE 2025 Freeze: Phase 1 Approval
 
-**Decision:** Approved as both owners  
+**Decision:** Approved as both owners
 **Date:** 2026-08-10
 
 ## Owner Roles
