@@ -44,6 +44,13 @@
   - [b] Curriculum/language owner accepts sampling and fact-vs-signal split — human-gate:curriculum-language
   - [b] Engineering owner accepts freeze package shape and sanity-only technical gate — human-gate:engineering
 
+**Mid-Red evidence (2026-08-10, resumed after harness crash):** Added
+`tests/yle_p1_scope.sh`. `bash tests/yle_p1_scope.sh` exits `1` as expected
+(`PASS=2`, `FAIL=3`): the dedicated `phase1-scope.md` artifact is absent, so
+labeled baseline/source facts, the fact-vs-signal catalog, and the explicit
+zero-`prerequisite_for` rule are not yet present. No Green artifacts or graph
+files were changed.
+
 ## Phase 2: YLE List Fidelity Audit
 
 - [~] Task: Build YLE membership audit fixtures and check harness
