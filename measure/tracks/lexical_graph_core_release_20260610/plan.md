@@ -72,6 +72,16 @@ engineering owners. `bash tests/yle_p1_scope.sh` exited `0` (5 checks) and
 explicit dual-owner approval record. The Phase 2 membership-fixture task
 remains the next automatable work.
 
+**A4 scope-guard remediation (2026-08-10):**
+`5bc047da8e58a975aa2140d2e7b5101fcf0b18fa` updates
+`tests/yle_p1_scope.sh` so every plan read honors `PLAN_OVERRIDE`, it parses
+only the exact Phase 1 section, and it reports `INCOMPLETE` with a labeled
+completed-task count when no substantive completed task exists. The targeted
+`bash tests/yle_p1_scope.sh && bash tests/yle_p1_a4_guard.sh` command exited
+`0` (6 scope checks and 3 A4 checks); `git diff --check` exited `0`; and
+`node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` reported
+`status: "valid"` with 3,752 inventory entries.
+
 ## Phase 2: YLE List Fidelity Audit
 
 - [~] Task: Build YLE membership audit fixtures and check harness
