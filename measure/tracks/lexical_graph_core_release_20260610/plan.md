@@ -102,6 +102,18 @@ completed-task count when no substantive completed task exists. The targeted
 - [b] Task: Curriculum sign-off on YLE fidelity — human-gate:curriculum-language
   - [b] Accept retained YLE membership and group decisions — human-gate:curriculum-language
 
+**Mid-Red evidence (2026-08-11):** Added the test-only
+`tests/yle_p2_membership.sh`. `bash tests/yle_p2_membership.sh` exits `1` as
+expected (`PASS=1`, `FAIL=6`): the local official YLE PDF identity/hash check
+passes, while the non-vacuous Phase 2 marker guard reports the labeled
+`Phase 2 completed task count: 0` and the source-row fixtures, durable decision
+log, exception/collision queues, membership report, thematic/grammatical
+artifacts, and attributable curriculum approval are absent. The harness reads
+source locations from the ignored local PDF and compares the eventual full
+1,388-skill / 1,390-direct-membership population; it does not commit PDF
+contents or generate fixtures from the inventory. No audit artifacts, parser
+fixes, graph data, or approval were changed.
+
 ## Phase 3: Relationship And Progression Review
 
 - [~] Task: Inventory all YLE-touching `supports` edges by derivation method
