@@ -28,7 +28,7 @@ track_dir_resolve() {
   fi
 }
 TRACK_DIR="$(track_dir_resolve "$TRACK_ID")"
-PLAN="$TRACK_DIR/plan.md"
+PLAN="${PLAN_OVERRIDE:-$TRACK_DIR/plan.md}"
 SCOPE="$ROOT/english/cefr-vocabulary/review/yle-2025/phase1-scope.md"
 INVENTORY="$ROOT/english/cefr-vocabulary/data/cambridge-vocabulary-inventory.json"
 GRAPH="$ROOT/english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json"
@@ -37,16 +37,70 @@ SOURCE_ID="cambridge-yle-word-list-2025"
 SOURCE_URL="https://www.cambridgeenglish.org/Images/739104-starters-movers-flyers-word-list-2025.pdf"
 SOURCE_SHA="6f7a0ad1e277bd10ae8b3bcccfb76c058f611a607c6c9947601abbd7e16a99fa"
 
-# Phase 1 must be Red until the scope-lock artifact exists.  Counts are derived
-# from tracked inputs and matched only through labeled fields (anti-pattern A3).
-echo "=== no legacy task markers in the track plan ==="
+# Every plan-dependent check reads PLAN so PLAN_OVERRIDE can isolate its contract.
+# Phase 1 must not pass vacuously: parse precisely the named Phase 1 section,
+# including indented task/subtask markers, rather than scanning neighboring phases.
+PHASE_ONE=""
+phase_parse_error=""
 if [[ ! -f "$PLAN" ]]; then
-  fail "track plan is missing"
-elif rg -n '^- \[ \] ' "$PLAN" >/dev/null 2>&1; then
-  fail "legacy [ ] task marker remains in plan.md"
+  phase_parse_error="track plan is missing"
 else
-  pass "plan uses only the current task-marker vocabulary"
+  PHASE_ONE="$(python3 - "$PLAN" <<'PY' 2>&1
+import re
+import sys
+from pathlib import Path
+
+plan = Path(sys.argv[1])
+text = plan.read_text(encoding="utf-8")
+phase_one = list(re.finditer(
+    r"^## Phase 1: Freeze Scope, Facts Inventory, And Review Rules[ \t]*$",
+    text,
+    re.MULTILINE,
+))
+phase_two = list(re.finditer(
+    r"^## Phase 2: YLE List Fidelity Audit[ \t]*$",
+    text,
+    re.MULTILINE,
+))
+if len(phase_one) != 1 or len(phase_two) != 1:
+    raise SystemExit("expected exactly one exact Phase 1 and Phase 2 heading")
+if phase_two[0].start() <= phase_one[0].end():
+    raise SystemExit("Phase 2 heading must follow the exact Phase 1 heading")
+print(text[phase_one[0].end():phase_two[0].start()], end="")
+PY
+)"
+  phase_parse_status=$?
+  if (( phase_parse_status != 0 )); then
+    phase_parse_error="$PHASE_ONE"
+    PHASE_ONE=""
+  fi
 fi
+
+# Counts are derived from tracked inputs and matched only through labeled fields
+# (anti-pattern A3).
+echo "=== no legacy task markers in the exact Phase 1 plan section ==="
+if [[ -n "$phase_parse_error" ]]; then
+  fail "$phase_parse_error"
+elif printf '%s\n' "$PHASE_ONE" | rg -q '^[[:space:]]*-[[:space:]]*\[ \][[:space:]]'; then
+  fail "legacy [ ] task marker remains in the Phase 1 plan section"
+else
+  pass "Phase 1 uses only the current task-marker vocabulary"
+fi
+
+echo "=== Phase 1 has substantive completed work ==="
+completed_phase_one_tasks=0
+if [[ -n "$phase_parse_error" ]]; then
+  fail "INCOMPLETE: Phase 1 task count is unavailable"
+else
+  completed_phase_one_tasks="$(printf '%s\n' "$PHASE_ONE" | rg -c '^- \[x\][[:space:]]+Task:')"
+  completed_phase_one_tasks="${completed_phase_one_tasks:-0}"
+  if (( completed_phase_one_tasks == 0 )); then
+    fail "INCOMPLETE: Phase 1 has zero substantive completed [x] tasks"
+  else
+    pass "Phase 1 has substantive completed work"
+  fi
+fi
+echo "Completed Phase 1 tasks: $completed_phase_one_tasks"
 
 echo "=== labeled baseline facts and official source identity ==="
 fact_errors="$(python3 - "$SCOPE" "$INVENTORY" "$GRAPH" "$SOURCES" \
