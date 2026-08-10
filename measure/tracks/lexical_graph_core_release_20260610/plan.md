@@ -36,9 +36,9 @@
 - [x] Task: Define sampling plan and plain-language thresholds — commit: c8e344761411836d55b392deb542960f0f12daee
   - [x] Alphabetical, thematic, collision/merge, and support-edge samples — commit: c8e344761411836d55b392deb542960f0f12daee
   - [x] Map samples to spec quality thresholds (labeled metrics only) — commit: c8e344761411836d55b392deb542960f0f12daee
-- [b] Task: Approve Phase 1 rules — human-gate:curriculum-language
-  - [b] Curriculum/language owner accepts sampling and fact-vs-signal split — human-gate:curriculum-language
-  - [b] Engineering owner accepts freeze package shape and sanity-only technical gate — human-gate:engineering
+- [x] Task: Approve Phase 1 rules — commit: 8447a3b174210c4845f6e0fb2fea8caa0fc93f28
+  - [x] Curriculum/language owner accepts sampling and fact-vs-signal split — commit: 8447a3b174210c4845f6e0fb2fea8caa0fc93f28
+  - [x] Engineering owner accepts freeze package shape and sanity-only technical gate — commit: 8447a3b174210c4845f6e0fb2fea8caa0fc93f28
 
 **Mid-Red evidence (2026-08-10, resumed after harness crash):** Added
 `tests/yle_p1_scope.sh`. `bash tests/yle_p1_scope.sh` exits `1` as expected
@@ -55,7 +55,15 @@ adds `english/cefr-vocabulary/review/yle-2025/phase1-scope.md`. The targeted
 with a valid 3,752-skill inventory. `bash measure/doctor.sh` is unavailable in
 this repository (exit `127`: file does not exist), so the documented Phase 1
 Green gate and requested project gates are the evidence for these automatable
-tasks. The two approval tasks remain human-gated and incomplete.
+tasks. The two approval tasks remained human-gated until the explicit owner
+approval recorded below.
+
+**Green human-approval evidence (2026-08-10):**
+`8447a3b174210c4845f6e0fb2fea8caa0fc93f28` adds
+`english/cefr-vocabulary/review/yle-2025/phase1-approval.md`, faithfully
+transcribing the user-supplied explicit approval as curriculum/language and
+engineering owners. `bash tests/yle_p1_scope.sh` exited `0` (5 checks) and
+`git diff --check` exited `0` before the evidence commit.
 
 ## Phase 2: YLE List Fidelity Audit
 
