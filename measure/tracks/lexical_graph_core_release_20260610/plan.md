@@ -8,8 +8,9 @@
 > next executable · `[b]` human-gated. Legacy `[ ]` is not used.
 >
 > **First remaining automatable work:** Phase 2 Task "Build YLE membership audit
-> fixtures and check harness" (marked `[~]`). Phase 1's two owner approvals
-> remain human-gated.
+> fixtures and check harness" (marked `[~]`). Phase 1's explicit dual-owner
+> approval is recorded by `8447a3b174210c4845f6e0fb2fea8caa0fc93f28` in
+> `english/cefr-vocabulary/review/yle-2025/phase1-approval.md`.
 >
 > **Marker-contract note:** Skill vocabulary wants human gates as
 > `[b] … deferred:<owner>`. The repo checker still (1) matches only
@@ -64,6 +65,12 @@ approval recorded below.
 transcribing the user-supplied explicit approval as curriculum/language and
 engineering owners. `bash tests/yle_p1_scope.sh` exited `0` (5 checks) and
 `git diff --check` exited `0` before the evidence commit.
+
+**Approval-state prose remediation (2026-08-10):**
+`056eda1a7f14abb9d776f1a9c3c91fa21be7d1ee` aligns the approval-state prose in
+`english/cefr-vocabulary/review/yle-2025/phase1-scope.md` with the existing
+explicit dual-owner approval record. The Phase 2 membership-fixture task
+remains the next automatable work.
 
 ## Phase 2: YLE List Fidelity Audit
 
