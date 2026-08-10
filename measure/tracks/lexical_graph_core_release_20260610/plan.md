@@ -7,8 +7,9 @@
 > **Marker vocabulary (orchestrator):** `[x]` complete · `[~]` in-progress or
 > next executable · `[b]` human-gated. Legacy `[ ]` is not used.
 >
-> **First executable work:** Phase 1 Task "Lock freeze scope and baseline facts"
-> (marked `[~]`).
+> **First remaining automatable work:** Phase 2 Task "Build YLE membership audit
+> fixtures and check harness" (marked `[~]`). Phase 1's two owner approvals
+> remain human-gated.
 >
 > **Marker-contract note:** Skill vocabulary wants human gates as
 > `[b] … deferred:<owner>`. The repo checker still (1) matches only
@@ -20,26 +21,26 @@
 
 ## Phase 1: Freeze Scope, Facts Inventory, And Review Rules
 
-- [~] Task: Lock freeze scope and baseline facts
-  - [~] Confirm release authority is YLE-only; A2 Key/B1 are method-later only
-  - [~] Snapshot labeled baseline counts from tracked artifacts (YLE skills,
+- [x] Task: Lock freeze scope and baseline facts
+  - [x] Confirm release authority is YLE-only; A2 Key/B1 are method-later only
+  - [x] Snapshot labeled baseline counts from tracked artifacts (YLE skills,
         Starters/Movers/Flyers membership, topic groups, support edges,
         prerequisite count) into a draft freeze facts section
-  - [~] Cite official YLE 2025 source identity from `SOURCES.md` (URL + SHA-256)
-  - [~] Evidence: labeled integers in the draft facts section; no digit-only claims
-- [~] Task: Separate source-backed facts from derived signals
-  - [~] Catalog edge types touching YLE: `contains`, `aligned_to_standard`,
+  - [x] Cite official YLE 2025 source identity from `SOURCES.md` (URL + SHA-256)
+  - [x] Evidence: labeled integers in the draft facts section; no digit-only claims
+- [x] Task: Separate source-backed facts from derived signals
+  - [x] Catalog edge types touching YLE: `contains`, `aligned_to_standard`,
         `supports` (and confirm `prerequisite_for` = 0)
-  - [~] Label each class as source-backed fact vs derived support signal
-  - [~] Prohibit fabricated hard prerequisites in the written freeze rules
-- [~] Task: Define durable YLE review records
-  - [~] Decision fields: reviewer role, timestamp, source location, finding
+  - [x] Label each class as source-backed fact vs derived support signal
+  - [x] Prohibit fabricated hard prerequisites in the written freeze rules
+- [x] Task: Define durable YLE review records
+  - [x] Decision fields: reviewer role, timestamp, source location, finding
         class (omit / false-include / bad-merge / group / support / other),
         disposition, supersession
-  - [~] Define exception and quarantine handling for freeze blockers
-- [~] Task: Define sampling plan and plain-language thresholds
-  - [~] Alphabetical, thematic, collision/merge, and support-edge samples
-  - [~] Map samples to spec quality thresholds (labeled metrics only)
+  - [x] Define exception and quarantine handling for freeze blockers
+- [x] Task: Define sampling plan and plain-language thresholds
+  - [x] Alphabetical, thematic, collision/merge, and support-edge samples
+  - [x] Map samples to spec quality thresholds (labeled metrics only)
 - [b] Task: Approve Phase 1 rules — human-gate:curriculum-language
   - [b] Curriculum/language owner accepts sampling and fact-vs-signal split — human-gate:curriculum-language
   - [b] Engineering owner accepts freeze package shape and sanity-only technical gate — human-gate:engineering
@@ -50,6 +51,16 @@
 labeled baseline/source facts, the fact-vs-signal catalog, and the explicit
 zero-`prerequisite_for` rule are not yet present. No Green artifacts or graph
 files were changed.
+
+**Green evidence (2026-08-10):** `c8e344761411836d55b392deb542960f0f12daee`
+adds `english/cefr-vocabulary/review/yle-2025/phase1-scope.md`. The targeted
+`bash tests/yle_p1_scope.sh` exited `0` (5 checks); `git diff --check` exited
+`0`; both requested `node --check` commands exited `0`; and
+`node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` exited `0`
+with a valid 3,752-skill inventory. `bash measure/doctor.sh` is unavailable in
+this repository (exit `127`: file does not exist), so the documented Phase 1
+Green gate and requested project gates are the evidence for these automatable
+tasks. The two approval tasks remain human-gated and incomplete.
 
 ## Phase 2: YLE List Fidelity Audit
 
