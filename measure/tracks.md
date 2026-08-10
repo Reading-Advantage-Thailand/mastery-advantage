@@ -12,10 +12,19 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: English Lexical Graph Core Release** *(critical path — gates 3 blocked tracks)*
-  *Release the audited, reproducible, source-backed Cambridge lexical graph
-  without blocking on optional enrichment.*
-  *Status (sharpened 2026-06-21): not started — 0/95 plan tasks, metadata `new`. Note: the underlying graph **data already exists and is tracked** (`english/cefr-vocabulary/data/cambridge-vocabulary-inventory.json` 1.5MB, `english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json` 13.8MB, both `9a5d4c4` 2026-06-10; `english/gse-knowledge-space.json` 17.5MB, 2026-05-20). This track is the audit / schema-validation / provenance / reproducibility / test-gate effort **over that existing data** (per plan: "generate counts from the tracked inventory and graph"; acceptance = byte-identical reproducible outputs + durable audit decisions), not a from-scratch build. It is the release gate for the three enrichment/recommendation tracks below (metadata `blocked`).*
+- [ ] **Track: English Lexical Graph Core Release (YLE Baseline Freeze)** *(critical path — gates 3 blocked tracks)*
+  *Verify and freeze the Cambridge YLE 2025 baseline of the existing lexical
+  graph; define static-graph + learner-state next-step consumption; validate
+  reading-program fixtures; dual human go/no-go. Not a standing regeneration
+  pipeline. A2 Key/B1 use the same method later.*
+  *Status (revised 2026-08-10): in progress at strategy/plan revision only —
+  substantive audit not started; first executable work is Phase 1 scope lock
+  (`[~]`). Metadata `in_progress`, 25 top-level plan tasks, none complete.
+  Underlying graph data already tracked (inventory + knowledge-space,
+  2026-06-10); current draft includes 1,388 YLE-aligned skills. Acceptance is
+  YLE fidelity + relationship review + consumption contract + reading fixtures
+  + freeze package + bounded sanity — not endless source-refresh ceremony.
+  Still the release gate for the three enrichment/recommendation tracks below.*
   *Link: [./tracks/lexical_graph_core_release_20260610/](./tracks/lexical_graph_core_release_20260610/)*
 
 ---
