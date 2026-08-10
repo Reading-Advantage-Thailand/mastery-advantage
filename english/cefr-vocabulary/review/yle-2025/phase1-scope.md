@@ -1,6 +1,6 @@
 # YLE 2025 Freeze: Phase 1 Scope And Review Rules
 
-**Status:** draft rules; not curriculum/language or engineering approval.
+**Status:** Phase 1 rules approved by the curriculum/language and engineering owners; the explicit dual-owner approval is recorded in [phase1-approval.md](phase1-approval.md).
 **Release authority:** Cambridge YLE 2025 only (Pre A1 Starters, A1 Movers, and
 A2 Flyers). A2 Key and B1 Preliminary remain in the tracked graph solely for
 structural context. Their audit and release authority are method-later work,
@@ -82,10 +82,11 @@ support edge from release eligibility without deleting the evidence; the record
 must state the reason, affected graph references, reviewer role, and condition
 for re-review. Quarantined items must not be counted as reviewed acceptance.
 
-## Approved One-Time Audit Sampling Rules (Pending Human Gate)
+## Approved One-Time Audit Sampling Rules
 
-These are the proposed rules for the one-time YLE audit. The curriculum/language
-owner must accept or revise them; this document does not record that approval.
+These are the approved rules for the one-time YLE audit. The explicit dual-owner
+approval is recorded in [phase1-approval.md](phase1-approval.md). Any later
+revision requires the curriculum/language owner's acceptance.
 
 | Review population | Minimum sample / rule | Metric and disposition |
 |---|---|---|
@@ -100,11 +101,10 @@ effect until the curriculum/language owner accepts it. The engineering review
 is limited to the package shape, source identity, structural sanity, and
 artifact consistency; it is not curriculum approval.
 
-## Phase 1 Human Gate
+## Phase 1 Human Approval Record
 
-The plan's curriculum/language and engineering tasks remain blocked
-(`human-gate:curriculum-language` and `human-gate:engineering`). No owner
-signature, curriculum approval, or engineering approval is created by this
-draft. A later `phase1-approval.md` may close those tasks only with named owner
-roles, dates, and explicit acceptance of the sampling plan and the sanity-only
-technical gate.
+The plan's curriculum/language and engineering approval tasks are complete.
+The explicit dual-owner approval, including owner roles, date, and acceptance
+of the sampling plan and sanity-only technical gate, is recorded in
+[phase1-approval.md](phase1-approval.md). This scope document does not create
+or replace that approval record.
