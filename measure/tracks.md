@@ -63,6 +63,23 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
+- [ ] **Track: GSE Grammar Inventory And Inflection-Level Identity** *(new 2026-08-11)*
+  *Acquire the Pearson GSE Grammar inventory, graph it as an independently gated
+  enrichment layer, specify inflection-level identity, and make recommendation
+  matching inflection-aware under a new contract version.*
+  *Status: new — opened from the recommendation Phase 4 independent review.
+  Cambridge lists are lemma-only, so `is`/`was`/`been` carry no level and count
+  as hard unmatched vocabulary; 8 of 18 unmatched spans in the recommendation
+  fixture pack are inflections of listed lemmas. Naive lemma mapping is unsafe:
+  `be` spans pre-A1 (`is`) to about B2 (`had been`). Source URL pinned in spec.*
+  *Link: [./tracks/gse_grammar_inflection_levels_20260811/](./tracks/gse_grammar_inflection_levels_20260811/)*
+  *Coordination: closes two tech-debt items owned by
+  [lexical_recommendation_contract_20260610](./tracks/lexical_recommendation_contract_20260610/);
+  distinct axis from [sense_level_identity_spec_20260611](./tracks/sense_level_identity_spec_20260611/),
+  which covers semantic senses only.*
+
+---
+
 - [ ] **Track: B2 Vocabulary Source Expansion** *(deferred — not graphable for current product)*
   *Close the B2 gap using documented alternative sources (Vocabulary in Use, etc.) without claiming false Cambridge FCE coverage.*
   *Status: parked 2026-08-11. B2 inventory is out of scope for current customers;
