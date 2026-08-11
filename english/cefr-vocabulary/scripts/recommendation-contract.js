@@ -271,12 +271,26 @@ function evaluate(graph, caseConfig, text, freqMap) {
   ).length;
   const targetDensity = E === 0 ? 0 : targetSpanCount / E;
 
+  const unknownCounts = [...articleCounts.values()];
+  const repetitionScore =
+    unknownCounts.length === 0
+      ? 0
+      : unknownCounts.reduce((a, b) => a + b, 0) / unknownCounts.length;
+
+  // Article-fit utility values for each ranked skill (RANKING_LAYER_SPEC §5 unlock)
+  for (const item of ranked) {
+    const count = item.articleCount || 0;
+    const occurs = count > 0 ? 1 : 0;
+    item.articleFitUtility = Number((0.5 * occurs + 0.5 * Math.min(1, count / 3)).toFixed(6));
+  }
+
   return {
     contractVersion: 'recommendation.v1',
     caseId: caseConfig.id,
     lexiconMode: mode,
     goalStage,
     targetVocabularyCap: targetCap,
+    rankingWeights: weights,
     metrics: {
       eligible_span_count: { label: 'Eligible span count', value: E },
       known_span_count: { label: 'Known span count', value: knownCount },
@@ -310,6 +324,10 @@ function evaluate(graph, caseConfig, text, freqMap) {
         value: Number(targetDensity.toFixed(6)),
         numerator: targetSpanCount,
         denominator: E,
+      },
+      repetitionScore: {
+        label: 'Mean article occurrences per unknown skill',
+        value: Number(repetitionScore.toFixed(6)),
       },
     },
     spans,
@@ -388,6 +406,63 @@ function selfCheck(graphPath, fixturesRoot, freqPath) {
       if (actual.metrics.unmatchedTokenRate.value < 0.05) {
         throw new Error(`${entry.id}: expected non-trivial unmatched rate in trap fixture`);
       }
+    }
+    if (expected.requireMweMatch) {
+      const mwe = actual.spans.find((s) => (s.rationale?.longestMatchTokenCount || 0) >= 2);
+      if (!mwe) throw new Error(`${entry.id}: expected multi-token MWE match span`);
+    }
+    if (expected.requireExplainability && actual.rankedNextVocabulary.size > 0) {
+      for (const item of actual.rankedNextVocabulary.items) {
+        if (!Array.isArray(item.signals) || item.signals.length < 4) {
+          throw new Error(`${entry.id}: ranked item missing 4 explainability signals`);
+        }
+        if (item.articleFitUtility == null) {
+          throw new Error(`${entry.id}: ranked item missing articleFitUtility`);
+        }
+      }
+    }
+    if (expected.requireMinTargets != null) {
+      if (actual.rankedNextVocabulary.size < expected.requireMinTargets) {
+        throw new Error(`${entry.id}: need ≥${expected.requireMinTargets} ranked targets`);
+      }
+    }
+    if (expected.requireFrequencySignal) {
+      const hasFreq = actual.rankedNextVocabulary.items.some((item) =>
+        (item.signals || []).some((sig) => sig.source === 'frequency-utility' && sig.value > 0),
+      );
+      if (!hasFreq) throw new Error(`${entry.id}: expected frequency-utility signal > 0`);
+    }
+    if (expected.requireSrsFirst) {
+      const due = new Set(config.learnerState?.dueSkillIds || []);
+      if (!due.size) throw new Error(`${entry.id}: profile missing dueSkillIds for srs check`);
+      const top = actual.rankedNextVocabulary.items[0];
+      if (!top || !due.has(top.skillId)) {
+        throw new Error(`${entry.id}: expected due skill ranked first, got ${top && top.skillId}`);
+      }
+    }
+    if (expected.requireEmptyEligible) {
+      if (actual.metrics.eligible_span_count.value !== 0) {
+        throw new Error(`${entry.id}: expected empty eligible set`);
+      }
+      if (actual.metrics.eligibleKnownCoverage.value !== 0) {
+        throw new Error(`${entry.id}: empty article metrics must be 0`);
+      }
+    }
+    if (expected.requireLexiconMode) {
+      if (actual.lexiconMode !== expected.requireLexiconMode) {
+        throw new Error(`${entry.id}: lexiconMode want ${expected.requireLexiconMode}, got ${actual.lexiconMode}`);
+      }
+    }
+    if (expected.requireIgnoreSkipped) {
+      const skipped = actual.spans.filter((s) => s.rationale?.reason === 'skipped_surface');
+      if (!skipped.length) throw new Error(`${entry.id}: expected ignoreSurfaceForms skip`);
+    }
+    // Determinism: re-run and compare score list
+    if (expected.requireDeterminism) {
+      const again = evaluate(graph, config, text, freqMap);
+      const a = actual.rankedNextVocabulary.items.map((i) => `${i.skillId}:${i.score}`).join('|');
+      const b = again.rankedNextVocabulary.items.map((i) => `${i.skillId}:${i.score}`).join('|');
+      if (a !== b) throw new Error(`${entry.id}: non-deterministic ranking`);
     }
     results.push({
       id: entry.id,

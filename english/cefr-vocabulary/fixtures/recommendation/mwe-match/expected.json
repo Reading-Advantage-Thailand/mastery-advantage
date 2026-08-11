@@ -1,0 +1,6 @@
+{
+  "requireMweMatch": true,
+  "requireExplainability": true,
+  "requireMinTargets": 1,
+  "maxTargetSize": 5
+}

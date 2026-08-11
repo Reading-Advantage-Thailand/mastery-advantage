@@ -16,15 +16,15 @@
 - [x] Task: Define next-vocabulary candidate and ranking contract
   - [x] Define optional signals, weights, exclusions, and tie behavior
   - [x] Define SRS urgency and learner-goal precedence
-- [ ] Task: Complete Phase 1 contract review gate — human-gate:both-owners
+- [x] Task: Complete Phase 1 contract review gate — human-gate:both-owners
 
 **Green evidence (2026-08-11):**
 
 - `english/cefr-vocabulary/RECOMMENDATION-CONTRACT.md`
+- **Decision: go** — `review/enrichment/phase1-recommendation-approval.md`
 - Reuses YLE reading lessons: unmatched in denominator; target cap; no
   `prerequisite_for`
-- Article-fit formula documented for future DomainUtilityProvider weight > 0
-- Harness: `bash tests/recommendation_contract.sh`
+- Article-fit formula unlocked for DomainUtilityProvider when article context exists
 
 ## Phase 2: Tests And Offline Fixtures
 
@@ -38,9 +38,11 @@
 
 **Green evidence (2026-08-11):**
 
-- `fixtures/recommendation/` — hard-unmatched, numbers-skipped, matched-trap,
-  yle-compat
-- Self-check via `scripts/recommendation-contract.js --self-check`
+- `fixtures/recommendation/` — 9 cases (hard-unmatched, numbers-skipped,
+  matched-trap, yle-compat, mwe-match, ranking-signals, empty-article,
+  core-mode, ignore-surface)
+- Self-check via `scripts/recommendation-contract.js --self-check` — 9/9
+- Report: `reports/enrichment/recommendation-phase2-3.md`
 
 ## Phase 3: Reference Evaluation Implementation
 
@@ -53,7 +55,10 @@
 
 - `scripts/recommendation-contract.js` — `recommendation.v1`
 - Ranking signals: frequency-utility, article-repetition, srs-urgency, goal-scope
+- `articleFitUtility` on ranked items; `repetitionScore` metric
 - Optional frequency overlay pin from approved coverage layer
+- Determinism self-check on ranking-signals fixture
+- Harness: `bash tests/recommendation_contract.sh`
 
 ## Phase 4: Offline Evaluation
 

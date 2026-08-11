@@ -1,0 +1,5 @@
+{
+  "requireIgnoreSkipped": true,
+  "requireExplainability": true,
+  "maxTargetSize": 5
+}

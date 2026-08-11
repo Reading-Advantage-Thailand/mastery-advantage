@@ -1,9 +1,14 @@
 {
   "contractVersion": "recommendation.v1",
   "cases": [
-    { "id": "hard-unmatched" },
-    { "id": "numbers-skipped" },
-    { "id": "matched-trap" },
-    { "id": "yle-compat" }
+    { "id": "hard-unmatched", "covers": ["unmatched-in-denominator"] },
+    { "id": "numbers-skipped", "covers": ["number-eligibility"] },
+    { "id": "matched-trap", "covers": ["matched-only-not-primary"] },
+    { "id": "yle-compat", "covers": ["yle-reading-compat"] },
+    { "id": "mwe-match", "covers": ["longest-mwe"] },
+    { "id": "ranking-signals", "covers": ["frequency", "srs", "explainability", "determinism"] },
+    { "id": "empty-article", "covers": ["empty-input"] },
+    { "id": "core-mode", "covers": ["lexicon-isolation"] },
+    { "id": "ignore-surface", "covers": ["ignoreSurfaceForms"] }
   ]
 }

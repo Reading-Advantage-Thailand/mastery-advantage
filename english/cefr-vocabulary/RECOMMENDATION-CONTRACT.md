@@ -1,8 +1,9 @@
 # Vocabulary And Article Recommendation Contract
 
-**Status:** Phase 1 contract (engineering draft complete 2026-08-11).  
+**Status:** Phase 1 **go** (2026-08-11); Phases 2–3 reference + fixtures green.  
 **Track:** `lexical_recommendation_contract_20260610`.  
-**Runtime:** Offline pure functions over `(graphSnapshot, articleText, learnerState)` — no production API or DB.
+**Runtime:** Offline pure functions over `(graphSnapshot, articleText, learnerState)` — no production API or DB.  
+**Approval:** `review/enrichment/phase1-recommendation-approval.md`.
 
 This contract generalizes the YLE reading fixtures (`yle-reading-contract.js`)
 to the full inventory while remaining application-neutral.
@@ -151,8 +152,9 @@ value_articleFit =
   + 0.5 * min(1, count(B in A) / 3)
 ```
 
-Until recommendation Phase 1 is dual-owner accepted, the planner keeps
-`weight_articleFit = 0` (RANKING_LAYER_SPEC §6).
+Phase 1 is dual-owner **go**. The planner may set `weight_articleFit > 0` when
+an active article is in `LearnerContext`. Without an article, weight stays 0
+(RANKING_LAYER_SPEC §6).
 
 ## 6. Layer isolation
 

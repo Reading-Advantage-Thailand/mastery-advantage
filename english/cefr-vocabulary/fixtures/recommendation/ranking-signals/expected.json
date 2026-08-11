@@ -1,0 +1,8 @@
+{
+  "requireExplainability": true,
+  "requireMinTargets": 3,
+  "requireFrequencySignal": true,
+  "requireSrsFirst": true,
+  "requireDeterminism": true,
+  "maxTargetSize": 5
+}

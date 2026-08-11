@@ -54,8 +54,8 @@ from pathlib import Path
 root = Path(sys.argv[1])
 idx = json.loads((root / "index.json").read_text())
 errors = []
-if len(idx.get("cases") or []) < 4:
-    errors.append("need ≥4 cases")
+if len(idx.get("cases") or []) < 8:
+    errors.append("need ≥8 cases")
 for c in idx["cases"]:
     d = root / c["id"]
     for name in ("text.txt", "profile.json", "expected.json"):
@@ -67,15 +67,24 @@ if errors:
 print("cases", len(idx["cases"]))
 PY
 if [[ $? -eq 0 ]]; then
-  pass "fixture pack complete (≥4 cases)"
+  pass "fixture pack complete (≥8 cases)"
 else
   fail "fixture pack incomplete"
 fi
 
+echo "=== Phase 1 approval ==="
+APPROVAL="$VOCAB/review/enrichment/phase1-recommendation-approval.md"
+if [[ -f "$APPROVAL" ]] && grep -qiE 'Decision:\**[[:space:]]*go' "$APPROVAL"; then
+  pass "phase1-recommendation-approval.md records go"
+else
+  fail "recommendation Phase 1 approval missing"
+fi
+
 echo "=== plan markers ==="
 PLAN="$ROOT/measure/tracks/lexical_recommendation_contract_20260610/plan.md"
-if [[ -f "$PLAN" ]] && grep -q 'RECOMMENDATION-CONTRACT.md' "$PLAN"; then
-  pass "recommendation plan references contract evidence"
+if [[ -f "$PLAN" ]] && grep -q 'RECOMMENDATION-CONTRACT.md' "$PLAN" \
+  && grep -q 'phase1-recommendation-approval' "$PLAN"; then
+  pass "recommendation plan references contract + Phase 1 go"
 else
   fail "recommendation plan missing evidence"
 fi

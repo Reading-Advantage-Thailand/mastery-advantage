@@ -45,12 +45,12 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: Vocabulary And Article Recommendation Contract** *(in progress)*
+- [ ] **Track: Vocabulary And Article Recommendation Contract** *(in progress — Phases 1–3 complete)*
   *Define portable lexical matching, readability metrics, ranking contracts, and
   offline evaluation fixtures.*
-  *Status: Phases 1–3 engineering done — RECOMMENDATION-CONTRACT.md, fixtures,
-  recommendation-contract.js (longest-MWE, unmatched in denominator, capped
-  ranking + frequency utility). Phase 1 human gate open; Phase 4 evaluation next.*
+  *Status: Phase 1 go; Phase 2 fixtures (9 cases); Phase 3 reference
+  recommendation-contract.js green. Next: Phase 4 expert evaluation; Phase 5
+  app handoff. Article-fit utility unlocked when article context is present.*
   *Link: [./tracks/lexical_recommendation_contract_20260610/](./tracks/lexical_recommendation_contract_20260610/)*
 
 ---

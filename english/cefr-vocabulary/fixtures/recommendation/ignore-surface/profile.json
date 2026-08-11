@@ -1,0 +1,13 @@
+{
+  "id": "ignore-surface",
+  "lexiconMode": "yle-only",
+  "targetVocabularyCap": 5,
+  "learnerState": {
+    "goalStage": "starters",
+    "ignoreSurfaceForms": ["Bob"],
+    "mastery": {
+      "english.vocabulary.skill.the.determiner": "known",
+      "english.vocabulary.skill.and.conjunction": "known"
+    }
+  }
+}

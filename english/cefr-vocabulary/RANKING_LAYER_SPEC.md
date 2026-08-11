@@ -164,19 +164,28 @@ Quarantined or rejected relation layers never contribute (weight stays 0).
 | `value` | `0` |
 | `weight` | `0` |
 
-## 6. Article-fit signal (inert at weight 0)
+## 6. Article-fit signal (unlocked; weight 0 without article context)
 
 ### 6.1 Ownership
 
 `lexical_recommendation_contract_20260610` defines coverage formulas and
-exposure bounds. This track does not define them.
+exposure bounds (Phase 1 **go**, 2026-08-11). This track does not redefine them.
 
 ### 6.2 When live
 
-After that track passes its Phase 1 gate, a later provider version may set
-`weight_articleFit > 0` using article metrics for the active content item.
+```text
+value_articleFit =
+    0.5 * 1[B occurs in active article A as unknown]
+  + 0.5 * min(1, count(B in A) / 3)
+```
 
-Until then weight is 0 with the same declared inert pattern as semantic.
+Default composition weight for `articleFit` is **0** when `LearnerContext` has
+no active article. When the app passes article evaluation results, a provider
+version may set `weight_articleFit > 0` (product choice; not required for core
+frequency ranking).
+
+Reference computation: `rankedNextVocabulary.items[].articleFitUtility` from
+`scripts/recommendation-contract.js`.
 
 ## 7. Worked examples (illustrative)
 

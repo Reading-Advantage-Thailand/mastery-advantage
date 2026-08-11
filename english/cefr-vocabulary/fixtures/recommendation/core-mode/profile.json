@@ -1,0 +1,12 @@
+{
+  "id": "core-mode",
+  "lexiconMode": "core-only",
+  "targetVocabularyCap": 5,
+  "learnerState": {
+    "goalStage": "starters",
+    "mastery": {
+      "english.vocabulary.skill.the.determiner": "known",
+      "english.vocabulary.skill.on.preposition": "known"
+    }
+  }
+}

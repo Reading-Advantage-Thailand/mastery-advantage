@@ -1,0 +1,13 @@
+{
+  "id": "mwe-match",
+  "lexiconMode": "yle-only",
+  "targetVocabularyCap": 5,
+  "learnerState": {
+    "goalStage": "starters",
+    "mastery": {
+      "english.vocabulary.skill.i.pronoun": "known",
+      "english.vocabulary.skill.the.determiner": "known",
+      "english.vocabulary.skill.on.preposition": "known"
+    }
+  }
+}

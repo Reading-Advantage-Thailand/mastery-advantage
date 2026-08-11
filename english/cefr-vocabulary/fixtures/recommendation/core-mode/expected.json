@@ -1,0 +1,6 @@
+{
+  "requireLexiconMode": "core-only",
+  "requireExplainability": true,
+  "requireMinTargets": 1,
+  "maxTargetSize": 5
+}

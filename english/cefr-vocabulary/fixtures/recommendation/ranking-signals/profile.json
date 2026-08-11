@@ -1,0 +1,14 @@
+{
+  "id": "ranking-signals",
+  "lexiconMode": "yle-only",
+  "targetVocabularyCap": 5,
+  "learnerState": {
+    "goalStage": "starters",
+    "mastery": {
+      "english.vocabulary.skill.a.determiner": "known",
+      "english.vocabulary.skill.the.determiner": "known",
+      "english.vocabulary.skill.here.adverb": "known"
+    },
+    "dueSkillIds": ["english.vocabulary.skill.friend.noun"]
+  }
+}
