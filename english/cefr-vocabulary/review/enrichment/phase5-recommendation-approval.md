@@ -31,3 +31,13 @@ recommendation service, API, or UI.
 ## Decision
 
 **go** for application handoff of the portable offline contract and fixtures.
+
+## Owner confirmation
+
+A commit audit on 2026-08-11 found that this record named no owner words. The
+audit asked the owner to confirm the gate. The owner answered in the same
+session:
+
+> OK. I approve. Let's fix up any remaining issues.
+
+The record is a retrospective transcription of that confirmation.

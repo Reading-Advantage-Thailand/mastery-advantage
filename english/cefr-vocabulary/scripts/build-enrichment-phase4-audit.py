@@ -39,6 +39,30 @@ OUT_MD = ROOT / "reports" / "enrichment" / "phase4-audit.md"
 OUT_GAPS = ROOT / "reports" / "enrichment" / "coverage-gaps.json"
 GENERATED_AT = "2026-08-11"
 SAMPLE_SEED = 20260811
+
+# Queue files owned by this track's enrichment layers. The queue directory is
+# shared with other tracks, so this audit names its own files. A directory glob
+# would pull another track's rows into an approved coverage report.
+COVERAGE_QUEUES: dict[str, tuple[str, ...]] = {
+    "enrichment.cambridge.a2-key-appendix": (
+        "a2-key-ambiguous.jsonl",
+        "a2-key-unmatched.jsonl",
+    ),
+    "enrichment.cambridge.b1-preliminary-appendix": (
+        "b1-preliminary-ambiguous.jsonl",
+        "b1-preliminary-unmatched.jsonl",
+    ),
+    "enrichment.cambridge.grammatical-groups": ("yle-grammatical-unmatched.jsonl",),
+    "enrichment.frequency.wordfreq": (
+        "frequency-label-anomalies.jsonl",
+        "frequency-missing.jsonl",
+        "frequency-unreliable.jsonl",
+    ),
+    "enrichment.viu.unit-groups": (
+        "viu-ambiguous.jsonl",
+        "viu-unmatched.jsonl",
+    ),
+}
 SAMPLE_TARGET = 100
 
 LAYERS = [
@@ -373,11 +397,18 @@ def load_queue_counts() -> dict[str, Any]:
     open_ambiguous: dict[str, int] = {}
     if not QUEUE_DIR.is_dir():
         return {"queues": {}, "ambiguousOpen": {}, "policy": "missing-queue-dir"}
-    for path in sorted(QUEUE_DIR.glob("*.jsonl")):
+    owned = sorted({name for names in COVERAGE_QUEUES.values() for name in names})
+    missing = [name for name in owned if not (QUEUE_DIR / name).is_file()]
+    if missing:
+        raise SystemExit(
+            "coverage queue files are absent: " + ", ".join(missing)
+        )
+    for name in owned:
+        path = QUEUE_DIR / name
         n = sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
-        counts[path.name] = n
-        if "ambiguous" in path.name:
-            open_ambiguous[path.name] = n
+        counts[name] = n
+        if "ambiguous" in name:
+            open_ambiguous[name] = n
     return {
         "queues": counts,
         "ambiguousOpen": open_ambiguous,

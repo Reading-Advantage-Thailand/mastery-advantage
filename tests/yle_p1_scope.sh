@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
+# Dependency preflight. Without ripgrep the task-count checks below report zero
+# matches, which reads as a contract failure instead of a missing tool. Exit 2
+# keeps a tool failure distinct from a Red (exit 1).
+if ! command -v rg >/dev/null 2>&1; then
+  echo "ERROR: this harness requires ripgrep (rg), which is not installed." >&2
+  echo "Install ripgrep, then run this harness again." >&2
+  exit 2
+fi
+
 FAILED=0
 PASS_COUNT=0
 FAIL_COUNT=0

@@ -15,3 +15,15 @@
 
 Phase 4 offline evaluation is accepted. No open fixture failures. Proceed to
 Phase 5 app handoff.
+
+## Owner confirmation
+
+A commit audit on 2026-08-11 found that this record named no owner words. The
+audit asked the owner to confirm the gate. The owner answered in the same
+session:
+
+> OK. I approve. Let's fix up any remaining issues.
+
+The record is a retrospective transcription of that confirmation. The Phase 4
+judgments carry `reviewer: engineering-owner (session procedure)`, which means
+the assistant produced the 9 judgments under owner direction.
