@@ -5,7 +5,8 @@
 - Movers direct source rows: **399**.
 - Flyers direct source rows: **513**.
 - YLE unique graph skills: **1,405**.
-- YLE alphabetical membership precision: **1.000** (1,407/1,407 graph membership pairs).
+- YLE alphabetical membership precision: **1.000** (1,407/1,407 matched-row pairs; this ratio is self-referential by contract).
+- YLE graph memberships justified by an official source row: **1.000** (1,407/1,407 graph membership pairs).
 - YLE alphabetical membership recall: **1.000** (1,407/1,407 independent source rows).
 - YLE thematic membership precision: **1.000** (100/100 reviewed source memberships).
 - Unresolved high-severity blockers: **0**.

@@ -82564,7 +82564,7 @@
   },
   {
     "headword": "city/town centre (US center)",
-    "normalizedHeadword": "center",
+    "normalizedHeadword": "city/town centre (us center)",
     "matchForms": [
       "center",
       "city/town centre"
@@ -82585,7 +82585,7 @@
   },
   {
     "headword": "could (as in past of can for ability)",
-    "normalizedHeadword": "could",
+    "normalizedHeadword": "could (as in past of can for ability)",
     "matchForms": [
       "could"
     ],
@@ -82605,7 +82605,7 @@
   },
   {
     "headword": "floor (e.g. ground, 1st, etc.)",
-    "normalizedHeadword": "floor",
+    "normalizedHeadword": "floor (e.g. ground, 1st, etc.)",
     "matchForms": [
       "floor"
     ],
@@ -82625,7 +82625,7 @@
   },
   {
     "headword": "shopping centre (US center)",
-    "normalizedHeadword": "center",
+    "normalizedHeadword": "shopping centre (us center)",
     "matchForms": [
       "center",
       "shopping centre"
@@ -82646,7 +82646,7 @@
   },
   {
     "headword": "sports centre (US center)",
-    "normalizedHeadword": "center",
+    "normalizedHeadword": "sports centre (us center)",
     "matchForms": [
       "center",
       "sports centre"
@@ -82667,7 +82667,7 @@
   },
   {
     "headword": "take off (i.e. get undressed)",
-    "normalizedHeadword": "take off",
+    "normalizedHeadword": "take off (i.e. get undressed)",
     "matchForms": [
       "take off"
     ],
@@ -82687,7 +82687,7 @@
   },
   {
     "headword": "town/city centre (US center)",
-    "normalizedHeadword": "center",
+    "normalizedHeadword": "town/city centre (us center)",
     "matchForms": [
       "center",
       "town/city centre"
@@ -82708,7 +82708,7 @@
   },
   {
     "headword": "a.m. (for time)",
-    "normalizedHeadword": "a.m.",
+    "normalizedHeadword": "a.m. (for time)",
     "matchForms": [
       "a.m."
     ],
@@ -82726,7 +82726,7 @@
   },
   {
     "headword": "file (as in open and close a file)",
-    "normalizedHeadword": "file",
+    "normalizedHeadword": "file (as in open and close a file)",
     "matchForms": [
       "file"
     ],
@@ -82746,7 +82746,7 @@
   },
   {
     "headword": "kilometre (US kilometer)",
-    "normalizedHeadword": "kilometer",
+    "normalizedHeadword": "kilometre (us kilometer)",
     "matchForms": [
       "kilometer",
       "kilometre"
@@ -82767,7 +82767,7 @@
   },
   {
     "headword": "p.m. (for time)",
-    "normalizedHeadword": "p.m.",
+    "normalizedHeadword": "p.m. (for time)",
     "matchForms": [
       "p.m."
     ],
@@ -82785,7 +82785,7 @@
   },
   {
     "headword": "programme (US program)",
-    "normalizedHeadword": "program",
+    "normalizedHeadword": "programme (us program)",
     "matchForms": [
       "program",
       "programme"
@@ -82806,7 +82806,7 @@
   },
   {
     "headword": "take (as in time e.g. it takes 20 minutes)",
-    "normalizedHeadword": "take",
+    "normalizedHeadword": "take (as in time e.g. it takes 20 minutes)",
     "matchForms": [
       "take"
     ],

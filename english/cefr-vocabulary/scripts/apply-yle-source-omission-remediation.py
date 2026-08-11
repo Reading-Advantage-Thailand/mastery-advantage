@@ -172,7 +172,12 @@ def main() -> None:
         )
         inventory.append({
             "headword": headword,
-            "normalizedHeadword": forms[0],
+            # generate-vocabulary-graph.js derives both the skill merge key
+            # (`${normalizedHeadword}::${pos}`) and the node ID from this field,
+            # and sets sourceNormalizedForm from it. It must therefore be the
+            # gloss-retaining normalized form, NOT the stripped match-form base:
+            # four "... centre (US center)" headwords share the base "center".
+            "normalizedHeadword": source_normalized(headword),
             "matchForms": forms,
             "partsOfSpeech": list(parts),
             "cefrLevels": [cefr],

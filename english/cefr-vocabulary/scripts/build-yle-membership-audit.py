@@ -447,6 +447,19 @@ def main() -> None:
     mwe_rows = sum(len(re.sub(r"\([^)]*\)", "", row["headword"]).strip().split()) > 1 for row in all_rows)
     variant_rows = sum(bool(re.search(r"[()/]", row["headword"])) for row in all_rows)
     precision = len(actual_pairs) / len(actual_pairs) if actual_pairs else 0.0
+    # The metric above is the shape the Phase 2 contract asserts, but it divides
+    # the matched-row pair set by itself and so cannot fall below 1. The metric
+    # below is the one that can actually fail: it takes every direct YLE exam
+    # membership the graph asserts and asks how many an official source row
+    # justifies, so a graph-only extra membership lowers it.
+    graph_membership_pairs = {
+        (edge["targetId"], edge["sourceId"].removeprefix("english.vocabulary.exam."))
+        for edge in graph["edges"]
+        if edge.get("type") == "contains"
+        and edge.get("sourceId") in {f"english.vocabulary.exam.{exam}" for _s, exam, _p, _sec in STAGES}
+    }
+    source_justified = graph_membership_pairs & actual_pairs
+    graph_precision = len(source_justified) / len(graph_membership_pairs) if graph_membership_pairs else 0.0
     recall = direct_hits / source_row_count if source_row_count else 0.0
     thematic_precision = thematic_hits / len(thematic_rows) if thematic_rows else 0.0
     report = {
@@ -470,6 +483,12 @@ def main() -> None:
                 "label": "YLE alphabetical membership precision", "value": precision,
                 "numerator": len(actual_pairs), "denominator": len(actual_pairs),
                 "population": "all-current-yle-source-rows",
+            },
+            "graph_membership_source_justification": {
+                "label": "YLE graph memberships justified by an official source row",
+                "value": graph_precision,
+                "numerator": len(source_justified), "denominator": len(graph_membership_pairs),
+                "population": "all-current-graph-yle-exam-memberships",
             },
             "alphabetical_membership_recall": {
                 "label": "YLE alphabetical membership recall", "value": recall,
@@ -506,7 +525,8 @@ def main() -> None:
 - Movers direct source rows: **{stage_counts['movers']:,}**.
 - Flyers direct source rows: **{stage_counts['flyers']:,}**.
 - YLE unique graph skills: **{len(nodes):,}**.
-- YLE alphabetical membership precision: **{precision:.3f}** ({len(actual_pairs):,}/{len(actual_pairs):,} graph membership pairs).
+- YLE alphabetical membership precision: **{precision:.3f}** ({len(actual_pairs):,}/{len(actual_pairs):,} matched-row pairs; this ratio is self-referential by contract).
+- YLE graph memberships justified by an official source row: **{graph_precision:.3f}** ({len(source_justified):,}/{len(graph_membership_pairs):,} graph membership pairs).
 - YLE alphabetical membership recall: **{recall:.3f}** ({direct_hits:,}/{source_row_count:,} independent source rows).
 - YLE thematic membership precision: **{thematic_precision:.3f}** ({thematic_hits}/{len(thematic_rows)} reviewed source memberships).
 - Unresolved high-severity blockers: **{omissions}**.

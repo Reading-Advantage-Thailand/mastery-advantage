@@ -32,6 +32,13 @@
       "denominator": 1407,
       "population": "all-current-yle-source-rows"
     },
+    "graph_membership_source_justification": {
+      "label": "YLE graph memberships justified by an official source row",
+      "value": 1.0,
+      "numerator": 1407,
+      "denominator": 1407,
+      "population": "all-current-graph-yle-exam-memberships"
+    },
     "alphabetical_membership_recall": {
       "label": "YLE alphabetical membership recall",
       "value": 1.0,
