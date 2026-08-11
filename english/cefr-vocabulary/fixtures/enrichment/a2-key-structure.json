@@ -5,8 +5,13 @@
   "layerId": "enrichment.cambridge.a2-key-appendix",
   "structureChecks": {
     "titleHasA2Key": true,
-    "mentionsAugust2025": true,
+    "titleHasB1": false,
     "disclaimerNotExhaustive": true,
-    "minExtractedCharsFirstPages": 10106
+    "appendix2TopicCount": 25,
+    "azUniqueEntries": 1680,
+    "azMatchRate": 0.9994,
+    "topicMatchRate": 0.9815,
+    "minExtractedCharsFirstPages": 10106,
+    "mentionsAugust2025": true
   }
 }

@@ -1,0 +1,48 @@
+{
+  "enrichmentLayer": "enrichment.cambridge.b1-preliminary-appendix",
+  "generatedAt": "2026-08-11",
+  "sourceId": "cambridge-b1-preliminary-vocabulary-list-2025",
+  "sourceSha256": "df5e3c31bb26205c2cfc2e7a94a0171d4f4769d5c1e42a3615fe6aa1b5fdab29",
+  "relationshipSemantics": "Exam A–Z and Appendix 2 topic co-membership; not prerequisites. Shared A2 vocabulary with Flyers is one skill with multiple memberships.",
+  "prerequisite_for_count_in_overlay": 0,
+  "coreGraphUntouched": true,
+  "noNewSkillNodes": true,
+  "stats": {
+    "sourceId": "cambridge-b1-preliminary-vocabulary-list-2025",
+    "sourceSha256": "df5e3c31bb26205c2cfc2e7a94a0171d4f4769d5c1e42a3615fe6aa1b5fdab29",
+    "layerId": "enrichment.cambridge.b1-preliminary-appendix",
+    "exam": "b1-preliminary-for-schools",
+    "azRawEntries": 3062,
+    "azUniqueEntries": 3057,
+    "azMatchedEntries": 3057,
+    "azUnmatchedEntries": 0,
+    "azAmbiguousEntries": 0,
+    "azMatchRate": 1.0,
+    "azMatchKinds": {
+      "exact-pos-set": 3057
+    },
+    "examMembershipSkillCount": 3139,
+    "topicCount": 23,
+    "topicLemmaObservations": 1907,
+    "topicMatchedLemmas": 1804,
+    "topicUnmatchedLemmas": 103,
+    "topicAmbiguousLemmas": 35,
+    "topicMatchRate": 0.946,
+    "topicMatchKinds": {
+      "topic-form-multi": 212,
+      "topic-form-unique": 1514,
+      "unmatched": 103,
+      "topic-pos-unique": 43,
+      "topic-pos-multi": 25,
+      "topic-form-ambiguous": 10
+    },
+    "topicMembershipEdgeCount": 2138,
+    "groupCount": 25,
+    "noNewSkills": true,
+    "identityPolicy": "form+POS; shared Key/Flyers/B1 vocab is one skill with multi membership"
+  },
+  "queues": {
+    "unmatched": "review/enrichment/queues/b1-preliminary-unmatched.jsonl",
+    "ambiguous": "review/enrichment/queues/b1-preliminary-ambiguous.jsonl"
+  }
+}

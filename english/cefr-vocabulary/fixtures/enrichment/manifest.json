@@ -17,5 +17,8 @@
   "frequencyLayer": "enrichment.frequency.wordfreq",
   "frequencySource": "wordfreq",
   "frequencySourceVersion": "3.1.1",
-  "frequencyIsNodeMetadataNotEdges": true
+  "frequencyIsNodeMetadataNotEdges": true,
+  "a2KeyAppendixLayer": "enrichment.cambridge.a2-key-appendix",
+  "b1PreliminaryAppendixLayer": "enrichment.cambridge.b1-preliminary-appendix",
+  "cambridgeAppendixIdentityPolicy": "form+POS; no duplicate skills for Key/Flyers overlap"
 }

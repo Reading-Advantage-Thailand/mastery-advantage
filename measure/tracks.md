@@ -27,11 +27,11 @@ This registry tracks Mastery Advantage specification and domain-data work.
 - [ ] **Track: English Lexical Coverage Enrichment** *(unblocked — in progress)*
   *Add independently gated source-backed groups, B2+ coverage, and frequency
   metadata.*
-  *Status: in progress — Phase 1 contracts/registry accepted (2026-08-11).
-  ViU unit-groups + YLE grammatical-groups overlays live; frequency layer
-  `enrichment.frequency.wordfreq` at wordfreq 3.1.1 verified (3374 of 3769
-  scored, harness 14/14, core freeze untouched). Next: A2/B1 appendix
-  extractors and later audit gates.*
+  *Status: in progress — Phase 1 accepted. Live overlays: ViU unit-groups, YLE
+  grammatical-groups, frequency.wordfreq (3.1.1), A2 Key appendix, B1
+  Preliminary appendix (form+POS identity; Key/Flyers share skills; core freeze
+  untouched). Next: Phase 4 audit gates. Full A2/B1 dual-go freeze remains
+  method-later.*
   *Link: [./tracks/lexical_coverage_enrichment_20260610/](./tracks/lexical_coverage_enrichment_20260610/)*
   *Coordination: this track produces the frequency data layer as versioned node metadata (`enrichment.frequency.wordfreq`), never as edges. [frequency_semantic_ranking_layer_20260611](./tracks/frequency_semantic_ranking_layer_20260611/) consumes that metadata as a utility provider.*
 

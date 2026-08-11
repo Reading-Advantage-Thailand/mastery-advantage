@@ -7,9 +7,9 @@
 >
 > **Marker vocabulary:** `[x]` complete · `[~]` in-progress/next · `[b]` human-gated.
 >
-> **First remaining work:** A2/B1 appendix topic extractors. Phase 1 accepted;
-> frequency, ViU unit groups, and YLE grammatical groups are implemented as
-> overlays.
+> **First remaining work:** Phase 4 audit gates (membership samples, frequency
+> distributions). Phase 1 accepted; frequency, ViU, YLE grammatical, A2 Key and
+> B1 Preliminary appendix overlays are implemented.
 
 ## Phase 1: Contracts And Source Decisions
 
@@ -65,7 +65,7 @@
 
 - [x] Task: Implement Cambridge group extraction
   - [x] YLE grammatical category×stage groups (optional overlay)
-  - [ ] A2 Key / B1 appendix topic extractors (topics already partly in core)
+  - [x] A2 Key / B1 appendix topic extractors (topics already partly in core)
 - [x] Task: Implement Vocabulary in Use catalogs and index matching
 - [x] Task: Implement selected frequency source integration
   - [x] Pin the `wordfreq` `sourceVersion` to `3.1.1` (replaces `PIN_AT_IMPLEMENTATION`)
@@ -76,8 +76,10 @@
 - [x] Task: Implement coverage and frequency quality reports
   - [x] ViU + grammatical quality reports
   - [x] Frequency quality report
+  - [x] A2 Key / B1 appendix quality reports
 - [x] Task: Implement durable enrichment review queues
   - [x] ViU unmatched/ambiguous + grammatical unmatched queues
+  - [x] A2 Key / B1 unmatched and ambiguous queues
 
 **Frequency layer Green evidence (2026-08-11):**
 
@@ -124,6 +126,28 @@
   (`enrichment.cambridge.grammatical-groups`); match rate ≥ 0.98 on tokens
 - Harness: `bash tests/enrichment_yle_grammatical.sh`
 - Freeze decision YLE-2025-GRAMMATICAL-001 remains valid for core package
+
+**A2 Key / B1 Preliminary appendix Green evidence (2026-08-11):**
+
+- Builder: `scripts/build-a2-b1-appendix-groups.py`
+- Overlays: `overlays/a2-key-appendix.overlay.json`,
+  `overlays/b1-preliminary-appendix.overlay.json`
+- Layers: `enrichment.cambridge.a2-key-appendix`,
+  `enrichment.cambridge.b1-preliminary-appendix`
+- Contents: A–Z exam membership (POS-aware) + Appendix 2 topic groups
+- Identity: form+POS only; no new skill nodes; Key/Flyers share skills
+  (351 shared skill IDs observed)
+- A2 Key A–Z: 1679/1680 matched (0.9994), 1765 skills; topics 1116/1137 (0.9815)
+- B1 Preliminary A–Z: 3057/3057 matched (1.0), 3139 skills; topics 1804/1907
+  (0.946)
+- `prerequisite_for` count 0; core freeze byte-identical
+- Queues: `a2-key-{unmatched,ambiguous}.jsonl`,
+  `b1-preliminary-{unmatched,ambiguous}.jsonl`
+- Reports: `reports/enrichment/{a2-key,b1-preliminary}-appendix.{json,md}`
+- Harness: `bash tests/enrichment_a2_b1_appendix.sh` — 8/8 pass
+- YLE decisions reused: form+POS identity, contains-only membership, no hard
+  prerequisites, core isolation, durable queues. Full A2/B1 dual-go freeze
+  remains method-later (`method-appendix-a2-b1.md`); these are enrichment layers.
 
 ## Phase 4: Audit And Calibration
 

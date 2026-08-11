@@ -7,5 +7,5 @@
   "description": "Expand the approved core lexical graph with source-backed groups, B2+ coverage, and frequency metadata.",
   "estimated_tasks": 23,
   "actual_tasks": null,
-  "deviation_notes": "Phase 1 accepted 2026-08-11. ViU unit-groups, YLE grammatical-groups, and frequency.wordfreq overlays implemented (core freeze untouched). Remaining: A2/B1 appendix extractors; later audit gates."
+  "deviation_notes": "Phase 1 accepted 2026-08-11. ViU, YLE grammatical, frequency.wordfreq, A2 Key appendix, and B1 Preliminary appendix overlays implemented (core freeze untouched). Remaining: Phase 4 audit gates; full A2/B1 freeze is method-later."
 }
