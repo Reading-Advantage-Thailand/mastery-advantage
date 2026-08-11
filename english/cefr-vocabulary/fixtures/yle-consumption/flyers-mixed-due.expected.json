@@ -1,0 +1,19 @@
+{
+  "requireLowerLevelGaps": false,
+  "requireSrsDue": true,
+  "requireCategories": [
+    "srs_due"
+  ],
+  "requireCounts": {
+    "srs_due": 1
+  },
+  "requireSkillCategories": {
+    "english.vocabulary.skill.actor.noun": "srs_due"
+  },
+  "match": {
+    "goalStage": "flyers",
+    "currentStage": "flyers",
+    "graphMutation": false,
+    "hardPrerequisiteFromSupports": false
+  }
+}

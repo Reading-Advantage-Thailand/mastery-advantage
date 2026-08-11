@@ -1,0 +1,15 @@
+{
+  "id": "starters-beginner",
+  "description": "Starters goal with mostly unknown skills; exercises stage and current-stage unknowns.",
+  "learnerState": {
+    "goalStage": "starters",
+    "mastery": {
+      "english.vocabulary.skill.a.determiner": "known"
+    },
+    "dueSkillIds": [],
+    "topicFocusGroupIds": []
+  },
+  "options": {
+    "cap": 10
+  }
+}

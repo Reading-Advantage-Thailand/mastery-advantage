@@ -1,0 +1,7 @@
+{
+  "minUnmatched": 1,
+  "requireUnmatchedInDenominator": true,
+  "requireMweMatch": true,
+  "minKnownCoverage": 0.3,
+  "maxKnownCoverage": 0.95
+}

@@ -1,0 +1,22 @@
+{
+  "id": "movers-with-starters-gaps",
+  "description": "Movers goal with weak Starters mastery; must emit lower-level gaps.",
+  "learnerState": {
+    "goalStage": "movers",
+    "mastery": {
+      "english.vocabulary.skill.a.determiner": "known",
+      "english.vocabulary.skill.about.preposition": "unknown",
+      "english.vocabulary.skill.add.verb": "unknown",
+      "english.vocabulary.skill.afternoon.noun": "unknown",
+      "english.vocabulary.skill.again.adverb": "unknown",
+      "english.vocabulary.skill.above.preposition": "unknown",
+      "english.vocabulary.skill.after.preposition": "known",
+      "english.vocabulary.skill.afraid.adjective": "unknown"
+    },
+    "dueSkillIds": [],
+    "topicFocusGroupIds": []
+  },
+  "options": {
+    "cap": 10
+  }
+}

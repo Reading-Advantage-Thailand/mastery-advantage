@@ -1,0 +1,30 @@
+{
+  "id": "flyers-mixed-due",
+  "description": "Flyers goal with mixed mastery, SRS due cards, topic focus, and MWE component signal.",
+  "learnerState": {
+    "goalStage": "flyers",
+    "mastery": {
+      "english.vocabulary.skill.a.determiner": "mastered",
+      "english.vocabulary.skill.about.preposition": "mastered",
+      "english.vocabulary.skill.add.verb": "known",
+      "english.vocabulary.skill.of.preposition": "known",
+      "english.vocabulary.skill.a-lot-of.determiner": "unknown",
+      "english.vocabulary.skill.above.preposition": "known",
+      "english.vocabulary.skill.after.preposition": "known",
+      "english.vocabulary.skill.across.preposition": "unknown",
+      "english.vocabulary.skill.act.verb": "unknown",
+      "english.vocabulary.skill.actor.noun": "known"
+    },
+    "dueSkillIds": [
+      "english.vocabulary.skill.actor.noun",
+      "english.vocabulary.skill.after.preposition",
+      "english.vocabulary.skill.add.verb"
+    ],
+    "topicFocusGroupIds": [
+      "english.vocabulary.topic.cambridge-yle-word-list-2025.animals"
+    ]
+  },
+  "options": {
+    "cap": 12
+  }
+}

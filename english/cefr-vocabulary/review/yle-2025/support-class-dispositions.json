@@ -1,0 +1,38 @@
+{
+  "classes": [
+    {
+      "consumer_use": "optional_readiness_or_ranking_signal",
+      "decision_id": "YLE-2025-SUPPORT-CLASS-SAME-FORM",
+      "derivation_method": "same-lexical-form-support-v1",
+      "disposition": "Promote as an optional readiness or ranking signal only. Knowledge of one POS use may help another, but mastery of one form+POS skill is never a hard prerequisite for another. Consumers must keep an override path via learner state and stage goals.",
+      "evidence": "Generator rule: every POS-variant pair for the same headword gets mutual supports edges (weight 0.7, medium confidence). Live YLE-touching count is inventoried; no edge is a hard readiness gate.",
+      "finding": "Same normalized lexical form with distinct POS uses is linked by bidirectional supports edges tagged same-lexical-form-support-v1.",
+      "finding_class": "support",
+      "mandatory_gate": false,
+      "reviewed_at": "2026-08-11",
+      "reviewer_role": "engineering audit",
+      "status": "accepted",
+      "superseded_by": null,
+      "supersedes": null
+    },
+    {
+      "consumer_use": "optional_readiness_or_ranking_signal",
+      "decision_id": "YLE-2025-SUPPORT-CLASS-MWE-COMPONENT",
+      "derivation_method": "multiword-component-support-v1",
+      "disposition": "Promote as an optional readiness or ranking signal only. Component knowledge may inform MWE practice ranking but is never a hard prerequisite and must not block MWE introduction when stage goals or learner state say otherwise. Weak function-word supports remain accepted signals with low instructional weight.",
+      "evidence": "Generator rule: split MWE tokens, match single-token skills, add supports from component to expression (weight 0.6, medium confidence). Some components are high-frequency function words; signal strength is advisory only.",
+      "finding": "Component tokens of multi-word expressions support the MWE skill via multiword-component-support-v1 edges when the component is not harder than the expression.",
+      "finding_class": "support",
+      "mandatory_gate": false,
+      "reviewed_at": "2026-08-11",
+      "reviewer_role": "engineering audit",
+      "status": "accepted",
+      "superseded_by": null,
+      "supersedes": null
+    }
+  ],
+  "curriculum_signoff": "pending",
+  "generated_at": "2026-08-11",
+  "mandatory_gate_policy": "No supports edge or derivation class may be treated as a hard prerequisite or required readiness gate. prerequisite_for remains prohibited (count 0).",
+  "scope": "YLE-touching supports derivation classes only"
+}

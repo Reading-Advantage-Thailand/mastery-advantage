@@ -1,0 +1,25 @@
+{
+  "id": "movers-reading",
+  "learnerState": {
+    "goalStage": "movers",
+    "mastery": {
+      "english.vocabulary.skill.above.preposition": "known",
+      "english.vocabulary.skill.the.determiner": "known",
+      "english.vocabulary.skill.cage.noun": "unknown",
+      "english.vocabulary.skill.there.adverb-pronoun": "known",
+      "english.vocabulary.skill.is.verb": "known",
+      "english.vocabulary.skill.a.determiner": "known",
+      "english.vocabulary.skill.bat.noun": "unknown",
+      "english.vocabulary.skill.after.preposition": "known",
+      "english.vocabulary.skill.school.noun": "known",
+      "english.vocabulary.skill.i.pronoun": "known",
+      "english.vocabulary.skill.am.verb": "known",
+      "english.vocabulary.skill.afraid.adjective": "unknown",
+      "english.vocabulary.skill.of.preposition": "known",
+      "english.vocabulary.skill.dark.adjective": "unknown",
+      "english.vocabulary.skill.forest.noun": "unknown",
+      "english.vocabulary.skill.new.adjective": "known"
+    }
+  },
+  "targetVocabularyCap": 5
+}

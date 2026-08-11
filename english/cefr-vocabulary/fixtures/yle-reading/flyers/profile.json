@@ -1,0 +1,28 @@
+{
+  "id": "flyers-reading",
+  "learnerState": {
+    "goalStage": "flyers",
+    "mastery": {
+      "english.vocabulary.skill.across.preposition": "known",
+      "english.vocabulary.skill.the.determiner": "known",
+      "english.vocabulary.skill.river.noun": "known",
+      "english.vocabulary.skill.an.determiner": "known",
+      "english.vocabulary.skill.actor.noun": "unknown",
+      "english.vocabulary.skill.have.verb": "known",
+      "english.vocabulary.skill.adventure.noun": "unknown",
+      "english.vocabulary.skill.with.preposition": "known",
+      "english.vocabulary.skill.a.determiner": "known",
+      "english.vocabulary.skill.butterfly.noun": "unknown",
+      "english.vocabulary.skill.and.conjunction": "known",
+      "english.vocabulary.skill.camel.noun": "unknown",
+      "english.vocabulary.skill.a-lot-of.determiner": "known",
+      "english.vocabulary.skill.child.noun": "known",
+      "english.vocabulary.skill.look.verb": "known",
+      "english.vocabulary.skill.at.preposition": "known",
+      "english.vocabulary.skill.beetle.noun": "unknown",
+      "english.vocabulary.skill.is.verb": "known",
+      "english.vocabulary.skill.new.adjective": "known"
+    }
+  },
+  "targetVocabularyCap": 5
+}

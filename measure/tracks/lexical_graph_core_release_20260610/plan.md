@@ -7,12 +7,14 @@
 > **Marker vocabulary (orchestrator):** `[x]` complete · `[~]` in-progress or
 > next executable · `[b]` human-gated. Legacy `[ ]` is not used.
 >
-> **First remaining automatable work:** Phase 3 Task "Inventory all YLE-touching
-> `supports` edges by derivation method" (marked `[~]`). Phase 2's automatable
-> work is complete at `2daf568`; its curriculum sign-off stays a `[b]` human
-> gate. Phase 1's explicit dual-owner approval is recorded by
-> `8447a3b174210c4845f6e0fb2fea8caa0fc93f28` in
-> `english/cefr-vocabulary/review/yle-2025/phase1-approval.md`.
+> **First remaining work:** human gates only. Phases 1–6 automatable work is
+> complete (freeze package draft + bounded sanity). Open `[b]` gates: Phase 3
+> relationships, Phase 4 consumption dual approval, Phase 5 reading
+> plausibility, Phase 6 dual freeze decision. Phase 1 dual-owner approval is
+> recorded by `8447a3b174210c4845f6e0fb2fea8caa0fc93f28` in
+> `english/cefr-vocabulary/review/yle-2025/phase1-approval.md`. Phase 2
+> curriculum fidelity is recorded in
+> `english/cefr-vocabulary/review/yle-2025/phase2-approval.md`.
 >
 > **Marker-contract note:** Skill vocabulary wants human gates as
 > `[b] … deferred:<owner>`. The repo checker still (1) matches only
@@ -105,8 +107,17 @@ completed-task count when no substantive completed task exists. The targeted
   - [x] Derive 495 Starters / 399 Movers / 513 Flyers rows from the hash-pinned local PDF and cross-check the combined alphabetic list — commit: 2daf568
   - [x] Detect source-to-graph omissions, false report denominators, unreachable omission decisions, and draft-count circularity — commit: 2daf568
   - [x] Keep complete source row/headword/POS/page data transient and require bounded, staged audit generation — commit: 2daf568
-- [b] Task: Curriculum sign-off on YLE fidelity — human-gate:curriculum-language
-  - [b] Accept retained YLE membership and group decisions — human-gate:curriculum-language
+- [x] Task: Curriculum sign-off on YLE fidelity — human-gate:curriculum-language
+  - [x] Accept retained YLE membership and group decisions — human-gate:curriculum-language
+
+**Green human-approval evidence (2026-08-11):** Explicit curriculum/language
+owner confirmation (“Phase 2 approved”) is recorded in
+`english/cefr-vocabulary/review/yle-2025/phase2-approval.md` as **Decision:
+go**. Accepted scope includes membership reconciliation, form+POS collision
+retention, grammatical-list group omission, thematic sample, empty exception
+queue, consumption-only cumulative policy, and form+POS identity with
+same-POS sense children deferred. `bash tests/yle_p2_membership.sh` must exit
+`0` with attributable approval evidence present.
 
 **Historical artifact evidence (2026-08-11, superseded by independent Red):** `26e6d1001c91b0a674d4aac9516ecdd65c55b9db`
 adds a reproducible local-PDF source parser, all 1,390 direct source-row
@@ -199,76 +210,171 @@ recorded in the document. `bash tests/yle_p1_scope.sh` returns to its prior
 reproduces identically at `24824aa`, before any of this work. It is logged as
 tech debt, not as Phase 2 evidence.
 
-The curriculum/language sign-off below remains the truthful `[b]` human gate;
-no approval artifact was fabricated.
+Curriculum/language sign-off is complete via `phase2-approval.md` (see Green
+human-approval evidence above). Earlier prose that left this task as `[b]` is
+historical only.
 
 ## Phase 3: Relationship And Progression Review
 
-- [~] Task: Inventory all YLE-touching `supports` edges by derivation method
-  - [~] Same-form POS support vs MWE component support counts (labeled)
-  - [~] Produce review queue stratified by method
-- [~] Task: Pedagogical review of support signals
-  - [~] Judge reasonableness; promote / demote / quarantine / reject
-  - [~] Ensure no support edge is documented as a hard prerequisite
-- [~] Task: Confirm progression policy
-  - [~] Write that next-step order uses learner state + stage goals + SRS +
+- [x] Task: Inventory all YLE-touching `supports` edges by derivation method
+  - [x] Same-form POS support vs MWE component support counts (labeled)
+  - [x] Produce review queue stratified by method
+- [x] Task: Pedagogical review of support signals
+  - [x] Judge reasonableness; promote / demote / quarantine / reject
+  - [x] Ensure no support edge is documented as a hard prerequisite
+- [x] Task: Confirm progression policy
+  - [x] Write that next-step order uses learner state + stage goals + SRS +
         groups + optional utility — never invented `prerequisite_for`
-  - [~] Guard test: zero `prerequisite_for` on freeze baseline
+  - [x] Guard test: zero `prerequisite_for` on freeze baseline
 - [b] Task: Curriculum sign-off on relationships — human-gate:curriculum-language
   - [b] Accept fact-vs-signal labeling and support dispositions — human-gate:curriculum-language
 
+**Mid-Red evidence (2026-08-11):** Added `tests/yle_p3_relationships.sh`.
+`bash tests/yle_p3_relationships.sh` exits `1` as expected (`PASS=2`,
+`FAIL=7`): live graph already has labeled YLE-touching supports
+(598 same-form / 713 MWE, total 1311) and `prerequisite_for count: 0`, while
+the support inventory, stratified queue, class dispositions, sample decisions,
+progression policy, relationship report, and generator are absent. No Green
+artifacts or graph edges were changed in the Red step.
+
+**Phase 3 Green evidence (2026-08-11):**
+`english/cefr-vocabulary/scripts/build-yle-relationship-audit.py` publishes a
+read-only audit package without rewriting the graph:
+
+- `review/yle-2025/support-inventory.json` — labeled
+  `YLE-touching supports count: 1311`,
+  `same-lexical-form-support-v1 count: 598`,
+  `multiword-component-support-v1 count: 713`,
+  `prerequisite_for count: 0`, classification `derived support signal`.
+- `review/yle-2025/support-review-queue.jsonl` — stratified sample of 80 edges
+  (40 per derivation method).
+- `review/yle-2025/support-class-dispositions.json` — both methods accepted as
+  `optional_readiness_or_ranking_signal` with `mandatory_gate: false`.
+- `review/yle-2025/support-sample-decisions.jsonl` — 80 engineering-audit sample
+  decisions, all non-mandatory.
+- `review/yle-2025/progression-policy.md` — next-step order uses learner state,
+  stage goals, SRS, groups, and optional utility; inventing `prerequisite_for`
+  is forbidden; supports are never hard gates.
+- `reports/yle-relationship-audit.{json,md}` — labeled metrics;
+  `hard_gate_from_supports: false`; curriculum sign-off remains pending.
+
+`bash tests/yle_p3_relationships.sh` exits `0` with `PASS=9, FAIL=0`.
+Supporting gates: `python3 -m py_compile` on the generator exits `0`;
+`node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` remains
+valid (no graph rewrite); `git diff --check` exits `0`. Curriculum/language
+relationship approval remains the truthful `[b]` human gate; no
+`phase3-approval.md` was fabricated.
+
 ## Phase 4: Consumption And Next-Step Contract
 
-- [~] Task: Draft `YLE-CONSUMPTION.md` (static graph + dynamic learner state)
-  - [~] Table of what lives in graph vs application state
-  - [~] Algorithms/rules for: SRS due work, lower-level gaps, current stage,
+- [x] Task: Draft `YLE-CONSUMPTION.md` (static graph + dynamic learner state)
+  - [x] Table of what lives in graph vs application state
+  - [x] Algorithms/rules for: SRS due work, lower-level gaps, current stage,
         reading targets, MWE readiness, topic foci
-  - [~] Explicit ban on storing per-student fields on graph nodes
-- [~] Task: Define explainability payload shape
-  - [~] Each next-step item cites graph fact IDs and learner-state fields
-  - [~] Derived signals labeled separately from source-backed facts
-- [~] Task: Contract tests for consumption rules (offline, no app runtime)
-  - [~] Profile fixtures: Starters learner, Movers goal with Starters gaps,
+  - [x] Explicit ban on storing per-student fields on graph nodes
+- [x] Task: Define explainability payload shape
+  - [x] Each next-step item cites graph fact IDs and learner-state fields
+  - [x] Derived signals labeled separately from source-backed facts
+- [x] Task: Contract tests for consumption rules (offline, no app runtime)
+  - [x] Profile fixtures: Starters learner, Movers goal with Starters gaps,
         Flyers reader with mixed mastery
-  - [~] Assert gap, stage, and due-work outputs from contract examples
+  - [x] Assert gap, stage, and due-work outputs from contract examples
 - [b] Task: Approve consumption contract — human-gate:engineering
   - [b] Engineering accepts boundary and payload shape — human-gate:engineering
   - [b] Curriculum/language accepts pedagogical next-step rules — human-gate:curriculum-language
 
+**Mid-Red evidence (2026-08-11):** Added `tests/yle_p4_consumption.sh`. Before
+contract artifacts existed, the harness failed on missing `YLE-CONSUMPTION.md`,
+fixtures, and evaluator (plan reference also required). Live graph was not
+modified.
+
+**Phase 4 Green evidence (2026-08-11):**
+
+- `english/cefr-vocabulary/YLE-CONSUMPTION.md` — static graph vs learner state
+  table; SRS due / lower-level gap / stage / topic / MWE rules; explicit ban on
+  per-student fields on graph nodes; explainability payload with separate
+  `graphFacts[]`, `derivedSignals[]`, and `learnerStateFields[]`.
+- `english/cefr-vocabulary/scripts/yle-consumption-contract.js` — pure offline
+  evaluator over `(graphSnapshot, learnerState)`; no DB; does not mutate graph.
+- Fixtures under `english/cefr-vocabulary/fixtures/yle-consumption/`:
+  - `starters-beginner` — Starters goal, current-stage unknowns
+  - `movers-with-starters-gaps` — Movers goal with weak Starters mastery emits
+    lower-level gaps (falsifier covered; count 494 in full population)
+  - `flyers-mixed-due` — Flyers goal with SRS due (3), topic focus, mixed mastery
+- `bash tests/yle_p4_consumption.sh` exits `0` with `PASS=9, FAIL=0`.
+- `node …/yle-consumption-contract.js --self-check …` exits `0`.
+- `node --check` on the evaluator exits `0`; graph validate remains valid
+  (no rewrite); dual human approval remains `[b]` (no fabricated
+  `phase4-approval.md`).
+
 ## Phase 5: Reading-Program Validation
 
-- [~] Task: Assemble representative texts and learner profiles
-  - [~] At least one Starters, one Movers, one Flyers text fixture
-  - [~] Profiles with known/unknown mixes and MWE cases
-- [~] Task: Offline matching and coverage evaluation
-  - [~] Longest-MWE match against YLE matchForms
-  - [~] known / unknown / unmatched classification
-  - [~] Eligible-token known coverage; unmatched tokens remain in denominator
-  - [~] Bounded target-vocabulary set with explicit cap
-- [~] Task: Explainable recommendation and progress evidence traces
-  - [~] Rationale payload per target skill and per reading candidate
-  - [~] Before/after progress snapshot under simulated reviews
+- [x] Task: Assemble representative texts and learner profiles
+  - [x] At least one Starters, one Movers, one Flyers text fixture
+  - [x] Profiles with known/unknown mixes and MWE cases
+- [x] Task: Offline matching and coverage evaluation
+  - [x] Longest-MWE match against YLE matchForms
+  - [x] known / unknown / unmatched classification
+  - [x] Eligible-token known coverage; unmatched tokens remain in denominator
+  - [x] Bounded target-vocabulary set with explicit cap
+- [x] Task: Explainable recommendation and progress evidence traces
+  - [x] Rationale payload per target skill and per reading candidate
+  - [x] Before/after progress snapshot under simulated reviews
 - [b] Task: Curriculum plausibility review of reading fixtures — human-gate:curriculum-language
   - [b] Accept or request fixture revisions — human-gate:curriculum-language
 
+**Phase 5 Green evidence (2026-08-11):**
+
+- Fixtures under `english/cefr-vocabulary/fixtures/yle-reading/{starters,movers,flyers}/`
+  with `text.txt`, `profile.json`, and `expected.json`. Each text includes the
+  deliberate unmatched hard phrase `quantum telescope`.
+- `english/cefr-vocabulary/scripts/yle-reading-contract.js` — longest-MWE match
+  against YLE `matchForms`; known/unknown/unmatched spans; eligible-token known
+  coverage keeps unmatched in the denominator; target vocabulary hard-capped;
+  explainability cites `matchForms` + exam membership; before/after coverage
+  under one simulated review.
+- Self-check labeled coverages (example run): Starters 0.571429 (unmatched 5),
+  Movers 0.428571 (unmatched 4), Flyers 0.541667 (unmatched 4); caps honored.
+- `bash tests/yle_p5_reading.sh` exits `0` with `PASS=7, FAIL=0`.
+- Curriculum plausibility remains `[b]`; no fabricated `phase5-approval.md`.
+
 ## Phase 6: Freeze Package, Sanity Check, And Decision
 
-- [~] Task: Assemble YLE freeze package
-  - [~] Decision log, exception list, quality summary with labeled metrics
-  - [~] Consumption contract, reading fixture index, method appendix for A2/B1
-  - [~] `RELEASE-YLE-2025.md` draft decision section (unsigned)
-- [~] Task: Bounded final technical sanity check (one-shot, not a pipeline)
-  - [~] Verify frozen YLE source identity (hash/registry citation)
-  - [~] Structural integrity: unique IDs, no dangling edges, YLE skill count
+- [x] Task: Assemble YLE freeze package
+  - [x] Decision log, exception list, quality summary with labeled metrics
+  - [x] Consumption contract, reading fixture index, method appendix for A2/B1
+  - [x] `RELEASE-YLE-2025.md` draft decision section (unsigned)
+- [x] Task: Bounded final technical sanity check (one-shot, not a pipeline)
+  - [x] Verify frozen YLE source identity (hash/registry citation)
+  - [x] Structural integrity: unique IDs, no dangling edges, YLE skill count
         consistency, zero `prerequisite_for`
-  - [~] Freeze artifacts consistent with accepted decisions
-  - [~] Commands limited to validation/report checks — not recurring dual-run
+  - [x] Freeze artifacts consistent with accepted decisions
+  - [x] Commands limited to validation/report checks — not recurring dual-run
         regeneration ceremony
 - [b] Task: Dual human freeze decision — human-gate:curriculum-language
   - [b] Curriculum/language records go / conditional-go / no-go — human-gate:curriculum-language
   - [b] Engineering records go / conditional-go / no-go — human-gate:engineering
   - [b] Only on go or conditional-go: mark baseline frozen and note accepted
         limitations — human-gate:both-owners
+
+**Phase 6 Green evidence (2026-08-11):**
+
+- Freeze package under `english/cefr-vocabulary/review/yle-2025/`:
+  - `RELEASE-YLE-2025.md` — **unsigned** draft decision table; labeled baseline
+    metrics; package index; open human gates listed honestly
+  - `quality-summary.md` — labeled metrics and phase outcomes
+  - `reading-fixture-index.md` — S/M/F fixture paths and coverage notes
+  - `method-appendix-a2-b1.md` — later-method note; no A2/B1 release claim
+- Prior artifacts included by index: membership decisions/exceptions, support
+  inventory/dispositions, progression policy, `YLE-CONSUMPTION.md`, Phase 1
+  scope/approval, membership + relationship audit reports
+- Bounded sanity: `node …/validate-vocabulary-graph.js` valid;
+  live labeled counts match package (`YLE skill count: 1405`,
+  `YLE-touching supports count: 1311`, `prerequisite_for count: 0`);
+  `SOURCES.md` cites YLE SHA-256
+- `bash tests/yle_p6_freeze.sh` exits `0`
+- Dual human freeze decision remains truthful `[b]`; track is **not** marked
+  complete or released
 
 ## Completion Rule
 

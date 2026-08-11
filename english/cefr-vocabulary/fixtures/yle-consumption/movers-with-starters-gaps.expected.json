@@ -1,0 +1,20 @@
+{
+  "requireLowerLevelGaps": true,
+  "requireSrsDue": false,
+  "requireCategories": [
+    "lower_level_gap"
+  ],
+  "requireCounts": {
+    "lower_level_gap": 1
+  },
+  "requireSkillCategories": {
+    "english.vocabulary.skill.about.preposition": "lower_level_gap",
+    "english.vocabulary.skill.add.verb": "lower_level_gap"
+  },
+  "match": {
+    "goalStage": "movers",
+    "currentStage": "movers",
+    "graphMutation": false,
+    "hardPrerequisiteFromSupports": false
+  }
+}

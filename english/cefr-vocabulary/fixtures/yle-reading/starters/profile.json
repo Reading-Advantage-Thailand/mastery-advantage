@@ -1,0 +1,24 @@
+{
+  "id": "starters-reading",
+  "learnerState": {
+    "goalStage": "starters",
+    "mastery": {
+      "english.vocabulary.skill.i.pronoun": "known",
+      "english.vocabulary.skill.have.verb": "known",
+      "english.vocabulary.skill.a.determiner": "known",
+      "english.vocabulary.skill.cat.noun": "known",
+      "english.vocabulary.skill.and.conjunction": "known",
+      "english.vocabulary.skill.bird.noun": "unknown",
+      "english.vocabulary.skill.like.verb": "known",
+      "english.vocabulary.skill.a-lot-of.determiner": "unknown",
+      "english.vocabulary.skill.animal.noun": "unknown",
+      "english.vocabulary.skill.my.determiner-pronoun": "known",
+      "english.vocabulary.skill.friend.noun": "known",
+      "english.vocabulary.skill.dog.noun": "known",
+      "english.vocabulary.skill.the.determiner": "known",
+      "english.vocabulary.skill.is.verb": "known",
+      "english.vocabulary.skill.new.adjective": "known"
+    }
+  },
+  "targetVocabularyCap": 5
+}

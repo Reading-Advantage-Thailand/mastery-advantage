@@ -1,0 +1,16 @@
+{
+  "requireLowerLevelGaps": false,
+  "requireSrsDue": false,
+  "requireCategories": [
+    "current_stage_unknown"
+  ],
+  "requireCounts": {
+    "current_stage_unknown": 1
+  },
+  "match": {
+    "goalStage": "starters",
+    "currentStage": "starters",
+    "graphMutation": false,
+    "hardPrerequisiteFromSupports": false
+  }
+}

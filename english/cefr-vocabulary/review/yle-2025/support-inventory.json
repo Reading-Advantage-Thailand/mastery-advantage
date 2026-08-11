@@ -1,0 +1,26 @@
+{
+  "both_endpoints_yle_count": 205,
+  "classification": "derived support signal",
+  "generated_at": "2026-08-11",
+  "hard_gate_policy": "supports edges are never hard prerequisites; prerequisite_for remains prohibited with required count 0",
+  "methods": {
+    "multiword-component-support-v1": {
+      "classification": "derived support signal",
+      "count": 713,
+      "label": "multiword-component-support-v1",
+      "mandatory_gate": false
+    },
+    "same-lexical-form-support-v1": {
+      "classification": "derived support signal",
+      "count": 598,
+      "label": "same-lexical-form-support-v1",
+      "mandatory_gate": false
+    }
+  },
+  "one_endpoint_yle_count": 1106,
+  "other_method_counts": {},
+  "prerequisite_for_count": 0,
+  "source_graph": "cefr-vocabulary-knowledge-space.json",
+  "yle_skill_count": 1405,
+  "yle_touching_supports_count": 1311
+}

@@ -1,0 +1,54 @@
+{
+  "curriculum_signoff": "pending",
+  "generated_at": "2026-08-11",
+  "hard_gate_from_supports": false,
+  "method_dispositions": {
+    "multiword-component-support-v1": {
+      "consumer_use": "optional_readiness_or_ranking_signal",
+      "decision_id": "YLE-2025-SUPPORT-CLASS-MWE-COMPONENT",
+      "mandatory_gate": false,
+      "status": "accepted"
+    },
+    "same-lexical-form-support-v1": {
+      "consumer_use": "optional_readiness_or_ranking_signal",
+      "decision_id": "YLE-2025-SUPPORT-CLASS-SAME-FORM",
+      "mandatory_gate": false,
+      "status": "accepted"
+    }
+  },
+  "metrics": {
+    "class_disposition_count": {
+      "label": "support class disposition count",
+      "value": 2
+    },
+    "multiword_component_count": {
+      "label": "multiword-component-support-v1 count",
+      "value": 713
+    },
+    "prerequisite_for_count": {
+      "label": "prerequisite_for count",
+      "value": 0
+    },
+    "same_lexical_form_count": {
+      "label": "same-lexical-form-support-v1 count",
+      "value": 598
+    },
+    "sample_decision_count": {
+      "label": "support sample decision count",
+      "value": 80
+    },
+    "stratified_sample_size": {
+      "label": "stratified support sample size",
+      "value": 80
+    },
+    "yle_skill_count": {
+      "label": "YLE skill count",
+      "value": 1405
+    },
+    "yle_touching_supports_count": {
+      "label": "YLE-touching supports count",
+      "value": 1311
+    }
+  },
+  "scope": "YLE 2025 relationship and progression review"
+}

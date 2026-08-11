@@ -1142,7 +1142,14 @@ else:
     # have substantive completed history and an honest current route.
     if completed == 0:
         errors.append(f"INCOMPLETE: Phase 2 completed task count: {completed}")
-    if in_progress == 0 and blocked == 0:
+    # Honest route: remaining [~]/[b] work, or fully complete after curriculum
+    # sign-off is [x] (attributable approval is checked separately).
+    curriculum_done = bool(re.search(
+        r"^- \[x\][ \t]+Task: Curriculum sign-off on YLE fidelity\b",
+        phase,
+        re.M,
+    ))
+    if in_progress == 0 and blocked == 0 and not curriculum_done:
         errors.append("Phase 2 has no in-progress or human-gated route")
     if "Remediate independent YLE source-completeness" not in phase:
         errors.append("Phase 2 Red-remediation task is absent")
