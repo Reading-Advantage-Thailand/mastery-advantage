@@ -628,7 +628,7 @@
       "id": "english.vocabulary.edge.contains.a2-key.4",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
-      "targetId": "english.vocabulary.skill.a-an.determiner",
+      "targetId": "english.vocabulary.skill.a.determiner",
       "weight": 1,
       "confidence": "high",
       "sourceRefs": [
@@ -651,6 +651,29 @@
       "id": "english.vocabulary.edge.contains.a2-key.5",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
+      "targetId": "english.vocabulary.skill.a-an.determiner",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-a2-key-vocabulary-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "A2 Key and A2 Key for Schools A–Z lists \"a/an\" (exam membership; not a prerequisite; shared form+POS skill)",
+      "metadata": {
+        "enrichmentLayer": "enrichment.cambridge.a2-key-appendix",
+        "sourceId": "cambridge-a2-key-vocabulary-list-2025",
+        "indexLemma": "a/an",
+        "matchKind": "exact",
+        "matchDetail": "exact-pos-set",
+        "extractionConfidence": "high",
+        "relationshipKind": "exam-list-group",
+        "section": "a-z"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.a2-key.6",
+      "type": "contains",
+      "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.able.adjective",
       "weight": 1,
       "confidence": "high",
@@ -671,7 +694,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.6",
+      "id": "english.vocabulary.edge.contains.a2-key.7",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.about.adverb-preposition",
@@ -694,7 +717,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.7",
+      "id": "english.vocabulary.edge.contains.a2-key.8",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.above.adverb-preposition",
@@ -717,7 +740,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.8",
+      "id": "english.vocabulary.edge.contains.a2-key.9",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.accident.noun",
@@ -740,7 +763,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.9",
+      "id": "english.vocabulary.edge.contains.a2-key.10",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.accommodation.noun",
@@ -763,7 +786,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.10",
+      "id": "english.vocabulary.edge.contains.a2-key.11",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.across.adverb-preposition",
@@ -786,7 +809,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.11",
+      "id": "english.vocabulary.edge.contains.a2-key.12",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.act.verb",
@@ -809,7 +832,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.12",
+      "id": "english.vocabulary.edge.contains.a2-key.13",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.action.adjective",
@@ -832,7 +855,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.13",
+      "id": "english.vocabulary.edge.contains.a2-key.14",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.activity.noun",
@@ -855,7 +878,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.14",
+      "id": "english.vocabulary.edge.contains.a2-key.15",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.actor.noun",
@@ -878,7 +901,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.15",
+      "id": "english.vocabulary.edge.contains.a2-key.16",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.actually.adverb",
@@ -901,7 +924,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.16",
+      "id": "english.vocabulary.edge.contains.a2-key.17",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.ad.noun",
@@ -924,7 +947,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.17",
+      "id": "english.vocabulary.edge.contains.a2-key.18",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.ad-advertisement.noun",
@@ -947,7 +970,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.18",
+      "id": "english.vocabulary.edge.contains.a2-key.19",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.add.verb",
@@ -970,7 +993,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.19",
+      "id": "english.vocabulary.edge.contains.a2-key.20",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.address.noun",
@@ -993,7 +1016,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.20",
+      "id": "english.vocabulary.edge.contains.a2-key.21",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.adult.adjective-noun",
@@ -1016,7 +1039,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.21",
+      "id": "english.vocabulary.edge.contains.a2-key.22",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.advanced.adjective",
@@ -1039,7 +1062,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.22",
+      "id": "english.vocabulary.edge.contains.a2-key.23",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.adventure.noun",
@@ -1062,7 +1085,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.23",
+      "id": "english.vocabulary.edge.contains.a2-key.24",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.advert.noun",
@@ -1085,7 +1108,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.24",
+      "id": "english.vocabulary.edge.contains.a2-key.25",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.advertisement.noun",
@@ -1108,7 +1131,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.25",
+      "id": "english.vocabulary.edge.contains.a2-key.26",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.advice.noun",
@@ -1131,7 +1154,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.26",
+      "id": "english.vocabulary.edge.contains.a2-key.27",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.aeroplane.noun",
@@ -1154,7 +1177,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.27",
+      "id": "english.vocabulary.edge.contains.a2-key.28",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.afraid.adjective",
@@ -1177,7 +1200,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.28",
+      "id": "english.vocabulary.edge.contains.a2-key.29",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.after.adverb-preposition",
@@ -1200,7 +1223,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.29",
+      "id": "english.vocabulary.edge.contains.a2-key.30",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.afternoon.noun",
@@ -1223,7 +1246,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.30",
+      "id": "english.vocabulary.edge.contains.a2-key.31",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.afterwards.adverb",
@@ -1246,7 +1269,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.31",
+      "id": "english.vocabulary.edge.contains.a2-key.32",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.again.adverb",
@@ -1269,7 +1292,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.32",
+      "id": "english.vocabulary.edge.contains.a2-key.33",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.against.preposition",
@@ -1292,7 +1315,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.33",
+      "id": "english.vocabulary.edge.contains.a2-key.34",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.age.noun",
@@ -1315,7 +1338,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.34",
+      "id": "english.vocabulary.edge.contains.a2-key.35",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.aged.adjective",
@@ -1338,7 +1361,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.35",
+      "id": "english.vocabulary.edge.contains.a2-key.36",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.ago.adverb",
@@ -1361,7 +1384,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.36",
+      "id": "english.vocabulary.edge.contains.a2-key.37",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.agree.verb",
@@ -1384,7 +1407,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.37",
+      "id": "english.vocabulary.edge.contains.a2-key.38",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.air.noun",
@@ -1407,7 +1430,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.38",
+      "id": "english.vocabulary.edge.contains.a2-key.39",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.airport.noun",
@@ -1430,7 +1453,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.39",
+      "id": "english.vocabulary.edge.contains.a2-key.40",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.alarm-clock.noun",
@@ -1453,7 +1476,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.40",
+      "id": "english.vocabulary.edge.contains.a2-key.41",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.album.noun",
@@ -1476,7 +1499,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.41",
+      "id": "english.vocabulary.edge.contains.a2-key.42",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.all.adverb-determiner-pronoun",
@@ -1499,7 +1522,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.42",
+      "id": "english.vocabulary.edge.contains.a2-key.43",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.all-kinds-of.determiner-pronoun",
@@ -1522,7 +1545,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.43",
+      "id": "english.vocabulary.edge.contains.a2-key.44",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.all-the-time.determiner",
@@ -1545,7 +1568,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.44",
+      "id": "english.vocabulary.edge.contains.a2-key.45",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.almost.adverb",
@@ -1568,7 +1591,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.45",
+      "id": "english.vocabulary.edge.contains.a2-key.46",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.alone.adjective-adverb",
@@ -1591,7 +1614,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.46",
+      "id": "english.vocabulary.edge.contains.a2-key.47",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.along.preposition",
@@ -1614,7 +1637,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.47",
+      "id": "english.vocabulary.edge.contains.a2-key.48",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.already.adverb",
@@ -1637,7 +1660,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.48",
+      "id": "english.vocabulary.edge.contains.a2-key.49",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.alright.adjective-adverb-exclamation",
@@ -1660,7 +1683,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.49",
+      "id": "english.vocabulary.edge.contains.a2-key.50",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.also.adverb",
@@ -1683,7 +1706,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.50",
+      "id": "english.vocabulary.edge.contains.a2-key.51",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.always.adverb",
@@ -1706,7 +1729,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.51",
+      "id": "english.vocabulary.edge.contains.a2-key.52",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.amazed.adjective",
@@ -1729,7 +1752,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.52",
+      "id": "english.vocabulary.edge.contains.a2-key.53",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.amazing.adjective",
@@ -1752,7 +1775,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.53",
+      "id": "english.vocabulary.edge.contains.a2-key.54",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.ambulance.noun",
@@ -1775,7 +1798,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.54",
+      "id": "english.vocabulary.edge.contains.a2-key.55",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.among.preposition",
@@ -1798,7 +1821,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.55",
+      "id": "english.vocabulary.edge.contains.a2-key.56",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.among-amongst.preposition",
@@ -1821,7 +1844,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.56",
+      "id": "english.vocabulary.edge.contains.a2-key.57",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.a-an.determiner",
@@ -1844,7 +1867,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.57",
+      "id": "english.vocabulary.edge.contains.a2-key.58",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.an.determiner",
@@ -1867,7 +1890,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.58",
+      "id": "english.vocabulary.edge.contains.a2-key.59",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.and.conjunction",
@@ -1890,7 +1913,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.59",
+      "id": "english.vocabulary.edge.contains.a2-key.60",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.angry.adjective",
@@ -1913,7 +1936,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.60",
+      "id": "english.vocabulary.edge.contains.a2-key.61",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.animal.noun",
@@ -1936,7 +1959,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.61",
+      "id": "english.vocabulary.edge.contains.a2-key.62",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.another.determiner-pronoun",
@@ -1959,7 +1982,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.62",
+      "id": "english.vocabulary.edge.contains.a2-key.63",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.answer.noun-verb",
@@ -1982,7 +2005,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.63",
+      "id": "english.vocabulary.edge.contains.a2-key.64",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.any.determiner-pronoun",
@@ -2005,7 +2028,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.64",
+      "id": "english.vocabulary.edge.contains.a2-key.65",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.anybody.pronoun",
@@ -2028,7 +2051,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.65",
+      "id": "english.vocabulary.edge.contains.a2-key.66",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.anymore.adverb",
@@ -2051,7 +2074,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.66",
+      "id": "english.vocabulary.edge.contains.a2-key.67",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.anyone.pronoun",
@@ -2074,7 +2097,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.67",
+      "id": "english.vocabulary.edge.contains.a2-key.68",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.anything.pronoun",
@@ -2097,7 +2120,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.68",
+      "id": "english.vocabulary.edge.contains.a2-key.69",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.anyway.adverb",
@@ -2120,7 +2143,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.69",
+      "id": "english.vocabulary.edge.contains.a2-key.70",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.anywhere.adverb",
@@ -2143,7 +2166,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.70",
+      "id": "english.vocabulary.edge.contains.a2-key.71",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.apartment.noun",
@@ -2166,7 +2189,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.71",
+      "id": "english.vocabulary.edge.contains.a2-key.72",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.apartment-uk-flat.noun",
@@ -2189,7 +2212,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.72",
+      "id": "english.vocabulary.edge.contains.a2-key.73",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.flat-us-apartment.noun",
@@ -2212,7 +2235,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.73",
+      "id": "english.vocabulary.edge.contains.a2-key.74",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.apartment-building.noun",
@@ -2235,7 +2258,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.74",
+      "id": "english.vocabulary.edge.contains.a2-key.75",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.app.noun",
@@ -2258,7 +2281,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.75",
+      "id": "english.vocabulary.edge.contains.a2-key.76",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.apple.noun",
@@ -2281,7 +2304,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.76",
+      "id": "english.vocabulary.edge.contains.a2-key.77",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.appointment.noun",
@@ -2304,7 +2327,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.77",
+      "id": "english.vocabulary.edge.contains.a2-key.78",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.april.noun",
@@ -2327,7 +2350,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.78",
+      "id": "english.vocabulary.edge.contains.a2-key.79",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.area.noun",
@@ -2350,7 +2373,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.79",
+      "id": "english.vocabulary.edge.contains.a2-key.80",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.arm.noun",
@@ -2373,7 +2396,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.80",
+      "id": "english.vocabulary.edge.contains.a2-key.81",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.armchair.noun",
@@ -2396,7 +2419,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.81",
+      "id": "english.vocabulary.edge.contains.a2-key.82",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.around.adverb-preposition",
@@ -2419,7 +2442,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.82",
+      "id": "english.vocabulary.edge.contains.a2-key.83",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.arrive.verb",
@@ -2442,7 +2465,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.83",
+      "id": "english.vocabulary.edge.contains.a2-key.84",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.art.noun",
@@ -2465,7 +2488,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.84",
+      "id": "english.vocabulary.edge.contains.a2-key.85",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.article.noun",
@@ -2488,7 +2511,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.85",
+      "id": "english.vocabulary.edge.contains.a2-key.86",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.artist.noun",
@@ -2511,7 +2534,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.86",
+      "id": "english.vocabulary.edge.contains.a2-key.87",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.as.adverb-conjunction-preposition",
@@ -2534,7 +2557,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.87",
+      "id": "english.vocabulary.edge.contains.a2-key.88",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.as-well.adverb",
@@ -2557,7 +2580,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.88",
+      "id": "english.vocabulary.edge.contains.a2-key.89",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.as-well-as.preposition",
@@ -2580,7 +2603,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.89",
+      "id": "english.vocabulary.edge.contains.a2-key.90",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.ask.verb",
@@ -2603,7 +2626,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.90",
+      "id": "english.vocabulary.edge.contains.a2-key.91",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.assistant.noun",
@@ -2626,7 +2649,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.91",
+      "id": "english.vocabulary.edge.contains.a2-key.92",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.at.preposition",
@@ -2649,7 +2672,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.92",
+      "id": "english.vocabulary.edge.contains.a2-key.93",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.at.preposition.2",
@@ -2672,7 +2695,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.93",
+      "id": "english.vocabulary.edge.contains.a2-key.94",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.at-all.prepositional-phrase",
@@ -2695,7 +2718,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.94",
+      "id": "english.vocabulary.edge.contains.a2-key.95",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.attractive.adjective",
@@ -2718,7 +2741,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.95",
+      "id": "english.vocabulary.edge.contains.a2-key.96",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.august.noun",
@@ -2741,7 +2764,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.96",
+      "id": "english.vocabulary.edge.contains.a2-key.97",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.aunt.noun",
@@ -2764,7 +2787,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.97",
+      "id": "english.vocabulary.edge.contains.a2-key.98",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.autumn.noun",
@@ -2787,7 +2810,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.98",
+      "id": "english.vocabulary.edge.contains.a2-key.99",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.autumn-us-fall.noun",
@@ -2810,7 +2833,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.99",
+      "id": "english.vocabulary.edge.contains.a2-key.100",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.fall-uk-autumn.noun",
@@ -2833,7 +2856,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.100",
+      "id": "english.vocabulary.edge.contains.a2-key.101",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.available.adjective",
@@ -2856,7 +2879,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.101",
+      "id": "english.vocabulary.edge.contains.a2-key.102",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.away.adverb",
@@ -2879,7 +2902,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.102",
+      "id": "english.vocabulary.edge.contains.a2-key.103",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.awesome.adjective",
@@ -2902,7 +2925,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.103",
+      "id": "english.vocabulary.edge.contains.a2-key.104",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.awful.adjective",
@@ -2925,7 +2948,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.104",
+      "id": "english.vocabulary.edge.contains.a2-key.105",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.baby.noun",
@@ -2948,7 +2971,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.105",
+      "id": "english.vocabulary.edge.contains.a2-key.106",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.back.adjective-adverb-noun",
@@ -2971,7 +2994,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.106",
+      "id": "english.vocabulary.edge.contains.a2-key.107",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.backpack.noun",
@@ -2994,7 +3017,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.107",
+      "id": "english.vocabulary.edge.contains.a2-key.108",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.backpack-uk-rucksack.noun",
@@ -3017,7 +3040,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.108",
+      "id": "english.vocabulary.edge.contains.a2-key.109",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.rucksack-us-backpack.noun",
@@ -3040,7 +3063,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.109",
+      "id": "english.vocabulary.edge.contains.a2-key.110",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bad.adjective",
@@ -3063,7 +3086,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.110",
+      "id": "english.vocabulary.edge.contains.a2-key.111",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.badly.adverb",
@@ -3086,7 +3109,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.111",
+      "id": "english.vocabulary.edge.contains.a2-key.112",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.badminton.noun",
@@ -3109,7 +3132,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.112",
+      "id": "english.vocabulary.edge.contains.a2-key.113",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bag.noun",
@@ -3132,7 +3155,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.113",
+      "id": "english.vocabulary.edge.contains.a2-key.114",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bake.verb",
@@ -3155,7 +3178,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.114",
+      "id": "english.vocabulary.edge.contains.a2-key.115",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.ball.noun",
@@ -3178,7 +3201,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.115",
+      "id": "english.vocabulary.edge.contains.a2-key.116",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.balloon.noun",
@@ -3201,7 +3224,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.116",
+      "id": "english.vocabulary.edge.contains.a2-key.117",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.banana.noun",
@@ -3224,7 +3247,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.117",
+      "id": "english.vocabulary.edge.contains.a2-key.118",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.band.noun",
@@ -3247,7 +3270,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.118",
+      "id": "english.vocabulary.edge.contains.a2-key.119",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.band-music.noun",
@@ -3270,7 +3293,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.119",
+      "id": "english.vocabulary.edge.contains.a2-key.120",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bank.noun",
@@ -3293,7 +3316,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.120",
+      "id": "english.vocabulary.edge.contains.a2-key.121",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.barbecue-barbeque.noun",
@@ -3316,7 +3339,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.121",
+      "id": "english.vocabulary.edge.contains.a2-key.122",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.baseball.noun",
@@ -3339,7 +3362,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.122",
+      "id": "english.vocabulary.edge.contains.a2-key.123",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.basketball.noun",
@@ -3362,7 +3385,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.123",
+      "id": "english.vocabulary.edge.contains.a2-key.124",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bat.noun",
@@ -3385,7 +3408,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.124",
+      "id": "english.vocabulary.edge.contains.a2-key.125",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bat-as-sports-equipment.noun",
@@ -3408,7 +3431,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.125",
+      "id": "english.vocabulary.edge.contains.a2-key.126",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bath.noun",
@@ -3431,7 +3454,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.126",
+      "id": "english.vocabulary.edge.contains.a2-key.127",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bathing-suit.noun",
@@ -3454,7 +3477,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.127",
+      "id": "english.vocabulary.edge.contains.a2-key.128",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bathroom.noun",
@@ -3477,7 +3500,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.128",
+      "id": "english.vocabulary.edge.contains.a2-key.129",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bathtub.noun",
@@ -3500,7 +3523,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.129",
+      "id": "english.vocabulary.edge.contains.a2-key.130",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.battery.noun",
@@ -3523,7 +3546,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.130",
+      "id": "english.vocabulary.edge.contains.a2-key.131",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.be.auxiliary-verb-verb",
@@ -3546,7 +3569,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.131",
+      "id": "english.vocabulary.edge.contains.a2-key.132",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.beach.noun",
@@ -3569,7 +3592,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.132",
+      "id": "english.vocabulary.edge.contains.a2-key.133",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bean.noun",
@@ -3592,7 +3615,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.133",
+      "id": "english.vocabulary.edge.contains.a2-key.134",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bear.noun",
@@ -3615,7 +3638,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.134",
+      "id": "english.vocabulary.edge.contains.a2-key.135",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.beard.noun",
@@ -3638,7 +3661,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.135",
+      "id": "english.vocabulary.edge.contains.a2-key.136",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.beautiful.adjective",
@@ -3661,7 +3684,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.136",
+      "id": "english.vocabulary.edge.contains.a2-key.137",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.because.conjunction",
@@ -3684,7 +3707,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.137",
+      "id": "english.vocabulary.edge.contains.a2-key.138",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.because-of.prepositional-phrase",
@@ -3707,7 +3730,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.138",
+      "id": "english.vocabulary.edge.contains.a2-key.139",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.become.verb",
@@ -3730,7 +3753,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.139",
+      "id": "english.vocabulary.edge.contains.a2-key.140",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bed.noun",
@@ -3753,7 +3776,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.140",
+      "id": "english.vocabulary.edge.contains.a2-key.141",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bedroom.noun",
@@ -3776,7 +3799,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.141",
+      "id": "english.vocabulary.edge.contains.a2-key.142",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bee.noun",
@@ -3799,7 +3822,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.142",
+      "id": "english.vocabulary.edge.contains.a2-key.143",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.beetle.noun",
@@ -3822,7 +3845,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.143",
+      "id": "english.vocabulary.edge.contains.a2-key.144",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.before.adverb-conjunction-preposition",
@@ -3845,7 +3868,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.144",
+      "id": "english.vocabulary.edge.contains.a2-key.145",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.begin.verb",
@@ -3868,7 +3891,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.145",
+      "id": "english.vocabulary.edge.contains.a2-key.146",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.beginner.noun",
@@ -3891,7 +3914,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.146",
+      "id": "english.vocabulary.edge.contains.a2-key.147",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.beginning.noun",
@@ -3914,7 +3937,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.147",
+      "id": "english.vocabulary.edge.contains.a2-key.148",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.behind.adverb-preposition",
@@ -3937,7 +3960,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.148",
+      "id": "english.vocabulary.edge.contains.a2-key.149",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.believe.verb",
@@ -3960,7 +3983,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.149",
+      "id": "english.vocabulary.edge.contains.a2-key.150",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.belong.verb",
@@ -3983,7 +4006,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.150",
+      "id": "english.vocabulary.edge.contains.a2-key.151",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.below.adverb-preposition",
@@ -4006,7 +4029,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.151",
+      "id": "english.vocabulary.edge.contains.a2-key.152",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.belt.noun",
@@ -4029,7 +4052,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.152",
+      "id": "english.vocabulary.edge.contains.a2-key.153",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.beside.preposition",
@@ -4052,7 +4075,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.153",
+      "id": "english.vocabulary.edge.contains.a2-key.154",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.best.adjective-adverb",
@@ -4075,7 +4098,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.154",
+      "id": "english.vocabulary.edge.contains.a2-key.155",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.better.adjective-adverb",
@@ -4098,7 +4121,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.155",
+      "id": "english.vocabulary.edge.contains.a2-key.156",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.between.preposition",
@@ -4121,7 +4144,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.156",
+      "id": "english.vocabulary.edge.contains.a2-key.157",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bicycle.noun",
@@ -4144,7 +4167,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.157",
+      "id": "english.vocabulary.edge.contains.a2-key.158",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.big.adjective",
@@ -4167,7 +4190,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.158",
+      "id": "english.vocabulary.edge.contains.a2-key.159",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bike.noun",
@@ -4190,7 +4213,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.159",
+      "id": "english.vocabulary.edge.contains.a2-key.160",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bill.noun",
@@ -4213,7 +4236,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.160",
+      "id": "english.vocabulary.edge.contains.a2-key.161",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bin.noun",
@@ -4236,7 +4259,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.161",
+      "id": "english.vocabulary.edge.contains.a2-key.162",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.biology.noun",
@@ -4259,7 +4282,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.162",
+      "id": "english.vocabulary.edge.contains.a2-key.163",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bird.noun",
@@ -4282,7 +4305,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.163",
+      "id": "english.vocabulary.edge.contains.a2-key.164",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.birth.noun",
@@ -4305,7 +4328,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.164",
+      "id": "english.vocabulary.edge.contains.a2-key.165",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.birthday.noun",
@@ -4328,7 +4351,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.165",
+      "id": "english.vocabulary.edge.contains.a2-key.166",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bit.adverb-noun",
@@ -4351,7 +4374,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.166",
+      "id": "english.vocabulary.edge.contains.a2-key.167",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.black.adjective-noun",
@@ -4374,7 +4397,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.167",
+      "id": "english.vocabulary.edge.contains.a2-key.168",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.blackboard.noun",
@@ -4397,7 +4420,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.168",
+      "id": "english.vocabulary.edge.contains.a2-key.169",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.blanket.noun",
@@ -4420,7 +4443,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.169",
+      "id": "english.vocabulary.edge.contains.a2-key.170",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.block.noun",
@@ -4443,7 +4466,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.170",
+      "id": "english.vocabulary.edge.contains.a2-key.171",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.blog.noun",
@@ -4466,7 +4489,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.171",
+      "id": "english.vocabulary.edge.contains.a2-key.172",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.blond-e.adjective",
@@ -4489,7 +4512,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.172",
+      "id": "english.vocabulary.edge.contains.a2-key.173",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.blood.noun",
@@ -4512,7 +4535,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.173",
+      "id": "english.vocabulary.edge.contains.a2-key.174",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.blouse.noun",
@@ -4535,7 +4558,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.174",
+      "id": "english.vocabulary.edge.contains.a2-key.175",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.blue.adjective-noun",
@@ -4558,7 +4581,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.175",
+      "id": "english.vocabulary.edge.contains.a2-key.176",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.board.noun",
@@ -4581,7 +4604,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.176",
+      "id": "english.vocabulary.edge.contains.a2-key.177",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.board-game.noun",
@@ -4604,7 +4627,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.177",
+      "id": "english.vocabulary.edge.contains.a2-key.178",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.boat.noun",
@@ -4627,7 +4650,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.178",
+      "id": "english.vocabulary.edge.contains.a2-key.179",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.body.noun",
@@ -4650,7 +4673,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.179",
+      "id": "english.vocabulary.edge.contains.a2-key.180",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.boil.verb",
@@ -4673,7 +4696,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.180",
+      "id": "english.vocabulary.edge.contains.a2-key.181",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.boiled.adjective",
@@ -4696,7 +4719,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.181",
+      "id": "english.vocabulary.edge.contains.a2-key.182",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.book.noun-verb",
@@ -4719,7 +4742,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.182",
+      "id": "english.vocabulary.edge.contains.a2-key.183",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bookcase.noun",
@@ -4742,7 +4765,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.183",
+      "id": "english.vocabulary.edge.contains.a2-key.184",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bookshelf.noun",
@@ -4765,7 +4788,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.184",
+      "id": "english.vocabulary.edge.contains.a2-key.185",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.boot.noun",
@@ -4788,7 +4811,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.185",
+      "id": "english.vocabulary.edge.contains.a2-key.186",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bored.adjective",
@@ -4811,7 +4834,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.186",
+      "id": "english.vocabulary.edge.contains.a2-key.187",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.boring.adjective",
@@ -4834,7 +4857,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.187",
+      "id": "english.vocabulary.edge.contains.a2-key.188",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.born.verb",
@@ -4857,7 +4880,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.188",
+      "id": "english.vocabulary.edge.contains.a2-key.189",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.borrow.verb",
@@ -4880,7 +4903,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.189",
+      "id": "english.vocabulary.edge.contains.a2-key.190",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.boss.noun",
@@ -4903,7 +4926,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.190",
+      "id": "english.vocabulary.edge.contains.a2-key.191",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.both.determiner-pronoun",
@@ -4926,7 +4949,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.191",
+      "id": "english.vocabulary.edge.contains.a2-key.192",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bother.verb",
@@ -4949,7 +4972,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.192",
+      "id": "english.vocabulary.edge.contains.a2-key.193",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bottle.noun",
@@ -4972,7 +4995,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.193",
+      "id": "english.vocabulary.edge.contains.a2-key.194",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bottom.noun",
@@ -4995,7 +5018,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.194",
+      "id": "english.vocabulary.edge.contains.a2-key.195",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bowl.noun",
@@ -5018,7 +5041,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.195",
+      "id": "english.vocabulary.edge.contains.a2-key.196",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.box.noun",
@@ -5041,7 +5064,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.196",
+      "id": "english.vocabulary.edge.contains.a2-key.197",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.boy.noun",
@@ -5064,7 +5087,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.197",
+      "id": "english.vocabulary.edge.contains.a2-key.198",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.boyfriend.noun",
@@ -5087,7 +5110,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.198",
+      "id": "english.vocabulary.edge.contains.a2-key.199",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bracelet.noun",
@@ -5110,7 +5133,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.199",
+      "id": "english.vocabulary.edge.contains.a2-key.200",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.brain.noun",
@@ -5133,7 +5156,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.200",
+      "id": "english.vocabulary.edge.contains.a2-key.201",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.brave.adjective",
@@ -5156,7 +5179,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.201",
+      "id": "english.vocabulary.edge.contains.a2-key.202",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bread.noun",
@@ -5179,7 +5202,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.202",
+      "id": "english.vocabulary.edge.contains.a2-key.203",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.break.noun-verb",
@@ -5202,7 +5225,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.203",
+      "id": "english.vocabulary.edge.contains.a2-key.204",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.break-down.phrasal-verb",
@@ -5225,7 +5248,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.204",
+      "id": "english.vocabulary.edge.contains.a2-key.205",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.breakfast.noun",
@@ -5248,7 +5271,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.205",
+      "id": "english.vocabulary.edge.contains.a2-key.206",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bridge.noun",
@@ -5271,7 +5294,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.206",
+      "id": "english.vocabulary.edge.contains.a2-key.207",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.brilliant.adjective",
@@ -5294,7 +5317,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.207",
+      "id": "english.vocabulary.edge.contains.a2-key.208",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bring.verb",
@@ -5317,7 +5340,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.208",
+      "id": "english.vocabulary.edge.contains.a2-key.209",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bring-back.verb",
@@ -5340,7 +5363,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.209",
+      "id": "english.vocabulary.edge.contains.a2-key.210",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.broken.adjective",
@@ -5363,7 +5386,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.210",
+      "id": "english.vocabulary.edge.contains.a2-key.211",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.brother.noun",
@@ -5386,7 +5409,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.211",
+      "id": "english.vocabulary.edge.contains.a2-key.212",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.brown.adjective-noun",
@@ -5409,7 +5432,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.212",
+      "id": "english.vocabulary.edge.contains.a2-key.213",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.brush.noun-verb",
@@ -5432,7 +5455,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.213",
+      "id": "english.vocabulary.edge.contains.a2-key.214",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.build.verb",
@@ -5455,7 +5478,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.214",
+      "id": "english.vocabulary.edge.contains.a2-key.215",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.building.noun",
@@ -5478,7 +5501,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.215",
+      "id": "english.vocabulary.edge.contains.a2-key.216",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.burger.noun",
@@ -5501,7 +5524,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.216",
+      "id": "english.vocabulary.edge.contains.a2-key.217",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bus.noun",
@@ -5524,7 +5547,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.217",
+      "id": "english.vocabulary.edge.contains.a2-key.218",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bus-station.noun",
@@ -5547,7 +5570,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.218",
+      "id": "english.vocabulary.edge.contains.a2-key.219",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bus-stop.noun",
@@ -5570,7 +5593,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.219",
+      "id": "english.vocabulary.edge.contains.a2-key.220",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.business.noun",
@@ -5593,7 +5616,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.220",
+      "id": "english.vocabulary.edge.contains.a2-key.221",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.business-person.noun",
@@ -5616,7 +5639,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.221",
+      "id": "english.vocabulary.edge.contains.a2-key.222",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.businessman.noun",
@@ -5639,7 +5662,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.222",
+      "id": "english.vocabulary.edge.contains.a2-key.223",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.businessman-woman.noun",
@@ -5662,7 +5685,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.223",
+      "id": "english.vocabulary.edge.contains.a2-key.224",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.businesswoman.noun",
@@ -5685,7 +5708,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.224",
+      "id": "english.vocabulary.edge.contains.a2-key.225",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.busy.adjective",
@@ -5708,7 +5731,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.225",
+      "id": "english.vocabulary.edge.contains.a2-key.226",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.but.conjunction",
@@ -5731,7 +5754,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.226",
+      "id": "english.vocabulary.edge.contains.a2-key.227",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.butter.noun",
@@ -5754,7 +5777,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.227",
+      "id": "english.vocabulary.edge.contains.a2-key.228",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.butterfly.noun",
@@ -5777,7 +5800,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.228",
+      "id": "english.vocabulary.edge.contains.a2-key.229",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.buy.verb",
@@ -5800,7 +5823,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.229",
+      "id": "english.vocabulary.edge.contains.a2-key.230",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.by.preposition",
@@ -5823,7 +5846,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.230",
+      "id": "english.vocabulary.edge.contains.a2-key.231",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.by-accident.prepositional-phrase",
@@ -5846,7 +5869,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.231",
+      "id": "english.vocabulary.edge.contains.a2-key.232",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.by-post.prepositional-phrase",
@@ -5869,7 +5892,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.232",
+      "id": "english.vocabulary.edge.contains.a2-key.233",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.by-the-way.prepositional-phrase",
@@ -5892,7 +5915,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.233",
+      "id": "english.vocabulary.edge.contains.a2-key.234",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.bye.exclamation",
@@ -5915,7 +5938,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.234",
+      "id": "english.vocabulary.edge.contains.a2-key.235",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.cabinet.noun",
@@ -5938,10 +5961,10 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.235",
+      "id": "english.vocabulary.edge.contains.a2-key.236",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
-      "targetId": "english.vocabulary.skill.caf.noun",
+      "targetId": "english.vocabulary.skill.cafe-caf.noun",
       "weight": 1,
       "confidence": "high",
       "sourceRefs": [
@@ -5961,7 +5984,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.236",
+      "id": "english.vocabulary.edge.contains.a2-key.237",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.cafeteria.noun",
@@ -5984,7 +6007,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.237",
+      "id": "english.vocabulary.edge.contains.a2-key.238",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.cake.noun",
@@ -6007,7 +6030,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.238",
+      "id": "english.vocabulary.edge.contains.a2-key.239",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.calendar.noun",
@@ -6030,7 +6053,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.239",
+      "id": "english.vocabulary.edge.contains.a2-key.240",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.call.noun-verb",
@@ -6053,7 +6076,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.240",
+      "id": "english.vocabulary.edge.contains.a2-key.241",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.camel.noun",
@@ -6076,7 +6099,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.241",
+      "id": "english.vocabulary.edge.contains.a2-key.242",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.camera.noun",
@@ -6099,7 +6122,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.242",
+      "id": "english.vocabulary.edge.contains.a2-key.243",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.camp.verb",
@@ -6122,7 +6145,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.243",
+      "id": "english.vocabulary.edge.contains.a2-key.244",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.camping.noun",
@@ -6145,7 +6168,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.244",
+      "id": "english.vocabulary.edge.contains.a2-key.245",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.campsite.noun",
@@ -6168,7 +6191,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.245",
+      "id": "english.vocabulary.edge.contains.a2-key.246",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.can.modal-verb-noun",
@@ -6191,7 +6214,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.246",
+      "id": "english.vocabulary.edge.contains.a2-key.247",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.candy.noun",
@@ -6214,7 +6237,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.247",
+      "id": "english.vocabulary.edge.contains.a2-key.248",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.sweet-s-us-candy.noun",
@@ -6237,7 +6260,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.248",
+      "id": "english.vocabulary.edge.contains.a2-key.249",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.cannot.modal-verb",
@@ -6260,7 +6283,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.249",
+      "id": "english.vocabulary.edge.contains.a2-key.250",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.cap.noun",
@@ -6283,7 +6306,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.250",
+      "id": "english.vocabulary.edge.contains.a2-key.251",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.capital.noun",
@@ -6306,7 +6329,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.251",
+      "id": "english.vocabulary.edge.contains.a2-key.252",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.car.noun",
@@ -6329,7 +6352,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.252",
+      "id": "english.vocabulary.edge.contains.a2-key.253",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.card.noun",
@@ -6352,7 +6375,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.253",
+      "id": "english.vocabulary.edge.contains.a2-key.254",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.career.noun",
@@ -6375,7 +6398,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.254",
+      "id": "english.vocabulary.edge.contains.a2-key.255",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.careful.adjective",
@@ -6398,7 +6421,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.255",
+      "id": "english.vocabulary.edge.contains.a2-key.256",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.carefully.adverb",
@@ -6421,7 +6444,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.256",
+      "id": "english.vocabulary.edge.contains.a2-key.257",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.carpet.noun",
@@ -6444,7 +6467,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.257",
+      "id": "english.vocabulary.edge.contains.a2-key.258",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.carrot.noun",
@@ -6467,7 +6490,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.258",
+      "id": "english.vocabulary.edge.contains.a2-key.259",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.carry.verb",
@@ -6490,7 +6513,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.259",
+      "id": "english.vocabulary.edge.contains.a2-key.260",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.cartoon.noun",
@@ -6513,7 +6536,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.260",
+      "id": "english.vocabulary.edge.contains.a2-key.261",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.case.noun",
@@ -6536,7 +6559,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.261",
+      "id": "english.vocabulary.edge.contains.a2-key.262",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.cash.noun-verb",
@@ -6559,7 +6582,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.262",
+      "id": "english.vocabulary.edge.contains.a2-key.263",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.castle.noun",
@@ -6582,7 +6605,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.263",
+      "id": "english.vocabulary.edge.contains.a2-key.264",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.cat.noun",
@@ -6605,7 +6628,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.264",
+      "id": "english.vocabulary.edge.contains.a2-key.265",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.catch.verb",
@@ -6628,7 +6651,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.265",
+      "id": "english.vocabulary.edge.contains.a2-key.266",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.catch-e-g-a-ball.verb",
@@ -6651,7 +6674,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.266",
+      "id": "english.vocabulary.edge.contains.a2-key.267",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.catch-e-g-a-bus.verb",
@@ -6674,7 +6697,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.267",
+      "id": "english.vocabulary.edge.contains.a2-key.268",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.cd.noun",
@@ -6697,7 +6720,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.268",
+      "id": "english.vocabulary.edge.contains.a2-key.269",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.cd-player.noun",
@@ -6720,7 +6743,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.269",
+      "id": "english.vocabulary.edge.contains.a2-key.270",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.ceiling.noun",
@@ -6743,7 +6766,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.270",
+      "id": "english.vocabulary.edge.contains.a2-key.271",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.celebrate.verb",
@@ -6766,7 +6789,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.271",
+      "id": "english.vocabulary.edge.contains.a2-key.272",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.celebrity.noun",
@@ -6789,7 +6812,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.272",
+      "id": "english.vocabulary.edge.contains.a2-key.273",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.cell-phone.noun",
@@ -6812,7 +6835,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.273",
+      "id": "english.vocabulary.edge.contains.a2-key.274",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.cent.noun",
@@ -6835,7 +6858,7 @@
       }
     },
     {
-      "id": "english.vocabulary.edge.contains.a2-key.274",
+      "id": "english.vocabulary.edge.contains.a2-key.275",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
       "targetId": "english.vocabulary.skill.centimetre-centimeter-cm.noun",
@@ -6850,29 +6873,6 @@
         "enrichmentLayer": "enrichment.cambridge.a2-key-appendix",
         "sourceId": "cambridge-a2-key-vocabulary-list-2025",
         "indexLemma": "centimetre/centimeter (cm)",
-        "matchKind": "exact",
-        "matchDetail": "exact-pos-set",
-        "extractionConfidence": "high",
-        "relationshipKind": "exam-list-group",
-        "section": "a-z"
-      }
-    },
-    {
-      "id": "english.vocabulary.edge.contains.a2-key.275",
-      "type": "contains",
-      "sourceId": "english.vocabulary.group.a2-key.exam-membership",
-      "targetId": "english.vocabulary.skill.centre-us-center.noun",
-      "weight": 1,
-      "confidence": "high",
-      "sourceRefs": [
-        "cambridge-a2-key-vocabulary-list-2025"
-      ],
-      "reviewStatus": "draft",
-      "rationale": "A2 Key and A2 Key for Schools A–Z lists \"centre/center\" (exam membership; not a prerequisite; shared form+POS skill)",
-      "metadata": {
-        "enrichmentLayer": "enrichment.cambridge.a2-key-appendix",
-        "sourceId": "cambridge-a2-key-vocabulary-list-2025",
-        "indexLemma": "centre/center",
         "matchKind": "exact",
         "matchDetail": "exact-pos-set",
         "extractionConfidence": "high",
@@ -28274,7 +28274,7 @@
       "id": "english.vocabulary.edge.contains.a2-key.1206",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
-      "targetId": "english.vocabulary.skill.prefer.verb",
+      "targetId": "english.vocabulary.skill.prefer-would-prefer.verb",
       "weight": 1,
       "confidence": "high",
       "sourceRefs": [
@@ -39705,7 +39705,7 @@
       "id": "english.vocabulary.edge.contains.a2-key.1703",
       "type": "contains",
       "sourceId": "english.vocabulary.group.a2-key.exam-membership",
-      "targetId": "english.vocabulary.skill.well-known.adjective.2",
+      "targetId": "english.vocabulary.skill.well-known.adjective",
       "weight": 1,
       "confidence": "high",
       "sourceRefs": [
@@ -73250,8 +73250,8 @@
     "topicMatchRate": 0.9815,
     "topicMatchKinds": {
       "topic-form-unique": 875,
-      "topic-form-multi": 145,
       "unmatched": 21,
+      "topic-form-multi": 145,
       "topic-pos-unique": 58,
       "topic-pos-multi": 31,
       "topic-form-ambiguous": 7

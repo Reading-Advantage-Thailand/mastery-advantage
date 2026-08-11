@@ -29,12 +29,12 @@
 | Metric | Value |
 |---|---:|
 | Topics | 23 |
-| Lemma observations | 1907 |
-| Matched | 1804 |
-| Unmatched | 103 |
-| Ambiguous | 35 |
-| Match rate | 0.946 |
-| Membership edges | 2138 |
+| Lemma observations | 1863 |
+| Matched | 1770 |
+| Unmatched | 93 |
+| Ambiguous | 34 |
+| Match rate | 0.9501 |
+| Membership edges | 2096 |
 
 ## Isolation
 

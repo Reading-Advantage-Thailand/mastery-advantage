@@ -392,10 +392,135 @@ def extract_topic_sections(text: str, topics: list[str]) -> list[tuple[str, str]
     return sections
 
 
+def _paren_balance(text: str) -> int:
+    """Net open-paren count (positive = unclosed opens)."""
+    return text.count("(") - text.count(")")
+
+
+def _is_noise_topic_cell(cell: str, title_norm: str) -> bool:
+    if not cell or len(cell) < 2:
+        return True
+    cn = normalize_form(cell)
+    if not cn or cn == title_norm or cn.startswith(title_norm):
+        return True
+    if re.fullmatch(r"\d+", cn):
+        return True
+    if cn in {
+        "key",
+        "schools",
+        "preliminary",
+        "vocabulary",
+        "list",
+        "ucles",
+        "and",
+        "or",
+        "the",
+        "of",
+        "a",
+        "an",
+    }:
+        return True
+    # Pure POS gloss debris: (n), (v), (n & v)
+    if re.fullmatch(r"\([^)]{1,20}\)", cell):
+        return True
+    return False
+
+
+def _is_orphan_paren_fragment(cell: str) -> bool:
+    """True for wrap halves that are not complete lemmas.
+
+    Layout pairs look like: 'barbecue (n &' + 'v)'  or  'bunch (of' + 'bananas)'.
+    If we have {word}) we also have ({word} / word (… — drop both if unrejoined.
+    """
+    t = cell.strip()
+    if not t:
+        return True
+    bal = _paren_balance(t)
+    # Closing half alone: v), bananas), TV), competition), prison/police)
+    if bal < 0:
+        return True
+    if re.fullmatch(r"[A-Za-z/'-]+\)", t):
+        return True
+    # Opening half alone: barbecue (n &, bunch (of, channel (with, officer (e.g.
+    if bal > 0:
+        return True
+    # Trailing incomplete POS connector without close
+    if re.search(r"\(\s*(?:n|v|adj|adv|phr v)?\s*&\s*$", t, re.I):
+        return True
+    if re.search(r"\(\s*(?:of|with|a|an|the|e\.g\.?)\s*$", t, re.I):
+        return True
+    return False
+
+
+def _merge_column_fragments(fragments: list[str]) -> list[str]:
+    """Rejoin vertical wraps inside one PDF column.
+
+    Multi-column layout puts 'barbecue (n &' above 'v)' in the same column, with
+    other columns' cells interleaved in left-to-right reading order. Column-wise
+    merge restores the pair before matching.
+
+    Rule: an open half ({word} / word (… always pairs with a later close half
+    {word}) in the same column. Emit one rejoined token, or drop both if the
+    pair never balances.
+    """
+    merged: list[str] = []
+    buf: str | None = None
+    for frag in fragments:
+        frag = frag.strip()
+        if not frag:
+            continue
+        if buf is None:
+            if _paren_balance(frag) > 0:
+                buf = frag
+            elif _paren_balance(frag) < 0 or re.fullmatch(r"[A-Za-z/'-]+\)", frag):
+                # Orphan close half with no open partner — drop
+                continue
+            else:
+                merged.append(frag)
+            continue
+
+        candidate = re.sub(r"\s+", " ", f"{buf} {frag}").strip()
+        # ' (n &' + 'v)' → tidy double spaces only; already single-spaced
+        if _paren_balance(candidate) > 0:
+            buf = candidate
+            continue
+        if _paren_balance(candidate) < 0:
+            # Still broken — drop the open buffer and reconsider frag alone
+            buf = None
+            if _paren_balance(frag) > 0:
+                buf = frag
+            elif _paren_balance(frag) == 0 and not re.fullmatch(r"[A-Za-z/'-]+\)", frag):
+                merged.append(frag)
+            continue
+        merged.append(candidate)
+        buf = None
+    # Trailing open half with no close partner — drop (paired with missing {word}))
+    return merged
+
+
+def _cells_with_columns(line: str) -> list[tuple[int, str]]:
+    """Return (start_column, cell_text) for multi-space-separated cells."""
+    raw = line.replace("\f", "")
+    if not raw.strip():
+        return []
+    cells: list[tuple[int, str]] = []
+    for match in re.finditer(r"\S(?:.*?\S)?(?=\s{2,}|\s*$)", raw):
+        text = match.group(0).strip()
+        if text:
+            cells.append((match.start(), text))
+    return cells
+
+
 def extract_topic_lemmas(section_text: str, title: str) -> list[str]:
-    """Return surface lemmas from a topic section body."""
+    """Return surface lemmas from a topic section body.
+
+    Appendix topic pages are multi-column. Parenthetical glosses often wrap
+    *within* a column ('bunch (of' / 'bananas)'). If we only split on spaces,
+    we get both halves as separate lemmas. Rejoin by column first; drop any
+    residual orphan half so {word}) never ships without its ({word} partner
+    being resolved into one token.
+    """
     lines = section_text.splitlines()
-    # Drop heading line(s)
     body_lines: list[str] = []
     seen_body = False
     title_norm = normalize_form(title.split("(")[0])
@@ -410,38 +535,25 @@ def extract_topic_lemmas(section_text: str, title: str) -> list[str]:
             continue
         body_lines.append(line)
 
-    lemmas: list[str] = []
+    # Group cells by approximate column (topic pages are typically 4 columns).
+    column_bins: dict[int, list[str]] = defaultdict(list)
     for line in body_lines:
         if re.search(r"©\s*UCLES|Page\s+\d+|Vocabulary List|Appendix\s+\d+", line, re.I):
             continue
-        cells = re.split(r"\s{2,}", line.replace("\f", "").strip())
-        for cell in cells:
-            cell = cell.strip()
-            if not cell or len(cell) < 2:
+        for start, cell in _cells_with_columns(line):
+            if _is_noise_topic_cell(cell, title_norm):
                 continue
-            # Skip residual topic titles / column noise
-            cn = normalize_form(cell)
-            if not cn or cn == title_norm or cn.startswith(title_norm):
+            # Bin width ~22 chars matches observed A2/B1 topic column pitch
+            col = start // 22
+            column_bins[col].append(cell)
+
+    lemmas: list[str] = []
+    for col in sorted(column_bins):
+        for cell in _merge_column_fragments(column_bins[col]):
+            if _is_noise_topic_cell(cell, title_norm):
                 continue
-            if re.fullmatch(r"\d+", cn):
-                continue
-            if cn in {
-                "key",
-                "schools",
-                "preliminary",
-                "vocabulary",
-                "list",
-                "ucles",
-                "and",
-                "or",
-                "the",
-                "of",
-                "a",
-                "an",
-            }:
-                continue
-            # Reject pure POS gloss debris
-            if re.fullmatch(r"\([^)]{1,12}\)", cell):
+            if _is_orphan_paren_fragment(cell):
+                # Unrejoined half — do not emit; partner is also dropped
                 continue
             lemmas.append(cell)
     return lemmas

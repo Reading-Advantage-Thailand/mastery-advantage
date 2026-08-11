@@ -161,6 +161,56 @@ check_layer "a2-key" "enrichment.cambridge.a2-key-appendix" "0.99" "0.95" "1500"
 # B1: near-perfect A–Z; topics slightly lower due to longer inventory
 check_layer "b1-preliminary" "enrichment.cambridge.b1-preliminary-appendix" "0.99" "0.90" "2800"
 
+echo "=== no orphan parenthetical halves ({word}) without ({word}) ==="
+python3 - "$VOCAB/overlays/a2-key-appendix.overlay.json" \
+  "$VOCAB/overlays/b1-preliminary-appendix.overlay.json" \
+  "$VOCAB/review/enrichment/queues/a2-key-unmatched.jsonl" \
+  "$VOCAB/review/enrichment/queues/b1-preliminary-unmatched.jsonl" <<'PY' || exit 1
+import json
+import re
+import sys
+from pathlib import Path
+
+errors = []
+for path in map(Path, sys.argv[1:]):
+    if path.suffix == ".json":
+        ov = json.loads(path.read_text(encoding="utf-8"))
+        items = []
+        for e in ov.get("edges", []):
+            meta = e.get("metadata") or {}
+            if meta.get("section") == "topic":
+                items.append(meta.get("indexLemma") or "")
+    else:
+        items = []
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            if row.get("section") == "topic":
+                items.append(row.get("lemma") or "")
+
+    for lem in items:
+        if not lem:
+            continue
+        bal = lem.count("(") - lem.count(")")
+        if bal != 0:
+            errors.append(f"{path.name}: unbalanced {lem!r}")
+        if re.fullmatch(r"[A-Za-z/'-]+\)", lem):
+            errors.append(f"{path.name}: orphan close-half {lem!r}")
+        if re.search(r"\(\s*(?:n|v|adj|adv)?\s*&\s*$", lem, re.I):
+            errors.append(f"{path.name}: orphan open-half {lem!r}")
+
+if errors:
+    print("; ".join(errors[:20]), file=sys.stderr)
+    raise SystemExit(1)
+print(f"checked topic lemmas across {len(sys.argv)-1} artifacts; no orphan paren halves")
+PY
+if [[ $? -eq 0 ]]; then
+  pass "no orphan {word}) / ({word} topic fragments"
+else
+  fail "orphan parenthetical halves present"
+fi
+
 echo "=== shared-skill policy: Key/Flyers may share skills ==="
 python3 - "$VOCAB/overlays/a2-key-appendix.overlay.json" "$CORE" <<'PY' || exit 1
 import json
