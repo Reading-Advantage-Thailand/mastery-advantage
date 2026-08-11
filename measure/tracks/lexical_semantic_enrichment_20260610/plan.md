@@ -1,16 +1,31 @@
 # Implementation Plan: English Lexical Semantic Enrichment
 
+> **Intent:** Typed WordNet-style relations as independently gated optional
+> layers. Never `prerequisite_for`. Form+POS identity retained until the
+> sense-identity track splits skills.
+>
+> **Coordination:** Ranking provider keeps semantic weight 0 until at least
+> one relation layer is approved (`RANKING_LAYER_SPEC.md`).
+
 ## Phase 1: Semantic Contract And Source Selection
 
-- [ ] Task: Define vocabulary semantic relation contract
-  - [ ] Define explicit relation kinds and directionality
-  - [ ] Define graph-edge representation and consumer filtering
-  - [ ] Define sense, provenance, model, score, confidence, and review fields
-- [ ] Task: Evaluate and approve candidate sources
-  - [ ] Assess license, coverage, versioning, reproducibility, and artifact size
-  - [ ] Select the first WordNet-compatible source
-- [ ] Task: Define per-relation review samples and precision thresholds
-- [ ] Task: Complete Phase 1 semantic-contract review gate
+- [x] Task: Define vocabulary semantic relation contract
+  - [x] Define explicit relation kinds and directionality
+  - [x] Define graph-edge representation and consumer filtering
+  - [x] Define sense, provenance, model, score, confidence, and review fields
+- [x] Task: Evaluate and approve candidate sources
+  - [x] Assess license, coverage, versioning, reproducibility, and artifact size
+  - [x] Select the first WordNet-compatible source
+- [x] Task: Define per-relation review samples and precision thresholds
+- [ ] Task: Complete Phase 1 semantic-contract review gate — human-gate:both-owners
+  - [ ] Accept contract and WordNet source selection — human-gate:both-owners
+
+**Green evidence (2026-08-11):**
+
+- `english/cefr-vocabulary/review/enrichment/phase1-semantic-contract.md`
+- `english/cefr-vocabulary/review/enrichment/phase1-semantic-sources.md`
+- Harness: `bash tests/enrichment_semantic_p1.sh`
+- First source: Princeton WordNet 3.1 offline; embeddings/ConceptNet deferred
 
 ## Phase 2: Tests And Fixtures
 

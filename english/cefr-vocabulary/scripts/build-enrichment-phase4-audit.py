@@ -477,7 +477,13 @@ def main() -> int:
             if a.get("kind") in {"cambridge-appendix", "yle-grammatical", "viu"}
         ),
         "ambiguousRowsQuarantinedInQueues": queues.get("ambiguousQuarantined") is True,
-        "curriculumPrecisionGate": "pending-human",
+        "curriculumPrecisionGate": (
+            "accepted"
+            if (ROOT / "review" / "enrichment" / "phase4-approval.md").is_file()
+            and "Decision: go"
+            in (ROOT / "review" / "enrichment" / "phase4-approval.md").read_text(encoding="utf-8")
+            else "pending-human"
+        ),
         "thresholds": {
             "membershipPrecision": 0.98,
             "provenanceCompleteness": 1.0,

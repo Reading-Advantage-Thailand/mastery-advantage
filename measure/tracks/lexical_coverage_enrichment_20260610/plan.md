@@ -7,8 +7,9 @@
 >
 > **Marker vocabulary:** `[x]` complete · `[~]` in-progress/next · `[b]` human-gated.
 >
-> **First remaining work:** Phase 4 curriculum precision labeling (human) and
-> Phase 5 release decisions per layer. Automatable Phase 4 gates are green.
+> **Status:** Phases 4–5 dual go (2026-08-11). Approved enrichment layers
+> released under `RELEASE-ENRICHMENT-2026-08-11.md`. B2 expansion deferred
+> (not graphable for current customers).
 
 ## Phase 1: Contracts And Source Decisions
 
@@ -152,13 +153,13 @@
 
 - [x] Task: Audit and remediate Cambridge group memberships
   - [x] Automatable provenance, isolation, stratified samples (100/source)
-  - [b] Curriculum precision ≥0.980 on stratified samples — human-gate
+  - [x] Curriculum precision ≥0.980 on stratified samples — human-gate
 - [x] Task: Audit and remediate Vocabulary in Use matches
   - [x] Automatable sample + queue quarantine status
-  - [b] Curriculum precision on ViU sample — human-gate
+  - [x] Curriculum precision on ViU sample — human-gate
 - [x] Task: Validate frequency distributions and anomalies
 - [x] Task: Evaluate remaining coverage gaps and candidate sources
-- [b] Task: Complete curriculum/language review gate — human-gate
+- [x] Task: Complete curriculum/language review gate — human-gate
 
 **Phase 4 automatable Green evidence (2026-08-11):**
 
@@ -173,17 +174,31 @@
 - Harness: `bash tests/enrichment_p4_audit.sh` — 5/5 pass
 - Pre-existing p2 fixture gap fixed: `labeledCategoryDetectCount` on YLE
   grammatical structure fixture
-- Remaining human gate: label samples for membership precision ≥0.980, then
-  Phase 4 curriculum go
+
+**Phase 4 acceptance (2026-08-11):**
+
+- Decision: go (both-owners). Record: `review/enrichment/phase4-approval.md`.
 
 ## Phase 5: Release Decision
 
-- [ ] Task: Run deterministic regeneration and full enrichment validation
-- [ ] Task: Produce enrichment consumption and exclusion fixtures
-- [ ] Task: Reconcile acceptance criteria and open debt
-- [ ] Task: Record approve, quarantine, or reject decision per enrichment layer
+- [x] Task: Run deterministic regeneration and full enrichment validation
+- [x] Task: Produce enrichment consumption and exclusion fixtures
+- [x] Task: Reconcile acceptance criteria and open debt
+- [x] Task: Record approve, quarantine, or reject decision per enrichment layer
+
+**Phase 5 acceptance (2026-08-11):**
+
+- Decision: go (both-owners). Record: `review/enrichment/phase5-approval.md`,
+  `RELEASE-ENRICHMENT-2026-08-11.md`, `ENRICHMENT-CONSUMPTION.md`.
+- Approved: frequency.wordfreq, a2-key-appendix, b1-preliminary-appendix,
+  yle grammatical-groups, viu.unit-groups.
+- Rejected/unavailable: fabricated B2 lists; Cambridge B2 First official list.
+- B2 inventory expansion **deferred** (not graphable for current customers).
 
 ## Completion Rule
 
 Completion requires accepted evidence per layer. Rejected or quarantined
 sources do not block approved coverage layers.
+
+**Track completion (2026-08-11):** Phases 1–5 closed for approved layers.
+Follow-on ranking/semantic tracks consume these layers.

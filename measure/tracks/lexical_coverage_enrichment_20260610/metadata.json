@@ -1,11 +1,11 @@
 {
   "track_id": "lexical_coverage_enrichment_20260610",
   "type": "feature",
-  "status": "in_progress",
+  "status": "completed",
   "created_at": "2026-06-10T08:32:01Z",
-  "updated_at": "2026-08-11T22:00:00Z",
+  "updated_at": "2026-08-11T23:30:00Z",
   "description": "Expand the approved core lexical graph with source-backed groups, B2+ coverage, and frequency metadata.",
   "estimated_tasks": 23,
   "actual_tasks": null,
-  "deviation_notes": "Phase 1 accepted. Overlays live: ViU, YLE grammatical, frequency.wordfreq, A2 Key, B1 Preliminary. Phase 4 automatable gates green (2026-08-11); curriculum precision labeling pending. Full A2/B1 dual-go freeze remains method-later."
+  "deviation_notes": "COMPLETED 2026-08-11: Phases 4–5 dual go. Approved layers: frequency.wordfreq, a2-key, b1-preliminary, yle grammatical, viu unit-groups. B2 expansion deferred (not graphable for current customers). Full A2/B1 exam freeze remains method-later."
 }

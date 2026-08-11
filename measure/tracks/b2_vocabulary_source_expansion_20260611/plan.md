@@ -1,5 +1,9 @@
 # Plan — B2 Vocabulary Source Expansion
 
+> **Status: DEFERRED (2026-08-11).** B2 inventory is not graphable for current
+> product scope. Customers are not at B2. Do not invent a Cambridge B2 list.
+> Reopen only when product needs B2 coverage.
+
 ## Phase 1: Source Evaluation
 - [ ] Task 1.1: Acquire and cache Vocabulary in Use Upper-Intermediate (4th edition) PDF
 - [ ] Task 1.2: Acquire and cache Oxford 3000 B2 supplement if available

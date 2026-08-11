@@ -24,21 +24,22 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: English Lexical Coverage Enrichment** *(unblocked — in progress)*
+- [x] **Track: English Lexical Coverage Enrichment** *(COMPLETE 2026-08-11 — Phase 4–5 dual go)*
   *Add independently gated source-backed groups, B2+ coverage, and frequency
   metadata.*
-  *Status: in progress — Phase 1 accepted; Phase 4 automatable audit green
-  (provenance, samples, frequency dist, zero prereq, core untouched). Live
-  overlays: ViU, YLE grammatical, frequency.wordfreq, A2 Key, B1 Preliminary.
-  Next: curriculum precision labeling on phase4 samples; Phase 5 per-layer
-  release decisions. Full A2/B1 dual-go freeze remains method-later.*
+  *Status: complete — approved layers: frequency.wordfreq, a2-key-appendix,
+  b1-preliminary-appendix, yle grammatical-groups, viu.unit-groups. Release:
+  `RELEASE-ENRICHMENT-2026-08-11.md`. B2 expansion deferred (not graphable for
+  current customers). Full A2/B1 exam freeze remains method-later.*
   *Link: [./tracks/lexical_coverage_enrichment_20260610/](./tracks/lexical_coverage_enrichment_20260610/)*
-  *Coordination: this track produces the frequency data layer as versioned node metadata (`enrichment.frequency.wordfreq`), never as edges. [frequency_semantic_ranking_layer_20260611](./tracks/frequency_semantic_ranking_layer_20260611/) consumes that metadata as a utility provider.*
+  *Coordination: frequency node metadata consumed by [frequency_semantic_ranking_layer_20260611](./tracks/frequency_semantic_ranking_layer_20260611/) as utility provider.*
 
 ---
 
-- [ ] **Track: English Lexical Semantic Enrichment** *(unblocked by core freeze)*
+- [ ] **Track: English Lexical Semantic Enrichment** *(in progress — Phase 1 contracts drafted)*
   *Evaluate and release independently gated typed lexical-semantic layers.*
+  *Status: Phase 1 contract + WordNet source selection drafted; human gate open.
+  Ranking semantic weight stays 0 until a relation layer is approved.*
   *Link: [./tracks/lexical_semantic_enrichment_20260610/](./tracks/lexical_semantic_enrichment_20260610/)*
 
 ---
@@ -56,16 +57,21 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: B2 Vocabulary Source Expansion**
+- [ ] **Track: B2 Vocabulary Source Expansion** *(deferred — not graphable for current product)*
   *Close the B2 gap using documented alternative sources (Vocabulary in Use, etc.) without claiming false Cambridge FCE coverage.*
+  *Status: parked 2026-08-11. B2 inventory is out of scope for current customers;
+  do not invent a Cambridge B2 list. Reopen only when product needs B2.*
   *Link: [./tracks/b2_vocabulary_source_expansion_20260611/](./tracks/b2_vocabulary_source_expansion_20260611/)*
 
 ---
 
-- [ ] **Track: Frequency, Semantic and Article-Ranking Utility Provider Design**
+- [x] **Track: Frequency, Semantic and Article-Ranking Utility Provider Design** *(COMPLETE 2026-08-11 — spec ready)*
   *Express the frequency, semantic, and article-fit signals as one `DomainUtilityProvider` per §10.3. Other tracks own the data layers.*
+  *Status: complete design — `RANKING_LAYER_SPEC.md`; frequency live (rank→[0,1]);
+  semantic and article-fit weight 0 until their tracks approve. Sample validator
+  500 nodes. Engine registration remains implementation outside this track.*
   *Link: [./tracks/frequency_semantic_ranking_layer_20260611/](./tracks/frequency_semantic_ranking_layer_20260611/)*
-  *Coordination: [lexical_coverage_enrichment_20260610](./tracks/lexical_coverage_enrichment_20260610/) produces the frequency node metadata. This track consumes it as the `english.cefr.frequency-utility` provider (decision D2, §10.3). It does not select the frequency source and does not create a frequency data layer.*
+  *Coordination: [lexical_coverage_enrichment_20260610](./tracks/lexical_coverage_enrichment_20260610/) produces frequency metadata. This track does not select the source or create frequency edges.*
 
 ---
 

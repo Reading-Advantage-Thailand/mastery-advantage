@@ -57,8 +57,8 @@ for key in (
     if gates.get(key) is not True:
         errors.append(f"gate {key} is not true: {gates.get(key)}")
 
-if gates.get("curriculumPrecisionGate") != "pending-human":
-    errors.append("curriculum precision gate must remain pending-human until labeled")
+if gates.get("curriculumPrecisionGate") not in ("pending-human", "accepted"):
+    errors.append(f"curriculum precision gate unexpected: {gates.get('curriculumPrecisionGate')}")
 
 layers = {a.get("layerId"): a for a in report.get("layers") or []}
 need = [

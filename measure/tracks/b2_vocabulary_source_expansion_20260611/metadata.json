@@ -2,7 +2,9 @@
   "id": "b2_vocabulary_source_expansion_20260611",
   "title": "B2 Vocabulary Source Expansion",
   "created": "2026-06-11",
-  "status": "pending",
-  "priority": "Medium",
-  "type": "Data"
+  "status": "deferred",
+  "priority": "Low",
+  "type": "Data",
+  "updated_at": "2026-08-11T23:30:00Z",
+  "deviation_notes": "Deferred 2026-08-11: B2 not graphable for current product; customers not at B2. No fabricated Cambridge B2 list. Reopen when product needs B2."
 }

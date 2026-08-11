@@ -2,7 +2,9 @@
   "id": "frequency_semantic_ranking_layer_20260611",
   "title": "Frequency, Semantic and Article-Ranking Utility Provider Design",
   "created": "2026-06-11",
-  "status": "pending",
+  "status": "completed",
   "priority": "High",
-  "type": "Design"
+  "type": "Design",
+  "updated_at": "2026-08-11T23:30:00Z",
+  "deviation_notes": "COMPLETED 2026-08-11: RANKING_LAYER_SPEC.md; frequency utility live via rank normalization; semantic/article weight 0. Engine registration out of scope for this design track."
 }
