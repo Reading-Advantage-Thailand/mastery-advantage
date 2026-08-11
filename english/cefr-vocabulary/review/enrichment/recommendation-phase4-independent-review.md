@@ -107,11 +107,29 @@ misread it on first contact, which is the evidence that the name misleads.
 `candidatesTruncated` would state the meaning. Renaming a field in a
 handed-off contract is an owner decision.
 
-## 5. What this review does not cover
+## 5. Scope correction (owner, 2026-08-11)
 
-- Whether the ranked words are pedagogically the right next words.
-- Whether the ranking weights (frequency 0.45, article 0.35, SRS 0.15, goal
-  0.05) suit real learners.
-- Whether the fixture texts represent real reading material.
+An earlier draft of this review held back "are these the right words to teach"
+for the curriculum owner. The owner corrected that, and the correction is right.
 
-These need the curriculum owner. The tech-debt entry stays open for them.
+Every skill in the graph carries a Cambridge source reference: 3060 from the B1
+Preliminary list, 1684 from A2 Key, 1405 from the YLE word list. Professional
+curriculum authors set those levels and built their exams on them. Level
+appropriateness is therefore source-backed, and a second local judgment adds
+nothing. The freeze already treats these lists as the authority.
+
+This also sharpens finding 1. Cambridge places `be` at **pre-A1 Starters**, the
+first level they teach. The contract reports `is` as hard unmatched vocabulary.
+That contradicts the source the graph is built on, so finding 1 is a
+source-fidelity defect and not only a matching convenience.
+
+What genuinely stays local, and carries no source:
+
+- the ranking weights `w_freq=0.45`, `w_article=0.35`, `w_srs=0.15`,
+  `w_goal=0.05`
+- `targetVocabularyCap = 5` and the tie-break order
+
+`RECOMMENDATION-CONTRACT.md` §4.2 already labels these defaults that an
+application may override, and §5 labels the thresholds uncalibrated. No runtime
+in this repository consumes them. The residual risk is therefore low, and the
+tech-debt entry is lowered to Low rather than held open as a curriculum gate.
