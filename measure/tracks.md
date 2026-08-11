@@ -36,17 +36,21 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: English Lexical Semantic Enrichment** *(in progress — Phase 1 contracts drafted)*
+- [ ] **Track: English Lexical Semantic Enrichment** *(in progress — Phase 1 go)*
   *Evaluate and release independently gated typed lexical-semantic layers.*
-  *Status: Phase 1 contract + WordNet source selection drafted; human gate open.
-  Ranking semantic weight stays 0 until a relation layer is approved.*
+  *Status: Phase 1 approved 2026-08-11 (WordNet 3.1 offline). Next: fixtures +
+  candidate generation. Ranking semantic weight stays 0 until a relation layer
+  is approved.*
   *Link: [./tracks/lexical_semantic_enrichment_20260610/](./tracks/lexical_semantic_enrichment_20260610/)*
 
 ---
 
-- [ ] **Track: Vocabulary And Article Recommendation Contract** *(unblocked by core freeze)*
+- [ ] **Track: Vocabulary And Article Recommendation Contract** *(in progress)*
   *Define portable lexical matching, readability metrics, ranking contracts, and
   offline evaluation fixtures.*
+  *Status: Phases 1–3 engineering done — RECOMMENDATION-CONTRACT.md, fixtures,
+  recommendation-contract.js (longest-MWE, unmatched in denominator, capped
+  ranking + frequency utility). Phase 1 human gate open; Phase 4 evaluation next.*
   *Link: [./tracks/lexical_recommendation_contract_20260610/](./tracks/lexical_recommendation_contract_20260610/)*
 
 ---

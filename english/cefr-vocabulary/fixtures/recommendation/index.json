@@ -1,0 +1,9 @@
+{
+  "contractVersion": "recommendation.v1",
+  "cases": [
+    { "id": "hard-unmatched" },
+    { "id": "numbers-skipped" },
+    { "id": "matched-trap" },
+    { "id": "yle-compat" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "numbers-skipped",
+  "lexiconMode": "yle-only",
+  "targetVocabularyCap": 5,
+  "learnerState": {
+    "goalStage": "starters",
+    "mastery": {
+      "english.vocabulary.skill.i.pronoun": "known",
+      "english.vocabulary.skill.have.verb": "known",
+      "english.vocabulary.skill.and.conjunction": "known",
+      "english.vocabulary.skill.in.preposition": "known",
+      "english.vocabulary.skill.the.determiner": "known"
+    }
+  }
+}

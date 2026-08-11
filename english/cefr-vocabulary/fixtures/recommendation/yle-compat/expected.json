@@ -1,0 +1,5 @@
+{
+  "minUnmatched": 1,
+  "requireUnmatchedInDenominator": true,
+  "maxTargetSize": 5
+}

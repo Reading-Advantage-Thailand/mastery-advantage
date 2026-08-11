@@ -1,0 +1,9 @@
+{
+  "id": "yle-compat",
+  "lexiconMode": "yle-only",
+  "targetVocabularyCap": 5,
+  "learnerState": {
+    "goalStage": "starters",
+    "mastery": {}
+  }
+}

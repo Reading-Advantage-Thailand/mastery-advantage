@@ -1,0 +1,19 @@
+{
+  "id": "hard-unmatched",
+  "lexiconMode": "yle-only",
+  "targetVocabularyCap": 5,
+  "learnerState": {
+    "goalStage": "starters",
+    "mastery": {
+      "english.vocabulary.skill.the.determiner": "known",
+      "english.vocabulary.skill.cat.noun": "known",
+      "english.vocabulary.skill.is.verb": "known",
+      "english.vocabulary.skill.on.preposition": "known",
+      "english.vocabulary.skill.a.determiner": "known",
+      "english.vocabulary.skill.i.pronoun": "known",
+      "english.vocabulary.skill.see.verb": "known",
+      "english.vocabulary.skill.and.conjunction": "known"
+    },
+    "dueSkillIds": []
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "requireMatchedLooksGoodUnmatchedBad": true,
+  "requireUnmatchedInDenominator": true,
+  "minUnmatched": 2,
+  "requireDiagnosticMatchedCoverage": true,
+  "maxTargetSize": 5
+}

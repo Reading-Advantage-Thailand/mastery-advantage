@@ -1,35 +1,59 @@
 # Implementation Plan: Vocabulary And Article Recommendation Contract
 
+> **Intent:** Portable offline contracts for article matching, extensive-reading
+> metrics, and next-vocabulary ranking with explainability. No production
+> runtime. Unmatched hard words stay in the coverage denominator.
+
 ## Phase 1: Matching And Ranking Contracts
 
-- [ ] Task: Define article lexical-analysis contract
-  - [ ] Define token eligibility, lemmatization, variants, and longest-MWE match
-  - [ ] Define proper-name, number, punctuation, repetition, and unmatched rules
-- [ ] Task: Define extensive-reading metrics
-  - [ ] Define matched-token coverage and eligible-token known coverage
-  - [ ] Define unmatched-token rate, target density, repetition, and topic fit
-  - [ ] Define configurable thresholds and explainability fields
-- [ ] Task: Define next-vocabulary candidate and ranking contract
-  - [ ] Define optional signals, weights, exclusions, and tie behavior
-  - [ ] Define SRS urgency and learner-goal precedence
-- [ ] Task: Complete Phase 1 contract review gate
+- [x] Task: Define article lexical-analysis contract
+  - [x] Define token eligibility, lemmatization, variants, and longest-MWE match
+  - [x] Define proper-name, number, punctuation, repetition, and unmatched rules
+- [x] Task: Define extensive-reading metrics
+  - [x] Define matched-token coverage and eligible-token known coverage
+  - [x] Define unmatched-token rate, target density, repetition, and topic fit
+  - [x] Define configurable thresholds and explainability fields
+- [x] Task: Define next-vocabulary candidate and ranking contract
+  - [x] Define optional signals, weights, exclusions, and tie behavior
+  - [x] Define SRS urgency and learner-goal precedence
+- [ ] Task: Complete Phase 1 contract review gate — human-gate:both-owners
+
+**Green evidence (2026-08-11):**
+
+- `english/cefr-vocabulary/RECOMMENDATION-CONTRACT.md`
+- Reuses YLE reading lessons: unmatched in denominator; target cap; no
+  `prerequisite_for`
+- Article-fit formula documented for future DomainUtilityProvider weight > 0
+- Harness: `bash tests/recommendation_contract.sh`
 
 ## Phase 2: Tests And Offline Fixtures
 
-- [ ] Task: Build lexical matching fixtures
-  - [ ] Cover MWEs, variants, inflections, names, numbers, and unmatched words
-- [ ] Task: Build article metric fixtures
-  - [ ] Include articles where matched-token coverage would overstate readability
-- [ ] Task: Build learner-state and vocabulary-ranking fixtures
-- [ ] Task: Build layer-isolation and explainability fixtures
-- [ ] Task: Verify Phase 2
+- [x] Task: Build lexical matching fixtures
+  - [x] Cover MWEs, variants, inflections, names, numbers, and unmatched words
+- [x] Task: Build article metric fixtures
+  - [x] Include articles where matched-token coverage would overstate readability
+- [x] Task: Build learner-state and vocabulary-ranking fixtures
+- [x] Task: Build layer-isolation and explainability fixtures
+- [x] Task: Verify Phase 2
+
+**Green evidence (2026-08-11):**
+
+- `fixtures/recommendation/` — hard-unmatched, numbers-skipped, matched-trap,
+  yle-compat
+- Self-check via `scripts/recommendation-contract.js --self-check`
 
 ## Phase 3: Reference Evaluation Implementation
 
-- [ ] Task: Implement application-neutral lexical matching reference
-- [ ] Task: Implement article metric reference
-- [ ] Task: Implement next-vocabulary ranking reference
-- [ ] Task: Implement deterministic explanation payloads
+- [x] Task: Implement application-neutral lexical matching reference
+- [x] Task: Implement article metric reference
+- [x] Task: Implement next-vocabulary ranking reference
+- [x] Task: Implement deterministic explanation payloads
+
+**Green evidence (2026-08-11):**
+
+- `scripts/recommendation-contract.js` — `recommendation.v1`
+- Ranking signals: frequency-utility, article-repetition, srs-urgency, goal-scope
+- Optional frequency overlay pin from approved coverage layer
 
 ## Phase 4: Offline Evaluation
 

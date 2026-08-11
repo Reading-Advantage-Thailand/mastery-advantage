@@ -43,6 +43,14 @@ else
   fail "semantic plan missing Phase 1 evidence"
 fi
 
+echo "=== Phase 1 approval record ==="
+APPROVAL="$VOCAB/review/enrichment/phase1-semantic-approval.md"
+if [[ -f "$APPROVAL" ]] && grep -qiE 'Decision:\**[[:space:]]*go' "$APPROVAL"; then
+  pass "phase1-semantic-approval.md records go"
+else
+  fail "semantic Phase 1 approval missing"
+fi
+
 echo "=== ranking inert until semantic approve ==="
 if grep -q 'enrichment.semantic' "$VOCAB/RANKING_LAYER_SPEC.md" \
   && grep -E 'weight.*0|weight_semantic = 0' "$VOCAB/RANKING_LAYER_SPEC.md" >/dev/null; then

@@ -1,0 +1,21 @@
+{
+  "id": "matched-trap",
+  "lexiconMode": "yle-only",
+  "targetVocabularyCap": 5,
+  "learnerState": {
+    "goalStage": "starters",
+    "mastery": {
+      "english.vocabulary.skill.the.determiner": "known",
+      "english.vocabulary.skill.cat.noun": "known",
+      "english.vocabulary.skill.and.conjunction": "known",
+      "english.vocabulary.skill.dog.noun": "known",
+      "english.vocabulary.skill.like.preposition-verb": "known",
+      "english.vocabulary.skill.ball.noun": "known",
+      "english.vocabulary.skill.look-at.verb": "known",
+      "english.vocabulary.skill.big.adjective": "known",
+      "english.vocabulary.skill.red.adjective": "known",
+      "english.vocabulary.skill.bus.noun": "known",
+      "english.vocabulary.skill.a.determiner": "known"
+    }
+  }
+}

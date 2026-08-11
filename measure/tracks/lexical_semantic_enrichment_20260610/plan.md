@@ -17,13 +17,14 @@
   - [x] Assess license, coverage, versioning, reproducibility, and artifact size
   - [x] Select the first WordNet-compatible source
 - [x] Task: Define per-relation review samples and precision thresholds
-- [ ] Task: Complete Phase 1 semantic-contract review gate — human-gate:both-owners
-  - [ ] Accept contract and WordNet source selection — human-gate:both-owners
+- [x] Task: Complete Phase 1 semantic-contract review gate — human-gate:both-owners
+  - [x] Accept contract and WordNet source selection — human-gate:both-owners
 
 **Green evidence (2026-08-11):**
 
 - `english/cefr-vocabulary/review/enrichment/phase1-semantic-contract.md`
 - `english/cefr-vocabulary/review/enrichment/phase1-semantic-sources.md`
+- **Decision: go** — `phase1-semantic-approval.md` (both-owners, 2026-08-11)
 - Harness: `bash tests/enrichment_semantic_p1.sh`
 - First source: Princeton WordNet 3.1 offline; embeddings/ConceptNet deferred
 

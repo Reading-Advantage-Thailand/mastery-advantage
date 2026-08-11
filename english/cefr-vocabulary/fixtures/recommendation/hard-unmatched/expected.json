@@ -1,0 +1,6 @@
+{
+  "minUnmatched": 2,
+  "requireUnmatchedInDenominator": true,
+  "maxTargetSize": 5,
+  "requireDiagnosticMatchedCoverage": true
+}
