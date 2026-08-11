@@ -40,6 +40,16 @@
   against a stored draft count validates nothing: the count came from the same
   parser. Derive the denominator from the source on every run, or the audit
   reports perfect recall over the rows it already dropped.
+- (2026-08-11, lexical_semantic_enrichment) A phase harness can read the plan
+  document itself. Compressing a completed phase section to one summary line
+  removed the evidence path the harness greps for, so an approved Phase 1 gate
+  failed while every artifact still existed. Keep the evidence pointers when
+  you shorten a phase section, or the harness reports a false red.
+- (2026-08-11, lexical_coverage_enrichment) An audit that scans a shared
+  directory is not isolated from other tracks. The coverage Phase 4 audit
+  counts every file in `review/enrichment/queues/`, so the later semantic
+  track added 2478 ambiguous rows to an approved coverage report on the next
+  run. Scope each audit to its own layer IDs, not to a directory listing.
 
 ## Patterns That Worked Well
 

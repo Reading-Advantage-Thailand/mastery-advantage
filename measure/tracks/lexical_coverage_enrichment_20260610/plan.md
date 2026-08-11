@@ -13,17 +13,17 @@
 
 ## Phase 1: Contracts And Source Decisions
 
-- [x] Task: Define enrichment-layer contracts
+- [x] Task: Define enrichment-layer contracts — commit: 55e89fa
   - [x] Define group, membership, frequency, ambiguity, and quarantine metadata
   - [x] Define stable references to core lexical IDs
   - [x] Define independently selectable release layers
-- [x] Task: Draft source registry additions
+- [x] Task: Draft source registry additions — commit: 55e89fa
   - [x] Record URLs, versions, checksums, scope, permitted use, and cache policy
   - [x] Record excluded or unavailable sources, including the absent B2 list
-- [x] Task: Define review samples and thresholds
+- [x] Task: Define review samples and thresholds — commit: 55e89fa
   - [x] Define at least 100 stratified memberships per retained source
   - [x] Define ambiguity, unmatched-entry, and frequency-anomaly queues
-- [x] Task: Complete Phase 1 review gate — human-gate:both-owners
+- [x] Task: Complete Phase 1 review gate — human-gate:both-owners — commit: 0e5fcd7
   - [x] Accept contracts and source registry — human-gate:both-owners
 
 **Green evidence (2026-08-11):**
@@ -44,16 +44,16 @@
 
 ## Phase 2: Tests And Fixtures
 
-- [x] Task: Build Cambridge group extraction fixtures
+- [x] Task: Build Cambridge group extraction fixtures — commit: 8e7d81d
   - [x] Cover YLE grammatical groups and A2/B1 Appendix word sets
-- [x] Task: Build Vocabulary in Use fixtures
-  - [x] Cover elementary frontmatter/index structure sample
-  - [x] Cover remaining three frontmatter and index layouts
-  - [x] Cover unmatched, multi-unit, and variant fixture cases (schema)
-- [x] Task: Build frequency metadata fixtures
+- [x] Task: Build Vocabulary in Use fixtures — commit: 8e7d81d, 5322a3d
+  - [x] Cover elementary frontmatter/index structure sample — commit: 8e7d81d
+  - [x] Cover remaining three frontmatter and index layouts — commit: 5322a3d
+  - [x] Cover unmatched, multi-unit, and variant fixture cases (schema) — commit: 8e7d81d
+- [x] Task: Build frequency metadata fixtures — commit: 8e7d81d
   - [x] Cover words, MWEs, missing scores, unreliable scores, and rank ties
-- [x] Task: Build enrichment isolation and determinism tests
-- [x] Task: Verify Phase 2
+- [x] Task: Build enrichment isolation and determinism tests — commit: 8e7d81d
+- [x] Task: Verify Phase 2 — commit: 5322a3d
 
 **Green evidence (2026-08-11):**
 
@@ -63,23 +63,23 @@
 
 ## Phase 3: Implementation
 
-- [x] Task: Implement Cambridge group extraction
-  - [x] YLE grammatical category×stage groups (optional overlay)
-  - [x] A2 Key / B1 appendix topic extractors (topics already partly in core)
-- [x] Task: Implement Vocabulary in Use catalogs and index matching
-- [x] Task: Implement selected frequency source integration
+- [x] Task: Implement Cambridge group extraction — commit: ba4568c, 3bb60d2
+  - [x] YLE grammatical category×stage groups (optional overlay) — commit: ba4568c
+  - [x] A2 Key / B1 appendix topic extractors (topics already partly in core) — commit: 3bb60d2, d3b56c3
+- [x] Task: Implement Vocabulary in Use catalogs and index matching — commit: 5322a3d
+- [x] Task: Implement selected frequency source integration — commit: 0e5fcd7
   - [x] Pin the `wordfreq` `sourceVersion` to `3.1.1` (replaces `PIN_AT_IMPLEMENTATION`)
   - [x] Define tokenization and lemmatization policy against node identity
   - [x] Exclude multi-token entries on the `wordfreq` token count, not on the `lexicalUnit` label and not on whitespace
   - [x] Define the missing-score and below-reliability-floor policy
   - [x] Define the `rankWithinInventory` tie policy
-- [x] Task: Implement coverage and frequency quality reports
-  - [x] ViU + grammatical quality reports
-  - [x] Frequency quality report
-  - [x] A2 Key / B1 appendix quality reports
-- [x] Task: Implement durable enrichment review queues
-  - [x] ViU unmatched/ambiguous + grammatical unmatched queues
-  - [x] A2 Key / B1 unmatched and ambiguous queues
+- [x] Task: Implement coverage and frequency quality reports — commit: 5322a3d, ba4568c, 0e5fcd7, 3bb60d2
+  - [x] ViU + grammatical quality reports — commit: 5322a3d, ba4568c
+  - [x] Frequency quality report — commit: 0e5fcd7
+  - [x] A2 Key / B1 appendix quality reports — commit: 3bb60d2
+- [x] Task: Implement durable enrichment review queues — commit: 5322a3d, ba4568c, 3bb60d2
+  - [x] ViU unmatched/ambiguous + grammatical unmatched queues — commit: 5322a3d, ba4568c
+  - [x] A2 Key / B1 unmatched and ambiguous queues — commit: 3bb60d2
 
 **Frequency layer Green evidence (2026-08-11):**
 
@@ -151,15 +151,15 @@
 
 ## Phase 4: Audit And Calibration
 
-- [x] Task: Audit and remediate Cambridge group memberships
-  - [x] Automatable provenance, isolation, stratified samples (100/source)
-  - [x] Curriculum precision ≥0.980 on stratified samples — human-gate
-- [x] Task: Audit and remediate Vocabulary in Use matches
-  - [x] Automatable sample + queue quarantine status
-  - [x] Curriculum precision on ViU sample — human-gate
-- [x] Task: Validate frequency distributions and anomalies
-- [x] Task: Evaluate remaining coverage gaps and candidate sources
-- [x] Task: Complete curriculum/language review gate — human-gate
+- [x] Task: Audit and remediate Cambridge group memberships — commit: f1f25e0, df950d1
+  - [x] Automatable provenance, isolation, stratified samples (100/source) — commit: f1f25e0
+  - [x] Curriculum precision ≥0.980 on stratified samples — human-gate — commit: df950d1
+- [x] Task: Audit and remediate Vocabulary in Use matches — commit: f1f25e0, df950d1
+  - [x] Automatable sample + queue quarantine status — commit: f1f25e0
+  - [x] Curriculum precision on ViU sample — human-gate — commit: df950d1
+- [x] Task: Validate frequency distributions and anomalies — commit: f1f25e0
+- [x] Task: Evaluate remaining coverage gaps and candidate sources — commit: f1f25e0
+- [x] Task: Complete curriculum/language review gate — human-gate — commit: df950d1
 
 **Phase 4 automatable Green evidence (2026-08-11):**
 
@@ -181,10 +181,10 @@
 
 ## Phase 5: Release Decision
 
-- [x] Task: Run deterministic regeneration and full enrichment validation
-- [x] Task: Produce enrichment consumption and exclusion fixtures
-- [x] Task: Reconcile acceptance criteria and open debt
-- [x] Task: Record approve, quarantine, or reject decision per enrichment layer
+- [x] Task: Run deterministic regeneration and full enrichment validation — commit: df950d1
+- [x] Task: Produce enrichment consumption and exclusion fixtures — commit: df950d1
+- [x] Task: Reconcile acceptance criteria and open debt — commit: df950d1
+- [x] Task: Record approve, quarantine, or reject decision per enrichment layer — commit: df950d1
 
 **Phase 5 acceptance (2026-08-11):**
 

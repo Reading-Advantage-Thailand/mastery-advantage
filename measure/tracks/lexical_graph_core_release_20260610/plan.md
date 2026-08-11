@@ -103,7 +103,7 @@ completed-task count when no substantive completed task exists. The targeted
   - [x] Derive 495 Starters / 399 Movers / 513 Flyers rows from the hash-pinned local PDF and cross-check the combined alphabetic list — commit: 2daf568
   - [x] Detect source-to-graph omissions, false report denominators, unreachable omission decisions, and draft-count circularity — commit: 2daf568
   - [x] Keep complete source row/headword/POS/page data transient and require bounded, staged audit generation — commit: 2daf568
-- [x] Task: Curriculum sign-off on YLE fidelity — human-gate:curriculum-language
+- [x] Task: Curriculum sign-off on YLE fidelity — human-gate:curriculum-language — commit: 4882631
   - [x] Accept retained YLE membership and group decisions — human-gate:curriculum-language
 
 **Green human-approval evidence (2026-08-11):** Explicit curriculum/language
@@ -212,17 +212,17 @@ historical only.
 
 ## Phase 3: Relationship And Progression Review
 
-- [x] Task: Inventory all YLE-touching `supports` edges by derivation method
+- [x] Task: Inventory all YLE-touching `supports` edges by derivation method — commit: 4882631
   - [x] Same-form POS support vs MWE component support counts (labeled)
   - [x] Produce review queue stratified by method
-- [x] Task: Pedagogical review of support signals
+- [x] Task: Pedagogical review of support signals — commit: 4882631
   - [x] Judge reasonableness; promote / demote / quarantine / reject
   - [x] Ensure no support edge is documented as a hard prerequisite
-- [x] Task: Confirm progression policy
+- [x] Task: Confirm progression policy — commit: 4882631
   - [x] Write that next-step order uses learner state + stage goals + SRS +
         groups + optional utility — never invented `prerequisite_for`
   - [x] Guard test: zero `prerequisite_for` on freeze baseline
-- [x] Task: Curriculum sign-off on relationships — human-gate:curriculum-language
+- [x] Task: Curriculum sign-off on relationships — human-gate:curriculum-language — commit: af63321
   - [x] Accept fact-vs-signal labeling and support dispositions — human-gate:curriculum-language
 
 **Green human-approval evidence (2026-08-11):** Explicit curriculum/language
@@ -272,19 +272,19 @@ historical only.
 
 ## Phase 4: Consumption And Next-Step Contract
 
-- [x] Task: Draft `YLE-CONSUMPTION.md` (static graph + dynamic learner state)
+- [x] Task: Draft `YLE-CONSUMPTION.md` (static graph + dynamic learner state) — commit: 4882631
   - [x] Table of what lives in graph vs application state
   - [x] Algorithms/rules for: SRS due work, lower-level gaps, current stage,
         reading targets, MWE readiness, topic foci
   - [x] Explicit ban on storing per-student fields on graph nodes
-- [x] Task: Define explainability payload shape
+- [x] Task: Define explainability payload shape — commit: 4882631
   - [x] Each next-step item cites graph fact IDs and learner-state fields
   - [x] Derived signals labeled separately from source-backed facts
-- [x] Task: Contract tests for consumption rules (offline, no app runtime)
+- [x] Task: Contract tests for consumption rules (offline, no app runtime) — commit: 4882631
   - [x] Profile fixtures: Starters learner, Movers goal with Starters gaps,
         Flyers reader with mixed mastery
   - [x] Assert gap, stage, and due-work outputs from contract examples
-- [x] Task: Approve consumption contract — human-gate:engineering
+- [x] Task: Approve consumption contract — human-gate:engineering — commit: 55e89fa
   - [x] Engineering accepts boundary and payload shape — human-gate:engineering
   - [x] Curriculum/language accepts pedagogical next-step rules — human-gate:curriculum-language
 
@@ -315,18 +315,18 @@ modified.
 
 ## Phase 5: Reading-Program Validation
 
-- [x] Task: Assemble representative texts and learner profiles
+- [x] Task: Assemble representative texts and learner profiles — commit: 4882631
   - [x] At least one Starters, one Movers, one Flyers text fixture
   - [x] Profiles with known/unknown mixes and MWE cases
-- [x] Task: Offline matching and coverage evaluation
+- [x] Task: Offline matching and coverage evaluation — commit: 4882631
   - [x] Longest-MWE match against YLE matchForms
   - [x] known / unknown / unmatched classification
   - [x] Eligible-token known coverage; unmatched tokens remain in denominator
   - [x] Bounded target-vocabulary set with explicit cap
-- [x] Task: Explainable recommendation and progress evidence traces
+- [x] Task: Explainable recommendation and progress evidence traces — commit: 4882631
   - [x] Rationale payload per target skill and per reading candidate
   - [x] Before/after progress snapshot under simulated reviews
-- [x] Task: Curriculum plausibility review of reading fixtures — human-gate:curriculum-language
+- [x] Task: Curriculum plausibility review of reading fixtures — human-gate:curriculum-language — commit: 55e89fa
   - [x] Accept or request fixture revisions — human-gate:curriculum-language
 
 **Green human-approval evidence (2026-08-11):** Curriculum **Decision: go** in
@@ -349,18 +349,18 @@ modified.
 
 ## Phase 6: Freeze Package, Sanity Check, And Decision
 
-- [x] Task: Assemble YLE freeze package
+- [x] Task: Assemble YLE freeze package — commit: 4882631
   - [x] Decision log, exception list, quality summary with labeled metrics
   - [x] Consumption contract, reading fixture index, method appendix for A2/B1
   - [x] `RELEASE-YLE-2025.md` draft decision section (unsigned)
-- [x] Task: Bounded final technical sanity check (one-shot, not a pipeline)
+- [x] Task: Bounded final technical sanity check (one-shot, not a pipeline) — commit: 4882631
   - [x] Verify frozen YLE source identity (hash/registry citation)
   - [x] Structural integrity: unique IDs, no dangling edges, YLE skill count
         consistency, zero `prerequisite_for`
   - [x] Freeze artifacts consistent with accepted decisions
   - [x] Commands limited to validation/report checks — not recurring dual-run
         regeneration ceremony
-- [x] Task: Dual human freeze decision — human-gate:curriculum-language
+- [x] Task: Dual human freeze decision — human-gate:curriculum-language — commit: 55e89fa
   - [x] Curriculum/language records go / conditional-go / no-go — human-gate:curriculum-language
   - [x] Engineering records go / conditional-go / no-go — human-gate:engineering
   - [x] Only on go or conditional-go: mark baseline frozen and note accepted
