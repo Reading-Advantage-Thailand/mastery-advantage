@@ -82481,5 +82481,347 @@
       "cambridge-yle-word-list-2025"
     ],
     "minimumCefr": "pre-a1"
+  },
+  {
+    "headword": "Miss",
+    "normalizedHeadword": "miss",
+    "matchForms": [
+      "miss"
+    ],
+    "partsOfSpeech": [
+      "title"
+    ],
+    "cefrLevels": [
+      "pre-a1"
+    ],
+    "exams": [
+      "pre-a1-starters"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "pre-a1"
+  },
+  {
+    "headword": "Mr",
+    "normalizedHeadword": "mr",
+    "matchForms": [
+      "mr"
+    ],
+    "partsOfSpeech": [
+      "title"
+    ],
+    "cefrLevels": [
+      "pre-a1"
+    ],
+    "exams": [
+      "pre-a1-starters"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "pre-a1"
+  },
+  {
+    "headword": "Mrs",
+    "normalizedHeadword": "mrs",
+    "matchForms": [
+      "mrs"
+    ],
+    "partsOfSpeech": [
+      "title"
+    ],
+    "cefrLevels": [
+      "pre-a1"
+    ],
+    "exams": [
+      "pre-a1-starters"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "pre-a1"
+  },
+  {
+    "headword": "page",
+    "normalizedHeadword": "page",
+    "matchForms": [
+      "page"
+    ],
+    "partsOfSpeech": [
+      "noun"
+    ],
+    "cefrLevels": [
+      "pre-a1"
+    ],
+    "exams": [
+      "pre-a1-starters"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "pre-a1"
+  },
+  {
+    "headword": "city/town centre (US center)",
+    "normalizedHeadword": "center",
+    "matchForms": [
+      "center",
+      "city/town centre"
+    ],
+    "partsOfSpeech": [
+      "noun"
+    ],
+    "cefrLevels": [
+      "a1"
+    ],
+    "exams": [
+      "a1-movers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a1"
+  },
+  {
+    "headword": "could (as in past of can for ability)",
+    "normalizedHeadword": "could",
+    "matchForms": [
+      "could"
+    ],
+    "partsOfSpeech": [
+      "verb"
+    ],
+    "cefrLevels": [
+      "a1"
+    ],
+    "exams": [
+      "a1-movers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a1"
+  },
+  {
+    "headword": "floor (e.g. ground, 1st, etc.)",
+    "normalizedHeadword": "floor",
+    "matchForms": [
+      "floor"
+    ],
+    "partsOfSpeech": [
+      "noun"
+    ],
+    "cefrLevels": [
+      "a1"
+    ],
+    "exams": [
+      "a1-movers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a1"
+  },
+  {
+    "headword": "shopping centre (US center)",
+    "normalizedHeadword": "center",
+    "matchForms": [
+      "center",
+      "shopping centre"
+    ],
+    "partsOfSpeech": [
+      "noun"
+    ],
+    "cefrLevels": [
+      "a1"
+    ],
+    "exams": [
+      "a1-movers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a1"
+  },
+  {
+    "headword": "sports centre (US center)",
+    "normalizedHeadword": "center",
+    "matchForms": [
+      "center",
+      "sports centre"
+    ],
+    "partsOfSpeech": [
+      "noun"
+    ],
+    "cefrLevels": [
+      "a1"
+    ],
+    "exams": [
+      "a1-movers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a1"
+  },
+  {
+    "headword": "take off (i.e. get undressed)",
+    "normalizedHeadword": "take off",
+    "matchForms": [
+      "take off"
+    ],
+    "partsOfSpeech": [
+      "verb"
+    ],
+    "cefrLevels": [
+      "a1"
+    ],
+    "exams": [
+      "a1-movers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a1"
+  },
+  {
+    "headword": "town/city centre (US center)",
+    "normalizedHeadword": "center",
+    "matchForms": [
+      "center",
+      "town/city centre"
+    ],
+    "partsOfSpeech": [
+      "noun"
+    ],
+    "cefrLevels": [
+      "a1"
+    ],
+    "exams": [
+      "a1-movers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a1"
+  },
+  {
+    "headword": "a.m. (for time)",
+    "normalizedHeadword": "a.m.",
+    "matchForms": [
+      "a.m."
+    ],
+    "partsOfSpeech": [],
+    "cefrLevels": [
+      "a2"
+    ],
+    "exams": [
+      "a2-flyers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a2"
+  },
+  {
+    "headword": "file (as in open and close a file)",
+    "normalizedHeadword": "file",
+    "matchForms": [
+      "file"
+    ],
+    "partsOfSpeech": [
+      "noun"
+    ],
+    "cefrLevels": [
+      "a2"
+    ],
+    "exams": [
+      "a2-flyers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a2"
+  },
+  {
+    "headword": "kilometre (US kilometer)",
+    "normalizedHeadword": "kilometer",
+    "matchForms": [
+      "kilometer",
+      "kilometre"
+    ],
+    "partsOfSpeech": [
+      "noun"
+    ],
+    "cefrLevels": [
+      "a2"
+    ],
+    "exams": [
+      "a2-flyers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a2"
+  },
+  {
+    "headword": "p.m. (for time)",
+    "normalizedHeadword": "p.m.",
+    "matchForms": [
+      "p.m."
+    ],
+    "partsOfSpeech": [],
+    "cefrLevels": [
+      "a2"
+    ],
+    "exams": [
+      "a2-flyers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a2"
+  },
+  {
+    "headword": "programme (US program)",
+    "normalizedHeadword": "program",
+    "matchForms": [
+      "program",
+      "programme"
+    ],
+    "partsOfSpeech": [
+      "noun"
+    ],
+    "cefrLevels": [
+      "a2"
+    ],
+    "exams": [
+      "a2-flyers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a2"
+  },
+  {
+    "headword": "take (as in time e.g. it takes 20 minutes)",
+    "normalizedHeadword": "take",
+    "matchForms": [
+      "take"
+    ],
+    "partsOfSpeech": [
+      "verb"
+    ],
+    "cefrLevels": [
+      "a2"
+    ],
+    "exams": [
+      "a2-flyers"
+    ],
+    "sourceRefs": [
+      "cambridge-yle-word-list-2025"
+    ],
+    "minimumCefr": "a2"
   }
 ]

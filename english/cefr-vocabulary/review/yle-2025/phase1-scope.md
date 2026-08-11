@@ -24,13 +24,20 @@ The following labeled facts are a read-only snapshot derived from the tracked
 `cefr-vocabulary-knowledge-space.json`. They are audit inputs, not fidelity,
 quality, or approval claims.
 
-- YLE skill count: 1388
-- Starters membership: 491
-- Movers membership: 392
-- Flyers membership: 507
+- YLE skill count: 1405
+- Starters membership: 495
+- Movers membership: 399
+- Flyers membership: 513
 - YLE topic group count: 20
 - YLE-touching supports count: 1311
 - prerequisite_for count: 0
+
+**Baseline restatement (2026-08-11).** The membership figures above were first
+recorded as 1388 / 491 / 392 / 507. The Phase 2 independent source oracle
+proved those figures were derived from a parser that silently dropped 17
+official source rows, and the graph has since ingested all 17. The counts above
+are the corrected read-only snapshot of the same tracked artifacts; no fidelity,
+quality, or approval claim is implied.
 
 The supports snapshot comprises 598 edges tagged
 `same-lexical-form-support-v1` and 713 tagged

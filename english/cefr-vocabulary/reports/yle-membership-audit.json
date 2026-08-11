@@ -7,42 +7,55 @@
     "method": "official-local-pdf",
     "inventory_independent": true
   },
-  "source_row_count": 1390,
-  "unique_skill_count": 1388,
-  "fixture_row_count": 1390,
-  "graph_skill_coverage_count": 1388,
+  "source_row_count": 1407,
+  "stage_source_row_counts": {
+    "label": "YLE direct source rows by stage",
+    "starters": 495,
+    "movers": 399,
+    "flyers": 513
+  },
+  "unique_skill_count": 1405,
+  "fixture_row_count": 1407,
+  "graph_skill_coverage_count": 1405,
+  "parse_coverage": {
+    "label": "Source cells scanned and skipped during extraction",
+    "scanned_cells": 1616,
+    "skipped_cells": 90,
+    "reconciled_rows": 1407,
+    "omission_rows": 0
+  },
   "metrics": {
     "alphabetical_membership_precision": {
       "label": "YLE alphabetical membership precision",
       "value": 1.0,
-      "numerator": 1390,
-      "denominator": 1390,
+      "numerator": 1407,
+      "denominator": 1407,
       "population": "all-current-yle-source-rows"
     },
     "alphabetical_membership_recall": {
       "label": "YLE alphabetical membership recall",
       "value": 1.0,
-      "numerator": 1390,
-      "denominator": 1390,
+      "numerator": 1407,
+      "denominator": 1407,
       "population": "all-current-yle-source-rows"
     }
   },
   "identity_coverage": {
     "lexical_form_rows": {
       "label": "YLE lexical-form rows reviewed",
-      "reviewed_rows": 1390
+      "reviewed_rows": 1407
     },
     "pos_rows": {
       "label": "YLE POS rows reviewed",
-      "reviewed_rows": 1390
+      "reviewed_rows": 1407
     },
     "mwe_rows": {
       "label": "YLE MWE rows reviewed",
-      "reviewed_rows": 88
+      "reviewed_rows": 93
     },
     "variant_rows": {
       "label": "YLE variant rows reviewed",
-      "reviewed_rows": 81
+      "reviewed_rows": 94
     },
     "all_rows_have_identity_fields": true
   },

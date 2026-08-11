@@ -2,3 +2,7 @@
 
 # Copyrighted reference documents downloaded from publishers for local research.
 english/cefr-vocabulary/source-pdfs/
+
+# Python bytecode from one-shot audit scripts
+__pycache__/
+*.pyc

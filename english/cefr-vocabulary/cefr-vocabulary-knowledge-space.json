@@ -132630,6 +132630,569 @@
           "b1-preliminary-for-schools"
         ]
       }
+    },
+    {
+      "id": "english.vocabulary.skill.miss.title",
+      "kind": "skill",
+      "title": "Miss",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"Miss\" as title.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "Miss",
+        "normalizedForm": "miss",
+        "matchForms": [
+          "miss"
+        ],
+        "sourceNormalizedForm": "miss",
+        "partsOfSpeech": [
+          "title"
+        ],
+        "cefr": "pre-a1",
+        "cefrAlignments": [
+          "pre-a1"
+        ],
+        "examAlignments": [
+          "pre-a1-starters"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "word"
+      },
+      "difficulty": 0.1,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.mr.title",
+      "kind": "skill",
+      "title": "Mr",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"Mr\" as title.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "Mr",
+        "normalizedForm": "mr",
+        "matchForms": [
+          "mr"
+        ],
+        "sourceNormalizedForm": "mr",
+        "partsOfSpeech": [
+          "title"
+        ],
+        "cefr": "pre-a1",
+        "cefrAlignments": [
+          "pre-a1"
+        ],
+        "examAlignments": [
+          "pre-a1-starters"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "word"
+      },
+      "difficulty": 0.1,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.mrs.title",
+      "kind": "skill",
+      "title": "Mrs",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"Mrs\" as title.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "Mrs",
+        "normalizedForm": "mrs",
+        "matchForms": [
+          "mrs"
+        ],
+        "sourceNormalizedForm": "mrs",
+        "partsOfSpeech": [
+          "title"
+        ],
+        "cefr": "pre-a1",
+        "cefrAlignments": [
+          "pre-a1"
+        ],
+        "examAlignments": [
+          "pre-a1-starters"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "word"
+      },
+      "difficulty": 0.1,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.page.noun",
+      "kind": "skill",
+      "title": "page",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"page\" as noun.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "page",
+        "normalizedForm": "page",
+        "matchForms": [
+          "page"
+        ],
+        "sourceNormalizedForm": "page",
+        "partsOfSpeech": [
+          "noun"
+        ],
+        "cefr": "pre-a1",
+        "cefrAlignments": [
+          "pre-a1"
+        ],
+        "examAlignments": [
+          "pre-a1-starters"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "word"
+      },
+      "difficulty": 0.1,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.city-town-centre-us-center.noun",
+      "kind": "skill",
+      "title": "city/town centre (US center)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"city/town centre (US center)\" as noun.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "city/town centre (US center)",
+        "normalizedForm": "center",
+        "matchForms": [
+          "center",
+          "city/town centre"
+        ],
+        "sourceNormalizedForm": "city/town centre (us center)",
+        "partsOfSpeech": [
+          "noun"
+        ],
+        "cefr": "a1",
+        "cefrAlignments": [
+          "a1"
+        ],
+        "examAlignments": [
+          "a1-movers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.3,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.could-as-in-past-of-can-for-ability.verb",
+      "kind": "skill",
+      "title": "could (as in past of can for ability)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"could (as in past of can for ability)\" as verb.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "could (as in past of can for ability)",
+        "normalizedForm": "could",
+        "matchForms": [
+          "could"
+        ],
+        "sourceNormalizedForm": "could (as in past of can for ability)",
+        "partsOfSpeech": [
+          "verb"
+        ],
+        "cefr": "a1",
+        "cefrAlignments": [
+          "a1"
+        ],
+        "examAlignments": [
+          "a1-movers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.3,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.floor-e-g-ground-1st-etc.noun",
+      "kind": "skill",
+      "title": "floor (e.g. ground, 1st, etc.)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"floor (e.g. ground, 1st, etc.)\" as noun.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "floor (e.g. ground, 1st, etc.)",
+        "normalizedForm": "floor",
+        "matchForms": [
+          "floor"
+        ],
+        "sourceNormalizedForm": "floor (e.g. ground, 1st, etc.)",
+        "partsOfSpeech": [
+          "noun"
+        ],
+        "cefr": "a1",
+        "cefrAlignments": [
+          "a1"
+        ],
+        "examAlignments": [
+          "a1-movers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.3,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.shopping-centre-us-center.noun",
+      "kind": "skill",
+      "title": "shopping centre (US center)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"shopping centre (US center)\" as noun.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "shopping centre (US center)",
+        "normalizedForm": "center",
+        "matchForms": [
+          "center",
+          "shopping centre"
+        ],
+        "sourceNormalizedForm": "shopping centre (us center)",
+        "partsOfSpeech": [
+          "noun"
+        ],
+        "cefr": "a1",
+        "cefrAlignments": [
+          "a1"
+        ],
+        "examAlignments": [
+          "a1-movers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.3,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.sports-centre-us-center.noun",
+      "kind": "skill",
+      "title": "sports centre (US center)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"sports centre (US center)\" as noun.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "sports centre (US center)",
+        "normalizedForm": "center",
+        "matchForms": [
+          "center",
+          "sports centre"
+        ],
+        "sourceNormalizedForm": "sports centre (us center)",
+        "partsOfSpeech": [
+          "noun"
+        ],
+        "cefr": "a1",
+        "cefrAlignments": [
+          "a1"
+        ],
+        "examAlignments": [
+          "a1-movers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.3,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.take-off-i-e-get-undressed.verb",
+      "kind": "skill",
+      "title": "take off (i.e. get undressed)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"take off (i.e. get undressed)\" as verb.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "take off (i.e. get undressed)",
+        "normalizedForm": "take off",
+        "matchForms": [
+          "take off"
+        ],
+        "sourceNormalizedForm": "take off (i.e. get undressed)",
+        "partsOfSpeech": [
+          "verb"
+        ],
+        "cefr": "a1",
+        "cefrAlignments": [
+          "a1"
+        ],
+        "examAlignments": [
+          "a1-movers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.3,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.town-city-centre-us-center.noun",
+      "kind": "skill",
+      "title": "town/city centre (US center)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"town/city centre (US center)\" as noun.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "town/city centre (US center)",
+        "normalizedForm": "center",
+        "matchForms": [
+          "center",
+          "town/city centre"
+        ],
+        "sourceNormalizedForm": "town/city centre (us center)",
+        "partsOfSpeech": [
+          "noun"
+        ],
+        "cefr": "a1",
+        "cefrAlignments": [
+          "a1"
+        ],
+        "examAlignments": [
+          "a1-movers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.3,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.a-m-for-time",
+      "kind": "skill",
+      "title": "a.m. (for time)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"a.m. (for time)\" as a listed lexical item.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "a.m. (for time)",
+        "normalizedForm": "a.m.",
+        "matchForms": [
+          "a.m."
+        ],
+        "sourceNormalizedForm": "a.m. (for time)",
+        "partsOfSpeech": [],
+        "cefr": "a2",
+        "cefrAlignments": [
+          "a2"
+        ],
+        "examAlignments": [
+          "a2-flyers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.5,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.file-as-in-open-and-close-a-file.noun",
+      "kind": "skill",
+      "title": "file (as in open and close a file)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"file (as in open and close a file)\" as noun.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "file (as in open and close a file)",
+        "normalizedForm": "file",
+        "matchForms": [
+          "file"
+        ],
+        "sourceNormalizedForm": "file (as in open and close a file)",
+        "partsOfSpeech": [
+          "noun"
+        ],
+        "cefr": "a2",
+        "cefrAlignments": [
+          "a2"
+        ],
+        "examAlignments": [
+          "a2-flyers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.5,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.kilometre-us-kilometer.noun",
+      "kind": "skill",
+      "title": "kilometre (US kilometer)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"kilometre (US kilometer)\" as noun.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "kilometre (US kilometer)",
+        "normalizedForm": "kilometer",
+        "matchForms": [
+          "kilometer",
+          "kilometre"
+        ],
+        "sourceNormalizedForm": "kilometre (us kilometer)",
+        "partsOfSpeech": [
+          "noun"
+        ],
+        "cefr": "a2",
+        "cefrAlignments": [
+          "a2"
+        ],
+        "examAlignments": [
+          "a2-flyers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.5,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.p-m-for-time",
+      "kind": "skill",
+      "title": "p.m. (for time)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"p.m. (for time)\" as a listed lexical item.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "p.m. (for time)",
+        "normalizedForm": "p.m.",
+        "matchForms": [
+          "p.m."
+        ],
+        "sourceNormalizedForm": "p.m. (for time)",
+        "partsOfSpeech": [],
+        "cefr": "a2",
+        "cefrAlignments": [
+          "a2"
+        ],
+        "examAlignments": [
+          "a2-flyers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.5,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.programme-us-program.noun",
+      "kind": "skill",
+      "title": "programme (US program)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"programme (US program)\" as noun.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "programme (US program)",
+        "normalizedForm": "program",
+        "matchForms": [
+          "program",
+          "programme"
+        ],
+        "sourceNormalizedForm": "programme (us program)",
+        "partsOfSpeech": [
+          "noun"
+        ],
+        "cefr": "a2",
+        "cefrAlignments": [
+          "a2"
+        ],
+        "examAlignments": [
+          "a2-flyers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.5,
+      "independentPracticeReady": false
+    },
+    {
+      "id": "english.vocabulary.skill.take-as-in-time-e-g-it-takes-20-minutes.verb",
+      "kind": "skill",
+      "title": "take (as in time e.g. it takes 20 minutes)",
+      "domain": "english.vocabulary",
+      "description": "Know and recognize \"take (as in time e.g. it takes 20 minutes)\" as verb.",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "metadata": {
+        "lexicalForm": "take (as in time e.g. it takes 20 minutes)",
+        "normalizedForm": "take",
+        "matchForms": [
+          "take"
+        ],
+        "sourceNormalizedForm": "take (as in time e.g. it takes 20 minutes)",
+        "partsOfSpeech": [
+          "verb"
+        ],
+        "cefr": "a2",
+        "cefrAlignments": [
+          "a2"
+        ],
+        "examAlignments": [
+          "a2-flyers"
+        ],
+        "modality": "vocabulary",
+        "lexicalUnit": "multiword-expression"
+      },
+      "difficulty": 0.5,
+      "independentPracticeReady": false
     }
   ],
   "edges": [
@@ -433814,6 +434377,550 @@
         "topic": "Work and Jobs",
         "source": "cambridge-b1-preliminary-vocabulary-list-2025",
         "derivationMethod": "topic-section-text-match-v1"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18032",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.pre-a1-starters",
+      "targetId": "english.vocabulary.skill.miss.title",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "pre-a1-starters"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11941",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.miss.title",
+      "targetId": "english.vocabulary.standard.pre-a1",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR PRE-A1",
+      "metadata": {
+        "cefr": "pre-a1"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18033",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.pre-a1-starters",
+      "targetId": "english.vocabulary.skill.mr.title",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "pre-a1-starters"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11942",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.mr.title",
+      "targetId": "english.vocabulary.standard.pre-a1",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR PRE-A1",
+      "metadata": {
+        "cefr": "pre-a1"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18034",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.pre-a1-starters",
+      "targetId": "english.vocabulary.skill.mrs.title",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "pre-a1-starters"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11943",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.mrs.title",
+      "targetId": "english.vocabulary.standard.pre-a1",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR PRE-A1",
+      "metadata": {
+        "cefr": "pre-a1"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18035",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.pre-a1-starters",
+      "targetId": "english.vocabulary.skill.page.noun",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "pre-a1-starters"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11944",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.page.noun",
+      "targetId": "english.vocabulary.standard.pre-a1",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR PRE-A1",
+      "metadata": {
+        "cefr": "pre-a1"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18036",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a1-movers",
+      "targetId": "english.vocabulary.skill.city-town-centre-us-center.noun",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a1-movers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11945",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.city-town-centre-us-center.noun",
+      "targetId": "english.vocabulary.standard.a1",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A1",
+      "metadata": {
+        "cefr": "a1"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18037",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a1-movers",
+      "targetId": "english.vocabulary.skill.could-as-in-past-of-can-for-ability.verb",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a1-movers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11946",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.could-as-in-past-of-can-for-ability.verb",
+      "targetId": "english.vocabulary.standard.a1",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A1",
+      "metadata": {
+        "cefr": "a1"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18038",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a1-movers",
+      "targetId": "english.vocabulary.skill.floor-e-g-ground-1st-etc.noun",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a1-movers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11947",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.floor-e-g-ground-1st-etc.noun",
+      "targetId": "english.vocabulary.standard.a1",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A1",
+      "metadata": {
+        "cefr": "a1"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18039",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a1-movers",
+      "targetId": "english.vocabulary.skill.shopping-centre-us-center.noun",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a1-movers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11948",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.shopping-centre-us-center.noun",
+      "targetId": "english.vocabulary.standard.a1",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A1",
+      "metadata": {
+        "cefr": "a1"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18040",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a1-movers",
+      "targetId": "english.vocabulary.skill.sports-centre-us-center.noun",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a1-movers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11949",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.sports-centre-us-center.noun",
+      "targetId": "english.vocabulary.standard.a1",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A1",
+      "metadata": {
+        "cefr": "a1"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18041",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a1-movers",
+      "targetId": "english.vocabulary.skill.take-off-i-e-get-undressed.verb",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a1-movers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11950",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.take-off-i-e-get-undressed.verb",
+      "targetId": "english.vocabulary.standard.a1",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A1",
+      "metadata": {
+        "cefr": "a1"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18042",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a1-movers",
+      "targetId": "english.vocabulary.skill.town-city-centre-us-center.noun",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a1-movers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11951",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.town-city-centre-us-center.noun",
+      "targetId": "english.vocabulary.standard.a1",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A1",
+      "metadata": {
+        "cefr": "a1"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18043",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a2-flyers",
+      "targetId": "english.vocabulary.skill.a-m-for-time",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a2-flyers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11952",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.a-m-for-time",
+      "targetId": "english.vocabulary.standard.a2",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A2",
+      "metadata": {
+        "cefr": "a2"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18044",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a2-flyers",
+      "targetId": "english.vocabulary.skill.file-as-in-open-and-close-a-file.noun",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a2-flyers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11953",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.file-as-in-open-and-close-a-file.noun",
+      "targetId": "english.vocabulary.standard.a2",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A2",
+      "metadata": {
+        "cefr": "a2"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18045",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a2-flyers",
+      "targetId": "english.vocabulary.skill.kilometre-us-kilometer.noun",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a2-flyers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11954",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.kilometre-us-kilometer.noun",
+      "targetId": "english.vocabulary.standard.a2",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A2",
+      "metadata": {
+        "cefr": "a2"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18046",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a2-flyers",
+      "targetId": "english.vocabulary.skill.p-m-for-time",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a2-flyers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11955",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.p-m-for-time",
+      "targetId": "english.vocabulary.standard.a2",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A2",
+      "metadata": {
+        "cefr": "a2"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18047",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a2-flyers",
+      "targetId": "english.vocabulary.skill.programme-us-program.noun",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a2-flyers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11956",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.programme-us-program.noun",
+      "targetId": "english.vocabulary.standard.a2",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A2",
+      "metadata": {
+        "cefr": "a2"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.contains.18048",
+      "type": "contains",
+      "sourceId": "english.vocabulary.exam.a2-flyers",
+      "targetId": "english.vocabulary.skill.take-as-in-time-e-g-it-takes-20-minutes.verb",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Cambridge exam vocabulary list contains lexical item",
+      "metadata": {
+        "exam": "a2-flyers"
+      }
+    },
+    {
+      "id": "english.vocabulary.edge.aligned_to_standard.11957",
+      "type": "aligned_to_standard",
+      "sourceId": "english.vocabulary.skill.take-as-in-time-e-g-it-takes-20-minutes.verb",
+      "targetId": "english.vocabulary.standard.a2",
+      "weight": 1,
+      "confidence": "high",
+      "sourceRefs": [
+        "cambridge-yle-word-list-2025"
+      ],
+      "reviewStatus": "draft",
+      "rationale": "Lexical item appears in a source aligned to CEFR A2",
+      "metadata": {
+        "cefr": "a2"
       }
     }
   ]
