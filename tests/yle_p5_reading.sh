@@ -209,15 +209,53 @@ approval_output="$(python3 - "$APPROVAL" "$PLAN" <<'PY'
 import re
 import sys
 from pathlib import Path
+
 approval_path, plan_path = map(Path, sys.argv[1:])
+errors = []
+marker = None
 plan = plan_path.read_text(encoding="utf-8") if plan_path.is_file() else ""
 phase_matches = list(re.finditer(r"^## Phase 5: Reading-Program Validation[ \t]*$", plan, re.M))
 next_matches = list(re.finditer(r"^## Phase 6: Freeze Package, Sanity Check, And Decision[ \t]*$", plan, re.M))
-phase = plan[phase_matches[0].end():next_matches[0].start()] if phase_matches and next_matches else ""
-if not re.search(r"^- \[b\][ \t]+Task: Curriculum plausibility review", phase, re.M):
-    print("Phase 5 curriculum plausibility is not marked [b]", file=sys.stderr)
+phase = ""
+if phase_matches and next_matches and next_matches[0].start() > phase_matches[0].end():
+    phase = plan[phase_matches[0].end():next_matches[0].start()]
+markers = re.findall(
+    r"^- \[([~xb])\][ \t]+Task: Curriculum plausibility review\b",
+    phase,
+    re.M,
+)
+if len(markers) != 1:
+    errors.append("Phase 5 curriculum plausibility task marker is not unique")
+else:
+    marker = markers[0]
+    if marker not in {"b", "x"}:
+        errors.append("Phase 5 curriculum plausibility must be [b] or [x]")
+
+if not approval_path.is_file():
+    if not errors and marker == "b":
+        print("Phase 5 curriculum approval artifact: absent (human gate open)")
+        raise SystemExit(0)
+    if marker == "x":
+        errors.append("Phase 5 approval is [x] but phase5-approval.md is absent")
+    elif marker is not None:
+        errors.append("approval artifact is absent and Phase 5 task is not the truthful [b] state")
+else:
+    text = approval_path.read_text(encoding="utf-8")
+    if not re.search(r"\b(?:decision|recommendation)\s*:\s*(?:go|conditional-go)\b", text, re.I):
+        errors.append("approval lacks go or conditional-go decision")
+    if not re.search(r"curriculum[ /-]*language", text, re.I):
+        errors.append("approval lacks curriculum/language owner role")
+    if not re.search(r"\b(?:owner|reviewer|approved by)\s*:\s*[^\n]+", text, re.I):
+        errors.append("approval lacks attributable owner/reviewer")
+    if not re.search(r"\b20[0-9]{2}-[0-9]{2}-[0-9]{2}\b", text):
+        errors.append("approval lacks ISO date")
+    if marker == "b":
+        errors.append("phase5-approval.md is present but plan still marks plausibility as [b]")
+    print("Phase 5 curriculum approval artifact: present")
+
+if errors:
+    print("; ".join(errors), file=sys.stderr)
     raise SystemExit(1)
-print("Phase 5 curriculum approval artifact:", "present" if approval_path.is_file() else "absent (human gate open)")
 PY
 )"
 approval_status=$?

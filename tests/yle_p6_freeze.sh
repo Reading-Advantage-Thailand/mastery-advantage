@@ -331,19 +331,64 @@ else
 fi
 
 echo "=== dual freeze decision remains human gate ==="
-if grep -q '^\- \[b\] Task: Dual human freeze decision' "$PLAN" 2>/dev/null || \
-   grep -q '^- \[b\] Task: Dual human freeze decision' "$PLAN"; then
-  pass "dual human freeze decision remains [b]"
+decision_output="$(python3 - "$PLAN" "$REVIEW/phase6-approval.md" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+plan_path, approval_path = map(Path, sys.argv[1:])
+errors = []
+marker = None
+plan = plan_path.read_text(encoding="utf-8") if plan_path.is_file() else ""
+phase_matches = list(re.finditer(r"^## Phase 6: Freeze Package, Sanity Check, And Decision[ \t]*$", plan, re.M))
+phase = plan[phase_matches[0].end():] if phase_matches else ""
+markers = re.findall(
+    r"^- \[([~xb])\][ \t]+Task: Dual human freeze decision\b",
+    phase,
+    re.M,
+)
+if len(markers) != 1:
+    errors.append("Phase 6 dual freeze decision task marker is not unique")
+else:
+    marker = markers[0]
+    if marker not in {"b", "x"}:
+        errors.append("Phase 6 dual freeze decision must be [b] or [x]")
+
+if not approval_path.is_file():
+    if not errors and marker == "b":
+        print("Phase 6 dual freeze decision: [b] open (no approval artifact)")
+        raise SystemExit(0)
+    if marker == "x":
+        errors.append("Phase 6 dual freeze decision is [x] but phase6-approval.md is absent")
+    elif marker is not None:
+        errors.append("approval artifact is absent and Phase 6 task is not the truthful [b] state")
+else:
+    text = approval_path.read_text(encoding="utf-8")
+    if not re.search(r"\b(?:decision|recommendation)\s*:\s*(?:go|conditional-go)\b", text, re.I):
+        errors.append("approval lacks go or conditional-go decision")
+    if not re.search(r"curriculum[ /-]*language", text, re.I):
+        errors.append("approval lacks curriculum/language owner role")
+    if not re.search(r"engineering", text, re.I):
+        errors.append("approval lacks engineering owner role")
+    if not re.search(r"\b(?:owner|reviewer|approved by)\s*:\s*[^\n]+", text, re.I):
+        errors.append("approval lacks attributable owner/reviewer")
+    if not re.search(r"\b20[0-9]{2}-[0-9]{2}-[0-9]{2}\b", text):
+        errors.append("approval lacks ISO date")
+    if marker == "b":
+        errors.append("phase6-approval.md is present but plan still marks dual freeze as [b]")
+    print("Phase 6 dual freeze decision: approval present")
+
+if errors:
+    print("; ".join(errors), file=sys.stderr)
+    raise SystemExit(1)
+PY
+)"
+decision_status=$?
+printf '%s\n' "$decision_output"
+if [[ "$decision_status" -ne 0 ]]; then
+  fail "dual human freeze decision is mis-marked or unattributable"
 else
-  # Fallback python
-  if python3 - "$PLAN" -c 'import re,sys; t=open(sys.argv[1]).read(); import pathlib' 2>/dev/null; then
-    :
-  fi
-  if python3 -c "import re,pathlib; t=pathlib.Path('$PLAN').read_text(); import sys; sys.exit(0 if re.search(r'^- \[b\][ \t]+Task: Dual human freeze decision', t, re.M) else 1)"; then
-    pass "dual human freeze decision remains [b]"
-  else
-    fail "dual human freeze decision is not marked [b]"
-  fi
+  pass "dual human freeze decision remains an honest gate"
 fi
 
 echo "=== results ==="

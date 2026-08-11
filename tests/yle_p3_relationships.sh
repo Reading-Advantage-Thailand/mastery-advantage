@@ -609,21 +609,47 @@ from pathlib import Path
 
 approval_path, plan_path = map(Path, sys.argv[1:])
 errors = []
+marker = None
 plan = plan_path.read_text(encoding="utf-8") if plan_path.is_file() else ""
 phase_matches = list(re.finditer(r"^## Phase 3: Relationship And Progression Review[ \t]*$", plan, re.M))
 next_matches = list(re.finditer(r"^## Phase 4: Consumption And Next-Step Contract[ \t]*$", plan, re.M))
 phase = ""
 if phase_matches and next_matches and next_matches[0].start() > phase_matches[0].end():
     phase = plan[phase_matches[0].end():next_matches[0].start()]
-if not re.search(r"^- \[b\][ \t]+Task: Curriculum sign-off on relationships", phase, re.M):
-    errors.append("Phase 3 curriculum sign-off is not marked [b] human-gate")
-if approval_path.is_file():
-    text = approval_path.read_text(encoding="utf-8")
-    if not re.search(r"curriculum|language", text, re.I):
-        errors.append("phase3-approval.md present but lacks curriculum/language attribution")
-    print("Phase 3 curriculum approval artifact: present")
+markers = re.findall(
+    r"^- \[([~xb])\][ \t]+Task: Curriculum sign-off on relationships\b",
+    phase,
+    re.M,
+)
+if len(markers) != 1:
+    errors.append("Phase 3 curriculum sign-off task marker is not unique")
 else:
-    print("Phase 3 curriculum approval artifact: absent (human gate still open)")
+    marker = markers[0]
+    if marker not in {"b", "x"}:
+        errors.append("Phase 3 curriculum sign-off must be [b] or [x]")
+
+if not approval_path.is_file():
+    if not errors and marker == "b":
+        print("Phase 3 curriculum approval artifact: absent (human gate still open)")
+        raise SystemExit(0)
+    if marker == "x":
+        errors.append("Phase 3 curriculum approval is [x] but phase3-approval.md is absent")
+    elif marker is not None:
+        errors.append("approval artifact is absent and Phase 3 curriculum task is not the truthful [b] state")
+else:
+    text = approval_path.read_text(encoding="utf-8")
+    if not re.search(r"\b(?:decision|recommendation)\s*:\s*(?:go|conditional-go)\b", text, re.I):
+        errors.append("approval lacks go or conditional-go decision")
+    if not re.search(r"curriculum[ /-]*language", text, re.I):
+        errors.append("approval lacks curriculum/language owner role")
+    if not re.search(r"\b(?:owner|reviewer|approved by)\s*:\s*[^\n]+", text, re.I):
+        errors.append("approval lacks attributable owner/reviewer")
+    if not re.search(r"\b20[0-9]{2}-[0-9]{2}-[0-9]{2}\b", text):
+        errors.append("approval lacks ISO date")
+    if marker == "b":
+        errors.append("phase3-approval.md is present but plan still marks curriculum sign-off as [b]")
+    print("Phase 3 curriculum approval artifact: present")
+
 if errors:
     print("; ".join(errors), file=sys.stderr)
     raise SystemExit(1)
