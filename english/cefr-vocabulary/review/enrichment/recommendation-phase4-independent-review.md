@@ -91,6 +91,55 @@ The checklist in section 2 of the procedure never tested inflection handling, so
 **Recorded as tech debt.** Fixing it changes an approved contract and touches
 the frozen core, so it is an owner decision, not a review action.
 
+### 3.1 The obvious fix is unsafe (owner, 2026-08-11)
+
+Do not map every inflection of `be` onto `be.verb`. One lemma's forms are
+taught across four CEFR bands:
+
+| Form | Approximate level |
+|---|---|
+| `is`, `am`, `are` | pre-A1 Starters |
+| `was`, `were` | about A1 (owner uncertain; confirm against the syllabus) |
+| `have been` (present perfect) | about B1 |
+| `had been` (past perfect) | about B2 |
+
+The current behavior reports `is` as hard vocabulary, which **overestimates**
+difficulty. A blanket lemma mapping would report `had been` as pre-A1, which
+**underestimates** it. The second error is worse: it tells an application that a
+B2 construction is first-level material.
+
+**The Cambridge word lists cannot settle this.** They are lemma-only. The whole
+graph holds exactly four relevant entries:
+
+```
+english.vocabulary.skill.be.verb                 cefr=pre-a1  forms=['be']
+english.vocabulary.skill.be.auxiliary-verb-verb  cefr=a2      forms=['be']
+english.vocabulary.skill.have.verb               cefr=pre-a1  forms=['have']
+english.vocabulary.skill.have.auxiliary-verb-verb cefr=a2     forms=['have']
+```
+
+`is`, `am`, `are`, `was`, `were`, and `been` appear nowhere, in any list. The
+YLE grammatical-groups layer is organized by part of speech per stage
+(31 groups: adjectives, adverbs, modals, verbs …), not by tense or structure.
+
+The authority that does settle it is the exam **grammar and structures
+syllabus**, which this repository does not hold. Until that source is acquired,
+any per-form level mapping would be invented. The same rule already governs the
+parked B2 track: do not invent a Cambridge list.
+
+### 3.2 This is a third identity axis
+
+`SENSE_IDENTITY_SPEC.md` addresses **semantic** collapse — `bank` as finance
+versus river. It does not mention inflection, tense, or aspect. Inflectional
+identity is a separate problem with its own shape:
+
+- The levels differ by form, not by meaning.
+- `have been` and `had been` are multiword, so they interact with longest-MWE
+  matching rather than with sense children.
+- The parent lemma stays legitimately pre-A1 while some of its forms do not.
+
+It needs its own specification rather than an extension of the sense track.
+
 ## 4. Finding 2 — `exceededCap` is undocumented and reads backwards
 
 **Severity: low.**

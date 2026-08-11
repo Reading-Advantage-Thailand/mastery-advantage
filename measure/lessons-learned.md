@@ -50,6 +50,11 @@
   that 9 rows said "pass" without recomputing one verdict, so the record was
   checked against itself. Re-derive each verdict from the fixtures, then compare
   the record to the computed result.
+- (2026-08-11, lexical_recommendation_contract) A lemma is not one teaching
+  unit. `be` spans pre-A1 (`is`) to about B2 (`had been`), so lemmatizing an
+  inflection onto its headword can move a token four CEFR bands. Check whether
+  the source lists inflected forms before adding any lemmatization step; the
+  Cambridge lists are lemma-only and cannot settle per-form level.
 - (2026-08-11, lexical_recommendation_contract) A review checklist bounds what a
   review can find. The 9 Phase 4 cases all passed while 44% of unmatched spans
   were inflections of listed lemmas, because no checklist row tested inflection

@@ -44,8 +44,12 @@ Fixture pack under `fixtures/recommendation/` is the regression oracle.
   are not in any `matchForms`, so they raise `unmatchedTokenRate` and lower
   `eligibleKnownCoverage`. The same holds for `has` against `have`. In the
   9-case fixture pack, 8 of 18 unmatched spans are inflections of a listed
-  lemma. Expect this effect to concentrate in beginner text. See
-  `review/enrichment/recommendation-phase4-independent-review.md`.
+  lemma. Expect this effect to concentrate in beginner text. **Do not patch
+  this by mapping inflections onto the lemma:** `be` spans pre-A1 (`is`) to
+  about B2 (`had been`), so a blanket mapping would report B2 constructions as
+  first-level material. The Cambridge lists are lemma-only and cannot settle
+  per-form level. See
+  `review/enrichment/recommendation-phase4-independent-review.md` §3.1.
 - `rankedNextVocabulary.exceededCap` means the candidate pool was truncated to
   the cap. It does **not** mean the emitted list is over the cap; the list is
   always within `cap`.
