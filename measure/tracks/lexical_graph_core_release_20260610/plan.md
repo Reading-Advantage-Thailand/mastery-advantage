@@ -7,9 +7,11 @@
 > **Marker vocabulary (orchestrator):** `[x]` complete · `[~]` in-progress or
 > next executable · `[b]` human-gated. Legacy `[ ]` is not used.
 >
-> **First remaining automatable work:** Phase 2 Red remediation for the
-> independent source-completeness and data-handling contract (marked `[~]`). Phase 1's explicit dual-owner
-> approval is recorded by `8447a3b174210c4845f6e0fb2fea8caa0fc93f28` in
+> **First remaining automatable work:** Phase 3 Task "Inventory all YLE-touching
+> `supports` edges by derivation method" (marked `[~]`). Phase 2's automatable
+> work is complete at `2daf568`; its curriculum sign-off stays a `[b]` human
+> gate. Phase 1's explicit dual-owner approval is recorded by
+> `8447a3b174210c4845f6e0fb2fea8caa0fc93f28` in
 > `english/cefr-vocabulary/review/yle-2025/phase1-approval.md`.
 >
 > **Marker-contract note:** Skill vocabulary wants human gates as
@@ -99,10 +101,10 @@ completed-task count when no substantive completed task exists. The targeted
   - [x] Review YLE thematic membership sample (≥100 or full set rules)
   - [x] Account for grammatical lists: represent or accept explicit omission
   - [x] Quarantine groups failing precision threshold
-- [~] Task: Remediate independent YLE source-completeness and data-handling Red contract
-  - [~] Derive 495 Starters / 399 Movers / 513 Flyers rows from the hash-pinned local PDF and cross-check the combined alphabetic list
-  - [~] Detect source-to-graph omissions, false report denominators, unreachable omission decisions, and draft-count circularity
-  - [~] Keep complete source row/headword/POS/page data transient and require bounded, staged audit generation
+- [x] Task: Remediate independent YLE source-completeness and data-handling Red contract — commit: 2daf568
+  - [x] Derive 495 Starters / 399 Movers / 513 Flyers rows from the hash-pinned local PDF and cross-check the combined alphabetic list — commit: 2daf568
+  - [x] Detect source-to-graph omissions, false report denominators, unreachable omission decisions, and draft-count circularity — commit: 2daf568
+  - [x] Keep complete source row/headword/POS/page data transient and require bounded, staged audit generation — commit: 2daf568
 - [b] Task: Curriculum sign-off on YLE fidelity — human-gate:curriculum-language
   - [b] Accept retained YLE membership and group decisions — human-gate:curriculum-language
 
@@ -160,6 +162,45 @@ committed expressive fixtures, draft-count circularity, unbounded PDF
 subprocess, and non-atomic report publication. The source oracle itself passes,
 so the Red is an expected contract failure rather than a tool or network
 failure. No parser, generator, graph, report, or Green artifact was changed.
+
+**Phase 2 Green evidence (2026-08-11):** `2daf568` closes the independent Red
+without altering the committed Red contract in `tests/yle_p2_membership.sh`.
+`bash tests/yle_p2_membership.sh` exits `0` with `PASS=9, FAIL=0`.
+
+The independent oracle's population (495 Starters / 399 Movers / 513 Flyers,
+1,407 direct rows) is now reproduced by the audit generator itself, which
+derives its own denominator from the hash-pinned PDF instead of validating
+against the removed `{starters: 491, movers: 392, flyers: 507}` draft
+dictionary. Four parser defects were confirmed against the local source and
+fixed: unrejoined wrapped POS cells, POS-less `a.m.`/`p.m.` rows, the missing
+`title` POS alias, and an over-broad `^Page` filter that consumed the headword
+`page`. All 17 previously dropped rows are ingested as skills following the
+convention already used by the graph's 68 other glossed YLE skills, so
+source-to-graph reconciliation is 1,407 of 1,407 with zero unresolved
+omissions and zero quarantined blockers.
+
+The committed package no longer reproduces publisher content: the four full
+alphabetical/thematic fixtures are replaced by coverage files holding graph
+identities, decision IDs, and labeled aggregates, and the generator stages
+every artifact in ignored temporary storage before an atomic swap.
+
+Supporting gates: `node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js`
+reports `status: "valid"` over 3,769 skills, 3,769 inventory entries, and
+18,065 edges; `git diff --check`, `node --check`, and Python compilation for
+both audit scripts exit `0`; two clean generator runs produce byte-identical
+tracked output and the remediation script is idempotent. `measure/doctor.sh` is
+not present in this repository.
+
+Phase 1's baseline snapshot in `phase1-scope.md` is restated from
+1388 / 491 / 392 / 507 to 1405 / 495 / 399 / 513, with the superseded figures
+recorded in the document. `bash tests/yle_p1_scope.sh` returns to its prior
+`PASS=5, FAIL=1` state; that single failure is a pre-existing environment gap
+(`rg` is not installed, so the harness cannot count completed tasks) and
+reproduces identically at `24824aa`, before any of this work. It is logged as
+tech debt, not as Phase 2 evidence.
+
+The curriculum/language sign-off below remains the truthful `[b]` human gate;
+no approval artifact was fabricated.
 
 ## Phase 3: Relationship And Progression Review
 

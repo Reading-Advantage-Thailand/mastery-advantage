@@ -29,12 +29,17 @@
 
 ## Recurring Gotchas
 
-- (2026-06-10, lexical_graph_core_release) PDF layout extraction can
-  mistake example sentences and headings for lexical entries. Generated
-  inventories require explicit suspicious-entry tests and human samples.
+- (2026-06-10, lexical_graph_core_release) PDF extraction both invents entries
+  (example sentences, headings) and drops real ones — `-layout` silently loses
+  cells whose POS wraps to the next line. Require suspicious-entry tests, human
+  samples, and a cross-check against a second independent list in the document.
 - (2026-06-10, lexical_graph_core_release) Topic-section text matching can
   falsely include function words from headings and can overrun the last group
   when all section boundaries are not enumerated.
+- (2026-08-11, lexical_graph_core_release) A generator that asserts its parse
+  against a stored draft count validates nothing: the count came from the same
+  parser. Derive the denominator from the source on every run, or the audit
+  reports perfect recall over the rows it already dropped.
 
 ## Patterns That Worked Well
 

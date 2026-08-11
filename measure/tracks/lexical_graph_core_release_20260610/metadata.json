@@ -3,9 +3,9 @@
   "type": "feature",
   "status": "in_progress",
   "created_at": "2026-06-10T04:31:47Z",
-  "updated_at": "2026-08-10T00:00:00Z",
+  "updated_at": "2026-08-11T00:00:00Z",
   "description": "Verify, review, and freeze the Cambridge YLE 2025 baseline of the existing English lexical graph; define static-graph + learner-state next-step consumption; validate reading-program fixtures; human go/no-go. Not a standing regeneration pipeline. A2 Key/B1 method-later only.",
   "estimated_tasks": 25,
   "actual_tasks": null,
-  "deviation_notes": "2026-08-10 strategy revision: retargeted from full multi-exam regeneration/release ceremony to one-time YLE 2025 baseline freeze, relationship fact-vs-signal review, consumption/next-step contract, reading-program validation, dual human freeze decision, and bounded sanity only. Plan markers normalized to [x]/[~]/[b] (human-gate owners). First executable work is Phase 1 scope lock. Substantive audit work is not marked complete. estimated_tasks = 25 top-level Task lines. Framework note: measure_interphase_checks.py task regex still matches [ ~x] only, so [b] human gates are invisible to its incomplete counts until the checker is aligned."
+  "deviation_notes": "2026-08-10 strategy revision: retargeted from full multi-exam regeneration/release ceremony to one-time YLE 2025 baseline freeze, relationship fact-vs-signal review, consumption/next-step contract, reading-program validation, dual human freeze decision, and bounded sanity only. Plan markers normalized to [x]/[~]/[b] (human-gate owners). First executable work is Phase 1 scope lock. Substantive audit work is not marked complete. estimated_tasks = 25 top-level Task lines. Framework note: measure_interphase_checks.py task regex still matches [ ~x] only, so [b] human gates are invisible to its incomplete counts until the checker is aligned. 2026-08-11 Phase 2: the first Phase 2 Green (26e6d10) was refuted by an independent source oracle and reworked. The committed audit had validated its parser against a hardcoded {starters:491, movers:392, flyers:507} draft dictionary; the official list holds 1,407 direct rows (495/399/513). All 17 dropped rows were ingested (2daf568), so the tracked YLE baseline moved from 1,388 to 1,405 skills and Phase 1's snapshot was restated. Task count grew by one top-level Phase 2 remediation task (26 total)."
 }
