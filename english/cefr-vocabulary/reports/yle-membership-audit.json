@@ -1,0 +1,77 @@
+{
+  "source_ref": "cambridge-yle-word-list-2025",
+  "source_pdf": "source-pdfs/cambridge-yle-word-list-2025.pdf",
+  "source_sha256": "6f7a0ad1e277bd10ae8b3bcccfb76c058f611a607c6c9947601abbd7e16a99fa",
+  "coverage_scope": "all-current-yle-source-rows",
+  "source_population": {
+    "method": "official-local-pdf",
+    "inventory_independent": true
+  },
+  "source_row_count": 1390,
+  "unique_skill_count": 1388,
+  "fixture_row_count": 1390,
+  "graph_skill_coverage_count": 1388,
+  "metrics": {
+    "alphabetical_membership_precision": {
+      "label": "YLE alphabetical membership precision",
+      "value": 1.0,
+      "numerator": 1390,
+      "denominator": 1390,
+      "population": "all-current-yle-source-rows"
+    },
+    "alphabetical_membership_recall": {
+      "label": "YLE alphabetical membership recall",
+      "value": 1.0,
+      "numerator": 1390,
+      "denominator": 1390,
+      "population": "all-current-yle-source-rows"
+    }
+  },
+  "identity_coverage": {
+    "lexical_form_rows": {
+      "label": "YLE lexical-form rows reviewed",
+      "reviewed_rows": 1390
+    },
+    "pos_rows": {
+      "label": "YLE POS rows reviewed",
+      "reviewed_rows": 1390
+    },
+    "mwe_rows": {
+      "label": "YLE MWE rows reviewed",
+      "reviewed_rows": 88
+    },
+    "variant_rows": {
+      "label": "YLE variant rows reviewed",
+      "reviewed_rows": 81
+    },
+    "all_rows_have_identity_fields": true
+  },
+  "cumulative_interpretation": {
+    "mode": "consumption-policy-only",
+    "movers_inherits": [
+      "pre-a1-starters"
+    ],
+    "flyers_inherits": [
+      "pre-a1-starters",
+      "a1-movers"
+    ],
+    "duplicate_membership_edges": false,
+    "prerequisite_edges_added": 0
+  },
+  "quality": {
+    "unresolved_high_severity_blockers": {
+      "label": "Unresolved high-severity blockers",
+      "value": 0
+    }
+  },
+  "thematic": {
+    "source_group_count": 20,
+    "reviewed_membership_count": 100,
+    "membership_precision": {
+      "label": "YLE thematic membership precision",
+      "value": 1.0,
+      "numerator": 100,
+      "denominator": 100
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "decision_id": "YLE-2025-GRAMMATICAL-001",
+  "status": "accepted",
+  "severity": "low",
+  "reviewer_role": "engineering audit",
+  "reviewed_at": "2026-08-11",
+  "source_location": {
+    "pdf": "source-pdfs/cambridge-yle-word-list-2025.pdf",
+    "pdf_page": 31,
+    "section": "Pre A1 Starters, A1 Movers and A2 Flyers grammatical vocabulary list"
+  },
+  "graph_refs": [],
+  "finding_class": "group",
+  "finding": "The source grammatical lists are not represented as additional graph content groups.",
+  "evidence": "The official grammatical-list section is separately located on PDF pages 31-37; its lexical items remain audited through their direct alphabetical memberships.",
+  "disposition": "Accept the bounded omission of grammatical content groups to avoid duplicating memberships or densifying word relations; curriculum sign-off remains a separate human gate.",
+  "supersedes": null,
+  "superseded_by": null,
+  "handling": "accepted-omission",
+  "rationale": "Individual grammatical-list entries remain represented by audited lexical skills; separate grammatical groups would duplicate source memberships without a consumer requirement."
+}
