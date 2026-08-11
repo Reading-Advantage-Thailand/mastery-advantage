@@ -122,10 +122,28 @@ english.vocabulary.skill.have.auxiliary-verb-verb cefr=a2     forms=['have']
 YLE grammatical-groups layer is organized by part of speech per stage
 (31 groups: adjectives, adverbs, modals, verbs …), not by tense or structure.
 
-The authority that does settle it is the exam **grammar and structures
-syllabus**, which this repository does not hold. Until that source is acquired,
-any per-form level mapping would be invented. The same rule already governs the
-parked B2 track: do not invent a Cambridge list.
+The authority that does settle it is a **per-structure level inventory**, which
+this repository does not hold. Until that source is acquired, any per-form level
+mapping would be invented. The same rule already governs the parked B2 track: do
+not invent a Cambridge list.
+
+**GSE checked (owner suggestion, 2026-08-11).** The repository's GSE assets are
+the four-skills can-do set only: `gse-md/{adult,young}-learners/{listening,
+reading,speaking,writing}.md` and 2083 objective skills in
+`gse-knowledge-space.json`. Exactly one node names a grammar structure:
+
+> Can introduce a conversation topic with the present perfect and provide
+> details in the past. — CEFR B1, GSE 48
+
+That single objective corroborates the owner's estimate of present perfect at
+about B1, but one speaking objective is not a grammar inventory.
+
+The right acquisition is the **GSE Grammar** inventory from the Pearson GSE
+Teacher Toolkit. It carries a GSE score per structure, and the project already
+maps GSE scores to CEFR bands (`english/README.md`), so it would resolve the
+per-form levels in the units this project already uses. GSE is already the
+taxonomy backbone here, so provenance and licensing follow existing practice
+rather than needing a new arrangement.
 
 ### 3.2 This is a third identity axis
 
