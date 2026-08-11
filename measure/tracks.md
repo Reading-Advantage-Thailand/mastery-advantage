@@ -55,8 +55,11 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: Sense-Level Lexical Identity Specification**
+- [x] **Track: Sense-Level Lexical Identity Specification** *(COMPLETE 2026-08-11 — spec ready)*
   *Define when and how sense-level identity replaces form+POS for polysemous words; produce reviewed spec and 50-word sample.*
+  *Status: complete design — SENSE_IDENTITY_SPEC.md; top200 + 50-sample;
+  WordNet 3.1 primary; additive sense-child migration. Implementation deferred.
+  ViU×Cambridge overlap smell-test accepted (report on file).*
   *Link: [./tracks/sense_level_identity_spec_20260611/](./tracks/sense_level_identity_spec_20260611/)*
 
 ---

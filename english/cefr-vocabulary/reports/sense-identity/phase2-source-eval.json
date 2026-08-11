@@ -1,0 +1,267 @@
+{
+  "generatedAt": "2026-08-11",
+  "sampleSize": 50,
+  "wordnet31": {
+    "multiSense": 34,
+    "uniqueSense": 3,
+    "absent": 13,
+    "coverageNote": "WordNet lists synsets for most high-frequency sample forms; multi-sense is common."
+  },
+  "cambridgeSenseBlocks": {
+    "status": "not-bulk-imported",
+    "rationale": "Cambridge dictionary / EVP sense inventories require license for bulk use (same constraint as EVP on coverage track). YLE/Key/B1 lists mark POS and occasional gloss constraints, not full sense inventories.",
+    "usableNow": "publisher gloss fragments already embedded in some lexicalForm strings (YLE)"
+  },
+  "details": [
+    {
+      "form": "on",
+      "wnBestSynsets": 3,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "be",
+      "wnBestSynsets": 13,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "have",
+      "wnBestSynsets": 19,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "so",
+      "wnBestSynsets": 10,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "will",
+      "wnBestSynsets": 3,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "just",
+      "wnBestSynsets": 6,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "like",
+      "wnBestSynsets": 5,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "about",
+      "wnBestSynsets": 7,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "up",
+      "wnBestSynsets": 8,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "out",
+      "wnBestSynsets": 10,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "do",
+      "wnBestSynsets": 13,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "no",
+      "wnBestSynsets": 3,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "there",
+      "wnBestSynsets": 3,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "time",
+      "wnBestSynsets": 10,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "get",
+      "wnBestSynsets": 36,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "new",
+      "wnBestSynsets": 11,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "people",
+      "wnBestSynsets": 4,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "now",
+      "wnBestSynsets": 7,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "other",
+      "wnBestSynsets": 4,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "good",
+      "wnBestSynsets": 21,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "a",
+      "wnBestSynsets": 7,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "in",
+      "wnBestSynsets": 3,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "that",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    },
+    {
+      "form": "it",
+      "wnBestSynsets": 1,
+      "status": "unique-sense-in-wn"
+    },
+    {
+      "form": "as",
+      "wnBestSynsets": 9,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "but",
+      "wnBestSynsets": 1,
+      "status": "unique-sense-in-wn"
+    },
+    {
+      "form": "my",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    },
+    {
+      "form": "your",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    },
+    {
+      "form": "all",
+      "wnBestSynsets": 2,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "his",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    },
+    {
+      "form": "can",
+      "wnBestSynsets": 6,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "what",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    },
+    {
+      "form": "when",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    },
+    {
+      "form": "more",
+      "wnBestSynsets": 2,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "who",
+      "wnBestSynsets": 1,
+      "status": "unique-sense-in-wn"
+    },
+    {
+      "form": "could",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    },
+    {
+      "form": "go",
+      "wnBestSynsets": 30,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "may",
+      "wnBestSynsets": 2,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "right",
+      "wnBestSynsets": 14,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "take",
+      "wnBestSynsets": 42,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "left",
+      "wnBestSynsets": 14,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "among",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    },
+    {
+      "form": "program",
+      "wnBestSynsets": 8,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "instead",
+      "wnBestSynsets": 2,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "date",
+      "wnBestSynsets": 8,
+      "status": "multi-sense-in-wn"
+    },
+    {
+      "form": "their",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    },
+    {
+      "form": "her",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    },
+    {
+      "form": "which",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    },
+    {
+      "form": "would",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    },
+    {
+      "form": "how",
+      "wnBestSynsets": 0,
+      "status": "absent-from-wn"
+    }
+  ]
+}

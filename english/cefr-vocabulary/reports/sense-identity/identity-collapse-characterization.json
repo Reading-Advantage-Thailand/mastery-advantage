@@ -1,0 +1,31 @@
+{
+  "claims": [
+    {
+      "id": "collapse-same-pos-senses",
+      "statement": "For form bank with POS noun, graph has at most one skill id class for bare bank.noun (gloss variants may add extra nodes).",
+      "bankSkillIds": [
+        "english.vocabulary.skill.bank.noun"
+      ],
+      "wnNounSynsets": 10,
+      "pass_if": "wnNounSynsets > skill_ids_for_noun implies collapse"
+    },
+    {
+      "id": "multi-pos-not-collapse",
+      "statement": "form+POS does NOT collapse different POS (book.noun vs book.verb-like ids remain distinct when POS differs)."
+    }
+  ],
+  "bank": {
+    "skillIds": [
+      "english.vocabulary.skill.bank.noun"
+    ],
+    "wnNoun": 10
+  },
+  "book": {
+    "skillIds": [
+      "english.vocabulary.skill.book.noun",
+      "english.vocabulary.skill.book.noun-verb"
+    ],
+    "wnNoun": 11,
+    "wnVerb": 4
+  }
+}

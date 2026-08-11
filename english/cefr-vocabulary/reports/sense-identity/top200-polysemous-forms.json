@@ -1,0 +1,3639 @@
+{
+  "generatedAt": "2026-08-11",
+  "policy": "single-token forms; ranked by frequency zipf then WordNet synset count",
+  "count": 200,
+  "forms": [
+    {
+      "form": "a",
+      "maxZipf": 7.36,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.a.determiner",
+        "english.vocabulary.skill.a-an.determiner"
+      ],
+      "posSets": [
+        [
+          "determiner"
+        ],
+        [
+          "determiner"
+        ]
+      ]
+    },
+    {
+      "form": "in",
+      "maxZipf": 7.27,
+      "skillCount": 2,
+      "wnMaxSynsets": 1,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.in.adverb-preposition",
+        "english.vocabulary.skill.in.preposition"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "preposition"
+        ],
+        [
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "that",
+      "maxZipf": 7.01,
+      "skillCount": 3,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.that.conjunction-determiner-pronoun",
+        "english.vocabulary.skill.that.conjunction-pronoun",
+        "english.vocabulary.skill.that.determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "conjunction",
+          "determiner",
+          "pronoun"
+        ],
+        [
+          "conjunction",
+          "pronoun"
+        ],
+        [
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "it",
+      "maxZipf": 6.95,
+      "skillCount": 3,
+      "wnMaxSynsets": 1,
+      "hasPublisherGloss": true,
+      "skillIds": [
+        "english.vocabulary.skill.it.noun",
+        "english.vocabulary.skill.it.pronoun",
+        "english.vocabulary.skill.it-information-technology.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ],
+        [
+          "pronoun"
+        ],
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "on",
+      "maxZipf": 6.91,
+      "skillCount": 2,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.on.adverb-preposition",
+        "english.vocabulary.skill.on.preposition"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "preposition"
+        ],
+        [
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "be",
+      "maxZipf": 6.79,
+      "skillCount": 2,
+      "wnMaxSynsets": 13,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.be.auxiliary-verb-verb",
+        "english.vocabulary.skill.be.verb"
+      ],
+      "posSets": [
+        [
+          "auxiliary-verb",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "as",
+      "maxZipf": 6.77,
+      "skillCount": 3,
+      "wnMaxSynsets": 1,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.as.adverb",
+        "english.vocabulary.skill.as.adverb-conjunction-preposition",
+        "english.vocabulary.skill.as.conjunction-preposition"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ],
+        [
+          "adverb",
+          "conjunction",
+          "preposition"
+        ],
+        [
+          "conjunction",
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "have",
+      "maxZipf": 6.71,
+      "skillCount": 2,
+      "wnMaxSynsets": 19,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.have.auxiliary-verb-verb",
+        "english.vocabulary.skill.have.verb"
+      ],
+      "posSets": [
+        [
+          "auxiliary-verb",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "but",
+      "maxZipf": 6.63,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.but.conjunction",
+        "english.vocabulary.skill.but.conjunction-preposition"
+      ],
+      "posSets": [
+        [
+          "conjunction"
+        ],
+        [
+          "conjunction",
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "my",
+      "maxZipf": 6.57,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.my.determiner",
+        "english.vocabulary.skill.my.possessive-adjective"
+      ],
+      "posSets": [
+        [
+          "determiner"
+        ],
+        [
+          "possessive-adjective"
+        ]
+      ]
+    },
+    {
+      "form": "your",
+      "maxZipf": 6.53,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.your.determiner",
+        "english.vocabulary.skill.your.possessive-adjective"
+      ],
+      "posSets": [
+        [
+          "determiner"
+        ],
+        [
+          "possessive-adjective"
+        ]
+      ]
+    },
+    {
+      "form": "so",
+      "maxZipf": 6.52,
+      "skillCount": 2,
+      "wnMaxSynsets": 10,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.so.adverb-conjunction",
+        "english.vocabulary.skill.so.discourse-marker"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "conjunction"
+        ],
+        [
+          "discourse-marker"
+        ]
+      ]
+    },
+    {
+      "form": "all",
+      "maxZipf": 6.52,
+      "skillCount": 2,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.all.adjective-adverb-determiner-pronoun",
+        "english.vocabulary.skill.all.adverb-determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb",
+          "determiner",
+          "pronoun"
+        ],
+        [
+          "adverb",
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "his",
+      "maxZipf": 6.51,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.his.determiner-pronoun",
+        "english.vocabulary.skill.his.possessive-adjective-pronoun"
+      ],
+      "posSets": [
+        [
+          "determiner",
+          "pronoun"
+        ],
+        [
+          "possessive-adjective",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "can",
+      "maxZipf": 6.46,
+      "skillCount": 2,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.can.modal-verb-noun",
+        "english.vocabulary.skill.can.verb"
+      ],
+      "posSets": [
+        [
+          "modal-verb",
+          "noun"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "will",
+      "maxZipf": 6.45,
+      "skillCount": 3,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": true,
+      "skillIds": [
+        "english.vocabulary.skill.will.modal-verb",
+        "english.vocabulary.skill.will.verb",
+        "english.vocabulary.skill.will-ll.modal-verb"
+      ],
+      "posSets": [
+        [
+          "modal-verb"
+        ],
+        [
+          "verb"
+        ],
+        [
+          "modal-verb"
+        ]
+      ]
+    },
+    {
+      "form": "just",
+      "maxZipf": 6.43,
+      "skillCount": 1,
+      "wnMaxSynsets": 6,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.just.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "like",
+      "maxZipf": 6.41,
+      "skillCount": 2,
+      "wnMaxSynsets": 5,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.like.adverb-preposition-verb",
+        "english.vocabulary.skill.like.preposition-verb"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "preposition",
+          "verb"
+        ],
+        [
+          "preposition",
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "about",
+      "maxZipf": 6.4,
+      "skillCount": 2,
+      "wnMaxSynsets": 7,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.about.adverb-preposition",
+        "english.vocabulary.skill.about.preposition"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "preposition"
+        ],
+        [
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "up",
+      "maxZipf": 6.39,
+      "skillCount": 1,
+      "wnMaxSynsets": 5,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.up.adverb-preposition"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "out",
+      "maxZipf": 6.38,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.out.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "what",
+      "maxZipf": 6.38,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.what.determiner-pronoun",
+        "english.vocabulary.skill.what.interrogative"
+      ],
+      "posSets": [
+        [
+          "determiner",
+          "pronoun"
+        ],
+        [
+          "interrogative"
+        ]
+      ]
+    },
+    {
+      "form": "when",
+      "maxZipf": 6.37,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.when.adverb",
+        "english.vocabulary.skill.when.adverb-conjunction-interrogative"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ],
+        [
+          "adverb",
+          "conjunction",
+          "interrogative"
+        ]
+      ]
+    },
+    {
+      "form": "more",
+      "maxZipf": 6.36,
+      "skillCount": 2,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.more.adjective-adverb-determiner-pronoun",
+        "english.vocabulary.skill.more.adverb-determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb",
+          "determiner",
+          "pronoun"
+        ],
+        [
+          "adverb",
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "do",
+      "maxZipf": 6.35,
+      "skillCount": 2,
+      "wnMaxSynsets": 13,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.do.auxiliary-verb-verb",
+        "english.vocabulary.skill.do.verb"
+      ],
+      "posSets": [
+        [
+          "auxiliary-verb",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "no",
+      "maxZipf": 6.35,
+      "skillCount": 2,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.no.adverb-determiner",
+        "english.vocabulary.skill.no.adverb-determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "determiner"
+        ],
+        [
+          "adverb",
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "who",
+      "maxZipf": 6.34,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.who.interrogative",
+        "english.vocabulary.skill.who.pronoun"
+      ],
+      "posSets": [
+        [
+          "interrogative"
+        ],
+        [
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "their",
+      "maxZipf": 6.33,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.their.determiner",
+        "english.vocabulary.skill.their.possessive-adjective"
+      ],
+      "posSets": [
+        [
+          "determiner"
+        ],
+        [
+          "possessive-adjective"
+        ]
+      ]
+    },
+    {
+      "form": "there",
+      "maxZipf": 6.31,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.there.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "her",
+      "maxZipf": 6.3,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.her.determiner-pronoun",
+        "english.vocabulary.skill.her.possessive-adjective-pronoun"
+      ],
+      "posSets": [
+        [
+          "determiner",
+          "pronoun"
+        ],
+        [
+          "possessive-adjective",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "which",
+      "maxZipf": 6.3,
+      "skillCount": 3,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.which.determiner-pronoun",
+        "english.vocabulary.skill.which.interrogative",
+        "english.vocabulary.skill.which.pronoun"
+      ],
+      "posSets": [
+        [
+          "determiner",
+          "pronoun"
+        ],
+        [
+          "interrogative"
+        ],
+        [
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "time",
+      "maxZipf": 6.29,
+      "skillCount": 2,
+      "wnMaxSynsets": 10,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.time.noun",
+        "english.vocabulary.skill.time.noun-verb"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ],
+        [
+          "noun",
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "get",
+      "maxZipf": 6.28,
+      "skillCount": 1,
+      "wnMaxSynsets": 36,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.get.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "would",
+      "maxZipf": 6.27,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.would.modal-verb",
+        "english.vocabulary.skill.would.verb"
+      ],
+      "posSets": [
+        [
+          "modal-verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "new",
+      "maxZipf": 6.25,
+      "skillCount": 1,
+      "wnMaxSynsets": 11,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.new.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    },
+    {
+      "form": "people",
+      "maxZipf": 6.25,
+      "skillCount": 2,
+      "wnMaxSynsets": 4,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.people.noun",
+        "english.vocabulary.skill.person-people.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ],
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "how",
+      "maxZipf": 6.24,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.how.adverb",
+        "english.vocabulary.skill.how.interrogative"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ],
+        [
+          "interrogative"
+        ]
+      ]
+    },
+    {
+      "form": "some",
+      "maxZipf": 6.2,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.some.determiner",
+        "english.vocabulary.skill.some.determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "determiner"
+        ],
+        [
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "now",
+      "maxZipf": 6.18,
+      "skillCount": 1,
+      "wnMaxSynsets": 7,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.now.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "other",
+      "maxZipf": 6.16,
+      "skillCount": 2,
+      "wnMaxSynsets": 4,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.other.adjective-determiner-pronoun",
+        "english.vocabulary.skill.other.determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "determiner",
+          "pronoun"
+        ],
+        [
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "its",
+      "maxZipf": 6.14,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.its.determiner",
+        "english.vocabulary.skill.its.possessive-adjective-pronoun"
+      ],
+      "posSets": [
+        [
+          "determiner"
+        ],
+        [
+          "possessive-adjective",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "our",
+      "maxZipf": 6.14,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.our.determiner",
+        "english.vocabulary.skill.our.possessive-adjective"
+      ],
+      "posSets": [
+        [
+          "determiner"
+        ],
+        [
+          "possessive-adjective"
+        ]
+      ]
+    },
+    {
+      "form": "good",
+      "maxZipf": 6.12,
+      "skillCount": 1,
+      "wnMaxSynsets": 21,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.good.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    },
+    {
+      "form": "only",
+      "maxZipf": 6.12,
+      "skillCount": 2,
+      "wnMaxSynsets": 7,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.only.adjective-adverb",
+        "english.vocabulary.skill.only.adverb"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ],
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "first",
+      "maxZipf": 6.11,
+      "skillCount": 1,
+      "wnMaxSynsets": 6,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.first.adjective-adverb"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "after",
+      "maxZipf": 6.11,
+      "skillCount": 4,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.after.adverb-conjunction",
+        "english.vocabulary.skill.after.adverb-conjunction-preposition",
+        "english.vocabulary.skill.after.adverb-preposition",
+        "english.vocabulary.skill.after.preposition"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "conjunction"
+        ],
+        [
+          "adverb",
+          "conjunction",
+          "preposition"
+        ],
+        [
+          "adverb",
+          "preposition"
+        ],
+        [
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "see",
+      "maxZipf": 6.1,
+      "skillCount": 1,
+      "wnMaxSynsets": 24,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.see.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "know",
+      "maxZipf": 6.1,
+      "skillCount": 1,
+      "wnMaxSynsets": 11,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.know.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "make",
+      "maxZipf": 6.08,
+      "skillCount": 1,
+      "wnMaxSynsets": 49,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.make.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "think",
+      "maxZipf": 6.08,
+      "skillCount": 1,
+      "wnMaxSynsets": 13,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.think.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "over",
+      "maxZipf": 6.08,
+      "skillCount": 1,
+      "wnMaxSynsets": 5,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.over.adverb-preposition"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "then",
+      "maxZipf": 6.07,
+      "skillCount": 2,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.then.adverb",
+        "english.vocabulary.skill.then.discourse-marker"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ],
+        [
+          "discourse-marker"
+        ]
+      ]
+    },
+    {
+      "form": "could",
+      "maxZipf": 6.06,
+      "skillCount": 3,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": true,
+      "skillIds": [
+        "english.vocabulary.skill.could.modal-verb",
+        "english.vocabulary.skill.could-for-possibility.verb",
+        "english.vocabulary.skill.could-as-in-past-of-can-for-ability.verb"
+      ],
+      "posSets": [
+        [
+          "modal-verb"
+        ],
+        [
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "want",
+      "maxZipf": 6.04,
+      "skillCount": 1,
+      "wnMaxSynsets": 5,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.want.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "back",
+      "maxZipf": 6.04,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.back.adjective-adverb-noun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb",
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "go",
+      "maxZipf": 6.03,
+      "skillCount": 3,
+      "wnMaxSynsets": 30,
+      "hasPublisherGloss": true,
+      "skillIds": [
+        "english.vocabulary.skill.go.noun-verb",
+        "english.vocabulary.skill.go.verb",
+        "english.vocabulary.skill.go-with-together.phrasal-verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ],
+        [
+          "phrasal-verb"
+        ]
+      ]
+    },
+    {
+      "form": "well",
+      "maxZipf": 6.03,
+      "skillCount": 3,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.well.adjective-adverb",
+        "english.vocabulary.skill.well.adjective-adverb-exclamation",
+        "english.vocabulary.skill.well.discourse-marker"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ],
+        [
+          "adjective",
+          "adverb",
+          "exclamation"
+        ],
+        [
+          "discourse-marker"
+        ]
+      ]
+    },
+    {
+      "form": "way",
+      "maxZipf": 6.01,
+      "skillCount": 1,
+      "wnMaxSynsets": 12,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.way.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "much",
+      "maxZipf": 6.0,
+      "skillCount": 2,
+      "wnMaxSynsets": 5,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.much.adjective-adverb-determiner-pronoun",
+        "english.vocabulary.skill.much.adverb-determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb",
+          "determiner",
+          "pronoun"
+        ],
+        [
+          "adverb",
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "most",
+      "maxZipf": 6.0,
+      "skillCount": 2,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.most.adjective-adverb-determiner-pronoun",
+        "english.vocabulary.skill.most.adverb-determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb",
+          "determiner",
+          "pronoun"
+        ],
+        [
+          "adverb",
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "very",
+      "maxZipf": 6.0,
+      "skillCount": 1,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.very.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "where",
+      "maxZipf": 6.0,
+      "skillCount": 4,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.where.adverb",
+        "english.vocabulary.skill.where.adverb-conjunction",
+        "english.vocabulary.skill.where.interrogative",
+        "english.vocabulary.skill.where.pronoun"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ],
+        [
+          "adverb",
+          "conjunction"
+        ],
+        [
+          "interrogative"
+        ],
+        [
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "even",
+      "maxZipf": 5.99,
+      "skillCount": 1,
+      "wnMaxSynsets": 4,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.even.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "should",
+      "maxZipf": 5.99,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.should.modal-verb",
+        "english.vocabulary.skill.should.verb"
+      ],
+      "posSets": [
+        [
+          "modal-verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "may",
+      "maxZipf": 5.98,
+      "skillCount": 4,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": true,
+      "skillIds": [
+        "english.vocabulary.skill.may.modal-verb",
+        "english.vocabulary.skill.may.noun",
+        "english.vocabulary.skill.may.verb",
+        "english.vocabulary.skill.may-as-in-girls-name.noun"
+      ],
+      "posSets": [
+        [
+          "modal-verb"
+        ],
+        [
+          "noun"
+        ],
+        [
+          "verb"
+        ],
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "here",
+      "maxZipf": 5.97,
+      "skillCount": 1,
+      "wnMaxSynsets": 4,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.here.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "really",
+      "maxZipf": 5.97,
+      "skillCount": 1,
+      "wnMaxSynsets": 4,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.really.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "need",
+      "maxZipf": 5.97,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.need.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "right",
+      "maxZipf": 5.96,
+      "skillCount": 5,
+      "wnMaxSynsets": 14,
+      "hasPublisherGloss": true,
+      "skillIds": [
+        "english.vocabulary.skill.right.adjective",
+        "english.vocabulary.skill.right.adjective-adverb-noun",
+        "english.vocabulary.skill.right.discourse-marker",
+        "english.vocabulary.skill.right-as-in-correct.adjective",
+        "english.vocabulary.skill.right-as-in-direction.noun"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ],
+        [
+          "adjective",
+          "adverb",
+          "noun"
+        ],
+        [
+          "discourse-marker"
+        ],
+        [
+          "adjective"
+        ],
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "work",
+      "maxZipf": 5.96,
+      "skillCount": 1,
+      "wnMaxSynsets": 7,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.work.noun-verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "year",
+      "maxZipf": 5.96,
+      "skillCount": 1,
+      "wnMaxSynsets": 4,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.year.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "day",
+      "maxZipf": 5.95,
+      "skillCount": 1,
+      "wnMaxSynsets": 10,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.day.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "too",
+      "maxZipf": 5.95,
+      "skillCount": 1,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.too.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "off",
+      "maxZipf": 5.93,
+      "skillCount": 2,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.off.adverb",
+        "english.vocabulary.skill.off.adverb-preposition"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ],
+        [
+          "adverb",
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "before",
+      "maxZipf": 5.93,
+      "skillCount": 3,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.before.adverb-conjunction",
+        "english.vocabulary.skill.before.adverb-conjunction-preposition",
+        "english.vocabulary.skill.before.preposition"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "conjunction"
+        ],
+        [
+          "adverb",
+          "conjunction",
+          "preposition"
+        ],
+        [
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "why",
+      "maxZipf": 5.93,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.why.adverb",
+        "english.vocabulary.skill.why.interrogative"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ],
+        [
+          "interrogative"
+        ]
+      ]
+    },
+    {
+      "form": "take",
+      "maxZipf": 5.92,
+      "skillCount": 2,
+      "wnMaxSynsets": 42,
+      "hasPublisherGloss": true,
+      "skillIds": [
+        "english.vocabulary.skill.take.verb",
+        "english.vocabulary.skill.take-as-in-time-e-g-it-takes-20-minutes.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "still",
+      "maxZipf": 5.92,
+      "skillCount": 2,
+      "wnMaxSynsets": 6,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.still.adjective-adverb",
+        "english.vocabulary.skill.still.adverb"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ],
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "never",
+      "maxZipf": 5.91,
+      "skillCount": 1,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.never.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "many",
+      "maxZipf": 5.91,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.many.determiner",
+        "english.vocabulary.skill.many.determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "determiner"
+        ],
+        [
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "life",
+      "maxZipf": 5.89,
+      "skillCount": 1,
+      "wnMaxSynsets": 14,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.life.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "say",
+      "maxZipf": 5.89,
+      "skillCount": 1,
+      "wnMaxSynsets": 11,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.say.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "world",
+      "maxZipf": 5.89,
+      "skillCount": 1,
+      "wnMaxSynsets": 8,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.world.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "down",
+      "maxZipf": 5.88,
+      "skillCount": 1,
+      "wnMaxSynsets": 6,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.down.adverb-preposition"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "great",
+      "maxZipf": 5.88,
+      "skillCount": 2,
+      "wnMaxSynsets": 6,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.great.adjective",
+        "english.vocabulary.skill.great.adjective-exclamation"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ],
+        [
+          "adjective",
+          "exclamation"
+        ]
+      ]
+    },
+    {
+      "form": "last",
+      "maxZipf": 5.86,
+      "skillCount": 3,
+      "wnMaxSynsets": 9,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.last.adjective-adverb",
+        "english.vocabulary.skill.last.adjective-adverb-determiner-verb",
+        "english.vocabulary.skill.last.adjective-determiner"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ],
+        [
+          "adjective",
+          "adverb",
+          "determiner",
+          "verb"
+        ],
+        [
+          "adjective",
+          "determiner"
+        ]
+      ]
+    },
+    {
+      "form": "while",
+      "maxZipf": 5.86,
+      "skillCount": 2,
+      "wnMaxSynsets": 1,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.while.conjunction",
+        "english.vocabulary.skill.while.noun"
+      ],
+      "posSets": [
+        [
+          "conjunction"
+        ],
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "best",
+      "maxZipf": 5.84,
+      "skillCount": 1,
+      "wnMaxSynsets": 23,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.best.adjective-adverb"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "man",
+      "maxZipf": 5.82,
+      "skillCount": 2,
+      "wnMaxSynsets": 11,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.man.noun",
+        "english.vocabulary.skill.man-men.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ],
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "love",
+      "maxZipf": 5.82,
+      "skillCount": 2,
+      "wnMaxSynsets": 6,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.love.noun-verb",
+        "english.vocabulary.skill.love.verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "look",
+      "maxZipf": 5.81,
+      "skillCount": 2,
+      "wnMaxSynsets": 10,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.look.noun-verb",
+        "english.vocabulary.skill.look.verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "long",
+      "maxZipf": 5.81,
+      "skillCount": 1,
+      "wnMaxSynsets": 9,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.long.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    },
+    {
+      "form": "use",
+      "maxZipf": 5.81,
+      "skillCount": 2,
+      "wnMaxSynsets": 7,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.use.noun-verb",
+        "english.vocabulary.skill.use.verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "home",
+      "maxZipf": 5.81,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.home.adverb-noun"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "something",
+      "maxZipf": 5.81,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.something.pronoun",
+        "english.vocabulary.skill.something.verb"
+      ],
+      "posSets": [
+        [
+          "pronoun"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "same",
+      "maxZipf": 5.8,
+      "skillCount": 3,
+      "wnMaxSynsets": 4,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.same.adjective",
+        "english.vocabulary.skill.same.adjective-adverb-pronoun",
+        "english.vocabulary.skill.same.adjective-pronoun"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ],
+        [
+          "adjective",
+          "adverb",
+          "pronoun"
+        ],
+        [
+          "adjective",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "come",
+      "maxZipf": 5.78,
+      "skillCount": 1,
+      "wnMaxSynsets": 21,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.come.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "part",
+      "maxZipf": 5.78,
+      "skillCount": 1,
+      "wnMaxSynsets": 12,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.part.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "around",
+      "maxZipf": 5.77,
+      "skillCount": 2,
+      "wnMaxSynsets": 10,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.around.adverb-preposition",
+        "english.vocabulary.skill.around.preposition"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "preposition"
+        ],
+        [
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "between",
+      "maxZipf": 5.77,
+      "skillCount": 2,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.between.adverb-preposition",
+        "english.vocabulary.skill.between.preposition"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "preposition"
+        ],
+        [
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "better",
+      "maxZipf": 5.76,
+      "skillCount": 1,
+      "wnMaxSynsets": 28,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.better.adjective-adverb"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "find",
+      "maxZipf": 5.76,
+      "skillCount": 1,
+      "wnMaxSynsets": 16,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.find.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "always",
+      "maxZipf": 5.76,
+      "skillCount": 1,
+      "wnMaxSynsets": 5,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.always.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "help",
+      "maxZipf": 5.75,
+      "skillCount": 2,
+      "wnMaxSynsets": 8,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.help.noun-verb",
+        "english.vocabulary.skill.help.verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "little",
+      "maxZipf": 5.75,
+      "skillCount": 2,
+      "wnMaxSynsets": 8,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.little.adjective",
+        "english.vocabulary.skill.little.adjective-determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ],
+        [
+          "adjective",
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "old",
+      "maxZipf": 5.75,
+      "skillCount": 1,
+      "wnMaxSynsets": 8,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.old.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    },
+    {
+      "form": "high",
+      "maxZipf": 5.75,
+      "skillCount": 2,
+      "wnMaxSynsets": 7,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.high.adjective",
+        "english.vocabulary.skill.high.adjective-adverb"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ],
+        [
+          "adjective",
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "since",
+      "maxZipf": 5.75,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.since.conjunction-preposition",
+        "english.vocabulary.skill.since.preposition"
+      ],
+      "posSets": [
+        [
+          "conjunction",
+          "preposition"
+        ],
+        [
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "own",
+      "maxZipf": 5.74,
+      "skillCount": 2,
+      "wnMaxSynsets": 1,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.own.adjective",
+        "english.vocabulary.skill.own.adjective-pronoun-verb"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ],
+        [
+          "adjective",
+          "pronoun",
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "thing",
+      "maxZipf": 5.72,
+      "skillCount": 1,
+      "wnMaxSynsets": 12,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.thing.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "game",
+      "maxZipf": 5.72,
+      "skillCount": 1,
+      "wnMaxSynsets": 11,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.game.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "give",
+      "maxZipf": 5.71,
+      "skillCount": 1,
+      "wnMaxSynsets": 44,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.give.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "place",
+      "maxZipf": 5.71,
+      "skillCount": 1,
+      "wnMaxSynsets": 16,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.place.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "house",
+      "maxZipf": 5.71,
+      "skillCount": 1,
+      "wnMaxSynsets": 12,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.house.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "school",
+      "maxZipf": 5.71,
+      "skillCount": 1,
+      "wnMaxSynsets": 7,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.school.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "next",
+      "maxZipf": 5.7,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.next.adjective-adverb"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "mr",
+      "maxZipf": 5.69,
+      "skillCount": 2,
+      "wnMaxSynsets": 1,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.mr.noun",
+        "english.vocabulary.skill.mr.title"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ],
+        [
+          "title"
+        ]
+      ]
+    },
+    {
+      "form": "end",
+      "maxZipf": 5.68,
+      "skillCount": 3,
+      "wnMaxSynsets": 14,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.end.noun",
+        "english.vocabulary.skill.end.noun-verb",
+        "english.vocabulary.skill.end.verb"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ],
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "show",
+      "maxZipf": 5.68,
+      "skillCount": 2,
+      "wnMaxSynsets": 12,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.show.noun-verb",
+        "english.vocabulary.skill.show.verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "must",
+      "maxZipf": 5.68,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.must.modal-verb",
+        "english.vocabulary.skill.must.verb"
+      ],
+      "posSets": [
+        [
+          "modal-verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "big",
+      "maxZipf": 5.67,
+      "skillCount": 1,
+      "wnMaxSynsets": 13,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.big.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    },
+    {
+      "form": "feel",
+      "maxZipf": 5.67,
+      "skillCount": 1,
+      "wnMaxSynsets": 13,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.feel.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "sure",
+      "maxZipf": 5.67,
+      "skillCount": 2,
+      "wnMaxSynsets": 9,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.sure.adjective",
+        "english.vocabulary.skill.sure.adjective-adverb"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ],
+        [
+          "adjective",
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "team",
+      "maxZipf": 5.67,
+      "skillCount": 1,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.team.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "keep",
+      "maxZipf": 5.66,
+      "skillCount": 1,
+      "wnMaxSynsets": 22,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.keep.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "put",
+      "maxZipf": 5.66,
+      "skillCount": 1,
+      "wnMaxSynsets": 9,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.put.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "family",
+      "maxZipf": 5.66,
+      "skillCount": 1,
+      "wnMaxSynsets": 8,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.family.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "ever",
+      "maxZipf": 5.66,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.ever.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "please",
+      "maxZipf": 5.66,
+      "skillCount": 2,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.please.discourse-marker",
+        "english.vocabulary.skill.please.exclamation-verb"
+      ],
+      "posSets": [
+        [
+          "discourse-marker"
+        ],
+        [
+          "exclamation",
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "might",
+      "maxZipf": 5.66,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.might.modal-verb",
+        "english.vocabulary.skill.might.verb"
+      ],
+      "posSets": [
+        [
+          "modal-verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "money",
+      "maxZipf": 5.64,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.money.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "free",
+      "maxZipf": 5.63,
+      "skillCount": 1,
+      "wnMaxSynsets": 9,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.free.adjective-adverb"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "second",
+      "maxZipf": 5.63,
+      "skillCount": 3,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.second.adjective-adverb",
+        "english.vocabulary.skill.second.adjective-determiner-noun",
+        "english.vocabulary.skill.second.adverb-determiner-noun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ],
+        [
+          "adjective",
+          "determiner",
+          "noun"
+        ],
+        [
+          "adverb",
+          "determiner",
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "away",
+      "maxZipf": 5.62,
+      "skillCount": 1,
+      "wnMaxSynsets": 11,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.away.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "number",
+      "maxZipf": 5.62,
+      "skillCount": 1,
+      "wnMaxSynsets": 11,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.number.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "left",
+      "maxZipf": 5.62,
+      "skillCount": 2,
+      "wnMaxSynsets": 4,
+      "hasPublisherGloss": true,
+      "skillIds": [
+        "english.vocabulary.skill.left.adjective-adverb-noun",
+        "english.vocabulary.skill.left-as-in-direction.adjective-noun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb",
+          "noun"
+        ],
+        [
+          "adjective",
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "play",
+      "maxZipf": 5.61,
+      "skillCount": 2,
+      "wnMaxSynsets": 35,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.play.noun-verb",
+        "english.vocabulary.skill.play.verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "night",
+      "maxZipf": 5.61,
+      "skillCount": 1,
+      "wnMaxSynsets": 8,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.night.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "name",
+      "maxZipf": 5.61,
+      "skillCount": 2,
+      "wnMaxSynsets": 6,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.name.noun",
+        "english.vocabulary.skill.name.noun-verb"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ],
+        [
+          "noun",
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "city",
+      "maxZipf": 5.61,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.city.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "until",
+      "maxZipf": 5.61,
+      "skillCount": 2,
+      "wnMaxSynsets": 0,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.until.conjunction-preposition",
+        "english.vocabulary.skill.until.preposition"
+      ],
+      "posSets": [
+        [
+          "conjunction",
+          "preposition"
+        ],
+        [
+          "preposition"
+        ]
+      ]
+    },
+    {
+      "form": "company",
+      "maxZipf": 5.6,
+      "skillCount": 1,
+      "wnMaxSynsets": 9,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.company.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "real",
+      "maxZipf": 5.6,
+      "skillCount": 1,
+      "wnMaxSynsets": 9,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.real.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    },
+    {
+      "form": "let",
+      "maxZipf": 5.6,
+      "skillCount": 1,
+      "wnMaxSynsets": 6,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.let.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "few",
+      "maxZipf": 5.6,
+      "skillCount": 2,
+      "wnMaxSynsets": 1,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.few.adjective-determiner",
+        "english.vocabulary.skill.few.adjective-determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "determiner"
+        ],
+        [
+          "adjective",
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "set",
+      "maxZipf": 5.59,
+      "skillCount": 2,
+      "wnMaxSynsets": 13,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.set.noun",
+        "english.vocabulary.skill.set.noun-verb"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ],
+        [
+          "noun",
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "different",
+      "maxZipf": 5.59,
+      "skillCount": 1,
+      "wnMaxSynsets": 5,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.different.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    },
+    {
+      "form": "thought",
+      "maxZipf": 5.59,
+      "skillCount": 1,
+      "wnMaxSynsets": 4,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.thought.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "however",
+      "maxZipf": 5.58,
+      "skillCount": 1,
+      "wnMaxSynsets": 4,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.however.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "top",
+      "maxZipf": 5.57,
+      "skillCount": 2,
+      "wnMaxSynsets": 11,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.top.adjective-noun",
+        "english.vocabulary.skill.top.noun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "noun"
+        ],
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "government",
+      "maxZipf": 5.57,
+      "skillCount": 1,
+      "wnMaxSynsets": 4,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.government.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "group",
+      "maxZipf": 5.57,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.group.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "public",
+      "maxZipf": 5.57,
+      "skillCount": 1,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.public.adjective-noun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "start",
+      "maxZipf": 5.56,
+      "skillCount": 2,
+      "wnMaxSynsets": 14,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.start.noun-verb",
+        "english.vocabulary.skill.start.verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "business",
+      "maxZipf": 5.56,
+      "skillCount": 1,
+      "wnMaxSynsets": 9,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.business.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "system",
+      "maxZipf": 5.56,
+      "skillCount": 1,
+      "wnMaxSynsets": 9,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.system.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "care",
+      "maxZipf": 5.56,
+      "skillCount": 1,
+      "wnMaxSynsets": 6,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.care.noun-verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "week",
+      "maxZipf": 5.56,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.week.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "case",
+      "maxZipf": 5.55,
+      "skillCount": 1,
+      "wnMaxSynsets": 20,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.case.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "person",
+      "maxZipf": 5.55,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.person.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "today",
+      "maxZipf": 5.55,
+      "skillCount": 1,
+      "wnMaxSynsets": 2,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.today.adverb-noun"
+      ],
+      "posSets": [
+        [
+          "adverb",
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "point",
+      "maxZipf": 5.54,
+      "skillCount": 2,
+      "wnMaxSynsets": 26,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.point.noun-verb",
+        "english.vocabulary.skill.point.verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "live",
+      "maxZipf": 5.54,
+      "skillCount": 2,
+      "wnMaxSynsets": 11,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.live.adjective",
+        "english.vocabulary.skill.live.verb"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "read",
+      "maxZipf": 5.54,
+      "skillCount": 1,
+      "wnMaxSynsets": 11,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.read.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "change",
+      "maxZipf": 5.54,
+      "skillCount": 2,
+      "wnMaxSynsets": 10,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.change.noun-verb",
+        "english.vocabulary.skill.change.verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "full",
+      "maxZipf": 5.54,
+      "skillCount": 1,
+      "wnMaxSynsets": 8,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.full.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    },
+    {
+      "form": "yet",
+      "maxZipf": 5.54,
+      "skillCount": 1,
+      "wnMaxSynsets": 6,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.yet.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "enough",
+      "maxZipf": 5.54,
+      "skillCount": 2,
+      "wnMaxSynsets": 1,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.enough.adjective-pronoun",
+        "english.vocabulary.skill.enough.adverb-determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "pronoun"
+        ],
+        [
+          "adverb",
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "bad",
+      "maxZipf": 5.53,
+      "skillCount": 1,
+      "wnMaxSynsets": 14,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.bad.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    },
+    {
+      "form": "hard",
+      "maxZipf": 5.53,
+      "skillCount": 1,
+      "wnMaxSynsets": 12,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.hard.adjective-adverb"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "support",
+      "maxZipf": 5.53,
+      "skillCount": 1,
+      "wnMaxSynsets": 11,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.support.noun-verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "tell",
+      "maxZipf": 5.53,
+      "skillCount": 1,
+      "wnMaxSynsets": 8,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.tell.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "mean",
+      "maxZipf": 5.53,
+      "skillCount": 1,
+      "wnMaxSynsets": 7,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.mean.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "once",
+      "maxZipf": 5.53,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.once.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "stop",
+      "maxZipf": 5.52,
+      "skillCount": 2,
+      "wnMaxSynsets": 11,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.stop.noun-verb",
+        "english.vocabulary.skill.stop.verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "power",
+      "maxZipf": 5.52,
+      "skillCount": 1,
+      "wnMaxSynsets": 9,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.power.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "water",
+      "maxZipf": 5.52,
+      "skillCount": 3,
+      "wnMaxSynsets": 6,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.water.noun",
+        "english.vocabulary.skill.water.noun-verb",
+        "english.vocabulary.skill.water.verb"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ],
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "music",
+      "maxZipf": 5.52,
+      "skillCount": 1,
+      "wnMaxSynsets": 5,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.music.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "head",
+      "maxZipf": 5.51,
+      "skillCount": 1,
+      "wnMaxSynsets": 33,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.head.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "call",
+      "maxZipf": 5.51,
+      "skillCount": 2,
+      "wnMaxSynsets": 28,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.call.noun-verb",
+        "english.vocabulary.skill.call.verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "white",
+      "maxZipf": 5.51,
+      "skillCount": 1,
+      "wnMaxSynsets": 12,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.white.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    },
+    {
+      "form": "small",
+      "maxZipf": 5.51,
+      "skillCount": 1,
+      "wnMaxSynsets": 10,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.small.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    },
+    {
+      "form": "national",
+      "maxZipf": 5.51,
+      "skillCount": 1,
+      "wnMaxSynsets": 7,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.national.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    },
+    {
+      "form": "believe",
+      "maxZipf": 5.51,
+      "skillCount": 1,
+      "wnMaxSynsets": 5,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.believe.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "job",
+      "maxZipf": 5.5,
+      "skillCount": 1,
+      "wnMaxSynsets": 13,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.job.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "side",
+      "maxZipf": 5.5,
+      "skillCount": 1,
+      "wnMaxSynsets": 12,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.side.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "try",
+      "maxZipf": 5.5,
+      "skillCount": 2,
+      "wnMaxSynsets": 9,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.try.noun-verb",
+        "english.vocabulary.skill.try.verb"
+      ],
+      "posSets": [
+        [
+          "noun",
+          "verb"
+        ],
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "far",
+      "maxZipf": 5.5,
+      "skillCount": 2,
+      "wnMaxSynsets": 5,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.far.adjective-adverb",
+        "english.vocabulary.skill.far.adverb"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ],
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "run",
+      "maxZipf": 5.49,
+      "skillCount": 1,
+      "wnMaxSynsets": 41,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.run.verb"
+      ],
+      "posSets": [
+        [
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "line",
+      "maxZipf": 5.49,
+      "skillCount": 1,
+      "wnMaxSynsets": 30,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.line.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "order",
+      "maxZipf": 5.49,
+      "skillCount": 2,
+      "wnMaxSynsets": 15,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.order.conjunction-noun-verb",
+        "english.vocabulary.skill.order.noun-verb"
+      ],
+      "posSets": [
+        [
+          "conjunction",
+          "noun",
+          "verb"
+        ],
+        [
+          "noun",
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "service",
+      "maxZipf": 5.49,
+      "skillCount": 1,
+      "wnMaxSynsets": 15,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.service.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "later",
+      "maxZipf": 5.49,
+      "skillCount": 2,
+      "wnMaxSynsets": 9,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.later.adjective-adverb",
+        "english.vocabulary.skill.later.adverb"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "adverb"
+        ],
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "party",
+      "maxZipf": 5.49,
+      "skillCount": 1,
+      "wnMaxSynsets": 5,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.party.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "actually",
+      "maxZipf": 5.49,
+      "skillCount": 1,
+      "wnMaxSynsets": 4,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.actually.adverb"
+      ],
+      "posSets": [
+        [
+          "adverb"
+        ]
+      ]
+    },
+    {
+      "form": "less",
+      "maxZipf": 5.49,
+      "skillCount": 2,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.less.adjective-determiner-pronoun",
+        "english.vocabulary.skill.less.adverb-determiner-pronoun"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "determiner",
+          "pronoun"
+        ],
+        [
+          "adverb",
+          "determiner",
+          "pronoun"
+        ]
+      ]
+    },
+    {
+      "form": "open",
+      "maxZipf": 5.48,
+      "skillCount": 1,
+      "wnMaxSynsets": 21,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.open.adjective-verb"
+      ],
+      "posSets": [
+        [
+          "adjective",
+          "verb"
+        ]
+      ]
+    },
+    {
+      "form": "country",
+      "maxZipf": 5.48,
+      "skillCount": 1,
+      "wnMaxSynsets": 5,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.country.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "season",
+      "maxZipf": 5.48,
+      "skillCount": 1,
+      "wnMaxSynsets": 3,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.season.noun"
+      ],
+      "posSets": [
+        [
+          "noun"
+        ]
+      ]
+    },
+    {
+      "form": "general",
+      "maxZipf": 5.47,
+      "skillCount": 1,
+      "wnMaxSynsets": 6,
+      "hasPublisherGloss": false,
+      "skillIds": [
+        "english.vocabulary.skill.general.adjective"
+      ],
+      "posSets": [
+        [
+          "adjective"
+        ]
+      ]
+    }
+  ]
+}

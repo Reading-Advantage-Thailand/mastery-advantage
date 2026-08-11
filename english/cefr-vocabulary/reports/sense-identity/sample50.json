@@ -1,0 +1,512 @@
+{
+  "generatedAt": "2026-08-11",
+  "count": 50,
+  "forms": [
+    {
+      "form": "on",
+      "maxZipf": 6.91,
+      "wnMaxSynsets": 3,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.on.adverb-preposition",
+        "english.vocabulary.skill.on.preposition"
+      ]
+    },
+    {
+      "form": "be",
+      "maxZipf": 6.79,
+      "wnMaxSynsets": 13,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.be.auxiliary-verb-verb",
+        "english.vocabulary.skill.be.verb"
+      ]
+    },
+    {
+      "form": "have",
+      "maxZipf": 6.71,
+      "wnMaxSynsets": 19,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.have.auxiliary-verb-verb",
+        "english.vocabulary.skill.have.verb"
+      ]
+    },
+    {
+      "form": "so",
+      "maxZipf": 6.52,
+      "wnMaxSynsets": 10,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.so.adverb-conjunction",
+        "english.vocabulary.skill.so.discourse-marker"
+      ]
+    },
+    {
+      "form": "will",
+      "maxZipf": 6.45,
+      "wnMaxSynsets": 3,
+      "skillCount": 3,
+      "skillIds": [
+        "english.vocabulary.skill.will.modal-verb",
+        "english.vocabulary.skill.will.verb",
+        "english.vocabulary.skill.will-ll.modal-verb"
+      ]
+    },
+    {
+      "form": "just",
+      "maxZipf": 6.43,
+      "wnMaxSynsets": 6,
+      "skillCount": 1,
+      "skillIds": [
+        "english.vocabulary.skill.just.adverb"
+      ]
+    },
+    {
+      "form": "like",
+      "maxZipf": 6.41,
+      "wnMaxSynsets": 5,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.like.adverb-preposition-verb",
+        "english.vocabulary.skill.like.preposition-verb"
+      ]
+    },
+    {
+      "form": "about",
+      "maxZipf": 6.4,
+      "wnMaxSynsets": 7,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.about.adverb-preposition",
+        "english.vocabulary.skill.about.preposition"
+      ]
+    },
+    {
+      "form": "up",
+      "maxZipf": 6.39,
+      "wnMaxSynsets": 5,
+      "skillCount": 1,
+      "skillIds": [
+        "english.vocabulary.skill.up.adverb-preposition"
+      ]
+    },
+    {
+      "form": "out",
+      "maxZipf": 6.38,
+      "wnMaxSynsets": 3,
+      "skillCount": 1,
+      "skillIds": [
+        "english.vocabulary.skill.out.adverb"
+      ]
+    },
+    {
+      "form": "do",
+      "maxZipf": 6.35,
+      "wnMaxSynsets": 13,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.do.auxiliary-verb-verb",
+        "english.vocabulary.skill.do.verb"
+      ]
+    },
+    {
+      "form": "no",
+      "maxZipf": 6.35,
+      "wnMaxSynsets": 3,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.no.adverb-determiner",
+        "english.vocabulary.skill.no.adverb-determiner-pronoun"
+      ]
+    },
+    {
+      "form": "there",
+      "maxZipf": 6.31,
+      "wnMaxSynsets": 3,
+      "skillCount": 1,
+      "skillIds": [
+        "english.vocabulary.skill.there.adverb"
+      ]
+    },
+    {
+      "form": "time",
+      "maxZipf": 6.29,
+      "wnMaxSynsets": 10,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.time.noun",
+        "english.vocabulary.skill.time.noun-verb"
+      ]
+    },
+    {
+      "form": "get",
+      "maxZipf": 6.28,
+      "wnMaxSynsets": 36,
+      "skillCount": 1,
+      "skillIds": [
+        "english.vocabulary.skill.get.verb"
+      ]
+    },
+    {
+      "form": "new",
+      "maxZipf": 6.25,
+      "wnMaxSynsets": 11,
+      "skillCount": 1,
+      "skillIds": [
+        "english.vocabulary.skill.new.adjective"
+      ]
+    },
+    {
+      "form": "people",
+      "maxZipf": 6.25,
+      "wnMaxSynsets": 4,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.people.noun",
+        "english.vocabulary.skill.person-people.noun"
+      ]
+    },
+    {
+      "form": "now",
+      "maxZipf": 6.18,
+      "wnMaxSynsets": 7,
+      "skillCount": 1,
+      "skillIds": [
+        "english.vocabulary.skill.now.adverb"
+      ]
+    },
+    {
+      "form": "other",
+      "maxZipf": 6.16,
+      "wnMaxSynsets": 4,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.other.adjective-determiner-pronoun",
+        "english.vocabulary.skill.other.determiner-pronoun"
+      ]
+    },
+    {
+      "form": "good",
+      "maxZipf": 6.12,
+      "wnMaxSynsets": 21,
+      "skillCount": 1,
+      "skillIds": [
+        "english.vocabulary.skill.good.adjective"
+      ]
+    },
+    {
+      "form": "a",
+      "maxZipf": 7.36,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.a.determiner",
+        "english.vocabulary.skill.a-an.determiner"
+      ]
+    },
+    {
+      "form": "in",
+      "maxZipf": 7.27,
+      "wnMaxSynsets": 1,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.in.adverb-preposition",
+        "english.vocabulary.skill.in.preposition"
+      ]
+    },
+    {
+      "form": "that",
+      "maxZipf": 7.01,
+      "wnMaxSynsets": 0,
+      "skillCount": 3,
+      "skillIds": [
+        "english.vocabulary.skill.that.conjunction-determiner-pronoun",
+        "english.vocabulary.skill.that.conjunction-pronoun",
+        "english.vocabulary.skill.that.determiner-pronoun"
+      ]
+    },
+    {
+      "form": "it",
+      "maxZipf": 6.95,
+      "wnMaxSynsets": 1,
+      "skillCount": 3,
+      "skillIds": [
+        "english.vocabulary.skill.it.noun",
+        "english.vocabulary.skill.it.pronoun",
+        "english.vocabulary.skill.it-information-technology.noun"
+      ]
+    },
+    {
+      "form": "as",
+      "maxZipf": 6.77,
+      "wnMaxSynsets": 1,
+      "skillCount": 3,
+      "skillIds": [
+        "english.vocabulary.skill.as.adverb",
+        "english.vocabulary.skill.as.adverb-conjunction-preposition",
+        "english.vocabulary.skill.as.conjunction-preposition"
+      ]
+    },
+    {
+      "form": "but",
+      "maxZipf": 6.63,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.but.conjunction",
+        "english.vocabulary.skill.but.conjunction-preposition"
+      ]
+    },
+    {
+      "form": "my",
+      "maxZipf": 6.57,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.my.determiner",
+        "english.vocabulary.skill.my.possessive-adjective"
+      ]
+    },
+    {
+      "form": "your",
+      "maxZipf": 6.53,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.your.determiner",
+        "english.vocabulary.skill.your.possessive-adjective"
+      ]
+    },
+    {
+      "form": "all",
+      "maxZipf": 6.52,
+      "wnMaxSynsets": 2,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.all.adjective-adverb-determiner-pronoun",
+        "english.vocabulary.skill.all.adverb-determiner-pronoun"
+      ]
+    },
+    {
+      "form": "his",
+      "maxZipf": 6.51,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.his.determiner-pronoun",
+        "english.vocabulary.skill.his.possessive-adjective-pronoun"
+      ]
+    },
+    {
+      "form": "can",
+      "maxZipf": 6.46,
+      "wnMaxSynsets": 2,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.can.modal-verb-noun",
+        "english.vocabulary.skill.can.verb"
+      ]
+    },
+    {
+      "form": "what",
+      "maxZipf": 6.38,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.what.determiner-pronoun",
+        "english.vocabulary.skill.what.interrogative"
+      ]
+    },
+    {
+      "form": "when",
+      "maxZipf": 6.37,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.when.adverb",
+        "english.vocabulary.skill.when.adverb-conjunction-interrogative"
+      ]
+    },
+    {
+      "form": "more",
+      "maxZipf": 6.36,
+      "wnMaxSynsets": 2,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.more.adjective-adverb-determiner-pronoun",
+        "english.vocabulary.skill.more.adverb-determiner-pronoun"
+      ]
+    },
+    {
+      "form": "who",
+      "maxZipf": 6.34,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.who.interrogative",
+        "english.vocabulary.skill.who.pronoun"
+      ]
+    },
+    {
+      "form": "could",
+      "maxZipf": 6.06,
+      "wnMaxSynsets": 0,
+      "skillCount": 3,
+      "skillIds": [
+        "english.vocabulary.skill.could.modal-verb",
+        "english.vocabulary.skill.could-for-possibility.verb",
+        "english.vocabulary.skill.could-as-in-past-of-can-for-ability.verb"
+      ]
+    },
+    {
+      "form": "go",
+      "maxZipf": 6.03,
+      "wnMaxSynsets": 30,
+      "skillCount": 3,
+      "skillIds": [
+        "english.vocabulary.skill.go.noun-verb",
+        "english.vocabulary.skill.go.verb",
+        "english.vocabulary.skill.go-with-together.phrasal-verb"
+      ]
+    },
+    {
+      "form": "may",
+      "maxZipf": 5.98,
+      "wnMaxSynsets": 2,
+      "skillCount": 4,
+      "skillIds": [
+        "english.vocabulary.skill.may.modal-verb",
+        "english.vocabulary.skill.may.noun",
+        "english.vocabulary.skill.may.verb",
+        "english.vocabulary.skill.may-as-in-girls-name.noun"
+      ]
+    },
+    {
+      "form": "right",
+      "maxZipf": 5.96,
+      "wnMaxSynsets": 14,
+      "skillCount": 5,
+      "skillIds": [
+        "english.vocabulary.skill.right.adjective",
+        "english.vocabulary.skill.right.adjective-adverb-noun",
+        "english.vocabulary.skill.right.discourse-marker",
+        "english.vocabulary.skill.right-as-in-correct.adjective",
+        "english.vocabulary.skill.right-as-in-direction.noun"
+      ]
+    },
+    {
+      "form": "take",
+      "maxZipf": 5.92,
+      "wnMaxSynsets": 42,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.take.verb",
+        "english.vocabulary.skill.take-as-in-time-e-g-it-takes-20-minutes.verb"
+      ]
+    },
+    {
+      "form": "left",
+      "maxZipf": 5.62,
+      "wnMaxSynsets": 4,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.left.adjective-adverb-noun",
+        "english.vocabulary.skill.left-as-in-direction.adjective-noun"
+      ]
+    },
+    {
+      "form": "among",
+      "maxZipf": 5.31,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.among.preposition",
+        "english.vocabulary.skill.among-amongst.preposition"
+      ]
+    },
+    {
+      "form": "program",
+      "maxZipf": 5.27,
+      "wnMaxSynsets": 8,
+      "skillCount": 3,
+      "skillIds": [
+        "english.vocabulary.skill.program.noun",
+        "english.vocabulary.skill.program-me.noun",
+        "english.vocabulary.skill.programme-us-program.noun"
+      ]
+    },
+    {
+      "form": "instead",
+      "maxZipf": 5.24,
+      "wnMaxSynsets": 2,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.instead.adverb",
+        "english.vocabulary.skill.instead-of.adverb"
+      ]
+    },
+    {
+      "form": "date",
+      "maxZipf": 5.22,
+      "wnMaxSynsets": 8,
+      "skillCount": 3,
+      "skillIds": [
+        "english.vocabulary.skill.date.noun",
+        "english.vocabulary.skill.date.noun-verb",
+        "english.vocabulary.skill.date-as-in-time.noun"
+      ]
+    },
+    {
+      "form": "their",
+      "maxZipf": 6.33,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.their.determiner",
+        "english.vocabulary.skill.their.possessive-adjective"
+      ]
+    },
+    {
+      "form": "her",
+      "maxZipf": 6.3,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.her.determiner-pronoun",
+        "english.vocabulary.skill.her.possessive-adjective-pronoun"
+      ]
+    },
+    {
+      "form": "which",
+      "maxZipf": 6.3,
+      "wnMaxSynsets": 0,
+      "skillCount": 3,
+      "skillIds": [
+        "english.vocabulary.skill.which.determiner-pronoun",
+        "english.vocabulary.skill.which.interrogative",
+        "english.vocabulary.skill.which.pronoun"
+      ]
+    },
+    {
+      "form": "would",
+      "maxZipf": 6.27,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.would.modal-verb",
+        "english.vocabulary.skill.would.verb"
+      ]
+    },
+    {
+      "form": "how",
+      "maxZipf": 6.24,
+      "wnMaxSynsets": 0,
+      "skillCount": 2,
+      "skillIds": [
+        "english.vocabulary.skill.how.adverb",
+        "english.vocabulary.skill.how.interrogative"
+      ]
+    }
+  ]
+}
