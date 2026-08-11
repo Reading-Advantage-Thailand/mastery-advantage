@@ -45,6 +45,11 @@
   removed the evidence path the harness greps for, so an approved Phase 1 gate
   failed while every artifact still existed. Keep the evidence pointers when
   you shorten a phase section, or the harness reports a false red.
+- (2026-08-11, lexical_graph_core_release) A lookahead consumes no text, so
+  `^## Phase 1:.*?(?=^## Phase 2:).*\[x\]` keeps scanning past Phase 2 and
+  reports markers from every later phase. The A4 guard passed only while the
+  later phases held no completed task. Slice the section first, then search
+  the slice.
 - (2026-08-11, lexical_coverage_enrichment) An audit that scans a shared
   directory is not isolated from other tracks. The coverage Phase 4 audit
   counts every file in `review/enrichment/queues/`, so the later semantic

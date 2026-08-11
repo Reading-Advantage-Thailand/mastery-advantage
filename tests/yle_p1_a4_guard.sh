@@ -79,7 +79,14 @@ fixture_path.write_text(fixture, encoding="utf-8")
 
 if not re.search(r"^  - \[ \] Synthetic indented legacy subtask marker for A4$", fixture, re.MULTILINE):
     raise SystemExit("indented legacy marker was not added to the fixture")
-if re.search(r"^## Phase 1:.*?(?=^## Phase 2:).*^[ \t]*-[ \t]*\[x\](?=[ \t])", fixture, re.MULTILINE | re.DOTALL):
+fixture_phase1 = re.search(
+    r"^## Phase 1:.*?(?=^## Phase 2:)",
+    fixture,
+    re.MULTILINE | re.DOTALL,
+)
+if fixture_phase1 is None:
+    raise SystemExit("Phase 1/Phase 2 boundaries are missing from the fixture")
+if re.search(r"^[ \t]*-[ \t]*\[x\](?=[ \t])", fixture_phase1.group(0), re.MULTILINE):
     raise SystemExit("fixture still contains a Phase 1 completed task marker")
 PY
 )"
