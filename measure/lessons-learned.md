@@ -45,6 +45,15 @@
   removed the evidence path the harness greps for, so an approved Phase 1 gate
   failed while every artifact still existed. Keep the evidence pointers when
   you shorten a phase section, or the harness reports a false red.
+- (2026-08-11, lexical_recommendation_contract) A judgments file that the
+  harness only reads back is not evidence. `recommendation_phase45.sh` checked
+  that 9 rows said "pass" without recomputing one verdict, so the record was
+  checked against itself. Re-derive each verdict from the fixtures, then compare
+  the record to the computed result.
+- (2026-08-11, lexical_recommendation_contract) A review checklist bounds what a
+  review can find. The 9 Phase 4 cases all passed while 44% of unmatched spans
+  were inflections of listed lemmas, because no checklist row tested inflection
+  handling. Ask what the checklist omits before trusting a clean pass.
 - (2026-08-11, lexical_graph_core_release) A lookahead consumes no text, so
   `^## Phase 1:.*?(?=^## Phase 2:).*\[x\]` keeps scanning past Phase 2 and
   reports markers from every later phase. The A4 guard passed only while the

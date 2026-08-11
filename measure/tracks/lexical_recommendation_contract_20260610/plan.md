@@ -31,6 +31,15 @@
 **Evidence:** `recommendation-phase4-procedure.md`; judgments **9/9 pass**;
 `phase4-recommendation-approval.md` (go); harness `tests/recommendation_phase45.sh`.
 
+**Independent technical review (2026-08-11):**
+`recommendation-phase4-independent-review.md`. `scripts/verify-recommendation-phase4.py`
+re-derives every section 2 verdict from the fixtures — **67 checks, 67 pass** —
+and three mutated fixtures confirm the checks can fail. All 9 recorded
+judgments hold. Two gaps sit outside the checklist: matching applies no
+lemmatization, so 8 of 18 unmatched spans are inflections of listed lemmas
+(tech debt, High); and `exceededCap` is undocumented (tech debt, Low).
+Teaching fitness remains an owner decision.
+
 ## Phase 5: Handoff Decision
 
 - [x] Task: Produce recommendation contract and bounded integration fixtures — commit: 8920998

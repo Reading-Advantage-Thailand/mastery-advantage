@@ -37,6 +37,18 @@ Fixture pack under `fixtures/recommendation/` is the regression oracle.
 - English CEFR inventory only; not general NLP.
 - No production telemetry calibration.
 - Proper-name detection is opt-in via `ignoreSurfaceForms`, not automatic.
+- **Matching applies no lemmatization.** A token matches only a literal
+  `metadata.matchForms` entry (contract §2.3). An inflected form whose lemma is
+  in the graph still counts as `unmatched`, which is hard unmatched vocabulary
+  in the primary metrics. `be` is a skill; `is`, `are`, `am`, `was`, and `were`
+  are not in any `matchForms`, so they raise `unmatchedTokenRate` and lower
+  `eligibleKnownCoverage`. The same holds for `has` against `have`. In the
+  9-case fixture pack, 8 of 18 unmatched spans are inflections of a listed
+  lemma. Expect this effect to concentrate in beginner text. See
+  `review/enrichment/recommendation-phase4-independent-review.md`.
+- `rankedNextVocabulary.exceededCap` means the candidate pool was truncated to
+  the cap. It does **not** mean the emitted list is over the cap; the list is
+  always within `cap`.
 - Frequency utility requires the approved frequency overlay.
 - Article-fit planner weight is optional and needs article context
   (`RANKING_LAYER_SPEC.md` §6).

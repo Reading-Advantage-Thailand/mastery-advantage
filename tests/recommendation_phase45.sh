@@ -43,6 +43,17 @@ else
   fail "phase4 judgments incomplete"
 fi
 
+# The block above only reads what the judgments file asserts about itself. The
+# re-derivation below computes every section 2 verdict from the fixtures and the
+# reference evaluator, so a wrong judgment row cannot pass unnoticed.
+echo "=== Phase 4 checklist re-derived from fixtures ==="
+if python3 "$VOCAB/scripts/verify-recommendation-phase4.py" >/tmp/rec-verify.out 2>&1; then
+  pass "phase4 checklist re-derived independently ($(tail -1 /tmp/rec-verify.out))"
+else
+  fail "phase4 checklist re-derivation failed"
+  cat /tmp/rec-verify.out >&2 || true
+fi
+
 echo "=== Phase 4–5 approvals ==="
 for f in phase4-recommendation-approval.md phase5-recommendation-approval.md RELEASE-RECOMMENDATION-2026-08-11.md; do
   p="$VOCAB/review/enrichment/$f"
