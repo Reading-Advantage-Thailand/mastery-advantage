@@ -11,13 +11,13 @@
 
 ## Phase 1: Source Acquisition And Contracts
 
-- [ ] Task: Export and pin the GSE Grammar inventory
-  - [ ] Export the full grammar objective set from the Teacher Toolkit URL in
+- [x] Task: Export and pin the GSE Grammar inventory
+  - [x] Export the full grammar objective set from the Teacher Toolkit URL in
         `spec.md` (audience `GLGR`, GSE 10–90, all 14 grammatical categories)
-  - [ ] Record URL with query parameters, product version, export date, and
+  - [x] Record URL with query parameters, product version, export date, and
         SHA-256 in `GSE_GRAMMAR_SOURCES.md`
-  - [ ] Record licence, redistribution terms, and cache policy
-  - [ ] Git-ignore the raw export if redistribution is not permitted
+  - [x] Record licence, redistribution terms, and cache policy
+  - [x] Git-ignore the raw export if redistribution is not permitted
 - [ ] Task: Define the grammar-layer contract
   - [ ] Define layer ID `enrichment.gse.grammar`, node kind, and metadata shape
   - [ ] Define `gseScore`, CEFR band, category, and objective-ID provenance
