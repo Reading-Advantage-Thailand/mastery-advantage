@@ -7,8 +7,8 @@
 > **Marker vocabulary (orchestrator):** `[x]` complete · `[~]` in-progress or
 > next executable · `[b]` human-gated. Legacy `[ ]` is not used.
 >
-> **First remaining automatable work:** Phase 2 Task "Build YLE membership audit
-> fixtures and check harness" (marked `[~]`). Phase 1's explicit dual-owner
+> **First remaining automatable work:** Phase 2 Red remediation for the
+> independent source-completeness and data-handling contract (marked `[~]`). Phase 1's explicit dual-owner
 > approval is recorded by `8447a3b174210c4845f6e0fb2fea8caa0fc93f28` in
 > `english/cefr-vocabulary/review/yle-2025/phase1-approval.md`.
 >
@@ -99,20 +99,24 @@ completed-task count when no substantive completed task exists. The targeted
   - [x] Review YLE thematic membership sample (≥100 or full set rules)
   - [x] Account for grammatical lists: represent or accept explicit omission
   - [x] Quarantine groups failing precision threshold
+- [~] Task: Remediate independent YLE source-completeness and data-handling Red contract
+  - [~] Derive 495 Starters / 399 Movers / 513 Flyers rows from the hash-pinned local PDF and cross-check the combined alphabetic list
+  - [~] Detect source-to-graph omissions, false report denominators, unreachable omission decisions, and draft-count circularity
+  - [~] Keep complete source row/headword/POS/page data transient and require bounded, staged audit generation
 - [b] Task: Curriculum sign-off on YLE fidelity — human-gate:curriculum-language
   - [b] Accept retained YLE membership and group decisions — human-gate:curriculum-language
 
-**Green evidence (2026-08-11):** `26e6d1001c91b0a674d4aac9516ecdd65c55b9db`
+**Historical artifact evidence (2026-08-11, superseded by independent Red):** `26e6d1001c91b0a674d4aac9516ecdd65c55b9db`
 adds a reproducible local-PDF source parser, all 1,390 direct source-row
 fixtures (491 Starters, 392 Movers, 507 Flyers), 100 source-derived thematic
 reviews across all 20 groups, 25 high-severity collision decisions, the
 explicit grammatical-list omission decision, empty durable exception queue,
 and labeled JSON/Markdown audit reports. The parser stores page/section
 locations and lexical identity fields only; it does not commit PDF excerpts.
-It reconciles source rows to graph identity and direct membership after source
-parsing, reports 1.000 alphabetical precision/recall and 1.000 thematic
-sample precision, and preserves zero `prerequisite_for` edges plus the
-consumption-only cumulative policy. `bash tests/yle_p2_membership.sh` exited
+Its parser-derived source population and resulting alphabetical precision/recall
+claim are refuted by the independent Red oracle below; the
+zero `prerequisite_for` and consumption-only cumulative-policy checks remain
+preserved. `bash tests/yle_p2_membership.sh` exited
 `0` with `PASS=7, FAIL=0`; `git diff --check`, both existing Node syntax
 checks, Python compilation for the audit parser, and
 `node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` exited
@@ -144,6 +148,18 @@ same run prints labeled diagnostics without classifying them as failures; a
 temporary `PLAN_OVERRIDE` with the approval task changed to `[x]` still exits
 `1` and reports that attributable approval evidence is absent. No Green
 artifacts, graph data, or Phase 2 task markers were changed.
+
+**Phase 2 Red remediation evidence (2026-08-11):** `bash -n tests/yle_p2_membership.sh` exits `0`. `bash tests/yle_p2_membership.sh`
+exits `1` with `PASS=4, FAIL=5`; the exact captured result is
+`/tmp/yle-p2-source-oracle-red.txt`. The transient hash-pinned local-PDF
+oracle independently derives labeled direct counts of 495 Starters, 399
+Movers, 513 Flyers, and 1,407 total, then cross-checks the separate combined
+alphabetic list. It names exactly 17 current source-to-graph omissions and
+shows the false 1,390 denominator/recall claims, missing omission decisions,
+committed expressive fixtures, draft-count circularity, unbounded PDF
+subprocess, and non-atomic report publication. The source oracle itself passes,
+so the Red is an expected contract failure rather than a tool or network
+failure. No parser, generator, graph, report, or Green artifact was changed.
 
 ## Phase 3: Relationship And Progression Review
 
