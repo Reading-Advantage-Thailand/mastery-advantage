@@ -1,6 +1,6 @@
 # Lexical Coverage Enrichment — Phase 1 Source Registry
 
-**Status:** Draft for enrichment track Phase 1.  
+**Status:** Accepted (Phase 1 go, both-owners, 2026-08-11).  
 **Generated:** 2026-08-11  
 **Core pin:** YLE 2025 freeze (`RELEASE-YLE-2025.md`, dual go 2026-08-11).
 
@@ -67,8 +67,8 @@
 | Field | Value |
 |---|---|
 | Source ID | `wordfreq` |
-| Distribution | PyPI `wordfreq`; pin package version at implementation |
-| Scope | Zipf estimates for single words; MWE policy TBD (document missing for multiword if unsupported) |
+| Distribution | PyPI `wordfreq`; package version pinned at **3.1.1** |
+| Scope | Zipf estimates for single-token forms; multi-token entries excluded by wordfreq token count and queued as missing |
 | Permitted use | Library license (see package); store versioned metadata only |
 | Cache policy | Pin `wordfreq` version + computation date in metadata |
 | Layer | `enrichment.frequency.wordfreq` |
@@ -97,3 +97,5 @@ Owners accept:
 - included candidate set and exclusions above;
 - layer IDs and isolation from the frozen core;
 - no automatic `prerequisite_for` from any listed source.
+
+**Decision (2026-08-11):** go (both-owners).

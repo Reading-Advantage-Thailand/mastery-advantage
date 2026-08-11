@@ -27,10 +27,13 @@ This registry tracks Mastery Advantage specification and domain-data work.
 - [ ] **Track: English Lexical Coverage Enrichment** *(unblocked — in progress)*
   *Add independently gated source-backed groups, B2+ coverage, and frequency
   metadata.*
-  *Status: in progress — ViU unit-groups + YLE grammatical-groups overlays
-  live (co-taught / grammatical co-listing; core freeze untouched). Next:
-  frequency layer; A2/B1 appendix extractors; Phase 1 human gate.*
+  *Status: in progress — Phase 1 contracts/registry accepted (2026-08-11).
+  ViU unit-groups + YLE grammatical-groups overlays live; frequency layer
+  `enrichment.frequency.wordfreq` at wordfreq 3.1.1 verified (3374 of 3769
+  scored, harness 14/14, core freeze untouched). Next: A2/B1 appendix
+  extractors and later audit gates.*
   *Link: [./tracks/lexical_coverage_enrichment_20260610/](./tracks/lexical_coverage_enrichment_20260610/)*
+  *Coordination: this track produces the frequency data layer as versioned node metadata (`enrichment.frequency.wordfreq`), never as edges. [frequency_semantic_ranking_layer_20260611](./tracks/frequency_semantic_ranking_layer_20260611/) consumes that metadata as a utility provider.*
 
 ---
 
@@ -59,9 +62,10 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: Frequency, Semantic and Article-Ranking Layer Design**
-  *Design reproducible frequency, semantic similarity, and article-ranking layers as additive graph extensions.*
+- [ ] **Track: Frequency, Semantic and Article-Ranking Utility Provider Design**
+  *Express the frequency, semantic, and article-fit signals as one `DomainUtilityProvider` per §10.3. Other tracks own the data layers.*
   *Link: [./tracks/frequency_semantic_ranking_layer_20260611/](./tracks/frequency_semantic_ranking_layer_20260611/)*
+  *Coordination: [lexical_coverage_enrichment_20260610](./tracks/lexical_coverage_enrichment_20260610/) produces the frequency node metadata. This track consumes it as the `english.cefr.frequency-utility` provider (decision D2, §10.3). It does not select the frequency source and does not create a frequency data layer.*
 
 ---
 

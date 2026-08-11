@@ -1,7 +1,7 @@
 {
   "layerId": "enrichment.frequency.wordfreq",
   "source": "wordfreq",
-  "sourceVersion": "PIN_AT_IMPLEMENTATION",
+  "sourceVersion": "3.1.1",
   "cases": [
     {
       "skillId": "english.vocabulary.skill.cat.noun",

@@ -1,0 +1,208 @@
+{
+  "enrichmentLayer": "enrichment.frequency.wordfreq",
+  "generatedAt": "2026-08-11",
+  "source": "wordfreq",
+  "sourceVersion": "3.1.1",
+  "frequencySemantics": "Corpus frequency is scalar node metadata giving a weak default ordering. It is not an edge, not a prerequisite, and not normalized to [0,1] here.",
+  "policies": {
+    "multiToken": {
+      "rule": "len(wordfreq.tokenize(normalizedForm, 'en')) > 1 -> missing: true, missingReason: \"multi-token-not-comparable\", excluded from rankWithinInventory.",
+      "detectionKey": "wordfreq tokenization of metadata.normalizedForm",
+      "detectionNote": "Neither metadata.lexicalUnit nor whitespace is used. The lexicalUnit label over-counts by 115 single-token forms whose lexicalForm carries a parenthetical gloss. Whitespace misses hyphenated compounds and slash alternations (no-one, make-up, cafe/café) that carry the identical combined-estimate defect, and over-fires on the 2 'at / @' forms that tokenize to a single token.",
+      "evidence": {
+        "phrase": "a good start",
+        "phraseZipf": 5.45,
+        "comparisonWord": "cat",
+        "comparisonWordZipf": 4.78,
+        "explanation": "wordfreq scores \"a good start\" at zipf 5.45, above \"cat\" at 4.78. That is not a phrase frequency: wordfreq combines the component token frequencies under an independence assumption, so a phrase of common words outranks a common noun. Multi-token scores are therefore not comparable to single-word zipf and must not enter the ranking.",
+        "hyphenAndSlashCases": [
+          {
+            "form": "no-one",
+            "tokens": [
+              "no",
+              "one"
+            ],
+            "zipf": 6.1
+          },
+          {
+            "form": "make-up",
+            "tokens": [
+              "make",
+              "up"
+            ],
+            "zipf": 5.91
+          },
+          {
+            "form": "part-time",
+            "tokens": [
+              "part",
+              "time"
+            ],
+            "zipf": 5.66
+          },
+          {
+            "form": "full-time",
+            "tokens": [
+              "full",
+              "time"
+            ],
+            "zipf": 5.47
+          },
+          {
+            "form": "old-fashioned",
+            "tokens": [
+              "old",
+              "fashioned"
+            ],
+            "zipf": 3.93
+          },
+          {
+            "form": "cafe/café",
+            "tokens": [
+              "cafe",
+              "café"
+            ],
+            "zipf": 3.59
+          }
+        ]
+      },
+      "diagnosticsOnly": "componentMinZipf and combinedTokenEstimate are recorded as review aids. Neither feeds rankWithinInventory.",
+      "excludedSkills": 393,
+      "excludedByKind": {
+        "whitespace": 363,
+        "hyphen": 28,
+        "slash": 2,
+        "other": 0
+      },
+      "kindPrecedence": [
+        "whitespace",
+        "hyphen",
+        "slash",
+        "other"
+      ]
+    },
+    "missing": {
+      "rule": "zipf == 0.0 -> missing: true, missingReason: \"not-in-corpus\", zipf and rankWithinInventory omitted. 0.0 is never stored as a score.",
+      "excludedSkills": 2
+    },
+    "reliability": {
+      "rule": "zipf < RELIABILITY_FLOOR_ZIPF -> value retained, reliable: false, missingReason: \"below-reliability-floor\", excluded from rankWithinInventory.",
+      "reliabilityFloorZipf": 1.0,
+      "justification": "Zipf 1.0 == 10 occurrences per billion tokens (1e-8 relative frequency), the magnitude at which wordfreq truncates its merged wordlists. Below it an estimate rests on a handful of observations from usually one sub-corpus and is dominated by OCR noise, tokenization artifacts, and one-off spikes, so it cannot support an ordering claim.",
+      "flaggedSkills": 0,
+      "lowestScoredZipf": 1.64
+    },
+    "rankTie": {
+      "rule": "Equal zipf values share one rank; the next distinct value takes the next integer (dense equal ranking, ranks 1..maxRank).",
+      "rankTiePolicy": "dense-equal-rank",
+      "zipfPrecision": 2,
+      "distinctZipfValues": 397,
+      "tiedZipfValues": 336,
+      "tiedNodes": 3313,
+      "largestTieSize": 35,
+      "largestTies": [
+        {
+          "zipf": 4.72,
+          "rank": 188,
+          "tiedNodeCount": 35
+        },
+        {
+          "zipf": 4.85,
+          "rank": 175,
+          "tiedNodeCount": 27
+        },
+        {
+          "zipf": 4.75,
+          "rank": 185,
+          "tiedNodeCount": 27
+        },
+        {
+          "zipf": 4.42,
+          "rank": 218,
+          "tiedNodeCount": 27
+        },
+        {
+          "zipf": 5.19,
+          "rank": 141,
+          "tiedNodeCount": 26
+        }
+      ]
+    }
+  },
+  "coreDataFindings": {
+    "note": "Core graph is frozen. These are reported for the coverage track to decide on; nothing is repaired here.",
+    "mweLabelAnomalies": {
+      "count": 115,
+      "description": "lexicalUnit == \"multiword-expression\" with a single-token normalizedForm, caused by a parenthetical gloss in lexicalForm.",
+      "examples": [
+        "ad (advertisement)",
+        "apartment (UK flat)",
+        "autumn (US fall)",
+        "catch (e.g. a ball)"
+      ],
+      "handling": "Scored normally by this layer."
+    },
+    "unexpectedCharacterForms": {
+      "count": 31,
+      "description": "normalizedForm contains characters outside [a-z0-9 '-] — punctuation leaked from the source list, e.g. english.vocabulary.skill.candy-uk-sweet-s.noun -> \"candy)\".",
+      "handling": "Form left untouched; wordfreq tokenization strips it, so \"candy)\" scores as candy (4.29)."
+    },
+    "whitespaceSingleTokenForms": {
+      "count": 2,
+      "description": "normalizedForm \"at / @\" contains whitespace but tokenizes to ['at'] and scores 6.70. Malformed source form; the score is correct for the lexical item at.",
+      "handling": "Scored; form reported for upstream cleanup."
+    },
+    "duplicateNormalizedForms": {
+      "distinctForms": 377,
+      "skills": 828,
+      "description": "Distinct senses of one word share a normalizedForm and therefore receive identical zipf.",
+      "handling": "Dense equal-rank tie policy assigns them one shared rank; no special handling."
+    }
+  },
+  "stats": {
+    "source": "wordfreq",
+    "sourceVersion": "3.1.1",
+    "language": "en",
+    "coreNodeCount": 3848,
+    "skillsProcessed": 3769,
+    "overlayNodeCount": 3769,
+    "overlayEdgeCount": 0,
+    "scored": 3374,
+    "missingMultiToken": 393,
+    "missingMultiTokenByKind": {
+      "whitespace": 363,
+      "hyphen": 28,
+      "slash": 2,
+      "other": 0
+    },
+    "missingNotInCorpus": 2,
+    "unreliableBelowFloor": 0,
+    "ranked": 3374,
+    "maxRank": 397,
+    "distinctZipfValues": 397,
+    "tiedZipfValues": 336,
+    "tiedNodes": 3313,
+    "largestTieSize": 35,
+    "zipfMin": 1.64,
+    "zipfMax": 7.73,
+    "mweLabelAnomalies": 115,
+    "unexpectedCharacterForms": 31,
+    "whitespaceSingleTokenForms": 2,
+    "duplicateNormalizedForms": 377,
+    "duplicateFormSkills": 828,
+    "multiTokenDetection": "wordfreq.tokenize(normalizedForm, 'en') length > 1",
+    "rankTiePolicy": "dense-equal-rank",
+    "reliabilityFloorZipf": 1.0,
+    "zipfPrecision": 2
+  },
+  "outputs": {
+    "overlay": "overlays/frequency.overlay.json",
+    "missingQueue": "review/enrichment/queues/frequency-missing.jsonl",
+    "unreliableQueue": "review/enrichment/queues/frequency-unreliable.jsonl",
+    "labelAnomaliesQueue": "review/enrichment/queues/frequency-label-anomalies.jsonl"
+  },
+  "edge_count_in_overlay": 0,
+  "prerequisite_for_count_in_overlay": 0,
+  "coreGraphUntouched": true,
+  "downstreamOwnership": "Normalization to utility(B) in [0,1] belongs to frequency_semantic_ranking_layer_20260611 via provider english.cefr.frequency-utility (SPECIFICATION.md 10.3, decision D2)."
+}

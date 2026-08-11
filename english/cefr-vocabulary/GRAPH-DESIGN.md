@@ -71,20 +71,33 @@ confidence, and review status.
 
 ### Frequency
 
-Frequency is a scalar feature on a lexical node, not an edge. A practical
-source is `wordfreq`, which combines multiple corpora and produces a Zipf
-frequency estimate. Preserve the source version and calculation date:
+Frequency is a scalar feature on a lexical node, not an edge. The source is
+`wordfreq`, pinned at version 3.1.1. It combines multiple corpora and produces
+a Zipf frequency estimate. Preserve the source version and calculation date:
 
 ```json
 {
   "frequency": {
     "source": "wordfreq",
-    "sourceVersion": "...",
+    "sourceVersion": "3.1.1",
+    "calculatedAt": "2026-08-11",
     "zipf": 5.42,
-    "rankWithinInventory": 137
+    "rankWithinInventory": 137,
+    "reliable": true,
+    "missing": false
   }
 }
 ```
+
+A node without a comparable estimate sets `missing: true`, adds a
+`missingReason`, and omits `zipf` and `rankWithinInventory`. A node below the
+reliability floor keeps its `zipf` value, sets `reliable: false`, and leaves
+the rank. Four policies control these fields: the multi-token form policy, the
+missing policy, the reliability policy, and the rank tie policy.
+`FREQUENCY-POLICY.md` gives each policy with its justification.
+
+This layer stores the raw estimate only. It does not scale the value to the
+range 0 to 1.
 
 Frequency gives a useful but deliberately weak default ordering. It should not
 override learner goals, article relevance, review urgency, or source-backed

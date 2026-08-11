@@ -1,6 +1,6 @@
 # Lexical Coverage Enrichment — Phase 1 Contracts
 
-**Status:** Draft for enrichment track Phase 1 (post YLE core freeze).  
+**Status:** Accepted (Phase 1 go, both-owners, 2026-08-11).  
 **Depends on:** YLE 2025 baseline freeze
 (`review/yle-2025/RELEASE-YLE-2025.md`, dual go 2026-08-11).  
 **Generated:** 2026-08-11
@@ -134,5 +134,6 @@ Phase 1 is complete when:
 2. Source registry additions in `phase1-source-registry.md` are accepted.
 3. Thresholds above are accepted for later audit phases.
 
-Implementation and parsers begin only after Phase 1 acceptance (or explicit
-exception for throwaway prototypes that never touch release overlays).
+**Decision (2026-08-11):** go (both-owners). Contracts, source registry, and
+thresholds accepted. Implementation already proceeded with live overlays under
+this acceptance.

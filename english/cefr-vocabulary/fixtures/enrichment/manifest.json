@@ -13,5 +13,9 @@
     "yle-grammatical-structure.json"
   ],
   "policy": "Structure and bounded samples only; full index transient at parse time.",
-  "viuLayer": "enrichment.viu.unit-groups"
+  "viuLayer": "enrichment.viu.unit-groups",
+  "frequencyLayer": "enrichment.frequency.wordfreq",
+  "frequencySource": "wordfreq",
+  "frequencySourceVersion": "3.1.1",
+  "frequencyIsNodeMetadataNotEdges": true
 }
