@@ -8,13 +8,15 @@
 > next executable · `[b]` human-gated. Legacy `[ ]` is not used.
 >
 > **First remaining work:** human gates only. Phases 1–6 automatable work is
-> complete (freeze package draft + bounded sanity). Open `[b]` gates: Phase 3
-> relationships, Phase 4 consumption dual approval, Phase 5 reading
-> plausibility, Phase 6 dual freeze decision. Phase 1 dual-owner approval is
-> recorded by `8447a3b174210c4845f6e0fb2fea8caa0fc93f28` in
+> complete (freeze package draft + bounded sanity). Open `[b]` gates: Phase 4
+> consumption dual approval, Phase 5 reading plausibility, Phase 6 dual freeze
+> decision. Phase 1 dual-owner approval is recorded by
+> `8447a3b174210c4845f6e0fb2fea8caa0fc93f28` in
 > `english/cefr-vocabulary/review/yle-2025/phase1-approval.md`. Phase 2
 > curriculum fidelity is recorded in
-> `english/cefr-vocabulary/review/yle-2025/phase2-approval.md`.
+> `english/cefr-vocabulary/review/yle-2025/phase2-approval.md`. Phase 3
+> relationship curriculum go is recorded in
+> `english/cefr-vocabulary/review/yle-2025/phase3-approval.md`.
 >
 > **Marker-contract note:** Skill vocabulary wants human gates as
 > `[b] … deferred:<owner>`. The repo checker still (1) matches only
@@ -226,8 +228,16 @@ historical only.
   - [x] Write that next-step order uses learner state + stage goals + SRS +
         groups + optional utility — never invented `prerequisite_for`
   - [x] Guard test: zero `prerequisite_for` on freeze baseline
-- [b] Task: Curriculum sign-off on relationships — human-gate:curriculum-language
-  - [b] Accept fact-vs-signal labeling and support dispositions — human-gate:curriculum-language
+- [x] Task: Curriculum sign-off on relationships — human-gate:curriculum-language
+  - [x] Accept fact-vs-signal labeling and support dispositions — human-gate:curriculum-language
+
+**Green human-approval evidence (2026-08-11):** Explicit curriculum/language
+owner confirmation (“Phase 3 approved.”) is recorded in
+`english/cefr-vocabulary/review/yle-2025/phase3-approval.md` as **Decision:
+go**. Accepted scope includes non-mandatory support class dispositions,
+stratified sample decisions, progression policy hard-gate bans, and
+`prerequisite_for count: 0`. `bash tests/yle_p3_relationships.sh` must exit
+`0` with attributable approval evidence present.
 
 **Mid-Red evidence (2026-08-11):** Added `tests/yle_p3_relationships.sh`.
 `bash tests/yle_p3_relationships.sh` exits `1` as expected (`PASS=2`,
@@ -262,8 +272,9 @@ read-only audit package without rewriting the graph:
 Supporting gates: `python3 -m py_compile` on the generator exits `0`;
 `node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` remains
 valid (no graph rewrite); `git diff --check` exits `0`. Curriculum/language
-relationship approval remains the truthful `[b]` human gate; no
-`phase3-approval.md` was fabricated.
+relationship approval is complete via `phase3-approval.md` (see Green
+human-approval evidence above). Earlier prose that left this task as `[b]` is
+historical only.
 
 ## Phase 4: Consumption And Next-Step Contract
 

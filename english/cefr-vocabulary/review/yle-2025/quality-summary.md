@@ -28,7 +28,7 @@ sign-offs remain separate human gates.
 |---|---|---|
 | 1 Scope / rules | Approved dual-owner Phase 1 rules | Complete |
 | 2 Membership fidelity | Source oracle 1407 rows; graph 1405 skills; harness green | Curriculum fidelity go (`phase2-approval.md`) |
-| 3 Relationships | Support inventory + progression policy; prereq 0 | Relationships open |
+| 3 Relationships | Support inventory + progression policy; prereq 0 | Relationships go (`phase3-approval.md`) |
 | 4 Consumption | `YLE-CONSUMPTION.md` + offline profiles green | Dual approval open |
 | 5 Reading | S/M/F fixtures + coverage contract green | Plausibility open |
 | 6 Freeze package | Draft package + sanity harness | Dual freeze decision open |

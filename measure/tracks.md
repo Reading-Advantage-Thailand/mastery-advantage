@@ -19,16 +19,15 @@ This registry tracks Mastery Advantage specification and domain-data work.
   pipeline. A2 Key/B1 use the same method later.*
   *Status (revised 2026-08-11): in progress — **all automatable phases
   complete**; freeze package draft unsigned. Phase 1 dual-owner rules approval
-  recorded. Phase 2 fidelity: 1,407 direct rows / 1,405 YLE skills
-  (495/399/513); **curriculum fidelity go** in `phase2-approval.md`. Phase 3:
-  1311 supports (598/713), prereq 0. Phase 4: consumption contract + offline
-  profiles. Phase 5: S/M/F reading fixtures + coverage contract. Phase 6:
-  `RELEASE-YLE-2025.md` draft (unsigned) + quality summary + A2/B1 method
-  appendix + bounded sanity green. Open human gates (4): Phase 3 relationships,
-  Phase 4 dual consumption approval, Phase 5 reading plausibility, Phase 6 dual
-  freeze go/no-go. Metadata `in_progress`, 26 top-level tasks (22 `[x]`, 0
-  `[~]`, 4 `[b]`). Still the release gate for the three enrichment/recommendation
-  tracks below. Not released until dual go/conditional-go.*
+  recorded. Phase 2 fidelity go (`phase2-approval.md`). Phase 3 relationships
+  go (`phase3-approval.md`; 1311 supports, prereq 0). Phase 4: consumption
+  contract + offline profiles. Phase 5: S/M/F reading fixtures + coverage
+  contract. Phase 6: `RELEASE-YLE-2025.md` draft (unsigned) + quality summary +
+  A2/B1 method appendix + bounded sanity green. Open human gates (3): Phase 4
+  dual consumption approval, Phase 5 reading plausibility, Phase 6 dual freeze
+  go/no-go. Metadata `in_progress`, 26 top-level tasks (23 `[x]`, 0 `[~]`, 3
+  `[b]`). Still the release gate for the three enrichment/recommendation tracks
+  below. Not released until dual go/conditional-go.*
   *Link: [./tracks/lexical_graph_core_release_20260610/](./tracks/lexical_graph_core_release_20260610/)*
 
 ---

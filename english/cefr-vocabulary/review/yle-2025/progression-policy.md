@@ -1,7 +1,7 @@
 # YLE 2025 Progression And Next-Step Policy
 
-**Status:** Engineering draft for the YLE baseline freeze. Curriculum/language
-acceptance of relationship dispositions remains a separate human gate.
+**Status:** Curriculum/language relationship dispositions accepted
+(`phase3-approval.md`, Decision: go, 2026-08-11).
 **Generated:** 2026-08-11
 
 ## Purpose
@@ -62,6 +62,6 @@ review status). Those belong in learner state.
 
 ## Honesty Note
 
-This document is not curriculum approval of individual edges. Class and sample
-dispositions under `review/yle-2025/` are engineering audit records; the plan's
-curriculum relationship sign-off remains `[b]`.
+Class and sample dispositions under `review/yle-2025/` were engineering audit
+records; curriculum/language acceptance of the class dispositions and
+progression policy is recorded in `phase3-approval.md`.

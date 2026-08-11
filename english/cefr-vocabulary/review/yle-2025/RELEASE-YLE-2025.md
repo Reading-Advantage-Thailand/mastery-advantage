@@ -69,7 +69,7 @@ artifacts. They are not curriculum approval by themselves.
 ## Open Human Gates (honest status)
 
 - Phase 2 curriculum fidelity sign-off — **go** (`phase2-approval.md`, 2026-08-11)
-- Phase 3 relationship curriculum sign-off — open
+- Phase 3 relationship curriculum sign-off — **go** (`phase3-approval.md`, 2026-08-11)
 - Phase 4 dual consumption approval — open
 - Phase 5 reading-fixture plausibility — open
 - Phase 6 dual freeze decision — open (this document)

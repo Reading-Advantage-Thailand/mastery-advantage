@@ -3,9 +3,9 @@
   "type": "feature",
   "status": "in_progress",
   "created_at": "2026-06-10T04:31:47Z",
-  "updated_at": "2026-08-11T18:00:00Z",
+  "updated_at": "2026-08-11T19:00:00Z",
   "description": "Verify, review, and freeze the Cambridge YLE 2025 baseline of the existing English lexical graph; define static-graph + learner-state next-step consumption; validate reading-program fixtures; human go/no-go. Not a standing regeneration pipeline. A2 Key/B1 method-later only.",
   "estimated_tasks": 26,
   "actual_tasks": null,
-  "deviation_notes": "2026-08-11: Phases 1–6 automatable work complete. Phase 2 curriculum fidelity recorded as go in phase2-approval.md. Freeze package draft remains unsigned. Remaining work is four [b] human gates (Phase 3 relationships, Phase 4 consumption dual approval, Phase 5 reading plausibility, Phase 6 dual freeze decision). Track status stays in_progress until dual go/conditional-go. estimated_tasks = 26 top-level Task lines (22 [x], 4 [b])."
+  "deviation_notes": "2026-08-11: Phases 1–6 automatable work complete. Phase 2 and Phase 3 curriculum goes recorded (phase2-approval.md, phase3-approval.md). Freeze package draft remains unsigned. Remaining work is three [b] human gates (Phase 4 consumption dual approval, Phase 5 reading plausibility, Phase 6 dual freeze decision). Track status stays in_progress until dual go/conditional-go. estimated_tasks = 26 top-level Task lines (23 [x], 3 [b])."
 }

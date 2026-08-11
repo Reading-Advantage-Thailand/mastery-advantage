@@ -13,7 +13,7 @@ Both derivation classes are accepted as **optional readiness or ranking
 signals only**. No support edge is a hard prerequisite. The freeze baseline
 keeps `prerequisite_for count: 0`.
 
-Curriculum/language acceptance of relationship dispositions remains the plan's
-separate human gate (`phase3-approval.md` is not fabricated here).
+Curriculum/language acceptance of relationship dispositions is recorded as
+**go** in `review/yle-2025/phase3-approval.md` (2026-08-11).
 
 Progression policy: see `review/yle-2025/progression-policy.md`.
