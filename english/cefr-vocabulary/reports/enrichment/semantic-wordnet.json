@@ -1,0 +1,39 @@
+{
+  "enrichmentLayer": "enrichment.semantic.wordnet",
+  "generatedAt": "2026-08-11",
+  "sourceVersion": "3.1",
+  "prerequisite_for_count_in_overlay": 0,
+  "coreGraphUntouched": true,
+  "noNewSkillNodes": true,
+  "ambiguousQuarantined": true,
+  "stats": {
+    "skillsConsidered": 3214,
+    "uniqueSenseMapped": 636,
+    "ambiguous": 2478,
+    "unmatched": 100,
+    "edgeCount": 1191,
+    "edgesByRelation": {
+      "synonym": 293,
+      "hypernym": 327,
+      "hyponym": 411,
+      "meronym": 53,
+      "antonym": 71,
+      "holonym": 36
+    },
+    "maxPerRelation": 15,
+    "layers": [
+      "enrichment.semantic.wordnet.synonym",
+      "enrichment.semantic.wordnet.antonym",
+      "enrichment.semantic.wordnet.hypernym",
+      "enrichment.semantic.wordnet.hyponym",
+      "enrichment.semantic.wordnet.meronym",
+      "enrichment.semantic.wordnet.holonym"
+    ]
+  },
+  "queues": {
+    "ambiguous": "review/enrichment/queues/semantic-ambiguous.jsonl",
+    "unmatched": "review/enrichment/queues/semantic-unmatched.jsonl"
+  },
+  "status": "draft-candidates",
+  "note": "Per-relation human precision gates still required before approve."
+}

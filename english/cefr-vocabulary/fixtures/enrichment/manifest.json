@@ -6,6 +6,8 @@
     "frequency-fixture-schema.json",
     "isolation-contract.json",
     "manifest.json",
+    "semantic-relation-fixtures.json",
+    "semantic-wordnet-structure.json",
     "viu-advanced-structure.json",
     "viu-elementary-structure.json",
     "viu-pre-intermediate-structure.json",
@@ -20,5 +22,6 @@
   "frequencyIsNodeMetadataNotEdges": true,
   "a2KeyAppendixLayer": "enrichment.cambridge.a2-key-appendix",
   "b1PreliminaryAppendixLayer": "enrichment.cambridge.b1-preliminary-appendix",
-  "cambridgeAppendixIdentityPolicy": "form+POS; no duplicate skills for Key/Flyers overlap"
+  "cambridgeAppendixIdentityPolicy": "form+POS; no duplicate skills for Key/Flyers overlap",
+  "semanticWordnetLayerFamily": "enrichment.semantic.wordnet"
 }

@@ -3,9 +3,9 @@
   "type": "feature",
   "status": "in_progress",
   "created_at": "2026-06-10T08:32:01Z",
-  "updated_at": "2026-08-11T24:00:00Z",
+  "updated_at": "2026-08-11T26:00:00Z",
   "description": "Evaluate and release independently gated typed lexical-semantic enrichment layers.",
   "estimated_tasks": 21,
   "actual_tasks": null,
-  "deviation_notes": "Phase 1 go 2026-08-11 (WordNet 3.1 offline). Next: Phase 2 fixtures + Phase 3 candidate generation. Ranking semantic weight stays 0 until a relation layer is approved."
+  "deviation_notes": "Phase 1 go; Phase 2 fixtures; Phase 3 WordNet draft candidates (~1191 edges, unique-synset only). Per-relation human precision review open before promote."
 }

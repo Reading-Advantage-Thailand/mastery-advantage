@@ -1,0 +1,57 @@
+{
+  "layerFamily": "enrichment.semantic.wordnet",
+  "sourceId": "wordnet",
+  "sourceVersion": "3.1",
+  "relationKinds": [
+    "synonym",
+    "antonym",
+    "hypernym",
+    "hyponym",
+    "meronym",
+    "holonym"
+  ],
+  "structureChecks": {
+    "uniqueSenseOnly": true,
+    "ambiguousQueued": true,
+    "noPrerequisiteFor": true,
+    "noSkillNodesInOverlay": true
+  },
+  "buildStats": {
+    "skillsConsidered": 3214,
+    "uniqueSenseMapped": 636,
+    "ambiguous": 2478,
+    "unmatched": 100,
+    "edgeCount": 1191,
+    "edgesByRelation": {
+      "synonym": 293,
+      "hypernym": 327,
+      "hyponym": 411,
+      "meronym": 53,
+      "antonym": 71,
+      "holonym": 36
+    },
+    "maxPerRelation": 15,
+    "layers": [
+      "enrichment.semantic.wordnet.synonym",
+      "enrichment.semantic.wordnet.antonym",
+      "enrichment.semantic.wordnet.hypernym",
+      "enrichment.semantic.wordnet.hyponym",
+      "enrichment.semantic.wordnet.meronym",
+      "enrichment.semantic.wordnet.holonym"
+    ]
+  },
+  "sampleRelations": {
+    "synonym": {
+      "id": "english.vocabulary.edge.semantic.wordnet.synonym.0007bc0a6db9",
+      "sourceId": "english.vocabulary.skill.amazing.adjective-exclamation",
+      "targetId": "english.vocabulary.skill.awesome.adjective",
+      "semanticRelation": "synonym"
+    },
+    "hypernym": {
+      "id": "english.vocabulary.edge.semantic.wordnet.hypernym.01a7acaf3fb0",
+      "sourceId": "english.vocabulary.skill.while.noun",
+      "targetId": "english.vocabulary.skill.time.noun-verb",
+      "semanticRelation": "hypernym"
+    }
+  }
+}

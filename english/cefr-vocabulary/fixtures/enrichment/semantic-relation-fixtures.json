@@ -1,0 +1,39 @@
+{
+  "layerFamily": "enrichment.semantic.wordnet",
+  "fixtureCases": [
+    {
+      "kind": "polysemy-ambiguous",
+      "note": "Lemma with multiple WordNet synsets must not auto-promote",
+      "exampleLemma": "bank",
+      "expectedQueue": "semantic-ambiguous"
+    },
+    {
+      "kind": "pos-difference",
+      "note": "book.noun and book.verb are distinct skills; relations stay within mapped POS when required",
+      "exampleSkills": [
+        "english.vocabulary.skill.book.noun",
+        "english.vocabulary.skill.book.noun-verb"
+      ]
+    },
+    {
+      "kind": "mwe-deferred",
+      "note": "Multi-token skills excluded from first WordNet ship",
+      "policy": "single-token-only"
+    },
+    {
+      "kind": "variant",
+      "note": "Hyphen/underscore lemma variants tried against WordNet",
+      "method": "sense-aware-lemma-pos-match"
+    },
+    {
+      "kind": "isolation",
+      "note": "Core graph validates without semantic overlay",
+      "requireCoreAlone": true
+    }
+  ],
+  "relationKinds": ["synonym", "antonym", "hypernym", "hyponym", "meronym", "holonym"],
+  "hardProhibitions": {
+    "prerequisite_for": true,
+    "ambiguousAutoPromote": true
+  }
+}
