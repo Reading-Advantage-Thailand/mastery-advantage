@@ -1,0 +1,26 @@
+{
+  "coreSkillCount": 3769,
+  "coreExamMembershipCounts": {
+    "pre-a1-starters": 495,
+    "a2-key-for-schools": 1684,
+    "a2-flyers": 513,
+    "b1-preliminary-for-schools": 3060,
+    "a1-movers": 399
+  },
+  "notes": [
+    "YLE freeze authority remains Pre-A1–A2 Flyers only.",
+    "A2 Key / B1 Preliminary enrichment layers add membership overlays; full dual-go freeze is method-later.",
+    "Cambridge B2 First official vocabulary list is unavailable (see source registry).",
+    "ViU advanced unmatched volume is expected: many C1–C2 index lemmas are absent from the YLE/A2/B1 inventory.",
+    "B2 coverage expansion is owned by track b2_vocabulary_source_expansion_20260611."
+  ],
+  "viuMatchRate": 0.2851,
+  "viuUnmatchedEntries": 7272,
+  "viuMatchedEntries": 2900,
+  "frequencyMissingMultiToken": 393,
+  "candidateNextSources": [
+    "Vocabulary in Use Upper-Intermediate / Advanced (already partially extracted as unit groups)",
+    "Licensed EVP bulk only after company-use rights confirmed",
+    "No fabricated Cambridge B2 list"
+  ]
+}

@@ -24,6 +24,7 @@
       "verbs"
     ]
   },
+  "labeledCategoryDetectCount": 10,
   "buildStats": {
     "sourceId": "cambridge-yle-word-list-2025",
     "sourceSha256": "6f7a0ad1e277bd10ae8b3bcccfb76c058f611a607c6c9947601abbd7e16a99fa",

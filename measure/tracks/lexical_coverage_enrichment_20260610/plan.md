@@ -7,9 +7,8 @@
 >
 > **Marker vocabulary:** `[x]` complete · `[~]` in-progress/next · `[b]` human-gated.
 >
-> **First remaining work:** Phase 4 audit gates (membership samples, frequency
-> distributions). Phase 1 accepted; frequency, ViU, YLE grammatical, A2 Key and
-> B1 Preliminary appendix overlays are implemented.
+> **First remaining work:** Phase 4 curriculum precision labeling (human) and
+> Phase 5 release decisions per layer. Automatable Phase 4 gates are green.
 
 ## Phase 1: Contracts And Source Decisions
 
@@ -151,11 +150,31 @@
 
 ## Phase 4: Audit And Calibration
 
-- [ ] Task: Audit and remediate Cambridge group memberships
-- [ ] Task: Audit and remediate Vocabulary in Use matches
-- [ ] Task: Validate frequency distributions and anomalies
-- [ ] Task: Evaluate remaining coverage gaps and candidate sources
-- [ ] Task: Complete curriculum/language review gate
+- [x] Task: Audit and remediate Cambridge group memberships
+  - [x] Automatable provenance, isolation, stratified samples (100/source)
+  - [b] Curriculum precision ≥0.980 on stratified samples — human-gate
+- [x] Task: Audit and remediate Vocabulary in Use matches
+  - [x] Automatable sample + queue quarantine status
+  - [b] Curriculum precision on ViU sample — human-gate
+- [x] Task: Validate frequency distributions and anomalies
+- [x] Task: Evaluate remaining coverage gaps and candidate sources
+- [b] Task: Complete curriculum/language review gate — human-gate
+
+**Phase 4 automatable Green evidence (2026-08-11):**
+
+- Builder: `scripts/build-enrichment-phase4-audit.py`
+- Report: `reports/enrichment/phase4-audit.{json,md}`
+- Gaps: `reports/enrichment/coverage-gaps.json`
+- Samples: `review/enrichment/phase4-samples/*-membership-sample.jsonl`
+  (a2-key, b1-preliminary, grammatical-groups, unit-groups)
+- Gates green: core freeze untouched; all layers `prerequisite_for`=0;
+  frequency silent nulls=0 (zipf 1.64–7.73, p50=4.63); provenance completeness
+  1.0 on membership layers; ambiguous rows quarantined in queues
+- Harness: `bash tests/enrichment_p4_audit.sh` — 5/5 pass
+- Pre-existing p2 fixture gap fixed: `labeledCategoryDetectCount` on YLE
+  grammatical structure fixture
+- Remaining human gate: label samples for membership precision ≥0.980, then
+  Phase 4 curriculum go
 
 ## Phase 5: Release Decision
 

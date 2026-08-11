@@ -1,0 +1,448 @@
+{
+  "generatedAt": "2026-08-11",
+  "phase": 4,
+  "track": "lexical_coverage_enrichment_20260610",
+  "coreGraph": {
+    "path": "cefr-vocabulary-knowledge-space.json",
+    "checked": true,
+    "headBlob": "7aced7492ea0de08f2247d780f245c44ba7b46fd",
+    "workBlob": "7aced7492ea0de08f2247d780f245c44ba7b46fd",
+    "byteIdentical": true
+  },
+  "layers": [
+    {
+      "layerId": "enrichment.cambridge.a2-key-appendix",
+      "sourceId": "cambridge-a2-key-vocabulary-list-2025",
+      "kind": "cambridge-appendix",
+      "overlayFile": "a2-key-appendix.overlay.json",
+      "overlaySha256": "d11d1d895cfbf613588760e8756f62bab5820d713ddbea9a5dbca707c8bdcdf6",
+      "groupNodeCount": 27,
+      "skillNodeCountInOverlay": 0,
+      "membershipEdgeCount": 3139,
+      "prerequisite_for_count": 0,
+      "targetsNotInCoreSkills": 0,
+      "overlaySkillIdCollisionsWithCore": [],
+      "provenance": {
+        "membershipEdges": 3139,
+        "strictComplete": 3139,
+        "strictCompleteness": 1.0,
+        "threshold": 1.0,
+        "pass": true,
+        "failExamples": []
+      },
+      "stratifiedSample": {
+        "target": 100,
+        "actual": 100,
+        "path": "review/enrichment/phase4-samples/a2-key-appendix-membership-sample.jsonl",
+        "seed": 20260811,
+        "labelStatus": "pending-human",
+        "note": "Sample is deterministic. Precision ≥0.980 is a curriculum gate on this file."
+      },
+      "builderStats": {
+        "sourceId": "cambridge-a2-key-vocabulary-list-2025",
+        "sourceSha256": "2abe174d067cd17ffa061cfc4bbbc0e5a55185ac696a5ef8ba49372c753a3ad6",
+        "layerId": "enrichment.cambridge.a2-key-appendix",
+        "exam": "a2-key-for-schools",
+        "azRawEntries": 1686,
+        "azUniqueEntries": 1680,
+        "azMatchedEntries": 1679,
+        "azUnmatchedEntries": 1,
+        "azAmbiguousEntries": 0,
+        "azMatchRate": 0.9994,
+        "azMatchKinds": {
+          "exact-pos-set": 1679,
+          "unmatched": 1
+        },
+        "examMembershipSkillCount": 1765,
+        "topicCount": 25,
+        "topicLemmaObservations": 1137,
+        "topicMatchedLemmas": 1116,
+        "topicUnmatchedLemmas": 21,
+        "topicAmbiguousLemmas": 38,
+        "topicMatchRate": 0.9815,
+        "topicMatchKinds": {
+          "topic-form-unique": 875,
+          "unmatched": 21,
+          "topic-form-multi": 145,
+          "topic-pos-unique": 58,
+          "topic-pos-multi": 31,
+          "topic-form-ambiguous": 7
+        },
+        "topicMembershipEdgeCount": 1366,
+        "groupCount": 27,
+        "noNewSkills": true,
+        "identityPolicy": "form+POS; shared Key/Flyers/B1 vocab is one skill with multi membership"
+      },
+      "hardProhibitionsPass": true
+    },
+    {
+      "layerId": "enrichment.cambridge.b1-preliminary-appendix",
+      "sourceId": "cambridge-b1-preliminary-vocabulary-list-2025",
+      "kind": "cambridge-appendix",
+      "overlayFile": "b1-preliminary-appendix.overlay.json",
+      "overlaySha256": "ff97006e45b2468ef95f7c4d0774f45402a64d496c50feaabc06da99259823a1",
+      "groupNodeCount": 25,
+      "skillNodeCountInOverlay": 0,
+      "membershipEdgeCount": 5242,
+      "prerequisite_for_count": 0,
+      "targetsNotInCoreSkills": 0,
+      "overlaySkillIdCollisionsWithCore": [],
+      "provenance": {
+        "membershipEdges": 5242,
+        "strictComplete": 5242,
+        "strictCompleteness": 1.0,
+        "threshold": 1.0,
+        "pass": true,
+        "failExamples": []
+      },
+      "stratifiedSample": {
+        "target": 100,
+        "actual": 100,
+        "path": "review/enrichment/phase4-samples/b1-preliminary-appendix-membership-sample.jsonl",
+        "seed": 20260811,
+        "labelStatus": "pending-human",
+        "note": "Sample is deterministic. Precision ≥0.980 is a curriculum gate on this file."
+      },
+      "builderStats": {
+        "sourceId": "cambridge-b1-preliminary-vocabulary-list-2025",
+        "sourceSha256": "df5e3c31bb26205c2cfc2e7a94a0171d4f4769d5c1e42a3615fe6aa1b5fdab29",
+        "layerId": "enrichment.cambridge.b1-preliminary-appendix",
+        "exam": "b1-preliminary-for-schools",
+        "azRawEntries": 3062,
+        "azUniqueEntries": 3057,
+        "azMatchedEntries": 3057,
+        "azUnmatchedEntries": 0,
+        "azAmbiguousEntries": 0,
+        "azMatchRate": 1.0,
+        "azMatchKinds": {
+          "exact-pos-set": 3057
+        },
+        "examMembershipSkillCount": 3139,
+        "topicCount": 23,
+        "topicLemmaObservations": 1863,
+        "topicMatchedLemmas": 1770,
+        "topicUnmatchedLemmas": 93,
+        "topicAmbiguousLemmas": 34,
+        "topicMatchRate": 0.9501,
+        "topicMatchKinds": {
+          "topic-form-multi": 208,
+          "topic-form-unique": 1487,
+          "topic-pos-unique": 41,
+          "unmatched": 93,
+          "topic-pos-multi": 24,
+          "topic-form-ambiguous": 10
+        },
+        "topicMembershipEdgeCount": 2096,
+        "groupCount": 25,
+        "noNewSkills": true,
+        "identityPolicy": "form+POS; shared Key/Flyers/B1 vocab is one skill with multi membership"
+      },
+      "hardProhibitionsPass": true
+    },
+    {
+      "layerId": "enrichment.cambridge.grammatical-groups",
+      "sourceId": "cambridge-yle-word-list-2025",
+      "kind": "yle-grammatical",
+      "overlayFile": "yle-grammatical-groups.overlay.json",
+      "overlaySha256": "e9ecf6dca98196499e134e260a2a131974523bde7f9e901236f0371c2071a4ac",
+      "groupNodeCount": 31,
+      "skillNodeCountInOverlay": 0,
+      "membershipEdgeCount": 2102,
+      "prerequisite_for_count": 0,
+      "targetsNotInCoreSkills": 0,
+      "overlaySkillIdCollisionsWithCore": [],
+      "provenance": {
+        "membershipEdges": 2102,
+        "strictComplete": 2102,
+        "strictCompleteness": 1.0,
+        "threshold": 1.0,
+        "pass": true,
+        "failExamples": []
+      },
+      "stratifiedSample": {
+        "target": 100,
+        "actual": 100,
+        "path": "review/enrichment/phase4-samples/grammatical-groups-membership-sample.jsonl",
+        "seed": 20260811,
+        "labelStatus": "pending-human",
+        "note": "Sample is deterministic. Precision ≥0.980 is a curriculum gate on this file."
+      },
+      "builderStats": {
+        "sourceId": "cambridge-yle-word-list-2025",
+        "sourceSha256": "6f7a0ad1e277bd10ae8b3bcccfb76c058f611a607c6c9947601abbd7e16a99fa",
+        "pdfPages": [
+          31,
+          37
+        ],
+        "tokenObservations": 1611,
+        "uniqueStageCategoryLemmas": 1534,
+        "matchedLemmas": 1511,
+        "unmatchedLemmas": 23,
+        "matchRate": 0.985,
+        "groupCount": 30,
+        "membershipEdgeCount": 2102,
+        "groups": {
+          "flyers.adjectives": 116,
+          "flyers.adverbs": 67,
+          "flyers.conjunctions": 12,
+          "flyers.determiners": 9,
+          "flyers.modals": 11,
+          "flyers.nouns": 293,
+          "flyers.prepositions": 13,
+          "flyers.pronouns": 11,
+          "flyers.question-words": 101,
+          "flyers.verbs": 161,
+          "movers.adjectives": 92,
+          "movers.adverbs": 76,
+          "movers.conjunctions": 4,
+          "movers.determiners": 11,
+          "movers.modals": 9,
+          "movers.nouns": 286,
+          "movers.prepositions": 29,
+          "movers.pronouns": 24,
+          "movers.question-words": 9,
+          "movers.verbs": 106,
+          "starters.adjectives": 66,
+          "starters.adverbs": 14,
+          "starters.conjunctions": 4,
+          "starters.determiners": 18,
+          "starters.modals": 2,
+          "starters.nouns": 278,
+          "starters.prepositions": 17,
+          "starters.pronouns": 30,
+          "starters.question-words": 107,
+          "starters.verbs": 126
+        }
+      },
+      "hardProhibitionsPass": true
+    },
+    {
+      "layerId": "enrichment.viu.unit-groups",
+      "sourceId": "vocabulary-in-use",
+      "kind": "viu",
+      "overlayFile": "viu-unit-groups.overlay.json",
+      "overlaySha256": "1f1edd295c494ff6ba0dce7c072a3e7196919f1d5044c67fd8efeb03d5a99758",
+      "groupNodeCount": 379,
+      "skillNodeCountInOverlay": 0,
+      "membershipEdgeCount": 4182,
+      "prerequisite_for_count": 0,
+      "targetsNotInCoreSkills": 0,
+      "overlaySkillIdCollisionsWithCore": [],
+      "provenance": {
+        "membershipEdges": 4182,
+        "strictComplete": 4182,
+        "strictCompleteness": 1.0,
+        "threshold": 1.0,
+        "pass": true,
+        "failExamples": []
+      },
+      "stratifiedSample": {
+        "target": 100,
+        "actual": 100,
+        "path": "review/enrichment/phase4-samples/unit-groups-membership-sample.jsonl",
+        "seed": 20260811,
+        "labelStatus": "pending-human",
+        "note": "Sample is deterministic. Precision ≥0.980 is a curriculum gate on this file."
+      },
+      "builderStats": {
+        "bandCount": 4,
+        "unitGroupCount": 374,
+        "overlayNodeCount": 379,
+        "overlayEdgeCount": 4561,
+        "membershipEdgeCount": 4182,
+        "totalIndexEntries": 10172,
+        "matchedEntries": 2900,
+        "unmatchedEntries": 7272,
+        "ambiguousMultiSkillEntries": 446,
+        "multiUnitEntries": 962,
+        "matchRate": 0.2851,
+        "bands": {
+          "elementary": {
+            "sourceId": "vocabulary-in-use-elementary",
+            "frontmatterSha256": "edde26e95c895c0918d9ed359328cbc2bf72b9b1c5da58782f92e09bca8b16ac",
+            "indexSha256": "e6b9a0dc3556feda1b54d332f8e3e271c2a76e9dd304d6edffbe584397cf6a09",
+            "labeledUnitCount": 70,
+            "indexEntryCount": 1331,
+            "matchedEntries": 699,
+            "unmatchedEntries": 632,
+            "ambiguousMultiSkillEntries": 121,
+            "membershipEdges": 1114,
+            "multiUnitEntries": 192,
+            "matchRate": 0.5252
+          },
+          "pre-intermediate": {
+            "sourceId": "vocabulary-in-use-pre-intermediate",
+            "frontmatterSha256": "5b1bdd50dfa9b02d21eabaf6dfa8127ae79bb16e8bae3bf4dd0505904e7c37a2",
+            "indexSha256": "57d36d4d34dd49382c7e3a2fe43bad73bef8e8d753e7dae4621ee55825a61b61",
+            "labeledUnitCount": 75,
+            "indexEntryCount": 2308,
+            "matchedEntries": 915,
+            "unmatchedEntries": 1393,
+            "ambiguousMultiSkillEntries": 134,
+            "membershipEdges": 1219,
+            "multiUnitEntries": 229,
+            "matchRate": 0.3964
+          },
+          "upper-intermediate": {
+            "sourceId": "vocabulary-in-use-upper-intermediate",
+            "frontmatterSha256": "13951d6912064a31e78f63ec80d85816d041919a15bb614ae4ca1526e3f37e5e",
+            "indexSha256": "162c4658283ca7f73797eb6d584559dfe7378d506ebd145923531d70bdffc617",
+            "labeledUnitCount": 83,
+            "indexEntryCount": 3229,
+            "matchedEntries": 950,
+            "unmatchedEntries": 2279,
+            "ambiguousMultiSkillEntries": 148,
+            "membershipEdges": 1437,
+            "multiUnitEntries": 404,
+            "matchRate": 0.2942
+          },
+          "advanced": {
+            "sourceId": "vocabulary-in-use-advanced",
+            "frontmatterSha256": "db6365f75abb4ff3476a24714e349298173955b9566487ce51ef3a4e882ec75b",
+            "indexSha256": "3dfad22d9d8ab1362b2cf4c714ff83683662901ea3f287fc390d968b1c056e0b",
+            "labeledUnitCount": 88,
+            "indexEntryCount": 3304,
+            "matchedEntries": 336,
+            "unmatchedEntries": 2968,
+            "ambiguousMultiSkillEntries": 43,
+            "membershipEdges": 412,
+            "multiUnitEntries": 137,
+            "matchRate": 0.1017
+          }
+        }
+      },
+      "hardProhibitionsPass": true
+    },
+    {
+      "layerId": "enrichment.frequency.wordfreq",
+      "sourceId": "wordfreq",
+      "kind": "frequency",
+      "overlayFile": "frequency.overlay.json",
+      "overlaySha256": "9be5ec57aa780cff1595d1134d13d3afec558f5b0869f19484ee74736ec7cf96",
+      "nodeCount": 3769,
+      "edgeCount": 0,
+      "prerequisite_for_count": 0,
+      "coreSkillCount": 3769,
+      "silentNulls": 0,
+      "noSilentNulls": true,
+      "scored": 3374,
+      "missingFlagged": 395,
+      "stateCounts": {
+        "scored": 3374,
+        "missing:whitespace": 363,
+        "missing:slash": 2,
+        "missing:hyphen": 28,
+        "missing:not-in-corpus": 2
+      },
+      "distribution": {
+        "zipfMin": 1.64,
+        "zipfP25": 4.13,
+        "zipfP50": 4.63,
+        "zipfP75": 5.09,
+        "zipfMax": 7.73,
+        "n": 3374
+      },
+      "builderStats": {
+        "source": "wordfreq",
+        "sourceVersion": "3.1.1",
+        "language": "en",
+        "coreNodeCount": 3848,
+        "skillsProcessed": 3769,
+        "overlayNodeCount": 3769,
+        "overlayEdgeCount": 0,
+        "scored": 3374,
+        "missingMultiToken": 393,
+        "missingMultiTokenByKind": {
+          "whitespace": 363,
+          "hyphen": 28,
+          "slash": 2,
+          "other": 0
+        },
+        "missingNotInCorpus": 2,
+        "unreliableBelowFloor": 0,
+        "ranked": 3374,
+        "maxRank": 397,
+        "distinctZipfValues": 397,
+        "tiedZipfValues": 336,
+        "tiedNodes": 3313,
+        "largestTieSize": 35,
+        "zipfMin": 1.64,
+        "zipfMax": 7.73,
+        "mweLabelAnomalies": 115,
+        "unexpectedCharacterForms": 31,
+        "whitespaceSingleTokenForms": 2,
+        "duplicateNormalizedForms": 377,
+        "duplicateFormSkills": 828,
+        "multiTokenDetection": "wordfreq.tokenize(normalizedForm, 'en') length > 1",
+        "rankTiePolicy": "dense-equal-rank",
+        "reliabilityFloorZipf": 1.0,
+        "zipfPrecision": 2
+      },
+      "hardProhibitionsPass": true
+    }
+  ],
+  "queues": {
+    "queues": {
+      "a2-key-ambiguous.jsonl": 38,
+      "a2-key-unmatched.jsonl": 22,
+      "b1-preliminary-ambiguous.jsonl": 34,
+      "b1-preliminary-unmatched.jsonl": 93,
+      "frequency-label-anomalies.jsonl": 148,
+      "frequency-missing.jsonl": 395,
+      "frequency-unreliable.jsonl": 0,
+      "viu-ambiguous.jsonl": 446,
+      "viu-unmatched.jsonl": 7272,
+      "yle-grammatical-unmatched.jsonl": 23
+    },
+    "ambiguousOpen": {
+      "a2-key-ambiguous.jsonl": 38,
+      "b1-preliminary-ambiguous.jsonl": 34,
+      "viu-ambiguous.jsonl": 446
+    },
+    "policy": "Ambiguous rows remain in durable queues (quarantined from approved exports until resolved). Phase 1 requires 100% closed = resolved OR quarantined; open queue counts are the quarantine set.",
+    "ambiguousQuarantined": true
+  },
+  "coverageGaps": {
+    "coreSkillCount": 3769,
+    "coreExamMembershipCounts": {
+      "pre-a1-starters": 495,
+      "a2-key-for-schools": 1684,
+      "a2-flyers": 513,
+      "b1-preliminary-for-schools": 3060,
+      "a1-movers": 399
+    },
+    "notes": [
+      "YLE freeze authority remains Pre-A1–A2 Flyers only.",
+      "A2 Key / B1 Preliminary enrichment layers add membership overlays; full dual-go freeze is method-later.",
+      "Cambridge B2 First official vocabulary list is unavailable (see source registry).",
+      "ViU advanced unmatched volume is expected: many C1–C2 index lemmas are absent from the YLE/A2/B1 inventory.",
+      "B2 coverage expansion is owned by track b2_vocabulary_source_expansion_20260611."
+    ],
+    "viuMatchRate": 0.2851,
+    "viuUnmatchedEntries": 7272,
+    "viuMatchedEntries": 2900,
+    "frequencyMissingMultiToken": 393,
+    "candidateNextSources": [
+      "Vocabulary in Use Upper-Intermediate / Advanced (already partially extracted as unit groups)",
+      "Licensed EVP bulk only after company-use rights confirmed",
+      "No fabricated Cambridge B2 list"
+    ]
+  },
+  "gates": {
+    "coreFreezeUntouched": true,
+    "allLayersZeroPrerequisiteFor": true,
+    "frequencyNoSilentNulls": true,
+    "provenanceCompleteAllMembershipLayers": true,
+    "stratifiedSamplesWritten": true,
+    "ambiguousRowsQuarantinedInQueues": true,
+    "curriculumPrecisionGate": "pending-human",
+    "thresholds": {
+      "membershipPrecision": 0.98,
+      "provenanceCompleteness": 1.0,
+      "ambiguousClosedOrQuarantined": 1.0,
+      "frequencySilentNulls": 0,
+      "prerequisite_for": 0
+    }
+  },
+  "nextHumanGate": "Curriculum/language: label stratified samples under review/enrichment/phase4-samples/ for precision ≥0.980 per source, then record Phase 4 review decision."
+}
