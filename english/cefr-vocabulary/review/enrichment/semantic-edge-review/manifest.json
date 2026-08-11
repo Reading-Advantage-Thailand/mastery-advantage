@@ -23,10 +23,13 @@
     "uncertain"
   ],
   "criteria": [
-    "Relation matches pedagogical English use for CEFR learners (not only WordNet technical sense)",
-    "Source and target forms are appropriate for the claimed relation",
-    "Glosses support the link; reject if only rare/obscure sense",
-    "Reject if wrong POS-ish use or near-homograph confusion",
-    "uncertain if needs human curriculum owner"
-  ]
+    "Does metadata.semanticRelation match the WordNet relation between sourceSenseId and targetSenseId?",
+    "Do sourceForm/targetForm correspond to lemmas of those synsets (allowing inventory spelling variants)?",
+    "Are sourceId/targetId consistent with those forms in the graph metadata provided?",
+    "Reject only clear technical errors (wrong relation, sense IDs do not support the link, form not in synset lemmas).",
+    "Do NOT score CEFR level, teachability, curriculum usefulness, or rarity for learners.",
+    "uncertain only if WordNet link is real but form/sense mapping to graph ids is ambiguous."
+  ],
+  "reviewKind": "technical-wordnet-fidelity",
+  "note": "Prior pedagogical CEFR fitness review was incorrect process; archived under pedagogical-mistaken/."
 }

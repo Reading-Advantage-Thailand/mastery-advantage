@@ -36,12 +36,11 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: English Lexical Semantic Enrichment** *(in progress — WordNet edges batch-reviewed)*
+- [ ] **Track: English Lexical Semantic Enrichment** *(in progress — technical WordNet review)*
   *Evaluate and release independently gated typed lexical-semantic layers.*
-  *Status: 1191 candidates reviewed in 12×100 subagent batches — accept 696
-  (58%), reject 439, uncertain 56. Accepted overlay on disk. Ranking semantic
-  weight still 0 until product/curriculum go. Ambiguous lemmas (2478) remain
-  out of auto-edges.*
+  *Status: technical fidelity on 1191 unique-synset edges — accept 996 (83.6%),
+  uncertain 185 (POS map), reject 10. CEFR teaching fitness is curriculum-owner
+  work (not subagent). Ranking semantic weight 0 until product go.*
   *Link: [./tracks/lexical_semantic_enrichment_20260610/](./tracks/lexical_semantic_enrichment_20260610/)*
 
 ---

@@ -4,41 +4,41 @@
   "sourceEdges": 1191,
   "batches": 12,
   "verdicts": {
-    "accept": 996,
-    "uncertain": 185,
-    "reject": 10
+    "accept": 696,
+    "reject": 439,
+    "uncertain": 56
   },
-  "acceptRate": 0.8363,
+  "acceptRate": 0.5844,
   "byRelation": {
     "antonym": {
       "total": 71,
-      "accept": 59,
-      "acceptRate": 0.831
+      "accept": 67,
+      "acceptRate": 0.9437
     },
     "holonym": {
       "total": 36,
-      "accept": 30,
-      "acceptRate": 0.8333
+      "accept": 22,
+      "acceptRate": 0.6111
     },
     "hypernym": {
       "total": 327,
-      "accept": 302,
-      "acceptRate": 0.9235
+      "accept": 222,
+      "acceptRate": 0.6789
     },
     "hyponym": {
       "total": 411,
-      "accept": 333,
-      "acceptRate": 0.8102
+      "accept": 175,
+      "acceptRate": 0.4258
     },
     "meronym": {
       "total": 53,
-      "accept": 45,
-      "acceptRate": 0.8491
+      "accept": 33,
+      "acceptRate": 0.6226
     },
     "synonym": {
       "total": 293,
-      "accept": 227,
-      "acceptRate": 0.7747
+      "accept": 177,
+      "acceptRate": 0.6041
     }
   },
   "outputs": {
