@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-08-11",
+  "totalJudgments": 1191,
+  "sourceEdges": 1191,
+  "batches": 12,
+  "verdicts": {
+    "accept": 696,
+    "reject": 439,
+    "uncertain": 56
+  },
+  "acceptRate": 0.5844,
+  "byRelation": {
+    "antonym": {
+      "total": 71,
+      "accept": 67,
+      "acceptRate": 0.9437
+    },
+    "holonym": {
+      "total": 36,
+      "accept": 22,
+      "acceptRate": 0.6111
+    },
+    "hypernym": {
+      "total": 327,
+      "accept": 222,
+      "acceptRate": 0.6789
+    },
+    "hyponym": {
+      "total": 411,
+      "accept": 175,
+      "acceptRate": 0.4258
+    },
+    "meronym": {
+      "total": 53,
+      "accept": 33,
+      "acceptRate": 0.6226
+    },
+    "synonym": {
+      "total": 293,
+      "accept": 177,
+      "acceptRate": 0.6041
+    }
+  },
+  "outputs": {
+    "acceptedOverlay": "overlays/semantic-wordnet-accepted.overlay.json",
+    "rejectedQueue": "review/enrichment/queues/semantic-edge-rejected.jsonl",
+    "uncertainQueue": "review/enrichment/queues/semantic-edge-uncertain.jsonl"
+  }
+}

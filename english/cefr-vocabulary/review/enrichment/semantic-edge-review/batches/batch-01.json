@@ -1,0 +1,1926 @@
+{
+  "batchId": "batch-01",
+  "indexStart": 100,
+  "indexEnd": 199,
+  "count": 100,
+  "edges": [
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.a44fad33a752",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.classroom.noun",
+      "targetId": "english.vocabulary.skill.school.noun",
+      "sourceForm": "classroom",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "school",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "classroom.n.01",
+      "targetSenseId": "school.n.02",
+      "sourceGloss": "a room in a school where lessons take place",
+      "targetGloss": "a building where young people receive education",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.b00912e93271",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.handlebars.noun",
+      "targetId": "english.vocabulary.skill.bicycle.noun",
+      "sourceForm": "handlebars",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bicycle",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "handlebar.n.01",
+      "targetSenseId": "bicycle.n.01",
+      "sourceGloss": "the shaped bar used to steer a bicycle",
+      "targetGloss": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.b2b5df63de87",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.beach.noun",
+      "targetId": "english.vocabulary.skill.shore.noun",
+      "sourceForm": "beach",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "shore",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "beach.n.01",
+      "targetSenseId": "shore.n.01",
+      "sourceGloss": "an area of sand sloping down to the water of a sea or lake",
+      "targetGloss": "the land along the edge of a body of water",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.b405de90ae14",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.sky.noun",
+      "targetId": "english.vocabulary.skill.earth.noun",
+      "sourceForm": "sky",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "earth",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "sky.n.01",
+      "targetSenseId": "earth.n.01",
+      "sourceGloss": "the atmosphere and outer space as viewed from the earth",
+      "targetGloss": "the 3rd planet from the sun; the planet we live on",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.d32d2cf1b580",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.windscreen.noun",
+      "targetId": "english.vocabulary.skill.aeroplane.noun",
+      "sourceForm": "windscreen",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "aeroplane",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "windshield.n.01",
+      "targetSenseId": "airplane.n.01",
+      "sourceGloss": "transparent screen (as of glass) to protect occupants of a vehicle",
+      "targetGloss": "an aircraft that has a fixed wing and is powered by propellers or jets",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.f194d531ee31",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.headline.noun",
+      "targetId": "english.vocabulary.skill.paper.adjective-noun",
+      "sourceForm": "headline",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "paper",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "headline.n.01",
+      "targetSenseId": "newspaper.n.01",
+      "sourceGloss": "the heading or caption of a newspaper article",
+      "targetGloss": "a daily or weekly publication on folded sheets; contains news and articles and advertisements",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.fc0e289dce39",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.sauce.noun",
+      "targetId": "english.vocabulary.skill.dish.noun",
+      "sourceForm": "sauce",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "dish",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "sauce.n.01",
+      "targetSenseId": "dish.n.02",
+      "sourceGloss": "flavorful relish or dressing or topping served as an accompaniment to food",
+      "targetGloss": "a particular item of prepared food",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.01a7acaf3fb0",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.while.noun",
+      "targetId": "english.vocabulary.skill.time.noun-verb",
+      "sourceForm": "while",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "time",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "while.n.01",
+      "targetSenseId": "time.n.03",
+      "sourceGloss": "a period of indeterminate length (usually short) marked by some action or condition",
+      "targetGloss": "an indefinite period (usually marked by specific attributes or activities)",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.01b0096de905",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.omelette.noun",
+      "targetId": "english.vocabulary.skill.dish.noun",
+      "sourceForm": "omelette",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "dish",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "omelet.n.01",
+      "targetSenseId": "dish.n.02",
+      "sourceGloss": "beaten eggs or an egg mixture cooked until just set; may be folded around e.g. ham or cheese or jelly",
+      "targetGloss": "a particular item of prepared food",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.01e64f4601a2",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.t-shirt.noun",
+      "targetId": "english.vocabulary.skill.shirt.noun",
+      "sourceForm": "t-shirt",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "shirt",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "jersey.n.03",
+      "targetSenseId": "shirt.n.01",
+      "sourceGloss": "a close-fitting pullover shirt",
+      "targetGloss": "a garment worn on the upper half of the body",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.02fdd8182fa3",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.snowboard.noun",
+      "targetId": "english.vocabulary.skill.board.noun",
+      "sourceForm": "snowboard",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "board",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "snowboard.n.01",
+      "targetSenseId": "board.n.03",
+      "sourceGloss": "a board that resembles a broad ski or a small surfboard; used in a standing position to slide down snow-covered slopes",
+      "targetGloss": "a flat piece of material designed for a special purpose",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.031abb688bbb",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.handlebars.noun",
+      "targetId": "english.vocabulary.skill.bar.noun",
+      "sourceForm": "handlebars",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bar",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "handlebar.n.01",
+      "targetSenseId": "bar.n.03",
+      "sourceGloss": "the shaped bar used to steer a bicycle",
+      "targetGloss": "a rigid piece of metal or wood; usually used as a fastening or obstruction or weapon",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.0374d68c70bf",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.thursday.noun",
+      "targetId": "english.vocabulary.skill.weekday.noun",
+      "sourceForm": "thursday",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "weekday",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "thursday.n.01",
+      "targetSenseId": "weekday.n.01",
+      "sourceGloss": "the fifth day of the week; the fourth working day",
+      "targetGloss": "any day except Sunday (and sometimes except Saturday)",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.037eb58cd682",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.unpack.verb",
+      "targetId": "english.vocabulary.skill.take.verb",
+      "sourceForm": "unpack",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "take",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "unpack.v.01",
+      "targetSenseId": "remove.v.01",
+      "sourceGloss": "remove from its packing",
+      "targetGloss": "remove something concrete, as by lifting, pushing, or taking off, or remove something abstract",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.039ab6f11b41",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.backpacking.noun",
+      "targetId": "english.vocabulary.skill.carry.verb",
+      "sourceForm": "backpacking",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "carry",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "packing.n.03",
+      "targetSenseId": "carry.n.01",
+      "sourceGloss": "carrying something in a pack on the back",
+      "targetGloss": "the act of carrying something",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.03dc1f400897",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.snowman.noun",
+      "targetId": "english.vocabulary.skill.figure.noun",
+      "sourceForm": "snowman",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "figure",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "snowman.n.01",
+      "targetSenseId": "figure.n.04",
+      "sourceGloss": "a figure of a person made of packed snow",
+      "targetGloss": "a model of a bodily form (especially of a person)",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.05e076371b32",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.district.noun",
+      "targetId": "english.vocabulary.skill.region.noun",
+      "sourceForm": "district",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "region",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "district.n.01",
+      "targetSenseId": "region.n.03",
+      "sourceGloss": "a region marked off for administrative or other purposes",
+      "targetGloss": "a large indefinite location on the surface of the Earth",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.07412b4ce209",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.winter.noun",
+      "targetId": "english.vocabulary.skill.season.noun",
+      "sourceForm": "winter",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "season",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "winter.n.01",
+      "targetSenseId": "season.n.02",
+      "sourceGloss": "the coldest season of the year; in the northern hemisphere it extends from the winter solstice to the vernal equinox",
+      "targetGloss": "one of the natural periods into which the year is divided by the equinoxes and solstices or atmospheric conditions",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.07e2f508e765",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.salad.noun",
+      "targetId": "english.vocabulary.skill.dish.noun",
+      "sourceForm": "salad",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "dish",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "salad.n.01",
+      "targetSenseId": "dish.n.02",
+      "sourceGloss": "food mixtures either arranged on a plate or tossed and served with a moist dressing; usually consisting of or including greens",
+      "targetGloss": "a particular item of prepared food",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.08f0ca7a9d73",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.policewoman.noun",
+      "targetId": "english.vocabulary.skill.policeman.noun",
+      "sourceForm": "policewoman",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "policeman",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "police_matron.n.01",
+      "targetSenseId": "policeman.n.01",
+      "sourceGloss": "a woman policeman",
+      "targetGloss": "a member of a police force",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.0b486fe4f4f3",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.tyre-us-tire.noun",
+      "targetId": "english.vocabulary.skill.ring.noun-verb",
+      "sourceForm": "tire",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "ring",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "tire.n.01",
+      "targetSenseId": "hoop.n.02",
+      "sourceGloss": "hoop that covers a wheel",
+      "targetGloss": "a rigid circular band of metal or wood or other material used for holding or fastening or hanging or pulling",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.0b7f587d506c",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.classroom.noun",
+      "targetId": "english.vocabulary.skill.room.noun",
+      "sourceForm": "classroom",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "room",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "classroom.n.01",
+      "targetSenseId": "room.n.01",
+      "sourceGloss": "a room in a school where lessons take place",
+      "targetGloss": "an area within a building enclosed by walls and floor and ceiling",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.0b8e82b5b584",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.lack.noun",
+      "targetId": "english.vocabulary.skill.demand.noun-verb",
+      "sourceForm": "lack",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "demand",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "lack.n.01",
+      "targetSenseId": "need.n.01",
+      "sourceGloss": "the state of needing something that is absent or unavailable",
+      "targetGloss": "a condition requiring relief",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.0b91a56b5b46",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.washing-up.noun",
+      "targetId": "english.vocabulary.skill.wash.verb",
+      "sourceForm": "washing-up",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "wash",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "washing-up.n.01",
+      "targetSenseId": "wash.n.02",
+      "sourceGloss": "the washing of dishes etc after a meal",
+      "targetGloss": "the work of cleansing (usually with soap and water)",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.0be4234e8518",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.ben.noun",
+      "targetId": "english.vocabulary.skill.mountain.noun",
+      "sourceForm": "ben",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "mountain",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "ben.n.01",
+      "targetSenseId": "mountain.n.01",
+      "sourceGloss": "a mountain or tall hill",
+      "targetGloss": "a land mass that projects well above its surroundings; higher than a hill",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.0c5be0b3bec6",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.photocopy.noun",
+      "targetId": "english.vocabulary.skill.picture.noun",
+      "sourceForm": "photocopy",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "picture",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "photocopy.n.01",
+      "targetSenseId": "photograph.n.01",
+      "sourceGloss": "a photographic copy of written or printed or graphic work",
+      "targetGloss": "a representation of a person or scene in the form of a print or transparent slide; recorded by a camera on light-sensitive material",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.0d4f5ee52248",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.sightseeing.noun",
+      "targetId": "english.vocabulary.skill.look.noun-verb",
+      "sourceForm": "sightseeing",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "look",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "sightseeing.n.01",
+      "targetSenseId": "look.n.02",
+      "sourceGloss": "going about to look at places of interest",
+      "targetGloss": "the act of directing the eyes toward something and perceiving it visually",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.0d7000ae3a19",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.bookcase.noun",
+      "targetId": "english.vocabulary.skill.furniture.noun",
+      "sourceForm": "bookcase",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "furniture",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "bookcase.n.01",
+      "targetSenseId": "furniture.n.01",
+      "sourceGloss": "a piece of furniture with shelves for storing books",
+      "targetGloss": "furnishings that make a room or other area ready for occupancy",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.0d8f17707b61",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.tyre-us-tire.noun",
+      "targetId": "english.vocabulary.skill.ring.noun",
+      "sourceForm": "tire",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "ring",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "tire.n.01",
+      "targetSenseId": "hoop.n.02",
+      "sourceGloss": "hoop that covers a wheel",
+      "targetGloss": "a rigid circular band of metal or wood or other material used for holding or fastening or hanging or pulling",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.0dd1122d05ed",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.rebuild.verb",
+      "targetId": "english.vocabulary.skill.make.verb",
+      "sourceForm": "rebuild",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "make",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "rebuild.v.01",
+      "targetSenseId": "construct.v.01",
+      "sourceGloss": "build again",
+      "targetGloss": "make by combining materials and parts",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.0e06d8209474",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.ski.verb",
+      "targetId": "english.vocabulary.skill.go.noun-verb",
+      "sourceForm": "ski",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "go",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "ski.v.01",
+      "targetSenseId": "travel.v.01",
+      "sourceGloss": "move along on skis",
+      "targetGloss": "change location; move, travel, or proceed, also metaphorically",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.1216b543b7fe",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.ski.verb",
+      "targetId": "english.vocabulary.skill.go-with-together.phrasal-verb",
+      "sourceForm": "ski",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "go",
+      "targetPos": [
+        "phrasal-verb"
+      ],
+      "sourceSenseId": "ski.v.01",
+      "targetSenseId": "travel.v.01",
+      "sourceGloss": "move along on skis",
+      "targetGloss": "change location; move, travel, or proceed, also metaphorically",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.13e59353eff1",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.biography.noun",
+      "targetId": "english.vocabulary.skill.story.noun",
+      "sourceForm": "biography",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "story",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "biography.n.01",
+      "targetSenseId": "history.n.02",
+      "sourceGloss": "an account of the series of events making up a person's life",
+      "targetGloss": "a record or narrative description of past events",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.15f53c49d11e",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.roommate.noun",
+      "targetId": "english.vocabulary.skill.friend.noun",
+      "sourceForm": "roommate",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "friend",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "roommate.n.01",
+      "targetSenseId": "friend.n.01",
+      "sourceGloss": "an associate who shares a room with you",
+      "targetGloss": "a person you know well and regard with affection and trust",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.15f9b4be2e74",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.wife.noun",
+      "targetId": "english.vocabulary.skill.mate.noun",
+      "sourceForm": "wife",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "mate",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "wife.n.01",
+      "targetSenseId": "spouse.n.01",
+      "sourceGloss": "a married woman; a man's partner in marriage",
+      "targetGloss": "a person's partner in marriage",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.16aca3a8a553",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.signpost.noun",
+      "targetId": "english.vocabulary.skill.sign.noun",
+      "sourceForm": "signpost",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "sign",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "signpost.n.01",
+      "targetSenseId": "sign.n.02",
+      "sourceGloss": "a post bearing a sign that gives directions or shows the way",
+      "targetGloss": "a public display of a message",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.170a4375e024",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.cafeteria.noun",
+      "targetId": "english.vocabulary.skill.restaurant.noun",
+      "sourceForm": "cafeteria",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "restaurant",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "cafeteria.n.01",
+      "targetSenseId": "restaurant.n.01",
+      "sourceGloss": "a restaurant where you serve yourself and pay a cashier",
+      "targetGloss": "a building where people go to eat",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.171289f5045e",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.password.noun",
+      "targetId": "english.vocabulary.skill.secret.adjective-noun",
+      "sourceForm": "password",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "secret",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "password.n.01",
+      "targetSenseId": "secret.n.02",
+      "sourceGloss": "a secret word or phrase known only to a restricted group",
+      "targetGloss": "information known only to a special group",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.175a4b2c4663",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.skating.noun",
+      "targetId": "english.vocabulary.skill.sport.noun",
+      "sourceForm": "skating",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "sport",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "skating.n.01",
+      "targetSenseId": "sport.n.01",
+      "sourceGloss": "the sport of gliding on skates",
+      "targetGloss": "an active diversion requiring physical exertion and competition",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.192d02f2a160",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.deserve.verb",
+      "targetId": "english.vocabulary.skill.be.auxiliary-verb-verb",
+      "sourceForm": "deserve",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "be",
+      "targetPos": [
+        "auxiliary-verb",
+        "verb"
+      ],
+      "sourceSenseId": "deserve.v.01",
+      "targetSenseId": "be.v.01",
+      "sourceGloss": "be worthy or deserving",
+      "targetGloss": "have the quality of being; (copula, used with an adjective or a predicate noun)",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.19c289e2a114",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.employer.noun",
+      "targetId": "english.vocabulary.skill.leader.noun",
+      "sourceForm": "employer",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "leader",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "employer.n.01",
+      "targetSenseId": "leader.n.01",
+      "sourceGloss": "a person or firm that employs workers",
+      "targetGloss": "a person who rules or guides or inspires others",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.1a55840cc9b2",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.signpost.noun",
+      "targetId": "english.vocabulary.skill.sign.noun-verb",
+      "sourceForm": "signpost",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "sign",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "signpost.n.01",
+      "targetSenseId": "sign.n.02",
+      "sourceGloss": "a post bearing a sign that gives directions or shows the way",
+      "targetGloss": "a public display of a message",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.1b169e98f582",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.wildlife.noun",
+      "targetId": "english.vocabulary.skill.life.noun",
+      "sourceForm": "wildlife",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "life",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "wildlife.n.01",
+      "targetSenseId": "life.n.10",
+      "sourceGloss": "all living things (except people) that are undomesticated",
+      "targetGloss": "living things collectively",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.1b38e73f6e01",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.sweatshirt.noun",
+      "targetId": "english.vocabulary.skill.pullover.noun",
+      "sourceForm": "sweatshirt",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "pullover",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "sweatshirt.n.01",
+      "targetSenseId": "pullover.n.01",
+      "sourceGloss": "cotton knit pullover with long sleeves worn during athletic activity",
+      "targetGloss": "a sweater that is put on by pulling it over the head",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.1b7be30cc7b0",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.toothache.noun",
+      "targetId": "english.vocabulary.skill.ache.noun",
+      "sourceForm": "toothache",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "ache",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "toothache.n.01",
+      "targetSenseId": "ache.n.01",
+      "sourceGloss": "an ache localized in or around a tooth",
+      "targetGloss": "a dull persistent (usually moderately intense) pain",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.1d2876b3eadd",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.snowboard.noun-verb",
+      "targetId": "english.vocabulary.skill.board.noun-verb",
+      "sourceForm": "snowboard",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "board",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "snowboard.n.01",
+      "targetSenseId": "board.n.03",
+      "sourceGloss": "a board that resembles a broad ski or a small surfboard; used in a standing position to slide down snow-covered slopes",
+      "targetGloss": "a flat piece of material designed for a special purpose",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.1dbead3b3a55",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.grand-d-ad.noun",
+      "targetId": "english.vocabulary.skill.grandparent.noun",
+      "sourceForm": "grandad",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "grandparent",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "grandfather.n.01",
+      "targetSenseId": "grandparent.n.01",
+      "sourceGloss": "the father of your father or mother",
+      "targetGloss": "a parent of your father or mother",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.1e12ce58be1f",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.hotel.noun",
+      "targetId": "english.vocabulary.skill.building.noun",
+      "sourceForm": "hotel",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "building",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "hotel.n.01",
+      "targetSenseId": "building.n.01",
+      "sourceGloss": "a building where travelers can pay for lodging and meals and other services",
+      "targetGloss": "a structure that has a roof and walls and stands more or less permanently in one place",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.20762741dae5",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.recycling.noun",
+      "targetId": "english.vocabulary.skill.exercise.noun-verb",
+      "sourceForm": "recycling",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "exercise",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "recycling.n.01",
+      "targetSenseId": "use.n.01",
+      "sourceGloss": "the act of processing used or abandoned materials for use in creating new products",
+      "targetGloss": "the act of using",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.227d94888ab8",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.actress.noun",
+      "targetId": "english.vocabulary.skill.player.noun",
+      "sourceForm": "actress",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "player",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "actress.n.01",
+      "targetSenseId": "actor.n.01",
+      "sourceGloss": "a female actor",
+      "targetGloss": "a theatrical performer",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.22b761403da5",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.initial.noun",
+      "targetId": "english.vocabulary.skill.letter-as-in-alphabet.noun",
+      "sourceForm": "initial",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "letter",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "initial.n.01",
+      "targetSenseId": "letter.n.02",
+      "sourceGloss": "the first letter of a word (especially a person's name)",
+      "targetGloss": "the conventional characters of the alphabet used to represent speech",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.23362a417920",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.assistant.noun",
+      "targetId": "english.vocabulary.skill.worker.noun",
+      "sourceForm": "assistant",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "worker",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "assistant.n.01",
+      "targetSenseId": "worker.n.01",
+      "sourceGloss": "a person who contributes to the fulfillment of a need or furtherance of an effort or purpose",
+      "targetGloss": "a person who works at a specific occupation",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.24c5864af0bd",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.unpack.verb",
+      "targetId": "english.vocabulary.skill.remove.verb",
+      "sourceForm": "unpack",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "remove",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "unpack.v.01",
+      "targetSenseId": "remove.v.01",
+      "sourceGloss": "remove from its packing",
+      "targetGloss": "remove something concrete, as by lifting, pushing, or taking off, or remove something abstract",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.24e641b97475",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.backpack-uk-rucksack.noun",
+      "targetId": "english.vocabulary.skill.bag.noun",
+      "sourceForm": "backpack",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bag",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "backpack.n.01",
+      "targetSenseId": "bag.n.01",
+      "sourceGloss": "a bag carried by a strap on your back or shoulder",
+      "targetGloss": "a flexible container with a single opening",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.26ada1fefe60",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.grandpa.noun",
+      "targetId": "english.vocabulary.skill.grandparent.noun",
+      "sourceForm": "grandpa",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "grandparent",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "grandfather.n.01",
+      "targetSenseId": "grandparent.n.01",
+      "sourceGloss": "the father of your father or mother",
+      "targetGloss": "a parent of your father or mother",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.26d1d0e0885a",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.kitchen.noun",
+      "targetId": "english.vocabulary.skill.room.noun",
+      "sourceForm": "kitchen",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "room",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "kitchen.n.01",
+      "targetSenseId": "room.n.01",
+      "sourceGloss": "a room equipped for preparing meals",
+      "targetGloss": "an area within a building enclosed by walls and floor and ceiling",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.2705bfe6774a",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.skiing.noun",
+      "targetId": "english.vocabulary.skill.sport.noun",
+      "sourceForm": "skiing",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "sport",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "skiing.n.01",
+      "targetSenseId": "sport.n.01",
+      "sourceGloss": "a sport in which participants must travel on skis",
+      "targetGloss": "an active diversion requiring physical exertion and competition",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.2825552abd86",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.blouse.noun",
+      "targetId": "english.vocabulary.skill.top.noun",
+      "sourceForm": "blouse",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "top",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "blouse.n.01",
+      "targetSenseId": "top.n.10",
+      "sourceGloss": "a top worn by women",
+      "targetGloss": "a garment (especially for women) that extends from the shoulders to the waist or hips",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.282b8c1c2ad4",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.midnight.noun",
+      "targetId": "english.vocabulary.skill.hour.noun",
+      "sourceForm": "midnight",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "hour",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "midnight.n.01",
+      "targetSenseId": "hour.n.02",
+      "sourceGloss": "12 o'clock at night; the middle of the night",
+      "targetGloss": "clock time",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.29a8137458aa",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.novelist.noun",
+      "targetId": "english.vocabulary.skill.author.noun",
+      "sourceForm": "novelist",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "author",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "novelist.n.01",
+      "targetSenseId": "writer.n.01",
+      "sourceGloss": "one who writes novels",
+      "targetGloss": "writes (books or stories or articles or the like) professionally (for pay)",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.2a59c3afd0b3",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.hitchhike.verb",
+      "targetId": "english.vocabulary.skill.ride.noun",
+      "sourceForm": "hitchhike",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "ride",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "hitchhike.v.01",
+      "targetSenseId": "ride.v.02",
+      "sourceGloss": "travel by getting free rides from motorists",
+      "targetGloss": "be carried or travel on or in a vehicle",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.2a5f847d35fc",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.surfboard.noun",
+      "targetId": "english.vocabulary.skill.board.noun-verb",
+      "sourceForm": "surfboard",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "board",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "surfboard.n.01",
+      "targetSenseId": "board.n.03",
+      "sourceGloss": "a narrow buoyant board for riding surf",
+      "targetGloss": "a flat piece of material designed for a special purpose",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.2b2a7950ae2e",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.monday.noun",
+      "targetId": "english.vocabulary.skill.weekday.noun",
+      "sourceForm": "monday",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "weekday",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "monday.n.01",
+      "targetSenseId": "weekday.n.01",
+      "sourceGloss": "the second day of the week; the first working day",
+      "targetGloss": "any day except Sunday (and sometimes except Saturday)",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.2c28bf51b00e",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.pillow.noun",
+      "targetId": "english.vocabulary.skill.cushion.noun",
+      "sourceForm": "pillow",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "cushion",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "pillow.n.01",
+      "targetSenseId": "cushion.n.03",
+      "sourceGloss": "a cushion to support the head of a sleeping person",
+      "targetGloss": "a soft bag filled with air or a mass of padding such as feathers or foam rubber etc.",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.2d0e49355c2d",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.statue.noun",
+      "targetId": "english.vocabulary.skill.sculpture.noun",
+      "sourceForm": "statue",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "sculpture",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "statue.n.01",
+      "targetSenseId": "sculpture.n.01",
+      "sourceGloss": "a sculpture representing a human or animal",
+      "targetGloss": "a three-dimensional work of plastic art",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.2d25f9988539",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.nightclub.noun",
+      "targetId": "english.vocabulary.skill.spot.noun",
+      "sourceForm": "nightclub",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "spot",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "cabaret.n.01",
+      "targetSenseId": "spot.n.07",
+      "sourceGloss": "a spot that is open late at night and that provides entertainment (as singers or dancers) as well as dancing and food and drink",
+      "targetGloss": "a business establishment for entertainment",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.308e74f64e13",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.update.noun-verb",
+      "targetId": "english.vocabulary.skill.news.noun",
+      "sourceForm": "update",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "news",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "update.n.01",
+      "targetSenseId": "news.n.01",
+      "sourceGloss": "news that updates your information",
+      "targetGloss": "information about recent and important events",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.30aac5821fa4",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.photocopy.noun",
+      "targetId": "english.vocabulary.skill.copy.verb",
+      "sourceForm": "photocopy",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "copy",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "photocopy.n.01",
+      "targetSenseId": "copy.n.02",
+      "sourceGloss": "a photographic copy of written or printed or graphic work",
+      "targetGloss": "a thing made to be similar or identical to another thing",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.30acfe78e500",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.restaurant.noun",
+      "targetId": "english.vocabulary.skill.building.noun",
+      "sourceForm": "restaurant",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "building",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "restaurant.n.01",
+      "targetSenseId": "building.n.01",
+      "sourceGloss": "a building where people go to eat",
+      "targetGloss": "a structure that has a roof and walls and stands more or less permanently in one place",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.325ec69a214c",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.motorbike.noun",
+      "targetId": "english.vocabulary.skill.bike.noun",
+      "sourceForm": "motorbike",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bike",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "minibike.n.01",
+      "targetSenseId": "motorcycle.n.01",
+      "sourceGloss": "small motorcycle with a low frame and small wheels and elevated handlebars",
+      "targetGloss": "a motor vehicle with two wheels and a strong frame",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.3415e30bb547",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.skyscraper.noun",
+      "targetId": "english.vocabulary.skill.building.noun",
+      "sourceForm": "skyscraper",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "building",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "skyscraper.n.01",
+      "targetSenseId": "building.n.01",
+      "sourceGloss": "a very tall building with many stories",
+      "targetGloss": "a structure that has a roof and walls and stands more or less permanently in one place",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.34a1dea78765",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.password.noun",
+      "targetId": "english.vocabulary.skill.secret.noun",
+      "sourceForm": "password",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "secret",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "password.n.01",
+      "targetSenseId": "secret.n.02",
+      "sourceGloss": "a secret word or phrase known only to a restricted group",
+      "targetGloss": "information known only to a special group",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.3682ba30fd64",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.try.noun-verb",
+      "targetId": "english.vocabulary.skill.activity.noun",
+      "sourceForm": "try",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "activity",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "attempt.n.01",
+      "targetSenseId": "activity.n.01",
+      "sourceGloss": "earnest and conscientious activity intended to do or accomplish something",
+      "targetGloss": "any specific behavior",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.36e89a181f05",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.ache.noun",
+      "targetId": "english.vocabulary.skill.pain.noun",
+      "sourceForm": "ache",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "pain",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "ache.n.01",
+      "targetSenseId": "pain.n.01",
+      "sourceGloss": "a dull persistent (usually moderately intense) pain",
+      "targetGloss": "a symptom of some physical hurt or disorder",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.38c8208bb29d",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.achievement.noun",
+      "targetId": "english.vocabulary.skill.action.adjective",
+      "sourceForm": "achievement",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "action",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "accomplishment.n.01",
+      "targetSenseId": "action.n.01",
+      "sourceGloss": "the action of accomplishing something",
+      "targetGloss": "something done (usually as opposed to something said)",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.3a9b8be795f1",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.soccer.noun",
+      "targetId": "english.vocabulary.skill.football-us-soccer.noun",
+      "sourceForm": "soccer",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "football",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "soccer.n.01",
+      "targetSenseId": "football.n.01",
+      "sourceGloss": "a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal",
+      "targetGloss": "any of various games played with a ball (round or oval) in which two teams try to kick or carry or propel the ball into each other's goal",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.3adf244797f5",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.questionnaire.noun",
+      "targetId": "english.vocabulary.skill.form.noun",
+      "sourceForm": "questionnaire",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "form",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "questionnaire.n.01",
+      "targetSenseId": "form.n.08",
+      "sourceGloss": "a form containing a set of questions; submitted to people to gain statistical information",
+      "targetGloss": "a printed document with spaces in which to write",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.3c0bf9ea23bc",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.rainforest.noun",
+      "targetId": "english.vocabulary.skill.wood.noun",
+      "sourceForm": "rainforest",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "wood",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "rain_forest.n.01",
+      "targetSenseId": "forest.n.01",
+      "sourceGloss": "a forest with heavy annual rainfall",
+      "targetGloss": "the trees and other plants in a large densely wooded area",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.3c3ece2552e3",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.factory.noun",
+      "targetId": "english.vocabulary.skill.plant.noun",
+      "sourceForm": "factory",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "plant",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "factory.n.01",
+      "targetSenseId": "plant.n.01",
+      "sourceGloss": "a plant consisting of one or more buildings with facilities for manufacturing",
+      "targetGloss": "buildings for carrying on industrial labor",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.3c593fbe722d",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.documentary.noun",
+      "targetId": "english.vocabulary.skill.picture.noun",
+      "sourceForm": "documentary",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "picture",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "documentary.n.01",
+      "targetSenseId": "movie.n.01",
+      "sourceGloss": "a film or TV program presenting the facts about a person or event",
+      "targetGloss": "a form of entertainment that enacts a story by sound and a sequence of images giving the illusion of continuous movement",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.3d755ba8e4b2",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.it.noun",
+      "targetId": "english.vocabulary.skill.engineering.noun",
+      "sourceForm": "it",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "engineering",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "information_technology.n.01",
+      "targetSenseId": "engineering.n.02",
+      "sourceGloss": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "targetGloss": "the discipline dealing with the art or science of applying scientific knowledge to practical problems",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.3dbabfc9c880",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.candy.noun",
+      "targetId": "english.vocabulary.skill.sweet.adjective-noun",
+      "sourceForm": "candy",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "sweet",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "candy.n.01",
+      "targetSenseId": "sweet.n.03",
+      "sourceGloss": "a rich sweet made of flavored sugar and often combined with fruit or nuts",
+      "targetGloss": "a food rich in sugar",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.3ede265f51b9",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.schoolchild.noun",
+      "targetId": "english.vocabulary.skill.youth.noun",
+      "sourceForm": "schoolchild",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "youth",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "schoolchild.n.01",
+      "targetSenseId": "young_person.n.01",
+      "sourceGloss": "a young person attending school (up through senior high school)",
+      "targetGloss": "a young person (especially a young man or boy)",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.40094f35346c",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.bookshop.noun",
+      "targetId": "english.vocabulary.skill.shop-us-store.noun",
+      "sourceForm": "bookshop",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "shop",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "bookshop.n.01",
+      "targetSenseId": "shop.n.01",
+      "sourceGloss": "a shop where books are sold",
+      "targetGloss": "a mercantile establishment for the retail sale of goods or services",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.40475170c014",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.it-information-technology.noun",
+      "targetId": "english.vocabulary.skill.engineering.noun",
+      "sourceForm": "it",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "engineering",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "information_technology.n.01",
+      "targetSenseId": "engineering.n.02",
+      "sourceGloss": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "targetGloss": "the discipline dealing with the art or science of applying scientific knowledge to practical problems",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.40f0611af04c",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.bedroom.noun",
+      "targetId": "english.vocabulary.skill.room.noun",
+      "sourceForm": "bedroom",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "room",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "bedroom.n.01",
+      "targetSenseId": "room.n.01",
+      "sourceGloss": "a room used primarily for sleeping",
+      "targetGloss": "an area within a building enclosed by walls and floor and ceiling",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.4162c2c4b651",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.skateboard.noun",
+      "targetId": "english.vocabulary.skill.board.noun-verb",
+      "sourceForm": "skateboard",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "board",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "skateboard.n.01",
+      "targetSenseId": "board.n.03",
+      "sourceGloss": "a board with wheels that is ridden in a standing or crouching position and propelled by foot",
+      "targetGloss": "a flat piece of material designed for a special purpose",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.4209451b5356",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.rugby.noun",
+      "targetId": "english.vocabulary.skill.football-us-soccer.noun",
+      "sourceForm": "rugby",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "football",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "rugby.n.01",
+      "targetSenseId": "football.n.01",
+      "sourceGloss": "a form of football played with an oval ball",
+      "targetGloss": "any of various games played with a ball (round or oval) in which two teams try to kick or carry or propel the ball into each other's goal",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.43c0880d48de",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.taxi.noun",
+      "targetId": "english.vocabulary.skill.car.noun",
+      "sourceForm": "taxi",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "car",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "cab.n.03",
+      "targetSenseId": "car.n.01",
+      "sourceGloss": "a car driven by a person whose job is to take passengers where they want to go in exchange for money",
+      "targetGloss": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.44a43779ad26",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.sky.noun",
+      "targetId": "english.vocabulary.skill.atmosphere.noun",
+      "sourceForm": "sky",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "atmosphere",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "sky.n.01",
+      "targetSenseId": "atmosphere.n.05",
+      "sourceGloss": "the atmosphere and outer space as viewed from the earth",
+      "targetGloss": "the envelope of gases surrounding any celestial body",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.458df5151a5a",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.whisper.verb",
+      "targetId": "english.vocabulary.skill.talk.noun-verb",
+      "sourceForm": "whisper",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "talk",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "whisper.v.01",
+      "targetSenseId": "talk.v.02",
+      "sourceGloss": "speak softly; in a low voice",
+      "targetGloss": "express in speech",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.46033828dde6",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.river.noun",
+      "targetId": "english.vocabulary.skill.stream.noun",
+      "sourceForm": "river",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "stream",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "river.n.01",
+      "targetSenseId": "stream.n.01",
+      "sourceGloss": "a large natural stream of water (larger than a creek)",
+      "targetGloss": "a natural body of running water flowing on or under the earth",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.47b88d752b68",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.curriculum.noun",
+      "targetId": "english.vocabulary.skill.information.noun",
+      "sourceForm": "curriculum",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "information",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "course_of_study.n.01",
+      "targetSenseId": "information.n.01",
+      "sourceGloss": "an integrated course of academic studies",
+      "targetGloss": "a message received and understood",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.495c521cb022",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.tuesday.noun",
+      "targetId": "english.vocabulary.skill.weekday.noun",
+      "sourceForm": "tuesday",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "weekday",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "tuesday.n.01",
+      "targetSenseId": "weekday.n.01",
+      "sourceGloss": "the third day of the week; the second working day",
+      "targetGloss": "any day except Sunday (and sometimes except Saturday)",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.49868f7fb754",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.desert.noun",
+      "targetId": "english.vocabulary.skill.parcel.noun",
+      "sourceForm": "desert",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "parcel",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "desert.n.01",
+      "targetSenseId": "tract.n.01",
+      "sourceGloss": "arid land with little or no vegetation",
+      "targetGloss": "an extended area of land",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.4acd5c2ed05b",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.upload.verb",
+      "targetId": "english.vocabulary.skill.transfer.verb",
+      "sourceForm": "upload",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "transfer",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "upload.v.01",
+      "targetSenseId": "transfer.v.02",
+      "sourceGloss": "transfer a file or program to a central computer from a smaller computer or a computer at a remote location",
+      "targetGloss": "move from one place to another",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.4ad3d5043791",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.footballer.noun",
+      "targetId": "english.vocabulary.skill.player.noun",
+      "sourceForm": "footballer",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "player",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "football_player.n.01",
+      "targetSenseId": "player.n.01",
+      "sourceGloss": "an athlete who plays American football",
+      "targetGloss": "a person who participates in or is skilled at some game",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.4aebc1d69618",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.cycling.noun",
+      "targetId": "english.vocabulary.skill.sport.noun",
+      "sourceForm": "cycling",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "sport",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "cycling.n.01",
+      "targetSenseId": "sport.n.01",
+      "sourceGloss": "the sport of traveling on a bicycle or motorcycle",
+      "targetGloss": "an active diversion requiring physical exertion and competition",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.4bf61fd0eb60",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.pond.noun",
+      "targetId": "english.vocabulary.skill.lake.noun",
+      "sourceForm": "pond",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "lake",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "pond.n.01",
+      "targetSenseId": "lake.n.01",
+      "sourceGloss": "a small lake",
+      "targetGloss": "a body of (usually fresh) water surrounded by land",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hypernym.4c019f61240a",
+      "relation": "hypernym",
+      "sourceId": "english.vocabulary.skill.lunch.noun",
+      "targetId": "english.vocabulary.skill.meal.noun",
+      "sourceForm": "lunch",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "meal",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "lunch.n.01",
+      "targetSenseId": "meal.n.01",
+      "sourceGloss": "a midday meal",
+      "targetGloss": "the food served and eaten at one time",
+      "layer": "enrichment.semantic.wordnet.hypernym"
+    }
+  ]
+}

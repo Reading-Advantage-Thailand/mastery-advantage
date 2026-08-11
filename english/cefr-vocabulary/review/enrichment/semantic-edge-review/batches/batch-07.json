@@ -1,0 +1,1934 @@
+{
+  "batchId": "batch-07",
+  "indexStart": 700,
+  "indexEnd": 799,
+  "count": 100,
+  "edges": [
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.a4de22c51748",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.weekday.noun",
+      "targetId": "english.vocabulary.skill.wednesday.noun",
+      "sourceForm": "weekday",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "wednesday",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "weekday.n.01",
+      "targetSenseId": "wednesday.n.01",
+      "sourceGloss": "any day except Sunday (and sometimes except Saturday)",
+      "targetGloss": "the fourth day of the week; the third working day",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.a540cbc2a7e4",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.swimming.noun",
+      "targetId": "english.vocabulary.skill.dive.verb",
+      "sourceForm": "swimming",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "dive",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "swimming.n.01",
+      "targetSenseId": "dive.n.02",
+      "sourceGloss": "the act of swimming; :",
+      "targetGloss": "a headlong plunge into water",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.a6ddddba8dc3",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.try.noun-verb",
+      "targetId": "english.vocabulary.skill.battle.noun",
+      "sourceForm": "try",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "battle",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "attempt.n.01",
+      "targetSenseId": "struggle.n.01",
+      "sourceGloss": "earnest and conscientious activity intended to do or accomplish something",
+      "targetGloss": "an energetic attempt to achieve something",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.a78f4fd11681",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.photo.noun",
+      "targetId": "english.vocabulary.skill.frame.noun",
+      "sourceForm": "photo",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "frame",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "photograph.n.01",
+      "targetSenseId": "frame.n.02",
+      "sourceGloss": "a representation of a person or scene in the form of a print or transparent slide; recorded by a camera on light-sensitive material",
+      "targetGloss": "a single one of a series of still transparent pictures forming a cinema, television or video film",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.a8e412f304fc",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.swim.noun",
+      "targetId": "english.vocabulary.skill.dive.verb",
+      "sourceForm": "swim",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "dive",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "swimming.n.01",
+      "targetSenseId": "dive.n.02",
+      "sourceGloss": "the act of swimming; :",
+      "targetGloss": "a headlong plunge into water",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.a925244ac71b",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.swim.noun-verb",
+      "targetId": "english.vocabulary.skill.dive.verb",
+      "sourceForm": "swim",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "dive",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "swimming.n.01",
+      "targetSenseId": "dive.n.02",
+      "sourceGloss": "the act of swimming; :",
+      "targetGloss": "a headlong plunge into water",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.aa92c3c1b4ae",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.kind.noun",
+      "targetId": "english.vocabulary.skill.type.noun-verb",
+      "sourceForm": "kind",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "type",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "kind.n.01",
+      "targetSenseId": "type.n.01",
+      "sourceGloss": "a category of things distinguished by some common characteristic or quality",
+      "targetGloss": "a subdivision of a particular kind of thing",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.aa9d231f03a8",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.achieve.verb",
+      "targetId": "english.vocabulary.skill.score.verb",
+      "sourceForm": "achieve",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "score",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "achieve.v.01",
+      "targetSenseId": "score.v.06",
+      "sourceGloss": "to gain with effort",
+      "targetGloss": "get a certain number or letter indicating quality or performance",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.ad1af6aa8e2c",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.fuel.noun",
+      "targetId": "english.vocabulary.skill.fire.noun",
+      "sourceForm": "fuel",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "fire",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "fuel.n.01",
+      "targetSenseId": "fire.n.07",
+      "sourceGloss": "a substance that can be consumed to produce energy",
+      "targetGloss": "fuel that is burning and is used as a means for cooking",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.ad1d6d24ad6a",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.examination-exam.noun",
+      "targetId": "english.vocabulary.skill.final.adjective",
+      "sourceForm": "exam",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "final",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "examination.n.02",
+      "targetSenseId": "final_examination.n.01",
+      "sourceGloss": "a set of questions or exercises evaluating skill or knowledge",
+      "targetGloss": "an examination administered at the end of an academic term",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.ad6acccb170c",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.clothing.noun",
+      "targetId": "english.vocabulary.skill.uniform.noun",
+      "sourceForm": "clothing",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "uniform",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "clothing.n.01",
+      "targetSenseId": "uniform.n.01",
+      "sourceGloss": "a covering designed to be worn on a person's body",
+      "targetGloss": "clothing of distinctive design worn by members of a particular group as a means of identification",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.ad992f191603",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.journey.noun",
+      "targetId": "english.vocabulary.skill.drive.noun",
+      "sourceForm": "journey",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "drive",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "journey.n.01",
+      "targetSenseId": "drive.n.08",
+      "sourceGloss": "the act of traveling from one place to another",
+      "targetGloss": "a journey in a vehicle (usually an automobile)",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.ae0d3ed8964b",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.assistant.noun",
+      "targetId": "english.vocabulary.skill.model.noun",
+      "sourceForm": "assistant",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "model",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "assistant.n.01",
+      "targetSenseId": "mannequin.n.01",
+      "sourceGloss": "a person who contributes to the fulfillment of a need or furtherance of an effort or purpose",
+      "targetGloss": "a woman who wears clothes to display fashions",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.ae54236b8f43",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.furniture.noun",
+      "targetId": "english.vocabulary.skill.lamp.noun",
+      "sourceForm": "furniture",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "lamp",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "furniture.n.01",
+      "targetSenseId": "lamp.n.02",
+      "sourceGloss": "furnishings that make a room or other area ready for occupancy",
+      "targetGloss": "a piece of furniture holding one or more electric light bulbs",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.b11439c4d94a",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.opportunity.noun",
+      "targetId": "english.vocabulary.skill.throw.verb",
+      "sourceForm": "opportunity",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "throw",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "opportunity.n.01",
+      "targetSenseId": "throw.n.02",
+      "sourceGloss": "a possibility due to a favorable combination of circumstances",
+      "targetGloss": "a single chance or instance",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.b2030cfa88a9",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.candy.noun",
+      "targetId": "english.vocabulary.skill.kiss.noun-verb",
+      "sourceForm": "candy",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "kiss",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "candy.n.01",
+      "targetSenseId": "kiss.n.03",
+      "sourceGloss": "a rich sweet made of flavored sugar and often combined with fruit or nuts",
+      "targetGloss": "any of several bite-sized candies",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.b266573c1516",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.coin.noun",
+      "targetId": "english.vocabulary.skill.dollar.noun",
+      "sourceForm": "coin",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "dollar",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "coin.n.01",
+      "targetSenseId": "dollar.n.03",
+      "sourceGloss": "a flat metal piece (usually a disc) used as money",
+      "targetGloss": "a United States coin worth one dollar",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.b2f8fec6c491",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.athlete.noun",
+      "targetId": "english.vocabulary.skill.swimmer.noun",
+      "sourceForm": "athlete",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "swimmer",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "athlete.n.01",
+      "targetSenseId": "swimmer.n.01",
+      "sourceGloss": "a person trained to compete in sports",
+      "targetGloss": "a trained athlete who participates in swimming meets",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.b36500e6536f",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.conversation.noun",
+      "targetId": "english.vocabulary.skill.rap.noun",
+      "sourceForm": "conversation",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "rap",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "conversation.n.01",
+      "targetSenseId": "rap.n.04",
+      "sourceGloss": "the use of speech for informal exchange of views or ideas or information etc.",
+      "targetGloss": "voluble conversation",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.b36fb1105337",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.thank.verb",
+      "targetId": "english.vocabulary.skill.recognise.verb",
+      "sourceForm": "thank",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "recognise",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "thank.v.01",
+      "targetSenseId": "acknowledge.v.04",
+      "sourceGloss": "express gratitude or show appreciation to",
+      "targetGloss": "express obligation, thanks, or gratitude for",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.b3f95ae1d7b5",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.journey.noun",
+      "targetId": "english.vocabulary.skill.expedition.noun",
+      "sourceForm": "journey",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "expedition",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "journey.n.01",
+      "targetSenseId": "expedition.n.03",
+      "sourceGloss": "the act of traveling from one place to another",
+      "targetGloss": "a journey organized for a particular purpose",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.b45483955b6d",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.businessman.noun",
+      "targetId": "english.vocabulary.skill.power.noun",
+      "sourceForm": "businessman",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "power",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "businessman.n.01",
+      "targetSenseId": "baron.n.03",
+      "sourceGloss": "a person engaged in commercial or industrial business (especially an owner or executive)",
+      "targetGloss": "a very wealthy or powerful businessman",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.b49fb08b0303",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.athlete.noun",
+      "targetId": "english.vocabulary.skill.footballer.noun",
+      "sourceForm": "athlete",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "footballer",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "athlete.n.01",
+      "targetSenseId": "football_player.n.01",
+      "sourceGloss": "a person trained to compete in sports",
+      "targetGloss": "an athlete who plays American football",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.b75e36f5a0ba",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.businessman-woman.noun",
+      "targetId": "english.vocabulary.skill.power.noun",
+      "sourceForm": "businessman",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "power",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "businessman.n.01",
+      "targetSenseId": "baron.n.03",
+      "sourceGloss": "a person engaged in commercial or industrial business (especially an owner or executive)",
+      "targetGloss": "a very wealthy or powerful businessman",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.b9547091df30",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.shout.noun-verb",
+      "targetId": "english.vocabulary.skill.noise.noun",
+      "sourceForm": "shout",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "noise",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "cry.n.01",
+      "targetSenseId": "noise.n.04",
+      "sourceGloss": "a loud utterance; often in protest or opposition",
+      "targetGloss": "a loud outcry of protest or complaint",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.b9ea329920a9",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.kind.noun",
+      "targetId": "english.vocabulary.skill.style.noun",
+      "sourceForm": "kind",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "style",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "kind.n.01",
+      "targetSenseId": "style.n.03",
+      "sourceGloss": "a category of things distinguished by some common characteristic or quality",
+      "targetGloss": "a particular kind (as to appearance)",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.ba68f958979f",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.photograph.noun-verb",
+      "targetId": "english.vocabulary.skill.still.adverb",
+      "sourceForm": "photograph",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "still",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "photograph.n.01",
+      "targetSenseId": "still.n.01",
+      "sourceGloss": "a representation of a person or scene in the form of a print or transparent slide; recorded by a camera on light-sensitive material",
+      "targetGloss": "a static photograph (especially one taken from a movie and used for advertising purposes)",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.baff5e637772",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.customer.noun",
+      "targetId": "english.vocabulary.skill.trick.noun",
+      "sourceForm": "customer",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "trick",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "customer.n.01",
+      "targetSenseId": "whoremaster.n.01",
+      "sourceGloss": "someone who pays for goods or services",
+      "targetGloss": "a prostitute's customer",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.bca395e33d1e",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.journey.noun",
+      "targetId": "english.vocabulary.skill.ride.verb",
+      "sourceForm": "journey",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "ride",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "journey.n.01",
+      "targetSenseId": "drive.n.08",
+      "sourceGloss": "the act of traveling from one place to another",
+      "targetGloss": "a journey in a vehicle (usually an automobile)",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.bd64b1b0630b",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.achievement.noun",
+      "targetId": "english.vocabulary.skill.walk.noun",
+      "sourceForm": "achievement",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "walk",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "accomplishment.n.01",
+      "targetSenseId": "base_on_balls.n.01",
+      "sourceGloss": "the action of accomplishing something",
+      "targetGloss": "(baseball) an advance to first base by a batter who receives four balls",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.bdbe186cc8d0",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.sweet-s-us-candy.noun",
+      "targetId": "english.vocabulary.skill.rock.noun",
+      "sourceForm": "candy",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "rock",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "candy.n.01",
+      "targetSenseId": "rock_candy.n.01",
+      "sourceGloss": "a rich sweet made of flavored sugar and often combined with fruit or nuts",
+      "targetGloss": "hard bright-colored stick candy (typically flavored with peppermint)",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.befe33df3000",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.kind.noun",
+      "targetId": "english.vocabulary.skill.model.noun",
+      "sourceForm": "kind",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "model",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "kind.n.01",
+      "targetSenseId": "model.n.02",
+      "sourceGloss": "a category of things distinguished by some common characteristic or quality",
+      "targetGloss": "a type of product",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.bf2d4180438f",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.furniture.noun",
+      "targetId": "english.vocabulary.skill.bookcase.noun",
+      "sourceForm": "furniture",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bookcase",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "furniture.n.01",
+      "targetSenseId": "bookcase.n.01",
+      "sourceGloss": "furnishings that make a room or other area ready for occupancy",
+      "targetGloss": "a piece of furniture with shelves for storing books",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c04a188e49a1",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.nightclub.noun",
+      "targetId": "english.vocabulary.skill.dive.verb",
+      "sourceForm": "nightclub",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "dive",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "cabaret.n.01",
+      "targetSenseId": "honkytonk.n.01",
+      "sourceGloss": "a spot that is open late at night and that provides entertainment (as singers or dancers) as well as dancing and food and drink",
+      "targetGloss": "a cheap disreputable nightclub or dance hall",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c090b597673a",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.achievement.noun",
+      "targetId": "english.vocabulary.skill.arrival.noun",
+      "sourceForm": "achievement",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "arrival",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "accomplishment.n.01",
+      "targetSenseId": "arrival.n.01",
+      "sourceGloss": "the action of accomplishing something",
+      "targetGloss": "accomplishment of an objective",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c090e92ddaa4",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.entertainment.noun",
+      "targetId": "english.vocabulary.skill.show.noun-verb",
+      "sourceForm": "entertainment",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "show",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "entertainment.n.01",
+      "targetSenseId": "show.n.01",
+      "sourceGloss": "an activity that is diverting and that holds the attention",
+      "targetGloss": "the act of publicly exhibiting or entertaining",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c0b8cda37b61",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.achieve.verb",
+      "targetId": "english.vocabulary.skill.strike.noun-verb",
+      "sourceForm": "achieve",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "strike",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "achieve.v.01",
+      "targetSenseId": "come_to.v.03",
+      "sourceGloss": "to gain with effort",
+      "targetGloss": "attain",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c126e60a071f",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.motorcycle.noun",
+      "targetId": "english.vocabulary.skill.motorbike.noun",
+      "sourceForm": "motorcycle",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "motorbike",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "motorcycle.n.01",
+      "targetSenseId": "minibike.n.01",
+      "sourceGloss": "a motor vehicle with two wheels and a strong frame",
+      "targetGloss": "small motorcycle with a low frame and small wheels and elevated handlebars",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c15dba819ae2",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.luggage.noun",
+      "targetId": "english.vocabulary.skill.bag.noun",
+      "sourceForm": "luggage",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bag",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "baggage.n.01",
+      "targetSenseId": "bag.n.06",
+      "sourceGloss": "cases used to carry belongings when traveling",
+      "targetGloss": "a portable rectangular container for carrying clothes",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c1e9962c651d",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.kind.noun",
+      "targetId": "english.vocabulary.skill.species.noun",
+      "sourceForm": "kind",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "species",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "kind.n.01",
+      "targetSenseId": "species.n.02",
+      "sourceGloss": "a category of things distinguished by some common characteristic or quality",
+      "targetGloss": "a specific kind of something",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c2890a119705",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.journey.noun",
+      "targetId": "english.vocabulary.skill.tour.noun-verb",
+      "sourceForm": "journey",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "tour",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "journey.n.01",
+      "targetSenseId": "tour.n.01",
+      "sourceGloss": "the act of traveling from one place to another",
+      "targetGloss": "a journey or route all the way around a particular place or area",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c2b11b19572c",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.dislike.verb",
+      "targetId": "english.vocabulary.skill.hate.verb",
+      "sourceForm": "dislike",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "hate",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "dislike.v.01",
+      "targetSenseId": "hate.v.01",
+      "sourceGloss": "have or feel a dislike or distaste for",
+      "targetGloss": "dislike intensely; feel antipathy or aversion towards",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c3f5b3100b75",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.friendship.noun",
+      "targetId": "english.vocabulary.skill.trust.verb",
+      "sourceForm": "friendship",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "trust",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "friendship.n.01",
+      "targetSenseId": "confidence.n.04",
+      "sourceGloss": "the state of being friends (or friendly)",
+      "targetGloss": "a trustful relationship",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c5a9da248d31",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.photo.noun",
+      "targetId": "english.vocabulary.skill.scene.noun",
+      "sourceForm": "photo",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "scene",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "photograph.n.01",
+      "targetSenseId": "scene.n.04",
+      "sourceGloss": "a representation of a person or scene in the form of a print or transparent slide; recorded by a camera on light-sensitive material",
+      "targetGloss": "a consecutive series of pictures that constitutes a unit of action in a film",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c5d4ec91c3f0",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.rubber-us-eraser.noun",
+      "targetId": "english.vocabulary.skill.rubber.noun",
+      "sourceForm": "eraser",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "rubber",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "eraser.n.01",
+      "targetSenseId": "rubber_eraser.n.01",
+      "sourceGloss": "an implement used to erase something",
+      "targetGloss": "an eraser made of rubber (or of a synthetic material with properties similar to rubber); commonly mounted at one end of a pencil",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c5d8c92958ff",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.footballer.noun",
+      "targetId": "english.vocabulary.skill.back.adjective-adverb-noun",
+      "sourceForm": "footballer",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "back",
+      "targetPos": [
+        "adjective",
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "football_player.n.01",
+      "targetSenseId": "back.n.04",
+      "sourceGloss": "an athlete who plays American football",
+      "targetGloss": "(football) a person who plays in the backfield",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c6df1b820910",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.architect.noun",
+      "targetId": "english.vocabulary.skill.town.noun",
+      "sourceForm": "architect",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "town",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "architect.n.01",
+      "targetSenseId": "town.n.04",
+      "sourceGloss": "someone who creates plans to be used in making something (such as buildings)",
+      "targetGloss": "United States architect who was noted for his design and construction of truss bridges (1784-1844)",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c740930441d0",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.software.noun",
+      "targetId": "english.vocabulary.skill.programme.noun",
+      "sourceForm": "software",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "programme",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "software.n.01",
+      "targetSenseId": "program.n.07",
+      "sourceGloss": "(computer science) written programs or procedures or rules and associated documentation pertaining to the operation of a computer system and that are stored in read/write memory",
+      "targetGloss": "(computer science) a sequence of instructions that a computer can interpret and execute",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c79443eee14b",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.coin.noun",
+      "targetId": "english.vocabulary.skill.real.adjective",
+      "sourceForm": "coin",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "real",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "coin.n.01",
+      "targetSenseId": "real.n.03",
+      "sourceGloss": "a flat metal piece (usually a disc) used as money",
+      "targetGloss": "an old small silver Spanish coin",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c812ed7a4121",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.workout.noun",
+      "targetId": "english.vocabulary.skill.yoga.noun",
+      "sourceForm": "workout",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "yoga",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "exercise.n.01",
+      "targetSenseId": "yoga.n.02",
+      "sourceGloss": "the activity of exerting your muscles in various ways to keep fit",
+      "targetGloss": "a system of exercises practiced as part of the Hindu discipline to promote control of the body and mind",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c879584e3548",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.cattle.noun",
+      "targetId": "english.vocabulary.skill.bull.noun",
+      "sourceForm": "cattle",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bull",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "cattle.n.01",
+      "targetSenseId": "bull.n.01",
+      "sourceGloss": "domesticated bovine animals as a group regardless of sex or age; ; ; - Bible",
+      "targetGloss": "uncastrated adult male of domestic cattle",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c8826ab94ff0",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.ache.noun",
+      "targetId": "english.vocabulary.skill.headache.noun",
+      "sourceForm": "ache",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "headache",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "ache.n.01",
+      "targetSenseId": "headache.n.02",
+      "sourceGloss": "a dull persistent (usually moderately intense) pain",
+      "targetGloss": "pain in the head caused by dilation of cerebral arteries or muscle contractions or a reaction to drugs",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c99d7bd221c2",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.achievement.noun",
+      "targetId": "english.vocabulary.skill.performance.noun",
+      "sourceForm": "achievement",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "performance",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "accomplishment.n.01",
+      "targetSenseId": "performance.n.04",
+      "sourceGloss": "the action of accomplishing something",
+      "targetGloss": "any recognized accomplishment",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c9b48b5bbaf4",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.bicycle.noun",
+      "targetId": "english.vocabulary.skill.ordinary.adjective",
+      "sourceForm": "bicycle",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "ordinary",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "bicycle.n.01",
+      "targetSenseId": "ordinary.n.04",
+      "sourceGloss": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "targetGloss": "an early bicycle with a very large front wheel and small back wheel",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.c9bd0894cd83",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.businessman.noun",
+      "targetId": "english.vocabulary.skill.operator.noun",
+      "sourceForm": "businessman",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "operator",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "businessman.n.01",
+      "targetSenseId": "operator.n.03",
+      "sourceGloss": "a person engaged in commercial or industrial business (especially an owner or executive)",
+      "targetGloss": "someone who owns or operates a business",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.cad6637eba5e",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.policeman.noun",
+      "targetId": "english.vocabulary.skill.pig.noun",
+      "sourceForm": "policeman",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "pig",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "policeman.n.01",
+      "targetSenseId": "bull.n.05",
+      "sourceGloss": "a member of a police force",
+      "targetGloss": "uncomplimentary terms for a policeman",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.cb5e73e72a76",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.athlete.noun",
+      "targetId": "english.vocabulary.skill.reserve.noun-verb",
+      "sourceForm": "athlete",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "reserve",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "athlete.n.01",
+      "targetSenseId": "substitute.n.02",
+      "sourceGloss": "a person trained to compete in sports",
+      "targetGloss": "an athlete who plays only when a starter on the team is replaced",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.cbfa9480e985",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.select.verb",
+      "targetId": "english.vocabulary.skill.vote.noun-verb",
+      "sourceForm": "select",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "vote",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "choose.v.01",
+      "targetSenseId": "vote.v.01",
+      "sourceGloss": "pick out, select, or choose from a number of alternatives",
+      "targetGloss": "express one's preference for a candidate or for a measure or resolution; cast a vote",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.cc17a5eb14d8",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.compete.verb",
+      "targetId": "english.vocabulary.skill.match-football.noun",
+      "sourceForm": "compete",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "match",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "compete.v.01",
+      "targetSenseId": "equal.v.02",
+      "sourceGloss": "compete for something; engage in a contest; measure oneself against others",
+      "targetGloss": "be equal to in quality or ability",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.cc6293dbe189",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.achievement.noun",
+      "targetId": "english.vocabulary.skill.performance-entertainment.noun",
+      "sourceForm": "achievement",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "performance",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "accomplishment.n.01",
+      "targetSenseId": "performance.n.04",
+      "sourceGloss": "the action of accomplishing something",
+      "targetGloss": "any recognized accomplishment",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.cceb813b83f8",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.journey.noun",
+      "targetId": "english.vocabulary.skill.drive.verb",
+      "sourceForm": "journey",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "drive",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "journey.n.01",
+      "targetSenseId": "drive.n.08",
+      "sourceGloss": "the act of traveling from one place to another",
+      "targetGloss": "a journey in a vehicle (usually an automobile)",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.cd0f4c5a6f44",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.greeting.noun",
+      "targetId": "english.vocabulary.skill.welcome.adjective-exclamation",
+      "sourceForm": "greeting",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "welcome",
+      "targetPos": [
+        "adjective",
+        "exclamation"
+      ],
+      "sourceSenseId": "greeting.n.01",
+      "targetSenseId": "welcome.n.02",
+      "sourceGloss": "(usually plural) an acknowledgment or expression of good will (especially on meeting)",
+      "targetGloss": "a greeting or reception",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.cd73930b832e",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.achievement.noun",
+      "targetId": "english.vocabulary.skill.smooth.adjective",
+      "sourceForm": "achievement",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "smooth",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "accomplishment.n.01",
+      "targetSenseId": "smooth.n.01",
+      "sourceGloss": "the action of accomplishing something",
+      "targetGloss": "the act of smoothing",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.cdfecaad017d",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.cupboard.noun",
+      "targetId": "english.vocabulary.skill.safe.adjective",
+      "sourceForm": "cupboard",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "safe",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "cupboard.n.01",
+      "targetSenseId": "safe.n.02",
+      "sourceGloss": "a small room (or recess) or cabinet used for storage space",
+      "targetGloss": "a ventilated or refrigerated cupboard for securing provisions from pests",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.ce13b34e2190",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.try.noun-verb",
+      "targetId": "english.vocabulary.skill.pass.noun-verb",
+      "sourceForm": "try",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "pass",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "attempt.n.01",
+      "targetSenseId": "crack.n.09",
+      "sourceGloss": "earnest and conscientious activity intended to do or accomplish something",
+      "targetGloss": "a usually brief attempt",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.ce5a82ebd970",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.underpants.noun",
+      "targetId": "english.vocabulary.skill.shorts.noun",
+      "sourceForm": "underpants",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "shorts",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "underpants.n.01",
+      "targetSenseId": "drawers.n.01",
+      "sourceGloss": "an undergarment that covers the body from the waist no further than to the thighs; usually worn next to the skin",
+      "targetGloss": "underpants worn by men",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.ce67b55c01f2",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.comic.noun",
+      "targetId": "english.vocabulary.skill.clown.noun",
+      "sourceForm": "comic",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "clown",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "comedian.n.01",
+      "targetSenseId": "clown.n.02",
+      "sourceGloss": "a professional performer who tells jokes and performs comical acts",
+      "targetGloss": "a person who amuses others by ridiculous behavior",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.cfbafc430501",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.greeting.noun",
+      "targetId": "english.vocabulary.skill.wish.noun-verb",
+      "sourceForm": "greeting",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "wish",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "greeting.n.01",
+      "targetSenseId": "regard.n.03",
+      "sourceGloss": "(usually plural) an acknowledgment or expression of good will (especially on meeting)",
+      "targetGloss": "(usually plural) a polite expression of desire for someone's welfare",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.cfc633c06e93",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.athlete.noun",
+      "targetId": "english.vocabulary.skill.jumper.noun",
+      "sourceForm": "athlete",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "jumper",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "athlete.n.01",
+      "targetSenseId": "jumper.n.02",
+      "sourceGloss": "a person trained to compete in sports",
+      "targetGloss": "an athlete who competes at jumping",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d02cabde439c",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.compete.verb",
+      "targetId": "english.vocabulary.skill.touch.verb",
+      "sourceForm": "compete",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "touch",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "compete.v.01",
+      "targetSenseId": "equal.v.02",
+      "sourceGloss": "compete for something; engage in a contest; measure oneself against others",
+      "targetGloss": "be equal to in quality or ability",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d0cfb7d3c768",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.leather.noun",
+      "targetId": "english.vocabulary.skill.calf.noun",
+      "sourceForm": "leather",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "calf",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "leather.n.01",
+      "targetSenseId": "calf.n.03",
+      "sourceGloss": "an animal skin made smooth and flexible by removing the hair and then tanning",
+      "targetGloss": "fine leather from the skin of a calf",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d0de52033dcd",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.clothing.noun",
+      "targetId": "english.vocabulary.skill.blue.adjective-noun",
+      "sourceForm": "clothing",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "blue",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "clothing.n.01",
+      "targetSenseId": "blue.n.02",
+      "sourceGloss": "a covering designed to be worn on a person's body",
+      "targetGloss": "blue clothing",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d197455b272b",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.select.verb",
+      "targetId": "english.vocabulary.skill.sort.noun",
+      "sourceForm": "select",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "sort",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "choose.v.01",
+      "targetSenseId": "screen.v.03",
+      "sourceGloss": "pick out, select, or choose from a number of alternatives",
+      "targetGloss": "examine in order to test suitability",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d19a37cadb4b",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.select.verb",
+      "targetId": "english.vocabulary.skill.follow-social-media.verb",
+      "sourceForm": "select",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "follow",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "choose.v.01",
+      "targetSenseId": "adopt.v.01",
+      "sourceGloss": "pick out, select, or choose from a number of alternatives",
+      "targetGloss": "choose and follow; as of theories, ideas, policies, strategies or plans",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d200fad0b329",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.walking.noun",
+      "targetId": "english.vocabulary.skill.march.noun",
+      "sourceForm": "walking",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "march",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "walk.n.01",
+      "targetSenseId": "march.n.02",
+      "sourceGloss": "the act of traveling by foot",
+      "targetGloss": "the act of marching; walking with regular steps (especially in a procession of some kind)",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d222a8fd31e9",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.illness.noun",
+      "targetId": "english.vocabulary.skill.condition.noun",
+      "sourceForm": "illness",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "condition",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "illness.n.01",
+      "targetSenseId": "condition.n.06",
+      "sourceGloss": "impairment of normal physiological function affecting part or all of an organism",
+      "targetGloss": "an illness, disease, or other medical problem",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d3db62ae8778",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.restaurant.noun",
+      "targetId": "english.vocabulary.skill.grill.noun-verb",
+      "sourceForm": "restaurant",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "grill",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "restaurant.n.01",
+      "targetSenseId": "grillroom.n.01",
+      "sourceGloss": "a building where people go to eat",
+      "targetGloss": "a restaurant where food is cooked on a grill",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d52a9b81e8c5",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.competitor.noun",
+      "targetId": "english.vocabulary.skill.queen.noun",
+      "sourceForm": "competitor",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "queen",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "rival.n.01",
+      "targetSenseId": "king.n.02",
+      "sourceGloss": "the contestant you hope to defeat",
+      "targetGloss": "a competitor who holds a preeminent position",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d55b884b4b93",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.businessman-woman.noun",
+      "targetId": "english.vocabulary.skill.suit.noun",
+      "sourceForm": "businessman",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "suit",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "businessman.n.01",
+      "targetSenseId": "suit.n.03",
+      "sourceGloss": "a person engaged in commercial or industrial business (especially an owner or executive)",
+      "targetGloss": "(slang) a businessman dressed in a business suit",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d705502a5133",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.photograph.noun-verb",
+      "targetId": "english.vocabulary.skill.still.adjective-adverb",
+      "sourceForm": "photograph",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "still",
+      "targetPos": [
+        "adjective",
+        "adverb"
+      ],
+      "sourceSenseId": "photograph.n.01",
+      "targetSenseId": "still.n.01",
+      "sourceGloss": "a representation of a person or scene in the form of a print or transparent slide; recorded by a camera on light-sensitive material",
+      "targetGloss": "a static photograph (especially one taken from a movie and used for advertising purposes)",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d7b3191a89a7",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.postpone.verb",
+      "targetId": "english.vocabulary.skill.call.noun-verb",
+      "sourceForm": "postpone",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "call",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "postpone.v.01",
+      "targetSenseId": "call.v.11",
+      "sourceGloss": "hold back to a later time",
+      "targetGloss": "stop or postpone because of adverse conditions, such as bad weather",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d8b9226edbd2",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.coin.noun",
+      "targetId": "english.vocabulary.skill.change.verb",
+      "sourceForm": "coin",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "change",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "coin.n.01",
+      "targetSenseId": "change.n.08",
+      "sourceGloss": "a flat metal piece (usually a disc) used as money",
+      "targetGloss": "coins of small denomination regarded collectively",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d9445d62c837",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.knowledge.noun",
+      "targetId": "english.vocabulary.skill.power.noun",
+      "sourceForm": "knowledge",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "power",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "cognition.n.01",
+      "targetSenseId": "ability.n.02",
+      "sourceGloss": "the psychological result of perception and learning and reasoning",
+      "targetGloss": "possession of the qualities (especially mental qualities) required to do something or get something done",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d98954580fd2",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.try.noun-verb",
+      "targetId": "english.vocabulary.skill.go.noun-verb",
+      "sourceForm": "try",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "go",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "attempt.n.01",
+      "targetSenseId": "crack.n.09",
+      "sourceGloss": "earnest and conscientious activity intended to do or accomplish something",
+      "targetGloss": "a usually brief attempt",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.d9f7b2f42551",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.athlete.noun",
+      "targetId": "english.vocabulary.skill.runner.noun",
+      "sourceForm": "athlete",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "runner",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "athlete.n.01",
+      "targetSenseId": "runner.n.06",
+      "sourceGloss": "a person trained to compete in sports",
+      "targetGloss": "a trained athlete who competes in foot races",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.da03a034e8f3",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.select.verb",
+      "targetId": "english.vocabulary.skill.go-with-together.phrasal-verb",
+      "sourceForm": "select",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "go",
+      "targetPos": [
+        "phrasal-verb"
+      ],
+      "sourceSenseId": "choose.v.01",
+      "targetSenseId": "plump.v.04",
+      "sourceGloss": "pick out, select, or choose from a number of alternatives",
+      "targetGloss": "give support (to) or make a choice (of) one out of a group or number",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.da59b44e77f5",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.apartment-uk-flat.noun",
+      "targetId": "english.vocabulary.skill.studio.noun",
+      "sourceForm": "apartment",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "studio",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "apartment.n.01",
+      "targetSenseId": "studio_apartment.n.01",
+      "sourceGloss": "a suite of rooms usually on one floor of an apartment house",
+      "targetGloss": "an apartment with a living space and a bathroom and a small kitchen",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.db34b2dc417e",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.achieve.verb",
+      "targetId": "english.vocabulary.skill.manage.verb",
+      "sourceForm": "achieve",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "manage",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "achieve.v.01",
+      "targetSenseId": "wangle.v.01",
+      "sourceGloss": "to gain with effort",
+      "targetGloss": "achieve something by means of trickery or devious methods",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.dba86a1a7eba",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.policeman.noun",
+      "targetId": "english.vocabulary.skill.policewoman.noun",
+      "sourceForm": "policeman",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "policewoman",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "policeman.n.01",
+      "targetSenseId": "police_matron.n.01",
+      "sourceGloss": "a member of a police force",
+      "targetGloss": "a woman policeman",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.dbad6474c2e9",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.restaurant.noun",
+      "targetId": "english.vocabulary.skill.cafeteria.noun",
+      "sourceForm": "restaurant",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "cafeteria",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "restaurant.n.01",
+      "targetSenseId": "cafeteria.n.01",
+      "sourceGloss": "a building where people go to eat",
+      "targetGloss": "a restaurant where you serve yourself and pay a cashier",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.dc037fb72ac0",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.achievement.noun",
+      "targetId": "english.vocabulary.skill.effort.noun",
+      "sourceForm": "achievement",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "effort",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "accomplishment.n.01",
+      "targetSenseId": "feat.n.01",
+      "sourceGloss": "the action of accomplishing something",
+      "targetGloss": "a notable achievement",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.dc361346c8ad",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.greeting.noun",
+      "targetId": "english.vocabulary.skill.card.noun",
+      "sourceForm": "greeting",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "card",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "greeting.n.01",
+      "targetSenseId": "calling_card.n.02",
+      "sourceGloss": "(usually plural) an acknowledgment or expression of good will (especially on meeting)",
+      "targetGloss": "a printed or written greeting that is left to indicate that you have visited",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.dc5b20d9d0af",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.textbook.noun",
+      "targetId": "english.vocabulary.skill.introduction.noun",
+      "sourceForm": "textbook",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "introduction",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "textbook.n.01",
+      "targetSenseId": "introduction.n.04",
+      "sourceGloss": "a book prepared for use in schools or colleges",
+      "targetGloss": "a basic or elementary instructional text",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.dcb6c28e73ee",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.compete.verb",
+      "targetId": "english.vocabulary.skill.play.noun-verb",
+      "sourceForm": "compete",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "play",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "compete.v.01",
+      "targetSenseId": "play.v.01",
+      "sourceGloss": "compete for something; engage in a contest; measure oneself against others",
+      "targetGloss": "participate in games or sport",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.ddecf2cb1bd9",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.achievement.noun",
+      "targetId": "english.vocabulary.skill.pass.noun-verb",
+      "sourceForm": "achievement",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "pass",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "accomplishment.n.01",
+      "targetSenseId": "base_on_balls.n.01",
+      "sourceGloss": "the action of accomplishing something",
+      "targetGloss": "(baseball) an advance to first base by a batter who receives four balls",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.de41bd756c4b",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.stadium.noun",
+      "targetId": "english.vocabulary.skill.park.noun",
+      "sourceForm": "stadium",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "park",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "stadium.n.01",
+      "targetSenseId": "ballpark.n.01",
+      "sourceGloss": "a large structure for open-air sports or entertainments",
+      "targetGloss": "a facility in which ball games are played (especially baseball games)",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.df2711bad33d",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.desk.noun",
+      "targetId": "english.vocabulary.skill.secretary.noun",
+      "sourceForm": "desk",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "secretary",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "desk.n.01",
+      "targetSenseId": "secretary.n.04",
+      "sourceGloss": "a piece of furniture with a writing surface and usually drawers or other compartments",
+      "targetGloss": "a desk used for writing",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.df651bff07d8",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.knowledge.noun",
+      "targetId": "english.vocabulary.skill.ability.noun",
+      "sourceForm": "knowledge",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "ability",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "cognition.n.01",
+      "targetSenseId": "ability.n.02",
+      "sourceGloss": "the psychological result of perception and learning and reasoning",
+      "targetGloss": "possession of the qualities (especially mental qualities) required to do something or get something done",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.df8e82b87b1d",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.businesswoman.noun",
+      "targetId": "english.vocabulary.skill.madam.noun",
+      "sourceForm": "businesswoman",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "madam",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "businesswoman.n.01",
+      "targetSenseId": "madam.n.02",
+      "sourceGloss": "a female businessperson",
+      "targetGloss": "a woman who runs a house of prostitution",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.hyponym.e03c995d4a8e",
+      "relation": "hyponym",
+      "sourceId": "english.vocabulary.skill.rug.noun",
+      "targetId": "english.vocabulary.skill.runner.noun",
+      "sourceForm": "rug",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "runner",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "rug.n.01",
+      "targetSenseId": "runner.n.08",
+      "sourceGloss": "floor covering consisting of a piece of thick heavy fabric (usually with nap or pile)",
+      "targetGloss": "a long narrow carpet",
+      "layer": "enrichment.semantic.wordnet.hyponym"
+    }
+  ]
+}

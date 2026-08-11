@@ -36,12 +36,12 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: English Lexical Semantic Enrichment** *(in progress — WordNet candidates drafted)*
+- [ ] **Track: English Lexical Semantic Enrichment** *(in progress — WordNet edges batch-reviewed)*
   *Evaluate and release independently gated typed lexical-semantic layers.*
-  *Status: Phase 1 go; Phase 2 fixtures; Phase 3 WordNet builder produced draft
-  overlay (~1191 edges, ambiguous quarantined). Next: per-relation human
-  precision review then promote/quarantine/reject. Ranking semantic weight
-  stays 0 until a relation layer is approved.*
+  *Status: 1191 candidates reviewed in 12×100 subagent batches — accept 696
+  (58%), reject 439, uncertain 56. Accepted overlay on disk. Ranking semantic
+  weight still 0 until product/curriculum go. Ambiguous lemmas (2478) remain
+  out of auto-edges.*
   *Link: [./tracks/lexical_semantic_enrichment_20260610/](./tracks/lexical_semantic_enrichment_20260610/)*
 
 ---

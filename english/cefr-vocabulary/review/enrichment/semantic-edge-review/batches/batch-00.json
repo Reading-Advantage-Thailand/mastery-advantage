@@ -1,0 +1,1991 @@
+{
+  "batchId": "batch-00",
+  "indexStart": 0,
+  "indexEnd": 99,
+  "count": 100,
+  "edges": [
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.01d2123bfb8b",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.downstairs.adverb",
+      "targetId": "english.vocabulary.skill.upstairs.adverb",
+      "sourceForm": "downstairs",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "upstairs",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "downstairs.r.01",
+      "targetSenseId": "upstairs.r.01",
+      "sourceGloss": "on a floor below",
+      "targetGloss": "on a floor above",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.0d15848e6986",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.download.noun-verb",
+      "targetId": "english.vocabulary.skill.upload.verb",
+      "sourceForm": "download",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "upload",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "download.v.01",
+      "targetSenseId": "upload.v.01",
+      "sourceGloss": "transfer a file or program from a central computer to a smaller computer or to a computer at a remote location",
+      "targetGloss": "transfer a file or program to a central computer from a smaller computer or a computer at a remote location",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.0d29b81b253a",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.full-time.adjective",
+      "targetId": "english.vocabulary.skill.part-time.adjective",
+      "sourceForm": "full-time",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "part-time",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "full-time.a.01",
+      "targetSenseId": "part-time.a.01",
+      "sourceGloss": "for the entire time appropriate to an activity",
+      "targetGloss": "involving less than the standard or customary time for an activity",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.14f1690549f8",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.little.adjective-determiner-pronoun",
+      "targetId": "english.vocabulary.skill.much.adjective-adverb-determiner-pronoun",
+      "sourceForm": "little",
+      "sourcePos": [
+        "adjective",
+        "determiner",
+        "pronoun"
+      ],
+      "targetForm": "much",
+      "targetPos": [
+        "adjective",
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "sourceSenseId": "little.a.02",
+      "targetSenseId": "much.a.01",
+      "sourceGloss": "(quantifier used with mass nouns) small in quantity or degree; not much or almost none or (with `a') at least some",
+      "targetGloss": "(quantifier used with mass nouns) great in quantity or degree or extent",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.15ec2c685a32",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.indoors.adverb",
+      "targetId": "english.vocabulary.skill.outside.adjective-adverb-preposition",
+      "sourceForm": "indoors",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "outside",
+      "targetPos": [
+        "adjective",
+        "adverb",
+        "preposition"
+      ],
+      "sourceSenseId": "inside.r.01",
+      "targetSenseId": "outside.r.01",
+      "sourceGloss": "within a building",
+      "targetGloss": "outside a building",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.17dbd7ba62e9",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.dislike.verb",
+      "targetId": "english.vocabulary.skill.like.adverb-preposition-verb",
+      "sourceForm": "dislike",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "like",
+      "targetPos": [
+        "adverb",
+        "preposition",
+        "verb"
+      ],
+      "sourceSenseId": "dislike.v.01",
+      "targetSenseId": "like.v.02",
+      "sourceGloss": "have or feel a dislike or distaste for",
+      "targetGloss": "find enjoyable or agreeable",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.1edd5dd478e2",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.downstairs.adjective-adverb",
+      "targetId": "english.vocabulary.skill.upstairs.adverb-noun",
+      "sourceForm": "downstairs",
+      "sourcePos": [
+        "adjective",
+        "adverb"
+      ],
+      "targetForm": "upstairs",
+      "targetPos": [
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "downstairs.a.01",
+      "targetSenseId": "upstairs.a.01",
+      "sourceGloss": "on or of lower floors of a building",
+      "targetGloss": "on or of upper floors of a building",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.1fdd198fa328",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.little.adjective",
+      "targetId": "english.vocabulary.skill.much.adjective-adverb-determiner-pronoun",
+      "sourceForm": "little",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "much",
+      "targetPos": [
+        "adjective",
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "sourceSenseId": "little.a.02",
+      "targetSenseId": "much.a.01",
+      "sourceGloss": "(quantifier used with mass nouns) small in quantity or degree; not much or almost none or (with `a') at least some",
+      "targetGloss": "(quantifier used with mass nouns) great in quantity or degree or extent",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.201af4cf8f02",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.downstairs.adverb",
+      "targetId": "english.vocabulary.skill.upstairs.adjective-adverb",
+      "sourceForm": "downstairs",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "upstairs",
+      "targetPos": [
+        "adjective",
+        "adverb"
+      ],
+      "sourceSenseId": "downstairs.r.01",
+      "targetSenseId": "upstairs.r.01",
+      "sourceGloss": "on a floor below",
+      "targetGloss": "on a floor above",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.231b5a2616ad",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.least.adjective-adverb",
+      "targetId": "english.vocabulary.skill.most.adjective-adverb-determiner-pronoun",
+      "sourceForm": "least",
+      "sourcePos": [
+        "adjective",
+        "adverb"
+      ],
+      "targetForm": "most",
+      "targetPos": [
+        "adjective",
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "sourceSenseId": "least.a.01",
+      "targetSenseId": "most.a.02",
+      "sourceGloss": "the superlative of `little' that can be used with mass nouns and is usually preceded by `the'; a quantifier meaning smallest in amount or extent or degree",
+      "targetGloss": "the superlative of `much' that can be used with mass nouns and is usually preceded by `the'; a quantifier meaning the greatest in amount or extent or degree",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.289987c352b5",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.all.adverb-determiner-pronoun",
+      "targetId": "english.vocabulary.skill.partly.adverb",
+      "sourceForm": "all",
+      "sourcePos": [
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "targetForm": "partly",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "wholly.r.01",
+      "targetSenseId": "partially.r.01",
+      "sourceGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "targetGloss": "in part; in some degree; not wholly",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.2c867fb62cf9",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.north.adjective-adverb-noun",
+      "targetId": "english.vocabulary.skill.south.adjective-adverb-noun",
+      "sourceForm": "north",
+      "sourcePos": [
+        "adjective",
+        "adverb",
+        "noun"
+      ],
+      "targetForm": "south",
+      "targetPos": [
+        "adjective",
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "north.a.01",
+      "targetSenseId": "south.a.01",
+      "sourceGloss": "situated in or facing or moving toward or coming from the north",
+      "targetGloss": "situated in or facing or moving toward or coming from the south",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.2f7bc38b1f91",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.side.noun",
+      "targetId": "english.vocabulary.skill.top.adjective-noun",
+      "sourceForm": "side",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "top",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "side.a.01",
+      "targetSenseId": "top.a.01",
+      "sourceGloss": "located on a side",
+      "targetGloss": "situated at the top or highest position",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.33183498ea93",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.tidy.adjective-verb",
+      "targetId": "english.vocabulary.skill.untidy.adjective",
+      "sourceForm": "tidy",
+      "sourcePos": [
+        "adjective",
+        "verb"
+      ],
+      "targetForm": "untidy",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "tidy.a.01",
+      "targetSenseId": "untidy.a.01",
+      "sourceGloss": "marked by order and cleanliness in appearance or habits",
+      "targetGloss": "not neat and tidy",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.3a6f62bc4158",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.fair.adjective-noun",
+      "targetId": "english.vocabulary.skill.unfair.adjective",
+      "sourceForm": "fair",
+      "sourcePos": [
+        "adjective",
+        "noun"
+      ],
+      "targetForm": "unfair",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "fair.a.01",
+      "targetSenseId": "unfair.a.01",
+      "sourceGloss": "free from favoritism or self-interest or bias or deception; conforming with established standards or rules",
+      "targetGloss": "not fair; marked by injustice or partiality or deception",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.3b9d3c6a25c3",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.cry.noun-verb",
+      "targetId": "english.vocabulary.skill.laugh.verb",
+      "sourceForm": "cry",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "laugh",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "cry.v.02",
+      "targetSenseId": "laugh.v.01",
+      "sourceGloss": "shed tears because of sadness, rage, or pain",
+      "targetGloss": "produce laughter",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.3e22befda5ad",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.aunt.noun",
+      "targetId": "english.vocabulary.skill.uncle.noun",
+      "sourceForm": "aunt",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "uncle",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "aunt.n.01",
+      "targetSenseId": "uncle.n.01",
+      "sourceGloss": "the sister of your father or mother; the wife of your uncle",
+      "targetGloss": "the brother of your father or mother; the husband of your aunt",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.435a3fca75fc",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.fortunately.adverb",
+      "targetId": "english.vocabulary.skill.unfortunately.adjective",
+      "sourceForm": "fortunately",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "unfortunately",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "fortunately.r.01",
+      "targetSenseId": "unfortunately.r.01",
+      "sourceGloss": "by good fortune",
+      "targetGloss": "by bad luck",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.49e283a1c683",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.employee.noun",
+      "targetId": "english.vocabulary.skill.employer.noun",
+      "sourceForm": "employee",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "employer",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "employee.n.01",
+      "targetSenseId": "employer.n.01",
+      "sourceGloss": "a worker who is hired to perform a job",
+      "targetGloss": "a person or firm that employs workers",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.4a50c454323d",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.shout.noun-verb",
+      "targetId": "english.vocabulary.skill.whisper.verb",
+      "sourceForm": "shout",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "whisper",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "shout.v.01",
+      "targetSenseId": "whisper.v.01",
+      "sourceGloss": "utter in a loud voice; talk in a loud voice (usually denoting characteristic manner of speaking)",
+      "targetGloss": "speak softly; in a low voice",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.4a9499c4752e",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.downstairs.adverb-noun",
+      "targetId": "english.vocabulary.skill.upstairs.adverb-noun",
+      "sourceForm": "downstairs",
+      "sourcePos": [
+        "adverb",
+        "noun"
+      ],
+      "targetForm": "upstairs",
+      "targetPos": [
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "downstairs.r.01",
+      "targetSenseId": "upstairs.r.01",
+      "sourceGloss": "on a floor below",
+      "targetGloss": "on a floor above",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.4d15195717c8",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.hate.verb",
+      "targetId": "english.vocabulary.skill.love.verb",
+      "sourceForm": "hate",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "love",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "hate.v.01",
+      "targetSenseId": "love.v.01",
+      "sourceGloss": "dislike intensely; feel antipathy or aversion towards",
+      "targetGloss": "have a great affection or liking for",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.501c7ff006c9",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.hate.verb",
+      "targetId": "english.vocabulary.skill.love.noun-verb",
+      "sourceForm": "hate",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "love",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "hate.v.01",
+      "targetSenseId": "love.v.01",
+      "sourceGloss": "dislike intensely; feel antipathy or aversion towards",
+      "targetGloss": "have a great affection or liking for",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.516c440ce7ca",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.daughter.noun",
+      "targetId": "english.vocabulary.skill.son.noun",
+      "sourceForm": "daughter",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "son",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "daughter.n.01",
+      "targetSenseId": "son.n.01",
+      "sourceGloss": "a female human offspring",
+      "targetGloss": "a male human offspring",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.53e39f9b705c",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.pack.verb",
+      "targetId": "english.vocabulary.skill.unpack.verb",
+      "sourceForm": "pack",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "unpack",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "pack.v.01",
+      "targetSenseId": "unpack.v.01",
+      "sourceGloss": "arrange in a container",
+      "targetGloss": "remove from its packing",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.55484e05d7e2",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.partly.adverb",
+      "targetId": "english.vocabulary.skill.totally.adverb",
+      "sourceForm": "partly",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "totally",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "partially.r.01",
+      "targetSenseId": "wholly.r.01",
+      "sourceGloss": "in part; in some degree; not wholly",
+      "targetGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.5cc57a3e4189",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.indoors.adverb",
+      "targetId": "english.vocabulary.skill.outdoors.adverb",
+      "sourceForm": "indoors",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "outdoors",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "inside.r.01",
+      "targetSenseId": "outside.r.01",
+      "sourceGloss": "within a building",
+      "targetGloss": "outside a building",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.5fd3076168d2",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.bottom.noun",
+      "targetId": "english.vocabulary.skill.top.adjective-noun",
+      "sourceForm": "bottom",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "top",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "bottom.a.01",
+      "targetSenseId": "top.a.01",
+      "sourceGloss": "situated at the bottom or lowest position",
+      "targetGloss": "situated at the top or highest position",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.601e54e7ca63",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.inside.adverb-preposition",
+      "targetId": "english.vocabulary.skill.outdoors.adverb",
+      "sourceForm": "inside",
+      "sourcePos": [
+        "adverb",
+        "preposition"
+      ],
+      "targetForm": "outdoors",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "inside.r.01",
+      "targetSenseId": "outside.r.01",
+      "sourceGloss": "within a building",
+      "targetGloss": "outside a building",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.64d21dd37db9",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.least.adjective-adverb",
+      "targetId": "english.vocabulary.skill.most.adverb-determiner-pronoun",
+      "sourceForm": "least",
+      "sourcePos": [
+        "adjective",
+        "adverb"
+      ],
+      "targetForm": "most",
+      "targetPos": [
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "sourceSenseId": "least.a.01",
+      "targetSenseId": "most.a.02",
+      "sourceGloss": "the superlative of `little' that can be used with mass nouns and is usually preceded by `the'; a quantifier meaning smallest in amount or extent or degree",
+      "targetGloss": "the superlative of `much' that can be used with mass nouns and is usually preceded by `the'; a quantifier meaning the greatest in amount or extent or degree",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.6859063990fa",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.pleasant.adjective",
+      "targetId": "english.vocabulary.skill.unpleasant.adjective",
+      "sourceForm": "pleasant",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "unpleasant",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "pleasant.a.01",
+      "targetSenseId": "unpleasant.a.01",
+      "sourceGloss": "affording pleasure; being in harmony with your taste or likings",
+      "targetGloss": "disagreeable to the senses, to the mind, or feelings",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.733151a7ad84",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.indoors.adverb",
+      "targetId": "english.vocabulary.skill.outside.adverb-preposition",
+      "sourceForm": "indoors",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "outside",
+      "targetPos": [
+        "adverb",
+        "preposition"
+      ],
+      "sourceSenseId": "inside.r.01",
+      "targetSenseId": "outside.r.01",
+      "sourceGloss": "within a building",
+      "targetGloss": "outside a building",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.78fc544c008b",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.curly.adjective",
+      "targetId": "english.vocabulary.skill.straight.adjective-adverb",
+      "sourceForm": "curly",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "straight",
+      "targetPos": [
+        "adjective",
+        "adverb"
+      ],
+      "sourceSenseId": "curly.a.01",
+      "targetSenseId": "straight.a.03",
+      "sourceGloss": "(of hair) having curls or waves",
+      "targetGloss": "(of hair) having no waves or curls",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.7a70e3eb6a5e",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.frequently.adverb",
+      "targetId": "english.vocabulary.skill.rarely.adverb",
+      "sourceForm": "frequently",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "rarely",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "frequently.r.01",
+      "targetSenseId": "rarely.r.01",
+      "sourceGloss": "many times at short intervals",
+      "targetGloss": "not often",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.7c4c9f024b2c",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.necessary.adjective",
+      "targetId": "english.vocabulary.skill.unnecessary.adjective",
+      "sourceForm": "necessary",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "unnecessary",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "necessary.a.01",
+      "targetSenseId": "unnecessary.a.01",
+      "sourceGloss": "absolutely essential",
+      "targetGloss": "not necessary",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.8775c6c1ed4f",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.downstairs.adjective-adverb",
+      "targetId": "english.vocabulary.skill.upstairs.adverb",
+      "sourceForm": "downstairs",
+      "sourcePos": [
+        "adjective",
+        "adverb"
+      ],
+      "targetForm": "upstairs",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "downstairs.a.01",
+      "targetSenseId": "upstairs.a.01",
+      "sourceGloss": "on or of lower floors of a building",
+      "targetGloss": "on or of upper floors of a building",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.8da71ea3ae7b",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.curly.adjective",
+      "targetId": "english.vocabulary.skill.straight.adjective",
+      "sourceForm": "curly",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "straight",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "curly.a.01",
+      "targetSenseId": "straight.a.03",
+      "sourceGloss": "(of hair) having curls or waves",
+      "targetGloss": "(of hair) having no waves or curls",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.8e6ce76ccec4",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.hardware.noun",
+      "targetId": "english.vocabulary.skill.software.noun",
+      "sourceForm": "hardware",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "software",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "hardware.n.03",
+      "targetSenseId": "software.n.01",
+      "sourceGloss": "(computer science) the mechanical, magnetic, electronic, and electrical components making up a computer system",
+      "targetGloss": "(computer science) written programs or procedures or rules and associated documentation pertaining to the operation of a computer system and that are stored in read/write memory",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.92fa3d484143",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.shout.verb",
+      "targetId": "english.vocabulary.skill.whisper.verb",
+      "sourceForm": "shout",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "whisper",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "shout.v.01",
+      "targetSenseId": "whisper.v.01",
+      "sourceGloss": "utter in a loud voice; talk in a loud voice (usually denoting characteristic manner of speaking)",
+      "targetGloss": "speak softly; in a low voice",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.932856ef2d74",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.east.adjective-adverb-noun",
+      "targetId": "english.vocabulary.skill.west.adjective-adverb-noun",
+      "sourceForm": "east",
+      "sourcePos": [
+        "adjective",
+        "adverb",
+        "noun"
+      ],
+      "targetForm": "west",
+      "targetPos": [
+        "adjective",
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "east.a.01",
+      "targetSenseId": "west.a.01",
+      "sourceGloss": "situated in or facing or moving toward the east",
+      "targetGloss": "situated in or facing or moving toward the west",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.96eb4eb50f70",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.expensive.adjective",
+      "targetId": "english.vocabulary.skill.inexpensive.adjective",
+      "sourceForm": "expensive",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "inexpensive",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "expensive.a.01",
+      "targetSenseId": "cheap.a.01",
+      "sourceGloss": "high in price or charging high prices",
+      "targetGloss": "relatively low in price or charging low prices",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.9bd64bfb8466",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.back.adjective-adverb-noun",
+      "targetId": "english.vocabulary.skill.front.adjective-noun",
+      "sourceForm": "back",
+      "sourcePos": [
+        "adjective",
+        "adverb",
+        "noun"
+      ],
+      "targetForm": "front",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "back.a.01",
+      "targetSenseId": "front.a.01",
+      "sourceGloss": "related to or located at the back",
+      "targetGloss": "relating to or located in the front",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.a055a83533b3",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.interesting.adjective",
+      "targetId": "english.vocabulary.skill.uninteresting.adjective",
+      "sourceForm": "interesting",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "uninteresting",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "interesting.a.01",
+      "targetSenseId": "uninteresting.a.01",
+      "sourceGloss": "arousing or holding the attention",
+      "targetGloss": "arousing no interest or attention or curiosity or excitement",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.a509c4cec603",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.dislike.verb",
+      "targetId": "english.vocabulary.skill.like.preposition-verb",
+      "sourceForm": "dislike",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "like",
+      "targetPos": [
+        "preposition",
+        "verb"
+      ],
+      "sourceSenseId": "dislike.v.01",
+      "targetSenseId": "like.v.02",
+      "sourceGloss": "have or feel a dislike or distaste for",
+      "targetGloss": "find enjoyable or agreeable",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.a5cd2a86bc78",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.advantage.noun",
+      "targetId": "english.vocabulary.skill.disadvantage.noun",
+      "sourceForm": "advantage",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "disadvantage",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "advantage.n.01",
+      "targetSenseId": "disadvantage.n.01",
+      "sourceGloss": "the quality of having a superior or more favorable position",
+      "targetGloss": "the quality of having an inferior or less favorable position",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.a7a709419761",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.downstairs.adverb",
+      "targetId": "english.vocabulary.skill.upstairs.adverb-noun",
+      "sourceForm": "downstairs",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "upstairs",
+      "targetPos": [
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "downstairs.r.01",
+      "targetSenseId": "upstairs.r.01",
+      "sourceGloss": "on a floor below",
+      "targetGloss": "on a floor above",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.a834967d5797",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.luckily.adverb",
+      "targetId": "english.vocabulary.skill.unfortunately.adverb",
+      "sourceForm": "luckily",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "unfortunately",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "fortunately.r.01",
+      "targetSenseId": "unfortunately.r.01",
+      "sourceGloss": "by good fortune",
+      "targetGloss": "by bad luck",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.acf205c671b5",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.employment.noun",
+      "targetId": "english.vocabulary.skill.unemployment.noun",
+      "sourceForm": "employment",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "unemployment",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "employment.n.01",
+      "targetSenseId": "unemployment.n.01",
+      "sourceGloss": "the state of being employed or having a job",
+      "targetGloss": "the state of being unemployed or not having a job",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.b51861ad7e67",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.downstairs.adverb-noun",
+      "targetId": "english.vocabulary.skill.upstairs.adjective-adverb",
+      "sourceForm": "downstairs",
+      "sourcePos": [
+        "adverb",
+        "noun"
+      ],
+      "targetForm": "upstairs",
+      "targetPos": [
+        "adjective",
+        "adverb"
+      ],
+      "sourceSenseId": "downstairs.r.01",
+      "targetSenseId": "upstairs.r.01",
+      "sourceGloss": "on a floor below",
+      "targetGloss": "on a floor above",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.bbe2279fff89",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.fair.adjective",
+      "targetId": "english.vocabulary.skill.unfair.adjective",
+      "sourceForm": "fair",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "unfair",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "fair.a.01",
+      "targetSenseId": "unfair.a.01",
+      "sourceGloss": "free from favoritism or self-interest or bias or deception; conforming with established standards or rules",
+      "targetGloss": "not fair; marked by injustice or partiality or deception",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.be4a9ecc0712",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.boy.noun",
+      "targetId": "english.vocabulary.skill.daughter.noun",
+      "sourceForm": "boy",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "daughter",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "son.n.01",
+      "targetSenseId": "daughter.n.01",
+      "sourceGloss": "a male human offspring",
+      "targetGloss": "a female human offspring",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.bedbb1c4431f",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.downstairs.adjective-adverb",
+      "targetId": "english.vocabulary.skill.upstairs.adjective-adverb",
+      "sourceForm": "downstairs",
+      "sourcePos": [
+        "adjective",
+        "adverb"
+      ],
+      "targetForm": "upstairs",
+      "targetPos": [
+        "adjective",
+        "adverb"
+      ],
+      "sourceSenseId": "downstairs.a.01",
+      "targetSenseId": "upstairs.a.01",
+      "sourceGloss": "on or of lower floors of a building",
+      "targetGloss": "on or of upper floors of a building",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.c592ff273d66",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.least.adverb",
+      "targetId": "english.vocabulary.skill.most.adjective-adverb-determiner-pronoun",
+      "sourceForm": "least",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "most",
+      "targetPos": [
+        "adjective",
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "sourceSenseId": "least.r.01",
+      "targetSenseId": "most.r.01",
+      "sourceGloss": "used to form the superlative",
+      "targetGloss": "used to form the superlative",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.c735240b7e7f",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.indoors.adverb",
+      "targetId": "english.vocabulary.skill.outside.adverb-noun-preposition",
+      "sourceForm": "indoors",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "outside",
+      "targetPos": [
+        "adverb",
+        "noun",
+        "preposition"
+      ],
+      "sourceSenseId": "inside.r.01",
+      "targetSenseId": "outside.r.01",
+      "sourceGloss": "within a building",
+      "targetGloss": "outside a building",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.cbfb85a438f5",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.often.adverb",
+      "targetId": "english.vocabulary.skill.rarely.adverb",
+      "sourceForm": "often",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "rarely",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "frequently.r.01",
+      "targetSenseId": "rarely.r.01",
+      "sourceGloss": "many times at short intervals",
+      "targetGloss": "not often",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.cfa89778542b",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.north.noun",
+      "targetId": "english.vocabulary.skill.south.adjective-adverb-noun",
+      "sourceForm": "north",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "south",
+      "targetPos": [
+        "adjective",
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "north.a.01",
+      "targetSenseId": "south.a.01",
+      "sourceGloss": "situated in or facing or moving toward or coming from the north",
+      "targetGloss": "situated in or facing or moving toward or coming from the south",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.cfbb0ef04e11",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.luckily.adverb",
+      "targetId": "english.vocabulary.skill.unfortunately.adjective",
+      "sourceForm": "luckily",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "unfortunately",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "fortunately.r.01",
+      "targetSenseId": "unfortunately.r.01",
+      "sourceGloss": "by good fortune",
+      "targetGloss": "by bad luck",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.d073bc3f6f44",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.nephew.noun",
+      "targetId": "english.vocabulary.skill.niece.noun",
+      "sourceForm": "nephew",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "niece",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "nephew.n.01",
+      "targetSenseId": "niece.n.01",
+      "sourceGloss": "a son of your brother or sister",
+      "targetGloss": "a daughter of your brother or sister",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.d33cdf8254b8",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.relaxed.adjective",
+      "targetId": "english.vocabulary.skill.tense.noun",
+      "sourceForm": "relaxed",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "tense",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "relaxed.a.01",
+      "targetSenseId": "tense.a.01",
+      "sourceGloss": "without strain or anxiety",
+      "targetGloss": "in or of a state of physical or nervous tension",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.d6bf003a8eda",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.least.adverb",
+      "targetId": "english.vocabulary.skill.most.adverb-determiner-pronoun",
+      "sourceForm": "least",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "most",
+      "targetPos": [
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "sourceSenseId": "least.r.01",
+      "targetSenseId": "most.r.01",
+      "sourceGloss": "used to form the superlative",
+      "targetGloss": "used to form the superlative",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.d86a0508bedf",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.inside.adverb-noun-preposition",
+      "targetId": "english.vocabulary.skill.outdoors.adverb",
+      "sourceForm": "inside",
+      "sourcePos": [
+        "adverb",
+        "noun",
+        "preposition"
+      ],
+      "targetForm": "outdoors",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "inside.r.01",
+      "targetSenseId": "outside.r.01",
+      "sourceGloss": "within a building",
+      "targetGloss": "outside a building",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.ddd2c3c5881d",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.downstairs.adverb-noun",
+      "targetId": "english.vocabulary.skill.upstairs.adverb",
+      "sourceForm": "downstairs",
+      "sourcePos": [
+        "adverb",
+        "noun"
+      ],
+      "targetForm": "upstairs",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "downstairs.r.01",
+      "targetSenseId": "upstairs.r.01",
+      "sourceGloss": "on a floor below",
+      "targetGloss": "on a floor above",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.df51474c92ed",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.cry.verb",
+      "targetId": "english.vocabulary.skill.laugh.verb",
+      "sourceForm": "cry",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "laugh",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "cry.v.02",
+      "targetSenseId": "laugh.v.01",
+      "sourceGloss": "shed tears because of sadness, rage, or pain",
+      "targetGloss": "produce laughter",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.e04da6c483a0",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.fortunately.adverb",
+      "targetId": "english.vocabulary.skill.unfortunately.adverb",
+      "sourceForm": "fortunately",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "unfortunately",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "fortunately.r.01",
+      "targetSenseId": "unfortunately.r.01",
+      "sourceGloss": "by good fortune",
+      "targetGloss": "by bad luck",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.e0e776d32268",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.husband.noun",
+      "targetId": "english.vocabulary.skill.wife.noun",
+      "sourceForm": "husband",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "wife",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "husband.n.01",
+      "targetSenseId": "wife.n.01",
+      "sourceGloss": "a married man; a woman's partner in marriage",
+      "targetGloss": "a married woman; a man's partner in marriage",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.e47416a2c566",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.maximum.adjective-noun",
+      "targetId": "english.vocabulary.skill.minimum.adjective-noun",
+      "sourceForm": "maximum",
+      "sourcePos": [
+        "adjective",
+        "noun"
+      ],
+      "targetForm": "minimum",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "maximal.a.01",
+      "targetSenseId": "minimal.a.01",
+      "sourceGloss": "the greatest or most complete or best possible",
+      "targetGloss": "the least possible",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.ec5f63078c22",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.east.adjective-adverb-noun",
+      "targetId": "english.vocabulary.skill.west.noun",
+      "sourceForm": "east",
+      "sourcePos": [
+        "adjective",
+        "adverb",
+        "noun"
+      ],
+      "targetForm": "west",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "east.a.01",
+      "targetSenseId": "west.a.01",
+      "sourceGloss": "situated in or facing or moving toward the east",
+      "targetGloss": "situated in or facing or moving toward the west",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.ed4a2c00e699",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.east.noun",
+      "targetId": "english.vocabulary.skill.west.adjective-adverb-noun",
+      "sourceForm": "east",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "west",
+      "targetPos": [
+        "adjective",
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "east.a.01",
+      "targetSenseId": "west.a.01",
+      "sourceGloss": "situated in or facing or moving toward the east",
+      "targetGloss": "situated in or facing or moving toward the west",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.f35fe57434df",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.north.adjective-adverb-noun",
+      "targetId": "english.vocabulary.skill.south.noun",
+      "sourceForm": "north",
+      "sourcePos": [
+        "adjective",
+        "adverb",
+        "noun"
+      ],
+      "targetForm": "south",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "north.a.01",
+      "targetSenseId": "south.a.01",
+      "sourceGloss": "situated in or facing or moving toward or coming from the north",
+      "targetGloss": "situated in or facing or moving toward or coming from the south",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.f47980ad2d74",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.cheap.adjective",
+      "targetId": "english.vocabulary.skill.expensive.adjective",
+      "sourceForm": "cheap",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "expensive",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "cheap.a.01",
+      "targetSenseId": "expensive.a.01",
+      "sourceGloss": "relatively low in price or charging low prices",
+      "targetGloss": "high in price or charging high prices",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.antonym.f86b19f02be0",
+      "relation": "antonym",
+      "sourceId": "english.vocabulary.skill.bottom.adjective-noun",
+      "targetId": "english.vocabulary.skill.top.adjective-noun",
+      "sourceForm": "bottom",
+      "sourcePos": [
+        "adjective",
+        "noun"
+      ],
+      "targetForm": "top",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "bottom.a.01",
+      "targetSenseId": "top.a.01",
+      "sourceGloss": "situated at the bottom or lowest position",
+      "targetGloss": "situated at the top or highest position",
+      "layer": "enrichment.semantic.wordnet.antonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.02180d0bded4",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.homework.noun",
+      "targetId": "english.vocabulary.skill.teaching.noun",
+      "sourceForm": "homework",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "teaching",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "homework.n.01",
+      "targetSenseId": "education.n.01",
+      "sourceGloss": "preparatory school work done outside school (especially at home)",
+      "targetGloss": "the activities of educating or instructing; activities that impart knowledge or skill",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.02dc782d170b",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.ankle.noun",
+      "targetId": "english.vocabulary.skill.leg.noun",
+      "sourceForm": "ankle",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "leg",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "ankle.n.01",
+      "targetSenseId": "leg.n.01",
+      "sourceGloss": "a gliding joint between the distal ends of the tibia and fibula and the proximal end of the talus",
+      "targetGloss": "a human limb; commonly used to refer to a whole limb but technically only the part of the limb between the knee and ankle",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.067b2490bee6",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.noon.noun",
+      "targetId": "english.vocabulary.skill.day.noun",
+      "sourceForm": "noon",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "day",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "noon.n.01",
+      "targetSenseId": "day.n.01",
+      "sourceGloss": "the middle of the day",
+      "targetGloss": "time for Earth to make a complete rotation on its axis",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.078840c88886",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.kitchen.noun",
+      "targetId": "english.vocabulary.skill.home.adverb-noun",
+      "sourceForm": "kitchen",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "home",
+      "targetPos": [
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "kitchen.n.01",
+      "targetSenseId": "dwelling.n.01",
+      "sourceGloss": "a room equipped for preparing meals",
+      "targetGloss": "housing that someone is living in",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.09f0c4b7f0c2",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.handlebars.noun",
+      "targetId": "english.vocabulary.skill.cycle.verb",
+      "sourceForm": "handlebars",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "cycle",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "handlebar.n.01",
+      "targetSenseId": "bicycle.n.01",
+      "sourceGloss": "the shaped bar used to steer a bicycle",
+      "targetGloss": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.188891baf2f4",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.midnight.noun",
+      "targetId": "english.vocabulary.skill.night.noun",
+      "sourceForm": "midnight",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "night",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "midnight.n.01",
+      "targetSenseId": "night.n.01",
+      "sourceGloss": "12 o'clock at night; the middle of the night",
+      "targetGloss": "the time after sunset and before sunrise while it is dark outside",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.1c63fde698bc",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.bathtub.noun",
+      "targetId": "english.vocabulary.skill.bathroom.noun",
+      "sourceForm": "bathtub",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bathroom",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "bathtub.n.01",
+      "targetSenseId": "bathroom.n.01",
+      "sourceGloss": "a relatively large open container that you fill with water and use to wash the body",
+      "targetGloss": "a room (as in a residence) containing a bathtub or shower and usually a washbasin and toilet",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.1e43df16c118",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.windscreen.noun",
+      "targetId": "english.vocabulary.skill.plane.noun",
+      "sourceForm": "windscreen",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "plane",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "windshield.n.01",
+      "targetSenseId": "airplane.n.01",
+      "sourceGloss": "transparent screen (as of glass) to protect occupants of a vehicle",
+      "targetGloss": "an aircraft that has a fixed wing and is powered by propellers or jets",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.2c78c6e462eb",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.midnight.noun",
+      "targetId": "english.vocabulary.skill.dark.adjective",
+      "sourceForm": "midnight",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "dark",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "midnight.n.01",
+      "targetSenseId": "night.n.01",
+      "sourceGloss": "12 o'clock at night; the middle of the night",
+      "targetGloss": "the time after sunset and before sunrise while it is dark outside",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.3b35e902cae2",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.bathtub.noun",
+      "targetId": "english.vocabulary.skill.bath.noun",
+      "sourceForm": "bathtub",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bath",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "bathtub.n.01",
+      "targetSenseId": "bathroom.n.01",
+      "sourceGloss": "a relatively large open container that you fill with water and use to wash the body",
+      "targetGloss": "a room (as in a residence) containing a bathtub or shower and usually a washbasin and toilet",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.3efaf2381b24",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.headline.noun",
+      "targetId": "english.vocabulary.skill.paper.noun",
+      "sourceForm": "headline",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "paper",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "headline.n.01",
+      "targetSenseId": "newspaper.n.01",
+      "sourceGloss": "the heading or caption of a newspaper article",
+      "targetGloss": "a daily or weekly publication on folded sheets; contains news and articles and advertisements",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.443bb9aee464",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.visa.noun",
+      "targetId": "english.vocabulary.skill.passport.noun",
+      "sourceForm": "visa",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "passport",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "visa.n.01",
+      "targetSenseId": "passport.n.02",
+      "sourceGloss": "an endorsement made in a passport that allows the bearer to enter the country issuing it",
+      "targetGloss": "a document issued by a country to a citizen allowing that person to travel abroad and re-enter the home country",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.45ada18917c6",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.midnight.noun",
+      "targetId": "english.vocabulary.skill.dark.adjective-noun",
+      "sourceForm": "midnight",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "dark",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "midnight.n.01",
+      "targetSenseId": "night.n.01",
+      "sourceGloss": "12 o'clock at night; the middle of the night",
+      "targetGloss": "the time after sunset and before sunrise while it is dark outside",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.49088b72f771",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.paragraph.noun",
+      "targetId": "english.vocabulary.skill.text.noun-verb",
+      "sourceForm": "paragraph",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "text",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "paragraph.n.01",
+      "targetSenseId": "text.n.01",
+      "sourceGloss": "one of several distinct subdivisions of a text intended to separate ideas; the beginning is usually marked by a new indented line",
+      "targetGloss": "the words of something written",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.4f334906ca46",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.flour.noun",
+      "targetId": "english.vocabulary.skill.bread.noun",
+      "sourceForm": "flour",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bread",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "flour.n.01",
+      "targetSenseId": "bread.n.01",
+      "sourceGloss": "fine powdery foodstuff obtained by grinding and sifting the meal of a cereal grain",
+      "targetGloss": "food made from dough of flour or meal and usually raised with yeast or baking powder and then baked",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.505dc8f259a7",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.bathtub.noun",
+      "targetId": "english.vocabulary.skill.bath.noun-verb",
+      "sourceForm": "bathtub",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bath",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "bathtub.n.01",
+      "targetSenseId": "bathroom.n.01",
+      "sourceGloss": "a relatively large open container that you fill with water and use to wash the body",
+      "targetGloss": "a room (as in a residence) containing a bathtub or shower and usually a washbasin and toilet",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.50d173ca3804",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.sandwich.noun",
+      "targetId": "english.vocabulary.skill.meal.noun",
+      "sourceForm": "sandwich",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "meal",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "sandwich.n.01",
+      "targetSenseId": "meal.n.01",
+      "sourceGloss": "two (or more) slices of bread with a filling between them",
+      "targetGloss": "the food served and eaten at one time",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.515408c929c2",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.bedroom.noun",
+      "targetId": "english.vocabulary.skill.home.adverb-noun",
+      "sourceForm": "bedroom",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "home",
+      "targetPos": [
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "bedroom.n.01",
+      "targetSenseId": "dwelling.n.01",
+      "sourceGloss": "a room used primarily for sleeping",
+      "targetGloss": "housing that someone is living in",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.51c735278ad1",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.handlebars.noun",
+      "targetId": "english.vocabulary.skill.wheel.noun",
+      "sourceForm": "handlebars",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "wheel",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "handlebar.n.01",
+      "targetSenseId": "bicycle.n.01",
+      "sourceGloss": "the shaped bar used to steer a bicycle",
+      "targetGloss": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.537850948bcb",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.saturday.noun",
+      "targetId": "english.vocabulary.skill.weekend.noun",
+      "sourceForm": "saturday",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "weekend",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "saturday.n.01",
+      "targetSenseId": "weekend.n.01",
+      "sourceGloss": "the seventh and last day of the week; observed as the Sabbath by Jews and some Christians",
+      "targetGloss": "a time period usually extending from Friday night through Sunday; more loosely defined as any period of successive days including one and only one Sunday",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.5a712bac5a9f",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.homework.noun",
+      "targetId": "english.vocabulary.skill.education.noun",
+      "sourceForm": "homework",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "education",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "homework.n.01",
+      "targetSenseId": "education.n.01",
+      "sourceGloss": "preparatory school work done outside school (especially at home)",
+      "targetGloss": "the activities of educating or instructing; activities that impart knowledge or skill",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.5d5f9d96bd75",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.moustache.noun",
+      "targetId": "english.vocabulary.skill.beard.noun",
+      "sourceForm": "moustache",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "beard",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "mustache.n.01",
+      "targetSenseId": "beard.n.01",
+      "sourceGloss": "an unshaved growth of hair on the upper lip",
+      "targetGloss": "the hair growing on the lower part of a man's face",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.5ed781db8009",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.weekend.noun",
+      "targetId": "english.vocabulary.skill.week.noun",
+      "sourceForm": "weekend",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "week",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "weekend.n.01",
+      "targetSenseId": "week.n.01",
+      "sourceGloss": "a time period usually extending from Friday night through Sunday; more loosely defined as any period of successive days including one and only one Sunday",
+      "targetGloss": "any period of seven consecutive days",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.67d3bceed1aa",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.waterfall.noun",
+      "targetId": "english.vocabulary.skill.river.noun",
+      "sourceForm": "waterfall",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "river",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "waterfall.n.01",
+      "targetSenseId": "river.n.01",
+      "sourceGloss": "a steep descent of the water of a river",
+      "targetGloss": "a large natural stream of water (larger than a creek)",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.68dd079ae1af",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.handlebars.noun",
+      "targetId": "english.vocabulary.skill.bike.noun",
+      "sourceForm": "handlebars",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bike",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "handlebar.n.01",
+      "targetSenseId": "bicycle.n.01",
+      "sourceGloss": "the shaped bar used to steer a bicycle",
+      "targetGloss": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.7b8a1020a3d0",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.headline.noun",
+      "targetId": "english.vocabulary.skill.newspaper.noun",
+      "sourceForm": "headline",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "newspaper",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "headline.n.01",
+      "targetSenseId": "newspaper.n.01",
+      "sourceGloss": "the heading or caption of a newspaper article",
+      "targetGloss": "a daily or weekly publication on folded sheets; contains news and articles and advertisements",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.85d28031ed06",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.sky.noun",
+      "targetId": "english.vocabulary.skill.world.noun",
+      "sourceForm": "sky",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "world",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "sky.n.01",
+      "targetSenseId": "earth.n.01",
+      "sourceGloss": "the atmosphere and outer space as viewed from the earth",
+      "targetGloss": "the 3rd planet from the sun; the planet we live on",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.8649aed1b628",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.midday.noun",
+      "targetId": "english.vocabulary.skill.day.noun",
+      "sourceForm": "midday",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "day",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "noon.n.01",
+      "targetSenseId": "day.n.01",
+      "sourceGloss": "the middle of the day",
+      "targetGloss": "time for Earth to make a complete rotation on its axis",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.holonym.8fc88f6fa23d",
+      "relation": "holonym",
+      "sourceId": "english.vocabulary.skill.handlebars.noun",
+      "targetId": "english.vocabulary.skill.cycle.noun-verb",
+      "sourceForm": "handlebars",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "cycle",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "handlebar.n.01",
+      "targetSenseId": "bicycle.n.01",
+      "sourceGloss": "the shaped bar used to steer a bicycle",
+      "targetGloss": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "layer": "enrichment.semantic.wordnet.holonym"
+    }
+  ]
+}

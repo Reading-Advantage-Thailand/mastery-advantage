@@ -1,0 +1,1964 @@
+{
+  "batchId": "batch-10",
+  "indexStart": 1000,
+  "indexEnd": 1099,
+  "count": 100,
+  "edges": [
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.58dc44a4f967",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.ad.noun",
+      "targetId": "english.vocabulary.skill.advertisement.noun",
+      "sourceForm": "ad",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "advertisement",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "ad.n.01",
+      "targetSenseId": "ad.n.01",
+      "sourceGloss": "a public promotion of some product or service",
+      "targetGloss": "a public promotion of some product or service",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.59e2d8b9ac80",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.bath.noun",
+      "targetId": "english.vocabulary.skill.bathtub.noun",
+      "sourceForm": "bath",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bathtub",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "bathtub.n.01",
+      "targetSenseId": "bathtub.n.01",
+      "sourceGloss": "a relatively large open container that you fill with water and use to wash the body",
+      "targetGloss": "a relatively large open container that you fill with water and use to wash the body",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5a427934c22a",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.snow.noun-verb",
+      "targetId": "english.vocabulary.skill.snowfall.noun",
+      "sourceForm": "snow",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "snowfall",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "snow.n.01",
+      "targetSenseId": "snow.n.01",
+      "sourceGloss": "precipitation falling from clouds in the form of ice crystals",
+      "targetGloss": "precipitation falling from clouds in the form of ice crystals",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5a7057ef9e54",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.pay.noun-verb",
+      "targetId": "english.vocabulary.skill.pay.verb",
+      "sourceForm": "pay",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "pay",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "wage.n.01",
+      "targetSenseId": "wage.n.01",
+      "sourceGloss": "something that remunerates",
+      "targetGloss": "something that remunerates",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5b083a47a92d",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.autumn-us-fall.noun",
+      "targetId": "english.vocabulary.skill.autumn.noun",
+      "sourceForm": "autumn",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "autumn",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "fall.n.01",
+      "targetSenseId": "fall.n.01",
+      "sourceGloss": "the season when the leaves fall from the trees",
+      "targetGloss": "the season when the leaves fall from the trees",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5b15e49481ef",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.above.adjective-adverb-preposition",
+      "targetId": "english.vocabulary.skill.above.adverb-preposition",
+      "sourceForm": "above",
+      "sourcePos": [
+        "adjective",
+        "adverb",
+        "preposition"
+      ],
+      "targetForm": "above",
+      "targetPos": [
+        "adverb",
+        "preposition"
+      ],
+      "sourceSenseId": "above.s.01",
+      "targetSenseId": "above.s.01",
+      "sourceGloss": "appearing earlier in the same text",
+      "targetGloss": "appearing earlier in the same text",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5bfbeafca4d4",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.about.adverb-preposition",
+      "targetId": "english.vocabulary.skill.approximately.adverb",
+      "sourceForm": "about",
+      "sourcePos": [
+        "adverb",
+        "preposition"
+      ],
+      "targetForm": "approximately",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "approximately.r.01",
+      "targetSenseId": "approximately.r.01",
+      "sourceGloss": "(of quantities) imprecise but fairly close to correct",
+      "targetGloss": "(of quantities) imprecise but fairly close to correct",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5c025ed5c290",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.grandma.noun",
+      "targetId": "english.vocabulary.skill.granny.noun",
+      "sourceForm": "grandma",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "granny",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "grandma.n.01",
+      "targetSenseId": "grandma.n.01",
+      "sourceGloss": "the mother of your father or mother",
+      "targetGloss": "the mother of your father or mother",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5d254aaa7c96",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.downstairs.adjective-adverb",
+      "targetId": "english.vocabulary.skill.downstairs.adverb",
+      "sourceForm": "downstairs",
+      "sourcePos": [
+        "adjective",
+        "adverb"
+      ],
+      "targetForm": "downstairs",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "downstairs.a.01",
+      "targetSenseId": "downstairs.a.01",
+      "sourceGloss": "on or of lower floors of a building",
+      "targetGloss": "on or of lower floors of a building",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5d94d2980f57",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.form.noun",
+      "targetId": "english.vocabulary.skill.kind.noun",
+      "sourceForm": "form",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "kind",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "kind.n.01",
+      "targetSenseId": "kind.n.01",
+      "sourceGloss": "a category of things distinguished by some common characteristic or quality",
+      "targetGloss": "a category of things distinguished by some common characteristic or quality",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5e247f099a28",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.good-looking.adjective",
+      "targetId": "english.vocabulary.skill.handsome.adjective",
+      "sourceForm": "good-looking",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "handsome",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "fine-looking.s.01",
+      "targetSenseId": "fine-looking.s.01",
+      "sourceGloss": "pleasing in appearance especially by reason of conformity to ideals of form and proportion; ; ; ; - Thackeray; - Lillian Hellman",
+      "targetGloss": "pleasing in appearance especially by reason of conformity to ideals of form and proportion; ; ; ; - Thackeray; - Lillian Hellman",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5e845075e589",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.cruise.noun",
+      "targetId": "english.vocabulary.skill.sail.noun-verb",
+      "sourceForm": "cruise",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "sail",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "cruise.n.01",
+      "targetSenseId": "cruise.n.01",
+      "sourceGloss": "an ocean trip taken for pleasure",
+      "targetGloss": "an ocean trip taken for pleasure",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5eccf09d1247",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.horrible.adjective",
+      "targetId": "english.vocabulary.skill.ugly.adjective",
+      "sourceForm": "horrible",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "ugly",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "atrocious.s.03",
+      "targetSenseId": "atrocious.s.03",
+      "sourceGloss": "provoking horror; ; ; ; - Winston Churchill",
+      "targetGloss": "provoking horror; ; ; ; - Winston Churchill",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5f4e0596edbb",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.lack.noun",
+      "targetId": "english.vocabulary.skill.want.verb",
+      "sourceForm": "lack",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "want",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "lack.n.01",
+      "targetSenseId": "lack.n.01",
+      "sourceGloss": "the state of needing something that is absent or unavailable",
+      "targetGloss": "the state of needing something that is absent or unavailable",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.5f9d35d5058d",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.animal.noun",
+      "targetId": "english.vocabulary.skill.creature.noun",
+      "sourceForm": "animal",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "creature",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "animal.n.01",
+      "targetSenseId": "animal.n.01",
+      "sourceGloss": "a living organism characterized by voluntary movement",
+      "targetGloss": "a living organism characterized by voluntary movement",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.6036bf4b5f33",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.piece.noun",
+      "targetId": "english.vocabulary.skill.while.noun",
+      "sourceForm": "piece",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "while",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "while.n.01",
+      "targetSenseId": "while.n.01",
+      "sourceGloss": "a period of indeterminate length (usually short) marked by some action or condition",
+      "targetGloss": "a period of indeterminate length (usually short) marked by some action or condition",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.605ed93c704d",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.password.noun",
+      "targetId": "english.vocabulary.skill.word.noun",
+      "sourceForm": "password",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "word",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "password.n.01",
+      "targetSenseId": "password.n.01",
+      "sourceGloss": "a secret word or phrase known only to a restricted group",
+      "targetGloss": "a secret word or phrase known only to a restricted group",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.60fab23ae141",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.ski.noun-verb",
+      "targetId": "english.vocabulary.skill.ski.verb",
+      "sourceForm": "ski",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "ski",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "ski.n.01",
+      "targetSenseId": "ski.n.01",
+      "sourceGloss": "narrow wood or metal or plastic runners used in pairs for gliding over snow",
+      "targetGloss": "narrow wood or metal or plastic runners used in pairs for gliding over snow",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.61aa33dd4067",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.brilliant.adjective-exclamation",
+      "targetId": "english.vocabulary.skill.magnificent.adjective",
+      "sourceForm": "brilliant",
+      "sourcePos": [
+        "adjective",
+        "exclamation"
+      ],
+      "targetForm": "magnificent",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "brilliant.s.03",
+      "targetSenseId": "brilliant.s.03",
+      "sourceGloss": "characterized by grandeur",
+      "targetGloss": "characterized by grandeur",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.622118c9b1b5",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.aged.adjective",
+      "targetId": "english.vocabulary.skill.elderly.adjective",
+      "sourceForm": "aged",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "elderly",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "aged.s.01",
+      "targetSenseId": "aged.s.01",
+      "sourceGloss": "advanced in years; (`aged' is pronounced as two syllables)",
+      "targetGloss": "advanced in years; (`aged' is pronounced as two syllables)",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.62e27ca2c5b6",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.try.noun-verb",
+      "targetId": "english.vocabulary.skill.try.verb",
+      "sourceForm": "try",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "try",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "attempt.n.01",
+      "targetSenseId": "attempt.n.01",
+      "sourceGloss": "earnest and conscientious activity intended to do or accomplish something",
+      "targetGloss": "earnest and conscientious activity intended to do or accomplish something",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.6303c67af1ee",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.firm.noun",
+      "targetId": "english.vocabulary.skill.house.noun",
+      "sourceForm": "firm",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "house",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "firm.n.01",
+      "targetSenseId": "firm.n.01",
+      "sourceGloss": "the members of a business organization that owns or operates one or more establishments",
+      "targetGloss": "the members of a business organization that owns or operates one or more establishments",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.64b870dcc87f",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.attempt.verb",
+      "targetId": "english.vocabulary.skill.try.noun-verb",
+      "sourceForm": "attempt",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "try",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "attempt.n.01",
+      "targetSenseId": "attempt.n.01",
+      "sourceGloss": "earnest and conscientious activity intended to do or accomplish something",
+      "targetGloss": "earnest and conscientious activity intended to do or accomplish something",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.655e4675e30d",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.flat-us-apartment.noun",
+      "targetId": "english.vocabulary.skill.flat.adjective-noun",
+      "sourceForm": "apartment",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "flat",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "apartment.n.01",
+      "targetSenseId": "apartment.n.01",
+      "sourceGloss": "a suite of rooms usually on one floor of an apartment house",
+      "targetGloss": "a suite of rooms usually on one floor of an apartment house",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.6570ea772f64",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.check.noun-verb",
+      "targetId": "english.vocabulary.skill.cheque.noun",
+      "sourceForm": "check",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "cheque",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "check.n.01",
+      "targetSenseId": "check.n.01",
+      "sourceGloss": "a written order directing a bank to pay money",
+      "targetGloss": "a written order directing a bank to pay money",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.66183b692109",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.fall-uk-autumn.noun",
+      "targetId": "english.vocabulary.skill.fall.noun-verb",
+      "sourceForm": "autumn",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "fall",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "fall.n.01",
+      "targetSenseId": "fall.n.01",
+      "sourceGloss": "the season when the leaves fall from the trees",
+      "targetGloss": "the season when the leaves fall from the trees",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.661c92092379",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.snowboard.noun",
+      "targetId": "english.vocabulary.skill.snowboard.noun-verb",
+      "sourceForm": "snowboard",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "snowboard",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "snowboard.n.01",
+      "targetSenseId": "snowboard.n.01",
+      "sourceGloss": "a board that resembles a broad ski or a small surfboard; used in a standing position to slide down snow-covered slopes",
+      "targetGloss": "a board that resembles a broad ski or a small surfboard; used in a standing position to slide down snow-covered slopes",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.68b0c3eed0bc",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.swim.noun",
+      "targetId": "english.vocabulary.skill.swim.noun-verb",
+      "sourceForm": "swim",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "swim",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "swimming.n.01",
+      "targetSenseId": "swimming.n.01",
+      "sourceGloss": "the act of swimming; :",
+      "targetGloss": "the act of swimming; :",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.69048eaf53e2",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.forbidden.adjective",
+      "targetId": "english.vocabulary.skill.prohibited.adjective",
+      "sourceForm": "forbidden",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "prohibited",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "forbidden.s.01",
+      "targetSenseId": "forbidden.s.01",
+      "sourceGloss": "excluded from use or mention",
+      "targetGloss": "excluded from use or mention",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.692c31535fcb",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.officer.noun",
+      "targetId": "english.vocabulary.skill.policeman.noun",
+      "sourceForm": "officer",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "policeman",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "policeman.n.01",
+      "targetSenseId": "policeman.n.01",
+      "sourceGloss": "a member of a police force",
+      "targetGloss": "a member of a police force",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.697958984366",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.top.adjective-noun",
+      "targetId": "english.vocabulary.skill.top.noun",
+      "sourceForm": "top",
+      "sourcePos": [
+        "adjective",
+        "noun"
+      ],
+      "targetForm": "top",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "top.a.01",
+      "targetSenseId": "top.a.01",
+      "sourceGloss": "situated at the top or highest position",
+      "targetGloss": "situated at the top or highest position",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.6dc41c10b00d",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.passenger.noun",
+      "targetId": "english.vocabulary.skill.rider.noun",
+      "sourceForm": "passenger",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "rider",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "passenger.n.01",
+      "targetSenseId": "passenger.n.01",
+      "sourceGloss": "a traveler riding in a vehicle (a boat or bus or car or plane or train etc) who is not operating it",
+      "targetGloss": "a traveler riding in a vehicle (a boat or bus or car or plane or train etc) who is not operating it",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.6de45786b8c9",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.flat-us-apartment.noun",
+      "targetId": "english.vocabulary.skill.flat.noun",
+      "sourceForm": "apartment",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "flat",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "apartment.n.01",
+      "targetSenseId": "apartment.n.01",
+      "sourceGloss": "a suite of rooms usually on one floor of an apartment house",
+      "targetGloss": "a suite of rooms usually on one floor of an apartment house",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.6e23a36cee59",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.homework.noun",
+      "targetId": "english.vocabulary.skill.preparation.noun",
+      "sourceForm": "homework",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "preparation",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "homework.n.01",
+      "targetSenseId": "homework.n.01",
+      "sourceGloss": "preparatory school work done outside school (especially at home)",
+      "targetGloss": "preparatory school work done outside school (especially at home)",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.6e9fea52f5f3",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.milkshake.noun",
+      "targetId": "english.vocabulary.skill.shake.verb",
+      "sourceForm": "milkshake",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "shake",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "milkshake.n.01",
+      "targetSenseId": "milkshake.n.01",
+      "sourceGloss": "frothy drink of milk and flavoring and sometimes fruit or ice cream",
+      "targetGloss": "frothy drink of milk and flavoring and sometimes fruit or ice cream",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.6ec319c7cc53",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.bag.noun",
+      "targetId": "english.vocabulary.skill.suitcase.noun",
+      "sourceForm": "bag",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "suitcase",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "bag.n.06",
+      "targetSenseId": "bag.n.06",
+      "sourceGloss": "a portable rectangular container for carrying clothes",
+      "targetGloss": "a portable rectangular container for carrying clothes",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.702eb5750b47",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.fortunately.adverb",
+      "targetId": "english.vocabulary.skill.luckily.adverb",
+      "sourceForm": "fortunately",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "luckily",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "fortunately.r.01",
+      "targetSenseId": "fortunately.r.01",
+      "sourceGloss": "by good fortune",
+      "targetGloss": "by good fortune",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.70763262db9a",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.clothes.noun",
+      "targetId": "english.vocabulary.skill.dress.noun-verb",
+      "sourceForm": "clothes",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "dress",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "apparel.n.01",
+      "targetSenseId": "apparel.n.01",
+      "sourceGloss": "clothing in general",
+      "targetGloss": "clothing in general",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.7189c0b37af8",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.below.adverb-preposition",
+      "targetId": "english.vocabulary.skill.downstairs.adverb",
+      "sourceForm": "below",
+      "sourcePos": [
+        "adverb",
+        "preposition"
+      ],
+      "targetForm": "downstairs",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "downstairs.r.01",
+      "targetSenseId": "downstairs.r.01",
+      "sourceGloss": "on a floor below",
+      "targetGloss": "on a floor below",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.71adb9731bc1",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.grand-d-ad.noun",
+      "targetId": "english.vocabulary.skill.grandpa.noun",
+      "sourceForm": "grandad",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "grandpa",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "grandfather.n.01",
+      "targetSenseId": "grandfather.n.01",
+      "sourceGloss": "the father of your father or mother",
+      "targetGloss": "the father of your father or mother",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.733ba782a872",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.cry.noun-verb",
+      "targetId": "english.vocabulary.skill.shout.noun-verb",
+      "sourceForm": "cry",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "shout",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "cry.n.01",
+      "targetSenseId": "cry.n.01",
+      "sourceGloss": "a loud utterance; often in protest or opposition",
+      "targetGloss": "a loud utterance; often in protest or opposition",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.7611c14da6b2",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.apartment-uk-flat.noun",
+      "targetId": "english.vocabulary.skill.flat.adjective-noun",
+      "sourceForm": "apartment",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "flat",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "apartment.n.01",
+      "targetSenseId": "apartment.n.01",
+      "sourceGloss": "a suite of rooms usually on one floor of an apartment house",
+      "targetGloss": "a suite of rooms usually on one floor of an apartment house",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.7754d83adc0f",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.downstairs.adverb",
+      "targetId": "english.vocabulary.skill.downstairs.adverb-noun",
+      "sourceForm": "downstairs",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "downstairs",
+      "targetPos": [
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "downstairs.r.01",
+      "targetSenseId": "downstairs.r.01",
+      "sourceGloss": "on a floor below",
+      "targetGloss": "on a floor below",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.783ec08916a1",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.clothes.noun",
+      "targetId": "english.vocabulary.skill.dress.noun",
+      "sourceForm": "clothes",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "dress",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "apparel.n.01",
+      "targetSenseId": "apparel.n.01",
+      "sourceGloss": "clothing in general",
+      "targetGloss": "clothing in general",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.78692ccbccd6",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.awesome.adjective",
+      "targetId": "english.vocabulary.skill.awful.adjective",
+      "sourceForm": "awesome",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "awful",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "amazing.s.02",
+      "targetSenseId": "amazing.s.02",
+      "sourceGloss": "inspiring awe or admiration or wonder; ; ; ; - Melville",
+      "targetGloss": "inspiring awe or admiration or wonder; ; ; ; - Melville",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.7bc719137050",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.boring.adjective",
+      "targetId": "english.vocabulary.skill.dull.adjective",
+      "sourceForm": "boring",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "dull",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "boring.s.01",
+      "targetSenseId": "boring.s.01",
+      "sourceGloss": "so lacking in interest as to cause mental weariness; ; ; ; ; ; - Edmund Burke; ; - Mark Twain",
+      "targetGloss": "so lacking in interest as to cause mental weariness; ; ; ; ; ; - Edmund Burke; ; - Mark Twain",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.7e737d9e1a72",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.choose.verb",
+      "targetId": "english.vocabulary.skill.select.verb",
+      "sourceForm": "choose",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "select",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "choose.v.01",
+      "targetSenseId": "choose.v.01",
+      "sourceGloss": "pick out, select, or choose from a number of alternatives",
+      "targetGloss": "pick out, select, or choose from a number of alternatives",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.7eaf7d9e741e",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.rely-on.verb",
+      "targetId": "english.vocabulary.skill.trust.verb",
+      "sourceForm": "rely",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "trust",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "trust.v.01",
+      "targetSenseId": "trust.v.01",
+      "sourceGloss": "have confidence or faith in",
+      "targetGloss": "have confidence or faith in",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.7edd6266d35e",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.pay.noun-verb",
+      "targetId": "english.vocabulary.skill.salary.noun",
+      "sourceForm": "pay",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "salary",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "wage.n.01",
+      "targetSenseId": "wage.n.01",
+      "sourceGloss": "something that remunerates",
+      "targetGloss": "something that remunerates",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.801386bb1e15",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.curriculum.noun",
+      "targetId": "english.vocabulary.skill.programme-us-program.noun",
+      "sourceForm": "curriculum",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "program",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "course_of_study.n.01",
+      "targetSenseId": "course_of_study.n.01",
+      "sourceGloss": "an integrated course of academic studies",
+      "targetGloss": "an integrated course of academic studies",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.818e4036cad0",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.apartment.noun",
+      "targetId": "english.vocabulary.skill.flat.noun",
+      "sourceForm": "apartment",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "flat",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "apartment.n.01",
+      "targetSenseId": "apartment.n.01",
+      "sourceGloss": "a suite of rooms usually on one floor of an apartment house",
+      "targetGloss": "a suite of rooms usually on one floor of an apartment house",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.822e872d2f8a",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.competition.noun",
+      "targetId": "english.vocabulary.skill.competitor.noun",
+      "sourceForm": "competition",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "competitor",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "rival.n.01",
+      "targetSenseId": "rival.n.01",
+      "sourceGloss": "the contestant you hope to defeat",
+      "targetGloss": "the contestant you hope to defeat",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.834e09a9a74f",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.assistant.noun",
+      "targetId": "english.vocabulary.skill.help.noun-verb",
+      "sourceForm": "assistant",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "help",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "assistant.n.01",
+      "targetSenseId": "assistant.n.01",
+      "sourceGloss": "a person who contributes to the fulfillment of a need or furtherance of an effort or purpose",
+      "targetGloss": "a person who contributes to the fulfillment of a need or furtherance of an effort or purpose",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.84b175e251fd",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.approximately.adverb",
+      "targetId": "english.vocabulary.skill.around.adverb-preposition",
+      "sourceForm": "approximately",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "around",
+      "targetPos": [
+        "adverb",
+        "preposition"
+      ],
+      "sourceSenseId": "approximately.r.01",
+      "targetSenseId": "approximately.r.01",
+      "sourceGloss": "(of quantities) imprecise but fairly close to correct",
+      "targetGloss": "(of quantities) imprecise but fairly close to correct",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.855178f69da5",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.check.verb",
+      "targetId": "english.vocabulary.skill.cheque.noun",
+      "sourceForm": "check",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "cheque",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "check.n.01",
+      "targetSenseId": "check.n.01",
+      "sourceGloss": "a written order directing a bank to pay money",
+      "targetGloss": "a written order directing a bank to pay money",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.85bec2e9d9c4",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.bicycle.noun",
+      "targetId": "english.vocabulary.skill.cycle.verb",
+      "sourceForm": "bicycle",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "cycle",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "bicycle.n.01",
+      "targetSenseId": "bicycle.n.01",
+      "sourceGloss": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "targetGloss": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.87a08561a2e1",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.totally.adverb",
+      "targetId": "english.vocabulary.skill.whole.adjective-noun",
+      "sourceForm": "totally",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "whole",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "wholly.r.01",
+      "targetSenseId": "wholly.r.01",
+      "sourceGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "targetGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.88e5168d51b0",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.second.adjective-adverb",
+      "targetId": "english.vocabulary.skill.second.adverb-determiner-noun",
+      "sourceForm": "second",
+      "sourcePos": [
+        "adjective",
+        "adverb"
+      ],
+      "targetForm": "second",
+      "targetPos": [
+        "adverb",
+        "determiner",
+        "noun"
+      ],
+      "sourceSenseId": "second.r.01",
+      "targetSenseId": "second.r.01",
+      "sourceGloss": "in the second place",
+      "targetGloss": "in the second place",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.8a1bcaba2500",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.fine.adjective-noun",
+      "targetId": "english.vocabulary.skill.ok.adjective-discourse-marker",
+      "sourceForm": "fine",
+      "sourcePos": [
+        "adjective",
+        "noun"
+      ],
+      "targetForm": "ok",
+      "targetPos": [
+        "adjective",
+        "discourse-marker"
+      ],
+      "sourceSenseId": "all_right.s.01",
+      "targetSenseId": "all_right.s.01",
+      "sourceGloss": "being satisfactory or in satisfactory condition",
+      "targetGloss": "being satisfactory or in satisfactory condition",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.8a7ef3a490de",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.grand-d-ad.noun",
+      "targetId": "english.vocabulary.skill.grandfather.noun",
+      "sourceForm": "grandad",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "grandfather",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "grandfather.n.01",
+      "targetSenseId": "grandfather.n.01",
+      "sourceGloss": "the father of your father or mother",
+      "targetGloss": "the father of your father or mother",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.8acc65e06aed",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.set.noun",
+      "targetId": "english.vocabulary.skill.situated.adjective",
+      "sourceForm": "set",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "situated",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "located.s.01",
+      "targetSenseId": "located.s.01",
+      "sourceGloss": "situated in a particular spot or position",
+      "targetGloss": "situated in a particular spot or position",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.8b0053545450",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.hitchhike.verb",
+      "targetId": "english.vocabulary.skill.thumb.noun",
+      "sourceForm": "hitchhike",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "thumb",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "hitchhike.v.01",
+      "targetSenseId": "hitchhike.v.01",
+      "sourceGloss": "travel by getting free rides from motorists",
+      "targetGloss": "travel by getting free rides from motorists",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.8b2535d00100",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.waste.adjective-noun-verb",
+      "targetId": "english.vocabulary.skill.wild.adjective",
+      "sourceForm": "waste",
+      "sourcePos": [
+        "adjective",
+        "noun",
+        "verb"
+      ],
+      "targetForm": "wild",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "godforsaken.s.01",
+      "targetSenseId": "godforsaken.s.01",
+      "sourceGloss": "located in a dismal or remote area; desolate",
+      "targetGloss": "located in a dismal or remote area; desolate",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.8e2ca95ca3ac",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.cry.verb",
+      "targetId": "english.vocabulary.skill.shout.noun-verb",
+      "sourceForm": "cry",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "shout",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "cry.n.01",
+      "targetSenseId": "cry.n.01",
+      "sourceGloss": "a loud utterance; often in protest or opposition",
+      "targetGloss": "a loud utterance; often in protest or opposition",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.8e6456efcd84",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.achieve.verb",
+      "targetId": "english.vocabulary.skill.reach.verb",
+      "sourceForm": "achieve",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "reach",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "achieve.v.01",
+      "targetSenseId": "achieve.v.01",
+      "sourceGloss": "to gain with effort",
+      "targetGloss": "to gain with effort",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.8f37a1e360e5",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.cruise.noun",
+      "targetId": "english.vocabulary.skill.sail.verb",
+      "sourceForm": "cruise",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "sail",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "cruise.n.01",
+      "targetSenseId": "cruise.n.01",
+      "sourceGloss": "an ocean trip taken for pleasure",
+      "targetGloss": "an ocean trip taken for pleasure",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.9253ece19fb3",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.certainly.adverb",
+      "targetId": "english.vocabulary.skill.sure.adjective-adverb",
+      "sourceForm": "certainly",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "sure",
+      "targetPos": [
+        "adjective",
+        "adverb"
+      ],
+      "sourceSenseId": "surely.r.01",
+      "targetSenseId": "surely.r.01",
+      "sourceGloss": "definitely or positively (`sure' is sometimes used informally for `surely')",
+      "targetGloss": "definitely or positively (`sure' is sometimes used informally for `surely')",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.9418cb3d39bf",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.almost.adverb",
+      "targetId": "english.vocabulary.skill.nearly.adverb",
+      "sourceForm": "almost",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "nearly",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "about.r.07",
+      "targetSenseId": "about.r.07",
+      "sourceGloss": "(of actions or states) slightly short of or not quite accomplished; all but",
+      "targetGloss": "(of actions or states) slightly short of or not quite accomplished; all but",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.949c06e59173",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.bowl.noun",
+      "targetId": "english.vocabulary.skill.stadium.noun",
+      "sourceForm": "bowl",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "stadium",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "stadium.n.01",
+      "targetSenseId": "stadium.n.01",
+      "sourceGloss": "a large structure for open-air sports or entertainments",
+      "targetGloss": "a large structure for open-air sports or entertainments",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.961cc291ae6f",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.half.adverb-determiner-noun-pronoun",
+      "targetId": "english.vocabulary.skill.half.determiner-noun-pronoun",
+      "sourceForm": "half",
+      "sourcePos": [
+        "adverb",
+        "determiner",
+        "noun",
+        "pronoun"
+      ],
+      "targetForm": "half",
+      "targetPos": [
+        "determiner",
+        "noun",
+        "pronoun"
+      ],
+      "sourceSenseId": "half.r.01",
+      "targetSenseId": "half.r.01",
+      "sourceGloss": "partially or to the extent of a half",
+      "targetGloss": "partially or to the extent of a half",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.962b581745fc",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.skate.noun-verb",
+      "targetId": "english.vocabulary.skill.skate.verb",
+      "sourceForm": "skate",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "skate",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "skate.v.01",
+      "targetSenseId": "skate.v.01",
+      "sourceGloss": "move along on skates",
+      "targetGloss": "move along on skates",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.963cbb68fcd8",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.photo.noun",
+      "targetId": "english.vocabulary.skill.picture.noun",
+      "sourceForm": "photo",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "picture",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "photograph.n.01",
+      "targetSenseId": "photograph.n.01",
+      "sourceGloss": "a representation of a person or scene in the form of a print or transparent slide; recorded by a camera on light-sensitive material",
+      "targetGloss": "a representation of a person or scene in the form of a print or transparent slide; recorded by a camera on light-sensitive material",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.9646a856a21e",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.bite.verb",
+      "targetId": "english.vocabulary.skill.snack.noun",
+      "sourceForm": "bite",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "snack",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "bite.n.04",
+      "targetSenseId": "bite.n.04",
+      "sourceGloss": "a light informal meal",
+      "targetGloss": "a light informal meal",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.964fbe2566dc",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.autumn.noun",
+      "targetId": "english.vocabulary.skill.fall.verb",
+      "sourceForm": "autumn",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "fall",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "fall.n.01",
+      "targetSenseId": "fall.n.01",
+      "sourceGloss": "the season when the leaves fall from the trees",
+      "targetGloss": "the season when the leaves fall from the trees",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.96821d62e122",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.unfortunately.adjective",
+      "targetId": "english.vocabulary.skill.unfortunately.adverb",
+      "sourceForm": "unfortunately",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "unfortunately",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "unfortunately.r.01",
+      "targetSenseId": "unfortunately.r.01",
+      "sourceGloss": "by bad luck",
+      "targetGloss": "by bad luck",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.98fd7fdc537e",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.amazing.adjective",
+      "targetId": "english.vocabulary.skill.awesome.adjective",
+      "sourceForm": "amazing",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "awesome",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "amazing.s.02",
+      "targetSenseId": "amazing.s.02",
+      "sourceGloss": "inspiring awe or admiration or wonder; ; ; ; - Melville",
+      "targetGloss": "inspiring awe or admiration or wonder; ; ; ; - Melville",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.9984721f00ae",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.architect.noun",
+      "targetId": "english.vocabulary.skill.designer.noun",
+      "sourceForm": "architect",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "designer",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "architect.n.01",
+      "targetSenseId": "architect.n.01",
+      "sourceGloss": "someone who creates plans to be used in making something (such as buildings)",
+      "targetGloss": "someone who creates plans to be used in making something (such as buildings)",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.9a0d77902458",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.bicycle.noun",
+      "targetId": "english.vocabulary.skill.cycle.noun-verb",
+      "sourceForm": "bicycle",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "cycle",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "bicycle.n.01",
+      "targetSenseId": "bicycle.n.01",
+      "sourceGloss": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "targetGloss": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.9d5e32a29874",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.flashlight-uk-torch.noun",
+      "targetId": "english.vocabulary.skill.torch.noun",
+      "sourceForm": "flashlight",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "torch",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "flashlight.n.01",
+      "targetSenseId": "flashlight.n.01",
+      "sourceGloss": "a small portable battery-powered electric lamp",
+      "targetGloss": "a small portable battery-powered electric lamp",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.9fef87020b28",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.laugh.noun-verb",
+      "targetId": "english.vocabulary.skill.laugh.verb",
+      "sourceForm": "laugh",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "laugh",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "laugh.v.01",
+      "targetSenseId": "laugh.v.01",
+      "sourceGloss": "produce laughter",
+      "targetGloss": "produce laughter",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.a0ed675e177b",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.candy.noun",
+      "targetId": "english.vocabulary.skill.sweet-s-us-candy.noun",
+      "sourceForm": "candy",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "candy",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "candy.n.01",
+      "targetSenseId": "candy.n.01",
+      "sourceGloss": "a rich sweet made of flavored sugar and often combined with fruit or nuts",
+      "targetGloss": "a rich sweet made of flavored sugar and often combined with fruit or nuts",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.a10dbcfe0858",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.spell.verb",
+      "targetId": "english.vocabulary.skill.while.noun",
+      "sourceForm": "spell",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "while",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "while.n.01",
+      "targetSenseId": "while.n.01",
+      "sourceGloss": "a period of indeterminate length (usually short) marked by some action or condition",
+      "targetGloss": "a period of indeterminate length (usually short) marked by some action or condition",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.a1674beca164",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.biography.noun",
+      "targetId": "english.vocabulary.skill.life.noun",
+      "sourceForm": "biography",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "life",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "biography.n.01",
+      "targetSenseId": "biography.n.01",
+      "sourceGloss": "an account of the series of events making up a person's life",
+      "targetGloss": "an account of the series of events making up a person's life",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.a192697743f8",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.certainly-not.adverb",
+      "targetId": "english.vocabulary.skill.certainly.adverb",
+      "sourceForm": "certainly",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "certainly",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "surely.r.01",
+      "targetSenseId": "surely.r.01",
+      "sourceGloss": "definitely or positively (`sure' is sometimes used informally for `surely')",
+      "targetGloss": "definitely or positively (`sure' is sometimes used informally for `surely')",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.a3169c70f235",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.dessert.noun",
+      "targetId": "english.vocabulary.skill.sweet.adjective",
+      "sourceForm": "dessert",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "sweet",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "dessert.n.01",
+      "targetSenseId": "dessert.n.01",
+      "sourceGloss": "a dish served as the last course of a meal",
+      "targetGloss": "a dish served as the last course of a meal",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.a3445a4fa9af",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.backpack-uk-rucksack.noun",
+      "targetId": "english.vocabulary.skill.rucksack-us-backpack.noun",
+      "sourceForm": "backpack",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "backpack",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "backpack.n.01",
+      "targetSenseId": "backpack.n.01",
+      "sourceGloss": "a bag carried by a strap on your back or shoulder",
+      "targetGloss": "a bag carried by a strap on your back or shoulder",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.a3db47e87971",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.much.adjective-adverb-determiner-pronoun",
+      "targetId": "english.vocabulary.skill.much.adverb-determiner-pronoun",
+      "sourceForm": "much",
+      "sourcePos": [
+        "adjective",
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "targetForm": "much",
+      "targetPos": [
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "sourceSenseId": "much.a.01",
+      "targetSenseId": "much.a.01",
+      "sourceGloss": "(quantifier used with mass nouns) great in quantity or degree or extent",
+      "targetGloss": "(quantifier used with mass nouns) great in quantity or degree or extent",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.a3e087b7cf69",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.apartment-uk-flat.noun",
+      "targetId": "english.vocabulary.skill.flat-us-apartment.noun",
+      "sourceForm": "apartment",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "apartment",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "apartment.n.01",
+      "targetSenseId": "apartment.n.01",
+      "sourceGloss": "a suite of rooms usually on one floor of an apartment house",
+      "targetGloss": "a suite of rooms usually on one floor of an apartment house",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.a72d3cd28c64",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.cooking.noun",
+      "targetId": "english.vocabulary.skill.preparation.noun",
+      "sourceForm": "cooking",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "preparation",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "cooking.n.01",
+      "targetSenseId": "cooking.n.01",
+      "sourceGloss": "the act of preparing something (as food) by the application of heat",
+      "targetGloss": "the act of preparing something (as food) by the application of heat",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.a82652f8475f",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.after.adverb-conjunction-preposition",
+      "targetId": "english.vocabulary.skill.afterwards.adverb",
+      "sourceForm": "after",
+      "sourcePos": [
+        "adverb",
+        "conjunction",
+        "preposition"
+      ],
+      "targetForm": "afterwards",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "subsequently.r.01",
+      "targetSenseId": "subsequently.r.01",
+      "sourceGloss": "happening at a time subsequent to a reference time",
+      "targetGloss": "happening at a time subsequent to a reference time",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ab3da10027d1",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.chat.noun",
+      "targetId": "english.vocabulary.skill.chat.verb",
+      "sourceForm": "chat",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "chat",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "chew_the_fat.v.01",
+      "targetSenseId": "chew_the_fat.v.01",
+      "sourceGloss": "talk socially without exchanging too much information",
+      "targetGloss": "talk socially without exchanging too much information",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ab74bc2b5c2e",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.further.adjective",
+      "targetId": "english.vocabulary.skill.further.adjective-adverb",
+      "sourceForm": "further",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "further",
+      "targetPos": [
+        "adjective",
+        "adverb"
+      ],
+      "sourceSenseId": "further.s.01",
+      "targetSenseId": "further.s.01",
+      "sourceGloss": "more distant in especially degree",
+      "targetGloss": "more distant in especially degree",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ab79c93cfc2e",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.least.adjective-adverb",
+      "targetId": "english.vocabulary.skill.least.adverb",
+      "sourceForm": "least",
+      "sourcePos": [
+        "adjective",
+        "adverb"
+      ],
+      "targetForm": "least",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "least.a.01",
+      "targetSenseId": "least.a.01",
+      "sourceGloss": "the superlative of `little' that can be used with mass nouns and is usually preceded by `the'; a quantifier meaning smallest in amount or extent or degree",
+      "targetGloss": "the superlative of `little' that can be used with mass nouns and is usually preceded by `the'; a quantifier meaning smallest in amount or extent or degree",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ac2129f9ad5c",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.salary.noun",
+      "targetId": "english.vocabulary.skill.wage-s.noun",
+      "sourceForm": "salary",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "wage",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "wage.n.01",
+      "targetSenseId": "wage.n.01",
+      "sourceGloss": "something that remunerates",
+      "targetGloss": "something that remunerates",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ac4bad676525",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.walk.noun",
+      "targetId": "english.vocabulary.skill.walking.noun",
+      "sourceForm": "walk",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "walking",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "walk.n.01",
+      "targetSenseId": "walk.n.01",
+      "sourceGloss": "the act of traveling by foot",
+      "targetGloss": "the act of traveling by foot",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.acf1110db606",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.autumn-us-fall.noun",
+      "targetId": "english.vocabulary.skill.fall-uk-autumn.noun",
+      "sourceForm": "autumn",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "autumn",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "fall.n.01",
+      "targetSenseId": "fall.n.01",
+      "sourceGloss": "the season when the leaves fall from the trees",
+      "targetGloss": "the season when the leaves fall from the trees",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ae7f5056234c",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.bike.noun",
+      "targetId": "english.vocabulary.skill.motorcycle.noun",
+      "sourceForm": "bike",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "motorcycle",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "motorcycle.n.01",
+      "targetSenseId": "motorcycle.n.01",
+      "sourceGloss": "a motor vehicle with two wheels and a strong frame",
+      "targetGloss": "a motor vehicle with two wheels and a strong frame",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ae9d92fec63c",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.cheap.adjective",
+      "targetId": "english.vocabulary.skill.inexpensive.adjective",
+      "sourceForm": "cheap",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "inexpensive",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "cheap.a.01",
+      "targetSenseId": "cheap.a.01",
+      "sourceGloss": "relatively low in price or charging low prices",
+      "targetGloss": "relatively low in price or charging low prices",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.aff455f99c6b",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.pink.adjective",
+      "targetId": "english.vocabulary.skill.pink.adjective-noun",
+      "sourceForm": "pink",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "pink",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "pink.s.01",
+      "targetSenseId": "pink.s.01",
+      "sourceGloss": "of a light shade of red",
+      "targetGloss": "of a light shade of red",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.b15d4625f459",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.examination-exam.noun",
+      "targetId": "english.vocabulary.skill.test.noun-verb",
+      "sourceForm": "exam",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "test",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "examination.n.02",
+      "targetSenseId": "examination.n.02",
+      "sourceGloss": "a set of questions or exercises evaluating skill or knowledge",
+      "targetGloss": "a set of questions or exercises evaluating skill or knowledge",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    }
+  ]
+}

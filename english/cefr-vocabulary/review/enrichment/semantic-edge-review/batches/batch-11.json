@@ -1,0 +1,1799 @@
+{
+  "batchId": "batch-11",
+  "indexStart": 1100,
+  "indexEnd": 1190,
+  "count": 91,
+  "edges": [
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.b45885e6da91",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.indoors.adverb",
+      "targetId": "english.vocabulary.skill.inside.adverb-preposition",
+      "sourceForm": "indoors",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "inside",
+      "targetPos": [
+        "adverb",
+        "preposition"
+      ],
+      "sourceSenseId": "inside.r.01",
+      "targetSenseId": "inside.r.01",
+      "sourceGloss": "within a building",
+      "targetGloss": "within a building",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.b4a2ac7994ae",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.late.adjective-adverb",
+      "targetId": "english.vocabulary.skill.lately.adverb",
+      "sourceForm": "late",
+      "sourcePos": [
+        "adjective",
+        "adverb"
+      ],
+      "targetForm": "lately",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "recently.r.01",
+      "targetSenseId": "recently.r.01",
+      "sourceGloss": "in the recent past",
+      "targetGloss": "in the recent past",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.b734940cd626",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.part.noun",
+      "targetId": "english.vocabulary.skill.partly.adverb",
+      "sourceForm": "part",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "partly",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "partially.r.01",
+      "targetSenseId": "partially.r.01",
+      "sourceGloss": "in part; in some degree; not wholly",
+      "targetGloss": "in part; in some degree; not wholly",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.b8f9b6aa38d2",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.bicycle.noun",
+      "targetId": "english.vocabulary.skill.bike.noun",
+      "sourceForm": "bicycle",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "bike",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "bicycle.n.01",
+      "targetSenseId": "bicycle.n.01",
+      "sourceGloss": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "targetGloss": "a wheeled vehicle that has two wheels and is moved by foot pedals",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.b92eb7d97bf4",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.climb.verb",
+      "targetId": "english.vocabulary.skill.climbing.noun",
+      "sourceForm": "climb",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "climbing",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "climb.n.02",
+      "targetSenseId": "climb.n.02",
+      "sourceGloss": "an event that involves rising to a higher point (as in altitude or temperature or intensity etc.)",
+      "targetGloss": "an event that involves rising to a higher point (as in altitude or temperature or intensity etc.)",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ba5f1964d571",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.awful.adjective",
+      "targetId": "english.vocabulary.skill.frightening.adjective",
+      "sourceForm": "awful",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "frightening",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "awful.s.02",
+      "targetSenseId": "awful.s.02",
+      "sourceGloss": "causing fear or dread or terror",
+      "targetGloss": "causing fear or dread or terror",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ba943d8a11af",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.all.adverb-determiner-pronoun",
+      "targetId": "english.vocabulary.skill.completely.adverb",
+      "sourceForm": "all",
+      "sourcePos": [
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "targetForm": "completely",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "wholly.r.01",
+      "targetSenseId": "wholly.r.01",
+      "sourceGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "targetGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.bae3bc5bbe82",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.club.noun",
+      "targetId": "english.vocabulary.skill.nightclub.noun",
+      "sourceForm": "club",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "nightclub",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "cabaret.n.01",
+      "targetSenseId": "cabaret.n.01",
+      "sourceGloss": "a spot that is open late at night and that provides entertainment (as singers or dancers) as well as dancing and food and drink",
+      "targetGloss": "a spot that is open late at night and that provides entertainment (as singers or dancers) as well as dancing and food and drink",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.bb250eaff631",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.all.adjective-adverb-determiner-pronoun",
+      "targetId": "english.vocabulary.skill.all.adverb-determiner-pronoun",
+      "sourceForm": "all",
+      "sourcePos": [
+        "adjective",
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "targetForm": "all",
+      "targetPos": [
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "sourceSenseId": "wholly.r.01",
+      "targetSenseId": "wholly.r.01",
+      "sourceGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "targetGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.bc56469936c1",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.cookery.noun",
+      "targetId": "english.vocabulary.skill.cooking.noun",
+      "sourceForm": "cookery",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "cooking",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "cooking.n.01",
+      "targetSenseId": "cooking.n.01",
+      "sourceGloss": "the act of preparing something (as food) by the application of heat",
+      "targetGloss": "the act of preparing something (as food) by the application of heat",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.bc5c0ae2d76e",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.guide.noun-verb",
+      "targetId": "english.vocabulary.skill.guidebook.noun",
+      "sourceForm": "guide",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "guidebook",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "guidebook.n.01",
+      "targetSenseId": "guidebook.n.01",
+      "sourceGloss": "something that offers basic information or instruction",
+      "targetGloss": "something that offers basic information or instruction",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.bcddf2e99285",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.shout.noun-verb",
+      "targetId": "english.vocabulary.skill.shout.verb",
+      "sourceForm": "shout",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "shout",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "cry.n.01",
+      "targetSenseId": "cry.n.01",
+      "sourceGloss": "a loud utterance; often in protest or opposition",
+      "targetGloss": "a loud utterance; often in protest or opposition",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.bd3a8ec48e8f",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.afterwards.adverb",
+      "targetId": "english.vocabulary.skill.later.adverb",
+      "sourceForm": "afterwards",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "later",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "subsequently.r.01",
+      "targetSenseId": "subsequently.r.01",
+      "sourceGloss": "happening at a time subsequent to a reference time",
+      "targetGloss": "happening at a time subsequent to a reference time",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.bdb47e791782",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.cliff.noun",
+      "targetId": "english.vocabulary.skill.drop.noun-verb",
+      "sourceForm": "cliff",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "drop",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "cliff.n.01",
+      "targetSenseId": "cliff.n.01",
+      "sourceGloss": "a steep high face of rock",
+      "targetGloss": "a steep high face of rock",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.be03d15bb1de",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.assistant.noun",
+      "targetId": "english.vocabulary.skill.supporter.noun",
+      "sourceForm": "assistant",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "supporter",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "assistant.n.01",
+      "targetSenseId": "assistant.n.01",
+      "sourceGloss": "a person who contributes to the fulfillment of a need or furtherance of an effort or purpose",
+      "targetGloss": "a person who contributes to the fulfillment of a need or furtherance of an effort or purpose",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.be6fea997e6e",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.shortly.adverb",
+      "targetId": "english.vocabulary.skill.soon.adverb",
+      "sourceForm": "shortly",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "soon",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "soon.r.01",
+      "targetSenseId": "soon.r.01",
+      "sourceGloss": "in the near future",
+      "targetGloss": "in the near future",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.be9901a20ce1",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.stair-s.noun",
+      "targetId": "english.vocabulary.skill.step.noun",
+      "sourceForm": "stair",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "step",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "step.n.04",
+      "targetSenseId": "step.n.04",
+      "sourceGloss": "support consisting of a place to rest the foot while ascending or descending a stairway",
+      "targetGloss": "support consisting of a place to rest the foot while ascending or descending a stairway",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.c18b61deab5c",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.excellent.adjective",
+      "targetId": "english.vocabulary.skill.excellent.adjective-exclamation",
+      "sourceForm": "excellent",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "excellent",
+      "targetPos": [
+        "adjective",
+        "exclamation"
+      ],
+      "sourceSenseId": "excellent.s.01",
+      "targetSenseId": "excellent.s.01",
+      "sourceGloss": "very good;of the highest quality",
+      "targetGloss": "very good;of the highest quality",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.c3c6e12183c2",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.handbag.noun",
+      "targetId": "english.vocabulary.skill.purse.noun",
+      "sourceForm": "handbag",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "purse",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "bag.n.04",
+      "targetSenseId": "bag.n.04",
+      "sourceGloss": "a container used for carrying money and small personal items or accessories (especially by women)",
+      "targetGloss": "a container used for carrying money and small personal items or accessories (especially by women)",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.c3cbe7d9abd5",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.maybe.adverb",
+      "targetId": "english.vocabulary.skill.perhaps.adverb",
+      "sourceForm": "maybe",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "perhaps",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "possibly.r.01",
+      "targetSenseId": "possibly.r.01",
+      "sourceGloss": "by chance",
+      "targetGloss": "by chance",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.c3fb6642982f",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.swim.verb",
+      "targetId": "english.vocabulary.skill.swimming.noun",
+      "sourceForm": "swim",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "swimming",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "swimming.n.01",
+      "targetSenseId": "swimming.n.01",
+      "sourceGloss": "the act of swimming; :",
+      "targetGloss": "the act of swimming; :",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.c43e1841b62a",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.after.adverb-preposition",
+      "targetId": "english.vocabulary.skill.afterwards.adverb",
+      "sourceForm": "after",
+      "sourcePos": [
+        "adverb",
+        "preposition"
+      ],
+      "targetForm": "afterwards",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "subsequently.r.01",
+      "targetSenseId": "subsequently.r.01",
+      "sourceGloss": "happening at a time subsequent to a reference time",
+      "targetGloss": "happening at a time subsequent to a reference time",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.c5b5a4324023",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.set.noun-verb",
+      "targetId": "english.vocabulary.skill.situated.adjective",
+      "sourceForm": "set",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "situated",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "located.s.01",
+      "targetSenseId": "located.s.01",
+      "sourceGloss": "situated in a particular spot or position",
+      "targetGloss": "situated in a particular spot or position",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.c5e698a3e3a5",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.assistant.noun",
+      "targetId": "english.vocabulary.skill.help.verb",
+      "sourceForm": "assistant",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "help",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "assistant.n.01",
+      "targetSenseId": "assistant.n.01",
+      "sourceGloss": "a person who contributes to the fulfillment of a need or furtherance of an effort or purpose",
+      "targetGloss": "a person who contributes to the fulfillment of a need or furtherance of an effort or purpose",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.c6750bc44cbe",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.select.verb",
+      "targetId": "english.vocabulary.skill.take-as-in-time-e-g-it-takes-20-minutes.verb",
+      "sourceForm": "select",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "take",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "choose.v.01",
+      "targetSenseId": "choose.v.01",
+      "sourceGloss": "pick out, select, or choose from a number of alternatives",
+      "targetGloss": "pick out, select, or choose from a number of alternatives",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.c838b46600f2",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.pay.verb",
+      "targetId": "english.vocabulary.skill.wage-s.noun",
+      "sourceForm": "pay",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "wage",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "wage.n.01",
+      "targetSenseId": "wage.n.01",
+      "sourceGloss": "something that remunerates",
+      "targetGloss": "something that remunerates",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.c85fd1d0c552",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.below.adverb-preposition",
+      "targetId": "english.vocabulary.skill.downstairs.adverb-noun",
+      "sourceForm": "below",
+      "sourcePos": [
+        "adverb",
+        "preposition"
+      ],
+      "targetForm": "downstairs",
+      "targetPos": [
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "downstairs.r.01",
+      "targetSenseId": "downstairs.r.01",
+      "sourceGloss": "on a floor below",
+      "targetGloss": "on a floor below",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.cb63ecc51fc1",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.advert.noun",
+      "targetId": "english.vocabulary.skill.advertisement.noun",
+      "sourceForm": "advert",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "advertisement",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "ad.n.01",
+      "targetSenseId": "ad.n.01",
+      "sourceGloss": "a public promotion of some product or service",
+      "targetGloss": "a public promotion of some product or service",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.cbc09abeac3d",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.call.verb",
+      "targetId": "english.vocabulary.skill.shout.noun-verb",
+      "sourceForm": "call",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "shout",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "cry.n.01",
+      "targetSenseId": "cry.n.01",
+      "sourceGloss": "a loud utterance; often in protest or opposition",
+      "targetGloss": "a loud utterance; often in protest or opposition",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.cbf7bd1e029f",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.half.adjective-noun",
+      "targetId": "english.vocabulary.skill.half.adverb-determiner-noun-pronoun",
+      "sourceForm": "half",
+      "sourcePos": [
+        "adjective",
+        "noun"
+      ],
+      "targetForm": "half",
+      "targetPos": [
+        "adverb",
+        "determiner",
+        "noun",
+        "pronoun"
+      ],
+      "sourceSenseId": "half.r.01",
+      "targetSenseId": "half.r.01",
+      "sourceGloss": "partially or to the extent of a half",
+      "targetGloss": "partially or to the extent of a half",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.cc32f8698b72",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.kind.noun",
+      "targetId": "english.vocabulary.skill.sort.noun",
+      "sourceForm": "kind",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "sort",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "kind.n.01",
+      "targetSenseId": "kind.n.01",
+      "sourceGloss": "a category of things distinguished by some common characteristic or quality",
+      "targetGloss": "a category of things distinguished by some common characteristic or quality",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.cc6210423b15",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.clothing.noun",
+      "targetId": "english.vocabulary.skill.wear.verb",
+      "sourceForm": "clothing",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "wear",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "clothing.n.01",
+      "targetSenseId": "clothing.n.01",
+      "sourceGloss": "a covering designed to be worn on a person's body",
+      "targetGloss": "a covering designed to be worn on a person's body",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.cc6307aa5824",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.closet.noun",
+      "targetId": "english.vocabulary.skill.cupboard.noun",
+      "sourceForm": "closet",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "cupboard",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "cupboard.n.01",
+      "targetSenseId": "cupboard.n.01",
+      "sourceGloss": "a small room (or recess) or cabinet used for storage space",
+      "targetGloss": "a small room (or recess) or cabinet used for storage space",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.cd018b201a8f",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.nowadays.adverb",
+      "targetId": "english.vocabulary.skill.today.adverb-noun",
+      "sourceForm": "nowadays",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "today",
+      "targetPos": [
+        "adverb",
+        "noun"
+      ],
+      "sourceSenseId": "nowadays.r.01",
+      "targetSenseId": "nowadays.r.01",
+      "sourceGloss": "in these times; - Nancy Mitford",
+      "targetGloss": "in these times; - Nancy Mitford",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ce6bee891f8e",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.marvellous.adjective",
+      "targetId": "english.vocabulary.skill.wonderful.adjective",
+      "sourceForm": "marvellous",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "wonderful",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "fantastic.s.02",
+      "targetSenseId": "fantastic.s.02",
+      "sourceGloss": "extraordinarily good or great ; used especially as intensifiers",
+      "targetGloss": "extraordinarily good or great ; used especially as intensifiers",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ced87e9877a8",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.second.adjective-determiner-noun",
+      "targetId": "english.vocabulary.skill.second.adverb-determiner-noun",
+      "sourceForm": "second",
+      "sourcePos": [
+        "adjective",
+        "determiner",
+        "noun"
+      ],
+      "targetForm": "second",
+      "targetPos": [
+        "adverb",
+        "determiner",
+        "noun"
+      ],
+      "sourceSenseId": "second.r.01",
+      "targetSenseId": "second.r.01",
+      "sourceGloss": "in the second place",
+      "targetGloss": "in the second place",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d31bedef7d0c",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.curriculum.noun",
+      "targetId": "english.vocabulary.skill.program.noun",
+      "sourceForm": "curriculum",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "program",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "course_of_study.n.01",
+      "targetSenseId": "course_of_study.n.01",
+      "sourceGloss": "an integrated course of academic studies",
+      "targetGloss": "an integrated course of academic studies",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d3808daf2676",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.monthly.adjective",
+      "targetId": "english.vocabulary.skill.monthly.adjective-adverb",
+      "sourceForm": "monthly",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "monthly",
+      "targetPos": [
+        "adjective",
+        "adverb"
+      ],
+      "sourceSenseId": "monthly.s.01",
+      "targetSenseId": "monthly.s.01",
+      "sourceGloss": "of or occurring or payable every month",
+      "targetGloss": "of or occurring or payable every month",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d453d819c1ec",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.walk.noun-verb",
+      "targetId": "english.vocabulary.skill.walking.noun",
+      "sourceForm": "walk",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "walking",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "walk.n.01",
+      "targetSenseId": "walk.n.01",
+      "sourceGloss": "the act of traveling by foot",
+      "targetGloss": "the act of traveling by foot",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d490089f6eb0",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.perhaps.adverb",
+      "targetId": "english.vocabulary.skill.possibly.adverb",
+      "sourceForm": "perhaps",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "possibly",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "possibly.r.01",
+      "targetSenseId": "possibly.r.01",
+      "sourceGloss": "by chance",
+      "targetGloss": "by chance",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d566e78ed582",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.effort.noun",
+      "targetId": "english.vocabulary.skill.try.noun-verb",
+      "sourceForm": "effort",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "try",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "attempt.n.01",
+      "targetSenseId": "attempt.n.01",
+      "sourceGloss": "earnest and conscientious activity intended to do or accomplish something",
+      "targetGloss": "earnest and conscientious activity intended to do or accomplish something",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d585282ca1b6",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.curriculum.noun",
+      "targetId": "english.vocabulary.skill.program-me.noun",
+      "sourceForm": "curriculum",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "program",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "course_of_study.n.01",
+      "targetSenseId": "course_of_study.n.01",
+      "sourceGloss": "an integrated course of academic studies",
+      "targetGloss": "an integrated course of academic studies",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d611db3b608e",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.all.adjective-adverb-determiner-pronoun",
+      "targetId": "english.vocabulary.skill.totally.adverb",
+      "sourceForm": "all",
+      "sourcePos": [
+        "adjective",
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "targetForm": "totally",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "wholly.r.01",
+      "targetSenseId": "wholly.r.01",
+      "sourceGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "targetGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d67ee74f2820",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.frightening.adjective",
+      "targetId": "english.vocabulary.skill.terrible.adjective",
+      "sourceForm": "frightening",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "terrible",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "awful.s.02",
+      "targetSenseId": "awful.s.02",
+      "sourceGloss": "causing fear or dread or terror",
+      "targetGloss": "causing fear or dread or terror",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d68308ad64b3",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.backpack.noun",
+      "targetId": "english.vocabulary.skill.rucksack-us-backpack.noun",
+      "sourceForm": "backpack",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "backpack",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "backpack.n.01",
+      "targetSenseId": "backpack.n.01",
+      "sourceGloss": "a bag carried by a strap on your back or shoulder",
+      "targetGloss": "a bag carried by a strap on your back or shoulder",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d6cddbb27712",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.bag.noun",
+      "targetId": "english.vocabulary.skill.handbag.noun",
+      "sourceForm": "bag",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "handbag",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "bag.n.04",
+      "targetSenseId": "bag.n.04",
+      "sourceGloss": "a container used for carrying money and small personal items or accessories (especially by women)",
+      "targetGloss": "a container used for carrying money and small personal items or accessories (especially by women)",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d726f9b35eef",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.kind.adjective",
+      "targetId": "english.vocabulary.skill.kind.noun",
+      "sourceForm": "kind",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "kind",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "kind.n.01",
+      "targetSenseId": "kind.n.01",
+      "sourceGloss": "a category of things distinguished by some common characteristic or quality",
+      "targetGloss": "a category of things distinguished by some common characteristic or quality",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d7c07f5f50f9",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.own.adjective",
+      "targetId": "english.vocabulary.skill.own.adjective-pronoun-verb",
+      "sourceForm": "own",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "own",
+      "targetPos": [
+        "adjective",
+        "pronoun",
+        "verb"
+      ],
+      "sourceSenseId": "own.s.01",
+      "targetSenseId": "own.s.01",
+      "sourceGloss": "belonging to or on behalf of a specified person (especially yourself); preceded by a possessive",
+      "targetGloss": "belonging to or on behalf of a specified person (especially yourself); preceded by a possessive",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.d9a273c6bff0",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.swim.noun",
+      "targetId": "english.vocabulary.skill.swim.verb",
+      "sourceForm": "swim",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "swim",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "swimming.n.01",
+      "targetSenseId": "swimming.n.01",
+      "sourceGloss": "the act of swimming; :",
+      "targetGloss": "the act of swimming; :",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.dc603c53b3c2",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.grandmother.noun",
+      "targetId": "english.vocabulary.skill.granny.noun",
+      "sourceForm": "grandmother",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "granny",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "grandma.n.01",
+      "targetSenseId": "grandma.n.01",
+      "sourceGloss": "the mother of your father or mother",
+      "targetGloss": "the mother of your father or mother",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.dcdc543f2429",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.fine.adjective-exclamation",
+      "targetId": "english.vocabulary.skill.ok.adjective-discourse-marker",
+      "sourceForm": "fine",
+      "sourcePos": [
+        "adjective",
+        "exclamation"
+      ],
+      "targetForm": "ok",
+      "targetPos": [
+        "adjective",
+        "discourse-marker"
+      ],
+      "sourceSenseId": "all_right.s.01",
+      "targetSenseId": "all_right.s.01",
+      "sourceGloss": "being satisfactory or in satisfactory condition",
+      "targetGloss": "being satisfactory or in satisfactory condition",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.dcffefd8021a",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.all.adverb-determiner-pronoun",
+      "targetId": "english.vocabulary.skill.altogether.adverb",
+      "sourceForm": "all",
+      "sourcePos": [
+        "adverb",
+        "determiner",
+        "pronoun"
+      ],
+      "targetForm": "altogether",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "wholly.r.01",
+      "targetSenseId": "wholly.r.01",
+      "sourceGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "targetGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.de276c447162",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.bank.noun",
+      "targetId": "english.vocabulary.skill.rely-on.verb",
+      "sourceForm": "bank",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "rely",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "trust.v.01",
+      "targetSenseId": "trust.v.01",
+      "sourceGloss": "have confidence or faith in",
+      "targetGloss": "have confidence or faith in",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.df4219a46f88",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.midday.noun",
+      "targetId": "english.vocabulary.skill.noon.noun",
+      "sourceForm": "midday",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "noon",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "noon.n.01",
+      "targetSenseId": "noon.n.01",
+      "sourceGloss": "the middle of the day",
+      "targetGloss": "the middle of the day",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.df440ba09397",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.mat.noun",
+      "targetId": "english.vocabulary.skill.matt.noun",
+      "sourceForm": "mat",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "matt",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "flatness.n.04",
+      "targetSenseId": "flatness.n.04",
+      "sourceGloss": "the property of having little or no contrast; lacking highlights or gloss",
+      "targetGloss": "the property of having little or no contrast; lacking highlights or gloss",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.e0e0994e2873",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.outdoors.adverb",
+      "targetId": "english.vocabulary.skill.outside.adverb-noun-preposition",
+      "sourceForm": "outdoors",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "outside",
+      "targetPos": [
+        "adverb",
+        "noun",
+        "preposition"
+      ],
+      "sourceSenseId": "outside.r.01",
+      "targetSenseId": "outside.r.01",
+      "sourceGloss": "outside a building",
+      "targetGloss": "outside a building",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.e0f6ce69f472",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.chance.noun",
+      "targetId": "english.vocabulary.skill.opportunity.noun",
+      "sourceForm": "chance",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "opportunity",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "opportunity.n.01",
+      "targetSenseId": "opportunity.n.01",
+      "sourceGloss": "a possibility due to a favorable combination of circumstances",
+      "targetGloss": "a possibility due to a favorable combination of circumstances",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.e303c0b5272b",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.thousand.noun",
+      "targetId": "english.vocabulary.skill.yard.noun",
+      "sourceForm": "thousand",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "yard",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "thousand.n.01",
+      "targetSenseId": "thousand.n.01",
+      "sourceGloss": "the cardinal number that is the product of 10 and 100",
+      "targetGloss": "the cardinal number that is the product of 10 and 100",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.e5c17864a0fc",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.aeroplane.noun",
+      "targetId": "english.vocabulary.skill.plane.noun",
+      "sourceForm": "aeroplane",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "plane",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "airplane.n.01",
+      "targetSenseId": "airplane.n.01",
+      "sourceGloss": "an aircraft that has a fixed wing and is powered by propellers or jets",
+      "targetGloss": "an aircraft that has a fixed wing and is powered by propellers or jets",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.e5e9e24b8b2a",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.photo-graph.noun",
+      "targetId": "english.vocabulary.skill.photo.noun",
+      "sourceForm": "photo",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "photo",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "photograph.n.01",
+      "targetSenseId": "photograph.n.01",
+      "sourceGloss": "a representation of a person or scene in the form of a print or transparent slide; recorded by a camera on light-sensitive material",
+      "targetGloss": "a representation of a person or scene in the form of a print or transparent slide; recorded by a camera on light-sensitive material",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.e6b38115ad08",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.almost.adverb",
+      "targetId": "english.vocabulary.skill.near.adjective-adverb-preposition",
+      "sourceForm": "almost",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "near",
+      "targetPos": [
+        "adjective",
+        "adverb",
+        "preposition"
+      ],
+      "sourceSenseId": "about.r.07",
+      "targetSenseId": "about.r.07",
+      "sourceGloss": "(of actions or states) slightly short of or not quite accomplished; all but",
+      "targetGloss": "(of actions or states) slightly short of or not quite accomplished; all but",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.e79d69a5dead",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.backpack-uk-rucksack.noun",
+      "targetId": "english.vocabulary.skill.backpack.noun",
+      "sourceForm": "backpack",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "backpack",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "backpack.n.01",
+      "targetSenseId": "backpack.n.01",
+      "sourceGloss": "a bag carried by a strap on your back or shoulder",
+      "targetGloss": "a bag carried by a strap on your back or shoulder",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.e9d6de3e4ff5",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.almost.adverb",
+      "targetId": "english.vocabulary.skill.near.adverb-preposition",
+      "sourceForm": "almost",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "near",
+      "targetPos": [
+        "adverb",
+        "preposition"
+      ],
+      "sourceSenseId": "about.r.07",
+      "targetSenseId": "about.r.07",
+      "sourceGloss": "(of actions or states) slightly short of or not quite accomplished; all but",
+      "targetGloss": "(of actions or states) slightly short of or not quite accomplished; all but",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.e9e2d335e433",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.outdoors.adverb",
+      "targetId": "english.vocabulary.skill.outside.adverb-preposition",
+      "sourceForm": "outdoors",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "outside",
+      "targetPos": [
+        "adverb",
+        "preposition"
+      ],
+      "sourceSenseId": "outside.r.01",
+      "targetSenseId": "outside.r.01",
+      "sourceGloss": "outside a building",
+      "targetGloss": "outside a building",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ea27125a218a",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.cough.noun",
+      "targetId": "english.vocabulary.skill.cough.noun-verb",
+      "sourceForm": "cough",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "cough",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "cough.n.01",
+      "targetSenseId": "cough.n.01",
+      "sourceGloss": "a sudden noisy expulsion of air from the lungs that clears the air passages; a common symptom of upper respiratory infection or bronchitis or pneumonia or tuberculosis",
+      "targetGloss": "a sudden noisy expulsion of air from the lungs that clears the air passages; a common symptom of upper respiratory infection or bronchitis or pneumonia or tuberculosis",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ec02ccd4ad1e",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.postpone.verb",
+      "targetId": "english.vocabulary.skill.table.noun",
+      "sourceForm": "postpone",
+      "sourcePos": [
+        "verb"
+      ],
+      "targetForm": "table",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "postpone.v.01",
+      "targetSenseId": "postpone.v.01",
+      "sourceGloss": "hold back to a later time",
+      "targetGloss": "hold back to a later time",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ed116cb6564b",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.north.adjective-adverb-noun",
+      "targetId": "english.vocabulary.skill.north.noun",
+      "sourceForm": "north",
+      "sourcePos": [
+        "adjective",
+        "adverb",
+        "noun"
+      ],
+      "targetForm": "north",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "north.a.01",
+      "targetSenseId": "north.a.01",
+      "sourceGloss": "situated in or facing or moving toward or coming from the north",
+      "targetGloss": "situated in or facing or moving toward or coming from the north",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.edaeb88007b5",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.incredible.adjective",
+      "targetId": "english.vocabulary.skill.unbelievable.adjective",
+      "sourceForm": "incredible",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "unbelievable",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "incredible.a.01",
+      "targetSenseId": "incredible.a.01",
+      "sourceGloss": "beyond belief or understanding",
+      "targetGloss": "beyond belief or understanding",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.eeac1fbaa132",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.late.adjective-adverb",
+      "targetId": "english.vocabulary.skill.recently.adverb",
+      "sourceForm": "late",
+      "sourcePos": [
+        "adjective",
+        "adverb"
+      ],
+      "targetForm": "recently",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "recently.r.01",
+      "targetSenseId": "recently.r.01",
+      "sourceGloss": "in the recent past",
+      "targetGloss": "in the recent past",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ef7213114c27",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.swim.noun-verb",
+      "targetId": "english.vocabulary.skill.swimming.noun",
+      "sourceForm": "swim",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "swimming",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "swimming.n.01",
+      "targetSenseId": "swimming.n.01",
+      "sourceGloss": "the act of swimming; :",
+      "targetGloss": "the act of swimming; :",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f05b5603da78",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.boring.adjective",
+      "targetId": "english.vocabulary.skill.slow.adjective",
+      "sourceForm": "boring",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "slow",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "boring.s.01",
+      "targetSenseId": "boring.s.01",
+      "sourceGloss": "so lacking in interest as to cause mental weariness; ; ; ; ; ; - Edmund Burke; ; - Mark Twain",
+      "targetGloss": "so lacking in interest as to cause mental weariness; ; ; ; ; ; - Edmund Burke; ; - Mark Twain",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f07ef1404326",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.bath.noun-verb",
+      "targetId": "english.vocabulary.skill.bathtub.noun",
+      "sourceForm": "bath",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "bathtub",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "bathtub.n.01",
+      "targetSenseId": "bathtub.n.01",
+      "sourceGloss": "a relatively large open container that you fill with water and use to wash the body",
+      "targetGloss": "a relatively large open container that you fill with water and use to wash the body",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f0b6cd6c7679",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.it-information-technology.noun",
+      "targetId": "english.vocabulary.skill.it.noun",
+      "sourceForm": "it",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "it",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "information_technology.n.01",
+      "targetSenseId": "information_technology.n.01",
+      "sourceGloss": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "targetGloss": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f0d66887ba0c",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.surfboarding.noun",
+      "targetId": "english.vocabulary.skill.surfing.noun",
+      "sourceForm": "surfboarding",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "surfing",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "surfing.n.01",
+      "targetSenseId": "surfing.n.01",
+      "sourceGloss": "the sport of riding a surfboard toward the shore on the crest of a wave",
+      "targetGloss": "the sport of riding a surfboard toward the shore on the crest of a wave",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f20d182e3050",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.about.adverb-preposition",
+      "targetId": "english.vocabulary.skill.almost.adverb",
+      "sourceForm": "about",
+      "sourcePos": [
+        "adverb",
+        "preposition"
+      ],
+      "targetForm": "almost",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "about.r.07",
+      "targetSenseId": "about.r.07",
+      "sourceGloss": "(of actions or states) slightly short of or not quite accomplished; all but",
+      "targetGloss": "(of actions or states) slightly short of or not quite accomplished; all but",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f375b943f698",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.delivery.noun",
+      "targetId": "english.vocabulary.skill.rescue.noun-verb",
+      "sourceForm": "delivery",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "rescue",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "rescue.n.01",
+      "targetSenseId": "rescue.n.01",
+      "sourceGloss": "recovery or preservation from loss or danger",
+      "targetGloss": "recovery or preservation from loss or danger",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f49052628625",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.apartment.noun",
+      "targetId": "english.vocabulary.skill.flat.adjective-noun",
+      "sourceForm": "apartment",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "flat",
+      "targetPos": [
+        "adjective",
+        "noun"
+      ],
+      "sourceSenseId": "apartment.n.01",
+      "targetSenseId": "apartment.n.01",
+      "sourceGloss": "a suite of rooms usually on one floor of an apartment house",
+      "targetGloss": "a suite of rooms usually on one floor of an apartment house",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f56d16fbb7be",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.altogether.adverb",
+      "targetId": "english.vocabulary.skill.totally.adverb",
+      "sourceForm": "altogether",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "totally",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "wholly.r.01",
+      "targetSenseId": "wholly.r.01",
+      "sourceGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "targetGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f5eda2385dce",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.few.adjective-determiner",
+      "targetId": "english.vocabulary.skill.few.adjective-determiner-pronoun",
+      "sourceForm": "few",
+      "sourcePos": [
+        "adjective",
+        "determiner"
+      ],
+      "targetForm": "few",
+      "targetPos": [
+        "adjective",
+        "determiner",
+        "pronoun"
+      ],
+      "sourceSenseId": "few.a.01",
+      "targetSenseId": "few.a.01",
+      "sourceGloss": "a quantifier that can be used with count nouns and is often preceded by `a'; a small but indefinite number",
+      "targetGloss": "a quantifier that can be used with count nouns and is often preceded by `a'; a small but indefinite number",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f626082c404f",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.headphones.noun",
+      "targetId": "english.vocabulary.skill.phone.noun-verb",
+      "sourceForm": "headphones",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "phone",
+      "targetPos": [
+        "noun",
+        "verb"
+      ],
+      "sourceSenseId": "earphone.n.01",
+      "targetSenseId": "earphone.n.01",
+      "sourceGloss": "electro-acoustic transducer for converting electric signals into sounds; it is held over or inserted into the ear",
+      "targetGloss": "electro-acoustic transducer for converting electric signals into sounds; it is held over or inserted into the ear",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f692a1de65dd",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.cliff.noun",
+      "targetId": "english.vocabulary.skill.drop.verb",
+      "sourceForm": "cliff",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "drop",
+      "targetPos": [
+        "verb"
+      ],
+      "sourceSenseId": "cliff.n.01",
+      "targetSenseId": "cliff.n.01",
+      "sourceGloss": "a steep high face of rock",
+      "targetGloss": "a steep high face of rock",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f800db68a41f",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.ad-advertisement.noun",
+      "targetId": "english.vocabulary.skill.advertisement.noun",
+      "sourceForm": "ad",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "advertisement",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "ad.n.01",
+      "targetSenseId": "ad.n.01",
+      "sourceGloss": "a public promotion of some product or service",
+      "targetGloss": "a public promotion of some product or service",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f8b262ea6040",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.form.noun-verb",
+      "targetId": "english.vocabulary.skill.kind.noun",
+      "sourceForm": "form",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "kind",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "kind.n.01",
+      "targetSenseId": "kind.n.01",
+      "sourceGloss": "a category of things distinguished by some common characteristic or quality",
+      "targetGloss": "a category of things distinguished by some common characteristic or quality",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f8d86693f60e",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.completely.adverb",
+      "targetId": "english.vocabulary.skill.totally.adverb",
+      "sourceForm": "completely",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "totally",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "wholly.r.01",
+      "targetSenseId": "wholly.r.01",
+      "sourceGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "targetGloss": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f91039d38f47",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.south.adjective-adverb-noun",
+      "targetId": "english.vocabulary.skill.south.noun",
+      "sourceForm": "south",
+      "sourcePos": [
+        "adjective",
+        "adverb",
+        "noun"
+      ],
+      "targetForm": "south",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "south.a.01",
+      "targetSenseId": "south.a.01",
+      "sourceGloss": "situated in or facing or moving toward or coming from the south",
+      "targetGloss": "situated in or facing or moving toward or coming from the south",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.f97a85065f2d",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.internet.noun",
+      "targetId": "english.vocabulary.skill.net.noun",
+      "sourceForm": "internet",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "net",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "internet.n.01",
+      "targetSenseId": "internet.n.01",
+      "sourceGloss": "a computer network consisting of a worldwide network of computer networks that use the TCP/IP network protocols to facilitate data transmission and exchange",
+      "targetGloss": "a computer network consisting of a worldwide network of computer networks that use the TCP/IP network protocols to facilitate data transmission and exchange",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.fa14da87ec09",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.certainly.adverb",
+      "targetId": "english.vocabulary.skill.sure.adjective",
+      "sourceForm": "certainly",
+      "sourcePos": [
+        "adverb"
+      ],
+      "targetForm": "sure",
+      "targetPos": [
+        "adjective"
+      ],
+      "sourceSenseId": "surely.r.01",
+      "targetSenseId": "surely.r.01",
+      "sourceGloss": "definitely or positively (`sure' is sometimes used informally for `surely')",
+      "targetGloss": "definitely or positively (`sure' is sometimes used informally for `surely')",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.fc1189527640",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.pay.noun-verb",
+      "targetId": "english.vocabulary.skill.wage-s.noun",
+      "sourceForm": "pay",
+      "sourcePos": [
+        "noun",
+        "verb"
+      ],
+      "targetForm": "wage",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "wage.n.01",
+      "targetSenseId": "wage.n.01",
+      "sourceGloss": "something that remunerates",
+      "targetGloss": "something that remunerates",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.fca4172e95ed",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.forbidden.adjective",
+      "targetId": "english.vocabulary.skill.out.adverb",
+      "sourceForm": "forbidden",
+      "sourcePos": [
+        "adjective"
+      ],
+      "targetForm": "out",
+      "targetPos": [
+        "adverb"
+      ],
+      "sourceSenseId": "forbidden.s.01",
+      "targetSenseId": "forbidden.s.01",
+      "sourceGloss": "excluded from use or mention",
+      "targetGloss": "excluded from use or mention",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.fd1ac2e6124a",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.curriculum.noun",
+      "targetId": "english.vocabulary.skill.programme.noun",
+      "sourceForm": "curriculum",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "programme",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "course_of_study.n.01",
+      "targetSenseId": "course_of_study.n.01",
+      "sourceGloss": "an integrated course of academic studies",
+      "targetGloss": "an integrated course of academic studies",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    },
+    {
+      "edgeId": "english.vocabulary.edge.semantic.wordnet.synonym.ff7b31ec7be0",
+      "relation": "synonym",
+      "sourceId": "english.vocabulary.skill.kind.noun",
+      "targetId": "english.vocabulary.skill.variety.noun",
+      "sourceForm": "kind",
+      "sourcePos": [
+        "noun"
+      ],
+      "targetForm": "variety",
+      "targetPos": [
+        "noun"
+      ],
+      "sourceSenseId": "kind.n.01",
+      "targetSenseId": "kind.n.01",
+      "sourceGloss": "a category of things distinguished by some common characteristic or quality",
+      "targetGloss": "a category of things distinguished by some common characteristic or quality",
+      "layer": "enrichment.semantic.wordnet.synonym"
+    }
+  ]
+}
