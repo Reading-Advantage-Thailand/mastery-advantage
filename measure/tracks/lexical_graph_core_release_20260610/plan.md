@@ -84,23 +84,41 @@ completed-task count when no substantive completed task exists. The targeted
 
 ## Phase 2: YLE List Fidelity Audit
 
-- [~] Task: Build YLE membership audit fixtures and check harness
-  - [~] Fixtures for Starters, Movers, Flyers alphabetical slices
-  - [~] Expected skill IDs / exam membership / explicit omission decisions
-  - [~] Red command must fail until audit evidence exists (see test-strategy)
-- [~] Task: Audit Starters / Movers / Flyers membership against official list
-  - [~] Stratified review meeting sample minima
-  - [~] Record omissions, false inclusions, POS/form errors with decisions
-  - [~] Verify cumulative interpretation is documented as consumption rule
-- [~] Task: Audit lexical forms, MWEs, variants, and merges
-  - [~] Review MWE and variant handling on YLE entries
-  - [~] Resolve or quarantine high-severity collisions and false merges
-- [~] Task: Audit thematic and grammatical groups
-  - [~] Review YLE thematic membership sample (≥100 or full set rules)
-  - [~] Account for grammatical lists: represent or accept explicit omission
-  - [~] Quarantine groups failing precision threshold
+- [x] Task: Build YLE membership audit fixtures and check harness — commit: 26e6d1001c91b0a674d4aac9516ecdd65c55b9db
+  - [x] Fixtures for Starters, Movers, Flyers alphabetical slices
+  - [x] Expected skill IDs / exam membership / explicit omission decisions
+  - [x] Red command must fail until audit evidence exists (see test-strategy)
+- [x] Task: Audit Starters / Movers / Flyers membership against official list — commit: 26e6d1001c91b0a674d4aac9516ecdd65c55b9db
+  - [x] Stratified review meeting sample minima
+  - [x] Record omissions, false inclusions, POS/form errors with decisions
+  - [x] Verify cumulative interpretation is documented as consumption rule
+- [x] Task: Audit lexical forms, MWEs, variants, and merges — commit: 26e6d1001c91b0a674d4aac9516ecdd65c55b9db
+  - [x] Review MWE and variant handling on YLE entries
+  - [x] Resolve or quarantine high-severity collisions and false merges
+- [x] Task: Audit thematic and grammatical groups — commit: 26e6d1001c91b0a674d4aac9516ecdd65c55b9db
+  - [x] Review YLE thematic membership sample (≥100 or full set rules)
+  - [x] Account for grammatical lists: represent or accept explicit omission
+  - [x] Quarantine groups failing precision threshold
 - [b] Task: Curriculum sign-off on YLE fidelity — human-gate:curriculum-language
   - [b] Accept retained YLE membership and group decisions — human-gate:curriculum-language
+
+**Green evidence (2026-08-11):** `26e6d1001c91b0a674d4aac9516ecdd65c55b9db`
+adds a reproducible local-PDF source parser, all 1,390 direct source-row
+fixtures (491 Starters, 392 Movers, 507 Flyers), 100 source-derived thematic
+reviews across all 20 groups, 25 high-severity collision decisions, the
+explicit grammatical-list omission decision, empty durable exception queue,
+and labeled JSON/Markdown audit reports. The parser stores page/section
+locations and lexical identity fields only; it does not commit PDF excerpts.
+It reconciles source rows to graph identity and direct membership after source
+parsing, reports 1.000 alphabetical precision/recall and 1.000 thematic
+sample precision, and preserves zero `prerequisite_for` edges plus the
+consumption-only cumulative policy. `bash tests/yle_p2_membership.sh` exited
+`0` with `PASS=7, FAIL=0`; `git diff --check`, both existing Node syntax
+checks, Python compilation for the audit parser, and
+`node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` exited
+`0` (valid 3,752-skill inventory). `measure/doctor.sh` is not present in this
+repository. The curriculum/language approval remains the truthful `[b]`
+human gate; no approval artifact was fabricated.
 
 **Mid-Red evidence (2026-08-11):** Added the test-only
 `tests/yle_p2_membership.sh`. `bash tests/yle_p2_membership.sh` exits `1` as
