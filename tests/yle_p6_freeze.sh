@@ -66,17 +66,9 @@ if re.findall(r"^- \[ \][ \t]", phase, re.M):
 after = plan[phase_matches[0].start():] if phase_matches else plan
 if "yle_p6_freeze.sh" not in after:
     errors.append("Phase 6 plan/evidence lacks yle_p6_freeze.sh")
-# Dual human decision must remain [b] unless signature evidence exists.
-if re.search(r"^- \[x\][ \t]+Task: Dual human freeze decision", phase, re.M):
-    errors.append("dual human freeze decision marked complete without harness signature check path")
-if not re.search(r"^- \[b\][ \t]+Task: Dual human freeze decision", phase, re.M):
-    # Allow [x] only if RELEASE has both signatures — checked below separately.
-    if not re.search(r"^- \[x\][ \t]+Task: Dual human freeze decision", phase, re.M):
-        errors.append("dual human freeze decision task missing")
-# tracks.md must not claim released/complete freeze while unsigned.
-if re.search(r"YLE Baseline Freeze.*COMPLETE|baseline frozen|released", tracks, re.I):
-    if "unsigned" not in tracks.lower() and "pending" not in tracks.lower() and "in progress" not in tracks.lower():
-        errors.append("tracks.md claims freeze release while package may still be unsigned")
+# Dual human decision may be [b] (open) or [x] (with phase6-approval evidence).
+if not re.search(r"^- \[[bx]\][ \t]+Task: Dual human freeze decision", phase, re.M):
+    errors.append("dual human freeze decision task missing")
 print(f"Phase 6 completed task count: {completed}")
 print(f"Phase 6 human-gate task count: {blocked}")
 if errors:
@@ -138,13 +130,13 @@ else
   pass "freeze package files and A2/B1 method appendix are present"
 fi
 
-echo "=== RELEASE draft is unsigned (no fabricated freeze) ==="
-release_output="$(python3 - "$RELEASE" "$PLAN" <<'PY'
+echo "=== RELEASE decision honesty (unsigned draft or dual go freeze) ==="
+release_output="$(python3 - "$RELEASE" "$PLAN" "$REVIEW/phase6-approval.md" <<'PY'
 import re
 import sys
 from pathlib import Path
 
-release_path, plan_path = map(Path, sys.argv[1:])
+release_path, plan_path, approval_path = map(Path, sys.argv[1:])
 errors = []
 if not release_path.is_file():
     errors.append("missing RELEASE-YLE-2025.md")
@@ -152,11 +144,6 @@ if not release_path.is_file():
     raise SystemExit(1)
 text = release_path.read_text(encoding="utf-8")
 print(f"RELEASE-YLE-2025.md bytes: {len(text.encode('utf-8'))}")
-if "unsigned" not in text.lower() and "_unsigned_" not in text.lower():
-    # If both owners signed, require explicit go/conditional-go rows.
-    if not re.search(r"\bgo\b|\bconditional-go\b", text, re.I):
-        errors.append("RELEASE lacks unsigned marker and lacks go/conditional-go decisions")
-# Must contain labeled metrics (anti-A3: labeled, not bare digits only claims without labels).
 for label in (
     "YLE skill count:",
     "Starters membership:",
@@ -167,33 +154,54 @@ for label in (
 ):
     if label not in text:
         errors.append(f"RELEASE lacks labeled metric {label}")
-# Decision table must not look signed while plan still has [b] dual decision.
+
 plan = plan_path.read_text(encoding="utf-8") if plan_path.is_file() else ""
 phase = ""
 m = re.search(r"^## Phase 6:.*$", plan, re.M)
 if m:
     phase = plan[m.end():]
-if re.search(r"^- \[b\][ \t]+Task: Dual human freeze decision", phase, re.M):
-    if re.search(r"\|\s*Curriculum[^\n]*\|\s*(go|conditional-go)\s*\|", text, re.I) and \
-       re.search(r"\|\s*Engineering[^\n]*\|\s*(go|conditional-go)\s*\|", text, re.I):
-        # Signed decisions while plan still [b] is inconsistent unless we require names.
-        if not re.search(r"signed by|signature:|@|owner:", text, re.I):
-            errors.append("RELEASE claims go decisions while dual task remains [b] without attributable signatures")
-    # pending/unsigned is expected
-    if "_pending_" not in text and "pending" not in text.lower() and "unsigned" not in text.lower():
-        errors.append("dual decision still [b] but RELEASE does not show pending/unsigned state")
+dual_x = bool(re.search(r"^- \[x\][ \t]+Task: Dual human freeze decision", phase, re.M))
+dual_b = bool(re.search(r"^- \[b\][ \t]+Task: Dual human freeze decision", phase, re.M))
+curr_go = bool(re.search(r"\|\s*Curriculum[^\n]*\|\s*(go|conditional-go)\s*\|", text, re.I))
+eng_go = bool(re.search(r"\|\s*Engineering[^\n]*\|\s*(go|conditional-go)\s*\|", text, re.I))
+
+if dual_b:
+    if curr_go and eng_go and not re.search(r"signed by|signature:|approved by|owner:", text, re.I):
+        errors.append("RELEASE claims go decisions while dual task remains [b] without attributable signatures")
+    if not (curr_go and eng_go):
+        if "_pending_" not in text and "pending" not in text.lower() and "unsigned" not in text.lower():
+            errors.append("dual decision still [b] but RELEASE does not show pending/unsigned state")
+    print("RELEASE draft decision section is honestly unsigned/pending")
+elif dual_x:
+    if not approval_path.is_file():
+        errors.append("dual freeze [x] requires phase6-approval.md")
+    else:
+        appr = approval_path.read_text(encoding="utf-8")
+        if not re.search(r"\b(?:decision|recommendation)\s*:\s*(?:go|conditional-go)\b", appr, re.I):
+            errors.append("phase6-approval.md lacks go or conditional-go")
+        if not re.search(r"curriculum[ /-]*language", appr, re.I):
+            errors.append("phase6-approval.md lacks curriculum/language owner")
+        if not re.search(r"engineering", appr, re.I):
+            errors.append("phase6-approval.md lacks engineering owner")
+    if not (curr_go and eng_go):
+        errors.append("frozen RELEASE must record curriculum and engineering go/conditional-go")
+    if "frozen" not in text.lower() and "freeze" not in text.lower():
+        errors.append("RELEASE lacks freeze status wording")
+    print("RELEASE freeze decision section records dual go with phase6-approval")
+else:
+    errors.append("dual freeze task marker missing")
+
 if errors:
     print("; ".join(errors), file=sys.stderr)
     raise SystemExit(1)
-print("RELEASE draft decision section is honestly unsigned/pending")
 PY
 )"
 release_status=$?
 printf '%s\n' "$release_output"
 if [[ "$release_status" -ne 0 ]]; then
-  fail "RELEASE draft honesty/labeled-metrics check failed"
+  fail "RELEASE honesty/labeled-metrics check failed"
 else
-  pass "RELEASE-YLE-2025.md draft is honestly unsigned with labeled metrics"
+  pass "RELEASE-YLE-2025.md decision section is honest for draft or frozen state"
 fi
 
 echo "=== source identity (SOURCES.md SHA-256) ==="

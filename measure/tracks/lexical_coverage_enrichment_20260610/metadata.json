@@ -1,11 +1,11 @@
 {
   "track_id": "lexical_coverage_enrichment_20260610",
   "type": "feature",
-  "status": "blocked",
+  "status": "in_progress",
   "created_at": "2026-06-10T08:32:01Z",
-  "updated_at": "2026-06-10T08:32:01Z",
+  "updated_at": "2026-08-11T20:00:00Z",
   "description": "Expand the approved core lexical graph with source-backed groups, B2+ coverage, and frequency metadata.",
   "estimated_tasks": 23,
   "actual_tasks": null,
-  "deviation_notes": "Blocked until the core lexical graph contracts and artifact boundaries are approved."
+  "deviation_notes": "2026-08-11: Unblocked by YLE core freeze (lexical_graph_core_release_20260610 dual go). Phase 1 contracts and source decisions in progress."
 }

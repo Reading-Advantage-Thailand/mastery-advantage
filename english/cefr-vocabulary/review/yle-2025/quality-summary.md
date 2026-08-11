@@ -1,8 +1,8 @@
 # YLE 2025 Freeze — Quality Summary
 
 **Generated:** 2026-08-11  
-**Authority:** Engineering audit package only. Curriculum/language freezes and
-sign-offs remain separate human gates.
+**Authority:** YLE 2025 baseline freeze package. Dual freeze go recorded
+2026-08-11 (`phase6-approval.md`, `RELEASE-YLE-2025.md`).
 
 ## Labeled Metrics
 
@@ -29,9 +29,9 @@ sign-offs remain separate human gates.
 | 1 Scope / rules | Approved dual-owner Phase 1 rules | Complete |
 | 2 Membership fidelity | Source oracle 1407 rows; graph 1405 skills; harness green | Curriculum fidelity go (`phase2-approval.md`) |
 | 3 Relationships | Support inventory + progression policy; prereq 0 | Relationships go (`phase3-approval.md`) |
-| 4 Consumption | `YLE-CONSUMPTION.md` + offline profiles green | Dual approval open |
-| 5 Reading | S/M/F fixtures + coverage contract green | Plausibility open |
-| 6 Freeze package | Draft package + sanity harness | Dual freeze decision open |
+| 4 Consumption | `YLE-CONSUMPTION.md` + offline profiles green | Dual go (`phase4-approval.md`) |
+| 5 Reading | S/M/F fixtures + coverage contract green | Plausibility go (`phase5-approval.md`) |
+| 6 Freeze package | Package + sanity harness | Dual freeze go (`phase6-approval.md`); baseline frozen |
 
 ## Decision / Exception Tallies
 

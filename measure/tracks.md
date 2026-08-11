@@ -12,40 +12,33 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: English Lexical Graph Core Release (YLE Baseline Freeze)** *(critical path — gates 3 blocked tracks)*
+- [x] **Track: English Lexical Graph Core Release (YLE Baseline Freeze)** *(COMPLETE 2026-08-11 — baseline frozen; unblocks coverage, semantic, recommendation)*
   *Verify and freeze the Cambridge YLE 2025 baseline of the existing lexical
   graph; define static-graph + learner-state next-step consumption; validate
-  reading-program fixtures; dual human go/no-go. Not a standing regeneration
+  reading-program fixtures; dual human go. Not a standing regeneration
   pipeline. A2 Key/B1 use the same method later.*
-  *Status (revised 2026-08-11): in progress — **all automatable phases
-  complete**; freeze package draft unsigned. Phase 1 dual-owner rules approval
-  recorded. Phase 2 fidelity go (`phase2-approval.md`). Phase 3 relationships
-  go (`phase3-approval.md`; 1311 supports, prereq 0). Phase 4: consumption
-  contract + offline profiles. Phase 5: S/M/F reading fixtures + coverage
-  contract. Phase 6: `RELEASE-YLE-2025.md` draft (unsigned) + quality summary +
-  A2/B1 method appendix + bounded sanity green. Open human gates (3): Phase 4
-  dual consumption approval, Phase 5 reading plausibility, Phase 6 dual freeze
-  go/no-go. Metadata `in_progress`, 26 top-level tasks (23 `[x]`, 0 `[~]`, 3
-  `[b]`). Still the release gate for the three enrichment/recommendation tracks
-  below. Not released until dual go/conditional-go.*
+  *Status: complete — dual freeze go in `phase6-approval.md` /
+  `RELEASE-YLE-2025.md`. YLE skills 1405; source rows 1407; supports 1311;
+  prereq 0. All phase approvals recorded.*
   *Link: [./tracks/lexical_graph_core_release_20260610/](./tracks/lexical_graph_core_release_20260610/)*
 
 ---
 
-- [ ] **Track: English Lexical Coverage Enrichment** *(blocked by core contracts)*
+- [ ] **Track: English Lexical Coverage Enrichment** *(unblocked — next executable)*
   *Add independently gated source-backed groups, B2+ coverage, and frequency
   metadata.*
+  *Status: in progress — Phase 1 contracts after YLE core freeze.*
   *Link: [./tracks/lexical_coverage_enrichment_20260610/](./tracks/lexical_coverage_enrichment_20260610/)*
 
 ---
 
-- [ ] **Track: English Lexical Semantic Enrichment** *(blocked by core contracts)*
+- [ ] **Track: English Lexical Semantic Enrichment** *(unblocked by core freeze)*
   *Evaluate and release independently gated typed lexical-semantic layers.*
   *Link: [./tracks/lexical_semantic_enrichment_20260610/](./tracks/lexical_semantic_enrichment_20260610/)*
 
 ---
 
-- [ ] **Track: Vocabulary And Article Recommendation Contract** *(blocked by core contracts)*
+- [ ] **Track: Vocabulary And Article Recommendation Contract** *(unblocked by core freeze)*
   *Define portable lexical matching, readability metrics, ranking contracts, and
   offline evaluation fixtures.*
   *Link: [./tracks/lexical_recommendation_contract_20260610/](./tracks/lexical_recommendation_contract_20260610/)*

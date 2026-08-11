@@ -24,4 +24,4 @@ Offline Phase 5 fixtures for the YLE freeze consumption/reading contracts.
 - Movers eligible-token known coverage: 0.428571 (unmatched span count: 4)
 - Flyers eligible-token known coverage: 0.541667 (unmatched span count: 4)
 
-Curriculum plausibility of the texts remains a human gate.
+Curriculum plausibility accepted 2026-08-11 (`phase5-approval.md`, Decision: go).

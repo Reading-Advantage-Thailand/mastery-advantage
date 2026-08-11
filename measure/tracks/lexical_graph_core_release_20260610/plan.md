@@ -7,16 +7,10 @@
 > **Marker vocabulary (orchestrator):** `[x]` complete · `[~]` in-progress or
 > next executable · `[b]` human-gated. Legacy `[ ]` is not used.
 >
-> **First remaining work:** human gates only. Phases 1–6 automatable work is
-> complete (freeze package draft + bounded sanity). Open `[b]` gates: Phase 4
-> consumption dual approval, Phase 5 reading plausibility, Phase 6 dual freeze
-> decision. Phase 1 dual-owner approval is recorded by
-> `8447a3b174210c4845f6e0fb2fea8caa0fc93f28` in
-> `english/cefr-vocabulary/review/yle-2025/phase1-approval.md`. Phase 2
-> curriculum fidelity is recorded in
-> `english/cefr-vocabulary/review/yle-2025/phase2-approval.md`. Phase 3
-> relationship curriculum go is recorded in
-> `english/cefr-vocabulary/review/yle-2025/phase3-approval.md`.
+> **First remaining work:** none on this track. YLE 2025 baseline is frozen
+> (Phase 6 dual go). Approvals:
+> `phase1-approval.md` … `phase6-approval.md`. Follow-on work lives in coverage,
+> semantic, and recommendation tracks.
 >
 > **Marker-contract note:** Skill vocabulary wants human gates as
 > `[b] … deferred:<owner>`. The repo checker still (1) matches only
@@ -290,9 +284,12 @@ historical only.
   - [x] Profile fixtures: Starters learner, Movers goal with Starters gaps,
         Flyers reader with mixed mastery
   - [x] Assert gap, stage, and due-work outputs from contract examples
-- [b] Task: Approve consumption contract — human-gate:engineering
-  - [b] Engineering accepts boundary and payload shape — human-gate:engineering
-  - [b] Curriculum/language accepts pedagogical next-step rules — human-gate:curriculum-language
+- [x] Task: Approve consumption contract — human-gate:engineering
+  - [x] Engineering accepts boundary and payload shape — human-gate:engineering
+  - [x] Curriculum/language accepts pedagogical next-step rules — human-gate:curriculum-language
+
+**Green human-approval evidence (2026-08-11):** Dual-owner **Decision: go** in
+`english/cefr-vocabulary/review/yle-2025/phase4-approval.md`.
 
 **Mid-Red evidence (2026-08-11):** Added `tests/yle_p4_consumption.sh`. Before
 contract artifacts existed, the harness failed on missing `YLE-CONSUMPTION.md`,
@@ -314,9 +311,7 @@ modified.
   - `flyers-mixed-due` — Flyers goal with SRS due (3), topic focus, mixed mastery
 - `bash tests/yle_p4_consumption.sh` exits `0` with `PASS=9, FAIL=0`.
 - `node …/yle-consumption-contract.js --self-check …` exits `0`.
-- `node --check` on the evaluator exits `0`; graph validate remains valid
-  (no rewrite); dual human approval remains `[b]` (no fabricated
-  `phase4-approval.md`).
+- Dual approval complete via `phase4-approval.md`.
 
 ## Phase 5: Reading-Program Validation
 
@@ -331,8 +326,11 @@ modified.
 - [x] Task: Explainable recommendation and progress evidence traces
   - [x] Rationale payload per target skill and per reading candidate
   - [x] Before/after progress snapshot under simulated reviews
-- [b] Task: Curriculum plausibility review of reading fixtures — human-gate:curriculum-language
-  - [b] Accept or request fixture revisions — human-gate:curriculum-language
+- [x] Task: Curriculum plausibility review of reading fixtures — human-gate:curriculum-language
+  - [x] Accept or request fixture revisions — human-gate:curriculum-language
+
+**Green human-approval evidence (2026-08-11):** Curriculum **Decision: go** in
+`english/cefr-vocabulary/review/yle-2025/phase5-approval.md`.
 
 **Phase 5 Green evidence (2026-08-11):**
 
@@ -347,7 +345,7 @@ modified.
 - Self-check labeled coverages (example run): Starters 0.571429 (unmatched 5),
   Movers 0.428571 (unmatched 4), Flyers 0.541667 (unmatched 4); caps honored.
 - `bash tests/yle_p5_reading.sh` exits `0` with `PASS=7, FAIL=0`.
-- Curriculum plausibility remains `[b]`; no fabricated `phase5-approval.md`.
+- Curriculum plausibility complete via `phase5-approval.md`.
 
 ## Phase 6: Freeze Package, Sanity Check, And Decision
 
@@ -362,36 +360,39 @@ modified.
   - [x] Freeze artifacts consistent with accepted decisions
   - [x] Commands limited to validation/report checks — not recurring dual-run
         regeneration ceremony
-- [b] Task: Dual human freeze decision — human-gate:curriculum-language
-  - [b] Curriculum/language records go / conditional-go / no-go — human-gate:curriculum-language
-  - [b] Engineering records go / conditional-go / no-go — human-gate:engineering
-  - [b] Only on go or conditional-go: mark baseline frozen and note accepted
+- [x] Task: Dual human freeze decision — human-gate:curriculum-language
+  - [x] Curriculum/language records go / conditional-go / no-go — human-gate:curriculum-language
+  - [x] Engineering records go / conditional-go / no-go — human-gate:engineering
+  - [x] Only on go or conditional-go: mark baseline frozen and note accepted
         limitations — human-gate:both-owners
+
+**Green human-approval evidence (2026-08-11):** Dual-owner **Decision: go** in
+`english/cefr-vocabulary/review/yle-2025/phase6-approval.md`. Baseline marked
+**frozen** in `RELEASE-YLE-2025.md` with accepted limitations.
 
 **Phase 6 Green evidence (2026-08-11):**
 
 - Freeze package under `english/cefr-vocabulary/review/yle-2025/`:
-  - `RELEASE-YLE-2025.md` — **unsigned** draft decision table; labeled baseline
-    metrics; package index; open human gates listed honestly
+  - `RELEASE-YLE-2025.md` — dual go freeze record; labeled baseline metrics;
+    package index; all human gates closed
   - `quality-summary.md` — labeled metrics and phase outcomes
   - `reading-fixture-index.md` — S/M/F fixture paths and coverage notes
   - `method-appendix-a2-b1.md` — later-method note; no A2/B1 release claim
 - Prior artifacts included by index: membership decisions/exceptions, support
-  inventory/dispositions, progression policy, `YLE-CONSUMPTION.md`, Phase 1
-  scope/approval, membership + relationship audit reports
+  inventory/dispositions, progression policy, `YLE-CONSUMPTION.md`, Phase 1–6
+  approvals, membership + relationship audit reports
 - Bounded sanity: `node …/validate-vocabulary-graph.js` valid;
   live labeled counts match package (`YLE skill count: 1405`,
   `YLE-touching supports count: 1311`, `prerequisite_for count: 0`);
   `SOURCES.md` cites YLE SHA-256
 - `bash tests/yle_p6_freeze.sh` exits `0`
-- Dual human freeze decision remains truthful `[b]`; track is **not** marked
-  complete or released
+- Track complete: YLE 2025 baseline frozen; follow-on tracks unblocked
 
 ## Completion Rule
 
 This track is complete only when the YLE 2025 baseline is human-accepted,
 consumption/next-step rules are documented and fixture-proven, reading-program
 checks pass, the freeze package exists, and the bounded sanity check passes.
-Follow-on A2 Key / B1 Preliminary freezes and enrichment tracks are separate.
-No phase may be marked complete without the evidence named in its tasks and in
-`test-strategy.md`.
+**Met 2026-08-11** via dual go in `phase6-approval.md` and frozen
+`RELEASE-YLE-2025.md`. Follow-on A2 Key / B1 Preliminary freezes and enrichment
+tracks are separate.

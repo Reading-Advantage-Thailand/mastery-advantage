@@ -1,7 +1,7 @@
 # YLE 2025 Consumption And Next-Step Contract
 
-**Status:** Engineering draft for the YLE baseline freeze. Dual human approval
-(engineering boundary + curriculum next-step rules) remains a separate plan gate.
+**Status:** Approved for the YLE 2025 baseline freeze (dual go,
+`review/yle-2025/phase4-approval.md`, 2026-08-11).
 **Scope:** Cambridge YLE 2025 (Starters / Movers / Flyers) only.
 **Runtime:** Offline pure functions over `(graphSnapshot, learnerState)` —
 no application database, API, or production SRS runtime is required by this
@@ -183,5 +183,5 @@ the machine-oriented contract and payload shape for the same rules.
 ## 7. Honesty
 
 - This contract does not implement a production recommender.
-- Curriculum and engineering dual approval remain plan human gates.
+- Dual approval is recorded in `review/yle-2025/phase4-approval.md`.
 - Graph counts alone are not quality evidence of good next-step pedagogy.

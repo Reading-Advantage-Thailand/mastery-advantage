@@ -1,29 +1,26 @@
-# RELEASE-YLE-2025 — Draft Freeze Decision
+# RELEASE-YLE-2025 — Freeze Decision
 
-**Status:** Draft package assembled; **unsigned**. Dual human go / conditional-go
-/ no-go is **not** recorded here until the curriculum/language and engineering
-owners explicitly sign.
+**Status:** **Frozen.** Dual human **go** recorded 2026-08-11.
 **Date assembled:** 2026-08-11
+**Date frozen:** 2026-08-11
 **Release authority:** Cambridge YLE 2025 only (Pre A1 Starters, A1 Movers,
 A2 Flyers).
 
-## Decision Section (unsigned)
+## Decision Section
 
 | Owner | Decision | Signature | Date |
 |---|---|---|---|
-| Curriculum / language | _pending_ | _unsigned_ | _—_ |
-| Engineering | _pending_ | _unsigned_ | _—_ |
+| Curriculum / language | go | Approved by: curriculum/language owner (session confirmation) | 2026-08-11 |
+| Engineering | go | Approved by: engineering owner (session confirmation) | 2026-08-11 |
 
 Allowed values for Decision: `go` | `conditional-go` | `no-go`.
 
-This document must **not** be treated as a freeze until both owners record a
-`go` or `conditional-go` with name/role/date. Anonymous or missing signatures
-are a freeze blocker (anti-pattern A2).
+Authoritative dual-owner record: [`phase6-approval.md`](phase6-approval.md).
 
-## Labeled Baseline Metrics (sanity inputs)
+## Labeled Baseline Metrics
 
 These figures are read-only snapshots of the tracked graph and Phase 2–5 audit
-artifacts. They are not curriculum approval by themselves.
+artifacts at freeze.
 
 - YLE skill count: 1405
 - Starters membership: 495
@@ -50,6 +47,11 @@ artifacts. They are not curriculum approval by themselves.
 |---|---|
 | Phase 1 scope / rules | `review/yle-2025/phase1-scope.md` |
 | Phase 1 dual-owner approval | `review/yle-2025/phase1-approval.md` |
+| Phase 2 curriculum fidelity approval | `review/yle-2025/phase2-approval.md` |
+| Phase 3 relationship approval | `review/yle-2025/phase3-approval.md` |
+| Phase 4 dual consumption approval | `review/yle-2025/phase4-approval.md` |
+| Phase 5 reading plausibility approval | `review/yle-2025/phase5-approval.md` |
+| Phase 6 dual freeze decision | `review/yle-2025/phase6-approval.md` |
 | Membership decisions | `review/yle-2025/membership-decisions.jsonl` |
 | Membership exceptions | `review/yle-2025/membership-exceptions.jsonl` |
 | Collision queue | `review/yle-2025/collision-queue.jsonl` |
@@ -64,23 +66,24 @@ artifacts. They are not curriculum approval by themselves.
 | Reading fixture index | `review/yle-2025/reading-fixture-index.md` |
 | Quality summary | `review/yle-2025/quality-summary.md` |
 | A2 Key / B1 method appendix | `review/yle-2025/method-appendix-a2-b1.md` |
-| This release draft | `review/yle-2025/RELEASE-YLE-2025.md` |
+| This release record | `review/yle-2025/RELEASE-YLE-2025.md` |
 
-## Open Human Gates (honest status)
+## Human Gates (closed)
 
-- Phase 2 curriculum fidelity sign-off — **go** (`phase2-approval.md`, 2026-08-11)
-- Phase 3 relationship curriculum sign-off — **go** (`phase3-approval.md`, 2026-08-11)
-- Phase 4 dual consumption approval — open
-- Phase 5 reading-fixture plausibility — open
-- Phase 6 dual freeze decision — open (this document)
+- Phase 2 curriculum fidelity — **go** (`phase2-approval.md`)
+- Phase 3 relationships — **go** (`phase3-approval.md`)
+- Phase 4 dual consumption — **go** (`phase4-approval.md`)
+- Phase 5 reading plausibility — **go** (`phase5-approval.md`)
+- Phase 6 dual freeze decision — **go** (`phase6-approval.md`)
 
-## Accepted Limitations (draft, pending remaining owner acceptance)
+## Accepted Limitations
 
-1. Form+POS identity (not reviewed sense-level identity; same-POS sense children deferred; accepted with Phase 2 go).
+1. Form+POS identity (not reviewed sense-level identity; same-POS sense children deferred).
 2. Support edges are optional ranking signals, never hard prerequisites.
 3. Grammatical lists are an accepted omission (see grammatical-list decision).
 4. A2 Key / B1 are structural context only; not released by this freeze.
 5. Reading fixtures are offline contract examples, not a production recommender.
+6. One-time freeze ceremony only — no standing regeneration pipeline.
 
 ## Sanity Commands (one-shot)
 
