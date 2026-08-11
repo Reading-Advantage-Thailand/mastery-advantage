@@ -6,3 +6,6 @@ english/cefr-vocabulary/source-pdfs/
 # Python bytecode from one-shot audit scripts
 __pycache__/
 *.pyc
+
+# Regenerable: core + ViU overlay merge
+english/cefr-vocabulary/cefr-vocabulary-extended-viu.json

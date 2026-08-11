@@ -1,0 +1,524 @@
+{
+  "sourceId": "vocabulary-in-use-advanced",
+  "frontmatterPdf": "source-pdfs/vocabulary-in-use-advanced-frontmatter.pdf",
+  "indexPdf": "source-pdfs/vocabulary-in-use-advanced-index.pdf",
+  "frontmatterSha256": "db6365f75abb4ff3476a24714e349298173955b9566487ce51ef3a4e882ec75b",
+  "indexSha256": "3dfad22d9d8ab1362b2cf4c714ff83683662901ea3f287fc390d968b1c056e0b",
+  "layerId": "enrichment.viu.unit-groups",
+  "cefrBandHint": "C1-C2",
+  "unitCatalog": {
+    "labeledUnitCount": 88,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Cramming for success: study and"
+      },
+      {
+        "unitNumber": 2,
+        "title": "Education: debates and issues"
+      },
+      {
+        "unitNumber": 3,
+        "title": "Applying for a job"
+      },
+      {
+        "unitNumber": 4,
+        "title": "English Vocabulary in Use Advanced"
+      },
+      {
+        "unitNumber": 5,
+        "title": "At work: colleagues and routines"
+      },
+      {
+        "unitNumber": 6,
+        "title": "English Vocabulary in Use Advanced"
+      },
+      {
+        "unitNumber": 7,
+        "title": "At work: careers"
+      },
+      {
+        "unitNumber": 8,
+        "title": "Describing people: positive and"
+      },
+      {
+        "unitNumber": 10,
+        "title": "Describing people: personality and"
+      },
+      {
+        "unitNumber": 11,
+        "title": "Relationships: friends forever"
+      },
+      {
+        "unitNumber": 12,
+        "title": "Relationships: ups and downs"
+      },
+      {
+        "unitNumber": 13,
+        "title": "Emotions and reactions"
+      },
+      {
+        "unitNumber": 14,
+        "title": "Negative feelings"
+      },
+      {
+        "unitNumber": 18,
+        "title": "Home styles, lifestyles"
+      },
+      {
+        "unitNumber": 19,
+        "title": "Socialising and networking"
+      },
+      {
+        "unitNumber": 20,
+        "title": "The performance arts: reviews"
+      },
+      {
+        "unitNumber": 21,
+        "title": "The visual arts"
+      },
+      {
+        "unitNumber": 22,
+        "title": "Describing people: appearance"
+      },
+      {
+        "unitNumber": 23,
+        "title": "Food: a recipe for disaster"
+      },
+      {
+        "unitNumber": 24,
+        "title": "Dinner’s on me: entertaining and"
+      },
+      {
+        "unitNumber": 25,
+        "title": "On the road: trafic and driving"
+      },
+      {
+        "unitNumber": 26,
+        "title": "Travel and accommodation"
+      },
+      {
+        "unitNumber": 27,
+        "title": "Attracting tourists"
+      },
+      {
+        "unitNumber": 28,
+        "title": "Describing the world"
+      },
+      {
+        "unitNumber": 29,
+        "title": "Weather and climate"
+      },
+      {
+        "unitNumber": 30,
+        "title": "Brick walls and glass ceilings"
+      },
+      {
+        "unitNumber": 31,
+        "title": "Taking root and reaping rewards"
+      },
+      {
+        "unitNumber": 32,
+        "title": "The animal kingdom"
+      },
+      {
+        "unitNumber": 33,
+        "title": "Our endangered world"
+      },
+      {
+        "unitNumber": 34,
+        "title": "Here to help: customer service"
+      },
+      {
+        "unitNumber": 35,
+        "title": "Authorities: customs and police"
+      },
+      {
+        "unitNumber": 36,
+        "title": "Beliefs"
+      },
+      {
+        "unitNumber": 37,
+        "title": "Festivals in their cultural context"
+      },
+      {
+        "unitNumber": 38,
+        "title": "Talking about language"
+      },
+      {
+        "unitNumber": 40,
+        "title": "items per unit) is presented with explanations on the let-hand"
+      },
+      {
+        "unitNumber": 41,
+        "title": "British politics"
+      },
+      {
+        "unitNumber": 42,
+        "title": "International politics"
+      },
+      {
+        "unitNumber": 43,
+        "title": "The letter of the law"
+      },
+      {
+        "unitNumber": 44,
+        "title": "War and peace"
+      },
+      {
+        "unitNumber": 45,
+        "title": "Economy and finance"
+      },
+      {
+        "unitNumber": 46,
+        "title": "Personal finance: making ends"
+      },
+      {
+        "unitNumber": 47,
+        "title": "The media: in print"
+      },
+      {
+        "unitNumber": 48,
+        "title": "The media: internet and email"
+      },
+      {
+        "unitNumber": 49,
+        "title": "Advertising"
+      },
+      {
+        "unitNumber": 50,
+        "title": "The news: gathering and"
+      },
+      {
+        "unitNumber": 52,
+        "title": "delivering"
+      },
+      {
+        "unitNumber": 54,
+        "title": "English Vocabulary in Use Advanced"
+      },
+      {
+        "unitNumber": 55,
+        "title": "Industries: from manufacturing"
+      },
+      {
+        "unitNumber": 56,
+        "title": "Work and study"
+      },
+      {
+        "unitNumber": 58,
+        "title": "Energy: from fossil fuels to"
+      },
+      {
+        "unitNumber": 59,
+        "title": "Space: no room to swing a cat"
+      },
+      {
+        "unitNumber": 60,
+        "title": "Time: once in a blue moon"
+      },
+      {
+        "unitNumber": 61,
+        "title": "Motion: taking steps"
+      },
+      {
+        "unitNumber": 62,
+        "title": "Manner: behaviour and body Fixed expressions and"
+      },
+      {
+        "unitNumber": 66,
+        "title": "and feelings"
+      },
+      {
+        "unitNumber": 67,
+        "title": "Cause and efect"
+      },
+      {
+        "unitNumber": 68,
+        "title": "Spot the diference: making"
+      },
+      {
+        "unitNumber": 69,
+        "title": "Dificulties and dilemmas"
+      },
+      {
+        "unitNumber": 70,
+        "title": "Modality: expressing facts,"
+      },
+      {
+        "unitNumber": 71,
+        "title": "Number: statistics and quantity"
+      },
+      {
+        "unitNumber": 73,
+        "title": "Complaining and protesting"
+      },
+      {
+        "unitNumber": 74,
+        "title": "Apology, regret and reconciliation"
+      },
+      {
+        "unitNumber": 75,
+        "title": "A pat on the back: complimenting Phonemic symbols"
+      },
+      {
+        "unitNumber": 76,
+        "title": "Promises and bets"
+      },
+      {
+        "unitNumber": 77,
+        "title": "Reminiscences and regrets"
+      },
+      {
+        "unitNumber": 78,
+        "title": "Agreement, disagreement"
+      },
+      {
+        "unitNumber": 79,
+        "title": "Academic writing: making sense"
+      },
+      {
+        "unitNumber": 80,
+        "title": "Academic writing: text structure"
+      },
+      {
+        "unitNumber": 81,
+        "title": "Writing: style and format"
+      },
+      {
+        "unitNumber": 82,
+        "title": "Whatchamacallit: being indirect"
+      },
+      {
+        "unitNumber": 83,
+        "title": "Give or take: more vague"
+      },
+      {
+        "unitNumber": 85,
+        "title": "Abbreviations and acronyms"
+      },
+      {
+        "unitNumber": 86,
+        "title": "Prefixes: creating new meanings"
+      },
+      {
+        "unitNumber": 87,
+        "title": "Sufixes: forming new words"
+      },
+      {
+        "unitNumber": 88,
+        "title": "Word-building and"
+      },
+      {
+        "unitNumber": 89,
+        "title": "English: a global language"
+      },
+      {
+        "unitNumber": 90,
+        "title": "Easily confused words"
+      },
+      {
+        "unitNumber": 91,
+        "title": "One word, many meanings"
+      },
+      {
+        "unitNumber": 92,
+        "title": "Collocation: which words go"
+      },
+      {
+        "unitNumber": 93,
+        "title": "Metaphor: seeing the light"
+      }
+    ],
+    "unitNumberIsNotPrerequisite": true,
+    "relationshipKind": "co-taught-lesson-group"
+  },
+  "indexSample": {
+    "sampleSize": 25,
+    "entries": [
+      {
+        "indexLemma": "aforementioned",
+        "unitNumbers": [
+          101
+        ]
+      },
+      {
+        "indexLemma": "anaesthetist",
+        "unitNumbers": [
+          51
+        ]
+      },
+      {
+        "indexLemma": "abhor",
+        "unitNumbers": [
+          14
+        ]
+      },
+      {
+        "indexLemma": "age-conscious",
+        "unitNumbers": [
+          87
+        ]
+      },
+      {
+        "indexLemma": "analogue",
+        "unitNumbers": [
+          56
+        ]
+      },
+      {
+        "indexLemma": "abhorrence",
+        "unitNumbers": [
+          14
+        ]
+      },
+      {
+        "indexLemma": "age-related",
+        "unitNumbers": [
+          87
+        ]
+      },
+      {
+        "indexLemma": "analogy",
+        "unitNumbers": [
+          68
+        ]
+      },
+      {
+        "indexLemma": "abhorrent",
+        "unitNumbers": [
+          14
+        ]
+      },
+      {
+        "indexLemma": "aggregate",
+        "unitNumbers": [
+          71
+        ]
+      },
+      {
+        "indexLemma": "ancestor",
+        "unitNumbers": [
+          28
+        ]
+      },
+      {
+        "indexLemma": "abject poverty",
+        "unitNumbers": [
+          45
+        ]
+      },
+      {
+        "indexLemma": "angle bracket",
+        "unitNumbers": [
+          81
+        ]
+      },
+      {
+        "indexLemma": "able",
+        "unitNumbers": [
+          87
+        ]
+      },
+      {
+        "indexLemma": "agony aunt",
+        "unitNumbers": [
+          47
+        ]
+      },
+      {
+        "indexLemma": "Anglo-Saxon",
+        "unitNumbers": [
+          89
+        ]
+      },
+      {
+        "indexLemma": "absolute poverty",
+        "unitNumbers": [
+          40
+        ]
+      },
+      {
+        "indexLemma": "agony column",
+        "unitNumbers": [
+          47
+        ]
+      },
+      {
+        "indexLemma": "animal",
+        "unitNumbers": [
+          32
+        ]
+      },
+      {
+        "indexLemma": "absolutely",
+        "unitNumbers": [
+          78
+        ]
+      },
+      {
+        "indexLemma": "agree to difer",
+        "unitNumbers": [
+          78
+        ]
+      },
+      {
+        "indexLemma": "animal rights activist",
+        "unitNumbers": [
+          32
+        ]
+      },
+      {
+        "indexLemma": "abstruse",
+        "unitNumbers": [
+          69
+        ]
+      },
+      {
+        "indexLemma": "ahead of its time",
+        "unitNumbers": [
+          22
+        ]
+      },
+      {
+        "indexLemma": "animal welfare",
+        "unitNumbers": [
+          23
+        ]
+      }
+    ],
+    "note": "Bounded sample only; full index stays transient at parse time."
+  },
+  "fixtureCases": [
+    {
+      "kind": "unmatched",
+      "indexLemma": "zzzz-not-a-real-lemma",
+      "expected": "unmatched"
+    },
+    {
+      "kind": "multi-unit",
+      "note": "Index rows with multiple unit numbers preserve all unit memberships"
+    },
+    {
+      "kind": "variant",
+      "note": "US/UK spelling variants resolve via matchForms or unmatched queue"
+    },
+    {
+      "kind": "co-taught-group",
+      "note": "Unit contains edges encode lesson co-membership, not prerequisites"
+    }
+  ],
+  "buildStats": {
+    "sourceId": "vocabulary-in-use-advanced",
+    "frontmatterSha256": "db6365f75abb4ff3476a24714e349298173955b9566487ce51ef3a4e882ec75b",
+    "indexSha256": "3dfad22d9d8ab1362b2cf4c714ff83683662901ea3f287fc390d968b1c056e0b",
+    "labeledUnitCount": 88,
+    "indexEntryCount": 3304,
+    "matchedEntries": 336,
+    "unmatchedEntries": 2968,
+    "ambiguousMultiSkillEntries": 43,
+    "membershipEdges": 412,
+    "multiUnitEntries": 137,
+    "matchRate": 0.1017
+  }
+}

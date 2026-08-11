@@ -24,10 +24,12 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: English Lexical Coverage Enrichment** *(unblocked — next executable)*
+- [ ] **Track: English Lexical Coverage Enrichment** *(unblocked — in progress)*
   *Add independently gated source-backed groups, B2+ coverage, and frequency
   metadata.*
-  *Status: in progress — Phase 1 contracts after YLE core freeze.*
+  *Status: in progress — Phase 1 contracts drafted; Phase 2 fixtures done; ViU
+  unit-group overlay live (co-taught lesson `contains` edges; core freeze
+  untouched). Next: Cambridge extractors + frequency layer.*
   *Link: [./tracks/lexical_coverage_enrichment_20260610/](./tracks/lexical_coverage_enrichment_20260610/)*
 
 ---

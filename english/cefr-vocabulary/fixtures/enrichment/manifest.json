@@ -5,9 +5,13 @@
     "b1-preliminary-structure.json",
     "frequency-fixture-schema.json",
     "isolation-contract.json",
+    "manifest.json",
+    "viu-advanced-structure.json",
     "viu-elementary-structure.json",
-    "yle-grammatical-structure.json",
-    "manifest.json"
+    "viu-pre-intermediate-structure.json",
+    "viu-upper-intermediate-structure.json",
+    "yle-grammatical-structure.json"
   ],
-  "policy": "Structure and bounded samples only; no full publisher wordlist republication."
+  "policy": "Structure and bounded samples only; full index transient at parse time.",
+  "viuLayer": "enrichment.viu.unit-groups"
 }

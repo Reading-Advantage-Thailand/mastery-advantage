@@ -1,0 +1,527 @@
+{
+  "sourceId": "vocabulary-in-use-upper-intermediate",
+  "frontmatterPdf": "source-pdfs/vocabulary-in-use-upper-intermediate-frontmatter.pdf",
+  "indexPdf": "source-pdfs/vocabulary-in-use-upper-intermediate-index.pdf",
+  "frontmatterSha256": "13951d6912064a31e78f63ec80d85816d041919a15bb614ae4ca1526e3f37e5e",
+  "indexSha256": "162c4658283ca7f73797eb6d584559dfe7378d506ebd145923531d70bdffc617",
+  "layerId": "enrichment.viu.unit-groups",
+  "cefrBandHint": "B2",
+  "unitCatalog": {
+    "labeledUnitCount": 83,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "king, queen, prince, princess royalty - duke"
+      },
+      {
+        "unitNumber": 2,
+        "title": "sunshade, shady, shadow, shade, to shadow, shadowy"
+      },
+      {
+        "unitNumber": 3,
+        "title": "articulate, communicate, convey, express, put across"
+      },
+      {
+        "unitNumber": 4,
+        "title": "Write i by the words that are informal and f by those that are formal"
+      },
+      {
+        "unitNumber": 5,
+        "title": "subtle, comb, lamb, crumb, debt, plumber"
+      },
+      {
+        "unitNumber": 6,
+        "title": "English Vocabulary in Use Upper-intermediate"
+      },
+      {
+        "unitNumber": 7,
+        "title": "Describing people: appearance"
+      },
+      {
+        "unitNumber": 8,
+        "title": "English Vocabulary in Use Upper-intermediate"
+      },
+      {
+        "unitNumber": 9,
+        "title": "Idioms describing people"
+      },
+      {
+        "unitNumber": 10,
+        "title": "Relationships"
+      },
+      {
+        "unitNumber": 11,
+        "title": "At home"
+      },
+      {
+        "unitNumber": 12,
+        "title": "Everyday minor problems"
+      },
+      {
+        "unitNumber": 13,
+        "title": "Global problems"
+      },
+      {
+        "unitNumber": 14,
+        "title": "Education"
+      },
+      {
+        "unitNumber": 15,
+        "title": "Higher education"
+      },
+      {
+        "unitNumber": 16,
+        "title": "Work"
+      },
+      {
+        "unitNumber": 17,
+        "title": "Business"
+      },
+      {
+        "unitNumber": 18,
+        "title": "Feelings and actions"
+      },
+      {
+        "unitNumber": 19,
+        "title": "Art and literature"
+      },
+      {
+        "unitNumber": 20,
+        "title": "Theatre and cinema"
+      },
+      {
+        "unitNumber": 21,
+        "title": "Music"
+      },
+      {
+        "unitNumber": 22,
+        "title": "Food"
+      },
+      {
+        "unitNumber": 23,
+        "title": "Physical geography"
+      },
+      {
+        "unitNumber": 24,
+        "title": "Environmental problems"
+      },
+      {
+        "unitNumber": 29,
+        "title": "Medicine and technology"
+      },
+      {
+        "unitNumber": 30,
+        "title": "Health and lifestyle"
+      },
+      {
+        "unitNumber": 31,
+        "title": "Travel"
+      },
+      {
+        "unitNumber": 32,
+        "title": "Holidays"
+      },
+      {
+        "unitNumber": 33,
+        "title": "Science and technology"
+      },
+      {
+        "unitNumber": 34,
+        "title": "Computers"
+      },
+      {
+        "unitNumber": 35,
+        "title": "Communications and the Internet"
+      },
+      {
+        "unitNumber": 36,
+        "title": "Social media"
+      },
+      {
+        "unitNumber": 37,
+        "title": "The press and the media"
+      },
+      {
+        "unitNumber": 38,
+        "title": "Politics and public institutions"
+      },
+      {
+        "unitNumber": 39,
+        "title": "Crime"
+      },
+      {
+        "unitNumber": 40,
+        "title": "Basic concepts"
+      },
+      {
+        "unitNumber": 41,
+        "title": "Describing objects"
+      },
+      {
+        "unitNumber": 42,
+        "title": "Belief and opinion"
+      },
+      {
+        "unitNumber": 43,
+        "title": "Pleasant and unpleasant feelings"
+      },
+      {
+        "unitNumber": 44,
+        "title": "Like, dislike and desire"
+      },
+      {
+        "unitNumber": 45,
+        "title": "Speaking"
+      },
+      {
+        "unitNumber": 46,
+        "title": "The six senses"
+      },
+      {
+        "unitNumber": 48,
+        "title": "Praising and criticising"
+      },
+      {
+        "unitNumber": 49,
+        "title": "Emotions and moods"
+      },
+      {
+        "unitNumber": 50,
+        "title": "Commenting on problematic"
+      },
+      {
+        "unitNumber": 51,
+        "title": "Number, quantity, degree and"
+      },
+      {
+        "unitNumber": 52,
+        "title": "Numbers and shapes"
+      },
+      {
+        "unitNumber": 53,
+        "title": "Time"
+      },
+      {
+        "unitNumber": 54,
+        "title": "Distances and dimensions"
+      },
+      {
+        "unitNumber": 55,
+        "title": "Obligation, need, possibility and"
+      },
+      {
+        "unitNumber": 56,
+        "title": "Sound and light"
+      },
+      {
+        "unitNumber": 57,
+        "title": "Possession and giving"
+      },
+      {
+        "unitNumber": 58,
+        "title": "Movement and speed"
+      },
+      {
+        "unitNumber": 59,
+        "title": "Texture, brightness, weight"
+      },
+      {
+        "unitNumber": 60,
+        "title": "Success, failure and difficulty"
+      },
+      {
+        "unitNumber": 61,
+        "title": "Time: connecting words and"
+      },
+      {
+        "unitNumber": 62,
+        "title": "Condition"
+      },
+      {
+        "unitNumber": 64,
+        "title": "Concession and contrast"
+      },
+      {
+        "unitNumber": 66,
+        "title": "English Vocabulary in Use Upper-intermediate"
+      },
+      {
+        "unitNumber": 67,
+        "title": "Discourse markers in spoken"
+      },
+      {
+        "unitNumber": 68,
+        "title": "Linking words in writing"
+      },
+      {
+        "unitNumber": 72,
+        "title": "Effective vocabulary learning"
+      },
+      {
+        "unitNumber": 73,
+        "title": "Abstract nouns"
+      },
+      {
+        "unitNumber": 74,
+        "title": "Compound adjectives"
+      },
+      {
+        "unitNumber": 80,
+        "title": "Words commonly mispronounced"
+      },
+      {
+        "unitNumber": 81,
+        "title": "Onomatopoeic words"
+      },
+      {
+        "unitNumber": 82,
+        "title": "Homophones and homographs"
+      },
+      {
+        "unitNumber": 83,
+        "title": "Uncountable nouns"
+      },
+      {
+        "unitNumber": 84,
+        "title": "Topics"
+      },
+      {
+        "unitNumber": 85,
+        "title": "Countable and uncountable nouns"
+      },
+      {
+        "unitNumber": 86,
+        "title": "Making uncountable nouns"
+      },
+      {
+        "unitNumber": 87,
+        "title": "Collective nouns"
+      },
+      {
+        "unitNumber": 88,
+        "title": "Containers and contents"
+      },
+      {
+        "unitNumber": 89,
+        "title": "Expressions with do and make"
+      },
+      {
+        "unitNumber": 91,
+        "title": "Expressions with get"
+      },
+      {
+        "unitNumber": 92,
+        "title": "Expressions with set and put"
+      },
+      {
+        "unitNumber": 93,
+        "title": "Expressions with come and go"
+      },
+      {
+        "unitNumber": 94,
+        "title": "Expressions with other common"
+      },
+      {
+        "unitNumber": 97,
+        "title": "Similes"
+      },
+      {
+        "unitNumber": 98,
+        "title": "Proverbs"
+      }
+    ],
+    "unitNumberIsNotPrerequisite": true,
+    "relationshipKind": "co-taught-lesson-group"
+  },
+  "indexSample": {
+    "sampleSize": 25,
+    "entries": [
+      {
+        "indexLemma": "admission",
+        "unitNumbers": [
+          14,
+          15,
+          70,
+          99
+        ]
+      },
+      {
+        "indexLemma": "all or nothing",
+        "unitNumbers": [
+          77
+        ]
+      },
+      {
+        "indexLemma": "admit",
+        "unitNumbers": [
+          64
+        ]
+      },
+      {
+        "indexLemma": "allocate",
+        "unitNumbers": [
+          57
+        ]
+      },
+      {
+        "indexLemma": "a)",
+        "unitNumbers": [
+          67
+        ]
+      },
+      {
+        "indexLemma": "admittedly",
+        "unitNumbers": [
+          64
+        ]
+      },
+      {
+        "indexLemma": "all-out",
+        "unitNumbers": [
+          74
+        ]
+      },
+      {
+        "indexLemma": "abduct",
+        "unitNumbers": [
+          39
+        ]
+      },
+      {
+        "indexLemma": "adore",
+        "unitNumbers": [
+          10
+        ]
+      },
+      {
+        "indexLemma": "allowance",
+        "unitNumbers": [
+          89
+        ]
+      },
+      {
+        "indexLemma": "able",
+        "unitNumbers": [
+          8
+        ]
+      },
+      {
+        "indexLemma": "along with",
+        "unitNumbers": [
+          65
+        ]
+      },
+      {
+        "indexLemma": "abode",
+        "unitNumbers": [
+          95
+        ]
+      },
+      {
+        "indexLemma": "alongside",
+        "unitNumbers": [
+          65
+        ]
+      },
+      {
+        "indexLemma": "above",
+        "unitNumbers": [
+          68
+        ]
+      },
+      {
+        "indexLemma": "adulthood",
+        "unitNumbers": [
+          73
+        ]
+      },
+      {
+        "indexLemma": "aloud",
+        "unitNumbers": [
+          82
+        ]
+      },
+      {
+        "indexLemma": "abrupt br",
+        "unitNumbers": [
+          8
+        ]
+      },
+      {
+        "indexLemma": "advance",
+        "unitNumbers": [
+          29
+        ]
+      },
+      {
+        "indexLemma": "alter",
+        "unitNumbers": [
+          33
+        ]
+      },
+      {
+        "indexLemma": "absent-minded",
+        "unitNumbers": [
+          74
+        ]
+      },
+      {
+        "indexLemma": "alteration",
+        "unitNumbers": [
+          70
+        ]
+      },
+      {
+        "indexLemma": "absolute",
+        "unitNumbers": [
+          55
+        ]
+      },
+      {
+        "indexLemma": "alternative",
+        "unitNumbers": [
+          55
+        ]
+      },
+      {
+        "indexLemma": "absolutely",
+        "unitNumbers": [
+          43
+        ]
+      }
+    ],
+    "note": "Bounded sample only; full index stays transient at parse time."
+  },
+  "fixtureCases": [
+    {
+      "kind": "unmatched",
+      "indexLemma": "zzzz-not-a-real-lemma",
+      "expected": "unmatched"
+    },
+    {
+      "kind": "multi-unit",
+      "note": "Index rows with multiple unit numbers preserve all unit memberships"
+    },
+    {
+      "kind": "variant",
+      "note": "US/UK spelling variants resolve via matchForms or unmatched queue"
+    },
+    {
+      "kind": "co-taught-group",
+      "note": "Unit contains edges encode lesson co-membership, not prerequisites"
+    }
+  ],
+  "buildStats": {
+    "sourceId": "vocabulary-in-use-upper-intermediate",
+    "frontmatterSha256": "13951d6912064a31e78f63ec80d85816d041919a15bb614ae4ca1526e3f37e5e",
+    "indexSha256": "162c4658283ca7f73797eb6d584559dfe7378d506ebd145923531d70bdffc617",
+    "labeledUnitCount": 83,
+    "indexEntryCount": 3229,
+    "matchedEntries": 950,
+    "unmatchedEntries": 2279,
+    "ambiguousMultiSkillEntries": 148,
+    "membershipEdges": 1437,
+    "multiUnitEntries": 404,
+    "matchRate": 0.2942
+  }
+}

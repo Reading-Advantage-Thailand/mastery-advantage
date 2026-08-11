@@ -1,0 +1,504 @@
+{
+  "sourceId": "vocabulary-in-use-pre-intermediate",
+  "frontmatterPdf": "source-pdfs/vocabulary-in-use-pre-intermediate-frontmatter.pdf",
+  "indexPdf": "source-pdfs/vocabulary-in-use-pre-intermediate-index.pdf",
+  "frontmatterSha256": "5b1bdd50dfa9b02d21eabaf6dfa8127ae79bb16e8bae3bf4dd0505904e7c37a2",
+  "indexSha256": "57d36d4d34dd49382c7e3a2fe43bad73bef8e8d753e7dae4621ee55825a61b61",
+  "layerId": "enrichment.viu.unit-groups",
+  "cefrBandHint": "B1",
+  "unitCatalog": {
+    "labeledUnitCount": 75,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Put the words from A and B in the correct category"
+      },
+      {
+        "unitNumber": 2,
+        "title": "Complete the sentences with words from the box"
+      },
+      {
+        "unitNumber": 3,
+        "title": "Would you like it"
+      },
+      {
+        "unitNumber": 4,
+        "title": "English Vocabulary in Use Pre-intermediate and Intermediate"
+      },
+      {
+        "unitNumber": 5,
+        "title": "Where are e or to take away?"
+      },
+      {
+        "unitNumber": 6,
+        "title": "English Vocabulary in Use Pre-intermediate and Intermediate"
+      },
+      {
+        "unitNumber": 8,
+        "title": "made warm (e.g. in an oven or a microwave)"
+      },
+      {
+        "unitNumber": 10,
+        "title": "Describing appearance"
+      },
+      {
+        "unitNumber": 22,
+        "title": "Fashion and buying clothes"
+      },
+      {
+        "unitNumber": 23,
+        "title": "Shopping"
+      },
+      {
+        "unitNumber": 24,
+        "title": "Food"
+      },
+      {
+        "unitNumber": 25,
+        "title": "items per unit) is presented through"
+      },
+      {
+        "unitNumber": 26,
+        "title": "Leisure and entertainment"
+      },
+      {
+        "unitNumber": 27,
+        "title": "Life in the country"
+      },
+      {
+        "unitNumber": 28,
+        "title": "Transport"
+      },
+      {
+        "unitNumber": 29,
+        "title": "On the road"
+      },
+      {
+        "unitNumber": 30,
+        "title": "Notices and warnings"
+      },
+      {
+        "unitNumber": 31,
+        "title": "Classroom language"
+      },
+      {
+        "unitNumber": 32,
+        "title": "School education"
+      },
+      {
+        "unitNumber": 33,
+        "title": "Studying English and taking exams"
+      },
+      {
+        "unitNumber": 34,
+        "title": "University education"
+      },
+      {
+        "unitNumber": 35,
+        "title": "Jobs"
+      },
+      {
+        "unitNumber": 36,
+        "title": "Talking about your work"
+      },
+      {
+        "unitNumber": 37,
+        "title": "Making a career"
+      },
+      {
+        "unitNumber": 38,
+        "title": "Working in an office"
+      },
+      {
+        "unitNumber": 39,
+        "title": "Running a company"
+      },
+      {
+        "unitNumber": 40,
+        "title": "Business and finance"
+      },
+      {
+        "unitNumber": 41,
+        "title": "Sport and leisure"
+      },
+      {
+        "unitNumber": 42,
+        "title": "Competitive sport"
+      },
+      {
+        "unitNumber": 43,
+        "title": "Books and films"
+      },
+      {
+        "unitNumber": 44,
+        "title": "Music"
+      },
+      {
+        "unitNumber": 45,
+        "title": "Special events"
+      },
+      {
+        "unitNumber": 46,
+        "title": "Travel bookings"
+      },
+      {
+        "unitNumber": 47,
+        "title": "Air travel"
+      },
+      {
+        "unitNumber": 48,
+        "title": "Hotels and restaurants"
+      },
+      {
+        "unitNumber": 49,
+        "title": "Cafés"
+      },
+      {
+        "unitNumber": 50,
+        "title": "Communication and technology"
+      },
+      {
+        "unitNumber": 51,
+        "title": "Holidays by the sea"
+      },
+      {
+        "unitNumber": 53,
+        "title": "Phoning and texting"
+      },
+      {
+        "unitNumber": 54,
+        "title": "Computers"
+      },
+      {
+        "unitNumber": 55,
+        "title": "Email and the Internet"
+      },
+      {
+        "unitNumber": 57,
+        "title": "Politics"
+      },
+      {
+        "unitNumber": 58,
+        "title": "Climate change"
+      },
+      {
+        "unitNumber": 59,
+        "title": "War and violence"
+      },
+      {
+        "unitNumber": 61,
+        "title": "Numbers"
+      },
+      {
+        "unitNumber": 62,
+        "title": "English Vocabulary in Use Pre-intermediate and Intermediate"
+      },
+      {
+        "unitNumber": 63,
+        "title": "Objects, materials, shapes"
+      },
+      {
+        "unitNumber": 65,
+        "title": "Apologies, excuses and thanks"
+      },
+      {
+        "unitNumber": 66,
+        "title": "Requests, permission"
+      },
+      {
+        "unitNumber": 67,
+        "title": "Opinions, agreeing"
+      },
+      {
+        "unitNumber": 68,
+        "title": "Likes, dislikes, attitudes"
+      },
+      {
+        "unitNumber": 69,
+        "title": "Greetings, farewells and special Style and register"
+      },
+      {
+        "unitNumber": 74,
+        "title": "The world around us Work and business"
+      },
+      {
+        "unitNumber": 75,
+        "title": "Fixed phrases"
+      },
+      {
+        "unitNumber": 76,
+        "title": "Fixed phrases in conversation"
+      },
+      {
+        "unitNumber": 77,
+        "title": "Verb or adjective + preposition"
+      },
+      {
+        "unitNumber": 78,
+        "title": "Prepositional phrases"
+      },
+      {
+        "unitNumber": 81,
+        "title": "Make, do and take:"
+      },
+      {
+        "unitNumber": 82,
+        "title": "Key verbs: give, keep and miss"
+      },
+      {
+        "unitNumber": 83,
+        "title": "Get: uses, phrases and"
+      },
+      {
+        "unitNumber": 84,
+        "title": "Go: meanings and expressions"
+      },
+      {
+        "unitNumber": 85,
+        "title": "The senses"
+      },
+      {
+        "unitNumber": 86,
+        "title": "Uncountable nouns"
+      },
+      {
+        "unitNumber": 89,
+        "title": "Adjectives"
+      },
+      {
+        "unitNumber": 91,
+        "title": "Adverbs"
+      },
+      {
+        "unitNumber": 92,
+        "title": "Time and sequence"
+      },
+      {
+        "unitNumber": 93,
+        "title": "Addition and contrast"
+      },
+      {
+        "unitNumber": 95,
+        "title": "Formal and informal English"
+      },
+      {
+        "unitNumber": 96,
+        "title": "Completing forms and CVs"
+      },
+      {
+        "unitNumber": 97,
+        "title": "Writing an essay"
+      },
+      {
+        "unitNumber": 98,
+        "title": "Formal letters and emails"
+      },
+      {
+        "unitNumber": 99,
+        "title": "Informal emails and messages"
+      },
+      {
+        "unitNumber": 100,
+        "title": "units in the book. You can study them in any order, but"
+      },
+      {
+        "unitNumber": 104,
+        "title": "English Vocabulary in Use Pre-intermediate and Intermediate"
+      },
+      {
+        "unitNumber": 105,
+        "title": "and your country"
+      }
+    ],
+    "unitNumberIsNotPrerequisite": true,
+    "relationshipKind": "co-taught-lesson-group"
+  },
+  "indexSample": {
+    "sampleSize": 25,
+    "entries": [
+      {
+        "indexLemma": "a bit",
+        "unitNumbers": [
+          91
+        ]
+      },
+      {
+        "indexLemma": "Africa",
+        "unitNumbers": [
+          5
+        ]
+      },
+      {
+        "indexLemma": "a great deal",
+        "unitNumbers": [
+          39
+        ]
+      },
+      {
+        "indexLemma": "ater",
+        "unitNumbers": [
+          90
+        ]
+      },
+      {
+        "indexLemma": "a laugh",
+        "unitNumbers": [
+          99
+        ]
+      },
+      {
+        "indexLemma": "ater",
+        "unitNumbers": [
+          92
+        ]
+      },
+      {
+        "indexLemma": "a little",
+        "unitNumbers": [
+          91
+        ]
+      },
+      {
+        "indexLemma": "ater that",
+        "unitNumbers": [
+          92
+        ]
+      },
+      {
+        "indexLemma": "aterwards",
+        "unitNumbers": [
+          92
+        ]
+      },
+      {
+        "indexLemma": "apart from",
+        "unitNumbers": [
+          75
+        ]
+      },
+      {
+        "indexLemma": "against",
+        "unitNumbers": [
+          42
+        ]
+      },
+      {
+        "indexLemma": "apartment",
+        "unitNumbers": [
+          17
+        ]
+      },
+      {
+        "indexLemma": "against",
+        "unitNumbers": [
+          90
+        ]
+      },
+      {
+        "indexLemma": "ages",
+        "unitNumbers": [
+          99
+        ]
+      },
+      {
+        "indexLemma": "a paper",
+        "unitNumbers": [
+          100
+        ]
+      },
+      {
+        "indexLemma": "ages ago",
+        "unitNumbers": [
+          60
+        ]
+      },
+      {
+        "indexLemma": "apology",
+        "unitNumbers": [
+          65
+        ]
+      },
+      {
+        "indexLemma": "appear",
+        "unitNumbers": [
+          70
+        ]
+      },
+      {
+        "indexLemma": "appear",
+        "unitNumbers": [
+          85
+        ]
+      },
+      {
+        "indexLemma": "a return",
+        "unitNumbers": [
+          28
+        ]
+      },
+      {
+        "indexLemma": "agree",
+        "unitNumbers": [
+          87
+        ]
+      },
+      {
+        "indexLemma": "appearance",
+        "unitNumbers": [
+          10
+        ]
+      },
+      {
+        "indexLemma": "aim",
+        "unitNumbers": [
+          39
+        ]
+      },
+      {
+        "indexLemma": "abbreviation",
+        "unitNumbers": [
+          53
+        ]
+      },
+      {
+        "indexLemma": "ability",
+        "unitNumbers": [
+          71
+        ]
+      }
+    ],
+    "note": "Bounded sample only; full index stays transient at parse time."
+  },
+  "fixtureCases": [
+    {
+      "kind": "unmatched",
+      "indexLemma": "zzzz-not-a-real-lemma",
+      "expected": "unmatched"
+    },
+    {
+      "kind": "multi-unit",
+      "note": "Index rows with multiple unit numbers preserve all unit memberships"
+    },
+    {
+      "kind": "variant",
+      "note": "US/UK spelling variants resolve via matchForms or unmatched queue"
+    },
+    {
+      "kind": "co-taught-group",
+      "note": "Unit contains edges encode lesson co-membership, not prerequisites"
+    }
+  ],
+  "buildStats": {
+    "sourceId": "vocabulary-in-use-pre-intermediate",
+    "frontmatterSha256": "5b1bdd50dfa9b02d21eabaf6dfa8127ae79bb16e8bae3bf4dd0505904e7c37a2",
+    "indexSha256": "57d36d4d34dd49382c7e3a2fe43bad73bef8e8d753e7dae4621ee55825a61b61",
+    "labeledUnitCount": 75,
+    "indexEntryCount": 2308,
+    "matchedEntries": 915,
+    "unmatchedEntries": 1393,
+    "ambiguousMultiSkillEntries": 134,
+    "membershipEdges": 1219,
+    "multiUnitEntries": 229,
+    "matchRate": 0.3964
+  }
+}

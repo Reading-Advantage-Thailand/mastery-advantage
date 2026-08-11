@@ -19,6 +19,9 @@ required=(
   a2-key-structure.json
   b1-preliminary-structure.json
   viu-elementary-structure.json
+  viu-pre-intermediate-structure.json
+  viu-upper-intermediate-structure.json
+  viu-advanced-structure.json
   frequency-fixture-schema.json
   isolation-contract.json
   manifest.json

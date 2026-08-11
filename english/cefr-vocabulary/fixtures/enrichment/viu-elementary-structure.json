@@ -7,19 +7,19 @@
   "layerId": "enrichment.viu.unit-groups",
   "cefrBandHint": "A2",
   "unitCatalog": {
-    "labeledUnitCount": 31,
+    "labeledUnitCount": 70,
     "units": [
       {
         "unitNumber": 1,
-        "title": "The family mother, uncle, relatives 8 Leisure"
+        "title": "Did you come for your letters? They’re on the table"
       },
       {
         "unitNumber": 2,
-        "title": "A: I\u2019m going to Thailand tomorrow."
+        "title": "birth, marriage and death birthday,"
       },
       {
         "unitNumber": 3,
-        "title": "The teacher came the classroom and started the lesson."
+        "title": "The teacher came the classroom and started the lesson"
       },
       {
         "unitNumber": 4,
@@ -27,19 +27,31 @@
       },
       {
         "unitNumber": 5,
-        "title": "Describing people tall, dark,"
+        "title": "Pierre from a small town in Luxembourg"
       },
       {
         "unitNumber": 6,
-        "title": "Health and illness headache, heart"
+        "title": "English Vocabulary in Use Elementary"
       },
       {
         "unitNumber": 7,
         "title": "Feelings love, tired, thirsty"
       },
       {
+        "unitNumber": 8,
+        "title": "Leisure"
+      },
+      {
         "unitNumber": 10,
-        "title": "Food and drink rice, tea, vegetables 26 The world"
+        "title": "currency, visa"
+      },
+      {
+        "unitNumber": 11,
+        "title": "In the kitchen fridge, glass,"
+      },
+      {
+        "unitNumber": 12,
+        "title": "department store, credit card"
       },
       {
         "unitNumber": 13,
@@ -62,12 +74,48 @@
         "title": "Your phone apps, voicemail, text"
       },
       {
+        "unitNumber": 18,
+        "title": "Holidays package holiday,"
+      },
+      {
+        "unitNumber": 19,
+        "title": "shops and shopping chemist’s,"
+      },
+      {
+        "unitNumber": 20,
+        "title": "Online shopping reviews,"
+      },
+      {
+        "unitNumber": 21,
+        "title": "In a hotel single room, key,"
+      },
+      {
+        "unitNumber": 22,
+        "title": "Eating out café, menu, fish"
+      },
+      {
         "unitNumber": 23,
         "title": "sports table tennis, judo,"
       },
       {
+        "unitNumber": 24,
+        "title": "Cinema western, film star, director"
+      },
+      {
+        "unitNumber": 25,
+        "title": "Free time at home gardening,"
+      },
+      {
         "unitNumber": 26,
         "title": "Music and musical instruments"
+      },
+      {
+        "unitNumber": 27,
+        "title": "Countries and nationalities Spain,"
+      },
+      {
+        "unitNumber": 28,
+        "title": "Weather cold, rain, storm"
       },
       {
         "unitNumber": 29,
@@ -86,6 +134,10 @@
         "title": "Travelling train, map, flight"
       },
       {
+        "unitNumber": 33,
+        "title": "UK culture fireworks, roast beef,"
+      },
+      {
         "unitNumber": 35,
         "title": "The media TV channel, magazine,"
       },
@@ -98,8 +150,24 @@
         "title": "Global problems hurricane,"
       },
       {
+        "unitNumber": 38,
+        "title": "Have / had / had have breakfast,"
+      },
+      {
+        "unitNumber": 39,
+        "title": "Go / went / gone go away, go"
+      },
+      {
+        "unitNumber": 40,
+        "title": "Do / did / done do an exercise, do"
+      },
+      {
+        "unitNumber": 41,
+        "title": "Make / made / made make cofee,"
+      },
+      {
         "unitNumber": 42,
-        "title": "Come / came / come"
+        "title": "Come / came / come come in, come"
       },
       {
         "unitNumber": 44,
@@ -114,6 +182,10 @@
         "title": "Phrasal verbs get up, put on,"
       },
       {
+        "unitNumber": 47,
+        "title": "Everyday things watch TV, wash Acknowledgements"
+      },
+      {
         "unitNumber": 48,
         "title": "Talking say, tell, ask"
       },
@@ -122,19 +194,104 @@
         "title": "Moving walk, drive, fly"
       },
       {
+        "unitNumber": 50,
+        "title": "Conjunctions and connecting words"
+      },
+      {
+        "unitNumber": 51,
+        "title": "Days, months, seasons Monday,"
+      },
+      {
+        "unitNumber": 52,
+        "title": "wishes Good morning, Happy New"
+      },
+      {
+        "unitNumber": 53,
+        "title": "Places middle, front, abroad"
+      },
+      {
+        "unitNumber": 54,
+        "title": "Manner fast, loud, the right way"
+      },
+      {
+        "unitNumber": 55,
+        "title": "Common uncountable nouns"
+      },
+      {
+        "unitNumber": 56,
+        "title": "Common adjectives: Good and bad"
+      },
+      {
+        "unitNumber": 57,
+        "title": "Words and prepositions wait for,"
+      },
+      {
+        "unitNumber": 58,
+        "title": "Prefixes impossible, ex-wife,"
+      },
+      {
+        "unitNumber": 59,
+        "title": "sufixes swimmer, useless, sunny"
+      },
+      {
         "unitNumber": 60,
         "title": "Words you may confuse quiet /"
       },
       {
-        "unitNumber": 79,
-        "title": "Anson Road, #06\u201304/06, singapore 079906"
+        "unitNumber": 62,
+        "title": "wardrobe, shampoo, mirror"
+      },
+      {
+        "unitNumber": 64,
+        "title": "remote control"
+      },
+      {
+        "unitNumber": 66,
+        "title": "School and workplace"
+      },
+      {
+        "unitNumber": 72,
+        "title": "English Vocabulary in Use Elementary"
+      },
+      {
+        "unitNumber": 82,
+        "title": "money, bread, information"
+      },
+      {
+        "unitNumber": 84,
+        "title": "things nice, awful, lovely"
+      },
+      {
+        "unitNumber": 86,
+        "title": "belong to, good at"
+      },
+      {
+        "unitNumber": 88,
+        "title": "unsafe"
       },
       {
         "unitNumber": 90,
         "title": "English Vocabulary in Use Elementary"
+      },
+      {
+        "unitNumber": 92,
+        "title": "Answer key"
+      },
+      {
+        "unitNumber": 94,
+        "title": "Phonemic symbols"
+      },
+      {
+        "unitNumber": 96,
+        "title": "Irregular verbs"
+      },
+      {
+        "unitNumber": 112,
+        "title": "Everyday verbs"
       }
     ],
-    "unitNumberIsNotPrerequisite": true
+    "unitNumberIsNotPrerequisite": true,
+    "relationshipKind": "co-taught-lesson-group"
   },
   "indexSample": {
     "sampleSize": 25,
@@ -142,183 +299,156 @@
       {
         "indexLemma": "about",
         "unitNumbers": [
+          25
+        ]
+      },
+      {
+        "indexLemma": "arrive",
+        "unitNumbers": [
+          32
+        ]
+      },
+      {
+        "indexLemma": "bar",
+        "unitNumbers": [
           22
-        ],
-        "matchKind": "index-extract-candidate"
+        ]
       },
       {
         "indexLemma": "abroad",
         "unitNumbers": [
+          53
+        ]
+      },
+      {
+        "indexLemma": "arrive at",
+        "unitNumbers": [
+          49
+        ]
+      },
+      {
+        "indexLemma": "baseball",
+        "unitNumbers": [
           23
-        ],
-        "matchKind": "index-extract-candidate"
+        ]
       },
       {
         "indexLemma": "absolutely",
         "unitNumbers": [
-          19
-        ],
-        "matchKind": "index-extract-candidate"
+          9
+        ]
       },
       {
-        "indexLemma": "accommodation",
+        "indexLemma": "arrive in",
+        "unitNumbers": [
+          49
+        ]
+      },
+      {
+        "indexLemma": "basement",
+        "unitNumbers": [
+          19
+        ]
+      },
+      {
+        "indexLemma": "art",
+        "unitNumbers": [
+          15
+        ]
+      },
+      {
+        "indexLemma": "basin",
         "unitNumbers": [
           12
-        ],
-        "matchKind": "index-extract-candidate"
+        ]
       },
       {
-        "indexLemma": "action",
+        "indexLemma": "as well",
+        "unitNumbers": [
+          50
+        ]
+      },
+      {
+        "indexLemma": "basket",
+        "unitNumbers": [
+          20
+        ]
+      },
+      {
+        "indexLemma": "action film",
+        "unitNumbers": [
+          24
+        ]
+      },
+      {
+        "indexLemma": "Asia",
+        "unitNumbers": [
+          27
+        ]
+      },
+      {
+        "indexLemma": "basketball",
         "unitNumbers": [
           23
-        ],
-        "matchKind": "index-extract-candidate"
+        ]
       },
       {
         "indexLemma": "actually",
         "unitNumbers": [
+          9
+        ]
+      },
+      {
+        "indexLemma": "ask",
+        "unitNumbers": [
+          48
+        ]
+      },
+      {
+        "indexLemma": "bath",
+        "unitNumbers": [
           38
-        ],
-        "matchKind": "index-extract-candidate"
+        ]
       },
       {
         "indexLemma": "address",
         "unitNumbers": [
-          12,
-          21
-        ],
-        "matchKind": "index-extract-candidate"
+          16
+        ]
       },
       {
-        "indexLemma": "add",
+        "indexLemma": "bathroom",
+        "unitNumbers": [
+          12,
+          21
+        ]
+      },
+      {
+        "indexLemma": "add to basket",
+        "unitNumbers": [
+          20
+        ]
+      },
+      {
+        "indexLemma": "battery",
         "unitNumbers": [
           17
-        ],
-        "matchKind": "index-extract-candidate"
+        ]
       },
       {
         "indexLemma": "advert",
         "unitNumbers": [
+          35
+        ]
+      },
+      {
+        "indexLemma": "be born",
+        "unitNumbers": [
           2
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "advertisement",
-        "unitNumbers": [
-          9
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "advice",
-        "unitNumbers": [
-          10,
-          22
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "aeroplane",
-        "unitNumbers": [
-          5
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "afraid",
-        "unitNumbers": [
-          5,
-          59
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "africa",
-        "unitNumbers": [
-          19
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "ater",
-        "unitNumbers": [
-          14
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "aternoon",
-        "unitNumbers": [
-          50
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "age",
-        "unitNumbers": [
-          12
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "ago",
-        "unitNumbers": [
-          12
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "air",
-        "unitNumbers": [
-          12
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "alarm",
-        "unitNumbers": [
-          31
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "alcohol",
-        "unitNumbers": [
-          10
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "also",
-        "unitNumbers": [
-          50
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "always",
-        "unitNumbers": [
-          53
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "american",
-        "unitNumbers": [
-          57
-        ],
-        "matchKind": "index-extract-candidate"
-      },
-      {
-        "indexLemma": "american",
-        "unitNumbers": [
-          4
-        ],
-        "matchKind": "index-extract-candidate"
+        ]
       }
     ],
-    "note": "Bounded sample for fixture matching only; full index stays transient at parse time."
+    "note": "Bounded sample only; full index stays transient at parse time."
   },
   "fixtureCases": [
     {
@@ -328,11 +458,28 @@
     },
     {
       "kind": "multi-unit",
-      "note": "Index rows with multiple unit numbers must preserve all units"
+      "note": "Index rows with multiple unit numbers preserve all unit memberships"
     },
     {
       "kind": "variant",
-      "note": "US/UK spelling variants must resolve or quarantine"
+      "note": "US/UK spelling variants resolve via matchForms or unmatched queue"
+    },
+    {
+      "kind": "co-taught-group",
+      "note": "Unit contains edges encode lesson co-membership, not prerequisites"
     }
-  ]
+  ],
+  "buildStats": {
+    "sourceId": "vocabulary-in-use-elementary",
+    "frontmatterSha256": "edde26e95c895c0918d9ed359328cbc2bf72b9b1c5da58782f92e09bca8b16ac",
+    "indexSha256": "e6b9a0dc3556feda1b54d332f8e3e271c2a76e9dd304d6edffbe584397cf6a09",
+    "labeledUnitCount": 70,
+    "indexEntryCount": 1331,
+    "matchedEntries": 699,
+    "unmatchedEntries": 632,
+    "ambiguousMultiSkillEntries": 121,
+    "membershipEdges": 1114,
+    "multiUnitEntries": 192,
+    "matchRate": 0.5252
+  }
 }

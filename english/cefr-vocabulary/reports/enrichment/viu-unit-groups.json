@@ -1,0 +1,80 @@
+{
+  "enrichmentLayer": "enrichment.viu.unit-groups",
+  "generatedAt": "2026-08-11",
+  "relationshipSemantics": "ViU units are co-taught lesson groups: contains edges mean taught-together, not required-before.",
+  "stats": {
+    "bandCount": 4,
+    "unitGroupCount": 374,
+    "overlayNodeCount": 379,
+    "overlayEdgeCount": 4561,
+    "membershipEdgeCount": 4182,
+    "totalIndexEntries": 10172,
+    "matchedEntries": 2900,
+    "unmatchedEntries": 7272,
+    "ambiguousMultiSkillEntries": 446,
+    "multiUnitEntries": 962,
+    "matchRate": 0.2851,
+    "bands": {
+      "elementary": {
+        "sourceId": "vocabulary-in-use-elementary",
+        "frontmatterSha256": "edde26e95c895c0918d9ed359328cbc2bf72b9b1c5da58782f92e09bca8b16ac",
+        "indexSha256": "e6b9a0dc3556feda1b54d332f8e3e271c2a76e9dd304d6edffbe584397cf6a09",
+        "labeledUnitCount": 70,
+        "indexEntryCount": 1331,
+        "matchedEntries": 699,
+        "unmatchedEntries": 632,
+        "ambiguousMultiSkillEntries": 121,
+        "membershipEdges": 1114,
+        "multiUnitEntries": 192,
+        "matchRate": 0.5252
+      },
+      "pre-intermediate": {
+        "sourceId": "vocabulary-in-use-pre-intermediate",
+        "frontmatterSha256": "5b1bdd50dfa9b02d21eabaf6dfa8127ae79bb16e8bae3bf4dd0505904e7c37a2",
+        "indexSha256": "57d36d4d34dd49382c7e3a2fe43bad73bef8e8d753e7dae4621ee55825a61b61",
+        "labeledUnitCount": 75,
+        "indexEntryCount": 2308,
+        "matchedEntries": 915,
+        "unmatchedEntries": 1393,
+        "ambiguousMultiSkillEntries": 134,
+        "membershipEdges": 1219,
+        "multiUnitEntries": 229,
+        "matchRate": 0.3964
+      },
+      "upper-intermediate": {
+        "sourceId": "vocabulary-in-use-upper-intermediate",
+        "frontmatterSha256": "13951d6912064a31e78f63ec80d85816d041919a15bb614ae4ca1526e3f37e5e",
+        "indexSha256": "162c4658283ca7f73797eb6d584559dfe7378d506ebd145923531d70bdffc617",
+        "labeledUnitCount": 83,
+        "indexEntryCount": 3229,
+        "matchedEntries": 950,
+        "unmatchedEntries": 2279,
+        "ambiguousMultiSkillEntries": 148,
+        "membershipEdges": 1437,
+        "multiUnitEntries": 404,
+        "matchRate": 0.2942
+      },
+      "advanced": {
+        "sourceId": "vocabulary-in-use-advanced",
+        "frontmatterSha256": "db6365f75abb4ff3476a24714e349298173955b9566487ce51ef3a4e882ec75b",
+        "indexSha256": "3dfad22d9d8ab1362b2cf4c714ff83683662901ea3f287fc390d968b1c056e0b",
+        "labeledUnitCount": 88,
+        "indexEntryCount": 3304,
+        "matchedEntries": 336,
+        "unmatchedEntries": 2968,
+        "ambiguousMultiSkillEntries": 43,
+        "membershipEdges": 412,
+        "multiUnitEntries": 137,
+        "matchRate": 0.1017
+      }
+    }
+  },
+  "outputs": {
+    "overlay": "overlays/viu-unit-groups.overlay.json",
+    "extendedGraph": "cefr-vocabulary-extended-viu.json",
+    "unmatchedQueue": "review/enrichment/queues/viu-unmatched.jsonl",
+    "ambiguousQueue": "review/enrichment/queues/viu-ambiguous.jsonl"
+  },
+  "prerequisite_for_count_in_overlay": 0,
+  "coreGraphUntouched": true
+}

@@ -8,8 +8,8 @@
 > **Marker vocabulary:** `[x]` complete · `[~]` in-progress/next · `[b]` human-gated.
 >
 > **First remaining work:** Phase 1 human review gate (contracts/registry).
-> Phase 2 structure fixtures are in progress. Core dependency satisfied by YLE
-> freeze dual go (2026-08-11).
+> ViU unit-group layer is implemented (overlay). Next: remaining Phase 2/3
+> Cambridge grammatical/A2/B1 extractors and frequency layer.
 
 ## Phase 1: Contracts And Source Decisions
 
@@ -39,32 +39,43 @@
 
 - [x] Task: Build Cambridge group extraction fixtures
   - [x] Cover YLE grammatical groups and A2/B1 Appendix word sets
-- [~] Task: Build Vocabulary in Use fixtures
+- [x] Task: Build Vocabulary in Use fixtures
   - [x] Cover elementary frontmatter/index structure sample
-  - [ ] Cover remaining three frontmatter and index layouts
+  - [x] Cover remaining three frontmatter and index layouts
   - [x] Cover unmatched, multi-unit, and variant fixture cases (schema)
 - [x] Task: Build frequency metadata fixtures
   - [x] Cover words, MWEs, missing scores, unreliable scores, and rank ties
 - [x] Task: Build enrichment isolation and determinism tests
-- [~] Task: Verify Phase 2
+- [x] Task: Verify Phase 2
 
-**Green evidence (2026-08-11, partial):**
+**Green evidence (2026-08-11):**
 
-- Structure fixtures under `english/cefr-vocabulary/fixtures/enrichment/`:
-  `yle-grammatical-structure.json`, `a2-key-structure.json`,
-  `b1-preliminary-structure.json`, `viu-elementary-structure.json`,
-  `frequency-fixture-schema.json`, `isolation-contract.json`, `manifest.json`.
-- Bounded samples only (no full publisher wordlist dumps).
-- `bash tests/enrichment_p2_fixtures.sh` is the Phase 2 structure harness.
-- Remaining: Pre-int / Upper-int / Advanced ViU layouts + full Phase 2 verify.
+- Structure fixtures under `english/cefr-vocabulary/fixtures/enrichment/` for
+  Cambridge sources and all four ViU bands; frequency + isolation schemas.
+- `bash tests/enrichment_p2_fixtures.sh` and `bash tests/enrichment_viu_layer.sh`.
 
 ## Phase 3: Implementation
 
 - [ ] Task: Implement Cambridge group extraction
-- [ ] Task: Implement Vocabulary in Use catalogs and index matching
+- [x] Task: Implement Vocabulary in Use catalogs and index matching
 - [ ] Task: Implement selected frequency source integration
-- [ ] Task: Implement coverage and frequency quality reports
-- [ ] Task: Implement durable enrichment review queues
+- [x] Task: Implement coverage and frequency quality reports
+  - [x] ViU unit-group quality report (frequency still pending)
+- [x] Task: Implement durable enrichment review queues
+  - [x] ViU unmatched + multi-skill queues
+
+**ViU layer Green evidence (2026-08-11):**
+
+- Builder: `scripts/build-viu-unit-groups.py`
+- Overlay: `overlays/viu-unit-groups.overlay.json` — unit `content_group`s +
+  `contains` co-membership; `unitNumberIsNotPrerequisite: true`;
+  `prerequisite_for` count 0
+- Semantics: co-taught lesson groups (GRAPH-DESIGN ViU rule)
+- Core graph file untouched; optional regenerable extended merge gitignored
+- Queues: `review/enrichment/queues/viu-unmatched.jsonl`,
+  `viu-ambiguous.jsonl`
+- Report: `reports/enrichment/viu-unit-groups.{json,md}`
+- Harness: `bash tests/enrichment_viu_layer.sh`
 
 ## Phase 4: Audit And Calibration
 
