@@ -1,0 +1,14 @@
+{
+  "id": "gse_vocabulary_core_enrichment_20260811",
+  "title": "GSE Vocabulary Core Enrichment",
+  "created": "2026-08-11",
+  "status": "new",
+  "priority": "High",
+  "type": "Data",
+  "spec_mode": "classic",
+  "updated_at": "2026-08-11T15:30:52Z",
+  "estimated_tasks": 25,
+  "actual_tasks": null,
+  "description": "Map core vocabulary nodes to the pinned GSE GL and YL vocabulary exports and write GSE scores, CEFR bands, definitions, and examples onto existing nodes; ship as a new core graph version under freeze discipline.",
+  "deviation_notes": "Opened 2026-08-11 after acquisition of the GSE vocabulary inventories (GL 11,586 items, YL 3,024 items, pinned in GSE_VOCABULARY_SOURCES.md). Owner directed core mutation rather than a gated enrichment overlay. FR-6 decided 2026-08-11: definition and example text is committed onto nodes; use is non-commercial and within Pearson's approved purposes. B2 vocabulary stays parked."
+}

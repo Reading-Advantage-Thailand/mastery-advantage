@@ -80,6 +80,22 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
+- [ ] **Track: GSE Vocabulary Core Enrichment** *(new 2026-08-11)*
+  *Map core vocabulary nodes to the pinned GSE GL/YL vocabulary exports and
+  write GSE scores, CEFR bands, definitions, and examples onto existing
+  nodes; ship as a new core graph version under freeze discipline.*
+  *Status: new — exports pinned 2026-08-11 (GL 11,586 items, GSE 10–67;
+  YL 3,024 items, GSE 10–59; `GSE_VOCABULARY_SOURCES.md`). Owner directed
+  core mutation, not an enrichment overlay. FR-6 decided: definition and
+  example text committed onto nodes for non-commercial use within Pearson's
+  approved purposes. B2 stays parked.*
+  *Link: [./tracks/gse_vocabulary_core_enrichment_20260811/](./tracks/gse_vocabulary_core_enrichment_20260811/)*
+  *Coordination: distinct axis from
+  [gse_grammar_inflection_levels_20260811](./tracks/gse_grammar_inflection_levels_20260811/) (inflection)
+  and [sense_level_identity_spec_20260611](./tracks/sense_level_identity_spec_20260611/) (senses).*
+
+---
+
 - [ ] **Track: B2 Vocabulary Source Expansion** *(deferred — not graphable for current product)*
   *Close the B2 gap using documented alternative sources (Vocabulary in Use, etc.) without claiming false Cambridge FCE coverage.*
   *Status: parked 2026-08-11. B2 inventory is out of scope for current customers;
