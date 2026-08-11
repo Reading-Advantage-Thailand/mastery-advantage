@@ -1,0 +1,44 @@
+{
+  "sourceId": "cambridge-yle-word-list-2025",
+  "pdf": "source-pdfs/cambridge-yle-word-list-2025.pdf",
+  "sha256": "6f7a0ad1e277bd10ae8b3bcccfb76c058f611a607c6c9947601abbd7e16a99fa",
+  "section": "Pre A1 Starters, A1 Movers and A2 Flyers grammatical vocabulary list",
+  "pdfPages": {
+    "start": 31,
+    "end": 37
+  },
+  "layerId": "enrichment.cambridge.grammatical-groups",
+  "notes": "Freeze accepted grammatical lists as group omission; enrichment may reintroduce groups without rewriting freeze package.",
+  "structureChecks": {
+    "titlePresent": true,
+    "columnsPresent": true,
+    "minExtractedChars": 39860
+  },
+  "sampleCategoryHints": [
+    "Nouns",
+    "Verbs",
+    "Adjectives",
+    "Adverbs",
+    "Prepositions",
+    "Determiners",
+    "Pronouns",
+    "Conjunctions",
+    "Question words",
+    "Ordinals",
+    "Cardinals",
+    "Titles",
+    "Letters",
+    "Names"
+  ],
+  "categoriesDetectedInPages": [
+    "Nouns",
+    "Verbs",
+    "Adjectives",
+    "Adverbs",
+    "Prepositions",
+    "Determiners",
+    "Pronouns",
+    "Conjunctions"
+  ],
+  "labeledCategoryDetectCount": 8
+}

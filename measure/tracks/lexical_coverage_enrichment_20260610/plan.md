@@ -7,8 +7,9 @@
 >
 > **Marker vocabulary:** `[x]` complete · `[~]` in-progress/next · `[b]` human-gated.
 >
-> **First remaining work:** Phase 1 human review gate after contract + registry
-> drafts. Core dependency satisfied by YLE freeze dual go (2026-08-11).
+> **First remaining work:** Phase 1 human review gate (contracts/registry).
+> Phase 2 structure fixtures are in progress. Core dependency satisfied by YLE
+> freeze dual go (2026-08-11).
 
 ## Phase 1: Contracts And Source Decisions
 
@@ -36,15 +37,26 @@
 
 ## Phase 2: Tests And Fixtures
 
-- [~] Task: Build Cambridge group extraction fixtures
-  - [ ] Cover YLE grammatical groups and A2/B1 Appendix word sets
-- [ ] Task: Build Vocabulary in Use fixtures
-  - [ ] Cover all four frontmatter and index layouts
-  - [ ] Cover unmatched, ambiguous, variant, and multi-unit entries
-- [ ] Task: Build frequency metadata fixtures
-  - [ ] Cover words, MWEs, missing scores, unreliable scores, and rank ties
-- [ ] Task: Build enrichment isolation and determinism tests
-- [ ] Task: Verify Phase 2
+- [x] Task: Build Cambridge group extraction fixtures
+  - [x] Cover YLE grammatical groups and A2/B1 Appendix word sets
+- [~] Task: Build Vocabulary in Use fixtures
+  - [x] Cover elementary frontmatter/index structure sample
+  - [ ] Cover remaining three frontmatter and index layouts
+  - [x] Cover unmatched, multi-unit, and variant fixture cases (schema)
+- [x] Task: Build frequency metadata fixtures
+  - [x] Cover words, MWEs, missing scores, unreliable scores, and rank ties
+- [x] Task: Build enrichment isolation and determinism tests
+- [~] Task: Verify Phase 2
+
+**Green evidence (2026-08-11, partial):**
+
+- Structure fixtures under `english/cefr-vocabulary/fixtures/enrichment/`:
+  `yle-grammatical-structure.json`, `a2-key-structure.json`,
+  `b1-preliminary-structure.json`, `viu-elementary-structure.json`,
+  `frequency-fixture-schema.json`, `isolation-contract.json`, `manifest.json`.
+- Bounded samples only (no full publisher wordlist dumps).
+- `bash tests/enrichment_p2_fixtures.sh` is the Phase 2 structure harness.
+- Remaining: Pre-int / Upper-int / Advanced ViU layouts + full Phase 2 verify.
 
 ## Phase 3: Implementation
 

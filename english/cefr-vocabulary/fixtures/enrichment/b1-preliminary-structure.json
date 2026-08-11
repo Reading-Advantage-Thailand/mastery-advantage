@@ -1,0 +1,11 @@
+{
+  "sourceId": "cambridge-b1-preliminary-vocabulary-list-2025",
+  "pdf": "source-pdfs/cambridge-b1-preliminary-vocabulary-list-2025.pdf",
+  "sha256": "df5e3c31bb26205c2cfc2e7a94a0171d4f4769d5c1e42a3615fe6aa1b5fdab29",
+  "layerId": "enrichment.cambridge.b1-preliminary-appendix",
+  "structureChecks": {
+    "titleHasB1": true,
+    "disclaimerNotExhaustive": true,
+    "minExtractedCharsFirstPages": 10926
+  }
+}

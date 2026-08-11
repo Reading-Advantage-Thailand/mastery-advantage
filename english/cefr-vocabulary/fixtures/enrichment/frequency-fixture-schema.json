@@ -1,0 +1,27 @@
+{
+  "layerId": "enrichment.frequency.wordfreq",
+  "source": "wordfreq",
+  "sourceVersion": "PIN_AT_IMPLEMENTATION",
+  "cases": [
+    {
+      "skillId": "english.vocabulary.skill.cat.noun",
+      "expect": "has-zipf"
+    },
+    {
+      "skillId": "english.vocabulary.skill.a-good-start.noun",
+      "expect": "mwe-policy-documented"
+    },
+    {
+      "skillId": "english.vocabulary.skill.__missing__.noun",
+      "expect": "missing-true"
+    },
+    {
+      "kind": "rank-tie",
+      "note": "Equal zipf values must not invent false total order without tie policy"
+    },
+    {
+      "kind": "unreliable",
+      "note": "Below reliability threshold \u2192 missing or flagged"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "coreGraphPath": "english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json",
+  "coreMustLoadWithoutEnrichment": true,
+  "enrichmentMustNotRewriteCoreIds": true,
+  "forbiddenEdgeTypeFromEnrichment": "prerequisite_for",
+  "overlayPathsAllowed": [
+    "english/cefr-vocabulary/overlays/",
+    "english/cefr-vocabulary/reports/enrichment/",
+    "english/cefr-vocabulary/review/enrichment/"
+  ]
+}

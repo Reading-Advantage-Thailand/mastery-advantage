@@ -1,0 +1,338 @@
+{
+  "sourceId": "vocabulary-in-use-elementary",
+  "frontmatterPdf": "source-pdfs/vocabulary-in-use-elementary-frontmatter.pdf",
+  "indexPdf": "source-pdfs/vocabulary-in-use-elementary-index.pdf",
+  "frontmatterSha256": "edde26e95c895c0918d9ed359328cbc2bf72b9b1c5da58782f92e09bca8b16ac",
+  "indexSha256": "e6b9a0dc3556feda1b54d332f8e3e271c2a76e9dd304d6edffbe584397cf6a09",
+  "layerId": "enrichment.viu.unit-groups",
+  "cefrBandHint": "A2",
+  "unitCatalog": {
+    "labeledUnitCount": 31,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "The family mother, uncle, relatives 8 Leisure"
+      },
+      {
+        "unitNumber": 2,
+        "title": "A: I\u2019m going to Thailand tomorrow."
+      },
+      {
+        "unitNumber": 3,
+        "title": "The teacher came the classroom and started the lesson."
+      },
+      {
+        "unitNumber": 4,
+        "title": "English Vocabulary in Use Elementary"
+      },
+      {
+        "unitNumber": 5,
+        "title": "Describing people tall, dark,"
+      },
+      {
+        "unitNumber": 6,
+        "title": "Health and illness headache, heart"
+      },
+      {
+        "unitNumber": 7,
+        "title": "Feelings love, tired, thirsty"
+      },
+      {
+        "unitNumber": 10,
+        "title": "Food and drink rice, tea, vegetables 26 The world"
+      },
+      {
+        "unitNumber": 13,
+        "title": "In the living room bookshelf, lamp, town hall"
+      },
+      {
+        "unitNumber": 14,
+        "title": "Jobs secretary, factory, nurse"
+      },
+      {
+        "unitNumber": 15,
+        "title": "At school and university biology,"
+      },
+      {
+        "unitNumber": 16,
+        "title": "Communications address,"
+      },
+      {
+        "unitNumber": 17,
+        "title": "Your phone apps, voicemail, text"
+      },
+      {
+        "unitNumber": 23,
+        "title": "sports table tennis, judo,"
+      },
+      {
+        "unitNumber": 26,
+        "title": "Music and musical instruments"
+      },
+      {
+        "unitNumber": 29,
+        "title": "In the town railway station, bank,"
+      },
+      {
+        "unitNumber": 30,
+        "title": "In the countryside hill, farm, river"
+      },
+      {
+        "unitNumber": 31,
+        "title": "Animals horse, girafe, pet"
+      },
+      {
+        "unitNumber": 32,
+        "title": "Travelling train, map, flight"
+      },
+      {
+        "unitNumber": 35,
+        "title": "The media TV channel, magazine,"
+      },
+      {
+        "unitNumber": 36,
+        "title": "Problems at home and work repair,"
+      },
+      {
+        "unitNumber": 37,
+        "title": "Global problems hurricane,"
+      },
+      {
+        "unitNumber": 42,
+        "title": "Come / came / come"
+      },
+      {
+        "unitNumber": 44,
+        "title": "bring / brought / brought bring"
+      },
+      {
+        "unitNumber": 45,
+        "title": "Get / got / got get tired, get better, Index"
+      },
+      {
+        "unitNumber": 46,
+        "title": "Phrasal verbs get up, put on,"
+      },
+      {
+        "unitNumber": 48,
+        "title": "Talking say, tell, ask"
+      },
+      {
+        "unitNumber": 49,
+        "title": "Moving walk, drive, fly"
+      },
+      {
+        "unitNumber": 60,
+        "title": "Words you may confuse quiet /"
+      },
+      {
+        "unitNumber": 79,
+        "title": "Anson Road, #06\u201304/06, singapore 079906"
+      },
+      {
+        "unitNumber": 90,
+        "title": "English Vocabulary in Use Elementary"
+      }
+    ],
+    "unitNumberIsNotPrerequisite": true
+  },
+  "indexSample": {
+    "sampleSize": 25,
+    "entries": [
+      {
+        "indexLemma": "about",
+        "unitNumbers": [
+          22
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "abroad",
+        "unitNumbers": [
+          23
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "absolutely",
+        "unitNumbers": [
+          19
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "accommodation",
+        "unitNumbers": [
+          12
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "action",
+        "unitNumbers": [
+          23
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "actually",
+        "unitNumbers": [
+          38
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "address",
+        "unitNumbers": [
+          12,
+          21
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "add",
+        "unitNumbers": [
+          17
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "advert",
+        "unitNumbers": [
+          2
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "advertisement",
+        "unitNumbers": [
+          9
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "advice",
+        "unitNumbers": [
+          10,
+          22
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "aeroplane",
+        "unitNumbers": [
+          5
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "afraid",
+        "unitNumbers": [
+          5,
+          59
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "africa",
+        "unitNumbers": [
+          19
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "ater",
+        "unitNumbers": [
+          14
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "aternoon",
+        "unitNumbers": [
+          50
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "age",
+        "unitNumbers": [
+          12
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "ago",
+        "unitNumbers": [
+          12
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "air",
+        "unitNumbers": [
+          12
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "alarm",
+        "unitNumbers": [
+          31
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "alcohol",
+        "unitNumbers": [
+          10
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "also",
+        "unitNumbers": [
+          50
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "always",
+        "unitNumbers": [
+          53
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "american",
+        "unitNumbers": [
+          57
+        ],
+        "matchKind": "index-extract-candidate"
+      },
+      {
+        "indexLemma": "american",
+        "unitNumbers": [
+          4
+        ],
+        "matchKind": "index-extract-candidate"
+      }
+    ],
+    "note": "Bounded sample for fixture matching only; full index stays transient at parse time."
+  },
+  "fixtureCases": [
+    {
+      "kind": "unmatched",
+      "indexLemma": "zzzz-not-a-real-lemma",
+      "expected": "unmatched"
+    },
+    {
+      "kind": "multi-unit",
+      "note": "Index rows with multiple unit numbers must preserve all units"
+    },
+    {
+      "kind": "variant",
+      "note": "US/UK spelling variants must resolve or quarantine"
+    }
+  ]
+}

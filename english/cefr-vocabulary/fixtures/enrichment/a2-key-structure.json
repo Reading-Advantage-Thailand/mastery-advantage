@@ -1,0 +1,12 @@
+{
+  "sourceId": "cambridge-a2-key-vocabulary-list-2025",
+  "pdf": "source-pdfs/cambridge-a2-key-vocabulary-list-2025.pdf",
+  "sha256": "2abe174d067cd17ffa061cfc4bbbc0e5a55185ac696a5ef8ba49372c753a3ad6",
+  "layerId": "enrichment.cambridge.a2-key-appendix",
+  "structureChecks": {
+    "titleHasA2Key": true,
+    "mentionsAugust2025": true,
+    "disclaimerNotExhaustive": true,
+    "minExtractedCharsFirstPages": 10106
+  }
+}

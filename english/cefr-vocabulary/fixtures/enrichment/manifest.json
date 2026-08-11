@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-08-11",
+  "fixtures": [
+    "a2-key-structure.json",
+    "b1-preliminary-structure.json",
+    "frequency-fixture-schema.json",
+    "isolation-contract.json",
+    "viu-elementary-structure.json",
+    "yle-grammatical-structure.json",
+    "manifest.json"
+  ],
+  "policy": "Structure and bounded samples only; no full publisher wordlist republication."
+}
