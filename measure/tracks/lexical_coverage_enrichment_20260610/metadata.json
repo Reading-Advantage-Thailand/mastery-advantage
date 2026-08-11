@@ -3,9 +3,9 @@
   "type": "feature",
   "status": "in_progress",
   "created_at": "2026-06-10T08:32:01Z",
-  "updated_at": "2026-08-11T21:00:00Z",
+  "updated_at": "2026-08-11T22:00:00Z",
   "description": "Expand the approved core lexical graph with source-backed groups, B2+ coverage, and frequency metadata.",
   "estimated_tasks": 23,
   "actual_tasks": null,
-  "deviation_notes": "2026-08-11: Unblocked by YLE freeze. Phase 1 contracts drafted. Phase 2 fixtures complete. ViU unit-group overlay implemented (co-taught contains edges; core untouched). Remaining: Cambridge extractors, frequency layer, Phase 1 human gate."
+  "deviation_notes": "ViU unit-groups + YLE grammatical-groups overlays implemented (co-membership contains; core freeze untouched). Phase 1 human gate open. Remaining: frequency layer; A2/B1 appendix extractors."
 }

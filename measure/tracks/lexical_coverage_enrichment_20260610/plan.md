@@ -7,9 +7,9 @@
 >
 > **Marker vocabulary:** `[x]` complete · `[~]` in-progress/next · `[b]` human-gated.
 >
-> **First remaining work:** Phase 1 human review gate (contracts/registry).
-> ViU unit-group layer is implemented (overlay). Next: remaining Phase 2/3
-> Cambridge grammatical/A2/B1 extractors and frequency layer.
+> **First remaining work:** Phase 1 human review gate (contracts/registry);
+> frequency layer; A2/B1 appendix topic extractors. ViU unit groups and YLE
+> grammatical groups are implemented as overlays.
 
 ## Phase 1: Contracts And Source Decisions
 
@@ -56,13 +56,15 @@
 
 ## Phase 3: Implementation
 
-- [ ] Task: Implement Cambridge group extraction
+- [x] Task: Implement Cambridge group extraction
+  - [x] YLE grammatical category×stage groups (optional overlay)
+  - [ ] A2 Key / B1 appendix topic extractors (topics already partly in core)
 - [x] Task: Implement Vocabulary in Use catalogs and index matching
 - [ ] Task: Implement selected frequency source integration
 - [x] Task: Implement coverage and frequency quality reports
-  - [x] ViU unit-group quality report (frequency still pending)
+  - [x] ViU + grammatical quality reports (frequency still pending)
 - [x] Task: Implement durable enrichment review queues
-  - [x] ViU unmatched + multi-skill queues
+  - [x] ViU unmatched/ambiguous + grammatical unmatched queues
 
 **ViU layer Green evidence (2026-08-11):**
 
@@ -76,6 +78,15 @@
   `viu-ambiguous.jsonl`
 - Report: `reports/enrichment/viu-unit-groups.{json,md}`
 - Harness: `bash tests/enrichment_viu_layer.sh`
+
+**YLE grammatical layer Green evidence (2026-08-11):**
+
+- Builder: `scripts/build-yle-grammatical-groups.py`
+- Overlay: `overlays/yle-grammatical-groups.overlay.json`
+- Restores freeze-omitted grammatical groups as selectable enrichment
+  (`enrichment.cambridge.grammatical-groups`); match rate ≥ 0.98 on tokens
+- Harness: `bash tests/enrichment_yle_grammatical.sh`
+- Freeze decision YLE-2025-GRAMMATICAL-001 remains valid for core package
 
 ## Phase 4: Audit And Calibration
 
