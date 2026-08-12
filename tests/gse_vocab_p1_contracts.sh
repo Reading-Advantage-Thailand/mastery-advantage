@@ -26,9 +26,20 @@ REVIEW_DIR="$ROOT/english/cefr-vocabulary/review/gse-vocab"
 MAPPING="$REVIEW_DIR/phase1-mapping-contract.md"
 MUTATION="$REVIEW_DIR/phase1-mutation-contract.md"
 SAMPLES="$REVIEW_DIR/phase1-review-samples.md"
-PLAN="$ROOT/measure/tracks/$TRACK_ID/plan.md"
+track_dir_resolve() {
+  local track_id="$1"
+  if [[ -d "$ROOT/measure/archive/$track_id" ]]; then
+    printf '%s\n' "$ROOT/measure/archive/$track_id"
+  else
+    printf '%s\n' "$ROOT/measure/tracks/$track_id"
+  fi
+}
+TRACK_DIR="$(track_dir_resolve "$TRACK_ID")"
+PLAN="$TRACK_DIR/plan.md"
 REGISTRY="$ROOT/measure/tracks.md"
 YLE_RELEASE="$ROOT/english/cefr-vocabulary/review/yle-2025/RELEASE-YLE-2025.md"
+GENERATOR="$ROOT/english/cefr-vocabulary/scripts/generate-vocabulary-graph.js"
+FROZEN_YLE_GRAPH="$ROOT/english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json"
 
 doc_patterns() {
   local file="$1"
@@ -559,6 +570,257 @@ if [[ "$review_status" -eq 0 ]]; then
 else
   printf '%s\n' "$review_error"
   fail "review sample threshold, precision threshold, or stratification axes are missing"
+fi
+
+for contract_path in "$MAPPING" "$MUTATION" "$SAMPLES"; do
+  contract_name="$(basename "$contract_path")"
+  echo "=== $contract_name closes with a sentinel or complete normative sentence ==="
+  closure_status=0
+  closure_error=""
+  if closure_error="$(python3 - "$contract_path" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+if not path.is_file():
+    raise SystemExit(f"missing document: {path}")
+text = path.read_text(encoding="utf-8")
+lines = [line.strip() for line in text.splitlines() if line.strip()]
+if not lines:
+    raise SystemExit("contract document is empty")
+
+sentinel = re.search(
+    r"^##\s+(?:Contract\s+)?(?:Closure|Completion|Closing(?:\s+(?:Section|Contract))?|End\s+State)\s*$",
+    text,
+    re.IGNORECASE | re.MULTILINE,
+)
+if sentinel:
+    closing_text = text[sentinel.end():]
+    if re.search(
+        r"^\s*(?:Contract\s+status|Status|Closure\s+status|Completion)\s*:\s*(?:complete|closed)\.?\s*$",
+        closing_text,
+        re.IGNORECASE | re.MULTILINE,
+    ) is None:
+        raise SystemExit("closing sentinel has no complete status line")
+    print("complete closing sentinel section found")
+else:
+    prose_paragraphs = []
+    paragraph = []
+    in_fence = False
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("```"):
+            if paragraph:
+                prose_paragraphs.append(paragraph)
+                paragraph = []
+            in_fence = not in_fence
+            continue
+        if in_fence or not stripped or stripped.startswith("#") or stripped.startswith("|"):
+            if paragraph:
+                prose_paragraphs.append(paragraph)
+                paragraph = []
+            continue
+        if re.match(r"^[-*+]\s+", stripped) or re.match(r"^\d+[.)]\s+", stripped):
+            if paragraph:
+                prose_paragraphs.append(paragraph)
+                paragraph = []
+            continue
+        paragraph.append(stripped)
+    if paragraph:
+        prose_paragraphs.append(paragraph)
+
+    incomplete = [
+        " ".join(block)
+        for block in prose_paragraphs
+        if re.search(r"[.!?](?:[\"'`\)\]]*)?$", block[-1]) is None
+        and not block[-1].endswith(":")
+    ]
+    if incomplete:
+        raise SystemExit(f"incomplete prose paragraph: {incomplete[0]!r}")
+    final_line = prose_paragraphs[-1][-1] if prose_paragraphs else ""
+    if re.search(
+        r"\b(?:must|shall|required|requires|does not|cannot|will|remains|stays|only|until|stops)\b",
+        " ".join(prose_paragraphs[-1]) if prose_paragraphs else "",
+        re.IGNORECASE,
+    ) is None:
+        raise SystemExit(f"final prose paragraph is not normative: {final_line!r}")
+    print("complete normative prose paragraphs found")
+PY
+)"; then
+    closure_status=0
+  else
+    closure_status=$?
+  fi
+  if [[ "$closure_status" -eq 0 ]]; then
+    printf '%s\n' "$closure_error"
+    pass "$contract_name has a complete closure requirement"
+  else
+    printf '%s\n' "$closure_error"
+    fail "$contract_name is truncated or lacks a complete normative closure"
+  fi
+done
+
+echo "=== YLE proof uses supported tooling and creates a safe temporary comparison artifact ==="
+proof_status=0
+proof_error=""
+if proof_error="$(python3 - "$MUTATION" "$GENERATOR" "$FROZEN_YLE_GRAPH" "$ROOT" <<'PY'
+import hashlib
+import re
+import shlex
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+mutation_path, generator_path, frozen_path, repo_root = map(Path, sys.argv[1:])
+mutation = mutation_path.read_text(encoding="utf-8") if mutation_path.is_file() else ""
+generator = generator_path.read_text(encoding="utf-8") if generator_path.is_file() else ""
+errors = []
+
+command_lines = [
+    line.strip()
+    for line in mutation.splitlines()
+    if re.match(r"^node\s+.*generate-vocabulary-graph\.js(?:\s|$)", line.strip())
+]
+if not command_lines:
+    errors.append("mutation contract has no executable generator command")
+    command_lines = []
+
+if re.search(r"\b(?:sha256sum|shasum)\b", mutation) is None:
+    errors.append("YLE proof does not hash the temporary comparison artifact")
+if re.search(r"\bcmp\b", mutation) is None:
+    errors.append("YLE proof does not compare the temporary artifact with the frozen graph")
+if re.search(r"(?:/tmp/|mktemp|tmpdir|temporary[ -_]?(?:file|artifact)|temp[ -_]?(?:file|artifact))", mutation, re.IGNORECASE) is None:
+    errors.append("YLE proof does not name a temporary comparison artifact")
+if re.search(
+    r"(?:does not overwrite|must not overwrite|leaves[^\n]{0,100}unchanged|without[^\n]{0,100}overwrite)",
+    mutation,
+    re.IGNORECASE,
+) is None:
+    errors.append("YLE proof does not state that the frozen baseline stays unchanged")
+
+cli_support = bool(
+    re.search(r"process\.argv|parseArgs|argv\s*\[", generator)
+    and re.search(r"--source\b|source(?:Path|File|Name)?", generator, re.IGNORECASE)
+    and re.search(r"--output\b|output(?:Path|File)?", generator, re.IGNORECASE)
+)
+sandbox_procedure = bool(
+    re.search(r"\bmktemp\b", mutation)
+    and re.search(r"\b(?:cp|rsync|install)\b", mutation)
+    and re.search(r"\bnode\b", mutation)
+    and re.search(r"\bcmp\b", mutation)
+)
+
+tokens = []
+output_argument = False
+if command_lines:
+    try:
+        tokens = shlex.split(command_lines[0])
+    except ValueError as exc:
+        errors.append(f"cannot parse generator command: {exc}")
+    output_argument = any(token == "--output" or token.startswith("--output=") for token in tokens)
+
+if output_argument and not cli_support and not sandbox_procedure:
+    errors.append("documented --output/--source flags are unsupported by the repository generator")
+if not output_argument and not sandbox_procedure:
+    errors.append("YLE proof has no supported output procedure")
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+frozen_before = digest(frozen_path) if frozen_path.is_file() else None
+probe_returncode = None
+probe_output_exists = False
+probe_output_path = None
+probe_command = []
+
+with tempfile.TemporaryDirectory(prefix="gse-vocab-yle-proof-") as temporary_root:
+    sandbox = Path(temporary_root)
+    script_target = sandbox / "english/cefr-vocabulary/scripts/generate-vocabulary-graph.js"
+    script_target.parent.mkdir(parents=True, exist_ok=True)
+    if generator_path.is_file():
+        shutil.copy2(generator_path, script_target)
+    source_target = sandbox / "english/cefr-vocabulary/source-pdfs"
+    source_target.parent.mkdir(parents=True, exist_ok=True)
+    source_target.symlink_to(repo_root / "english/cefr-vocabulary/source-pdfs", target_is_directory=True)
+
+    if tokens and all("$" not in token and "`" not in token for token in tokens):
+        probe_command = list(tokens)
+        probe_output_path = sandbox / "yle-baseline-regenerated.json"
+        replaced = False
+        rewritten = []
+        skip_next = False
+        for index, token in enumerate(probe_command):
+            if skip_next:
+                skip_next = False
+                continue
+            if token == "--output":
+                rewritten.extend([token, str(probe_output_path)])
+                skip_next = True
+                replaced = True
+            elif token.startswith("--output="):
+                rewritten.append(f"--output={probe_output_path}")
+                replaced = True
+            elif token.endswith("generate-vocabulary-graph.js"):
+                rewritten.append(str(script_target))
+            else:
+                rewritten.append(token)
+        probe_command = rewritten
+        if not replaced and sandbox_procedure:
+            probe_output_path = sandbox / "english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json"
+    elif sandbox_procedure:
+        probe_command = ["node", str(script_target)]
+        probe_output_path = sandbox / "english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json"
+
+    if probe_command:
+        try:
+            probe = subprocess.run(
+                probe_command,
+                cwd=sandbox,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                timeout=120,
+                check=False,
+            )
+            probe_returncode = probe.returncode
+            if probe.returncode != 0:
+                errors.append(f"safe generator probe exited {probe.returncode}: {probe.stderr.strip()[:300]}")
+        except (OSError, subprocess.SubprocessError) as exc:
+            errors.append(f"safe generator probe could not run: {exc}")
+    else:
+        errors.append("YLE proof generator command could not be safely exercised")
+
+    probe_output_exists = bool(probe_output_path and probe_output_path.is_file() and probe_output_path.stat().st_size > 0)
+    if not probe_output_exists:
+        errors.append("safe generator probe did not create the requested temporary comparison artifact")
+
+frozen_after = digest(frozen_path) if frozen_path.is_file() else None
+if frozen_before is None or frozen_after != frozen_before:
+    errors.append("safe YLE proof probe changed the tracked frozen baseline")
+
+print(f"generator CLI argument support: {'yes' if cli_support else 'no'}")
+print(f"documented sandbox procedure: {'yes' if sandbox_procedure else 'no'}")
+print(f"safe generator probe exit: {probe_returncode}")
+print(f"temporary comparison artifact created: {'yes' if probe_output_exists else 'no'}")
+print(f"frozen baseline unchanged: {'yes' if frozen_before is not None and frozen_after == frozen_before else 'no'}")
+if errors:
+    print("; ".join(errors), file=sys.stderr)
+    raise SystemExit(1)
+PY
+)"; then
+  proof_status=0
+else
+  proof_status=$?
+fi
+if [[ "$proof_status" -eq 0 ]]; then
+  printf '%s\n' "$proof_error"
+  pass "YLE proof uses supported generator behavior and protects the frozen baseline"
+else
+  printf '%s\n' "$proof_error"
+  fail "YLE proof uses unsupported or destructive generator behavior"
 fi
 
 echo "=== Phase 1 plan keeps canonical markers, evidence, and the human gate honest ==="

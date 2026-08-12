@@ -48,16 +48,21 @@
 - [x] Task: Define review samples and thresholds - commit: f3f0db5
   - [x] At least 100 stratified node-to-entry mappings for review - commit: f3f0db5
   - [x] Precision threshold for the mapping sample - commit: f3f0db5
+- [~] Task: Jr-Green remediation of audited Phase 1 contract gaps (RA-P1-B1/B2/B3)
+  - [~] Complete the mutation contract closure and the YLE baseline comparison rule.
+  - [~] Complete the deterministic review-sample top-up rule and its termination condition.
+  - [~] Replace unsupported or in-place YLE proof steps with supported, non-destructive temporary-artifact steps.
 - [b] Task: Complete Phase 1 review gate — deferred:both-owners
 
 **Mid-Red evidence (2026-08-12):**
 
-- The Phase 1 automatable tasks remain `[~]`. The human gate remains `[b] deferred:both-owners`.
+- The initial Red run preceded the earlier contract Green attempt. The bounded remediation task above is now `[~]` for Jr-Green.
+- The human gate remains `[b] deferred:both-owners`.
 - Command: `RED_TEST_COMMAND="bash tests/gse_vocab_p1_contracts.sh" bash tests/gse_vocab_p1_contracts.sh`
-- Result: expected Red, exit `1`.
-- Passing probes: pinned provenance, FR-6 owner words, labelled cache counts, raw-cache tracking, the YLE freeze record, and registry status.
-- Intended failures: the mapping contract, special-value semantics, queue shapes and isolation, no-inference rule, mutation fields, version and diff rules, YLE reproducibility contract, review threshold, and Green evidence markers are absent.
-- Red artifact: `tests/gse_vocab_p1_contracts.sh`. Jr-Green owns the contract documents and Green marker updates.
+- Result: expected Red, exit `1`, with `Total: 22 checks (PASS=19, FAIL=3)`.
+- Targeted failures: RA-P1-B1 mutation-contract closure; RA-P1-B2 review-sample top-up closure; RA-P1-B3 supported, non-destructive YLE proof and temporary comparison artifact.
+- Hardening added: each contract now needs a complete closing sentinel or normative final sentence; the YLE probe safely exercises a copied real generator and verifies the frozen baseline hash stays unchanged.
+- Red artifact: `tests/gse_vocab_p1_contracts.sh`. Jr-Green owns the three bounded remediation items and later contract Green evidence.
 
 ## Phase 2: Tests And Fixtures
 
