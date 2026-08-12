@@ -7,14 +7,14 @@ exact entry. The mutation writes this object under `node.metadata.gse`:
 
 ```json
 {
-  "itemId": "<GSE item ID>",
-  "audience": "GL|YL",
-  "gseScore": "<source gse value>",
-  "starred": "<boolean>",
-  "temporaryGse": "<boolean>",
-  "cefrBand": "<normalized CEFR band>",
-  "definition": "<source definition>",
-  "example": "<source example>",
+  "itemId": "<string: GSE item ID>",
+  "audience": "<enum: GL|YL>",
+  "gseScore": "<string: exact source gse value>",
+  "starred": true,
+  "temporaryGse": false,
+  "cefrBand": "<enum: PRE-A1|A1|A2|B1|B2|C1|C2>",
+  "definition": "<string: source definition>",
+  "example": "<string: source example>",
   "sourceCitation": {
     "sourceId": "gse-vocabulary-gl-10-67-2026-08-11|gse-vocabulary-yl-10-59-2026-08-11",
     "itemId": "<GSE item ID>",
@@ -23,10 +23,35 @@ exact entry. The mutation writes this object under `node.metadata.gse`:
 }
 ```
 
-`gseScore`, `cefrBand`, `definition`, and `example` are source-backed values.
-`itemId` is the required source citation. The mutation copies a value only when
-the cited source item states that value. It omits an absent optional value. It
-does not invent a value or replace the existing Cambridge `metadata.cefr`.
+`itemId` and `audience` are required. `gseScore` is required when the source
+item has `gse`; it preserves the exact source string, including a trailing
+asterisk. `starred` is required when `gseScore` is present and is a boolean.
+`temporaryGse` is required when the source record has that boolean field.
+`cefrBand`, `definition`, and `example` are optional and are omitted when the
+source item omits them. The mutation copies a value only when the cited source
+item states that value. It does not invent a value or replace the existing
+Cambridge `metadata.cefr`.
+
+The mapper normalizes a GL long CEFR value such as `<A1 (10-21)` by removing
+the leading `<` and the first following space or `(` suffix, producing `A1`.
+It normalizes a YL short value such as `<A1` by removing the leading `<`, also
+producing `A1`. It uppercases the resulting band and accepts only
+`PRE-A1`, `A1`, `A2`, `B1`, `B2`, `C1`, or `C2`; an invalid or absent value is
+omitted and enters the relevant unmapped or source-data queue.
+
+### Source-To-Node Field Mapping
+
+| Pinned source field | Node field | Type and rule |
+|---|---|---|
+| `itemId` | `metadata.gse.itemId` and `metadata.gse.sourceCitation.itemId` | required string; copy exactly |
+| export audience | `metadata.gse.audience` | required `GL` or `YL` enum; copy exactly |
+| `gse.rawValue` | `metadata.gse.gseScore` | required string when present; copy exactly, including `*` |
+| `gse.starred` | `metadata.gse.starred` | required boolean when `gseScore` is present |
+| `temporaryGse` | `metadata.gse.temporaryGse` | required boolean when the source field exists |
+| `cefr` | `metadata.gse.cefrBand` | optional normalized CEFR enum |
+| `definition` | `metadata.gse.definition` | optional string; copy exactly |
+| `example` | `metadata.gse.example` | optional string; copy exactly |
+| export identifier and SHA-256 | `metadata.gse.sourceCitation.sourceId` and `.exportSha256` | required strings; copy exactly |
 
 ## Reconciliation
 
@@ -35,16 +60,30 @@ The mutation retains the existing Cambridge level in `metadata.cefr` and
 `metadata.gse.cefrBand`. When an existing GSE value differs from the pinned
 entry, the pinned source corrects `metadata.gse` and the diff report records a
 level correction. When the Cambridge and GSE bands differ, both values remain
-visible and the disagreement report receives a row. The mutation makes no
-silent overwrite.
+visible and the disagreement report receives a row. The labelled count
+`Conflicts: integer` records these rows. The mutation makes no silent overwrite.
+
+The generator writes disagreement rows to
+`english/cefr-vocabulary/review/gse-vocab/reports/cambridge-gse-cefr-conflicts.jsonl`.
+Each JSON Lines row has this schema:
+
+```json
+{"nodeId":"<string>","itemId":"<string>","audience":"GL|YL","cambridgeCefr":"<string>","cambridgeCefrAlignments":["<string>"],"gseCefrBand":"<enum: PRE-A1|A1|A2|B1|B2|C1|C2>","reason":"cambridge-gse-cefr-disagreement","sourceExportSha256":"<SHA-256>"}
+```
+
+The report preserves both source values. It does not change the Cambridge
+fields to resolve a disagreement.
 
 ## Core Version Bump
 
 The generator creates a new core graph version by changing the domain node
 `metadata.schemaVersion` from the prior core version to a distinct new core
-version. The new core version is separate from and different from the frozen
-YLE baseline version. It writes the new graph to a new versioned artifact path;
-it does not overwrite the frozen YLE baseline artifact.
+version. A core version has the format `gse-vocab-YYYYMMDD-rNN`, where
+`YYYYMMDD` is the supplied UTC release date and `NN` is a two-digit revision
+counter. The first release for a date uses `r01`; a repeated release date uses
+the next counter. The new core version is separate from and different from the
+frozen YLE baseline version. It writes the new graph to a new versioned
+artifact path; it does not overwrite the frozen YLE baseline artifact.
 
 The release manifest records the previous version, the new core version, both
 artifact paths, and SHA-256 checksums. A version change needs the later core
@@ -67,17 +106,33 @@ the following labelled counts. Each value is a non-negative integer.
 
 The report also records `prior SHA-256`, `new SHA-256`, `bytes changed:
 integer`, and a deterministic sorted list of changed `nodeId` values. This is
+the complete byte-level change record for the new core version.
 
 ## Executable YLE Baseline Proof
 
 Before and after the GSE mutation, run this verification against the frozen
-YLE release record `review/yle-2025/RELEASE-YLE-2025.md`:
+YLE release record `review/yle-2025/RELEASE-YLE-2025.md`. The baseline
+regeneration is byte-identical when it reproduces the frozen artifact. The
+current generator has no output-path option. Run it only in a copied temporary
+sandbox:
 
 ```bash
-node english/cefr-vocabulary/scripts/generate-vocabulary-graph.js --source=yle-2025 --output=/tmp/yle-baseline-regenerated.json
-sha256sum /tmp/yle-baseline-regenerated.json
-cmp --silent /tmp/yle-baseline-regenerated.json english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json
-bash tests/yle_p6_freeze.sh
+SANDBOX="$(mktemp -d)"
+mkdir -p "$SANDBOX/english/cefr-vocabulary/scripts"
+cp english/cefr-vocabulary/scripts/generate-vocabulary-graph.js "$SANDBOX/english/cefr-vocabulary/scripts/"
+ln -s "$PWD/english/cefr-vocabulary/source-pdfs" "$SANDBOX/english/cefr-vocabulary/source-pdfs"
+cd "$SANDBOX"
+node english/cefr-vocabulary/scripts/generate-vocabulary-graph.js
+sha256sum "$SANDBOX/english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json"
+cmp --silent "$SANDBOX/english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json" "$OLDPWD/english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json"
+bash "$OLDPWD/tests/yle_p6_freeze.sh"
+rm -rf "$SANDBOX"
 ```
 
-The proof compares the regenerated YLE baseline byte-identical artifact with
+The proof compares the regenerated sandbox artifact byte-for-byte with the
+tracked frozen YLE baseline. It hashes the sandbox artifact and leaves the
+tracked frozen baseline unchanged.
+
+## Contract Closure
+
+Contract status: complete.

@@ -29,7 +29,12 @@ reason in the manifest.
 | Multi-POS core nodes | 10 |
 | Cambridge-versus-GSE conflict cases | 10 |
 
-Strata overlap. The selector adds deterministic general-population rows until
+Strata overlap. The selector first takes the sorted `nodeId:itemId` rows that
+meet each applicable stratum minimum. It then adds unused rows from the full
+accepted population in the same sorted order until the selected row count is
+at least 100. The selector stops when it reaches 100 rows or when the accepted
+population has no unused row. The manifest records the final count and any
+population shortfall. A count below 100 is a review failure.
 
 ## Precision Threshold
 
@@ -43,3 +48,7 @@ states the precision result.
 
 The mapping audit stays open when the final sample has fewer than 100 mappings
 or its precision is below 98%. Human approval remains a separate later gate.
+
+## Contract Closure
+
+Contract status: complete.
