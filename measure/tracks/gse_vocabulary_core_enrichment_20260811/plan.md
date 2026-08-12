@@ -50,6 +50,15 @@
   - [~] Precision threshold for the mapping sample
 - [b] Task: Complete Phase 1 review gate — deferred:both-owners
 
+**Mid-Red evidence (2026-08-12):**
+
+- The Phase 1 automatable tasks remain `[~]`. The human gate remains `[b] deferred:both-owners`.
+- Command: `RED_TEST_COMMAND="bash tests/gse_vocab_p1_contracts.sh" bash tests/gse_vocab_p1_contracts.sh`
+- Result: expected Red, exit `1`.
+- Passing probes: pinned provenance, FR-6 owner words, labelled cache counts, raw-cache tracking, the YLE freeze record, and registry status.
+- Intended failures: the mapping contract, special-value semantics, queue shapes and isolation, no-inference rule, mutation fields, version and diff rules, YLE reproducibility contract, review threshold, and Green evidence markers are absent.
+- Red artifact: `tests/gse_vocab_p1_contracts.sh`. Jr-Green owns the contract documents and Green marker updates.
+
 ## Phase 2: Tests And Fixtures
 
 - [~] Task: Build GSE vocabulary extraction fixtures
