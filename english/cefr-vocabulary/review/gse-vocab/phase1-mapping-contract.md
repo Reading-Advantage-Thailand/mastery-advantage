@@ -73,6 +73,7 @@ Phase 3 writes JSON Lines files at these explicit paths:
 english/cefr-vocabulary/review/gse-vocab/queues/ambiguous-node-to-entry.jsonl
 english/cefr-vocabulary/review/gse-vocab/queues/unmapped-node-to-entry.jsonl
 english/cefr-vocabulary/review/gse-vocab/queues/unmatched-gse-entry.jsonl
+english/cefr-vocabulary/review/gse-vocab/queues/invalid-cefr-source-data.jsonl
 ```
 
 The ambiguous queue persists one durable row for each node with two or more
@@ -95,9 +96,20 @@ The unmatched-entry queue persists each GSE `itemId` with no matching node:
 {"itemId":"<string>","expression":"<string>","audience":"GL|YL","normalizedGrammaticalCategories":["<string>"],"reason":"no-exact-node","sourceExportSha256":"<sha256>"}
 ```
 
+The invalid-CEFR source-data queue is a JSON Lines file. It persists one durable
+row when a mapped source record has a present `cefr` value that cannot normalize
+to `PRE-A1`, `A1`, `A2`, `B1`, `B2`, `C1`, or `C2`:
+
+```json
+{"nodeId":"<string>","itemId":"<string>","audience":"GL|YL","rawCefr":"<string: present source value>","reason":"invalid-cefr-band","sourceExportSha256":"<sha256>"}
+```
+
+An absent optional CEFR value is omitted from the node and creates no queue row.
+The invalid-CEFR source-data queue contains no definition or example text.
+
 ## FR-8 Queue Isolation
 
-FR-8 applies to the three queue files above. This track reads only these
+FR-8 applies to the four queue files above. This track reads only these
 explicit `review/gse-vocab/queues/` files when it builds its reports. A foreign
 queue must not change this track's report. A foreign queue file must not
 affect or poison this track's report. The mapper

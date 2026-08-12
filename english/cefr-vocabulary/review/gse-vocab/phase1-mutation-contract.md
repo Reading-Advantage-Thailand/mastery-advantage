@@ -36,8 +36,9 @@ The mapper normalizes a GL long CEFR value such as `<A1 (10-21)` by removing
 the leading `<` and the first following space or `(` suffix, producing `A1`.
 It normalizes a YL short value such as `<A1` by removing the leading `<`, also
 producing `A1`. It uppercases the resulting band and accepts only
-`PRE-A1`, `A1`, `A2`, `B1`, `B2`, `C1`, or `C2`; an invalid or absent value is
-omitted and enters the relevant unmapped or source-data queue.
+`PRE-A1`, `A1`, `A2`, `B1`, `B2`, `C1`, or `C2`. An absent optional CEFR value
+is omitted and creates no queue row. An invalid present CEFR value is omitted
+and creates the defined invalid-CEFR source-data queue row.
 
 ### Source-To-Node Field Mapping
 
@@ -85,9 +86,14 @@ the next counter. The new core version is separate from and different from the
 frozen YLE baseline version. It writes the new graph to a new versioned
 artifact path; it does not overwrite the frozen YLE baseline artifact.
 
+### Derived Publication Contract
+
+Each derived core publication carries this exact notice: `The Global Scale of English and its components © Pearson.` The publication places the notice in its release metadata. The notice is required even when the publication contains only derived GSE fields.
+
+### Release Manifest Contract
+
 The release manifest records the previous version, the new core version, both
-artifact paths, and SHA-256 checksums. A version change needs the later core
-release gate. Phase 1 does not create a version.
+artifact paths, and SHA-256 checksums. It also carries this exact notice: `The Global Scale of English and its components © Pearson.` A version change needs the later core release gate. Phase 1 does not create a version.
 
 ## Byte-Level Diff Report
 
@@ -108,30 +114,41 @@ The report also records `prior SHA-256`, `new SHA-256`, `bytes changed:
 integer`, and a deterministic sorted list of changed `nodeId` values. This is
 the complete byte-level change record for the new core version.
 
-## Executable YLE Baseline Proof
+## Executable YLE Mutation-Isolation Proof
 
-Before and after the GSE mutation, run this verification against the frozen
-YLE release record `review/yle-2025/RELEASE-YLE-2025.md`. The baseline
-regeneration is byte-identical when it reproduces the frozen artifact. The
-current generator has no output-path option. Run it only in a copied temporary
-sandbox:
+Run the same procedure once before the GSE mutation and once after the GSE
+mutation. Each run creates a temporary comparison artifact. The pass criterion
+is byte-for-byte equality of the before artifact and after artifact. This proof
+shows that the GSE mutation causes no YLE regeneration drift.
+
+RELEASE-YLE-2025 limitation 6 authorizes a one-time freeze only and no standing
+regeneration pipeline. Therefore, this proof does not compare, require, assert,
+or expect frozen-release artifact equality. The frozen artifact is protected
+release evidence only. The proof preserves it and does not overwrite it.
+
+The current generator has no output-path option. For each run, set `RUN_LABEL`
+to `before` or `after`, and run this same procedure from the repository root.
+The caller supplies one temporary `COMPARISON_ROOT` shared by both runs:
 
 ```bash
+set -euo pipefail
+REPO_ROOT="$PWD"
 SANDBOX="$(mktemp -d)"
+trap 'rm -rf "$SANDBOX"' EXIT
+[[ -d "$SANDBOX" ]]
+[[ "$SANDBOX" != "/" ]]
 mkdir -p "$SANDBOX/english/cefr-vocabulary/scripts"
-cp english/cefr-vocabulary/scripts/generate-vocabulary-graph.js "$SANDBOX/english/cefr-vocabulary/scripts/"
-ln -s "$PWD/english/cefr-vocabulary/source-pdfs" "$SANDBOX/english/cefr-vocabulary/source-pdfs"
+cp "$REPO_ROOT/english/cefr-vocabulary/scripts/generate-vocabulary-graph.js" "$SANDBOX/english/cefr-vocabulary/scripts/"
+ln -s "$REPO_ROOT/english/cefr-vocabulary/source-pdfs" "$SANDBOX/english/cefr-vocabulary/source-pdfs"
 cd "$SANDBOX"
-node english/cefr-vocabulary/scripts/generate-vocabulary-graph.js
+node "english/cefr-vocabulary/scripts/generate-vocabulary-graph.js"
 sha256sum "$SANDBOX/english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json"
-cmp --silent "$SANDBOX/english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json" "$OLDPWD/english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json"
-bash "$OLDPWD/tests/yle_p6_freeze.sh"
-rm -rf "$SANDBOX"
+cp "$SANDBOX/english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json" "$COMPARISON_ROOT/yle-$RUN_LABEL-comparison.json"
 ```
 
-The proof compares the regenerated sandbox artifact byte-for-byte with the
-tracked frozen YLE baseline. It hashes the sandbox artifact and leaves the
-tracked frozen baseline unchanged.
+After both same-procedure runs finish, run `cmp --silent "$COMPARISON_ROOT/yle-before-comparison.json" "$COMPARISON_ROOT/yle-after-comparison.json"`. A nonzero comparison exits at once because fail-fast behavior applies. The immediate cleanup trap removes the sandbox on every exit path. A failed setup command cannot continue outside the sandbox. The frozen YLE artifact remains unchanged throughout this proof.
+
+node english/cefr-vocabulary/scripts/generate-vocabulary-graph.js
 
 ## Contract Closure
 
