@@ -58,7 +58,7 @@
   - [x] Require fail-fast, validated, quoted, trap-protected sandbox behavior and an adversarial setup-failure probe - commit: e265616
   - [x] Define the invalid-CEFR source-data queue and keep absent optional CEFR out of that queue - commit: e265616
   - [x] Normalize trailing punctuation in commit evidence - commit: e265616
-- [~] Task: Jr-Green remediation of Phase 1 Red evidence defects — remove the orphan bare generator command and correct the cycle-2 Red evidence
+- [x] Task: Jr-Green remediation of Phase 1 Red evidence defects — remove the orphan bare generator command and correct the cycle-2 Red evidence - commit: d759ef1
 - [b] Task: Complete Phase 1 review gate — deferred:both-owners
 
 **Mid-Red evidence (2026-08-12):**
@@ -84,9 +84,9 @@
 - The bounded remediation task is `[~]` for Jr-Green. The Phase 1 human gate remains `[b] deferred:both-owners`.
 - Red regression command: `RED_TEST_COMMAND="bash tests/gse_vocab_p1_contracts.sh"`.
 - The strengthened harness executes two isolated YLE generator runs and compares their outputs without comparing either output to the frozen release artifact.
-- At the role-base contract state, the Red command exited `1` with `Total: 26 checks (PASS=22, FAIL=4)`.
-- Remaining failures are the Pearson attribution contract, invalid-CEFR queue contract, same-procedure YLE contract property, and safe sandbox procedure.
-- RA-P1-N4 is closed in Red by removing trailing punctuation from the three `60f4ef3` plan evidence lines.
+- At the role-base contract state, the Red command exited `1` with `Total: 26 checks (PASS=21, FAIL=5)`.
+- Remaining failures are the Pearson attribution contract, invalid-CEFR queue contract, same-procedure YLE contract property, safe sandbox procedure, and Phase 1 plan commit SHA evidence has trailing punctuation.
+- RA-P1-N4 is closed in Green at 1d0ce0d by removing trailing punctuation from the three `60f4ef3` plan evidence lines.
 - Log: `/tmp/opencode/gse-vocabulary-p1-mid-red-remediation2-a2314fa.log`.
 - Red artifact: `tests/gse_vocab_p1_contracts.sh`. The next role owns the bounded contract remediation.
 
