@@ -421,6 +421,109 @@ else
   fail "mutation contract omits one or more required source-backed node fields"
 fi
 
+echo "=== derived publication and release manifest require the exact Pearson attribution ==="
+attribution_error=""
+if attribution_error="$(python3 - "$MUTATION" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+text = path.read_text(encoding="utf-8") if path.is_file() else ""
+notice = "The Global Scale of English and its components © Pearson."
+errors = []
+if notice not in text:
+    errors.append("exact Pearson notice is absent from the mutation contract")
+elif text.count(notice) < 2:
+    errors.append("exact Pearson notice does not appear once for each required contract")
+
+for label, anchor in {
+    "derived publication": r"derived\s+(?:core\s+)?publication|publication\s+contract|derived\s+artifact",
+    "release manifest": r"release\s+manifest",
+}.items():
+    matches = list(re.finditer(anchor, text, re.IGNORECASE))
+    if not matches:
+        errors.append(f"{label} section is missing")
+        continue
+    if not any(notice in text[max(0, match.start() - 700): match.end() + 900] for match in matches):
+        errors.append(f"exact Pearson notice is not required in the {label} section")
+
+if errors:
+    print("; ".join(errors), file=sys.stderr)
+    raise SystemExit(1)
+print("exact Pearson notice is required in both derived publication and release manifest sections")
+PY
+)"; then
+  attribution_status=0
+else
+  attribution_status=$?
+fi
+if [[ "$attribution_status" -eq 0 ]]; then
+  printf '%s\n' "$attribution_error"
+  pass "derived publication and release manifest contracts carry the exact Pearson attribution"
+else
+  printf '%s\n' "$attribution_error"
+  fail "derived publication or release manifest contract omits the exact Pearson attribution"
+fi
+
+echo "=== mapping contract defines invalid-CEFR source-data queue semantics ==="
+cefr_queue_status=0
+cefr_queue_error=""
+if cefr_queue_error="$(python3 - "$MAPPING" "$MUTATION" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+mapping_path, mutation_path = map(Path, sys.argv[1:])
+mapping = mapping_path.read_text(encoding="utf-8") if mapping_path.is_file() else ""
+mutation = mutation_path.read_text(encoding="utf-8") if mutation_path.is_file() else ""
+errors = []
+queue_path = "english/cefr-vocabulary/review/gse-vocab/queues/invalid-cefr-source-data.jsonl"
+if queue_path not in mapping:
+    errors.append("invalid-CEFR source-data queue path is not defined under this track")
+queue_anchors = list(re.finditer(r"invalid.{0,80}CEFR|CEFR.{0,80}invalid", mapping, re.IGNORECASE | re.DOTALL))
+queue_windows = [mapping[max(0, match.start() - 500): match.end() + 1300] for match in queue_anchors]
+required = [
+    r"source[- ]data",
+    r"JSONL|JSON Lines",
+    r"nodeId",
+    r"itemId",
+    r"audience",
+    r"rawCefr|rawCEFR|sourceCefr|cefrRaw",
+    r"reason",
+    r"invalid[- ]cefr|invalid.{0,30}band",
+    r"sourceExportSha256|exportSha256|SHA-256",
+]
+if not queue_windows or not any(all(re.search(pattern, window, re.IGNORECASE | re.DOTALL) for pattern in required) for window in queue_windows):
+    errors.append("invalid-CEFR source-data queue row shape is incomplete")
+
+absence_text = f"{mapping}\n{mutation}"
+if re.search(
+    r"(?:absent|missing).{0,180}(?:optional|CEFR).{0,220}(?:no queue(?: row)?|not queued|does not create.{0,40}queue)"
+    r"|(?:optional|CEFR).{0,180}(?:absent|missing).{0,220}(?:no queue(?: row)?|not queued|does not create.{0,40}queue)",
+    absence_text,
+    re.IGNORECASE | re.DOTALL,
+) is None:
+    errors.append("absent optional CEFR is not explicitly excluded from queue creation")
+
+if errors:
+    print("; ".join(errors), file=sys.stderr)
+    raise SystemExit(1)
+print("invalid CEFR has a durable source-data queue, while an absent optional CEFR has no queue row")
+PY
+)"; then
+  cefr_queue_status=0
+else
+  cefr_queue_status=$?
+fi
+if [[ "$cefr_queue_status" -eq 0 ]]; then
+  printf '%s\n' "$cefr_queue_error"
+  pass "invalid CEFR source data has a defined queue and absent optional CEFR creates no queue row"
+else
+  printf '%s\n' "$cefr_queue_error"
+  fail "invalid CEFR queue semantics are missing or absent optional CEFR is queued"
+fi
+
 echo "=== mutation contract defines a distinct core version and byte-level diff ==="
 if doc_patterns "$MUTATION" \
   '(?:core graph|core) version' \
@@ -433,17 +536,240 @@ else
   fail "mutation contract lacks version-bump or byte-diff mechanics"
 fi
 
-echo "=== mutation contract defines the YLE byte-identical reproducibility proof ==="
-if doc_patterns "$MUTATION" \
-  '(?:YLE|Cambridge YLE).{0,300}baseline' \
-  'baseline.{0,260}(?:regenerat|reproduc|re-run)' \
-  'byte[- ]identical|bytewise identical' \
-  'proof|assert|compare|verification' \
-  'RELEASE-YLE-2025|review/yle-2025|yle-2025' \
-  'SHA-256|checksum|cmp|diff'; then
-  pass "mutation contract specifies a byte-identical regeneration proof against the frozen YLE baseline"
+echo "=== mutation contract defines a same-procedure before-vs-after YLE proof ==="
+proof_status=0
+proof_error=""
+if proof_error="$(python3 - "$MUTATION" "$YLE_RELEASE" "$GENERATOR" "$FROZEN_YLE_GRAPH" "$ROOT" <<'PY'
+import hashlib
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+mutation_path, release_path, generator_path, frozen_path, repo_root = map(Path, sys.argv[1:])
+mutation = mutation_path.read_text(encoding="utf-8") if mutation_path.is_file() else ""
+release = release_path.read_text(encoding="utf-8") if release_path.is_file() else ""
+errors = []
+
+if re.search(r"one-time freeze ceremony.{0,120}no standing regeneration pipeline", release, re.IGNORECASE | re.DOTALL) is None:
+    errors.append("RELEASE-YLE-2025 limitation 6 is not present")
+if re.search(r"no standing regeneration.{0,100}(?:dual-run|regeneration).{0,100}authorized", release, re.IGNORECASE | re.DOTALL) is None:
+    errors.append("RELEASE-YLE-2025 does not prohibit a standing regeneration or dual-run ceremony")
+
+if re.search(r"before.{0,180}after.{0,180}GSE mutation|before and after the GSE mutation", mutation, re.IGNORECASE | re.DOTALL) is None:
+    errors.append("proof does not name before and after the GSE mutation")
+if re.search(r"same[ -](?:procedure|process).{0,240}(?:before|after)|(?:before|after).{0,240}same[ -](?:procedure|process)", mutation, re.IGNORECASE | re.DOTALL) is None:
+    errors.append("proof does not require the same procedure before and after the mutation")
+if re.search(r"before.{0,500}after|after.{0,500}before", mutation, re.IGNORECASE | re.DOTALL) is None:
+    errors.append("proof does not define both before and after comparison artifacts")
+if re.search(r"(?:does not|must not|do not|never)\s+(?:compare|require|assert|expect).{0,180}(?:frozen|release).{0,100}(?:artifact|baseline|equality|identical)", mutation, re.IGNORECASE | re.DOTALL) is None:
+    errors.append("proof does not reject frozen-release equality as its pass criterion")
+
+cmp_lines = [
+    line.strip()
+    for line in mutation.splitlines()
+    if re.search(r"\bcmp\b", line) and not line.lstrip().startswith("#")
+]
+if not any(
+    re.search(r"before", line, re.IGNORECASE)
+    and re.search(r"after", line, re.IGNORECASE)
+    for line in cmp_lines
+):
+    errors.append("proof has no executable cmp between before and after artifacts")
+if any(
+    re.search(r"cmp", line, re.IGNORECASE)
+    and re.search(r"(?:frozen|RELEASE-YLE-2025|cefr-vocabulary-knowledge-space\.json)", line, re.IGNORECASE)
+    and not re.search(r"before|after", line, re.IGNORECASE)
+    for line in cmp_lines
+):
+    errors.append("proof still uses frozen-release equality as the executable cmp target")
+
+if re.search(r"(?:temporary|sandbox).{0,160}(?:unchanged|preserv|does not overwrite|must not overwrite)", mutation, re.IGNORECASE | re.DOTALL) is None:
+    errors.append("proof does not preserve the frozen artifact while comparing temporary outputs")
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+frozen_before = digest(frozen_path) if frozen_path.is_file() else None
+run_errors = []
+artifacts = {}
+comparison_returncode = None
+
+with tempfile.TemporaryDirectory(prefix="gse-vocab-yle-before-after-") as temporary_root:
+    root = Path(temporary_root)
+    for label in ("before", "after"):
+        sandbox = root / label
+        script_target = sandbox / "english/cefr-vocabulary/scripts/generate-vocabulary-graph.js"
+        script_target.parent.mkdir(parents=True, exist_ok=True)
+        source_target = sandbox / "english/cefr-vocabulary/source-pdfs"
+        source_target.parent.mkdir(parents=True, exist_ok=True)
+        if not generator_path.is_file():
+            run_errors.append("repository generator is missing")
+            continue
+        shutil.copy2(generator_path, script_target)
+        source_target.symlink_to(repo_root / "english/cefr-vocabulary/source-pdfs", target_is_directory=True)
+        result = subprocess.run(
+            ["node", str(script_target)],
+            cwd=sandbox,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            timeout=120,
+            check=False,
+        )
+        if result.returncode != 0:
+            run_errors.append(f"{label} same-procedure run exited {result.returncode}: {result.stderr.strip()[:240]}")
+            continue
+        generated = sandbox / "english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json"
+        artifact = root / f"yle-{label}-comparison.json"
+        if not generated.is_file() or generated.stat().st_size == 0:
+            run_errors.append(f"{label} same-procedure run did not create an artifact")
+            continue
+        shutil.copy2(generated, artifact)
+        artifacts[label] = artifact
+
+    if set(artifacts) == {"before", "after"}:
+        comparison = subprocess.run(
+            ["cmp", "--silent", str(artifacts["before"]), str(artifacts["after"])],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+        )
+        comparison_returncode = comparison.returncode
+        if comparison.returncode != 0:
+            run_errors.append("before and after same-procedure artifacts differ")
+    else:
+        run_errors.append("before and after artifacts were not both created")
+
+frozen_after = digest(frozen_path) if frozen_path.is_file() else None
+if frozen_before is None or frozen_after != frozen_before:
+    run_errors.append("same-procedure probe changed the tracked frozen baseline")
+
+print("RELEASE-YLE-2025 limitation 6 checked: one-time freeze with no standing regeneration pipeline")
+print("same-procedure before/after probe executed in two temporary sandboxes")
+print("comparison target: before artifact versus after artifact; frozen artifact is preservation-only")
+print(f"same-procedure cmp exit: {comparison_returncode}")
+if errors or run_errors:
+    print("; ".join(errors + run_errors), file=sys.stderr)
+    raise SystemExit(1)
+PY
+)"; then
+  proof_status=0
 else
-  fail "mutation contract lacks the YLE freeze reproducibility proof"
+  proof_status=$?
+fi
+if [[ "$proof_status" -eq 0 ]]; then
+  printf '%s\n' "$proof_error"
+  pass "YLE proof compares same-procedure before/after artifacts without requiring frozen-release equality"
+else
+  printf '%s\n' "$proof_error"
+  fail "YLE proof does not execute the contract-named same-procedure before/after property"
+fi
+
+echo "=== mutation contract hardens the documented sandbox procedure ==="
+sandbox_status=0
+sandbox_error=""
+if sandbox_error="$(python3 - "$MUTATION" "$ROOT" <<'PY'
+import os
+import re
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+path = Path(sys.argv[1])
+repo_root = Path(sys.argv[2])
+text = path.read_text(encoding="utf-8") if path.is_file() else ""
+blocks = re.findall(r"```[^\n]*\n(.*?)```", text, re.IGNORECASE | re.DOTALL)
+procedures = [block for block in blocks if re.search(r"mktemp\s+-d", block) and re.search(r"generate-vocabulary-graph\.js", block)]
+errors = []
+if not procedures:
+    errors.append("mutation contract has no executable sandbox procedure")
+    procedure = ""
+else:
+    procedure = procedures[0]
+
+lines = [line.strip() for line in procedure.splitlines() if line.strip() and not line.strip().startswith("#")]
+mktemp_index = next((index for index, line in enumerate(lines) if re.search(r"mktemp\s+-d", line)), None)
+if mktemp_index is None:
+    errors.append("sandbox procedure does not create a temporary directory")
+else:
+    if not any(re.search(r"set\s+-[^\n]*e", line) and re.search(r"pipefail", line) for line in lines[:mktemp_index + 1]):
+        errors.append("sandbox procedure lacks fail-fast set -e and pipefail")
+    next_commands = lines[mktemp_index + 1:mktemp_index + 3]
+    if not next_commands or not re.search(r"\btrap\b", next_commands[0]):
+        errors.append("sandbox procedure does not install an immediate cleanup trap")
+
+if re.search(r"-d\s+[\"']?\$SANDBOX", procedure, re.IGNORECASE | re.DOTALL) is None:
+    errors.append("sandbox procedure does not validate that SANDBOX is a directory")
+if re.search(r"\$SANDBOX.{0,100}(?:!=|==).{0,40}[\"']?/[\"']?", procedure, re.IGNORECASE | re.DOTALL) is None:
+    errors.append("sandbox procedure does not reject an unsafe root sandbox path")
+for variable in ("SANDBOX", "PWD", "OLDPWD"):
+    if re.search(rf'(?<!["\'])\${variable}(?!["\'])', procedure):
+        errors.append(f"sandbox procedure contains an unquoted ${variable} path")
+if re.search(r"\bcp\s+english/", procedure):
+    errors.append("sandbox procedure contains an unquoted relative source path")
+
+path_commands = []
+for line in lines:
+    if re.match(r"(?:cp|ln|cd|node|sha256sum|cmp|bash|rm)\b", line):
+        path_commands.append(line)
+for line in path_commands:
+    if re.search(r"\b(?:cp|ln|cd|node|sha256sum|cmp|bash|rm)\b", line) and re.search(r"(?:english/|tests/|\$PWD|\$OLDPWD|\$SANDBOX)", line):
+        if re.search(r"(?:^|\s)(?:english/|tests/|\$PWD|\$OLDPWD|\$SANDBOX)(?:[/\s\"]|$)", line) and not re.search(r'"(?:english/|tests/|\$PWD|\$OLDPWD|\$SANDBOX)', line):
+            errors.append(f"sandbox path argument is not quoted: {line}")
+            break
+
+with tempfile.TemporaryDirectory(prefix="gse-vocab-sandbox-adversary-") as work_root:
+    work = Path(work_root)
+    marker = work / "continued-outside-sandbox"
+    bin_dir = work / "bin"
+    bin_dir.mkdir()
+    failing_mkdir = bin_dir / "mkdir"
+    failing_mkdir.write_text("#!/usr/bin/env sh\nexit 77\n", encoding="utf-8")
+    failing_mkdir.chmod(0o755)
+    fake_node = bin_dir / "node"
+    fake_node.write_text(
+        "#!/usr/bin/env sh\nprintf continued > \"$PWD/continued-outside-sandbox\"\nexit 0\n",
+        encoding="utf-8",
+    )
+    fake_node.chmod(0o755)
+    environment = os.environ.copy()
+    environment["PATH"] = f"{bin_dir}:{environment.get('PATH', '')}"
+    adversarial_script = procedure + f'\nprintf continued > "{marker}"\n'
+    result = subprocess.run(
+        ["bash"],
+        input=adversarial_script,
+        cwd=work,
+        env=environment,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+    if marker.exists():
+        errors.append("adversarial sandbox failure continued outside the sandbox")
+    if result.returncode == 0:
+        errors.append("adversarial sandbox failure path returned success")
+
+if errors:
+    print("; ".join(errors), file=sys.stderr)
+    raise SystemExit(1)
+print("fail-fast, sandbox validation, immediate cleanup, quoted paths, and adversarial stop behavior are present")
+PY
+)"; then
+  sandbox_status=0
+else
+  sandbox_status=$?
+fi
+if [[ "$sandbox_status" -eq 0 ]]; then
+  printf '%s\n' "$sandbox_error"
+  pass "sandbox procedure fails safely before any command can continue outside its temporary directory"
+else
+  printf '%s\n' "$sandbox_error"
+  fail "sandbox procedure lacks fail-fast, validation, cleanup, quoting, or adversarial failure protection"
 fi
 
 echo "=== mutation contract uses labelled integer fields for every byte-diff count ==="
@@ -870,6 +1196,35 @@ if [[ "$plan_status" -eq 0 ]]; then
 else
   printf '%s\n' "$plan_error"
   fail "Phase 1 plan markers, completed-task evidence, or human-gate state is invalid"
+fi
+
+echo "=== Phase 1 plan commit evidence has no trailing punctuation after SHA ==="
+punctuation_status=0
+punctuation_error=""
+if punctuation_error="$(python3 - "$PLAN" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+text = path.read_text(encoding="utf-8") if path.is_file() else ""
+matches = re.findall(r"commit:\s*[0-9a-f]{7,40}\.", text, re.IGNORECASE)
+if matches:
+    print("trailing punctuation after commit SHA: " + ", ".join(matches), file=sys.stderr)
+    raise SystemExit(1)
+print("commit SHA evidence uses canonical punctuation")
+PY
+)"; then
+  punctuation_status=0
+else
+  punctuation_status=$?
+fi
+if [[ "$punctuation_status" -eq 0 ]]; then
+  printf '%s\n' "$punctuation_error"
+  pass "Phase 1 plan commit SHA evidence has normalized punctuation"
+else
+  printf '%s\n' "$punctuation_error"
+  fail "Phase 1 plan commit SHA evidence has trailing punctuation"
 fi
 
 echo "=== track registry does not claim GSE core release before dual owner gates ==="
