@@ -148,8 +148,6 @@ cp "$SANDBOX/english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json" "$COM
 
 After both same-procedure runs finish, run `cmp --silent "$COMPARISON_ROOT/yle-before-comparison.json" "$COMPARISON_ROOT/yle-after-comparison.json"`. A nonzero comparison exits at once because fail-fast behavior applies. The immediate cleanup trap removes the sandbox on every exit path. A failed setup command cannot continue outside the sandbox. The frozen YLE artifact remains unchanged throughout this proof.
 
-node english/cefr-vocabulary/scripts/generate-vocabulary-graph.js
-
 ## Contract Closure
 
 Contract status: complete.
