@@ -49,15 +49,15 @@
   - [x] At least 100 stratified node-to-entry mappings for review - commit: f3f0db5
   - [x] Precision threshold for the mapping sample - commit: f3f0db5
 - [x] Task: Jr-Green remediation of audited Phase 1 contract gaps (RA-P1-B1/B2/B3) - commit: 60f4ef3
-  - [x] Complete the mutation contract closure and the YLE baseline comparison rule - commit: 60f4ef3.
-  - [x] Complete the deterministic review-sample top-up rule and its termination condition - commit: 60f4ef3.
-  - [x] Replace unsupported or in-place YLE proof steps with supported, non-destructive temporary-artifact steps - commit: 60f4ef3.
-- [~] Task: Second bounded remediation of audited Phase 1 contract gaps (RA-P1-B4/N3, RB-P1-B1/B2, Review C NB-1, RA-P1-N4)
-  - [~] Require a same-procedure before-vs-after YLE comparison that proves no GSE-induced regeneration drift without frozen-release equality.
-  - [~] Require the exact Pearson attribution in the derived publication and release manifest contracts.
-  - [~] Require fail-fast, validated, quoted, trap-protected sandbox behavior and an adversarial setup-failure probe.
-  - [~] Define the invalid-CEFR source-data queue and keep absent optional CEFR out of that queue.
-  - [~] Normalize trailing punctuation in commit evidence.
+  - [x] Complete the mutation contract closure and the YLE baseline comparison rule - commit: 60f4ef3
+  - [x] Complete the deterministic review-sample top-up rule and its termination condition - commit: 60f4ef3
+  - [x] Replace unsupported or in-place YLE proof steps with supported, non-destructive temporary-artifact steps - commit: 60f4ef3
+- [x] Task: Second bounded remediation of audited Phase 1 contract gaps (RA-P1-B4/N3, RB-P1-B1/B2, Review C NB-1, RA-P1-N4) - commit: e265616
+  - [x] Require a same-procedure before-vs-after YLE comparison that proves no GSE-induced regeneration drift without frozen-release equality - commit: e265616
+  - [x] Require the exact Pearson attribution in the derived publication and release manifest contracts - commit: e265616
+  - [x] Require fail-fast, validated, quoted, trap-protected sandbox behavior and an adversarial setup-failure probe - commit: e265616
+  - [x] Define the invalid-CEFR source-data queue and keep absent optional CEFR out of that queue - commit: e265616
+  - [x] Normalize trailing punctuation in commit evidence - commit: e265616
 - [b] Task: Complete Phase 1 review gate — deferred:both-owners
 
 **Mid-Red evidence (2026-08-12):**
@@ -88,6 +88,14 @@
 - RA-P1-N4 is closed in Red by removing trailing punctuation from the three `60f4ef3` plan evidence lines.
 - Log: `/tmp/opencode/gse-vocabulary-p1-mid-red-remediation2-a2314fa.log`.
 - Red artifact: `tests/gse_vocab_p1_contracts.sh`. The next role owns the bounded contract remediation.
+
+**Jr-Green remediation cycle 2 evidence (2026-08-12):**
+
+- Implementation commit: `e265616e0d044f40bb23b9034b49ebec01a3a06c` completes the bounded second remediation task.
+- `bash tests/gse_vocab_p1_contracts.sh` exited `0` with `Total: 26 checks (PASS=26, FAIL=0)`.
+- `node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` exited `0` with graph `status: valid`.
+- `git diff --check` exited `0` before the implementation commit.
+- The Phase 1 human gate remains `[b] deferred:both-owners` and has no acceptance evidence.
 
 ## Phase 2: Tests And Fixtures
 
