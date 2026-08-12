@@ -33,21 +33,21 @@
   - [x] Update the redistribution section of `GSE_VOCABULARY_SOURCES.md`:
         definition and example text may be committed onto nodes; transcribe
         the owner words and date - commit: 16cc199
-- [~] Task: Define the node-to-entry mapping contract
-  - [~] Define the binding rule: core node form + POS against GSE expression +
-        grammaticalCategories, with audience handling for GL vs YL
-  - [~] Define starred `gse` values (70 GL items) and `temporaryGse` (129 YL
-        items) semantics
-  - [~] Define the ambiguous and unmapped queue shapes
-  - [~] State the no-inference rule: an unmapped node receives no GSE data
-- [~] Task: Define the core mutation contract
-  - [~] Define node field names: GSE score, CEFR band, definition, example,
-        `itemId` citation
-  - [~] Define the core version bump mechanics and the byte-diff report shape
-  - [~] Define YLE baseline reproducibility proof for the new version
-- [~] Task: Define review samples and thresholds
-  - [~] At least 100 stratified node-to-entry mappings for review
-  - [~] Precision threshold for the mapping sample
+- [x] Task: Define the node-to-entry mapping contract - commit: f3f0db5
+  - [x] Define the binding rule: core node form + POS against GSE expression +
+        grammaticalCategories, with audience handling for GL vs YL - commit: f3f0db5
+  - [x] Define starred `gse` values (70 GL items) and `temporaryGse` (129 YL
+        items) semantics - commit: f3f0db5
+  - [x] Define the ambiguous and unmapped queue shapes - commit: f3f0db5
+  - [x] State the no-inference rule: an unmapped node receives no GSE data - commit: f3f0db5
+- [x] Task: Define the core mutation contract - commit: f3f0db5
+  - [x] Define node field names: GSE score, CEFR band, definition, example,
+        `itemId` citation - commit: f3f0db5
+  - [x] Define the core version bump mechanics and the byte-diff report shape - commit: f3f0db5
+  - [x] Define YLE baseline reproducibility proof for the new version - commit: f3f0db5
+- [x] Task: Define review samples and thresholds - commit: f3f0db5
+  - [x] At least 100 stratified node-to-entry mappings for review - commit: f3f0db5
+  - [x] Precision threshold for the mapping sample - commit: f3f0db5
 - [b] Task: Complete Phase 1 review gate — deferred:both-owners
 
 **Mid-Red evidence (2026-08-12):**
