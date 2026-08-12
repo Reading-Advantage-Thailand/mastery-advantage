@@ -987,6 +987,49 @@ PY
   fi
 done
 
+echo "=== YLE generator command appears only inside the fenced sandbox procedure ==="
+orphan_command_status=0
+orphan_command_error=""
+if orphan_command_error="$(python3 - "$MUTATION" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+text = path.read_text(encoding="utf-8") if path.is_file() else ""
+closure = re.search(r"^##\s+Contract\s+Closure\s*$", text, re.IGNORECASE | re.MULTILINE)
+if closure is None:
+    raise SystemExit("Contract Closure section is missing")
+
+bare_generator = re.compile(r"^node\s+english/cefr-vocabulary/scripts/generate-vocabulary-graph\.js\s*$")
+in_fence = False
+orphans = []
+for line_number, line in enumerate(text[:closure.start()].splitlines(), start=1):
+    stripped = line.strip()
+    if stripped.startswith("```"):
+        in_fence = not in_fence
+        continue
+    if not in_fence and bare_generator.fullmatch(stripped):
+        orphans.append(f"line {line_number}: {stripped}")
+
+if orphans:
+    print("orphan bare generator command outside the fenced sandbox procedure: " + "; ".join(orphans), file=sys.stderr)
+    raise SystemExit(1)
+print("the generator command is confined to the fenced sandbox procedure")
+PY
+)"; then
+  orphan_command_status=0
+else
+  orphan_command_status=$?
+fi
+if [[ "$orphan_command_status" -eq 0 ]]; then
+  printf '%s\n' "$orphan_command_error"
+  pass "YLE generator command is not duplicated as an orphan outside the proof fence"
+else
+  printf '%s\n' "$orphan_command_error"
+  fail "YLE proof contains an orphan bare generator command outside the fenced sandbox procedure"
+fi
+
 echo "=== YLE proof uses supported tooling and creates a safe temporary comparison artifact ==="
 proof_status=0
 proof_error=""
@@ -1005,13 +1048,26 @@ mutation = mutation_path.read_text(encoding="utf-8") if mutation_path.is_file() 
 generator = generator_path.read_text(encoding="utf-8") if generator_path.is_file() else ""
 errors = []
 
+fenced_blocks = re.findall(r"```[^\n]*\n(.*?)```", mutation, re.IGNORECASE | re.DOTALL)
+procedures = [
+    block
+    for block in fenced_blocks
+    if re.search(r"\bmktemp\b", block)
+    and re.search(r"generate-vocabulary-graph\.js", block)
+]
+procedure = procedures[0] if procedures else ""
+generator_command_pattern = re.compile(
+    r'^node\s+(?:"[^"\n]*generate-vocabulary-graph\.js"|'
+    r"'[^'\n]*generate-vocabulary-graph\.js'|"
+    r'\S*generate-vocabulary-graph\.js)(?:\s|$)'
+)
 command_lines = [
     line.strip()
-    for line in mutation.splitlines()
-    if re.match(r"^node\s+.*generate-vocabulary-graph\.js(?:\s|$)", line.strip())
+    for line in procedure.splitlines()
+    if generator_command_pattern.match(line.strip())
 ]
 if not command_lines:
-    errors.append("mutation contract has no executable generator command")
+    errors.append("mutation contract has no executable generator command in its fenced sandbox procedure")
     command_lines = []
 
 if re.search(r"\b(?:sha256sum|shasum)\b", mutation) is None:
@@ -1033,9 +1089,10 @@ cli_support = bool(
     and re.search(r"--output\b|output(?:Path|File)?", generator, re.IGNORECASE)
 )
 sandbox_procedure = bool(
-    re.search(r"\bmktemp\b", mutation)
-    and re.search(r"\b(?:cp|rsync|install)\b", mutation)
-    and re.search(r"\bnode\b", mutation)
+    procedure
+    and re.search(r"\bmktemp\b", procedure)
+    and re.search(r"\b(?:cp|rsync|install)\b", procedure)
+    and re.search(r"\bnode\b", procedure)
     and re.search(r"\bcmp\b", mutation)
 )
 
@@ -1225,6 +1282,48 @@ if [[ "$punctuation_status" -eq 0 ]]; then
 else
   printf '%s\n' "$punctuation_error"
   fail "Phase 1 plan commit SHA evidence has trailing punctuation"
+fi
+
+echo "=== cycle-2 Red plan evidence matches the recorded result and Green closure ==="
+cycle2_evidence_status=0
+cycle2_evidence_error=""
+if cycle2_evidence_error="$(python3 - "$PLAN" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+text = path.read_text(encoding="utf-8") if path.is_file() else ""
+match = re.search(
+    r"^\*\*Mid-Red remediation cycle 2 evidence \(2026-08-12\):\*\*"
+    r"(.*?)(?=^\*\*Jr-Green remediation cycle 2 evidence|^## Phase 2:|\Z)",
+    text,
+    re.MULTILINE | re.DOTALL,
+)
+if match is None:
+    raise SystemExit("cycle-2 Mid-Red evidence section is missing")
+red_evidence = match.group(1)
+required = {
+    "recorded Red result": r"Total:\s*26\s+checks\s+\(PASS=21,\s*FAIL=5\)",
+    "punctuation failure": r"Phase 1 plan commit SHA evidence has trailing punctuation",
+    "Green RA-P1-N4 closure": r"RA-P1-N4\s+(?:is\s+)?closed\s+in\s+Green\s+at\s+1d0ce0d",
+}
+missing = [label for label, pattern in required.items() if re.search(pattern, red_evidence, re.IGNORECASE) is None]
+if missing:
+    raise SystemExit("cycle-2 Red evidence is missing: " + ", ".join(missing))
+print("cycle-2 Red evidence records PASS=21 FAIL=5, the punctuation failure, and Green closure of RA-P1-N4 at 1d0ce0d")
+PY
+)"; then
+  cycle2_evidence_status=0
+else
+  cycle2_evidence_status=$?
+fi
+if [[ "$cycle2_evidence_status" -eq 0 ]]; then
+  printf '%s\n' "$cycle2_evidence_error"
+  pass "cycle-2 Red plan evidence matches the recorded failure result and Green RA-P1-N4 closure"
+else
+  printf '%s\n' "$cycle2_evidence_error"
+  fail "cycle-2 Red plan evidence does not match the recorded result or Green RA-P1-N4 closure"
 fi
 
 echo "=== track registry does not claim GSE core release before dual owner gates ==="

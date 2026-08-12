@@ -58,6 +58,7 @@
   - [x] Require fail-fast, validated, quoted, trap-protected sandbox behavior and an adversarial setup-failure probe - commit: e265616
   - [x] Define the invalid-CEFR source-data queue and keep absent optional CEFR out of that queue - commit: e265616
   - [x] Normalize trailing punctuation in commit evidence - commit: e265616
+- [~] Task: Jr-Green remediation of Phase 1 Red evidence defects — remove the orphan bare generator command and correct the cycle-2 Red evidence
 - [b] Task: Complete Phase 1 review gate — deferred:both-owners
 
 **Mid-Red evidence (2026-08-12):**
@@ -96,6 +97,16 @@
 - `node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` exited `0` with graph `status: valid`.
 - `git diff --check` exited `0` before the implementation commit.
 - The Phase 1 human gate remains `[b] deferred:both-owners` and has no acceptance evidence.
+
+**Mid-Red evidence remediation cycle 3 (2026-08-12):**
+
+- The bounded remediation task is `[~]` for Jr-Green. The Phase 1 human gate remains `[b] deferred:both-owners`.
+- Command: `RED_TEST_COMMAND="bash tests/gse_vocab_p1_contracts.sh"`
+- Result: exit `1`; `Total: 28 checks (PASS=26, FAIL=2)`.
+- Targeted failures: the orphan bare generator command outside the fenced sandbox procedure; the cycle-2 Red plan evidence does not record `PASS=21 FAIL=5`, the punctuation failure, and RA-P1-N4 closed in Green at `1d0ce0d`.
+- The harness recognizes the valid quoted generator command inside the fenced sandbox procedure.
+- Log: `/tmp/opencode/gse-vocabulary-p1-mid-red-evidence-fix-1d0ce0d.log`.
+- Red artifact: `tests/gse_vocab_p1_contracts.sh`. Jr-Green owns the bounded documentation remediation.
 
 ## Phase 2: Tests And Fixtures
 
