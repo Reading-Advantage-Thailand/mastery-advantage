@@ -2,6 +2,6 @@
   "expectations": [
     {"caseId": "extractor-two-run-byte-identical", "procedure": "extract", "runLabels": ["run-1", "run-2"], "outputArtifact": "fixture-output/gse-records.json", "expected": {"byteIdentical": true}},
     {"caseId": "core-mutation-two-run-byte-identical", "procedure": "core-mutation", "runLabels": ["run-1", "run-2"], "outputArtifact": "fixture-output/core-graph.json", "expected": {"byteIdentical": true}},
-    {"caseId": "yle-same-procedure-before-after-baseline-isolation", "sameProcedure": true, "runLabels": ["before", "after"], "mutationAppliedBetweenRuns": true, "comparisonTarget": "temporary-before-vs-after", "frozenBaselineArtifact": "english/cefr-vocabulary/graph/yle-frozen-baseline.json", "expected": {"beforeAfterByteIdentical": true, "frozenBaselineUnchanged": true, "frozenBaselineIsComparisonTarget": false}}
+    {"caseId": "yle-same-procedure-before-after-baseline-isolation", "sameProcedure": true, "runLabels": ["before", "after"], "mutationAppliedBetweenRuns": true, "comparisonTarget": "temporary-before-vs-after", "frozenBaselineArtifact": "english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json", "expected": {"beforeAfterByteIdentical": true, "frozenBaselineUnchanged": true, "frozenBaselineIsComparisonTarget": false}}
   ]
 }

@@ -26,6 +26,7 @@
           "definition": "the period of time after the morning and before the evening",
           "example": "It was very hot in the afternoon.",
           "sourceCitation": {
+            "sourceId": "gse-vocabulary-gl-10-67-2026-08-11",
             "itemId": "ua8444abd28d0e715.-5299d1a3.145b710ae86.-4273",
             "exportSha256": "e63298d796eecc1d9ed68cd5bde28d01912cfe3312a1381d2b074cdbe9b90800"
           }
@@ -111,6 +112,7 @@
                 "definition": "the period of time after the morning and before the evening",
                 "example": "It was very hot in the afternoon.",
                 "sourceCitation": {
+                  "sourceId": "gse-vocabulary-gl-10-67-2026-08-11",
                   "itemId": "ua8444abd28d0e715.-5299d1a3.145b710ae86.-4273",
                   "exportSha256": "e63298d796eecc1d9ed68cd5bde28d01912cfe3312a1381d2b074cdbe9b90800"
                 }
@@ -125,7 +127,13 @@
                 "itemId": "ua8444abd28d0e715.-5299d1a3.145b71d3748.46f8",
                 "audience": "GL",
                 "gseScore": "31",
-                "cefrBand": "A2"
+                "starred": false,
+                "cefrBand": "A2",
+                "sourceCitation": {
+                  "sourceId": "gse-vocabulary-gl-10-67-2026-08-11",
+                  "itemId": "ua8444abd28d0e715.-5299d1a3.145b71d3748.46f8",
+                  "exportSha256": "e63298d796eecc1d9ed68cd5bde28d01912cfe3312a1381d2b074cdbe9b90800"
+                }
               }
             }
           }
@@ -141,8 +149,8 @@
       },
       "expected": {
         "priorSha256": "34f06af333ee69b4c16c8574466170e7a71d32a27edccf313e9a5df0eb508726",
-        "newSha256": "e18090cd3935a46eb6a3b7addee5d31324e159c5f8a396c2fddd3cadd0c32694",
-        "bytesChanged": 605,
+        "newSha256": "38b9f82455ddefdbde1e97a83bda369149784db8dc37e59f3e5cc930dac72763",
+        "bytesChanged": 874,
         "changedNodeIds": [
           "fixture:core:afternoon",
           "fixture:core:you"
