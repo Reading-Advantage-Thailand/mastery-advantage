@@ -217,21 +217,30 @@
 
 ## Phase 3: Extraction, Mapping, And Core Mutation
 
-- [~] Task: Implement the deterministic GSE vocabulary extractor
-  - [~] Two consecutive runs produce byte-identical tracked output
-- [~] Task: Implement source-backed node-to-entry mapping
-  - [~] Every mapped node cites a GSE `itemId`
-  - [~] Ambiguous and unmapped cases go to durable queues under this track's
-        own directory
-- [~] Task: Implement the core mutation generator
-  - [~] Write GSE score, band, definition, and example onto mapped nodes
-  - [~] Produce the new core version and the byte-diff report
-- [~] Task: Produce the mapping quality report
-  - [~] Labelled counts: nodes mapped, levels added, levels corrected,
-        conflicts, unmapped queued, GSE entries with no node
-- [~] Task: Apply audit isolation
-  - [~] Name this track's queue files explicitly so foreign queue files
-        cannot change its reports
+- [x] Task: Implement the deterministic GSE vocabulary extractor - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [x] Two consecutive runs produce byte-identical tracked output - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+- [x] Task: Implement source-backed node-to-entry mapping - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [x] Every mapped node cites a GSE `itemId` - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [x] Ambiguous and unmapped cases go to durable queues under this track's
+        own directory - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+- [x] Task: Implement the core mutation generator - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [x] Write GSE score, band, definition, and example onto mapped nodes - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [x] Produce the new core version and the byte-diff report - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+- [x] Task: Produce the mapping quality report - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [x] Labelled counts: nodes mapped, levels added, levels corrected,
+        conflicts, unmapped queued, GSE entries with no node - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+- [x] Task: Apply audit isolation - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [x] Name this track's queue files explicitly so foreign queue files
+        cannot change its reports - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+
+**Jr-Green evidence (2026-08-13):**
+
+- Implementation commit: `cb2a1a37999032d4db462f5148597a5b532ba0e4`.
+- `bash tests/gse_vocab_p3_extraction.sh` exited `0` with `Total: 13 checks (PASS=13, FAIL=0)`.
+- `bash tests/gse_vocab_p2_fixtures.sh` exited `0` with `Total: 14 checks (PASS=14, FAIL=0)`.
+- `bash tests/gse_vocab_p1_contracts.sh` exited `0` with `Total: 30 checks (PASS=30, FAIL=0)`.
+- `node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` exited `0` with `status: valid`.
+- `git diff --check` exited `0`.
 
 **Mid-Red evidence (2026-08-13):**
 
