@@ -360,6 +360,20 @@ Implementation handoff to Jr-Green:
   - Named defects: shared frozen-YLE and byte-diff paths were accepted or changed; unknown options were accepted or lacked an unknown-option diagnostic; the independent before-and-after YLE proof failed.
 - Jr-Green owns remediation of these nine defects and must provide new Green evidence before changing the Phase 3 markers.
 
+## Jr-Green independent-audit remediation evidence (2026-08-13)
+
+- Remediation commits: mapping `56d255d3c49a88899395969ba1051b6dae81ad4e`; graph `cd9e991adb3594355fbb855b94f614e6bbe60060`; safety `4856640c6cfab470c1357a5c0586b397348648cd`.
+- `bash tests/gse_vocab_p3_review_mapping.sh` exited `0` with `PASS=3 FAIL=0`.
+- `bash tests/gse_vocab_p3_review_graph.sh` exited `0` with `PASS=3 FAIL=0`.
+- `bash tests/gse_vocab_p3_review_safety.sh` exited `0` with `PASS=3 FAIL=0`.
+- `bash tests/gse_vocab_p3_extraction.sh` exited `0` with `PASS=13 FAIL=0`.
+- `bash tests/gse_vocab_p2_fixtures.sh` exited `0` with `PASS=14 FAIL=0`.
+- `bash tests/gse_vocab_p1_contracts.sh` exited `0` with `PASS=30 FAIL=0`.
+- `node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` exited `0` with graph validator status `valid`.
+- `git diff --check` exited `0`.
+- RA-P3-B1 through B6 and RB-P3-B1 through B3 were remediated.
+- Reviews A, B, and C must rerun at the new HEAD.
+
 ## Phase 4: Audit And Calibration
 
 - [~] Task: Audit the node-to-entry mapping
