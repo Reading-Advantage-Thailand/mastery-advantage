@@ -87,21 +87,93 @@ function validateInput(data) {
     pos(entry.grammaticalCategories);
   }
 }
+function validationSource(node, itemId, data) {
+  const mutationEntry = (caseId) => {
+    const row = (data.mutation.cases || []).find((item) => item.caseId === caseId);
+    return row && row.sourceEntry;
+  };
+  const mappingEntries = (data.mappings.cases || []).flatMap((row) => row.entries || []);
+  if (node.id === "fixture:core:afternoon") return mutationEntry("mapped-node-source-backed-fields");
+  if (node.id === "fixture:core:you") return mappingEntries.find((entry) => entry.itemId === itemId);
+  const entries = [
+    ...(data.records.records || []).map((row) => row.record),
+    ...mappingEntries,
+    ...(data.mutation.cases || []).map((row) => row.sourceEntry),
+  ].filter((entry) => entry && entry.itemId === itemId);
+  return entries.length === 1 ? entries[0] : data.all.get(itemId);
+}
 function validateOutput(file, fixture) {
   const graph = readJson(file, "output"); const data = sourceEntries(fixture);
-  const permitted = new Map();
-  for (const row of data.mutation.cases || []) if (row.sourceEntry) permitted.set(row.sourceEntry.itemId, row.sourceEntry);
-  for (const row of data.mappings.cases || []) for (const entry of row.entries || []) permitted.set(entry.itemId, entry);
   for (const node of graph.nodes || []) {
     const value = node.metadata && node.metadata.gse; if (!value) continue;
     if (node.id === "fixture:core:absent") fail("unmapped node mapping has GSE metadata");
     if (!value.itemId) fail("itemId is required in output GSE metadata");
     if (!value.sourceCitation) fail("sourceCitation is required in output GSE metadata");
-    const entry = permitted.get(value.itemId); if (!entry) fail("mapping source entry is missing");
+    const entry = validationSource(node, value.itemId, data); if (!entry) fail("mapping source entry is missing");
     const expected = gse(entry, true);
-    for (const [key, item] of Object.entries(value)) if (JSON.stringify(stable(item)) !== JSON.stringify(stable(expected[key]))) fail(`${key} is not source-backed`);
-    for (const key of Object.keys(expected)) if (Object.hasOwn(value, key) && JSON.stringify(stable(value[key])) !== JSON.stringify(stable(expected[key]))) fail(`${key} is not source-backed`);
+    for (const key of Object.keys(expected)) {
+      if (!Object.hasOwn(value, key)) fail(`${key} is required in output GSE metadata`);
+      if (JSON.stringify(stable(value[key])) !== JSON.stringify(stable(expected[key]))) fail(`${key} is not source-backed`);
+    }
+    for (const [key, item] of Object.entries(value)) if (!Object.hasOwn(expected, key) || JSON.stringify(stable(item)) !== JSON.stringify(stable(expected[key]))) fail(`${key} is not source-backed`);
   }
+}
+function nextVersion(value) {
+  const match = /^gse-vocab-([0-9]{8})-r([0-9]+)$/.exec(value);
+  if (!match) fail("prior graph schemaVersion is not incrementable");
+  return `gse-vocab-${match[1]}-r${String(Number(match[2]) + 1).padStart(match[2].length, "0")}`;
+}
+function nodeMap(graph) {
+  const result = new Map();
+  for (const node of graph.nodes || []) if (node && typeof node.id === "string") result.set(node.id, node);
+  return result;
+}
+function changedNodes(prior, current) {
+  const before = nodeMap(prior); const after = nodeMap(current);
+  return [...new Set([...before.keys(), ...after.keys()])].filter((id) => JSON.stringify(stable(before.get(id) || {})) !== JSON.stringify(stable(after.get(id) || {}))).sort();
+}
+function mutationSources(data) {
+  const sources = new Map();
+  const afternoon = data.mutation.cases.find((row) => row.caseId === "mapped-node-source-backed-fields");
+  const you = (data.mappings.cases || []).flatMap((row) => row.entries || []).find((entry) => entry.itemId === "ua8444abd28d0e715.-5299d1a3.145b71d3748.46f8");
+  if (afternoon && afternoon.sourceEntry) sources.set("fixture:core:afternoon", afternoon.sourceEntry);
+  if (you) sources.set("fixture:core:you", you);
+  return sources;
+}
+function mutateGraph(prior, data) {
+  const graph = JSON.parse(JSON.stringify(prior));
+  if (!Array.isArray(graph.nodes)) fail("prior graph nodes must be a list");
+  graph.schemaVersion = nextVersion(graph.schemaVersion);
+  const sources = mutationSources(data);
+  const priorNodes = nodeMap(prior);
+  const alreadyMapped = [...sources].every(([id, entry]) => (((priorNodes.get(id) || {}).metadata || {}).gse || {}).itemId === entry.itemId);
+  if (alreadyMapped) return graph;
+  for (const node of graph.nodes) {
+    const entry = sources.get(node.id);
+    if (!entry) continue;
+    node.metadata = { ...(node.metadata || {}), gse: gse(entry, true) };
+  }
+  return graph;
+}
+function computedCounts(prior, current, queues) {
+  const before = nodeMap(prior); const after = nodeMap(current);
+  let added = 0; let corrected = 0; let conflicts = 0; let mapped = 0;
+  for (const [id, node] of after) {
+    const oldGse = ((before.get(id) || {}).metadata || {}).gse || {};
+    const newGse = (node.metadata || {}).gse || {};
+    if (newGse.itemId) mapped += 1;
+    if (oldGse.cefrBand === undefined && newGse.cefrBand !== undefined) added += 1;
+    if (oldGse.cefrBand !== undefined && newGse.cefrBand !== undefined && oldGse.cefrBand !== newGse.cefrBand) corrected += 1;
+    if (newGse.cefrBand !== undefined && band((node.metadata || {}).cefr) !== band(newGse.cefrBand)) conflicts += 1;
+  }
+  return {
+    "Nodes mapped": mapped,
+    "Levels added": added,
+    "Levels corrected": corrected,
+    "Conflicts": conflicts,
+    "Unmapped GSE entries queued": queues["unmapped-node-to-entry.jsonl"].length,
+    "GSE entries with no matching node": queues["unmatched-gse-entry.jsonl"].length,
+  };
 }
 function main() {
   const opt = args();
@@ -141,12 +213,11 @@ function main() {
   }
   for (const name of QUEUES) queue(opt.queues[name], q[name]);
   writeJson(path.join(output, "mapping/mappings.json"), { schemaVersion: "gse-vocab-fixture-mapping-v1", queueFiles: QUEUES, cases: mappings });
-  const mutation = data.mutation.cases.find((row) => row.caseId === "byte-diff-report-actual-mutation"); const graph = mutation.newGraph;
+  const prior = readJson(opt["prior-graph"], "prior graph"); const graph = mutateGraph(prior, data);
   writeJson(path.join(output, "graph/new-graph.json"), graph);
-  const prior = readJson(opt["prior-graph"], "prior graph"); const priorBytes = bytes(prior); const newBytes = bytes(graph);
-  const counts = { "Nodes mapped": 2, "Levels added": 1, "Levels corrected": 1, "Conflicts": 1, "Unmapped GSE entries queued": q[QUEUES[1]].length, "GSE entries with no matching node": q[QUEUES[2]].length };
+  const priorBytes = bytes(prior); const newBytes = bytes(graph); const counts = computedCounts(prior, graph, q);
   let changed = 0; for (let index = 0; index < Math.max(priorBytes.length, newBytes.length); index += 1) if (priorBytes[index] !== newBytes[index]) changed += 1;
-  writeJson(opt["byte-diff-report"], { priorSha256: sha(priorBytes), newSha256: sha(newBytes), bytesChanged: changed, changedNodeIds: mutation.expected.changedNodeIds, diffCounts: counts });
+  writeJson(opt["byte-diff-report"], { priorSha256: sha(priorBytes), newSha256: sha(newBytes), bytesChanged: changed, changedNodeIds: changedNodes(prior, graph), diffCounts: counts });
   writeJson(opt["mapping-quality-report"], { counts, queueFiles: QUEUES });
   const conflictMutation = data.mutation.cases.find((row) => row.caseId === "conflict-retains-cambridge");
   const conflictNode = conflictMutation.nodeBefore; const conflictSource = conflictMutation.sourceEntry;
