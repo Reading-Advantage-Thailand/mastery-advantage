@@ -56,8 +56,8 @@ YL row has `temporaryGse: true` and requires `sourceFieldPreserved: true`.
 ## Mapping Fixtures
 
 `mapping-cases.json` contains a non-empty `cases` array. Each entry contains
-`itemId`, `expression`, `audience`, `grammaticalCategories`, `gse`, `cefr`, and
-`sourceExportSha256`. Each node contains `nodeId`, `normalizedForm`,
+`itemId`, `expression`, `audience`, `grammaticalCategories`, `gse`, optional
+`cefr`, and `sourceExportSha256`. Each node contains `nodeId`, `normalizedForm`,
 `partsOfSpeech`, and `audience` unless the node is `null` for an unmatched GSE
 entry.
 
@@ -71,6 +71,8 @@ The required case IDs and outcomes are:
 | `unmatched-gse-entry` | one entry has `node: null` | `unmatched-gse-entry` |
 | `cambridge-gse-level-conflict` | Cambridge and GSE bands differ | `mapped` plus conflict |
 | `same-form-different-pos-falsifier` | the first form-only entry has the wrong POS | `mapped` by exact POS |
+| `invalid-cefr-source-data` | present source CEFR cannot normalize | queued invalid source data |
+| `absent-optional-cefr` | source omits optional CEFR | mapped with no queue row |
 
 The ambiguous case cites `ambiguous-node-to-entry.jsonl`. The unmapped case
 cites `unmapped-node-to-entry.jsonl`. The unmatched case cites
@@ -91,8 +93,24 @@ equal that first entry. Its expected exact `itemId` must be different.
 
 The mapped mutation expectation copies `itemId`, audience, raw GSE value,
 normalized CEFR, definition, example, and source citation from one source
-entry. The unmapped expectation leaves `metadata.gse` absent. The conflict
+entry. A source citation is complete only when it contains these exact fields:
+
+```json
+{
+  "sourceId": "gse-vocabulary-gl-10-67-2026-08-11|gse-vocabulary-yl-10-59-2026-08-11",
+  "itemId": "<the cited source entry itemId>",
+  "exportSha256": "<the matching manifest sourceExports.*.sha256>"
+}
+```
+
+`sourceId` identifies the export for the citation audience. `itemId` equals the
+source entry `itemId`. `exportSha256` equals the source entry and manifest hash.
+The unmapped expectation leaves `metadata.gse` absent. The conflict
 expectation keeps Cambridge data and records a separate GSE disagreement.
+
+Every mapped object in `newGraph` carries a complete `sourceCitation`. Every
+mapped `newGraph` object with `gseScore` also carries boolean `starred`, even
+when the value is `false`.
 
 The byte-diff case has `priorGraph`, `newGraph`, `queueRows`, and `expected`.
 Canonical graph bytes use sorted JSON keys, compact separators, UTF-8, and one
@@ -110,7 +128,11 @@ mutation runs, and the YLE case
 The YLE case uses run labels `before` and `after`, sets `sameProcedure` and
 `mutationAppliedBetweenRuns` to true, and compares temporary before and after
 artifacts. It requires byte equality between those artifacts and preservation
-of the frozen baseline. The frozen baseline is not the comparison target.
+of the frozen baseline. The `frozenBaselineArtifact` value is exactly
+`english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json`. The harness
+resolves this repository-relative path, requires a regular file, and requires
+the path to be present in `git ls-files`. The frozen baseline is not the
+comparison target.
 
 ## Malformed And Mutation Probes
 
@@ -126,3 +148,40 @@ probe. It does not accept a row because it only declares an expected failure.
 The fixture pack stays small and contains no raw export dump or publisher
 wordlist. The Phase 2 test fails until every required file and relationship
 exists.
+
+## CEFR Queue Fixtures
+
+`mapping-cases.json` also contains these case IDs:
+
+- `invalid-cefr-source-data`
+- `absent-optional-cefr`
+
+The invalid case has one mapped source entry with a present, non-normalizable
+`cefr` value. Its expected queue row contains the complete Phase 1 schema:
+`nodeId`, `itemId`, `audience`, `rawCefr`, `reason`, and
+`sourceExportSha256`. The reason is `invalid-cefr-band`, and the mapped GSE
+object omits `cefrBand`.
+
+The absent case omits the optional source `cefr` value. It remains mapped, its
+GSE object omits `cefrBand`, and it has no queue name or queue row.
+
+## Conflict Report Fixture
+
+The `cambridge-gse-level-conflict` expected report row contains all Phase 1
+fields: `nodeId`, `itemId`, `audience`, `cambridgeCefr`,
+`cambridgeCefrAlignments`, `gseCefrBand`, `reason`, and
+`sourceExportSha256`. The row copies identity and source values from the node
+and the mapped entry. The reason is
+`cambridge-gse-cefr-disagreement`.
+
+## Red Audit Probe
+
+The exact current-tree Red command is:
+
+```text
+GSE_VOCAB_P2_NEGATIVE=audit-gaps bash tests/gse_vocab_p2_fixtures.sh
+```
+
+This mode requires the baseline path, source citation, conflict report,
+`newGraph`, invalid-CEFR, and absent-optional-CEFR checks to fail on the
+current fixture pack. It does not modify fixture files.

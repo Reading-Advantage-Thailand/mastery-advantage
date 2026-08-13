@@ -85,27 +85,34 @@ if task_number == 0:
 path.write_text(text[: phase.start()] + rewritten_phase + text[phase.end() :], encoding="utf-8")
 PY
   PLAN="$NEGATIVE_PLAN"
-elif [[ -n "${GSE_VOCAB_P2_NEGATIVE:-}" ]]; then
+elif [[ -n "${GSE_VOCAB_P2_NEGATIVE:-}" && "${GSE_VOCAB_P2_NEGATIVE}" != "audit-gaps" ]]; then
   printf 'unknown GSE_VOCAB_P2_NEGATIVE mode: %s\n' "$GSE_VOCAB_P2_NEGATIVE" >&2
   exit 2
 fi
 
 probe() {
   local check="$1"
-  python3 - "$FIX" "$check" "$PLAN" <<'PY'
+  python3 - "$FIX" "$check" "$PLAN" "$ROOT" <<'PY'
 import hashlib
 import json
 import re
+import stat
+import subprocess
 import sys
 from pathlib import Path
 
 fixture_root = Path(sys.argv[1])
 check = sys.argv[2]
+repo_root = Path(sys.argv[4]).resolve()
 errors = []
 allowed_bands = {"PRE-A1", "A1", "A2", "B1", "B2", "C1", "C2"}
 pos_aliases = {
     "phrasal verb": "phrasal verb",
     "phrase": "phrase",
+}
+source_ids = {
+    "GL": "gse-vocabulary-gl-10-67-2026-08-11",
+    "YL": "gse-vocabulary-yl-10-59-2026-08-11",
 }
 
 
@@ -153,6 +160,41 @@ def normalized_pos(values):
         lowered = value.strip().casefold()
         result.append(pos_aliases.get(lowered, lowered))
     return sorted(set(result))
+
+
+def source_id_for(audience):
+    return source_ids.get(audience)
+
+
+def citation_matches_source(citation, source):
+    if not isinstance(citation, dict) or not isinstance(source, dict):
+        return False
+    audience = source.get("audience")
+    export_hash = source.get("sourceExportSha256")
+    return (
+        isinstance(citation.get("sourceId"), str)
+        and citation.get("sourceId") == source_id_for(audience)
+        and isinstance(citation.get("itemId"), str)
+        and citation.get("itemId") == source.get("itemId")
+        and isinstance(citation.get("exportSha256"), str)
+        and re.fullmatch(r"[0-9a-f]{64}", citation.get("exportSha256")) is not None
+        and citation.get("exportSha256") == export_hash
+    )
+
+
+def require_complete_source_citation(citation, source, label):
+    need(isinstance(citation, dict), f"{label} must be an object")
+    if not isinstance(citation, dict):
+        return
+    for field in ("sourceId", "itemId", "exportSha256"):
+        need(isinstance(citation.get(field), str) and citation.get(field).strip(), f"{label} lacks {field}")
+    audience = source.get("audience") if isinstance(source, dict) else None
+    expected_source_id = source_id_for(audience)
+    need(citation.get("sourceId") == expected_source_id, f"{label} sourceId does not match its audience/export identity")
+    need(citation.get("itemId") == (source.get("itemId") if isinstance(source, dict) else None), f"{label} itemId does not equal its source entry itemId")
+    source_hash = source.get("sourceExportSha256") if isinstance(source, dict) else None
+    need(re.fullmatch(r"[0-9a-f]{64}", str(citation.get("exportSha256", ""))) is not None, f"{label} exportSha256 is not a full hex digest")
+    need(citation.get("exportSha256") == source_hash, f"{label} exportSha256 does not equal its source export hash")
 
 
 def manifest_and_files():
@@ -241,12 +283,17 @@ def records_by_id(records_doc):
     return result
 
 
-def entry_shape(entry, label, hashes):
+def entry_shape(entry, label, hashes, require_cefr=True):
     need(isinstance(entry, dict), f"{label} must be an object")
     if not isinstance(entry, dict):
         return
-    for field in ("itemId", "expression", "audience", "gse", "cefr", "sourceExportSha256"):
+    required_fields = ("itemId", "expression", "audience", "gse", "sourceExportSha256")
+    for field in required_fields:
         need(isinstance(entry.get(field), str) and entry.get(field).strip(), f"{label} lacks source field {field}")
+    if require_cefr:
+        need(isinstance(entry.get("cefr"), str) and entry.get("cefr").strip(), f"{label} lacks source field cefr")
+    else:
+        need("cefr" not in entry, f"{label} must omit absent optional cefr")
     audience = entry.get("audience")
     need(audience in ("GL", "YL"), f"{label} audience must be GL or YL")
     if audience in hashes:
@@ -282,7 +329,10 @@ def mapping_cases(mapping_doc, hashes):
         need(isinstance(entries, list), f"mapping case {case_id} entries must be a list")
         if isinstance(entries, list):
             for index, entry in enumerate(entries):
-                entry_shape(entry, f"mapping case {case_id} entry {index}", hashes)
+                if case_id == "absent-optional-cefr":
+                    entry_shape(entry, f"mapping case {case_id} entry {index}", hashes, require_cefr=False)
+                else:
+                    entry_shape(entry, f"mapping case {case_id} entry {index}", hashes)
         expected = case.get("expected")
         need(isinstance(expected, dict), f"mapping case {case_id} needs expected semantics")
     return result
@@ -338,6 +388,23 @@ def gse_metadata(node):
     return (metadata or {}).get("gse") if isinstance(metadata, dict) else None
 
 
+def source_entries_by_item():
+    result = {}
+    for filename, key in (("mapping-cases.json", "entries"), ("mutation-cases.json", "sourceEntry")):
+        document = load_json(filename)
+        if not isinstance(document, dict):
+            continue
+        rows = document.get("cases") or []
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            entries = row.get(key) if key == "entries" else [row.get(key)]
+            for entry in entries or []:
+                if isinstance(entry, dict) and isinstance(entry.get("itemId"), str):
+                    result[entry["itemId"]] = entry
+    return result
+
+
 def valid_record(record):
     return (
         isinstance(record, dict)
@@ -358,6 +425,12 @@ def valid_mutation(mutation, source):
     if not isinstance(gse.get("itemId"), str) or not gse.get("itemId").strip():
         return False
     if gse.get("audience") not in ("GL", "YL"):
+        return False
+    if gse.get("itemId") != source.get("itemId"):
+        return False
+    if not citation_matches_source(gse.get("sourceCitation"), source):
+        return False
+    if "gseScore" in gse and not isinstance(gse.get("starred"), bool):
         return False
     for optional in ("definition", "example", "cefrBand"):
         if optional in gse and optional not in source:
@@ -509,6 +582,48 @@ def check_queue_cases():
     need(unmatched_expected.get("queue") == "unmatched-gse-entry.jsonl", "unmatched GSE entry queue is wrong")
 
 
+def check_invalid_cefr_cases():
+    manifest = manifest_and_files()
+    mapping_doc = load_json("mapping-cases.json")
+    if manifest is None or mapping_doc is None:
+        return
+    cases = mapping_cases(mapping_doc, source_hashes(manifest))
+    invalid = cases.get("invalid-cefr-source-data") or {}
+    invalid_node = invalid.get("node") or {}
+    invalid_entries = invalid.get("entries") or []
+    invalid_expected = invalid.get("expected") or {}
+    need(isinstance(invalid.get("node"), dict), "invalid CEFR case must include a core node")
+    need(len(invalid_entries) == 1, "invalid CEFR case needs one source entry")
+    if invalid_entries:
+        invalid_entry = invalid_entries[0]
+        need("cefr" in invalid_entry, "invalid CEFR case must contain a present source cefr")
+        need(band(invalid_entry.get("cefr")) is None, "invalid CEFR case must use a non-normalizable source cefr")
+        queue_row = invalid_expected.get("queueRow")
+        required_queue_fields = {"nodeId", "itemId", "audience", "rawCefr", "reason", "sourceExportSha256"}
+        need(isinstance(queue_row, dict), "invalid CEFR case needs a complete queue row")
+        if isinstance(queue_row, dict):
+            need(set(queue_row) == required_queue_fields, "invalid CEFR queue row must contain exactly the Phase 1 fields")
+            need(queue_row.get("nodeId") == invalid_node.get("nodeId"), "invalid CEFR queue row nodeId does not cite the node")
+            need(queue_row.get("itemId") == invalid_entry.get("itemId"), "invalid CEFR queue row itemId does not cite the source entry")
+            need(queue_row.get("audience") == invalid_entry.get("audience"), "invalid CEFR queue row audience does not cite the source entry")
+            need(queue_row.get("rawCefr") == invalid_entry.get("cefr"), "invalid CEFR queue row rawCefr does not preserve the source value")
+            need(queue_row.get("reason") == "invalid-cefr-band", "invalid CEFR queue row reason is wrong")
+            need(queue_row.get("sourceExportSha256") == invalid_entry.get("sourceExportSha256"), "invalid CEFR queue row source hash does not cite the source export")
+    need(invalid_expected.get("outcome") == "invalid-cefr-source-data", "invalid CEFR case outcome is wrong")
+    need(invalid_expected.get("queue") == "invalid-cefr-source-data.jsonl", "invalid CEFR case queue is wrong")
+    need(invalid_expected.get("cefrBandOmitted") is True, "invalid CEFR case must omit the GSE CEFR band")
+    absent = cases.get("absent-optional-cefr") or {}
+    absent_entries = absent.get("entries") or []
+    absent_expected = absent.get("expected") or {}
+    need(len(absent_entries) == 1, "absent optional CEFR case needs one source entry")
+    if absent_entries:
+        need("cefr" not in absent_entries[0], "absent optional CEFR case must omit source cefr")
+    need(absent_expected.get("outcome") == "mapped", "absent optional CEFR case must remain mapped")
+    need(absent_expected.get("queue") is None, "absent optional CEFR case must create no queue name")
+    need(absent_expected.get("queueRow") is None, "absent optional CEFR case must create no queue row")
+    need(absent_expected.get("cefrBandOmitted") is True, "absent optional CEFR case must omit the GSE CEFR band")
+
+
 def check_conflict_case():
     manifest = manifest_and_files()
     mapping_doc = load_json("mapping-cases.json")
@@ -532,11 +647,18 @@ def check_conflict_case():
         report = expected.get("conflictReport")
         need(isinstance(report, dict), "conflict fixture needs a conflict report row expectation")
         if isinstance(report, dict):
-            for field in ("nodeId", "itemId", "cambridgeCefr", "gseCefrBand", "reason"):
+            for field in ("nodeId", "itemId", "audience", "cambridgeCefr", "cambridgeCefrAlignments", "gseCefrBand", "reason", "sourceExportSha256"):
                 need(field in report, f"conflict report expectation lacks {field}")
             need(report.get("nodeId") == node.get("nodeId"), "conflict report nodeId does not cite the node")
             need(report.get("itemId") == entries[0].get("itemId"), "conflict report itemId does not cite the entry")
+            need(report.get("audience") == entries[0].get("audience"), "conflict report audience does not cite the entry")
+            need(isinstance(report.get("cambridgeCefrAlignments"), list) and all(isinstance(value, str) and value.strip() for value in report.get("cambridgeCefrAlignments", [])), "conflict report cambridgeCefrAlignments must be a non-empty string list")
+            if "cambridgeCefrAlignments" in node:
+                need(report.get("cambridgeCefrAlignments") == node.get("cambridgeCefrAlignments"), "conflict report Cambridge alignments do not cite the node")
             need(report.get("reason") == "cambridge-gse-cefr-disagreement", "conflict report reason is wrong")
+            need(report.get("cambridgeCefr") == node.get("cambridgeCefr"), "conflict report Cambridge CEFR does not cite the node")
+            need(report.get("gseCefrBand") == source_band, "conflict report GSE band is not normalized from the entry")
+            need(report.get("sourceExportSha256") == entries[0].get("sourceExportSha256"), "conflict report source hash does not cite the entry")
 
 
 def check_falsifier():
@@ -597,7 +719,7 @@ def check_mutation_schema():
         if "temporaryGse" in source:
             need(mutation_expected.get("temporaryGse") == source.get("temporaryGse"), "mapped mutation temporaryGse flag is not source-backed")
         citation = mutation_expected.get("sourceCitation")
-        need(isinstance(citation, dict) and citation.get("itemId") == source.get("itemId") and citation.get("exportSha256") == source.get("sourceExportSha256"), "mapped mutation citation does not identify the source entry and export")
+        require_complete_source_citation(citation, source, "mapped mutation sourceCitation")
     conflict = cases.get("conflict-retains-cambridge") or {}
     conflict_node = conflict.get("nodeBefore") or {}
     conflict_source = conflict.get("sourceEntry") or {}
@@ -631,6 +753,7 @@ def check_byte_diff():
         return
     prior_nodes = node_by_id(prior)
     current_nodes = node_by_id(current)
+    source_by_item = source_entries_by_item()
     prior_bytes = canonical_bytes(prior)
     current_bytes = canonical_bytes(current)
     changed = sorted(node_id for node_id in set(prior_nodes) | set(current_nodes) if canonical_bytes(prior_nodes.get(node_id, {})) != canonical_bytes(current_nodes.get(node_id, {})))
@@ -649,6 +772,20 @@ def check_byte_diff():
         cambridge = (current_nodes.get(node_id, {}).get("metadata") or {}).get("cefr")
         if cambridge is not None and new_band is not None and band(cambridge) != band(new_band):
             conflicts += 1
+    for node_id, node in current_nodes.items():
+        gse = gse_metadata(node)
+        if not isinstance(gse, dict):
+            continue
+        mapped = "gseScore" in gse or "itemId" in gse
+        if not mapped:
+            continue
+        need(isinstance(gse.get("itemId"), str) and gse.get("itemId").strip(), f"byte-diff mapped node {node_id} lacks itemId")
+        source = source_by_item.get(gse.get("itemId"))
+        need(isinstance(source, dict), f"byte-diff mapped node {node_id} lacks a matching source entry")
+        if isinstance(source, dict):
+            require_complete_source_citation(gse.get("sourceCitation"), source, f"byte-diff mapped node {node_id} sourceCitation")
+            if "gseScore" in gse:
+                need(isinstance(gse.get("starred"), bool), f"byte-diff mapped node {node_id} gseScore requires boolean starred")
     nodes_mapped = sum(bool((gse_metadata(node) or {}).get("itemId")) for node in current_nodes.values())
     queue_rows = case.get("queueRows") or {}
     actual_counts = {
@@ -730,7 +867,24 @@ def check_determinism():
     need(yle_expected.get("beforeAfterByteIdentical") is True, "YLE expectation must require byte-identical before and after output")
     need(yle_expected.get("frozenBaselineUnchanged") is True, "YLE expectation must preserve the frozen baseline")
     need(yle_expected.get("frozenBaselineIsComparisonTarget") is False, "YLE expectation must not compare against the frozen release artifact")
-    need(isinstance(yle.get("frozenBaselineArtifact"), str) and yle.get("frozenBaselineArtifact").strip(), "YLE expectation lacks the frozen baseline artifact path")
+    baseline = yle.get("frozenBaselineArtifact")
+    expected_baseline = "english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json"
+    need(baseline == expected_baseline, "YLE expectation must cite the tracked frozen baseline artifact")
+    if baseline == expected_baseline:
+        baseline_path = repo_root / baseline
+        need(baseline_path.is_file() and stat.S_ISREG(baseline_path.lstat().st_mode), "YLE frozen baseline artifact must resolve to a regular file")
+        try:
+            tracked = subprocess.run(
+                ["git", "-C", str(repo_root), "ls-files", "--error-unmatch", "--", baseline],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                check=False,
+            )
+        except OSError as exc:
+            add_error(f"could not verify frozen baseline tracking: {exc}")
+        else:
+            need(tracked.returncode == 0 and tracked.stdout.strip() == baseline, "YLE frozen baseline artifact must be git-tracked")
 
 
 def check_plan_gate():
@@ -830,6 +984,37 @@ def check_plan_gate():
         print("Phase 2 plan state is valid mixed remediation: bounded task evidence matches its marker")
 
 
+def check_audit_gaps():
+    expected_failures = {
+        "determinism": ("YLE expectation must cite the tracked frozen baseline artifact",),
+        "mutation-schema": ("mapped mutation sourceCitation lacks sourceId",),
+        "byte-diff": (
+            "byte-diff mapped node fixture:core:you sourceCitation must be an object",
+            "byte-diff mapped node fixture:core:you gseScore requires boolean starred",
+        ),
+        "invalid-cefr": (
+            "invalid CEFR case must include a core node",
+            "absent optional CEFR case needs one source entry",
+        ),
+        "conflict": (
+            "conflict report expectation lacks audience",
+            "conflict report expectation lacks cambridgeCefrAlignments",
+            "conflict report expectation lacks sourceExportSha256",
+        ),
+    }
+    invalid_probe_names = []
+    for check_name, required_messages in expected_failures.items():
+        start = len(errors)
+        checks[check_name]()
+        probe_errors = errors[start:]
+        del errors[start:]
+        if not probe_errors or any(not any(message in error for error in probe_errors) for message in required_messages):
+            invalid_probe_names.append(check_name)
+    need(not invalid_probe_names, "audit-gap negative mode did not reproduce the targeted failures: " + ", ".join(invalid_probe_names))
+    if not invalid_probe_names:
+        print("audit-gap negative probes failed closed for all five current gaps")
+
+
 checks = {
     "manifest": check_manifest,
     "record-layouts": check_record_layouts,
@@ -837,6 +1022,7 @@ checks = {
     "yl-short-cefr": check_yl_short_cefr,
     "mapping-shape": check_mapping_shape_and_multi_pos,
     "queue-cases": check_queue_cases,
+    "invalid-cefr": check_invalid_cefr_cases,
     "conflict": check_conflict_case,
     "falsifier": check_falsifier,
     "mutation-schema": check_mutation_schema,
@@ -844,6 +1030,7 @@ checks = {
     "negative": check_negative_cases,
     "determinism": check_determinism,
     "plan-gate": check_plan_gate,
+    "audit-gaps": check_audit_gaps,
 }
 
 if check not in checks:
@@ -903,6 +1090,13 @@ else
   fail "queue fixture cases are missing or do not describe their semantic relationships"
 fi
 
+echo "=== invalid CEFR source data queues completely and absent optional CEFR creates no row ==="
+if probe invalid-cefr; then
+  pass "invalid present CEFR values use the complete queue row and absent optional CEFR creates no queue row"
+else
+  fail "invalid CEFR source-data or absent optional CEFR queue semantics are missing"
+fi
+
 echo "=== Cambridge and GSE level conflict fixture retains both values ==="
 if probe conflict; then
   pass "level conflict fixture records disagreement, preserved Cambridge data, GSE data, and report identity"
@@ -950,6 +1144,15 @@ if probe plan-gate; then
   pass "Phase 1 remains [b] deferred:both-owners and Phase 2 Red, Green, or bounded-remediation state is valid"
 else
   fail "plan markers do not preserve the Phase 1 human gate or a valid Phase 2 state"
+fi
+
+if [[ "${GSE_VOCAB_P2_NEGATIVE:-}" == "audit-gaps" ]]; then
+  echo "=== named audit-gap Red mode confirms each current gap fails closed ==="
+  if probe audit-gaps; then
+    pass "baseline path, citation, conflict report, newGraph, and invalid-CEFR probes each fail closed"
+  else
+    fail "named audit-gap Red mode did not reproduce every intended failure"
+  fi
 fi
 
 echo "=== results ==="

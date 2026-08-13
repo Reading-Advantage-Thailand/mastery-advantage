@@ -140,6 +140,17 @@
   - [x] A node where a naive form-only mapping binds the wrong POS entry - commit: ec8211d
 - [x] Task: Verify Phase 2 - commit: ec8211d
 
+- [~] Task: Jr-Green bounded remediation of Phase 2 audit gaps
+
+**Mid-Red bounded remediation evidence (2026-08-13):**
+
+- The bounded remediation task remains `[~]` for Jr-Green. The Phase 1 human gate remains `[b] deferred:both-owners`.
+- Exact `RED_TEST_COMMAND`: `GSE_VOCAB_P2_NEGATIVE=audit-gaps bash tests/gse_vocab_p2_fixtures.sh`
+- Result: exit `1`; `Total: 15 checks (PASS=10, FAIL=5)`.
+- Targeted failures: the frozen baseline path, complete source citation, complete conflict report, complete byte-diff `newGraph` citation and `starred`, and invalid-CEFR and absent-optional-CEFR fixture cases.
+- Ordinary command: `bash tests/gse_vocab_p2_fixtures.sh` exited `1` with `Total: 14 checks (PASS=9, FAIL=5)` for the same five audit gaps.
+- Log: `/tmp/opencode/gse-vocabulary-p2-mid-red-audit-e18a3d6.log`.
+
 **Mid-Red evidence (2026-08-13):**
 
 - The Phase 1 human gate remains `[b] deferred:both-owners`. All Phase 2
