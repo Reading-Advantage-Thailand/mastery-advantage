@@ -28,6 +28,7 @@ track_dir_resolve() {
   fi
 }
 TRACK_DIR="$(track_dir_resolve "$TRACK_ID")"
+PLAN="${GSE_VOCAB_P3_PLAN:-$TRACK_DIR/plan.md}"
 FIXTURE_DIR="${GSE_VOCAB_P3_FIXTURE_DIR:-$ROOT/english/cefr-vocabulary/fixtures/gse-vocab}"
 CONTRACT="$TRACK_DIR/phase3-execution-contract.md"
 ENTRYPOINT="$ROOT/english/cefr-vocabulary/scripts/gse-vocabulary-core.js"
@@ -43,12 +44,73 @@ fi
 
 cleanup() {
   rm -rf -- "$TEMP_ROOT"
+  if [[ -n "${NEGATIVE_PLAN:-}" ]]; then
+    rm -f -- "$NEGATIVE_PLAN"
+  fi
 }
 trap cleanup EXIT HUP INT TERM
 
+if [[ "${GSE_VOCAB_P3_NEGATIVE:-}" == "completed-without-sha" ]]; then
+  NEGATIVE_TMP_ROOT="${TMPDIR:-}"
+  if [[ -z "$NEGATIVE_TMP_ROOT" && -d /dev/shm && -w /dev/shm ]]; then
+    NEGATIVE_TMP_ROOT=/dev/shm
+  elif [[ -z "$NEGATIVE_TMP_ROOT" ]]; then
+    NEGATIVE_TMP_ROOT=/tmp
+  fi
+  NEGATIVE_PLAN="$(mktemp "$NEGATIVE_TMP_ROOT/gse-vocab-p3-plan.XXXXXX")"
+  if ! cp -- "$PLAN" "$NEGATIVE_PLAN"; then
+    printf 'could not copy plan for the completed-without-sha probe: %s\n' "$PLAN" >&2
+    exit 2
+  fi
+  python3 - "$NEGATIVE_PLAN" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+text = path.read_text(encoding="utf-8")
+phase = re.search(
+    r"(^## Phase 3: Extraction, Mapping, And Core Mutation\s*$)(.*?)(?=^## Phase 4:|\Z)",
+    text,
+    re.MULTILINE | re.DOTALL | re.IGNORECASE,
+)
+if phase is None:
+    raise SystemExit("Phase 3 section is missing from the temporary plan")
+
+task_pattern = re.compile(r"^([ \t]*)- \[([~xb ])\] (.+)$", re.MULTILINE)
+top_level_number = 0
+
+
+def rewrite(match):
+    global top_level_number
+    indent, _status, description = match.groups()
+    description = re.sub(
+        r"\s+-\s+commit:\s*[0-9a-f]{7,40}\b[.,]?",
+        "",
+        description,
+        flags=re.IGNORECASE,
+    ).rstrip()
+    if not indent:
+        top_level_number += 1
+        if top_level_number > 1:
+            description += " - commit: 9ef2832"
+    return f"{indent}- [x] {description}"
+
+
+rewritten_phase = task_pattern.sub(rewrite, phase.group(0))
+if top_level_number == 0:
+    raise SystemExit("Phase 3 has no top-level tasks in the temporary plan")
+path.write_text(text[: phase.start()] + rewritten_phase + text[phase.end() :], encoding="utf-8")
+PY
+  PLAN="$NEGATIVE_PLAN"
+elif [[ -n "${GSE_VOCAB_P3_NEGATIVE:-}" ]]; then
+  printf 'unknown GSE_VOCAB_P3_NEGATIVE mode: %s\n' "$GSE_VOCAB_P3_NEGATIVE" >&2
+  exit 2
+fi
+
 probe() {
   local check="$1"
-  python3 - "$ROOT" "$FIXTURE_DIR" "$ENTRYPOINT" "$FROZEN_YLE" "$TEMP_ROOT" "$TRACK_DIR" "$check" <<'PY'
+  python3 - "$ROOT" "$FIXTURE_DIR" "$ENTRYPOINT" "$FROZEN_YLE" "$TEMP_ROOT" "$TRACK_DIR" "$PLAN" "$check" <<'PY'
 import hashlib
 import json
 import re
@@ -58,13 +120,14 @@ import sys
 import unicodedata
 from pathlib import Path
 
-repo_root, fixture_arg, entrypoint_arg, frozen_arg, temp_arg, track_dir_arg, check = sys.argv[1:]
+repo_root, fixture_arg, entrypoint_arg, frozen_arg, temp_arg, track_dir_arg, plan_arg, check = sys.argv[1:]
 repo_root = Path(repo_root).resolve()
 fixture_root = Path(fixture_arg).resolve()
 entrypoint = Path(entrypoint_arg).resolve()
 frozen_path = Path(frozen_arg).resolve()
 temp_root = Path(temp_arg).resolve() / check
 track_dir = Path(track_dir_arg).resolve()
+plan_path = Path(plan_arg).resolve()
 temp_root.mkdir(parents=True, exist_ok=True)
 
 ALLOWED_BANDS = {"PRE-A1", "A1", "A2", "B1", "B2", "C1", "C2"}
@@ -465,7 +528,6 @@ def check_contract():
 
 
 def check_plan_state():
-    plan_path = track_dir / "plan.md"
     need(plan_path.is_file(), f"missing track plan: {plan_path}")
     text = plan_path.read_text(encoding="utf-8")
     match = re.search(
@@ -475,10 +537,27 @@ def check_plan_state():
     )
     need(match is not None, "exact Phase 3 heading is missing")
     phase = match.group(1)
-    markers = re.findall(r"^\s*- \[([~xb ])\] ", phase, re.MULTILINE)
-    need(markers, "Phase 3 has no task markers")
-    need(all(marker == "~" for marker in markers), "Phase 3 tasks must remain [~] during Red")
-    need(not re.search(r"^\s*- \[ \] ", phase, re.MULTILINE), "Phase 3 contains a deprecated [ ] marker")
+    task_rows = re.findall(r"^([ \t]*)- \[([~xb ])\] (.+)$", phase, re.MULTILINE)
+    need(task_rows, "Phase 3 has no task markers")
+    invalid_rows = [row for row in task_rows if row[1] not in ("~", "x")]
+    if invalid_rows:
+        raise ProbeError(f"Phase 3 contains unsupported marker [{invalid_rows[0][1]}]")
+    statuses = [status for _indent, status, _description in task_rows]
+    if all(status == "~" for status in statuses):
+        return
+    if all(status == "x" for status in statuses):
+        top_level = [
+            description
+            for indent, _status, description in task_rows
+            if not indent
+        ]
+        need(top_level, "Phase 3 has no completed top-level tasks")
+        commit_pattern = re.compile(r"\bcommit(?:s)?\s*:\s*[0-9a-f]{7,40}\b", re.IGNORECASE)
+        missing_sha = [description for description in top_level if commit_pattern.search(description) is None]
+        if missing_sha:
+            raise ProbeError(f"completed Phase 3 task lacks commit SHA evidence: {missing_sha[0]}")
+        return
+    need(False, "Phase 3 markers must be all [~] Red or all [x] Green")
 
 
 def check_extraction():
@@ -873,11 +952,11 @@ else
   fail "deterministic GL/YL extraction or raw marker preservation is missing"
 fi
 
-echo "=== Phase 3 plan tasks remain in the Red marker state ==="
+echo "=== Phase 3 plan markers obey the Red and Green state contract ==="
 if probe plan-state; then
-  pass "all Phase 3 tasks remain [~] during Mid-Red"
+  pass "Phase 3 uses a complete Red or Green marker state with required SHA evidence"
 else
-  fail "Phase 3 plan markers do not describe the Red state"
+  fail "Phase 3 plan markers do not describe a complete Red or Green state"
 fi
 
 echo "=== mapping requires exact form, normalized POS set, audience parity, and cross-audience rejection ==="

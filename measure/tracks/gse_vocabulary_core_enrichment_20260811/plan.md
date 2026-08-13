@@ -297,6 +297,27 @@ FAIL: malformed input or citation-free output was accepted
 === Total: 13 checks (PASS=2, FAIL=11) ===
 ```
 
+**Mid-Red bounded plan-gate correction evidence (2026-08-13):**
+
+- `check_plan_state()` now accepts complete Red and Green Phase 3 states.
+- Complete Red requires every Phase 3 marker to be `[~]`.
+- Complete Green requires every Phase 3 marker to be `[x]` and a 7-to-40 hex
+  commit SHA on every top-level completed task.
+- Mixed markers, `[ ]`, and missing top-level SHA evidence fail the check.
+- `bash -n tests/gse_vocab_p3_extraction.sh` exited `0`.
+- `bash tests/gse_vocab_p3_extraction.sh` exited `1` with `Total: 13 checks
+  (PASS=2, FAIL=11)`. The product entrypoint is absent, so the tree remains
+  Red.
+- `GSE_VOCAB_P3_NEGATIVE=completed-without-sha bash
+  tests/gse_vocab_p3_extraction.sh` exited `1` with `Total: 13 checks
+  (PASS=1, FAIL=12)`. The plan-state check rejected `Task: Implement the
+  deterministic GSE vocabulary extractor` without commit SHA evidence.
+- `bash tests/gse_vocab_p2_fixtures.sh` exited `0` with `Total: 14 checks
+  (PASS=14, FAIL=0)`.
+- `git diff --check` exited `0`.
+- The correction changed only the Phase 3 harness and this Phase 3 evidence.
+  Unrelated untracked paths remain untouched.
+
 Implementation handoff to Jr-Green:
 
 - Add `english/cefr-vocabulary/scripts/gse-vocabulary-core.js`.
