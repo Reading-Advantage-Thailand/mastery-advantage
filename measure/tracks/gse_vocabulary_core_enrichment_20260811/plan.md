@@ -233,6 +233,87 @@
   - [~] Name this track's queue files explicitly so foreign queue files
         cannot change its reports
 
+**Mid-Red evidence (2026-08-13):**
+
+- Phase 3 tasks and subtasks remain `[~]`. The Red role changed no production source.
+- The exact command is `bash tests/gse_vocab_p3_extraction.sh`.
+- The command exited `1` with `Total: 13 checks (PASS=2, FAIL=11)`.
+- A rerun after harness hardening kept the same exit `1` and the same `PASS=2, FAIL=11` result.
+- The contract check and the Phase 3 marker check passed.
+- The eleven live-behavior checks failed because the Phase 3 entrypoint is absent.
+- The failures are substantive. They test missing extraction, mapping, mutation, queues, reports, determinism, isolation, and rejection behavior.
+- The execution interface is defined in `phase3-execution-contract.md` because the specification and strategy did not define a runnable command or output paths.
+- The Red harness consumes `english/cefr-vocabulary/fixtures/gse-vocab/` and uses temporary paths under `/tmp/opencode/`.
+- The harness does not modify the frozen YLE artifact or repository-root temporary paths.
+- `bash -n tests/gse_vocab_p3_extraction.sh` exited `0`.
+- `bash tests/gse_vocab_p2_fixtures.sh` exited `0` with `Total: 14 checks (PASS=14, FAIL=0)`.
+- `bash tests/gse_vocab_p1_contracts.sh` exited `0` with `Total: 30 checks (PASS=30, FAIL=0)`.
+- `node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` exited `0` with `status: valid`.
+- `git diff --check` exited `0`.
+
+Exact Red output:
+
+```text
+=== Phase 3 execution contract defines a live test interface ===
+Phase 3 probe passed: contract
+=== GL and YL extraction is deterministic and preserves raw source markers ===
+first extractor run failed with exit 127: missing Phase 3 implementation: /home/daniebo/Desktop/mastery-advantage/english/cefr-vocabulary/scripts/gse-vocabulary-core.js
+=== Phase 3 plan tasks remain in the Red marker state ===
+Phase 3 probe passed: plan-state
+=== mapping requires exact form, normalized POS set, audience parity, and cross-audience rejection ===
+mapping run failed with exit 127: missing Phase 3 implementation: /home/daniebo/Desktop/mastery-advantage/english/cefr-vocabulary/scripts/gse-vocabulary-core.js
+=== mapped graph nodes carry complete citations and no inferred fields ===
+citation run failed with exit 127: missing Phase 3 implementation: /home/daniebo/Desktop/mastery-advantage/english/cefr-vocabulary/scripts/gse-vocabulary-core.js
+=== durable queues cover ambiguous, unmapped, unmatched, and invalid CEFR cases ===
+queue run failed with exit 127: missing Phase 3 implementation: /home/daniebo/Desktop/mastery-advantage/english/cefr-vocabulary/scripts/gse-vocabulary-core.js
+=== Cambridge and GSE conflict evidence remains visible ===
+conflict run failed with exit 127: missing Phase 3 implementation: /home/daniebo/Desktop/mastery-advantage/english/cefr-vocabulary/scripts/gse-vocabulary-core.js
+=== byte diff, version bump, source-backed newGraph validation, and graph edge rules are live ===
+byte-diff run failed with exit 127: missing Phase 3 implementation: /home/daniebo/Desktop/mastery-advantage/english/cefr-vocabulary/scripts/gse-vocabulary-core.js
+=== two core mutation runs are byte-identical ===
+first mutation run failed with exit 127: missing Phase 3 implementation: /home/daniebo/Desktop/mastery-advantage/english/cefr-vocabulary/scripts/gse-vocabulary-core.js
+=== same-procedure YLE isolation preserves the tracked frozen artifact ===
+YLE before run failed with exit 127: missing Phase 3 implementation: /home/daniebo/Desktop/mastery-advantage/english/cefr-vocabulary/scripts/gse-vocabulary-core.js
+=== explicit queue inputs isolate reports from foreign queues ===
+clean queue run failed with exit 127: missing Phase 3 implementation: /home/daniebo/Desktop/mastery-advantage/english/cefr-vocabulary/scripts/gse-vocabulary-core.js
+=== mapping quality report carries six labelled integer counts ===
+mapping quality run failed with exit 127: missing Phase 3 implementation: /home/daniebo/Desktop/mastery-advantage/english/cefr-vocabulary/scripts/gse-vocabulary-core.js
+=== malformed input and output without item citations are rejected ===
+output validation setup failed with exit 127: missing Phase 3 implementation: /home/daniebo/Desktop/mastery-advantage/english/cefr-vocabulary/scripts/gse-vocabulary-core.js
+=== results ===
+PASS: Phase 3 execution contract defines the live command and output paths
+FAIL: deterministic GL/YL extraction or raw marker preservation is missing
+PASS: all Phase 3 tasks remain [~] during Mid-Red
+FAIL: mapping identity or the cross-audience falsifier failed
+FAIL: mapped node citations or no-inference validation failed
+FAIL: durable queue behavior or optional CEFR handling is missing
+FAIL: Cambridge-GSE conflict evidence is missing or overwritten
+FAIL: core mutation, byte diff, source-backed newGraph validation, or graph edge rules are missing
+FAIL: core mutation output is not deterministic
+FAIL: same-procedure YLE isolation or frozen-artifact preservation is missing
+FAIL: foreign queue input changes a report or queue result
+FAIL: mapping quality report counts or queue labels are missing
+FAIL: malformed input or citation-free output was accepted
+=== Total: 13 checks (PASS=2, FAIL=11) ===
+```
+
+Implementation handoff to Jr-Green:
+
+- Add `english/cefr-vocabulary/scripts/gse-vocabulary-core.js`.
+- Support the command and output contract in `phase3-execution-contract.md`.
+- Consume the Phase 2 fixture pack for GL, YL, mapping, mutation, and negative cases.
+- Write only to supplied output and queue paths.
+- Use only explicit `--queue-file` inputs.
+- Validate every mapped graph node against its cited source entry.
+- Preserve raw starred GSE values and YL `temporaryGse` values.
+- Reject cross-audience multi-POS input.
+- Preserve Cambridge conflict evidence and omit inferred fields.
+- Keep the frozen YLE artifact unchanged during the same-procedure proof.
+- Produce canonical, deterministic graph, queue, and report bytes.
+- Reject malformed input and output without item citations with field-specific errors.
+- Keep `prerequisite_for` edge count at zero.
+- Re-run `bash tests/gse_vocab_p3_extraction.sh` and record the Green output before marking Phase 3 tasks `[x]`.
+
 ## Phase 4: Audit And Calibration
 
 - [~] Task: Audit the node-to-entry mapping
