@@ -318,6 +318,8 @@ FAIL: malformed input or citation-free output was accepted
 - The correction changed only the Phase 3 harness and this Phase 3 evidence.
   Unrelated untracked paths remain untouched.
 
+- Bounded correction: the rejection probe appends `fixture:core:absent` to `graph["nodes"]` before serialization. The rejection check reaches output validation and no longer fails because the node was absent from serialized JSON. `bash -n tests/gse_vocab_p3_extraction.sh` exited `0`; the full Red command exited `1` with `PASS=9 FAIL=4`. Remaining failures are inferred metadata in `ambiguous-binding`, missing Cambridge-GSE conflict evidence, invalid YLE arguments, and a missing field-specific rejection diagnostic.
+
 Implementation handoff to Jr-Green:
 
 - Add `english/cefr-vocabulary/scripts/gse-vocabulary-core.js`.

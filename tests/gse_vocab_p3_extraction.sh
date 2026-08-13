@@ -897,8 +897,8 @@ def check_rejection():
     require_rejection(validate_output(inferred_text, fixture_root), "output with invented definition", ("definition", "source"))
 
     graph = load_graph(valid_run)
-    nodes = graph_nodes(graph)
-    absent_node = nodes.setdefault("fixture:core:absent", {"id": "fixture:core:absent", "metadata": {}})
+    absent_node = {"id": "fixture:core:absent", "metadata": {}}
+    graph["nodes"].append(absent_node)
     absent_node.setdefault("metadata", {})["gse"] = {
         "itemId": "ua8444abd28d0e715.-5299d1a3.145b71d3748.46f2",
         "audience": "GL",
