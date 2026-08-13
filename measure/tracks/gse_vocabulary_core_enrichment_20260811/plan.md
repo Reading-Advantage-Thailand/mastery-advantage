@@ -141,6 +141,30 @@
   - [~] A node where a naive form-only mapping binds the wrong POS entry
 - [~] Task: Verify Phase 2
 
+**Mid-Red evidence (2026-08-13):**
+
+- The Phase 1 human gate remains `[b] deferred:both-owners`. All Phase 2
+  automatable tasks remain `[~]`; no later phase task was changed.
+- Red command: `RED_TEST_COMMAND="bash tests/gse_vocab_p2_fixtures.sh" bash tests/gse_vocab_p2_fixtures.sh`
+- Result: exit `1`; `Total: 13 checks (PASS=1, FAIL=12)`.
+- The passing check is the plan-gate probe. The exact failures are: fixture
+  manifest or required fixture files are missing or invalid; GL or YL record
+  layout semantics are missing; starred `gse` or `temporaryGse` preservation
+  semantics are missing; YL short CEFR fixture semantics are missing; mapping
+  fixture schema or multi-POS relationship is missing; queue fixture cases are
+  missing or do not describe their semantic relationships; Cambridge-vs-GSE
+  conflict fixture is missing or permits silent overwrite; required same-form
+  different-POS falsifier is missing or weak; core mutation fixture schema or
+  source-backed relationship is missing; byte-diff fixture does not reconcile
+  its report with the actual mutation; malformed-input or mutation rejection
+  probes are missing or vacuous; determinism or YLE baseline-isolation fixture
+  expectations are missing.
+- Log: `/tmp/opencode/gse-vocabulary-p2-mid-red-ee95902.log`.
+- Red artifact: `tests/gse_vocab_p2_fixtures.sh`. The canonical fixture schema
+  is `measure/tracks/gse_vocabulary_core_enrichment_20260811/phase2-fixture-contract.md`.
+- The test creates no fixture data and no production implementation. Jr-Green
+  must add the fixture pack before this command can exit `0`.
+
 ## Phase 3: Extraction, Mapping, And Core Mutation
 
 - [~] Task: Implement the deterministic GSE vocabulary extractor
