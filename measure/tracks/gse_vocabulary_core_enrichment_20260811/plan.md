@@ -128,18 +128,17 @@
 
 ## Phase 2: Tests And Fixtures
 
-- [~] Task: Build GSE vocabulary extraction fixtures
-  - [~] Cover GL and YL record layouts, starred `gse`, `temporaryGse`, and
-        the YL short CEFR form
-- [~] Task: Build mapping fixtures
-  - [~] Multi-POS expressions, ambiguous bindings, unmapped nodes
-  - [~] Nodes whose Cambridge level disagrees with the GSE band
-- [~] Task: Build core-mutation and determinism tests
-  - [~] Assert the YLE baseline regenerates byte-identical
-  - [~] Assert the byte-diff report matches the actual mutation
-- [~] Task: Build the falsifier fixture
-  - [~] A node where a naive form-only mapping binds the wrong POS entry
-- [~] Task: Verify Phase 2
+- [x] Task: Build GSE vocabulary extraction fixtures - commit: ec8211d
+  - [x] Cover GL and YL record layouts, starred `gse`, `temporaryGse`, and the YL short CEFR form - commit: ec8211d
+- [x] Task: Build mapping fixtures - commit: ec8211d
+  - [x] Multi-POS expressions, ambiguous bindings, unmapped nodes - commit: ec8211d
+  - [x] Nodes whose Cambridge level disagrees with the GSE band - commit: ec8211d
+- [x] Task: Build core-mutation and determinism tests - commit: ec8211d
+  - [x] Assert the YLE baseline regenerates byte-identical - commit: ec8211d
+  - [x] Assert the byte-diff report matches the actual mutation - commit: ec8211d
+- [x] Task: Build the falsifier fixture - commit: ec8211d
+  - [x] A node where a naive form-only mapping binds the wrong POS entry - commit: ec8211d
+- [x] Task: Verify Phase 2 - commit: ec8211d
 
 **Mid-Red evidence (2026-08-13):**
 
@@ -184,6 +183,15 @@
 - The negative mode uses a temporary plan copy. It leaves the tracked plan,
   fixture pack, audit evidence, and all unrelated work unchanged.
 - Log: `/tmp/opencode/gse-vocabulary-p2-mid-red-plan-fix-9ef2832.log`.
+
+**Jr-Green evidence (2026-08-13):**
+
+- Fixture implementation commit: `ec8211d`.
+- `bash tests/gse_vocab_p2_fixtures.sh` exited `0` with `Total: 13 checks (PASS=13, FAIL=0)`.
+- `bash tests/gse_vocab_p1_contracts.sh` exited `0` with `Total: 30 checks (PASS=30, FAIL=0)`.
+- `node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` exited `0` with graph `status: valid`.
+- `git diff --check` exited `0` before the fixture implementation commit.
+- The Phase 1 human gate remains `[b] deferred:both-owners`.
 
 ## Phase 3: Extraction, Mapping, And Core Mutation
 
