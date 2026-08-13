@@ -59,7 +59,7 @@
   - [x] Define the invalid-CEFR source-data queue and keep absent optional CEFR out of that queue - commit: e265616
   - [x] Normalize trailing punctuation in commit evidence - commit: e265616
 - [x] Task: Jr-Green remediation of Phase 1 Red evidence defects — remove the orphan bare generator command and correct the cycle-2 Red evidence - commit: d759ef1
-- [~] Task: Mid-Red adversarial guard hardening for Phase 1 contracts
+- [x] Task: Mid-Red adversarial guard hardening for Phase 1 contracts - commit: 0b1a14d
 - [b] Task: Complete Phase 1 review gate — deferred:both-owners
 
 **Mid-Red evidence (2026-08-12):**
@@ -111,9 +111,9 @@
 
 **Mid-Red adversarial hardening evidence (2026-08-13):**
 
-- The Mid-Red hardening task is in progress. The human gate remains `[b] deferred:both-owners`.
+- The Mid-Red hardening task is complete. The human gate remains `[b] deferred:both-owners`.
 - Normal command: `bash tests/gse_vocab_p1_contracts.sh` exited `0` with `Total: 30 checks (PASS=30, FAIL=0)`.
-- Exact `RED_TEST_COMMAND`: `GSE_VOCAB_P1_NEGATIVE=form-only bash tests/gse_vocab_p1_contracts.sh` exited `1` because the binding guard rejected form-only permission.
+- Exact `RED_TEST_COMMAND`: `GSE_VOCAB_P1_NEGATIVE=form-only bash tests/gse_vocab_p1_contracts.sh` exited `1` because the binding guard rejected form-only permission. The role gate must run this exact command with `expect_failure=True`.
 - F-ADV-P1-01 failed closed: a temporary form-only fixture exited `1` at the binding guard.
 - F-ADV-P1-02 failed closed: a temporary cross-audience substitution fixture exited `1` at the binding guard.
 - F-ADV-P1-03 failed closed: a temporary inference-permission fixture exited `1` at the no-inference guard.
@@ -124,7 +124,7 @@
 - The existing dropped-special-values probe still failed closed with `PASS=29 FAIL=1`.
 - The stale RA-P1-N5 message now states that the proof compares temporary before and after artifacts.
 - Log: `/tmp/opencode/gse-vocabulary-p1-mid-red-adversarial-e615688.log`.
-- The hardening task receives its test commit SHA after commit creation. `.opencode/` and `audit-results/` remain excluded from the commit.
+- Implementation commit: `0b1a14d9249b7521c40db4f5c7350b90cd1e5c42` contains the guard hardening. This plan evidence update is the post-commit plan update. `.opencode/` and `audit-results/` remain excluded from the commit.
 
 ## Phase 2: Tests And Fixtures
 
