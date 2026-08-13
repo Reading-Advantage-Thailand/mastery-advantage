@@ -345,6 +345,21 @@ Implementation handoff to Jr-Green:
 - Keep `prerequisite_for` edge count at zero.
 - Re-run `bash tests/gse_vocab_p3_extraction.sh` and record the Green output before marking Phase 3 tasks `[x]`.
 
+## Mid-Red independent-audit remediation evidence (2026-08-13)
+
+- The three focused tests were read. They write only under temporary paths and do not mutate tracked files.
+- The existing Phase 3 tasks and subtasks remain `[x]` for audited implementation commit `cb2a1a37999032d4db462f5148597a5b532ba0e4`. Remediation is open and owned by Jr-Green. No mixed `[~]` marker was added.
+- Exact command: `bash tests/gse_vocab_p3_review_mapping.sh`
+  - Result: exit `1`; `Total: 3 checks (PASS=0, FAIL=3)`.
+  - Named defects: wrong-POS mapping trusted the tampered expected item; one exact candidate still produced an ambiguous outcome; conflict output trusted the tampered expected band.
+- Exact command: `bash tests/gse_vocab_p3_review_graph.sh`
+  - Result: exit `1`; `Total: 3 checks (PASS=0, FAIL=3)`.
+  - Named defects: prior graph did not preserve the unrelated sentinel node; newGraph prior did not increment the version or report zero mutation; `validate-output` accepted missing afternoon definition or lacked a diagnostic.
+- Exact command: `bash tests/gse_vocab_p3_review_safety.sh`
+  - Result: exit `1`; `Total: 3 checks (PASS=0, FAIL=3)`.
+  - Named defects: shared frozen-YLE and byte-diff paths were accepted or changed; unknown options were accepted or lacked an unknown-option diagnostic; the independent before-and-after YLE proof failed.
+- Jr-Green owns remediation of these nine defects and must provide new Green evidence before changing the Phase 3 markers.
+
 ## Phase 4: Audit And Calibration
 
 - [~] Task: Audit the node-to-entry mapping
