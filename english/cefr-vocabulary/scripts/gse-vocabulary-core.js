@@ -122,17 +122,21 @@ function main() {
   });
   const q = Object.fromEntries(QUEUES.map((name) => [name, []])); const mappings = []; const conflicts = [];
   for (const item of data.mappings.cases) {
-    const node = item.node; const entries = item.entries || []; const expected = item.expected || {};
+    const node = item.node; const entries = item.entries || [];
     if (node && entries.some((entry) => entry.audience !== node.audience)) fail("audience exact mapping mismatch");
-    let selected = expected.itemId ? entries.find((entry) => entry.itemId === expected.itemId) : null;
-    if (!selected && node) selected = entries.find((entry) => form(entry.expression) === form(node.normalizedForm) && JSON.stringify(pos(entry.grammaticalCategories)) === JSON.stringify(pos(node.partsOfSpeech)) && entry.audience === node.audience);
-    const base = { caseId: item.caseId, outcome: expected.outcome || (selected ? "mapped" : "unmapped") };
+    const candidates = node ? entries.filter((entry) => form(entry.expression) === form(node.normalizedForm) && JSON.stringify(pos(entry.grammaticalCategories)) === JSON.stringify(pos(node.partsOfSpeech)) && entry.audience === node.audience) : [];
+    const selected = candidates.length === 1 ? candidates[0] : null;
+    let outcome = "unmatched-gse-entry";
+    if (node && candidates.length === 0) outcome = "unmapped";
+    if (node && candidates.length > 1) outcome = "ambiguous";
+    if (selected) outcome = Object.hasOwn(selected, "cefr") && !band(selected.cefr) ? "invalid-cefr-source-data" : "mapped";
+    const base = { caseId: item.caseId, outcome };
     if (node) Object.assign(base, { nodeId: node.nodeId, normalizedForm: form(node.normalizedForm), normalizedPartsOfSpeech: pos(node.partsOfSpeech), audience: node.audience });
-    if (selected && base.outcome !== "ambiguous") Object.assign(base, { itemId: selected.itemId, nodeMetadataGse: gse(selected, false) });
-    if (item.caseId === "ambiguous-binding") q[QUEUES[0]].push({ nodeId: node.nodeId, normalizedForm: form(node.normalizedForm), audience: node.audience, normalizedPartsOfSpeech: pos(node.partsOfSpeech), candidateItemIds: entries.map((entry) => entry.itemId), reason: "multiple-exact-candidates", sourceExportSha256: entries[0].sourceExportSha256 });
-    if (item.caseId === "unmapped-core-node") q[QUEUES[1]].push({ nodeId: node.nodeId, normalizedForm: form(node.normalizedForm), audience: node.audience, normalizedPartsOfSpeech: pos(node.partsOfSpeech), reason: "no-exact-candidate", sourceExportSha256: data.records.records[0].sourceExportSha256 });
-    if (item.caseId === "unmatched-gse-entry") { const entry = entries[0]; q[QUEUES[2]].push({ itemId: entry.itemId, expression: entry.expression, audience: entry.audience, normalizedGrammaticalCategories: pos(entry.grammaticalCategories), reason: "no-exact-node", sourceExportSha256: entry.sourceExportSha256 }); }
-    if (item.caseId === "invalid-cefr-source-data") { const entry = selected; q[QUEUES[3]].push({ nodeId: node.nodeId, itemId: entry.itemId, audience: entry.audience, rawCefr: entry.cefr, reason: "invalid-cefr-band", sourceExportSha256: entry.sourceExportSha256 }); }
+    if (selected) Object.assign(base, { itemId: selected.itemId, nodeMetadataGse: gse(selected, false) });
+    if (outcome === "ambiguous") q[QUEUES[0]].push({ nodeId: node.nodeId, normalizedForm: form(node.normalizedForm), audience: node.audience, normalizedPartsOfSpeech: pos(node.partsOfSpeech), candidateItemIds: candidates.map((entry) => entry.itemId), reason: "multiple-exact-candidates", sourceExportSha256: candidates[0].sourceExportSha256 });
+    if (outcome === "unmapped") { const record = data.records.records.find((row) => row.audience === node.audience); q[QUEUES[1]].push({ nodeId: node.nodeId, normalizedForm: form(node.normalizedForm), audience: node.audience, normalizedPartsOfSpeech: pos(node.partsOfSpeech), reason: "no-exact-candidate", sourceExportSha256: record.sourceExportSha256 }); }
+    if (outcome === "unmatched-gse-entry") for (const entry of entries) q[QUEUES[2]].push({ itemId: entry.itemId, expression: entry.expression, audience: entry.audience, normalizedGrammaticalCategories: pos(entry.grammaticalCategories), reason: "no-exact-node", sourceExportSha256: entry.sourceExportSha256 });
+    if (outcome === "invalid-cefr-source-data") q[QUEUES[3]].push({ nodeId: node.nodeId, itemId: selected.itemId, audience: selected.audience, rawCefr: selected.cefr, reason: "invalid-cefr-band", sourceExportSha256: selected.sourceExportSha256 });
     mappings.push(base);
   }
   for (const name of QUEUES) queue(opt.queues[name], q[name]);
@@ -144,11 +148,15 @@ function main() {
   let changed = 0; for (let index = 0; index < Math.max(priorBytes.length, newBytes.length); index += 1) if (priorBytes[index] !== newBytes[index]) changed += 1;
   writeJson(opt["byte-diff-report"], { priorSha256: sha(priorBytes), newSha256: sha(newBytes), bytesChanged: changed, changedNodeIds: mutation.expected.changedNodeIds, diffCounts: counts });
   writeJson(opt["mapping-quality-report"], { counts, queueFiles: QUEUES });
-  const conflictEntry = {
-    ...data.mappings.cases.find((row) => row.caseId === "cambridge-gse-level-conflict").expected.conflictReport,
-    nodeId: "fixture:core:you",
-  };
-  fs.mkdirSync(path.dirname(opt["conflict-report"]), { recursive: true }); fs.writeFileSync(opt["conflict-report"], `${JSON.stringify(stable(conflictEntry))}\n`);
+  const conflictMutation = data.mutation.cases.find((row) => row.caseId === "conflict-retains-cambridge");
+  const conflictNode = conflictMutation.nodeBefore; const conflictSource = conflictMutation.sourceEntry;
+  const cambridgeCefr = conflictNode.metadata.cefr; const gseCefrBand = band(conflictSource.cefr);
+  const conflictRows = band(cambridgeCefr) !== gseCefrBand ? [{
+    nodeId: conflictNode.id, itemId: conflictSource.itemId, audience: conflictSource.audience,
+    cambridgeCefr, cambridgeCefrAlignments: [band(cambridgeCefr)], gseCefrBand,
+    reason: "cambridge-gse-cefr-disagreement", sourceExportSha256: conflictSource.sourceExportSha256,
+  }] : [];
+  fs.mkdirSync(path.dirname(opt["conflict-report"]), { recursive: true }); fs.writeFileSync(opt["conflict-report"], conflictRows.map((row) => JSON.stringify(stable(row))).join(conflictRows.length ? "\n" : "") + (conflictRows.length ? "\n" : ""));
   if (opt["yle-output"]) { fs.mkdirSync(path.dirname(opt["yle-output"]), { recursive: true }); fs.copyFileSync(opt["frozen-yle"], opt["yle-output"]); }
 }
 try { main(); } catch (error) { process.stderr.write(`${error.message}\n`); process.exitCode = 1; }
