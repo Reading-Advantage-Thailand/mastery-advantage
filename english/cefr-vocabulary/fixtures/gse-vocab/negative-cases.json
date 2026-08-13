@@ -1,0 +1,7 @@
+{
+  "cases": [
+    {"caseId": "malformed-record-missing-item-id", "record": {"expression": "fixture-invalid", "audience": "GL", "grammaticalCategories": ["noun"], "fixtureData": true}, "expected": {"accepted": false}},
+    {"caseId": "mutation-without-item-citation", "sourceEntry": {"itemId": "fixture-source", "expression": "fixture", "audience": "GL", "grammaticalCategories": ["noun"]}, "mutation": {"metadata": {"gse": {"audience": "GL"}}, "fixtureData": true}, "expected": {"accepted": false}},
+    {"caseId": "mutation-infers-absent-definition", "sourceEntry": {"itemId": "fixture-source", "expression": "fixture", "audience": "GL", "grammaticalCategories": ["noun"]}, "mutation": {"metadata": {"gse": {"itemId": "fixture-source", "audience": "GL", "definition": "invented fixture text"}}, "fixtureData": true}, "expected": {"accepted": false}}
+  ]
+}

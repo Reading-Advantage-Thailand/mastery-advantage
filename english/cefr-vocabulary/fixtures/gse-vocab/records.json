@@ -1,0 +1,8 @@
+{
+  "records": [
+    {"caseId": "gl-standard-layout", "audience": "GL", "sourceExportSha256": "e63298d796eecc1d9ed68cd5bde28d01912cfe3312a1381d2b074cdbe9b90800", "record": {"itemId": "ua8444abd28d0e715.-5299d1a3.145b71d3748.46f2", "expression": "you", "audience": "GL", "cefr": "<A1 (10-21)", "gse": "11", "grammaticalCategories": ["pronoun"]}, "expected": {"normalizedCefr": "A1"}},
+    {"caseId": "gl-starred-gse", "audience": "GL", "sourceExportSha256": "e63298d796eecc1d9ed68cd5bde28d01912cfe3312a1381d2b074cdbe9b90800", "record": {"itemId": "ua8444abd28d0e715.-5299d1a3.145b710ae86.-4273", "expression": "afternoon", "audience": "GL", "cefr": "<A1 (10-21)*", "gse": "19*", "grammaticalCategories": ["noun"]}, "expected": {"normalizedCefr": "A1", "sourceValuePreserved": true, "gseRawValue": "19*", "starred": true}},
+    {"caseId": "yl-standard-layout", "audience": "YL", "sourceExportSha256": "6b8c895055ea6c24c8f29b9e2999676444ffe3507a61725a9595f6eab784ab30", "record": {"itemId": "ue5509a518e6b3efa.72421137.1585960e44b.18a6", "expression": "to", "expression_bre": "", "audience": "YL", "cefr": "<A1", "gse": "10", "temporaryGse": false, "grammaticalCategories": ["preposition"]}, "expected": {"normalizedCefr": "A1"}},
+    {"caseId": "yl-temporary-gse", "audience": "YL", "sourceExportSha256": "6b8c895055ea6c24c8f29b9e2999676444ffe3507a61725a9595f6eab784ab30", "record": {"itemId": "ue5509a518e6b3efa.72421137.1585960e44b.44d3", "expression": "ready, steady, go!", "expression_bre": "", "audience": "YL", "cefr": "<A1*", "gse": "17", "temporaryGse": true, "grammaticalCategories": ["phrase"]}, "expected": {"normalizedCefr": "A1", "sourceFieldPreserved": true, "temporaryGse": true}}
+  ]
+}
