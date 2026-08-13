@@ -140,7 +140,7 @@
   - [x] A node where a naive form-only mapping binds the wrong POS entry - commit: ec8211d
 - [x] Task: Verify Phase 2 - commit: ec8211d
 
-- [~] Task: Jr-Green bounded remediation of Phase 2 audit gaps
+- [x] Task: Jr-Green bounded remediation of Phase 2 audit gaps - commit: d4b055f
 
 **Mid-Red bounded remediation evidence (2026-08-13):**
 
@@ -203,6 +203,17 @@
 - `node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` exited `0` with graph `status: valid`.
 - `git diff --check` exited `0` before the fixture implementation commit.
 - The Phase 1 human gate remains `[b] deferred:both-owners`.
+
+**Jr-Green audit-remediation evidence (2026-08-13):**
+
+- Fixture remediation commit: `d4b055fd2350464b3855224e1a3190a441c72051`.
+- `bash tests/gse_vocab_p2_fixtures.sh` exited `0` with `Total: 14 checks (PASS=14, FAIL=0)`.
+- `bash tests/gse_vocab_p1_contracts.sh` exited `0` with `Total: 30 checks (PASS=30, FAIL=0)`.
+- `node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js` exited `0` with graph `status: valid`.
+- `git diff --check` exited `0` before the fixture remediation commit.
+- `GSE_VOCAB_P2_NEGATIVE=audit-gaps bash tests/gse_vocab_p2_fixtures.sh` exited `1` as the permanent mutation probe requires.
+- The Phase 1 human gate remains `[b] deferred:both-owners`.
+- Log: `/tmp/opencode/gse-vocabulary-p2-jr-green-remediation-9e3eb6a.log`.
 
 ## Phase 3: Extraction, Mapping, And Core Mutation
 
