@@ -28,8 +28,61 @@ track_dir_resolve() {
   fi
 }
 TRACK_DIR="$(track_dir_resolve "$TRACK_ID")"
-PLAN="$TRACK_DIR/plan.md"
+PLAN="${GSE_VOCAB_P2_PLAN:-$TRACK_DIR/plan.md}"
 FIX="${GSE_VOCAB_P2_FIXTURE_DIR:-$ROOT/english/cefr-vocabulary/fixtures/gse-vocab}"
+
+# Mid-Red uses this temporary plan mutation to prove that completed work needs
+# commit evidence. It never changes the tracked plan or fixture pack.
+if [[ "${GSE_VOCAB_P2_NEGATIVE:-}" == "completed-without-sha" ]]; then
+  NEGATIVE_PLAN="$(mktemp "${TMPDIR:-/tmp}/gse-vocab-p2-plan.XXXXXX")"
+  trap 'rm -f -- "$NEGATIVE_PLAN"' EXIT
+  if ! cp -- "$PLAN" "$NEGATIVE_PLAN"; then
+    printf 'could not copy plan for the completed-without-sha probe: %s\n' "$PLAN" >&2
+    exit 2
+  fi
+  python3 - "$NEGATIVE_PLAN" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+text = path.read_text(encoding="utf-8")
+phase = re.search(
+    r"(^## Phase 2: Tests And Fixtures\s*$)(.*?)(?=^## Phase 3:|\Z)",
+    text,
+    re.MULTILINE | re.DOTALL | re.IGNORECASE,
+)
+if phase is None:
+    raise SystemExit("Phase 2 section is missing from the temporary plan")
+
+task_pattern = re.compile(r"^([ \t]*- )[\[\]~xb ]+\s+(.+)$", re.MULTILINE)
+task_number = 0
+
+
+def rewrite(match):
+    global task_number
+    task_number += 1
+    description = re.sub(
+        r"\s+-\s+commit:\s*[0-9a-f]{7,40}\b[.,]?",
+        "",
+        match.group(2),
+        flags=re.IGNORECASE,
+    ).rstrip()
+    if task_number > 1:
+        description += " - commit: 9ef2832"
+    return f"{match.group(1)}[x] {description}"
+
+
+rewritten_phase = task_pattern.sub(rewrite, phase.group(0))
+if task_number == 0:
+    raise SystemExit("Phase 2 has no task markers in the temporary plan")
+path.write_text(text[: phase.start()] + rewritten_phase + text[phase.end() :], encoding="utf-8")
+PY
+  PLAN="$NEGATIVE_PLAN"
+elif [[ -n "${GSE_VOCAB_P2_NEGATIVE:-}" ]]; then
+  printf 'unknown GSE_VOCAB_P2_NEGATIVE mode: %s\n' "$GSE_VOCAB_P2_NEGATIVE" >&2
+  exit 2
+fi
 
 probe() {
   local check="$1"
@@ -680,14 +733,95 @@ def check_plan_gate():
         add_error(f"missing active plan: {plan_path}")
         return
     text = plan_path.read_text(encoding="utf-8")
-    need(re.search(r"^- \[b\].*deferred:both-owners", text, re.IGNORECASE | re.MULTILINE) is not None, "Phase 1 human gate is not preserved as [b] deferred:both-owners")
-    phase = re.search(r"^## Phase 2: Tests And Fixtures\s*$\n?(.*?)(?=^## Phase 3:|\Z)", text, re.IGNORECASE | re.MULTILINE | re.DOTALL)
+    phase_one = re.search(
+        r"^## Phase 1:.*?(?=^## Phase 2:|\Z)",
+        text,
+        re.IGNORECASE | re.MULTILINE | re.DOTALL,
+    )
+    need(phase_one is not None, "Phase 1 plan section is missing")
+    if phase_one:
+        need(
+            re.search(
+                r"^\s*- \[b\] Task: Complete Phase 1 review gate.*deferred:both-owners",
+                phase_one.group(0),
+                re.IGNORECASE | re.MULTILINE,
+            )
+            is not None,
+            "Phase 1 human gate is not preserved as [b] deferred:both-owners",
+        )
+    need(re.search(r"^\s*-\s+\[ \]", text, re.MULTILINE) is None, "plan contains a deprecated [ ] marker")
+
+    phase = re.search(
+        r"^## Phase 2: Tests And Fixtures\s*$\n?(.*?)(?=^## Phase 3:|\Z)",
+        text,
+        re.IGNORECASE | re.MULTILINE | re.DOTALL,
+    )
     need(phase is not None, "Phase 2 plan section is missing")
-    if phase:
-        phase_text = phase.group(1)
-        need(re.search(r"^- \[ \]", phase_text, re.MULTILINE) is None, "Phase 2 plan contains a deprecated [ ] marker")
-        for label in ("Build GSE vocabulary extraction fixtures", "Build mapping fixtures", "Build core-mutation and determinism tests", "Build the falsifier fixture", "Verify Phase 2"):
-            need(re.search(rf"^- \[~\] Task: {re.escape(label)}", phase_text, re.MULTILINE) is not None, f"Phase 2 task is not marked [~]: {label}")
+    if not phase:
+        return
+
+    phase_text = phase.group(1)
+    task_rows = re.findall(r"^\s*- \[([~xb ])\] (.+)$", phase_text, re.MULTILINE)
+    need(bool(task_rows), "Phase 2 has no task or subtask markers")
+    if not task_rows:
+        return
+
+    invalid_rows = [
+        (status, description)
+        for status, description in task_rows
+        if status not in ("~", "x")
+    ]
+    for status, description in invalid_rows:
+        add_error(f"Phase 2 task uses unsupported marker [{status}]: {description}")
+
+    commit_pattern = re.compile(r"\bcommit(?:s)?\s*:\s*[0-9a-f]{7,40}\b", re.IGNORECASE)
+    missing_sha = [description for status, description in task_rows if status == "x" and commit_pattern.search(description) is None]
+    for description in missing_sha:
+        add_error(f"completed Phase 2 task lacks commit SHA evidence: {description}")
+
+    statuses = [status for status, _description in task_rows]
+    if all(status == "~" for status in statuses):
+        print("Phase 2 plan state is valid Red: every task and subtask is [~]")
+        return
+    if all(status == "x" for status in statuses):
+        if not missing_sha:
+            print("Phase 2 plan state is valid Green: every task and subtask is [x] with commit SHA evidence")
+        return
+
+    remediation = [
+        (status, description)
+        for status, description in task_rows
+        if re.search(r"\bbounded[ -]remediation\b", description, re.IGNORECASE)
+    ]
+    if not remediation:
+        add_error("mixed Phase 2 markers require an explicit bounded remediation task")
+        return
+    remediation_statuses = {status for status, _description in remediation}
+    if len(remediation_statuses) != 1:
+        add_error("bounded remediation tasks must use one consistent marker state")
+
+    evidence_heading = re.search(
+        r"^\*\*[^\n]*bounded[ -]remediation[^\n]*\*\*:?\s*$",
+        phase_text,
+        re.IGNORECASE | re.MULTILINE,
+    )
+    command_evidence = re.search(r"^\s*-\s*(?:Red\s+)?command:\s*.+$", phase_text, re.IGNORECASE | re.MULTILINE)
+    result_evidence = re.search(
+        r"^\s*-\s*result:\s*exit\s*`?(\d+)`?.*$",
+        phase_text,
+        re.IGNORECASE | re.MULTILINE,
+    )
+    if evidence_heading is None or command_evidence is None or result_evidence is None:
+        add_error("mixed Phase 2 markers require bounded-remediation evidence with a command and exit result")
+        return
+
+    result_code = int(result_evidence.group(1))
+    if remediation_statuses == {"~"} and result_code == 0:
+        add_error("bounded remediation marked [~] requires a failing exit result")
+    if remediation_statuses == {"x"} and result_code != 0:
+        add_error("bounded remediation marked [x] requires a successful exit result")
+    if not errors:
+        print("Phase 2 plan state is valid mixed remediation: bounded task evidence matches its marker")
 
 
 checks = {
@@ -805,11 +939,11 @@ else
   fail "determinism or YLE baseline-isolation fixture expectations are missing"
 fi
 
-echo "=== Phase 1 human gate and Phase 2 in-progress markers remain honest ==="
+echo "=== Phase 1 human gate and Phase 2 plan-state markers obey the contract ==="
 if probe plan-gate; then
-  pass "Phase 1 remains [b] deferred:both-owners and all Phase 2 tasks remain [~]"
+  pass "Phase 1 remains [b] deferred:both-owners and Phase 2 Red, Green, or bounded-remediation state is valid"
 else
-  fail "plan markers do not preserve the Phase 1 human gate or Phase 2 in-progress state"
+  fail "plan markers do not preserve the Phase 1 human gate or a valid Phase 2 state"
 fi
 
 echo "=== results ==="

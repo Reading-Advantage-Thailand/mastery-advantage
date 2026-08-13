@@ -165,6 +165,26 @@
 - The test creates no fixture data and no production implementation. Jr-Green
   must add the fixture pack before this command can exit `0`.
 
+**Mid-Red plan-gate remediation evidence (2026-08-13):**
+
+- The Phase 1 human gate remains `[b] deferred:both-owners`. All Phase 2
+  automatable tasks and subtasks remain `[~]` for the valid Red state.
+- The plan gate now accepts either a complete Red state with every Phase 2
+  marker `[~]`, or a complete Green state with every marker `[x]` and commit
+  SHA evidence. It rejects `[ ]`, missing SHA evidence, and mixed markers
+  without honest bounded-remediation evidence.
+- The positive fixture harness passed with the preserved untracked Jr-Green
+  fixture pack: `bash tests/gse_vocab_p2_fixtures.sh` exited `0` with
+  `Total: 13 checks (PASS=13, FAIL=0)`.
+- Exact negative `RED_TEST_COMMAND`:
+  `GSE_VOCAB_P2_NEGATIVE=completed-without-sha bash tests/gse_vocab_p2_fixtures.sh`
+- The negative command exited `1` with `Total: 13 checks (PASS=12, FAIL=1)`.
+  The intentional failure was `completed Phase 2 task lacks commit SHA
+  evidence: Task: Build GSE vocabulary extraction fixtures`.
+- The negative mode uses a temporary plan copy. It leaves the tracked plan,
+  fixture pack, audit evidence, and all unrelated work unchanged.
+- Log: `/tmp/opencode/gse-vocabulary-p2-mid-red-plan-fix-9ef2832.log`.
+
 ## Phase 3: Extraction, Mapping, And Core Mutation
 
 - [~] Task: Implement the deterministic GSE vocabulary extractor
