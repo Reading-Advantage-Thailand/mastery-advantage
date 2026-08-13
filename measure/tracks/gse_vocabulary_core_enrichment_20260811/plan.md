@@ -59,6 +59,7 @@
   - [x] Define the invalid-CEFR source-data queue and keep absent optional CEFR out of that queue - commit: e265616
   - [x] Normalize trailing punctuation in commit evidence - commit: e265616
 - [x] Task: Jr-Green remediation of Phase 1 Red evidence defects — remove the orphan bare generator command and correct the cycle-2 Red evidence - commit: d759ef1
+- [~] Task: Mid-Red adversarial guard hardening for Phase 1 contracts
 - [b] Task: Complete Phase 1 review gate — deferred:both-owners
 
 **Mid-Red evidence (2026-08-12):**
@@ -107,6 +108,23 @@
 - The harness recognizes the valid quoted generator command inside the fenced sandbox procedure.
 - Log: `/tmp/opencode/gse-vocabulary-p1-mid-red-evidence-fix-1d0ce0d.log`.
 - Red artifact: `tests/gse_vocab_p1_contracts.sh`. Jr-Green owns the bounded documentation remediation.
+
+**Mid-Red adversarial hardening evidence (2026-08-13):**
+
+- The Mid-Red hardening task is in progress. The human gate remains `[b] deferred:both-owners`.
+- Normal command: `bash tests/gse_vocab_p1_contracts.sh` exited `0` with `Total: 30 checks (PASS=30, FAIL=0)`.
+- Exact `RED_TEST_COMMAND`: `GSE_VOCAB_P1_NEGATIVE=form-only bash tests/gse_vocab_p1_contracts.sh` exited `1` because the binding guard rejected form-only permission.
+- F-ADV-P1-01 failed closed: a temporary form-only fixture exited `1` at the binding guard.
+- F-ADV-P1-02 failed closed: a temporary cross-audience substitution fixture exited `1` at the binding guard.
+- F-ADV-P1-03 failed closed: a temporary inference-permission fixture exited `1` at the no-inference guard.
+- F-ADV-P1-04 failed closed: a temporary cycle-3 claim exited `1`; the guard requires exit `1` and `PASS=26 FAIL=2`.
+- F-ADV-P1-05 failed closed: a temporary unbound `all checks pass` claim exited `1` outside a named evidence section.
+- F-ADV-P1-06 failed closed: a temporary phrase/phrasal-verb collapse exited `1` at the POS guard.
+- Foreign queue path poisoning failed closed: a temporary foreign queue declaration exited `1` because every queue path must use `english/cefr-vocabulary/review/gse-vocab/queues/`.
+- The existing dropped-special-values probe still failed closed with `PASS=29 FAIL=1`.
+- The stale RA-P1-N5 message now states that the proof compares temporary before and after artifacts.
+- Log: `/tmp/opencode/gse-vocabulary-p1-mid-red-adversarial-e615688.log`.
+- The hardening task receives its test commit SHA after commit creation. `.opencode/` and `audit-results/` remain excluded from the commit.
 
 ## Phase 2: Tests And Fixtures
 

@@ -41,6 +41,53 @@ YLE_RELEASE="$ROOT/english/cefr-vocabulary/review/yle-2025/RELEASE-YLE-2025.md"
 GENERATOR="$ROOT/english/cefr-vocabulary/scripts/generate-vocabulary-graph.js"
 FROZEN_YLE_GRAPH="$ROOT/english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json"
 
+# Mid-Red uses this read-only override for temporary adversarial fixtures.
+if [[ -n "${GSE_VOCAB_P1_FIXTURE_DIR:-}" ]]; then
+  MAPPING="$GSE_VOCAB_P1_FIXTURE_DIR/phase1-mapping-contract.md"
+  MUTATION="$GSE_VOCAB_P1_FIXTURE_DIR/phase1-mutation-contract.md"
+  SAMPLES="$GSE_VOCAB_P1_FIXTURE_DIR/phase1-review-samples.md"
+  if [[ -f "$GSE_VOCAB_P1_FIXTURE_DIR/plan.md" ]]; then
+    PLAN="$GSE_VOCAB_P1_FIXTURE_DIR/plan.md"
+  fi
+  if [[ -f "$GSE_VOCAB_P1_FIXTURE_DIR/registry.md" ]]; then
+    REGISTRY="$GSE_VOCAB_P1_FIXTURE_DIR/registry.md"
+  fi
+fi
+if [[ -n "${GSE_VOCAB_P1_PLAN:-}" ]]; then
+  PLAN="$GSE_VOCAB_P1_PLAN"
+fi
+if [[ -n "${GSE_VOCAB_P1_REGISTRY:-}" ]]; then
+  REGISTRY="$GSE_VOCAB_P1_REGISTRY"
+fi
+if [[ "${GSE_VOCAB_P1_NEGATIVE:-}" == "form-only" ]]; then
+  NEGATIVE_ROOT="$(mktemp -d)"
+  trap 'rm -rf -- "$NEGATIVE_ROOT"' EXIT
+  for negative_contract in phase1-mapping-contract.md phase1-mutation-contract.md phase1-review-samples.md; do
+    cp -- "$ROOT/english/cefr-vocabulary/review/gse-vocab/$negative_contract" "$NEGATIVE_ROOT/$negative_contract"
+  done
+  python3 - "$NEGATIVE_ROOT/phase1-mapping-contract.md" <<'PY'
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+text = path.read_text(encoding="utf-8")
+start = text.index("## Binding Rule")
+pos_map = text.index("### POS Normalization Map", start)
+text = text[:start] + """## Binding Rule
+
+The mapper binds a core node to the first GSE entry whose form matches.
+Form-only binding is safe and permitted.
+
+The mapper does not check POS or audience.
+
+""" + text[pos_map:]
+path.write_text(text, encoding="utf-8")
+PY
+  MAPPING="$NEGATIVE_ROOT/phase1-mapping-contract.md"
+  MUTATION="$NEGATIVE_ROOT/phase1-mutation-contract.md"
+  SAMPLES="$NEGATIVE_ROOT/phase1-review-samples.md"
+fi
+
 doc_patterns() {
   local file="$1"
   shift
@@ -217,52 +264,88 @@ if not path.is_file():
     raise SystemExit(f"missing document: {path}")
 text = path.read_text(encoding="utf-8")
 
-anchors = list(re.finditer(r"binding rule|node[- ]to[- ]entry|mapping rule|matching rule", text, re.IGNORECASE))
-windows = [text[max(0, match.start() - 220): match.end() + 1500] for match in anchors]
-required = {
-    "core form identity": r"core node|normalizedHeadword|form",
-    "core POS": r"partsOfSpeech|part[s]?[- ]of[- ]speech|\bPOS\b",
-    "GSE expression": r"GSE.{0,80}expression|expression",
-    "GSE grammatical categories": r"grammaticalCategories|grammatical categor(?:y|ies)",
-    "audience": r"audience",
-    "GL audience": r"\bGL\b",
-    "YL audience": r"\bYL\b",
-    "binding operation": r"match|bind|join|key|equal|correspond",
-}
-if not windows:
+def section(text_value, heading_pattern):
+    match = re.search(
+        rf"^###?\s+{heading_pattern}\s*$\n?(.*?)(?=^###?\s+|\Z)",
+        text_value,
+        re.IGNORECASE | re.MULTILINE | re.DOTALL,
+    )
+    return match.group(1) if match else ""
+
+def table_rows(table_text):
+    rows = {}
+    for line in table_text.splitlines():
+        if not line.lstrip().startswith("|"):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) < 2 or all(set(cell) <= {"-", ":", " "} for cell in cells):
+            continue
+        key = re.sub(r"[`*]", "", cells[0]).strip().casefold()
+        rows[key] = cells
+    return rows
+
+binding = section(text, r"Binding Rule")
+if not binding:
     raise SystemExit("mapping contract has no binding-rule section")
-if not any(
-    all(re.search(pattern, window, re.IGNORECASE | re.DOTALL) for pattern in required.values())
-    for window in windows
-):
-    raise SystemExit("one binding-rule section does not require core form + POS, GSE expression + categories, and audience")
 
-pos_anchors = list(re.finditer(r"POS.{0,80}(?:normalization|mapping)|(?:normalization|mapping).{0,80}POS", text, re.IGNORECASE))
-pos_windows = [text[max(0, match.start() - 160): match.end() + 900] for match in pos_anchors]
-if not any(
-    re.search(r"phrase", window, re.IGNORECASE)
-    and re.search(r"phrasal verb", window, re.IGNORECASE)
-    and re.search(r"map|normaliz|correspond|=>|->", window, re.IGNORECASE)
-    for window in pos_windows
-):
-    raise SystemExit("POS normalization map does not distinguish phrase and phrasal verb")
+identity_table = binding.split("### POS Normalization Map", 1)[0]
+rows = table_rows(identity_table)
+for key in ("form", "pos", "audience"):
+    if key not in rows:
+        raise SystemExit(f"binding-rule table is missing the {key} identity row")
+if any(len(rows[key]) < 4 for key in ("form", "pos", "audience")):
+    raise SystemExit("binding-rule identity rows must contain core, GSE, and rule cells")
 
-audience_anchors = list(re.finditer(r"audience.{0,100}(?:rule|match|handling|filter|separat|distinguish)|(?:rule|match|handling|filter|separat|distinguish).{0,100}audience", text, re.IGNORECASE))
-audience_windows = [text[max(0, match.start() - 120): match.end() + 650] for match in audience_anchors]
-if not any(
-    re.search(r"\bGL\b", window)
-    and re.search(r"\bYL\b", window)
-    and re.search(r"match|separat|filter|distinguish|not.{0,30}(?:cross|mix|substitut)", window, re.IGNORECASE)
-    for window in audience_windows
-):
-    raise SystemExit("audience rule does not separate or match GL and YL")
+form_core, form_gse, form_rule = rows["form"][1:4]
+pos_core, pos_gse, pos_rule = rows["pos"][1:4]
+audience_core, audience_gse, audience_rule = rows["audience"][1:4]
+required_cells = {
+    "form core": (form_core, r"metadata\.normalizedForm"),
+    "form GSE": (form_gse, r"\bexpression\b"),
+    "form normalization": (form_rule, r"unicode[- ]normalize.*trim.*case[- ]fold.*compare equal"),
+    "POS core": (pos_core, r"metadata\.partsOfSpeech"),
+    "POS GSE": (pos_gse, r"grammaticalCategories"),
+    "POS normalization": (pos_rule, r"normalize.*POS.*sets.*match exactly"),
+    "audience core": (audience_core, r"explicit mapper input.*audience"),
+    "audience GSE": (audience_gse, r"\baudience\b"),
+    "GL binding": (audience_rule, r"GL input matches GL only"),
+    "YL binding": (audience_rule, r"YL input matches YL only"),
+}
+for label, (value, pattern) in required_cells.items():
+    if re.search(pattern, value, re.IGNORECASE | re.DOTALL) is None:
+        raise SystemExit(f"binding-rule {label} cell does not state the required normalized identity")
 
-form_only_anchors = list(re.finditer(r"form[- ]only|only the form|form alone", text, re.IGNORECASE))
-if not any(
-    re.search(r"not|reject|unsafe|insufficient|prohibit|forbid|does not|cannot", text[max(0, match.start() - 160): match.end() + 260], re.IGNORECASE)
-    for match in form_only_anchors
-):
-    raise SystemExit("mapping contract does not reject form-only mapping")
+if re.search(r"\bform[- ]only\b.{0,140}\b(?:unsafe|prohibited|not permitted|must not|insufficient)\b", binding, re.IGNORECASE | re.DOTALL) is None:
+    raise SystemExit("binding rule does not explicitly reject form-only permission")
+if re.search(r"\bform[- ]only\b.{0,140}\b(?:safe|permitted|allowed|acceptable)\b", binding, re.IGNORECASE | re.DOTALL):
+    raise SystemExit("binding rule permits form-only matching")
+
+audience = section(text, r"GL And YL Audience Rule")
+if not audience:
+    raise SystemExit("GL/YL audience rule section is missing")
+non_substitution = (
+    r"\bA\s+GL\s+entry\s+(?:cannot|must not|may not|is not permitted to|is not allowed to)\s+"
+    r"substitut\w*\s+for\s+a\s+YL\s+entry\b",
+    r"\bA\s+YL\s+entry\s+(?:cannot|must not|may not|is not permitted to|is not allowed to)\s+"
+    r"substitut\w*\s+for\s+a\s+GL\s+entry\b",
+)
+if not all(re.search(pattern, audience, re.IGNORECASE | re.DOTALL) for pattern in non_substitution):
+    raise SystemExit("audience rule does not explicitly prohibit GL/YL cross-audience substitution")
+if re.search(r"\b(?:GL|YL)\s+entry\s+(?:may|can|is permitted|is allowed to)\s+substitut", audience, re.IGNORECASE):
+    raise SystemExit("audience rule permits cross-audience substitution")
+if re.search(r"cross[- ]audience\s+matches?\s+are\s+permitted", audience, re.IGNORECASE):
+    raise SystemExit("audience rule permits cross-audience matches")
+
+pos_map = section(text, r"POS Normalization Map")
+pos_rows = table_rows(pos_map)
+if "phrase" not in pos_rows or "phrasal verb" not in pos_rows:
+    raise SystemExit("POS normalization map is missing phrase or phrasal verb")
+if len(pos_rows["phrase"]) < 3 or len(pos_rows["phrasal verb"]) < 3:
+    raise SystemExit("POS normalization rows are incomplete")
+phrase_value = re.sub(r"[`*]", "", pos_rows["phrase"][-1]).strip().casefold()
+phrasal_value = re.sub(r"[`*]", "", pos_rows["phrasal verb"][-1]).strip().casefold()
+if not phrase_value or not phrasal_value or phrase_value == phrasal_value:
+    raise SystemExit("phrase and phrasal verb normalize to the same POS value")
 PY
 )"; then
   binding_status=0
@@ -385,26 +468,95 @@ else
 fi
 
 echo "=== mapping contract isolates queues to this track and rejects foreign queue influence ==="
-if doc_patterns "$MAPPING" \
-  'FR-8' \
-  'queue[ -]?(?:isolation|files|directory)' \
-  "(?:review/gse-vocab|measure/tracks/$TRACK_ID)/queues?/" \
-  'foreign queue.{0,220}(?:must not|cannot|does not|must never).{0,220}(?:change|affect|poison|report)' \
-  'ambiguous' \
-  'unmapped'; then
-  pass "queue paths are explicit under this track and foreign queues cannot alter its reports"
+queue_isolation_status=0
+queue_isolation_error=""
+if queue_isolation_error="$(python3 - "$MAPPING" "$TRACK_ID" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+track_id = sys.argv[2]
+text = path.read_text(encoding="utf-8") if path.is_file() else ""
+match = re.search(r"^##\s+Durable Queues\s*$\n?(.*?)(?=^##\s+|\Z)", text, re.IGNORECASE | re.MULTILINE | re.DOTALL)
+if match is None:
+    raise SystemExit("Durable Queues section is missing")
+queue_section = match.group(1)
+declared = sorted(set(re.findall(
+    r"(?<![A-Za-z0-9_.-])((?:[A-Za-z0-9_.-]+/)+queues/[A-Za-z0-9_.-]+\.jsonl)(?![A-Za-z0-9_.-])",
+    text,
+)))
+expected_directory = "english/cefr-vocabulary/review/gse-vocab/queues/"
+if len(declared) != 4:
+    raise SystemExit(f"expected four declared queue paths, found {len(declared)}: {declared}")
+foreign = [queue_path for queue_path in declared if not queue_path.startswith(expected_directory)]
+if foreign:
+    raise SystemExit(f"declared queue path is outside this track's required directory: {foreign}")
+if any("/queues/" not in queue_path for queue_path in declared):
+    raise SystemExit("a declared queue path does not contain a queue directory")
+if re.search(r"FR-8", text, re.IGNORECASE) is None:
+    raise SystemExit("FR-8 is not named")
+isolation = re.search(r"^##\s+FR-8 Queue Isolation\s*$\n?(.*?)(?=^##\s+|\Z)", text, re.IGNORECASE | re.MULTILINE | re.DOTALL)
+if isolation is None or re.search(r"foreign queue(?: file)?\s+(?:must not|cannot|does not)\s+(?:change|affect|poison)", isolation.group(1), re.IGNORECASE | re.DOTALL) is None:
+    raise SystemExit("FR-8 section does not prohibit foreign queue influence")
+print("all declared queue paths are under english/cefr-vocabulary/review/gse-vocab/queues/")
+PY
+)"; then
+  queue_isolation_status=0
 else
-  fail "mapping contract lacks explicit FR-8 queue isolation"
+  queue_isolation_status=$?
+fi
+if [[ "$queue_isolation_status" -eq 0 ]]; then
+  printf '%s\n' "$queue_isolation_error"
+  pass "all declared queue paths are explicit under this track and foreign queues cannot alter its reports"
+else
+  printf '%s\n' "$queue_isolation_error"
+  fail "mapping contract declares a foreign queue path or lacks explicit FR-8 queue isolation"
 fi
 
 echo "=== mapping contract enforces item citations and no inference for absent entries ==="
-if doc_patterns "$MAPPING" \
-  '(?:mapped node|mapped nodes).{0,220}(?:itemId|item ID)' \
-  'no[- ]inference|no inference|must not infer|do not infer|never infer' \
-  '(?:absent|unmapped|no matching).{0,220}(?:queue|no GSE data|no data)'; then
-  pass "mapped nodes cite itemId and absent matches create queue evidence without inferred GSE data"
+no_inference_status=0
+no_inference_error=""
+if no_inference_error="$(python3 - "$MAPPING" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+text = path.read_text(encoding="utf-8") if path.is_file() else ""
+section = re.search(r"^##\s+No-Inference And Citations\s*$\n?(.*?)(?=^##\s+|\Z)", text, re.IGNORECASE | re.MULTILINE | re.DOTALL)
+if section is None:
+    raise SystemExit("No-Inference And Citations section is missing")
+clause = section.group(1)
+if re.search(r"mapped node[s]?.{0,180}itemId", clause, re.IGNORECASE | re.DOTALL) is None:
+    raise SystemExit("no-inference section does not bind mapped nodes to itemId citations")
+if re.search(r"absent\s+or\s+unmapped\s+entry.{0,180}unmapped queue row", clause, re.IGNORECASE | re.DOTALL) is None:
+    raise SystemExit("no-inference section does not route absent or unmapped entries to a queue row")
+inference_clause = re.search(
+    r"\b(?:the\s+)?mapper\s+uses\s+no\s+inference\s*:\s*"
+    r"it\s+must\s+not\s+infer\s+"
+    r"a\s+(?P<fields>score,\s*band,\s*definition,\s*example,\s*POS,\s*audience,\s*or\s*source\s+entry)\s+"
+    r"from\s+a\s+similar\s+form\b",
+    clause,
+    re.IGNORECASE | re.DOTALL,
+)
+if inference_clause is None:
+    raise SystemExit("no-inference section does not prohibit inference of score, band, definition, example, POS, audience, and source entry")
+if re.search(r"\b(?:may|can|permitted|allowed)\s+infer\b", clause, re.IGNORECASE):
+    raise SystemExit("no-inference section contains an inference permission")
+print("actual no-inference clause prohibits every listed inferred field")
+PY
+)"; then
+  no_inference_status=0
 else
-  fail "mapping contract permits inferred data or omits mapped itemId citations"
+  no_inference_status=$?
+fi
+if [[ "$no_inference_status" -eq 0 ]]; then
+  printf '%s\n' "$no_inference_error"
+  pass "mapped nodes cite itemId and the actual no-inference clause forbids inferred GSE fields"
+else
+  printf '%s\n' "$no_inference_error"
+  fail "mapping contract permits inferred data or omits the actual no-inference clause"
 fi
 
 echo "=== mutation contract names all source-backed node fields ==="
@@ -597,7 +749,7 @@ run_errors = []
 artifacts = {}
 comparison_returncode = None
 
-with tempfile.TemporaryDirectory(prefix="gse-vocab-yle-before-after-") as temporary_root:
+with tempfile.TemporaryDirectory(prefix="gse-vocab-yle-before-after-", dir=repo_root) as temporary_root:
     root = Path(temporary_root)
     for label in ("before", "after"):
         sandbox = root / label
@@ -1073,7 +1225,7 @@ if not command_lines:
 if re.search(r"\b(?:sha256sum|shasum)\b", mutation) is None:
     errors.append("YLE proof does not hash the temporary comparison artifact")
 if re.search(r"\bcmp\b", mutation) is None:
-    errors.append("YLE proof does not compare the temporary artifact with the frozen graph")
+    errors.append("YLE proof does not compare the temporary before and after artifacts")
 if re.search(r"(?:/tmp/|mktemp|tmpdir|temporary[ -_]?(?:file|artifact)|temp[ -_]?(?:file|artifact))", mutation, re.IGNORECASE) is None:
     errors.append("YLE proof does not name a temporary comparison artifact")
 if re.search(
@@ -1119,7 +1271,7 @@ probe_output_exists = False
 probe_output_path = None
 probe_command = []
 
-with tempfile.TemporaryDirectory(prefix="gse-vocab-yle-proof-") as temporary_root:
+with tempfile.TemporaryDirectory(prefix="gse-vocab-yle-proof-", dir=repo_root) as temporary_root:
     sandbox = Path(temporary_root)
     script_target = sandbox / "english/cefr-vocabulary/scripts/generate-vocabulary-graph.js"
     script_target.parent.mkdir(parents=True, exist_ok=True)
@@ -1324,6 +1476,98 @@ if [[ "$cycle2_evidence_status" -eq 0 ]]; then
 else
   printf '%s\n' "$cycle2_evidence_error"
   fail "cycle-2 Red plan evidence does not match the recorded result or Green RA-P1-N4 closure"
+fi
+
+echo "=== cycle-3 Red plan evidence matches the recorded adversarial result ==="
+cycle3_evidence_status=0
+cycle3_evidence_error=""
+if cycle3_evidence_error="$(python3 - "$PLAN" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+text = path.read_text(encoding="utf-8") if path.is_file() else ""
+match = re.search(
+    r"^\*\*Mid-Red evidence remediation cycle 3 \(2026-08-12\):\*\*"
+    r"(.*?)(?=^\*\*|^## Phase 2:|\Z)",
+    text,
+    re.MULTILINE | re.DOTALL,
+)
+if match is None:
+    raise SystemExit("cycle-3 Mid-Red evidence section is missing")
+evidence = match.group(1)
+required = {
+    "exit status": r"Result:\s*exit\s*`1`",
+    "recorded Red result": r"Total:\s*28\s+checks\s+\(PASS=26,\s*FAIL=2\)",
+    "orphan-command failure": r"orphan bare generator command",
+    "cycle-2 evidence failure": r"cycle-2 Red plan evidence",
+}
+missing = [label for label, pattern in required.items() if re.search(pattern, evidence, re.IGNORECASE) is None]
+if missing:
+    raise SystemExit("cycle-3 Red evidence is missing: " + ", ".join(missing))
+if re.search(r"Result:\s*exit\s*`0`|PASS=28,\s*FAIL=0", evidence, re.IGNORECASE):
+    raise SystemExit("cycle-3 Red evidence claims a passing result")
+print("cycle-3 Red evidence records exit 1, PASS=26 FAIL=2, and both expected failures")
+PY
+)"; then
+  cycle3_evidence_status=0
+else
+  cycle3_evidence_status=$?
+fi
+if [[ "$cycle3_evidence_status" -eq 0 ]]; then
+  printf '%s\n' "$cycle3_evidence_error"
+  pass "cycle-3 Red plan evidence matches exit 1 with PASS=26 FAIL=2 and its two failures"
+else
+  printf '%s\n' "$cycle3_evidence_error"
+  fail "cycle-3 Red plan evidence does not match exit 1 with PASS=26 FAIL=2"
+fi
+
+echo "=== plan claims bind all-checks evidence to a precise successful command ==="
+claim_status=0
+claim_error=""
+if claim_error="$(python3 - "$PLAN" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+text = path.read_text(encoding="utf-8") if path.is_file() else ""
+headings = list(re.finditer(r"(?im)^(##\s+[^\n]+|\*\*[^*\n]+\*\*:?)[ \t]*$", text))
+# Inline code can quote a claim as attack evidence. Validate only prose claims.
+masked = re.sub(r"`[^`\n]*`", lambda match: " " * len(match.group(0)), text)
+claims = list(re.finditer(r"\ball checks pass\b|\bPASS=\d+\s*,?\s*FAIL=0\b", masked, re.IGNORECASE))
+for claim in claims:
+    prior_headings = [heading for heading in headings if heading.start() < claim.start()]
+    heading = prior_headings[-1] if prior_headings else None
+    heading_title = re.sub(r"^##\s+|^\*\*|\*\*:?$", "", heading.group(1)).strip() if heading else ""
+    if heading is None or "evidence" not in heading_title.casefold():
+        raise SystemExit("unbound all-checks claim is outside a named evidence section")
+    section_start = heading.end()
+    following_headings = [item for item in headings if item.start() > heading.start()]
+    section_end = following_headings[0].start() if following_headings else len(text)
+    evidence_section = text[section_start:section_end]
+    claim_offset = claim.start() - section_start
+    before_claim = evidence_section[:claim_offset]
+    if re.search(
+        r"(?im)^\s*-?\s*(?:Normal command:\s*)?`?bash\s+tests/gse_vocab_p1_contracts\.sh`?\s+"
+        r"exited\s+`?0`?\b",
+        before_claim,
+    ) is None:
+        raise SystemExit("successful checks claim is not bound to bash tests/gse_vocab_p1_contracts.sh exiting 0")
+print("all successful-check claims are confined to evidence sections with an exit-0 command")
+PY
+)"; then
+  claim_status=0
+else
+  claim_status=$?
+fi
+if [[ "$claim_status" -eq 0 ]]; then
+  printf '%s\n' "$claim_error"
+  pass "plan all-checks claims use a precise evidence section and an exit-0 command"
+else
+  printf '%s\n' "$claim_error"
+  fail "plan contains an unbound all-checks claim"
 fi
 
 echo "=== track registry does not claim GSE core release before dual owner gates ==="
