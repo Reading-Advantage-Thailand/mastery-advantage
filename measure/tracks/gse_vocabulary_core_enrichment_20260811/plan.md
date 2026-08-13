@@ -312,8 +312,7 @@ FAIL: malformed input or citation-free output was accepted
   tests/gse_vocab_p3_extraction.sh` exited `1` with `Total: 13 checks
   (PASS=1, FAIL=12)`. The plan-state check rejected `Task: Implement the
   deterministic GSE vocabulary extractor` without commit SHA evidence.
-- `bash tests/gse_vocab_p2_fixtures.sh` exited `0` with `Total: 14 checks
-  (PASS=14, FAIL=0)`.
+- `bash tests/gse_vocab_p2_fixtures.sh` exited `0`.
 - `git diff --check` exited `0`.
 - The correction changed only the Phase 3 harness and this Phase 3 evidence.
   Unrelated untracked paths remain untouched.
