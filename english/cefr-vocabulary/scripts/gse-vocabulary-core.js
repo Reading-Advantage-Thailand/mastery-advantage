@@ -19,6 +19,12 @@ const SOURCE_IDS = {
   GL: "gse-vocabulary-gl-10-67-2026-08-11",
   YL: "gse-vocabulary-yl-10-59-2026-08-11",
 };
+const OPTIONS_WITH_VALUES = new Set([
+  "--fixture-dir", "--prior-graph", "--output-dir", "--queue-file",
+  "--byte-diff-report", "--mapping-quality-report", "--conflict-report",
+  "--yle-output", "--frozen-yle", "--run-label", "--validate-output",
+]);
+const FLAGS = new Set(["--mutation-applied-between-runs"]);
 
 function fail(message) { throw new Error(message); }
 function canonical(value) { return JSON.stringify(value, Object.keys(value).sort(), 0); }
@@ -50,13 +56,74 @@ function args() {
   for (let index = 0; index < values.length;) {
     const key = values[index]; const value = values[index + 1];
     if (!key || !key.startsWith("--")) fail("command arguments are invalid");
-    if (key === "--mutation-applied-between-runs") { result[key.slice(2)] = true; index += 1; continue; }
+    if (!OPTIONS_WITH_VALUES.has(key) && !FLAGS.has(key)) fail(`unknown option: ${key}`);
+    if (FLAGS.has(key)) { result[key.slice(2)] = true; index += 1; continue; }
     if (value === undefined) fail("command arguments are invalid");
-    if (key === "--queue-file") { const cut = value.indexOf("="); result.queues[value.slice(0, cut)] = value.slice(cut + 1); }
+    if (key === "--queue-file") {
+      const cut = value.indexOf("="); const name = value.slice(0, cut); const file = value.slice(cut + 1);
+      if (cut < 1 || !file) fail("queue-file is invalid");
+      if (!QUEUES.includes(name)) fail(`queue-file name is unknown: ${name}`);
+      if (result.queues[name]) fail(`queue-file is duplicated: ${name}`);
+      result.queues[name] = file;
+    }
     else result[key.slice(2)] = value;
     index += 2;
   }
   return result;
+}
+function resolvedInput(file, name) {
+  try { return fs.realpathSync(file); }
+  catch (error) { fail(`${name} cannot be resolved: ${error.message}`); }
+}
+function resolvedOutput(file, name) {
+  const absolute = path.resolve(file);
+  let parent = absolute;
+  const suffix = [];
+  while (!fs.existsSync(parent)) { suffix.unshift(path.basename(parent)); parent = path.dirname(parent); }
+  try { return path.join(fs.realpathSync(parent), ...suffix); }
+  catch (error) { fail(`${name} cannot be resolved: ${error.message}`); }
+}
+function aliases(left, right) { return left === right || left.startsWith(`${right}${path.sep}`) || right.startsWith(`${left}${path.sep}`); }
+function validatePaths(opt) {
+  const inputs = {
+    "fixture-dir": resolvedInput(opt["fixture-dir"], "fixture-dir"),
+    "prior-graph": resolvedInput(opt["prior-graph"], "prior-graph"),
+    "frozen-yle": resolvedInput(opt["frozen-yle"], "frozen-yle"),
+  };
+  const outputs = {
+    "output-dir": resolvedOutput(opt["output-dir"], "output-dir"),
+    "byte-diff-report": resolvedOutput(opt["byte-diff-report"], "byte-diff-report"),
+    "mapping-quality-report": resolvedOutput(opt["mapping-quality-report"], "mapping-quality-report"),
+    "conflict-report": resolvedOutput(opt["conflict-report"], "conflict-report"),
+  };
+  if (opt["yle-output"]) outputs["yle-output"] = resolvedOutput(opt["yle-output"], "yle-output");
+  for (const name of QUEUES) outputs[`queue-file ${name}`] = resolvedOutput(opt.queues[name], `queue-file ${name}`);
+  for (const [outputName, outputPath] of Object.entries(outputs)) {
+    for (const [inputName, inputPath] of Object.entries(inputs)) {
+      if (aliases(outputPath, inputPath)) fail(`${outputName} aliases ${inputName}`);
+    }
+  }
+  const entries = Object.entries(outputs);
+  for (let index = 0; index < entries.length; index += 1) {
+    for (let other = index + 1; other < entries.length; other += 1) {
+      if (aliases(entries[index][1], entries[other][1])) fail(`${entries[index][0]} aliases ${entries[other][0]}`);
+    }
+  }
+  return { inputs, outputs };
+}
+function yleComparisonArtifact(data) {
+  const records = (data.records.records || []).map((row) => {
+    const entry = row.record || {};
+    return {
+      itemId: entry.itemId,
+      expression: entry.expression,
+      audience: entry.audience,
+      grammaticalCategories: entry.grammaticalCategories,
+      sourceExportSha256: entry.sourceExportSha256,
+    };
+  });
+  if (!records.length) fail("YLE comparison artifact has no records");
+  return { schemaVersion: "yle-comparison-artifact-v1", records };
 }
 function citation(entry) { return { sourceId: SOURCE_IDS[entry.audience], itemId: entry.itemId, exportSha256: entry.sourceExportSha256 }; }
 function gse(entry, includeText) {
@@ -177,11 +244,17 @@ function computedCounts(prior, current, queues) {
 }
 function main() {
   const opt = args();
-  if (opt["validate-output"]) { if (!opt["fixture-dir"]) fail("fixture-dir is required"); validateOutput(opt["validate-output"], opt["fixture-dir"]); return; }
+  if (opt["validate-output"]) {
+    if (!opt["fixture-dir"]) fail("fixture-dir is required");
+    validateOutput(resolvedInput(opt["validate-output"], "validate-output"), resolvedInput(opt["fixture-dir"], "fixture-dir")); return;
+  }
   for (const key of ["fixture-dir", "prior-graph", "output-dir", "byte-diff-report", "mapping-quality-report", "conflict-report", "frozen-yle"]) if (!opt[key]) fail(`${key} is required`);
   for (const name of QUEUES) if (!opt.queues[name]) fail(`queue-file ${name} is required`);
-  const data = sourceEntries(opt["fixture-dir"]); validateInput(data);
-  const output = opt["output-dir"];
+  const paths = validatePaths(opt);
+  const data = sourceEntries(paths.inputs["fixture-dir"]); validateInput(data);
+  const yleArtifact = yleComparisonArtifact(data); const yleBytes = bytes(yleArtifact);
+  if (yleBytes.equals(fs.readFileSync(paths.inputs["frozen-yle"]))) fail("YLE comparison artifact aliases frozen YLE bytes");
+  const output = paths.outputs["output-dir"];
   const extracted = { GL: [], YL: [] };
   for (const row of data.records.records) {
     const entry = { ...row.record }; if (entry.gse && entry.gse.endsWith("*")) entry.starred = true;
@@ -211,14 +284,14 @@ function main() {
     if (outcome === "invalid-cefr-source-data") q[QUEUES[3]].push({ nodeId: node.nodeId, itemId: selected.itemId, audience: selected.audience, rawCefr: selected.cefr, reason: "invalid-cefr-band", sourceExportSha256: selected.sourceExportSha256 });
     mappings.push(base);
   }
-  for (const name of QUEUES) queue(opt.queues[name], q[name]);
+  for (const name of QUEUES) queue(paths.outputs[`queue-file ${name}`], q[name]);
   writeJson(path.join(output, "mapping/mappings.json"), { schemaVersion: "gse-vocab-fixture-mapping-v1", queueFiles: QUEUES, cases: mappings });
-  const prior = readJson(opt["prior-graph"], "prior graph"); const graph = mutateGraph(prior, data);
+  const prior = readJson(paths.inputs["prior-graph"], "prior graph"); const graph = mutateGraph(prior, data);
   writeJson(path.join(output, "graph/new-graph.json"), graph);
   const priorBytes = bytes(prior); const newBytes = bytes(graph); const counts = computedCounts(prior, graph, q);
   let changed = 0; for (let index = 0; index < Math.max(priorBytes.length, newBytes.length); index += 1) if (priorBytes[index] !== newBytes[index]) changed += 1;
-  writeJson(opt["byte-diff-report"], { priorSha256: sha(priorBytes), newSha256: sha(newBytes), bytesChanged: changed, changedNodeIds: changedNodes(prior, graph), diffCounts: counts });
-  writeJson(opt["mapping-quality-report"], { counts, queueFiles: QUEUES });
+  writeJson(paths.outputs["byte-diff-report"], { priorSha256: sha(priorBytes), newSha256: sha(newBytes), bytesChanged: changed, changedNodeIds: changedNodes(prior, graph), diffCounts: counts });
+  writeJson(paths.outputs["mapping-quality-report"], { counts, queueFiles: QUEUES });
   const conflictMutation = data.mutation.cases.find((row) => row.caseId === "conflict-retains-cambridge");
   const conflictNode = conflictMutation.nodeBefore; const conflictSource = conflictMutation.sourceEntry;
   const cambridgeCefr = conflictNode.metadata.cefr; const gseCefrBand = band(conflictSource.cefr);
@@ -227,7 +300,10 @@ function main() {
     cambridgeCefr, cambridgeCefrAlignments: [band(cambridgeCefr)], gseCefrBand,
     reason: "cambridge-gse-cefr-disagreement", sourceExportSha256: conflictSource.sourceExportSha256,
   }] : [];
-  fs.mkdirSync(path.dirname(opt["conflict-report"]), { recursive: true }); fs.writeFileSync(opt["conflict-report"], conflictRows.map((row) => JSON.stringify(stable(row))).join(conflictRows.length ? "\n" : "") + (conflictRows.length ? "\n" : ""));
-  if (opt["yle-output"]) { fs.mkdirSync(path.dirname(opt["yle-output"]), { recursive: true }); fs.copyFileSync(opt["frozen-yle"], opt["yle-output"]); }
+  fs.mkdirSync(path.dirname(paths.outputs["conflict-report"]), { recursive: true }); fs.writeFileSync(paths.outputs["conflict-report"], conflictRows.map((row) => JSON.stringify(stable(row))).join(conflictRows.length ? "\n" : "") + (conflictRows.length ? "\n" : ""));
+  if (paths.outputs["yle-output"]) {
+    fs.mkdirSync(path.dirname(paths.outputs["yle-output"]), { recursive: true });
+    fs.writeFileSync(paths.outputs["yle-output"], yleBytes);
+  }
 }
 try { main(); } catch (error) { process.stderr.write(`${error.message}\n`); process.exitCode = 1; }
