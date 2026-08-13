@@ -34,7 +34,13 @@ FIX="${GSE_VOCAB_P2_FIXTURE_DIR:-$ROOT/english/cefr-vocabulary/fixtures/gse-voca
 # Mid-Red uses this temporary plan mutation to prove that completed work needs
 # commit evidence. It never changes the tracked plan or fixture pack.
 if [[ "${GSE_VOCAB_P2_NEGATIVE:-}" == "completed-without-sha" ]]; then
-  NEGATIVE_PLAN="$(mktemp "${TMPDIR:-/tmp}/gse-vocab-p2-plan.XXXXXX")"
+  NEGATIVE_TMP_ROOT="${TMPDIR:-}"
+  if [[ -z "$NEGATIVE_TMP_ROOT" && -d /dev/shm && -w /dev/shm ]]; then
+    NEGATIVE_TMP_ROOT=/dev/shm
+  elif [[ -z "$NEGATIVE_TMP_ROOT" ]]; then
+    NEGATIVE_TMP_ROOT=/tmp
+  fi
+  NEGATIVE_PLAN="$(mktemp "$NEGATIVE_TMP_ROOT/gse-vocab-p2-plan.XXXXXX")"
   trap 'rm -f -- "$NEGATIVE_PLAN"' EXIT
   if ! cp -- "$PLAN" "$NEGATIVE_PLAN"; then
     printf 'could not copy plan for the completed-without-sha probe: %s\n' "$PLAN" >&2
