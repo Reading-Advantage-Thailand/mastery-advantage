@@ -184,9 +184,19 @@ function deriveMatchForms(headword) {
     if (match[1].trim()) forms.add(match[1].trim());
   }
   if (/^[a-z-]+\/[a-z-]+$/.test(base)) {
-    for (const alternative of base.split('/')) forms.add(alternative);
+    const [first, second] = base.split('/');
+    forms.add(first);
+    forms.add(tailAlternative(first, second));
   }
   return [...forms].sort();
+}
+
+// "businessman/woman" lists a tail that replaces the end of the first form: the alternative is
+// "businesswoman", not "woman". A full second form ("salesman/saleswoman", "child/children") stays.
+function tailAlternative(first, second) {
+  let suffix = 0;
+  while (suffix < second.length && first[first.length - 1 - suffix] === second[second.length - 1 - suffix]) suffix += 1;
+  return second.length < first.length && suffix >= 3 ? first.slice(0, first.length - suffix) + second : second;
 }
 
 function slug(value) {
