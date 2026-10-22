@@ -1,0 +1,5 @@
+level,label,grade,reader_bands,elements,weeks
+1,Level 1,Anuban 2,Seed,none (26 letters by song),1-32
+2,Level 2,Anuban 3,Seed|Sprout,1-28,33-64
+3,Level 3,P1,Sprout|Leaf|Bud,29-51 + T1-T5,65-96
+4,Level 4,P2,Bud|Flower,52-68 + E1-E11,97-128

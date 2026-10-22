@@ -1,0 +1,940 @@
+{
+ "meta": {
+  "source": "measure/tracks/storytime_advantage_program_20261021/gen_sequence.py (monorepo integration worktree)",
+  "source_sequence_commit": "b55009f2d",
+  "generated_by": "level_rows(level, '', 0) for levels 1-4, fields: level, week, element, pa, hf",
+  "row_fields": [
+   "level",
+   "week",
+   "element",
+   "phonemic_awareness",
+   "tricky_and_hf_words"
+  ]
+ },
+ "letters_order": [
+  "n",
+  "a",
+  "p",
+  "m",
+  "s",
+  "t",
+  "o",
+  "d",
+  "e",
+  "h",
+  "f",
+  "g",
+  "i",
+  "b",
+  "c",
+  "r",
+  "u",
+  "l",
+  "w",
+  "j",
+  "k",
+  "v",
+  "y",
+  "q",
+  "x",
+  "z"
+ ],
+ "rows": [
+  [
+   1,
+   1,
+   "Listening only",
+   "Listening: start-stop, name the sound (DSS A1-A3)",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   2,
+   "Listening only",
+   "Listening: first, next, last sound (DSS A4-A6)",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   3,
+   "Letter n name+sound (song)",
+   "Listening: sound effects, silly songs, directions (DSS A7-A9)",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   4,
+   "Letter a name+sound (song)",
+   "Word awareness",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   5,
+   "Letter p name+sound (song)",
+   "Syllable counting",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   6,
+   "Letter m name+sound (song)",
+   "Rhyme 1",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   7,
+   "Letter s name+sound (song)",
+   "Rhyme 2",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   8,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   1,
+   9,
+   "Letter t name+sound (song)",
+   "Rhyme 3",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   10,
+   "Letter o name+sound (song)",
+   "Initial sound; alliteration",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   11,
+   "Letter d name+sound (song)",
+   "Initial sound; syllable blending",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   12,
+   "Letter e name+sound (song)",
+   "Syllable deletion; blend onset-rime",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   13,
+   "Letter h name+sound (song)",
+   "Segment onset-rime",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   14,
+   "Letter f name+sound (song)",
+   "Phoneme addition",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   15,
+   "Letter g name+sound (song)",
+   "Phoneme deletion",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   16,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   1,
+   17,
+   "Letter i name+sound (song)",
+   "Rhyme; phoneme substitution",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   18,
+   "Letter b name+sound (song)",
+   "Segment onset-rime; addition",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   19,
+   "Letter c name+sound (song)",
+   "Final sound",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   20,
+   "Letter r name+sound (song)",
+   "Phoneme substitution",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   21,
+   "Letter u name+sound (song)",
+   "Final + initial; phoneme blending",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   22,
+   "Letter l name+sound (song)",
+   "Initial, medial, final; segment and blend",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   23,
+   "Letter w name+sound (song)",
+   "Medial vowel; segmentation",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   24,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   1,
+   25,
+   "Letter j name+sound (song)",
+   "Word awareness; syllables (pass 2)",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   26,
+   "Letter k name+sound (song)",
+   "Rhyme; syllables (pass 2)",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   27,
+   "Letter v name+sound (song)",
+   "Rhyme; alliteration (pass 2)",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   28,
+   "Letter y name+sound (song)",
+   "Blend and segment onset-rime (pass 2)",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   29,
+   "Letter q name+sound (song)",
+   "Alliteration; initial; delete, segment, blend",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   30,
+   "Letter x name+sound (song)",
+   "Final sound (pass 2)",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   31,
+   "Letter z name+sound (song)",
+   "Initial, medial, final; segment, blend (capstone)",
+   "(none; name writing wk 20+)"
+  ],
+  [
+   1,
+   32,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   2,
+   1,
+   "E 1: n",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "a, and, can"
+  ],
+  [
+   2,
+   2,
+   "E 2: short a",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "I, on, in"
+  ],
+  [
+   2,
+   3,
+   "E 3: p",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "the, get"
+  ],
+  [
+   2,
+   4,
+   "E 4: m",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "is, this"
+  ],
+  [
+   2,
+   5,
+   "E 5: s",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "off, saw, with"
+  ],
+  [
+   2,
+   6,
+   "E 6: t",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "he, put, see"
+  ],
+  [
+   2,
+   7,
+   "E 7: short o",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "from, run, up"
+  ],
+  [
+   2,
+   8,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   2,
+   9,
+   "E 8: d",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "are, has, cannot"
+  ],
+  [
+   2,
+   10,
+   "E 9: -an -ad",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "they, too, were"
+  ],
+  [
+   2,
+   11,
+   "E 10: short e",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "me, of"
+  ],
+  [
+   2,
+   12,
+   "E 11: h",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "goes, it, said, that"
+  ],
+  [
+   2,
+   13,
+   "E 12: -ot -op",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "do, for, like"
+  ],
+  [
+   2,
+   14,
+   "E 13: f",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "this, you"
+  ],
+  [
+   2,
+   15,
+   "E 14: g",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "his, no, my"
+  ],
+  [
+   2,
+   16,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   2,
+   17,
+   "E 15: -et -en",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "she, will"
+  ],
+  [
+   2,
+   18,
+   "E 16: short i",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "her, look"
+  ],
+  [
+   2,
+   19,
+   "E 17: b",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "eat"
+  ],
+  [
+   2,
+   20,
+   "E 18: -it -in",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "stop, them"
+  ],
+  [
+   2,
+   21,
+   "E 19: c",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "jump, just"
+  ],
+  [
+   2,
+   22,
+   "E 20: r",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "we"
+  ],
+  [
+   2,
+   23,
+   "E 21: short u",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "go, play, take"
+  ],
+  [
+   2,
+   24,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   2,
+   25,
+   "E 22: -ug -un",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "over, want"
+  ],
+  [
+   2,
+   26,
+   "E 23: l",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "would"
+  ],
+  [
+   2,
+   27,
+   "E 24: w",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "out"
+  ],
+  [
+   2,
+   28,
+   "E 25: -at -ap",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "does"
+  ],
+  [
+   2,
+   29,
+   "E 26: j",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "good"
+  ],
+  [
+   2,
+   30,
+   "E 27: k",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "have"
+  ],
+  [
+   2,
+   31,
+   "E 28: -ut -ub",
+   "Daily 2-min: sound of the week (initial/final), blend 3 sounds",
+   "more, some"
+  ],
+  [
+   2,
+   32,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   3,
+   1,
+   "E 29: v",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "into, went"
+  ],
+  [
+   3,
+   2,
+   "E 30: y",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "make, one"
+  ],
+  [
+   3,
+   3,
+   "E 31: -ill -ip",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "never, seen"
+  ],
+  [
+   3,
+   4,
+   "E 32: qu",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "as, where"
+  ],
+  [
+   3,
+   5,
+   "E 33: x",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "help, made"
+  ],
+  [
+   3,
+   6,
+   "E 34: z",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "be, who, then"
+  ],
+  [
+   3,
+   7,
+   "E 35: -ob -ell",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "how, new, there"
+  ],
+  [
+   3,
+   8,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   3,
+   9,
+   "Thai-specific: T1 final consonants /p t k d/",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "(Thai week: review)"
+  ],
+  [
+   3,
+   10,
+   "E 36: s-blends",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "give, live"
+  ],
+  [
+   3,
+   11,
+   "E 37: r-blends",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "come, think, why"
+  ],
+  [
+   3,
+   12,
+   "E 38: l-blends",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "could, don't, so"
+  ],
+  [
+   3,
+   13,
+   "E 39: final n-blends",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "by, your"
+  ],
+  [
+   3,
+   14,
+   "E 40: final blends",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "every"
+  ],
+  [
+   3,
+   15,
+   "E 41: 3-letter blends",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "day, our"
+  ],
+  [
+   3,
+   16,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   3,
+   17,
+   "Thai-specific: T2 initial clusters",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "(Thai week: review)"
+  ],
+  [
+   3,
+   18,
+   "Thai-specific: T3 final clusters and -s",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "(Thai week: review)"
+  ],
+  [
+   3,
+   19,
+   "E 42: a_e",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "always, find"
+  ],
+  [
+   3,
+   20,
+   "E 43: o_e",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "about, people"
+  ],
+  [
+   3,
+   21,
+   "E 44: i_e",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "what"
+  ],
+  [
+   3,
+   22,
+   "E 45: u_e",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "(review)"
+  ],
+  [
+   3,
+   23,
+   "E 46: sh",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "(review)"
+  ],
+  [
+   3,
+   24,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   3,
+   25,
+   "E 47: ch",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "(review)"
+  ],
+  [
+   3,
+   26,
+   "E 48: ck",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "(review)"
+  ],
+  [
+   3,
+   27,
+   "E 49: ng",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "(review)"
+  ],
+  [
+   3,
+   28,
+   "E 50: th",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "(review)"
+  ],
+  [
+   3,
+   29,
+   "Thai-specific: T4 th s f contrast",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "(Thai week: review)"
+  ],
+  [
+   3,
+   30,
+   "E 51: wh",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "(review)"
+  ],
+  [
+   3,
+   31,
+   "Thai-specific: T5 v w, r l contrast",
+   "Daily 2-min: segment and blend 4 sounds; digraph and blend awareness (DSS I, K)",
+   "(Thai week: review)"
+  ],
+  [
+   3,
+   32,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   4,
+   1,
+   "E 52: open vowels",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "what, give"
+  ],
+  [
+   4,
+   2,
+   "E 53: ee ea ie",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "live, come"
+  ],
+  [
+   4,
+   3,
+   "E 54: short ea",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "think, why"
+  ],
+  [
+   4,
+   4,
+   "E 55: ai ay",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "could, don't"
+  ],
+  [
+   4,
+   5,
+   "E 56: ea eigh ey",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "so, by"
+  ],
+  [
+   4,
+   6,
+   "E 57: oa oe ow",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "your, every"
+  ],
+  [
+   4,
+   7,
+   "E 58: i igh",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "day, our"
+  ],
+  [
+   4,
+   8,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   4,
+   9,
+   "E 59: oo ue ew",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "always, find"
+  ],
+  [
+   4,
+   10,
+   "E 60: oo oul u",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "about, people"
+  ],
+  [
+   4,
+   11,
+   "E 61: a aw",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "(review)"
+  ],
+  [
+   4,
+   12,
+   "E 62: augh ough",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "(review)"
+  ],
+  [
+   4,
+   13,
+   "E 63: oi oy",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "(review)"
+  ],
+  [
+   4,
+   14,
+   "E 64: ou ow",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "(review)"
+  ],
+  [
+   4,
+   15,
+   "E 65: or oar our",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "(review)"
+  ],
+  [
+   4,
+   16,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   4,
+   17,
+   "E 66: air are ear",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "(review)"
+  ],
+  [
+   4,
+   18,
+   "E 67: ar",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "(review)"
+  ],
+  [
+   4,
+   19,
+   "E 68: er ir ur",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "(review)"
+  ],
+  [
+   4,
+   20,
+   "Exit-profile week: E1 -s -es endings",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "says, comes, asks"
+  ],
+  [
+   4,
+   21,
+   "Exit-profile week: E2 -ing -ed endings",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "looks, loves, am, are"
+  ],
+  [
+   4,
+   22,
+   "Exit-profile week: E3 two-syllable and compound words",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "yes, to, do, does"
+  ],
+  [
+   4,
+   23,
+   "Exit-profile week: E4 vowel length contrast (Thai)",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "or, old, say, how"
+  ],
+  [
+   4,
+   24,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ],
+  [
+   4,
+   25,
+   "Exit-profile week: E5 long and short vowel review",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "color, white, red, blue, children"
+  ],
+  [
+   4,
+   26,
+   "Exit-profile week: E6 fluency: timed re-read",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "school, teacher, draw, write, sit"
+  ],
+  [
+   4,
+   27,
+   "Exit-profile week: E7 fluency: dialogue and expression",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "(fluency: all 92 words timed)"
+  ],
+  [
+   4,
+   28,
+   "Exit-profile week: E8 sentence writing 1",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "(fluency: dialogue)"
+  ],
+  [
+   4,
+   29,
+   "Exit-profile week: E9 sentence writing 2",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "(writing: frames)"
+  ],
+  [
+   4,
+   30,
+   "Exit-profile week: E10 bridge: read an Origins 1 text",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "(writing: frames)"
+  ],
+  [
+   4,
+   31,
+   "Exit-profile week: E11 bridge: Origins 1 frames and names",
+   "Daily 2-min: swap first/middle/last sound (DSS L); syllables",
+   "Lily, Tom, Mia, Pip (names)"
+  ],
+  [
+   4,
+   32,
+   "REVIEW WEEK",
+   "Review",
+   "(review)"
+  ]
+ ]
+}
