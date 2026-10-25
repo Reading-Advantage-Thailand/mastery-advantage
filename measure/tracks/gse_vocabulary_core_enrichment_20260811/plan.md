@@ -229,20 +229,20 @@
 
 ## Phase 3: Extraction, Mapping, And Core Mutation
 
-- [x] Task: Implement the deterministic GSE vocabulary extractor - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [x] Two consecutive runs produce byte-identical tracked output - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-- [x] Task: Implement source-backed node-to-entry mapping - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [x] Every mapped node cites a GSE `itemId` - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [x] Ambiguous and unmapped cases go to durable queues under this track's
+- [~] Task: Implement the deterministic GSE vocabulary extractor - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [~] Two consecutive runs produce byte-identical tracked output - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+- [~] Task: Implement source-backed node-to-entry mapping - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [~] Every mapped node cites a GSE `itemId` - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [~] Ambiguous and unmapped cases go to durable queues under this track's
         own directory - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-- [x] Task: Implement the core mutation generator - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [x] Write GSE score, band, definition, and example onto mapped nodes - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [x] Produce the new core version and the byte-diff report - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-- [x] Task: Produce the mapping quality report - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [x] Labelled counts: nodes mapped, levels added, levels corrected,
+- [~] Task: Implement the core mutation generator - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [~] Write GSE score, band, definition, and example onto mapped nodes - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [~] Produce the new core version and the byte-diff report - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+- [~] Task: Produce the mapping quality report - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [~] Labelled counts: nodes mapped, levels added, levels corrected,
         conflicts, unmapped queued, GSE entries with no node - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-- [x] Task: Apply audit isolation - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [x] Name this track's queue files explicitly so foreign queue files
+- [~] Task: Apply audit isolation - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+  - [~] Name this track's queue files explicitly so foreign queue files
         cannot change its reports - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
 
 **Jr-Green evidence (2026-08-13):**
@@ -385,6 +385,77 @@ Implementation handoff to Jr-Green:
 - `git diff --check` exited `0`.
 - RA-P3-B1 through B6 and RB-P3-B1 through B3 were remediated.
 - Reviews A, B, and C must rerun at the new HEAD.
+
+**Correction (2026-10-25):** The preceding remediation claim was too broad.
+Reviews A, B, and C failed at `6e4bce2`.
+RA-P3-B2, RA-P3-B5, and RA-P3-B6 remain open.
+The reopened markers identify claims without sufficient behavior evidence.
+Historical commit fields do not establish completion.
+
+## Mid-Red remediation cycle (2026-10-25)
+
+- Phase baseline: `6e4bce2789471d5cb62673046b262e0c8a8464a5`.
+- Role baseline: `6e4bce2789471d5cb62673046b262e0c8a8464a5`.
+- Relevant implementation tasks remain `[~]` during this remediation.
+- All human gates retain their existing markers and owner fields.
+- Runtime verification remains incomplete because all ten preflight attempts returned a hold.
+
+| Findings | Harness or correction |
+|---|---|
+| RA-P3R-B5/B6; RC-P3R-B1/B2/B5 | `tests/gse_vocab_p3_review_realsource.sh` |
+| RA-P3R-B1/B2/B4/B7; RB-P3R-B2/B3; RC-P3R-B4 | `tests/gse_vocab_p3_review_mutation.sh` |
+| RA-P3R-B3 | The mutation harness tests graph sensitivity and the accepted sandbox procedure. |
+| RB-P3R-B1/B3 | `tests/gse_vocab_p3_review_destinations.sh` |
+| RC-P3R-B3; O-3 | The real-source harness compares the four tracked queues with fresh GL output. |
+| RA-P3R-B8 | The extraction, mapping, and safety harnesses use independent graph probes. The plan guard rejects failed review evidence. |
+| RA-P3R-B9 | The Phase 3 markers reopen. The dated correction preserves the earlier claim as history. |
+
+- Jr-Green must correct `mutation-cases.json` without changing the ambiguous mapping outcome.
+- `fixture:core:you` must carry no GSE data in the corrected `newGraph`.
+- Jr-Green must recompute the expected hashes, byte count, changed IDs, and labelled counts from the corrected fixture.
+- The conflict fixture must identify the mapped conflict node, not the ambiguous node.
+- The prior fixture needs explicit form, POS, and audience values for mutation bindings.
+- The Phase 1 sandbox probes now use `/tmp/opencode`, not repository directories.
+- No test runs the generator against tracked destinations.
+- The real-source interface is in `phase3-execution-contract.md`, section `Real-Source Interface`.
+
+### Commands and results
+
+```sh
+RED_TEST_COMMAND='rc=0; for t in tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh; do bash "$t" || rc=1; done; exit "$rc"'
+```
+
+- The Red command did not run. Its expected exit is `1`.
+- PASS/FAIL totals are unavailable. No runtime failure has confirmation.
+- The retry wrapper exited `3` after ten holds. Each preflight call exited `1`.
+- The wrapper used `sleep 120` between attempts. It did not acquire or delete the lock.
+- Preflight command: `sh /home/daniebo/Desktop/advantage-pr/scripts/jobs/heavy-preflight.sh`.
+
+```text
+attempt 1: heavy-preflight: hold — load 7.69 (max 4)
+attempt 2: heavy-preflight: hold — load 4.07 (max 4)
+attempt 3: heavy-preflight: hold — load 6.44 (max 4)
+attempt 4: heavy-preflight: hold — load 6.07 (max 4)
+attempt 5: heavy-preflight: hold — load 6.73 (max 4)
+attempt 6: heavy-preflight: hold — load 7.06 (max 4)
+attempt 7: heavy-preflight: hold — load 6.33 (max 4)
+attempt 8: heavy-preflight: hold — load 11.87 (max 4)
+attempt 9: heavy-preflight: hold — load 10.08 (max 4)
+attempt 10: heavy-preflight: hold — load 9.61 (max 4)
+```
+
+- Light syntax command, exit `0`:
+
+```sh
+bash -n tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_safety.sh tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh
+```
+
+- Python AST inspection found an unclosed list. The correction passed the repeated syntax inspection, exit `0`.
+- The embedded Python blocks in the extraction and mapping harnesses passed AST inspection, exit `0`.
+- `git diff --check` exited `0`.
+- The Green command and the project suite did not run.
+- The orchestrator must obtain a substantive exit `1` from the Red command before Green starts.
+- The intended failures cover the finding map above. Runtime results must identify each confirmed failure and each already-satisfied check.
 
 ## Phase 4: Audit And Calibration
 

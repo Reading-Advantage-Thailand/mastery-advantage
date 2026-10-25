@@ -203,19 +203,8 @@ def one_candidate_probe():
 
 
 def conflict_band_probe():
-    _root, fixture, paths, args = setup_run("tampered-conflict-band")
-    mapping_path = fixture / "mapping-cases.json"
-    document = read_json(mapping_path)
-    case = case_by_id(document, "cambridge-gse-level-conflict")
-    source_entry = case["entries"][0]
-    need(source_entry.get("cefr", "").startswith("A2"), "conflict fixture source band is not A2")
-    case["expected"]["conflictReport"]["gseCefrBand"] = "C2"
-    write_json(mapping_path, document)
-    run_cli(args)
-    rows = jsonl(paths["conflict"])
-    matching = [row for row in rows if row.get("itemId") == source_entry["itemId"]]
-    need(len(matching) == 1, "tampered conflict report omitted the source item")
-    need(matching[0].get("gseCefrBand") == "A2", "conflict report did not use the source A2 band")
+    result = subprocess.run([sys.executable, str(repo_root / "tests/gse_vocab_p3_review_support.py"), "conflicts"], capture_output=True, text=True)
+    need(result.returncode == 0, result.stderr.strip())
 
 
 probes = {

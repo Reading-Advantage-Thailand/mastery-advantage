@@ -136,11 +136,11 @@ Phase 2 and Phase 3 roles recorded their exact Red commands in `plan.md`.
 ### 2.3 Phase 3 closure commands (re-review, remediation, acceptance)
 
 ```text
-RED_TEST_COMMAND="<focused harness named by Mid-Red; see below>"
-GREEN_TEST_COMMAND='rc=0; for t in tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_graph.sh tests/gse_vocab_p3_review_safety.sh; do bash "$t" || rc=1; done; exit "$rc"'
+RED_TEST_COMMAND='rc=0; for t in tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh; do bash "$t" || rc=1; done; exit "$rc"'
+GREEN_TEST_COMMAND='rc=0; for t in tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_graph.sh tests/gse_vocab_p3_review_safety.sh tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh; do bash "$t" || rc=1; done; exit "$rc"'
 PROJECT_CHECKS="node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js"
 PROJECT_LINT="git diff --check"
-PROJECT_TESTS='rc=0; for t in tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p2_fixtures.sh tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_graph.sh tests/gse_vocab_p3_review_safety.sh; do bash "$t" || rc=1; done; exit "$rc"'
+PROJECT_TESTS='rc=0; for t in tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p2_fixtures.sh tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_graph.sh tests/gse_vocab_p3_review_safety.sh tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh; do bash "$t" || rc=1; done; exit "$rc"'
 PROJECT_DEV_URL=""
 UX_REQUIRED="never"
 ```
@@ -159,6 +159,17 @@ UX_REQUIRED="never"
   use `&&` chains, because they hide later results.
 - `PROJECT_CHECKS` must exit `0`. The Phase 3 closure changes no committed
   graph.
+
+#### Remediation harnesses (2026-10-25)
+
+- `gse_vocab_p3_review_realsource.sh` tests both exports, their hashes, the domain version, exact bindings, POS normalization, and durable queues.
+- `gse_vocab_p3_review_mutation.sh` tests accepted mappings, rejected mappings, output validation, conflicts, corrections, fixture literals, and YLE sensitivity.
+- `gse_vocab_p3_review_destinations.sh` tests generated aliases and source validation before writes.
+- The shared independent probes live in `tests/gse_vocab_p3_review_support.py`.
+- The real-source option names are in `phase3-execution-contract.md`, section `Real-Source Interface`.
+- These tests retain the accepted plus-band and `<A1` rules. They do not decide OI-1, OI-2, or OI-3.
+- The YLE probe runs the accepted generator procedure in temporary sandboxes only.
+- Its second control changes Cambridge CEFR in the prior graph. The comparison must detect that change.
 
 ### 2.4 Phase 4 commands
 

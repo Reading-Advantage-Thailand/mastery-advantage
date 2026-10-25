@@ -50,7 +50,7 @@ cleanup() {
 }
 trap cleanup EXIT HUP INT TERM
 
-if [[ "${GSE_VOCAB_P3_NEGATIVE:-}" == "completed-without-sha" ]]; then
+if [[ "${GSE_VOCAB_P3_NEGATIVE:-}" == "completed-without-sha" || "${GSE_VOCAB_P3_NEGATIVE:-}" == "completed-at-failed-review" ]]; then
   NEGATIVE_TMP_ROOT="${TMPDIR:-}"
   if [[ -z "$NEGATIVE_TMP_ROOT" && -d /dev/shm && -w /dev/shm ]]; then
     NEGATIVE_TMP_ROOT=/dev/shm
@@ -62,7 +62,7 @@ if [[ "${GSE_VOCAB_P3_NEGATIVE:-}" == "completed-without-sha" ]]; then
     printf 'could not copy plan for the completed-without-sha probe: %s\n' "$PLAN" >&2
     exit 2
   fi
-  python3 - "$NEGATIVE_PLAN" <<'PY'
+  python3 - "$NEGATIVE_PLAN" "$GSE_VOCAB_P3_NEGATIVE" <<'PY'
 import re
 import sys
 from pathlib import Path
@@ -92,7 +92,9 @@ def rewrite(match):
     ).rstrip()
     if not indent:
         top_level_number += 1
-        if top_level_number > 1:
+        if sys.argv[2] == "completed-at-failed-review":
+            description += " - commit: 6e4bce2789471d5cb62673046b262e0c8a8464a5"
+        elif top_level_number > 1:
             description += " - commit: 9ef2832"
     return f"{indent}- [x] {description}"
 
@@ -246,21 +248,20 @@ def source_for(item_id):
     return source
 
 
-def graph_source_for(node_id, item_id):
-    if node_id == "fixture:core:afternoon":
-        mutation_doc = load_json(fixture_root / "mutation-cases.json")
-        for case in mutation_doc.get("cases", []):
-            if case.get("caseId") == "mapped-node-source-backed-fields":
-                return case.get("sourceEntry")
-    if node_id == "fixture:core:you":
-        mapping_doc = load_json(fixture_root / "mapping-cases.json")
-        for case in mapping_doc.get("cases", []):
-            if case.get("caseId") != "ambiguous-binding":
-                continue
-            for entry in case.get("entries", []):
-                if entry.get("itemId") == item_id:
-                    return entry
-    return source_for(item_id)
+def graph_source_for(node, item_id):
+    cases = load_json(fixture_root / "mapping-cases.json")["cases"]
+    case = next((row for row in cases if (row.get("node") or {}).get("nodeId") == node["id"]), None)
+    identity = case["node"] if case else node.get("metadata", {})
+    entries = case["entries"] if case else list(source_entries().values())
+    candidates = [entry for entry in entries
+                  if normalized_form(entry.get("expression", "")) == normalized_form(identity.get("normalizedForm", ""))
+                  and normalized_pos(entry["grammaticalCategories"]) == normalized_pos(identity.get("partsOfSpeech", []))
+                  and entry["audience"] == identity.get("audience")]
+    need(len(candidates) == 1, f"node {node['id']} has no unambiguous mapping")
+    source = candidates[0]
+    need(source["itemId"] == item_id, "graph itemId differs from the selected mapping")
+    need("cefr" not in source or cefr_band(source["cefr"]) is not None, "invalid-CEFR node carries GSE data")
+    return source
 
 
 def expected_citation(source):
@@ -444,7 +445,7 @@ def validate_graph_mapped_nodes(graph):
         need(isinstance(gse.get("itemId"), str) and gse.get("itemId"), f"graph node {node_id} lacks itemId")
         validate_source_backed_gse(
             gse,
-            graph_source_for(node_id, gse["itemId"]),
+            graph_source_for(node, gse["itemId"]),
             f"graph node {node_id}",
             require_optional_fields=True,
         )
@@ -556,6 +557,14 @@ def check_plan_state():
         missing_sha = [description for description in top_level if commit_pattern.search(description) is None]
         if missing_sha:
             raise ProbeError(f"completed Phase 3 task lacks commit SHA evidence: {missing_sha[0]}")
+        failed_review_heads = ("50d524c", "6e4bce2789471d5cb62673046b262e0c8a8464a5")
+        for description in top_level:
+            sha = re.search(r"\bcommit(?:s)?\s*:\s*([0-9a-f]{7,40})\b", description, re.IGNORECASE)[1]
+            resolved = subprocess.run(["git", "rev-parse", "--verify", sha + "^{commit}"], cwd=repo_root, capture_output=True)
+            need(resolved.returncode == 0, f"completed task commit does not resolve: {sha}")
+            for failed in failed_review_heads:
+                result = subprocess.run(["git", "merge-base", "--is-ancestor", sha, failed], cwd=repo_root, capture_output=True)
+                need(result.returncode == 1, f"completed task cites a commit refuted by a failed review, or the comparison failed: {sha}")
         return
     need(False, "Phase 3 markers must be all [~] Red or all [x] Green")
 
@@ -715,27 +724,8 @@ def check_queues():
 
 
 def check_conflict():
-    run = make_run("conflict")
-    require_success(run_cli(run), "conflict run")
-    graph = load_graph(run)
-    nodes = graph_nodes(graph)
-    node = nodes.get("fixture:core:you")
-    need(isinstance(node, dict), "conflict graph node is missing")
-    metadata = node.get("metadata") or {}
-    need(metadata.get("cefr") == "<A1", "Cambridge CEFR evidence was overwritten")
-    need((metadata.get("gse") or {}).get("cefrBand") == "A2", "GSE conflict band is missing")
-    report_rows = read_jsonl(run["conflict"])
-    need(any(
-        row.get("nodeId") == "fixture:core:you"
-        and row.get("itemId") == "ua8444abd28d0e715.-5299d1a3.145b71d3748.46f8"
-        and row.get("audience") == "GL"
-        and row.get("cambridgeCefr") == "<A1"
-        and row.get("cambridgeCefrAlignments") == ["A1"]
-        and row.get("gseCefrBand") == "A2"
-        and row.get("reason") == "cambridge-gse-cefr-disagreement"
-        and row.get("sourceExportSha256") == "e63298d796eecc1d9ed68cd5bde28d01912cfe3312a1381d2b074cdbe9b90800"
-        for row in report_rows
-    ), "Cambridge-GSE conflict report lacks both values")
+    result = subprocess.run([sys.executable, str(repo_root / "tests/gse_vocab_p3_review_support.py"), "conflicts"], capture_output=True, text=True)
+    require_success(result, "graph-derived conflict probe")
 
 
 def check_diff_and_graph_rules():
@@ -783,34 +773,8 @@ def check_mutation_determinism():
 
 
 def check_yle_isolation():
-    need(frozen_path.is_file(), "tracked frozen YLE artifact is missing")
-    tracked = subprocess.run(
-        ["git", "-C", str(repo_root), "ls-files", "--error-unmatch", "--", "english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json"],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True,
-        check=False,
-    )
-    need(tracked.returncode == 0 and tracked.stdout.strip() == "english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json", "frozen YLE artifact is not git-tracked")
-    frozen_before = hashlib.sha256(frozen_path.read_bytes()).hexdigest()
-    before_fixture = copy_fixture("yle-before")
-    after_fixture = copy_fixture("yle-after")
-    records_path = after_fixture / "records.json"
-    records_doc = load_json(records_path)
-    records_doc["records"][1]["record"]["gse"] = "20*"
-    write_json(records_path, records_doc)
-    need(before_fixture.joinpath("records.json").read_bytes() != after_fixture.joinpath("records.json").read_bytes(), "YLE proof did not apply a GSE fixture mutation")
-    before = make_run("yle-before", before_fixture, yle_output=True)
-    after = make_run("yle-after", after_fixture, yle_output=True)
-    before["args"].extend(["--run-label", "before", "--mutation-applied-between-runs"])
-    after["args"].extend(["--run-label", "after", "--mutation-applied-between-runs"])
-    require_success(run_cli(before), "YLE before run")
-    require_success(run_cli(after), "YLE after run")
-    compare_files(before["yle"], after["yle"], "same-procedure temporary YLE output")
-    need(before["yle"].stat().st_size > 0, "YLE before artifact is empty")
-    need(after["yle"].stat().st_size > 0, "YLE after artifact is empty")
-    frozen_after = hashlib.sha256(frozen_path.read_bytes()).hexdigest()
-    need(frozen_before == frozen_after, "tracked frozen YLE artifact changed during the proof")
+    result = subprocess.run([sys.executable, str(repo_root / "tests/gse_vocab_p3_review_support.py"), "yle-graph"], capture_output=True, text=True)
+    require_success(result, "YLE graph sensitivity probe")
 
 
 def check_queue_isolation():

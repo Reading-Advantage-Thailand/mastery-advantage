@@ -749,7 +749,7 @@ run_errors = []
 artifacts = {}
 comparison_returncode = None
 
-with tempfile.TemporaryDirectory(prefix="gse-vocab-yle-before-after-", dir=repo_root) as temporary_root:
+with tempfile.TemporaryDirectory(prefix="gse-vocab-yle-before-after-", dir="/tmp/opencode") as temporary_root:
     root = Path(temporary_root)
     for label in ("before", "after"):
         sandbox = root / label
@@ -1271,7 +1271,7 @@ probe_output_exists = False
 probe_output_path = None
 probe_command = []
 
-with tempfile.TemporaryDirectory(prefix="gse-vocab-yle-proof-", dir=repo_root) as temporary_root:
+with tempfile.TemporaryDirectory(prefix="gse-vocab-yle-proof-", dir="/tmp/opencode") as temporary_root:
     sandbox = Path(temporary_root)
     script_target = sandbox / "english/cefr-vocabulary/scripts/generate-vocabulary-graph.js"
     script_target.parent.mkdir(parents=True, exist_ok=True)
