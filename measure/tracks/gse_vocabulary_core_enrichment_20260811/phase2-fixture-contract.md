@@ -1,5 +1,17 @@
 # Phase 2 GSE Vocabulary Fixture Contract
 
+## Contents
+
+- [Pack Location And Manifest](#pack-location-and-manifest)
+- [Record Fixtures](#record-fixtures)
+- [Mapping Fixtures](#mapping-fixtures)
+- [Mutation And Byte-Diff Fixtures](#mutation-and-byte-diff-fixtures)
+- [Determinism And YLE Isolation](#determinism-and-yle-isolation)
+- [Malformed And Mutation Probes](#malformed-and-mutation-probes)
+- [CEFR Queue Fixtures](#cefr-queue-fixtures)
+- [Conflict Report Fixture](#conflict-report-fixture)
+- [Red Audit Probe](#red-audit-probe)
+
 This contract defines the small fixture pack for Phase 3. It contains source
 shapes and expected relationships. It does not contain the publisher exports.
 

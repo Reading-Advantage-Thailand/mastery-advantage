@@ -1,5 +1,14 @@
 # Phase 3 GSE Vocabulary Execution Contract
 
+## Contents
+
+- [Purpose](#purpose)
+- [Entry Command](#entry-command)
+- [Required Output Files](#required-output-files)
+- [Queue Files](#queue-files)
+- [Reports](#reports)
+- [Determinism And YLE Isolation](#determinism-and-yle-isolation)
+
 ## Purpose
 
 The specification defines required source values and graph effects. The strategy does not define a command or output path. This contract defines the Phase 3 test interface.

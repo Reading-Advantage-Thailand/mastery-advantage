@@ -1,5 +1,15 @@
 # GSE Vocabulary Core Enrichment
 
+## Contents
+
+- [Problem](#problem)
+- [Goal](#goal)
+- [Source Identity](#source-identity)
+- [Functional Requirements](#functional-requirements)
+- [Non-Functional Requirements](#non-functional-requirements)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Out of Scope](#out-of-scope)
+
 ## Problem
 
 Core lexical graph nodes carry Cambridge-derived levels but no per-word GSE

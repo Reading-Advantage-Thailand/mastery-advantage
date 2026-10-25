@@ -1,5 +1,16 @@
 # Implementation Plan: GSE Vocabulary Core Enrichment
 
+## Contents
+
+- [Phase 1: Source Acquisition And Contracts](#phase-1-source-acquisition-and-contracts)
+- [Phase 2: Tests And Fixtures](#phase-2-tests-and-fixtures)
+- [Phase 3: Extraction, Mapping, And Core Mutation](#phase-3-extraction-mapping-and-core-mutation)
+- [Mid-Red independent-audit remediation evidence (2026-08-13)](#mid-red-independent-audit-remediation-evidence-2026-08-13)
+- [Jr-Green independent-audit remediation evidence (2026-08-13)](#jr-green-independent-audit-remediation-evidence-2026-08-13)
+- [Phase 4: Audit And Calibration](#phase-4-audit-and-calibration)
+- [Phase 5: Release Decision](#phase-5-release-decision)
+- [Completion Rule](#completion-rule)
+
 > **Intent:** Write source-backed GSE scores, bands, definitions, and examples
 > onto existing core vocabulary nodes. Ship as a new core graph version under
 > freeze discipline.
@@ -11,10 +22,11 @@
 > invented; every mapped node cites a GSE `itemId`.
 >
 > **Marker-contract note:** Human gates use `[b]` plus `deferred:<owner>`. The
-> supervisor (`measure/automation-supervisor.py`) recognizes `[b]` and
-> `deferred:<owner>` as structured-blocked. The interphase checker still uses
-> the old `[ ~x]` regex, so `[b]` lines are invisible to its counts; this is the
-> intended honest state for human gates. See `test-strategy.md` section 9.
+> former supervisor (`measure/automation-supervisor.py`) recognized `[b]` and
+> `deferred:<owner>` as structured-blocked; commit `ba3e0a3` (2026-10-05)
+> removed it. The interphase checker still uses the old `[ ~x]` regex, so
+> `[b]` lines are invisible to its counts; this is the intended honest state
+> for human gates. See `test-strategy.md` section 9.
 >
 > **Owner decision recorded:** FR-6 option (b) - definition and example text is
 > committed onto nodes. Owner words: "FR-6 (b) while we are not selling this
@@ -384,6 +396,16 @@ Implementation handoff to Jr-Green:
   - [~] Confirm Cambridge-vs-GSE conflicts keep both values visible
 - [b] Task: Curriculum review of the mapping sample — deferred:curriculum-owner
 - [b] Task: Complete Phase 4 review gate — deferred:both-owners
+
+**Phase 4 route note (2026-10-25):**
+
+- Phase 4 Mid-Red waits for Phase 3 phase acceptance. Phase 3 has no passing acceptance.
+- Route: Reviews A, B, and C for Phase 3 rerun at one fixed SHA, then remediation if needed, then adversarial testing, then Phase 3 acceptance.
+- The orchestrator captures the Phase 4 `phase_base_sha` after the Phase 3 acceptance evidence commit.
+- The Phase 3 entry script reads only the fixture pack. Phase 4 needs a real-source run on the pinned exports and the committed graph.
+- No role writes `cefr-vocabulary-knowledge-space.json` or runs `generate-vocabulary-graph.js` against it in Phase 4.
+- Gate commands, sample rule, falsifiers, and open items OI-1 to OI-3 are in `test-strategy.md` (revision 2026-10-25).
+- Both `[b]` lines above stay unchanged until owner words exist.
 
 ## Phase 5: Release Decision
 

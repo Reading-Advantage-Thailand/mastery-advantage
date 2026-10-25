@@ -80,11 +80,18 @@ This registry tracks Mastery Advantage specification and domain-data work.
 
 ---
 
-- [ ] **Track: GSE Vocabulary Core Enrichment** *(new 2026-08-11)*
+- [~] **Track: GSE Vocabulary Core Enrichment** *(in progress — Phase 3 re-review and acceptance pending, then Phase 4)*
   *Map core vocabulary nodes to the pinned GSE GL/YL vocabulary exports and
   write GSE scores, CEFR bands, definitions, and examples onto existing
   nodes; ship as a new core graph version under freeze discipline.*
-  *Status: new — exports pinned 2026-08-11 (GL 11,586 items, GSE 10–67;
+  *Status: in progress — Phase 1 acceptance passed at ee95902; Phase 2
+  acceptance passed at abe7d3d. Phase 3 Reviews A and B failed at 50d524c;
+  remediation commits 56d255d, cd9e991, and 4856640 followed. Reviews A, B,
+  and C must rerun at one fixed SHA before Phase 3 acceptance. The Phase 3
+  entry script reads only the fixture pack, so no real-data mapping exists
+  yet. Phase 4 audit waits for Phase 3 acceptance. All human gates stay open.
+  Strategy revision 2026-10-25 in `test-strategy.md`.
+  Exports pinned 2026-08-11 (GL 11,586 items, GSE 10–67;
   YL 3,024 items, GSE 10–59; `GSE_VOCABULARY_SOURCES.md`). Owner directed
   core mutation, not an enrichment overlay. FR-6 decided: definition and
   example text committed onto nodes for non-commercial use within Pearson's
