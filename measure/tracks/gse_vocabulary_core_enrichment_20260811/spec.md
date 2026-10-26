@@ -50,16 +50,22 @@ vocabulary records carrying `itemId`, expression, POS categories, `gse`,
 CEFR band, definition, example, variants, and audience. Two consecutive runs
 produce byte-identical tracked output. The 70 starred GL `gse` values and the
 129 YL `temporaryGse` values are preserved and explained, not dropped.
+Owner decision OI-2 (2026-10-26): preserve the raw plus band and store a separate base band.
+Normalize `<A1 (10-21)` and `<A1` to `PRE-A1`, including starred forms. Phase 4 implements this change before Green.
 
 **FR-3 — Node-to-entry mapping contract.** A specification defines how a core
 node (form + POS, and audience where relevant) binds to a GSE vocabulary
 entry. Ambiguous and unmapped cases persist in durable queues scoped to this
 track. No mapping is inferred or guessed.
+Owner decision OI-3 (2026-10-26): keep both audience values on a node, each marked with its audience.
+STA and PA read YL; RA reads GL. Phase 5 defines the combined contract without audience substitution.
 
 **FR-4 — Core mutation under a version bump.** Mapped nodes gain GSE score
 and CEFR band in the core graph. The change ships as a new core version. The
 frozen YLE baseline stays reproducible. A byte-level diff report with
 labelled counts accompanies the new version.
+Owner decision OI-1 (2026-10-26): the committed graph file stays unchanged as a version.
+Each change writes a new versioned file. Regeneration never overwrites the current file.
 
 **FR-5 — Level reconciliation.** Where the graph already carries GSE level
 data, the pinned source corrects it. Where a GSE band disagrees with the
@@ -102,8 +108,8 @@ the deliberate re-approval this track exists to make.
 
 1. The mapping spec defines the binding rule, and every mapped node cites a
    GSE `itemId`.
-2. The new core version validates; the YLE baseline regenerates
-   byte-identical.
+2. The new core version validates and reproduces byte-identically at new versioned paths.
+   The same-procedure YLE isolation proof passes. The committed graph and inventory bytes stay unchanged.
 3. Labelled counts for mapped, added, corrected, conflicted, and queued
    cases appear in the release report.
 4. The FR-6 decision is recorded with owner words (done 2026-08-11,

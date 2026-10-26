@@ -9,6 +9,7 @@
 - [Jr-Green independent-audit remediation evidence (2026-08-13)](#jr-green-independent-audit-remediation-evidence-2026-08-13)
 - [Phase 4: Audit And Calibration](#phase-4-audit-and-calibration)
 - [Phase 5: Release Decision](#phase-5-release-decision)
+- [Owner answers (2026-10-26)](#owner-answers-2026-10-26)
 - [Completion Rule](#completion-rule)
 
 > **Intent:** Write source-backed GSE scores, bands, definitions, and examples
@@ -529,6 +530,16 @@ bash -n tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p3_extraction.sh tests/g
 
 ## Phase 4: Audit And Calibration
 
+- [~] Task: Mid-Red tests the OI-2 band calibration change
+  - [~] Add `tests/gse_vocab_p4_bands.sh` and revise affected Phase 1 to Phase 3 test oracles
+  - [~] Prove substantive Red against the accepted contracts, fixtures, and implementation
+- [~] Task: Jr-Green remediates the accepted artifacts for OI-2
+  - [~] Revise the Phase 1 mapping and mutation contracts, Phase 2 fixture contract, and Phase 3 execution contract
+  - [~] Preserve raw plus bands and separate base bands; normalize both `<A1` forms to `PRE-A1`
+  - [~] Revise record, mapping, mutation, and negative fixtures; recompute hashes and labelled counts
+  - [~] Update `band()`, classification, validation, correction counts, and conflict comparison
+  - [~] Regenerate the four named GL queues; retain invalid-CEFR evidence for unsupported values
+  - [~] Pass the OI-2 Green aggregate before the audit Green gate
 - [~] Task: Audit the node-to-entry mapping
   - [~] Stratified sample against the Phase 1 threshold
   - [~] Verify no node carries inferred data
@@ -548,14 +559,65 @@ bash -n tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p3_extraction.sh tests/g
 - Gate commands, sample rule, falsifiers, and open items OI-1 to OI-3 are in `test-strategy.md` (revision 2026-10-25).
 - Both `[b]` lines above stay unchanged until owner words exist.
 
+**Current route (2026-10-26; replaces the earlier route where it differs):**
+
+- The Phase 3 Green gate passed at `045b67b2aebda117ab85420b592afc4ae49b5d9e`.
+- Phase 3 reviews, adversarial testing, and acceptance come next. They judge band rules accepted before 2026-10-26.
+- Phase 3 retains plus-band queuing and `<A1` to `A1` normalization for closure. OI-2 must not block Phase 3.
+- Capture the Phase 4 `phase_base_sha` after this strategy commit and the Phase 3 acceptance evidence commit.
+- Run Phase 4 roles in this order: Mid-Red bands, Jr-Green remediation, Mid-Red audit, Jr-Green audit evidence.
+- Then run independent Reviews A, B, C, adversarial testing, and Phase 4 acceptance at one fixed SHA.
+- Phase 4 real-source runs read the pinned exports and temporary copies of the committed graph.
+- OI-1 preserves the committed graph. OI-3 keeps GL and YL audit evidence separate, with explicit audience labels.
+- `test-strategy.md` sections 2.4 and 6 name the artifacts, shape limits, exact commands, and falsifiers.
+- Mid-Red owns tests. Jr-Green owns contracts, fixtures, implementation, and regenerated queue evidence.
+- All human gates retain their existing markers and owner fields.
+
+```text
+RED_TEST_COMMAND="bash tests/gse_vocab_p4_bands.sh"
+GREEN_TEST_COMMAND='rc=0; for t in tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p2_fixtures.sh tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_graph.sh tests/gse_vocab_p3_review_safety.sh tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh tests/gse_vocab_p4_bands.sh; do bash "$t" || rc=1; done; exit "$rc"'
+```
+
+Use `bash /home/daniebo/Desktop/advantage-pr/scripts/jobs/heavy-run.sh -c '<command>'` for each heavy command.
+The band cycle changes accepted artifacts as Phase 4 remediation. It does not revise Phase 1 to Phase 3 markers.
+
 ## Phase 5: Release Decision
 
-- [~] Task: Run deterministic regeneration and full validation
-  - [~] All harnesses exit 0; YLE baseline byte-identical
+- [~] Task: Run deterministic new-version generation and full validation under OI-1
+  - [~] Run the GSE entry script twice into temporary versioned paths; compare the output bytes
+  - [~] Preserve the committed graph and inventory bytes; validate the new version
+  - [~] Record the same-procedure YLE isolation proof without rebuilding the committed graph
+- [~] Task: Implement the OI-3 audience contract for the new version
+  - [~] Mid-Red tests both audience values on one node and rejects audience substitution
+  - [~] Jr-Green defines and implements separate audience results with complete citations
+  - [~] Record consumption rules: STA and PA read YL; RA reads GL; absent audiences have no fallback
 - [~] Task: Produce the release and consumption record for the new core version
+  - [~] Write a new versioned graph file; record prior and new paths, versions, and hashes
 - [~] Task: Reconcile acceptance criteria and close open debt
 - [b] Task: Record the mapping decision — deferred:both-owners
 - [b] Task: Record the core version release decision — deferred:both-owners
+
+## Owner answers (2026-10-26)
+
+The PM supplied these answers on 2026-10-26 at 18:55 ICT. They do not approve the mapping or the release.
+
+- **OI-1.** Daniel: "c -- We need to version the graph. Is this version broken? No? Then we should not mutate it."
+  Owner rule (c): the committed graph file is a version and stays unchanged.
+  Each change writes a new versioned file. Phase 5 owns release generation without overwriting the current file.
+  Phase 4 preserves the committed graph bytes. The Phase 1 sandbox generator run fits because it writes no tracked file.
+- **OI-2.** The PM recommended raw plus bands with base bands, option (b), and `<A1` to `PRE-A1`, option (b).
+  Daniel: "Yes. Pre-A1."
+  Phase 4 owns this calibration change before Green. Mid-Red changes tests; Jr-Green changes contracts, fixtures, code, and queue evidence.
+  The contract author chooses field names within the limits in `test-strategy.md` section 6.
+  Phase 3 closure uses the earlier accepted band rules. Reviewers must not block Phase 3 on OI-2.
+- **OI-3.** The PM recommended both values on the node, each marked with its audience.
+  Daniel: "Yes. STA and PA are YLE and RA is the "adult" list (which is actually 13+, I think."
+  Phase 5 keeps both audience values. Storytime Advantage (STA) and Primary Advantage (PA) read YL; Reading Advantage (RA) reads GL.
+  Phase 4 audits GL and YL separately, with explicit audience labels.
+
+The pinned source calls GL "Adult Learners" and YL "Young Learners (6-14)". It gives no GL age range.
+Pearson's published audience names also give no adult age range. Ages 13-14 fall within the stated YL range.
+The source does not state "13+" for GL. Preserve the product routing without adding an unsupported publisher age boundary.
 
 ## Completion Rule
 

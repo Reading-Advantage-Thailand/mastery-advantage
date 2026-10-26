@@ -16,32 +16,29 @@
 - [11. Open Items For The Owners](#11-open-items-for-the-owners)
 
 **Track:** GSE Vocabulary Core Enrichment
-**Revision:** 2026-10-25 - Phase 3 closure route and strategy for Phase 4
-(Audit And Calibration)
+**Revision:** 2026-10-26 - owner answers and Phase 4 calibration remediation
 **Revision history:**
 
 - 2026-08-12 - strategy for Phase 1 (Source Acquisition And Contracts),
   pre-strategy baseline `79fb0a4abede4fcd8cb85b6b609047d05ec707a9`. Phase 2
   and Phase 3 used the per-phase sections of that revision.
-- 2026-10-25 - this revision. Pre-strategy baseline (role_base_sha):
+- 2026-10-25 - Phase 3 closure route. Pre-strategy baseline (role_base_sha):
   `ceb728d6b317486f8622a147a9155bcb1e2dcfcd`.
+- 2026-10-26 - owner answers OI-1 to OI-3. Role baseline:
+  `045b67b2aebda117ab85420b592afc4ae49b5d9e`. The Phase 3 Green gate passed at this SHA.
 
 **Role:** measure-strategy
-**Scope of this revision:** the route that closes Phase 3, the Phase 4 audit,
-and the Phase 5 open item. This revision changes no product source, no test,
-no graph, and no contract outside the track directory.
+**Scope of this revision:** record owner answers in the strategy, plan, and specification.
+This revision changes no product source, test, fixture, contract, queue, or graph.
 
 ---
 
 ## 0. Orchestrator Capture Points (`phase_base_sha`)
 
-This revision has two capture points. Do not use the pre-strategy SHA
-`ceb728d6b317486f8622a147a9155bcb1e2dcfcd` for either point. Do not embed a
-guessed future SHA in this file.
+This revision has two capture points. Neither point uses a SHA that predates this strategy commit.
+The role baseline records history, not a phase capture. Do not embed a guessed future SHA in this file.
 
-**Capture point 1 - Phase 3 re-review base.** After the commit that contains
-this `test-strategy.md`, the `plan.md` route note, and the `measure/tracks.md`
-entry, the orchestrator captures:
+**Capture point 1 - Phase 3 re-review base.** After this strategy, plan, and specification commit, the orchestrator captures:
 
 ```text
 p3_review_base_sha = git rev-parse HEAD
@@ -95,15 +92,11 @@ review is **not applicable**.
 
 ### 2.1 Heavy-job rule (all roles, from 2026-10-25)
 
-A test run is a heavy job on this machine (rule from Daniel, 2026-10-25).
-Each role applies this procedure to each test or check command `C`:
+A test run is a heavy job on this machine. The 2026-10-26 wrapper rule replaces the earlier separate-lock procedure.
+Run each test or check command `C` through this wrapper:
 
 ```sh
-sh /home/daniebo/Desktop/advantage-pr/scripts/jobs/heavy-preflight.sh
-# exit 0: run the command under the shared lock
-flock ~/Desktop/primary-parity-progress/heavy.lock -c "$C"
-# exit 1: do not run C; copy the printed "heavy-preflight: hold ..." line
-#         into the role log and the plan evidence
+bash /home/daniebo/Desktop/advantage-pr/scripts/jobs/heavy-run.sh -c "$C"
 ```
 
 - The heavy commands are `RED_TEST_COMMAND`, `GREEN_TEST_COMMAND`,
@@ -114,8 +107,7 @@ flock ~/Desktop/primary-parity-progress/heavy.lock -c "$C"
 - A hold is not a pass and not a fail. A role that needs a result and gets a
   hold ends with `status: blocked` or `status: partial`. It records the hold
   line. It does not reuse an older result as evidence for the current HEAD.
-- `flock -c` runs the string with `sh -c`. The command strings below are
-  POSIX `sh` strings.
+- Use no separate `flock`. The command strings below use POSIX shell syntax.
 
 ### 2.2 Phase 1 commands (history)
 
@@ -167,25 +159,39 @@ UX_REQUIRED="never"
 - `gse_vocab_p3_review_destinations.sh` tests generated aliases and source validation before writes.
 - The shared independent probes live in `tests/gse_vocab_p3_review_support.py`.
 - The real-source option names are in `phase3-execution-contract.md`, section `Real-Source Interface`.
-- These tests retain the accepted plus-band and `<A1` rules. They do not decide OI-1, OI-2, or OI-3.
+- Phase 3 closure retains the band rules accepted before 2026-10-26.
+- OI-2 changes those rules in Phase 4 only. Phase 3 reviews, adversarial testing, and acceptance must not block Phase 3 on OI-2.
 - The YLE probe runs the accepted generator procedure in temporary sandboxes only.
 - Its second control changes Cambridge CEFR in the prior graph. The comparison must detect that change.
 
 ### 2.4 Phase 4 commands
+
+#### OI-2 remediation cycle (before the audit Green gate)
+
+```text
+RED_TEST_COMMAND="bash tests/gse_vocab_p4_bands.sh"
+GREEN_TEST_COMMAND='rc=0; for t in tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p2_fixtures.sh tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_graph.sh tests/gse_vocab_p3_review_safety.sh tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh tests/gse_vocab_p4_bands.sh; do bash "$t" || rc=1; done; exit "$rc"'
+```
+
+Mid-Red writes the band harness and updates existing test oracles for OI-2.
+Jr-Green changes the contracts, fixtures, and implementation listed in section 6.
+Red requires a substantive exit `1` against the unchanged accepted artifacts and code.
+Green requires exit `0` from every listed harness. Missing files and syntax errors do not establish Red.
+
+#### Audit cycle (after OI-2 remediation)
 
 ```text
 RED_TEST_COMMAND="bash tests/gse_vocab_p4_audit.sh"
 GREEN_TEST_COMMAND="bash tests/gse_vocab_p4_audit.sh"
 PROJECT_CHECKS="node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js"
 PROJECT_LINT="git diff --check"
-PROJECT_TESTS='rc=0; for t in tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p2_fixtures.sh tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_graph.sh tests/gse_vocab_p3_review_safety.sh tests/gse_vocab_p4_audit.sh; do bash "$t" || rc=1; done; exit "$rc"'
+PROJECT_TESTS='rc=0; for t in tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p2_fixtures.sh tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_graph.sh tests/gse_vocab_p3_review_safety.sh tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh tests/gse_vocab_p4_bands.sh tests/gse_vocab_p4_audit.sh; do bash "$t" || rc=1; done; exit "$rc"'
 PROJECT_DEV_URL=""
 UX_REQUIRED="never"
 ```
 
-- Insert each Phase 3 remediation harness from section 2.3 before
-  `tests/gse_vocab_p4_audit.sh` in `PROJECT_TESTS`.
-- `RED_TEST_COMMAND` must exit `1` at `phase_base_sha` for a substantive
+- The aggregate includes every existing GSE harness and both Phase 4 harnesses.
+- `RED_TEST_COMMAND` must exit `1` at the audit role baseline for a substantive
   reason (a missing audit artifact or a failed comparison). A syntax error or
   a missing harness file is not a valid Red.
 - `GREEN_TEST_COMMAND` must exit `0` after Jr-Green. The harness then exits
@@ -233,6 +239,8 @@ UX_REQUIRED="never"
    rebuilt from its sources. No role runs
    `english/cefr-vocabulary/scripts/generate-vocabulary-graph.js` against the
    committed graph. No role writes the committed graph in Phase 3 or Phase 4.
+   OI-1 confirms that each committed graph file is an immutable version.
+   Each release writes a new versioned file. It never regenerates over the current file.
    A harness reads the committed graph, or a byte-identical temporary copy.
    It checks the SHA-256 of the committed graph and of
    `english/cefr-vocabulary/data/cambridge-vocabulary-inventory.json` before
@@ -262,22 +270,28 @@ UX_REQUIRED="never"
   the pinned exports found plus bands. GL: `A2+` 723, `B1+` 2945, `B2+` 764.
   YL: `A2+` 686, `A2+*` 34. The current `band()` function returns no band
   for a plus value. A mapped entry with a plus band therefore goes to the
-  invalid-CEFR queue. See open item OI-2.
+  invalid-CEFR queue. This describes the Phase 3 closure baseline.
+  OI-2 replaces this behavior in Phase 4 before Green: preserve the raw plus band and store its base band.
 - **`<A1` normalization (found 2026-10-25).** The Phase 2 fixtures expect
   `<A1 (10-21)` to normalize to `A1`. The GSE range 10-21 is below A1, and
   the Cambridge core uses `pre-a1` for 495 skill nodes. The current rule can
   report a Cambridge-versus-GSE conflict for each pre-A1 word with a GSE `<A1`
-  band. GL has 383 `<A1` items; YL has 630 (`<A1` 624, `<A1*` 6). See OI-2.
+  band. GL has 383 `<A1` items; YL has 630 (`<A1` 624, `<A1*` 6).
+  OI-2 requires `PRE-A1` in Phase 4, including the starred forms.
 - **Version location (found 2026-10-25).** The mutation contract puts the
   core version in the domain node `metadata.schemaVersion` with the format
   `gse-vocab-YYYYMMDD-rNN`. The committed graph has only `nodes` and `edges`
   at the top level. Its domain node carries `english-vocabulary.v1`. The
   current `nextVersion()` reads a top-level `schemaVersion` and needs a prior
   `gse-vocab-...` value. It cannot bump the committed graph.
-- **Two audiences.** The mapping contract says a release input that needs
-  both audiences records two separate candidate results before a later
-  approved reconciliation rule. No reconciliation rule exists yet. Phase 4
-  audits GL and YL as separate runs and does not merge them.
+- **Two audiences.** OI-3 keeps both values on one node, each with its audience and source citation.
+  Phase 4 audits GL and YL separately. Phase 5 implements the combined shape without replacing either value.
+  Storytime Advantage (STA) and Primary Advantage (PA) read YL. Reading Advantage (RA) reads GL.
+  The contract author defines the combined shape before Phase 5 implementation.
+  Tests must reject audience substitution and loss of either value.
+- **Graph-aware inspection (2026-10-26).** `build-graph` is available, but this repository has no `graph.db`.
+  No scan ran. Direct inspection covered JavaScript `band()`, its classification callers, mutation, and conflict comparison.
+  OI-2 affects extraction, classification, output validation, correction counts, and conflict comparison.
 
 ### Intentionally-red aggregate handling
 
@@ -373,13 +387,16 @@ stays `[b] deferred:both-owners`.
 **Fixtures / live proof:** read-only count probes of the pinned exports. The
 harness also runs a copy of `generate-vocabulary-graph.js` twice in a
 temporary sandbox and compares the two outputs. It writes no tracked file and
-checks the committed graph SHA-256 before and after (see OI-1).
+checks the committed graph SHA-256 before and after. This sandbox run fits OI-1 because it writes no tracked file.
+It proves mutation isolation, not that the generator reproduces the committed graph.
 
 **Artifact vs live:** artifact and documentation tests plus read-only
 source-cache probes.
 
 **Anti-patterns defended:** A1, A3, A4, A5, A6, A8, P-GSE-3 (as in the
 2026-08-12 revision).
+The section 5 guards apply: structural markers, labelled integers, substantive completion, evidence equality, registry honesty, and special-value preservation.
+Each guard fails when its required field, evidence, or source value is absent or incorrect.
 
 **Falsifiers:** missing SHA-256 or FR-6 owner words; missing POS map or
 audience rule; missing YLE proof; sample threshold absent or below 100; any
@@ -402,6 +419,8 @@ not applicable.
 | **Closeout** | Phase 2 verification task `[x]` with SHA. |
 
 **Anti-patterns:** A3, A4, A7, P-GSE-2.
+Parse labelled counts; reject empty fixture coverage; retain genuine negative cases; reject the wrong-POS form match.
+Each defense fails when a fixture omits or contradicts its required relationship.
 
 **Falsifiers:** falsifier fixture absent; GL covered without YL; no conflict
 case.
@@ -421,6 +440,7 @@ Adversarial yes; Browser not applicable.
 | **Closeout** | Phase 3 phase acceptance passes at one reviewed SHA. |
 
 **Anti-patterns:** A3, A5, P-GSE-1, P-GSE-3, P-GSE-4.
+Parse labelled counts and compare claims with run evidence. Reject export-size coverage claims, lost source markers, and fixture literals in product code.
 
 **Falsifiers:** a mapped node without an `itemId`; an unmapped node with GSE
 data; YLE regeneration drift; a foreign queue file changes a report; a starred
@@ -442,6 +462,11 @@ data; YLE regeneration drift; a foreign queue file changes a report; a starred
   `generate-vocabulary-graph.js` after the Phase 3 Green evidence.
 
 #### Phase 3 closure route (required before Phase 4)
+
+The Green gate passed at `045b67b2aebda117ab85420b592afc4ae49b5d9e` on 2026-10-26.
+Reviews, adversarial testing, and acceptance remain next. They judge the band rules accepted before 2026-10-26.
+Those rules queue plus bands and normalize `<A1` to `A1`.
+OI-2 is Phase 4 scope, not a Phase 3 blocker. Reviewers record this boundary when they assess O-5.
 
 1. The orchestrator captures `p3_review_base_sha` (section 0, point 1).
 2. Reviews A, B, and C for "Phase 3: Extraction, Mapping, And Core Mutation"
@@ -513,9 +538,67 @@ captured `phase_base_sha` (section 0, point 2).
 
 | Gate | Command / evidence |
 |---|---|
-| **Red** | `bash tests/gse_vocab_p4_audit.sh` (Mid-Red authors it). It exits `1` at `phase_base_sha` because the tracked Phase 4 artifacts are absent. |
-| **Green** | Same harness exits `0`. The section 2.4 `PROJECT_TESTS`, `PROJECT_CHECKS`, and `PROJECT_LINT` exit `0`. |
-| **Closeout** | The four automatable subtasks are `[x]` with SHA. "Curriculum review of the mapping sample" stays `[b] deferred:curriculum-owner`. "Complete Phase 4 review gate" stays `[b] deferred:both-owners`. Each becomes `[x]` only with owner words in a signed artifact. |
+| **Red** | OI-2: `bash tests/gse_vocab_p4_bands.sh` exits `1` on missing band behavior. Audit: `bash tests/gse_vocab_p4_audit.sh` exits `1` on absent audit evidence. |
+| **Green** | The OI-2 cycle passes first. Then the audit harness, section 2.4 aggregate, `PROJECT_CHECKS`, and `PROJECT_LINT` exit `0`. |
+| **Closeout** | All automatable Phase 4 tasks have `[x]` and SHA evidence. Independent reviews and adversarial testing pass before phase acceptance. Both human gates stay `[b]` without signed owner evidence. |
+
+#### OI-2 contract and fixture remediation (2026-10-26)
+
+This cycle changes accepted artifacts without changing Phase 1 to Phase 3 markers or historical acceptance evidence.
+Mid-Red owns tests. Jr-Green owns the contracts, fixtures, code, and regenerated queue evidence.
+
+Jr-Green updates these accepted contracts:
+
+- `english/cefr-vocabulary/review/gse-vocab/phase1-mapping-contract.md`: valid plus bands do not enter the invalid-CEFR queue.
+- `english/cefr-vocabulary/review/gse-vocab/phase1-mutation-contract.md`: raw CEFR preservation, base bands, and `PRE-A1` normalization.
+- `measure/tracks/gse_vocabulary_core_enrichment_20260811/phase2-fixture-contract.md`: revised record, mapping, mutation, and negative expectations.
+- `measure/tracks/gse_vocabulary_core_enrichment_20260811/phase3-execution-contract.md`: revised band behavior, including its real-source rules at lines 106-118.
+
+The Phase 1 sample contract changes only if the sample fields need the raw CEFR value.
+Jr-Green records that decision in the contract change evidence.
+
+Jr-Green updates the pack under `english/cefr-vocabulary/fixtures/gse-vocab/`:
+
+- `records.json`: GL and YL `<A1` expectations become `PRE-A1`; plus cases preserve raw values and base bands.
+- `mapping-cases.json`: move valid `A2+ (36-42)` out of the invalid case; retain a separate synthetic invalid value.
+- `mutation-cases.json`: revise expected metadata, conflicts, hashes, byte counts, and labelled counts from the revised fixtures.
+- `negative-cases.json`: reject raw-band loss, wrong base bands, and unsupported present CEFR values.
+- `manifest.json`: register any added case metadata without changing pinned source identities.
+- `determinism.json`: retain the same isolation guarantees; change expectations only when the new shape requires them.
+
+The contract author chooses field names before Green implementation. The shape has these limits:
+
+- Each audience result stores the exact source `cefr` string, including `+`, range suffixes, and `*`.
+- Each result stores a separate normalized base band in the existing `cefrBand` enum.
+- `A2+`, `B1+`, and `B2+` use base bands `A2`, `B1`, and `B2`.
+- `<A1 (10-21)` and `<A1` use `PRE-A1`; starred forms use the same base band.
+- Absent CEFR stays absent. Unsupported present values still enter the invalid-CEFR queue.
+- The contract states the source-derived normalization rule. It does not present a base band as an unchanged publisher value.
+
+Jr-Green changes `band()` and every dependent comparison or validator in `gse-vocabulary-core.js`.
+Valid plus bands no longer produce an invalid-CEFR outcome. Ambiguous and unmapped cases retain their existing outcomes.
+Jr-Green regenerates the four named GL queues before the cycle Green gate. YL audit queues remain temporary.
+Queue counts from Phase 3 remain historical evidence, not Phase 4 expected counts.
+
+Mid-Red updates independent oracles in every affected Phase 1, Phase 2, and Phase 3 harness.
+It also updates `tests/gse_vocab_p3_review_support.py` where its accepted band parser supplies those oracles.
+It keeps real-source, destination, citation, and Cambridge preservation guards intact.
+The exact Red and Green commands are in section 2.4. Every heavy command uses section 2.1.
+
+The band harness uses small fixtures and real GL/YL runs on temporary graph copies. It imports no product parser.
+No mock replaces the source reader, mapper, output validator, or independent band parser.
+It fails on raw-band loss, a wrong base band, or a valid plus entry in the invalid-CEFR queue.
+It fails when either `<A1` spelling yields `A1`, including starred variants.
+It fails if unsupported CEFR is accepted or absent CEFR creates an invalid queue row.
+It fails if Cambridge fields change or a temporary pre-A1 control produces a normalization-only conflict.
+A true Cambridge-versus-GSE disagreement must still produce a conflict row.
+Negative controls remove the raw value, restore the old `<A1` rule, and substitute an invalid CEFR value.
+Each control must fail its expected comparison. An unexecuted control establishes no proof.
+
+Reviews A, B, and C assess the revised contracts, fixtures, and implementation after Green.
+The adversarial role attacks raw-value loss and false queue suppression before Phase 4 acceptance.
+OI-1 applies throughout: committed graph and inventory hashes stay unchanged.
+OI-3 requires audience labels in all sample and conflict rows; Phase 4 does not implement the combined release shape.
 
 #### Phase 4 inputs
 
@@ -538,7 +621,7 @@ captured `phase_base_sha` (section 0, point 2).
 - **Temporary only:** the new graph, the extraction files, the mapping files,
   the queue files, and the byte-diff report. They go under
   `mktemp -d "${TMPDIR:-/tmp}/gse-vocab-p4.XXXXXX"`.
-- **Tracked evidence** (Jr-Green writes it; Phase 4 only writes these names),
+- **Tracked audit evidence** (Jr-Green writes it after OI-2 remediation),
   all under `english/cefr-vocabulary/review/gse-vocab/`:
   - `phase4-review-sample.json` - the manifest and the selected rows;
   - `phase4-audit-report.json` and `phase4-audit-report.md` - the labelled
@@ -555,6 +638,9 @@ captured `phase_base_sha` (section 0, point 2).
   no example text. Sample rows carry only the contract fields.
 - **Human artifact:** the curriculum owner writes the curriculum review. No
   automated role creates it.
+
+The OI-2 cycle also permits the named contracts, fixture files, code, tests, and GL queues above.
+The audit cycle uses the narrower artifact list. Each role checks its writes against its supplied scope.
 
 #### Phase 4 sample (from `phase1-review-samples.md`)
 
@@ -603,7 +689,7 @@ captured `phase_base_sha` (section 0, point 2).
 - The real-source run exits non-zero, or the harness skips it -> fail.
 - The committed graph SHA-256 or the inventory SHA-256 changes during the
   harness -> fail.
-- A tracked file other than the named Phase 4 artifacts changes -> fail.
+- A tracked file outside the supplied cycle scope changes -> fail.
 - The tracked sample manifest differs from the re-derived manifest -> fail.
 - The selected row count is below 100, or a stratum is below its minimum
   without a `population: 0` record -> fail.
@@ -628,8 +714,9 @@ captured `phase_base_sha` (section 0, point 2).
   fail.
 - **Band calibration:** the audit report shows labelled counts per raw GSE
   CEFR value and per outcome (mapped with band, invalid-CEFR queue, conflict).
-  It shows the conflicts whose only cause is the `<A1` rule as their own
-  labelled count. A report without this table -> fail.
+  It records normalization-only `<A1` conflicts as a labelled count, which must be zero after remediation.
+  A report without this table, or a nonzero normalization-only count, fails.
+  Valid plus bands in the invalid-CEFR queue fail the audit.
 - `Nodes mapped` is greater than the number of core skill nodes, or equals an
   export item count -> fail (P-GSE-1).
 - A starred `gse` raw value or a `temporaryGse` flag in a sampled row's export
@@ -637,8 +724,8 @@ captured `phase_base_sha` (section 0, point 2).
 - A GL entry binds to a YL run, or a YL entry binds to a GL run -> fail.
 - The entry script contains a literal fixture node ID, fixture `itemId`, or
   fixture `caseId` -> fail (P-GSE-4).
-- Plan state: Red needs each Phase 4 automatable marker `[~]`; Green needs
-  each one `[x]` with a 7-to-40 hex SHA. Both `[b]` lines must stay
+- Plan state: Red needs each unfinished cycle task `[~]`. Completed earlier cycle tasks retain `[x]` with SHA evidence.
+  Phase 4 Green needs every automatable task `[x]` with a 7-to-40 hex SHA. Both `[b]` lines must stay
   byte-identical with their `deferred:<owner>` fields. A `[ ]` marker -> fail.
 - The registry entry contains "complete", "released", "validated", or
   "frozen" -> fail (A6).
@@ -665,6 +752,9 @@ temporary copy only and must exit `1`:
   the same SHA. Defense: report-versus-harness count equality.
 - **A6** - registry words guard (above).
 - **A8** - `[ ]` guard on `plan.md`.
+- **A1** - parse `[b]` and `deferred:<owner>` structurally; prose containing "deferred" must not hide an automatable task.
+- **A7** - preserve genuine invalid-CEFR hits; valid-plus acceptance must not suppress unsupported values.
+- **A10** - re-derive queue and audit counts after the band change; stale generated counts fail equality checks.
 - **P-GSE-1** - mapped-node counts use graph nodes as the denominator, not
   export size.
 - **P-GSE-2** - each sampled row passes the form, POS, and audience re-check.
@@ -675,8 +765,8 @@ temporary copy only and must exit `1`:
 
 Wrong-POS same-form substitution; cross-audience substitution; an export with
 one changed byte (SHA-256 check); a manifest reorder; a precision claim in
-the report without harness output; a plus band coerced to a clean band
-without an owner decision; a conflict resolved by overwrite; an output path
+the report without harness output; a plus band whose raw value disappears;
+a conflict resolved by overwrite; an output path
 that aliases the committed graph; a temporary directory in the repository
 root; a registry entry with "validated".
 
@@ -708,21 +798,38 @@ consumption record; Security narrow; Browser not applicable.
 
 | Gate | Command / evidence |
 |---|---|
-| **Red** | `bash tests/gse_vocab_p5_release.sh` (Mid-Red authors it). Fails while the release record, regeneration proof, and acceptance reconciliation are absent. |
-| **Green** | All harnesses exit 0; YLE baseline reproducible; release and consumption record present; acceptance criteria reconciled; open debt recorded. |
+| **Red** | `bash tests/gse_vocab_p5_release.sh` (Mid-Red authors it). Fails while the release record, versioned-output proof, and audience contract are absent. |
+| **Green** | The same harness and every existing GSE harness exit `0`. New-version runs produce equal bytes. Validation, preservation, audience controls, and acceptance reconciliation pass. |
 | **Closeout (track)** | Final acceptance only after dual go for the mapping decision and the core version release decision. Both `[b]` gates flip to `[x]` only with signed owner words. |
 
-**Anti-patterns:** A2, A4, A5, A6, A8.
+**Anti-patterns:** A2 checks both signed decisions; A4 rejects empty release evidence; A5 and A6 compare claims with current executable evidence.
+A8 rejects ambiguous markers. A3 parses manifest counts as labelled integers.
+A9 resolves active or archived track paths. A10 re-derives hashes and counts from the released bytes.
+Missing decisions, empty evidence, unsupported claims, ambiguous markers, broken paths, or mismatched hashes and counts fail these guards.
 
 **Falsifiers:** registry says released while a dual go is missing; a human
 gate `[x]` without owner words; YLE regeneration drift; an unreconciled
 acceptance criterion.
 
-**Open item for the Phase 5 strategy (not decided here):** the Phase 5 task
-"Run deterministic regeneration and full validation" and FR-10 conflict with
-the tech-debt rule of 2026-10-06: "the committed file is the source of truth;
-do not run the build before the Primary cutover." See OI-1. The Phase 5
-strategy must not start before the owners answer OI-1.
+**OI-1 release rule (answered 2026-10-26):** retain the current committed graph as an unchanged version.
+Run the GSE entry script twice from that graph into separate temporary, versioned paths.
+Compare the output bytes before publishing a new versioned file. Never regenerate over the current file.
+The manifest records both paths, versions, and hashes. Keep the current graph and inventory hashes unchanged.
+The sandboxed Phase 1 generator probe fits OI-1 because it writes no tracked file.
+It remains an isolation proof, not permission to rebuild the current graph.
+
+**OI-3 audience rule (answered 2026-10-26):** retain both audience results on a node when both mappings exist.
+Each result keeps its audience, `itemId`, source hash, score, raw CEFR value, and base band.
+The contract author defines the combined shape before implementation. It must preserve independent GL and YL results without substitution.
+STA and PA read YL. RA reads GL. No production consumer changes belong to this repository.
+
+**Live proof:** a temporary node with distinct GL and YL values retains both after release generation and validation.
+Contract-level selector probes return YL for STA and PA, and GL for RA.
+An absent requested audience returns no value; it must not fall back to the other audience.
+Raw-value loss, audience substitution, release-path aliasing, changed prior bytes, or changed inventory bytes fail the gate.
+Swapped audience labels and a missing audience provide negative controls. No mock replaces the release writer or validator.
+Review C checks the consumption contract. Review B checks write scope and licence compliance.
+Adversarial testing checks path aliases and audience loss. Browser review stays not applicable.
 
 ---
 
@@ -735,6 +842,10 @@ strategy must not start before the owners answer OI-1.
 - Before Phase 4 Mid-Red, `tests/gse_vocab_p4_audit.sh` is absent. Use the
   section 2.3 aggregate. The section 2.4 aggregate is intentionally red until
   Phase 4 Green, and no role claims it as "all green" before then.
+- During OI-2 remediation, the cycle aggregate includes `gse_vocab_p4_bands.sh`, but excludes the future audit harness.
+  Existing harnesses can become intentionally red when Mid-Red changes their accepted band oracles.
+  Record each changed oracle and its substantive failure. Never replace a failed harness with a stub or skip.
+  The full Phase 4 aggregate must pass before Phase 4 Green closes.
 - The repo has no `measure/test-all.sh`, `measure/generate.sh`, or
   `measure/doctor.sh`. Do not claim those gates run.
 
@@ -748,7 +859,7 @@ strategy must not start before the owners answer OI-1.
 | 2 | Fixture file presence and shape | None (fixtures are data) |
 | 3 | Mutation report shape | Deterministic extraction, mapping with `itemId`, YLE isolation, byte-diff report (fixture inputs); real-data run after remediation |
 | 4 | Sample manifest, audit report, and conflict report shape | Real-data run on the pinned exports and the committed graph; independent source re-check; seeded correction probe; conflict visibility |
-| 5 | Release record | Regeneration as the owners define it (OI-1); full validation suite |
+| 5 | Release and audience consumption contracts | Deterministic new-version writes; prior preservation; dual-audience controls; full validation suite |
 
 Rule: a markdown file is evidence only when an executable probe parses its
 content or a live command produces the claimed numbers. A filename match is
@@ -796,16 +907,21 @@ blocking.
    its interface in `phase3-execution-contract.md`.
 5. Adversarial testing, then Phase 3 phase acceptance, at one SHA.
 6. Orchestrator: capture the Phase 4 `phase_base_sha` (section 0, point 2).
-   Route OI-2 to the owners before Phase 4 Green.
-7. Phase 4 Mid-Red: author `tests/gse_vocab_p4_audit.sh` from section 6. It
+   OI-2 is answered; run its Phase 4 remediation cycle before the audit Green gate.
+7. Phase 4 Mid-Red: author `tests/gse_vocab_p4_bands.sh` and revise affected test oracles.
+8. Jr-Green: revise the named contracts, fixtures, implementation, and GL queues. Run the OI-2 Green command.
+9. Phase 4 Mid-Red: author `tests/gse_vocab_p4_audit.sh` from section 6. It
    writes only under `tests/`. It keeps both Phase 4 `[b]` lines unchanged.
+10. Jr-Green: produce the audit evidence. Reviews A, B, C and adversarial testing follow at one fixed SHA.
+11. Phase acceptance: judge OI-2 under the new Phase 4 rules. Preserve all human gates.
+12. Phase 5: Mid-Red tests OI-1 and OI-3; Jr-Green implements the contracts and release evidence.
 
 ---
 
 ## 11. Open Items For The Owners
 
-The orchestrator routes these to the owners. This strategy decides none of
-them.
+All three items were answered on 2026-10-26. The original options remain below for traceability.
+These answers do not approve a mapping or a release.
 
 - **OI-1 - Regeneration versus the do-not-rebuild rule (Phase 5).** Plan
   Phase 5 and FR-10 ask for "deterministic regeneration". The tech-debt row of
@@ -818,6 +934,11 @@ them.
   owner rule. Related: the Phase 1 harness runs a copy of the generator in a
   temporary sandbox. It writes no tracked file. The owners confirm whether
   that sandbox run fits the rule.
+  **Answered 2026-10-26.** Daniel: "c -- We need to version the graph. Is this version broken? No? Then we should not mutate it."
+  Owner rule (c): each committed graph file is a version and stays unchanged.
+  Every change writes a new versioned file. No regeneration overwrites the current file.
+  Phase 5 owns release implementation. Phase 4 preserves the committed bytes.
+  The Phase 1 sandbox run fits this rule because it writes no tracked file.
 - **OI-2 - CEFR band calibration (Phase 4, before Green).** The contract band
   set has no plus bands, and the fixtures map `<A1` to `A1`. Pinned export
   counts: GL `A2+` 723, `B1+` 2945, `B2+` 764, `<A1` 383; YL `A2+` 686,
@@ -826,6 +947,21 @@ them.
   (c) another rule. Options for `<A1`: (a) keep `A1`; (b) map to `PRE-A1`.
   Any change edits accepted Phase 1 and Phase 2 artifacts and needs a
   remediation cycle.
+  **Answered 2026-10-26.** The PM recommended plus-band option (b) and `<A1` option (b), `PRE-A1`.
+  Daniel: "Yes. Pre-A1."
+  Result: preserve the raw plus band and a base band; normalize `<A1` to `PRE-A1`.
+  Phase 4 owns the remediation cycle in sections 2.4 and 6, before its Green gate.
+  Phase 3 closure judges the earlier accepted rules and must not block on this change.
 - **OI-3 - Two-audience reconciliation (Phase 5).** A node can map in both
   the GL run and the YL run. The mapping contract needs "a later approved
   reconciliation rule" before one value goes onto the node.
+  **Answered 2026-10-26.** The PM recommended both values on the node, each marked with its audience.
+  Daniel: "Yes. STA and PA are YLE and RA is the "adult" list (which is actually 13+, I think."
+  Result: keep both audience values. STA and PA read YL; RA reads GL.
+  Phase 5 owns the combined contract and release behavior. Phase 4 audits each audience separately.
+
+**Age evidence (2026-10-26):** the pinned source names GL "Adult Learners" at line 4.
+It names YL "Young Learners (6-14)" at line 36. It gives no GL age range.
+The orchestrator reports Pearson's published names: "Pre-Primary (aged under 6 years old), Young Learners (6-14), General Adult Learners".
+The published names give no adult age range. Ages 13-14 fall within the stated YL range.
+The source does not state "13+" for GL. The product routing decision does not establish a publisher age boundary.
