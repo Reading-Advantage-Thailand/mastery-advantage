@@ -29,6 +29,7 @@ const QUEUES = [
 const QUEUE_UNMATCHED = QUEUES[2];
 const QUEUE_INVALID_CEFR = QUEUES[3];
 const QUEUE_UNMATCHED_OUTCOME = QUEUE_UNMATCHED.replace(".jsonl", "");
+const QUEUE_INVALID_CEFR_OUTCOME = QUEUE_INVALID_CEFR.replace(".jsonl", "");
 const COUNT_LABELS = [
   "Nodes mapped", "Levels added", "Levels corrected", "Conflicts",
   "Unmapped GSE entries queued", "GSE entries with no matching node",
@@ -312,7 +313,7 @@ function classify(identityForm, labels, candidates) {
   if (candidates.length > 1) return { outcome: "ambiguous" };
   const selected = candidates[0];
   if (Object.hasOwn(selected, "cefr") && !band(selected.cefr)) {
-    return { outcome: "invalid-cefr", selected };
+    return { outcome: QUEUE_INVALID_CEFR_OUTCOME, selected };
   }
   return { outcome: "mapped", selected };
 }
@@ -343,7 +344,7 @@ function evaluateCases(data) {
         nodeId: node.nodeId, normalizedForm: identityForm,
         normalizedPartsOfSpeech: labels, audience: node.audience,
       });
-      if (verdict.outcome === "mapped" || verdict.outcome === "invalid-cefr") {
+      if (verdict.outcome === "mapped" || verdict.outcome === QUEUE_INVALID_CEFR_OUTCOME) {
         Object.assign(base, { itemId: verdict.selected.itemId, nodeMetadataGse: gseValue(verdict.selected) });
       }
       if (verdict.outcome === "ambiguous") {
@@ -359,7 +360,7 @@ function evaluateCases(data) {
           normalizedPartsOfSpeech: labels, reason: verdict.reason, sourceExportSha256: sha,
         });
       }
-      if (verdict.outcome === "invalid-cefr") {
+      if (verdict.outcome === QUEUE_INVALID_CEFR_OUTCOME) {
         q[QUEUE_INVALID_CEFR].push({
           nodeId: node.nodeId, itemId: verdict.selected.itemId, audience: verdict.selected.audience,
           rawCefr: verdict.selected.cefr, reason: "invalid-cefr-band", sourceExportSha256: verdict.selected.sourceExportSha256,
@@ -691,7 +692,7 @@ function main() {
           reason: "multiple-exact-candidates", sourceExportSha256: shaByAudience[audience],
         });
       }
-      if (verdict.outcome === "invalid-cefr") {
+      if (verdict.outcome === QUEUE_INVALID_CEFR_OUTCOME) {
         q[QUEUE_INVALID_CEFR].push({
           nodeId: node.id, itemId: verdict.selected.itemId, audience: verdict.selected.audience,
           rawCefr: verdict.selected.cefr, reason: "invalid-cefr-band", sourceExportSha256: verdict.selected.sourceExportSha256,
