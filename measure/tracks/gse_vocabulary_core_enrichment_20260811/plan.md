@@ -245,6 +245,11 @@
 - [x] Task: Apply audit isolation - commit: e914e3b
   - [x] Name this track's queue files explicitly so foreign queue files
         cannot change its reports - commit: e914e3b
+- [~] Task: Remediate the 4d25234 review blockers (RB-P3R-B1 to B3, RA-P3R2-B1)
+  - [~] RB-P3R-B1: Reject dangling links and foreign destinations before writes; preserve destination bytes
+  - [~] RB-P3R-B2: Validate complete candidate outcomes and bind mutation to the actual prior identity
+  - [~] RB-P3R-B3: Require citation hashes and supported audiences; reject conflicting duplicate entries
+  - [~] RA-P3R2-B1: Correct the unbound plan claim and record current aggregate evidence; Green owns the text correction
 
 **Jr-Green evidence (2026-08-13):**
 
@@ -527,6 +532,50 @@ bash -n tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p3_extraction.sh tests/g
   completed.
 - The log is `measure/runs/gse_vocabulary_core_enrichment_20260811/
   jr-green-p3-03207a5.log`.
+
+## Mid-Red hardening evidence (2026-10-26)
+
+- Phase baseline: `6e4bce2789471d5cb62673046b262e0c8a8464a5`.
+- Role baseline and reviewed HEAD: `4d25234fb05a58a7de82295292196c87c63fea48`.
+- The new remediation task and its sub-items remain `[~]`. Earlier task markers and all human gates remain unchanged.
+- `tests/gse_vocab_p3_review_hardening.sh` covers RB-P3R-B1 to B3. Its probes reuse the independent Python support module.
+- Every probe writes under `/tmp/opencode`. Tracked-destination probes use a temporary Git repository and a copied entry script.
+- Rejection probes compare all temporary file bytes and links before and after each command.
+- The extraction guard now includes `4d25234` among failed-review HEADs. Completed Phase 3 tasks must cite a post-review commit.
+- Mixed Phase 3 markers intentionally keep the extraction plan guard Red until Green records current completion evidence.
+- Strategy section 2.3 appends the harness to `GREEN_TEST_COMMAND` and `PROJECT_TESTS` in this commit.
+- RA-P3R2-B1 remains open. Green owns the existing unbound count claim; this role leaves that text unchanged.
+- Phase 3 keeps plus bands in the invalid-CEFR queue and normalizes `<A1` to `A1`. This cycle tests no owner decision.
+- Exact cycle Red command: `TMPDIR=/tmp/opencode bash tests/gse_vocab_p3_review_hardening.sh`.
+- Heavy wrapper: `bash /home/daniebo/Desktop/advantage-pr/scripts/jobs/heavy-run.sh -c 'TMPDIR=/tmp/opencode bash tests/gse_vocab_p3_review_hardening.sh'`.
+- Runtime result at the unchanged product HEAD `4d25234`: exit `1`; `Total: 14 checks (PASS=1, FAIL=13)`.
+- The harness ran once under `heavy-run.sh` with a shell timeout of `3600000` milliseconds. No hold or lock-wait line appeared.
+- Each rejection failure confirms missing behavior. No failure came from a missing file, syntax error, or setup error.
+- The agreeing-duplicate check already passes. It remains an acceptance control, not a Red claim.
+- Light checks exited `0`: `bash -n tests/gse_vocab_p3_review_hardening.sh`, `bash -n tests/gse_vocab_p3_extraction.sh`, and `git diff --check`.
+- Python AST inspection of `tests/gse_vocab_p3_review_support.py` exited `0` without creating bytecode files.
+- The aggregate commands did not run in this role. Existing Review A evidence identifies the separate plan-claim failure.
+
+| Named check | Result | Confirmed behavior at the role baseline |
+|---|---|---|
+| `RB-P3R-B1-dangling-generated-leaf` | FAIL | The command accepted the link, created the unsupplied target, and changed destination bytes. |
+| `RB-P3R-B1-tracked-report` | FAIL | The copied script accepted and changed the tracked foreign report destination. |
+| `RB-P3R-B1-tracked-generated-leaf` | FAIL | The copied script accepted and changed the tracked generated leaf. |
+| `RB-P3R-B1-tracked-foreign-queue` | FAIL | The copied script replaced the tracked foreign queue sentinel. |
+| `RB-P3R-B1-foreign-queue-sentinel` | FAIL | The command replaced the foreign queue sentinel and changed other destination bytes. |
+| `RB-P3R-B2-validate-ambiguous` | FAIL | Output validation accepted exact cited metadata on the ambiguous `fixture:core:you` node. |
+| `RB-P3R-B2-validate-invalid-cefr` | FAIL | Output validation accepted exact cited metadata on the invalid-CEFR uncle node. |
+| `RB-P3R-B2-mismatched-prior-identity` | FAIL | Mutation attached make metadata to the changed prior identity. |
+| `RB-P3R-B3-missing-citation-hash` | FAIL | The command accepted an absent mapping citation hash and changed destination bytes. |
+| `RB-P3R-B3-malformed-citation-hash` | FAIL | The command accepted a malformed mapping citation hash and changed destination bytes. |
+| `RB-P3R-B3-conflicting-duplicate-identity` | FAIL | The command accepted a repeated `itemId` with a conflicting expression. |
+| `RB-P3R-B3-conflicting-duplicate-source` | FAIL | The command accepted a repeated `itemId` with a conflicting score. |
+| `RB-P3R-B3-unsupported-audience` | FAIL | The command accepted an unsupported source audience. |
+| `RB-P3R-B3-agreeing-duplicate` | PASS | Matching shared fields and an additive fixture field preserved an accepted, validated mapping. |
+
+- Log: `measure/runs/gse_vocabulary_core_enrichment_20260811/mid-red-p3-4d25234.log`.
+- Green must remediate RB-P3R-B1 to B3 and RA-P3R2-B1, then run both extended section 2.3 aggregates.
+- Independent Reviews A, B, and C must rerun at the new fixed SHA before acceptance.
 
 ## Phase 4: Audit And Calibration
 

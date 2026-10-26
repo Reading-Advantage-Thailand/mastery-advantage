@@ -505,6 +505,226 @@ def yle_graph(root):
     need(after.yle.read_bytes() != changed.yle.read_bytes(), "A Cambridge CEFR change did not alter the YLE comparison.")
 
 
+def destination_files(run):
+    return [run.output / "extraction/gl.json", run.output / "extraction/yl.json",
+            run.mapping, run.graph, run.diff, run.quality, run.conflicts, run.yle,
+            *run.queues.values()]
+
+
+def seed_destinations(run, omit=()):
+    for index, path in enumerate(destination_files(run)):
+        if path not in omit:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(f"destination sentinel {index}\n".encode())
+
+
+def tree_state(root):
+    """Record all temporary bytes and links without following directory links."""
+    result = {}
+    for parent, directories, files in os.walk(root, followlinks=False):
+        directories[:] = [name for name in directories if name != ".git"]
+        for name in directories + files:
+            path = Path(parent) / name
+            key = path.relative_to(root).as_posix()
+            if path.is_symlink():
+                result[key] = ("link", os.readlink(path))
+            elif path.is_dir():
+                result[key] = ("directory",)
+            else:
+                result[key] = ("file", path.read_bytes())
+    return result
+
+
+def reject_without_writes(run, snapshot_root, label, field=None, entry=None, cwd=None):
+    before = tree_state(snapshot_root)
+    if entry is None:
+        result = run.run()
+    else:
+        result = subprocess.run(["node", str(entry), *map(str, run.args())], cwd=cwd,
+                                capture_output=True, text=True, timeout=120)
+    after = tree_state(snapshot_root)
+    changed = sorted(k for k in before.keys() | after.keys() if before.get(k) != after.get(k))
+    errors = []
+    if result.returncode == 0:
+        errors.append(f"The command accepted {label}.")
+    if changed:
+        errors.append(f"Rejection changed temporary paths: {', '.join(changed)}.")
+    if result.returncode != 0:
+        if field:
+            if field.casefold() not in result.stderr.casefold():
+                errors.append(f"The diagnostic does not name {field}: {result.stderr.strip()}")
+        elif not result.stderr.strip():
+            errors.append("The rejection has no diagnostic.")
+    need(not errors, " ".join(errors))
+
+
+def dangling_generated_leaf(root):
+    # Execution contract 49, 129-132: reject every generated symlink before writes.
+    run = Run(root)
+    seed_destinations(run, omit=(run.graph,))
+    target = root / "unsupplied-target.json"
+    run.graph.parent.mkdir(parents=True, exist_ok=True)
+    run.graph.symlink_to(target)
+    need(run.graph.is_symlink() and not target.exists(), "The setup needs a dangling link.")
+    reject_without_writes(run, root, "a dangling generated leaf")
+    need(not target.exists(), "The command created an unsupplied target.")
+
+
+def copied_product(root):
+    """Give the entry script a temporary repository and read-only protected inputs."""
+    repo = root / "repository"
+    product = repo / "english/cefr-vocabulary"
+    entry = product / "scripts/gse-vocabulary-core.js"
+    entry.parent.mkdir(parents=True)
+    shutil.copyfile(ENTRY, entry)
+    for relative in ("cefr-vocabulary-knowledge-space.json", "data/cambridge-vocabulary-inventory.json",
+                     "GSE_VOCABULARY_SOURCES.md", "fixtures", "source-pdfs"):
+        path = product / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.symlink_to(BASE / relative, target_is_directory=(BASE / relative).is_dir())
+    success(subprocess.run(["git", "init", "--quiet", str(repo)], capture_output=True, text=True))
+    return repo, entry
+
+
+def tracked_destination(root, mode):
+    # Only the four durable GL queue paths have repository write authority.
+    # Never track or write a destination in the real checkout.
+    repo, entry = copied_product(root)
+    run = Run(root / "run")
+    target = repo / "foreign-track/queues/foreign-queue.jsonl"
+    if mode == "report":
+        run.diff = target
+    elif mode == "queue":
+        run.queues[QUEUES[0]] = target
+    else:
+        run.output = repo / "generated"
+        run.graph = run.output / "graph/new-graph.json"
+        run.mapping = run.output / "mapping/mappings.json"
+        target = run.graph
+    seed_destinations(run)
+    success(subprocess.run(["git", "add", "--", str(target.relative_to(repo))], cwd=repo,
+                           capture_output=True, text=True))
+    tracked = subprocess.check_output(["git", "ls-files"], cwd=repo, text=True).splitlines()
+    need(tracked == [target.relative_to(repo).as_posix()], "The setup must track only the sentinel.")
+    reject_without_writes(run, root, f"a tracked foreign {mode} destination", entry=entry, cwd=repo)
+
+
+def foreign_queue_sentinel(root):
+    # Mapping contract 68-76, 110-116: foreign queues remain isolated.
+    run = Run(root)
+    run.queues[QUEUES[0]] = root / "foreign-track/queues/foreign-queue.jsonl"
+    seed_destinations(run)
+    reject_without_writes(run, root, "a foreign queue destination")
+
+
+def source_metadata(run, entry):
+    """Copy only stated fields, with the accepted Phase 3 band rule."""
+    source_file = load(run.fixture / "manifest.json")["sourceExports"][entry["audience"]]["file"]
+    value = {"itemId": entry["itemId"], "audience": entry["audience"],
+             "sourceCitation": {"sourceId": Path(source_file).stem, "itemId": entry["itemId"],
+                                "exportSha256": entry["sourceExportSha256"]}}
+    if "gse" in entry:
+        value.update(gseScore=entry["gse"], starred=entry["gse"].endswith("*"))
+    for field in ("definition", "example", "temporaryGse"):
+        if field in entry:
+            value[field] = copy.deepcopy(entry[field])
+    if band(entry.get("cefr")):
+        value["cefrBand"] = band(entry["cefr"])
+    return value
+
+
+def validate_rejected_outcome(root, case_name):
+    # Execution contract 61, 106, 160-164: a citation cannot override classification.
+    run = Run(root)
+    success(run.run())
+    graph = load(run.graph)
+    success(run.validate(graph))
+    case = fixture_case(run, case_name)
+    identity = case["node"]
+    candidates = [e for e in case["entries"]
+                  if form(e["expression"]) == form(identity["normalizedForm"])
+                  and pos(e["grammaticalCategories"]) == pos(identity["partsOfSpeech"])
+                  and e["audience"] == identity["audience"]]
+    if case_name == "ambiguous-binding":
+        need(len(candidates) > 1, "The setup needs multiple exact candidates.")
+    else:
+        need(len(candidates) == 1 and "cefr" in candidates[0] and band(candidates[0]["cefr"]) is None,
+             "The setup needs one invalid-CEFR candidate under the Phase 3 rule.")
+    node = next(n for n in graph["nodes"] if n["id"] == identity["nodeId"])
+    need("gse" not in node["metadata"], "The control graph already carries rejected metadata.")
+    node["metadata"]["gse"] = source_metadata(run, candidates[0])
+    validation_path = root / "validation.json"
+    write(validation_path, graph)
+    before = tree_state(root)
+    result = invoke(["--validate-output", validation_path, *run.sources()])
+    need(tree_state(root) == before, "Output validation changed temporary bytes.")
+    rejected(result, "gse")
+
+
+def mismatched_prior_identity(root):
+    # Mapping contract 11-23: actual node identity controls mutation.
+    run = Run(root)
+    success(run.run())
+    case = fixture_case(run, "same-form-different-pos-falsifier")
+    target = case["node"]["nodeId"]
+    control = next(n for n in load(run.graph)["nodes"] if n["id"] == target)
+    need(control["metadata"]["gse"]["itemId"] == case["expected"]["itemId"], "The control did not map make.")
+    prior = load(run.prior)
+    node = next(n for n in prior["nodes"] if n["id"] == target)
+    node["metadata"].update(normalizedForm="synthetic unrelated prior identity")
+    node["metadata"].pop("gse", None)
+    write(run.prior, prior)
+    seed_destinations(run)
+    before = tree_state(root)
+    result = run.run()
+    if result.returncode != 0:
+        need(tree_state(root) == before, "Rejected prior identity changed destination bytes.")
+        need(bool(result.stderr.strip()), "Rejected prior identity has no diagnostic.")
+    else:
+        node = next(n for n in load(run.graph)["nodes"] if n["id"] == target)
+        need("gse" not in node["metadata"], "The mismatched actual prior node received make GSE metadata.")
+
+
+def hardened_mapping_source(root, mode):
+    # Execution contract 129, 162: validate complete citations before writes.
+    run = Run(root)
+    path = run.fixture / "mapping-cases.json"
+    document = load(path)
+    case = next(c for c in document["cases"] if c["caseId"] == "same-form-different-pos-falsifier")
+    entry = next(e for e in case["entries"] if e["grammaticalCategories"] == ["verb"])
+    field = "sourceExportSha256"
+    if mode == "missing-citation-hash":
+        del entry[field]
+    elif mode == "malformed-citation-hash":
+        entry[field] = "not-a-sha256"
+    else:
+        duplicate = copy.deepcopy(entry)
+        if mode == "conflicting-duplicate-identity":
+            duplicate["expression"] = "synthetic conflicting identity"
+            field = "itemId"
+        elif mode == "conflicting-duplicate-source":
+            duplicate["gse"] = "12"
+            field = "itemId"
+        elif mode == "unsupported-audience":
+            duplicate.update(itemId="synthetic:unsupported-audience", audience="unsupported")
+            field = "audience"
+        elif mode == "agreeing-duplicate":
+            duplicate["definition"] = "Synthetic additive fixture text."
+        else:
+            raise AssertionError(f"Unknown source probe: {mode}")
+        document["cases"].append({"caseId": f"probe:{mode}", "node": None, "entries": [duplicate]})
+    write(path, document)
+    if mode == "agreeing-duplicate":
+        success(run.run())
+        node = next(n for n in load(run.graph)["nodes"] if n["id"] == case["node"]["nodeId"])
+        need(node["metadata"]["gse"]["itemId"] == entry["itemId"], "An agreeing duplicate lost the mapping.")
+        need(node["metadata"]["gse"]["gseScore"] == entry["gse"], "An agreeing duplicate changed the source score.")
+        success(run.validate(load(run.graph)))
+    else:
+        seed_destinations(run)
+        reject_without_writes(run, root, mode, field=field)
+
+
 def main():
     probes = {"mapped-mutation": mapped_mutation, "no-inference": no_inference,
               "validation-binding": lambda r: validation(r, "binding"),
@@ -529,6 +749,18 @@ EXTRA_PROBES = {"real-source": real_source,
                 "tampered-GL": lambda r: tampered_export(r, "GL"),
                 "tampered-YL": lambda r: tampered_export(r, "YL"),
                 "real-pos": real_pos, "durable-queues": durable_queues, "yle-graph": yle_graph}
+EXTRA_PROBES.update({
+    "RB-P3R-B1-dangling-generated-leaf": dangling_generated_leaf,
+    "RB-P3R-B1-foreign-queue-sentinel": foreign_queue_sentinel,
+    "RB-P3R-B2-validate-ambiguous": lambda r: validate_rejected_outcome(r, "ambiguous-binding"),
+    "RB-P3R-B2-validate-invalid-cefr": lambda r: validate_rejected_outcome(r, "invalid-cefr-source-data"),
+    "RB-P3R-B2-mismatched-prior-identity": mismatched_prior_identity,
+})
+for _label, _mode in (("tracked-report", "report"), ("tracked-generated-leaf", "leaf"), ("tracked-foreign-queue", "queue")):
+    EXTRA_PROBES[f"RB-P3R-B1-{_label}"] = lambda r, mode=_mode: tracked_destination(r, mode)
+for _mode in ("missing-citation-hash", "malformed-citation-hash", "conflicting-duplicate-identity",
+              "conflicting-duplicate-source", "unsupported-audience", "agreeing-duplicate"):
+    EXTRA_PROBES[f"RB-P3R-B3-{_mode}"] = lambda r, mode=_mode: hardened_mapping_source(r, mode)
 for _mode in ("leaf-symlink", "leaf-hardlink", "parent-symlink", "dot-segments", "input-equality"):
     EXTRA_PROBES[_mode] = lambda r, mode=_mode: destination_alias(r, mode)
 for _container in ("mapping", "mutation"):

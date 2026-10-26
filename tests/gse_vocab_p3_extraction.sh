@@ -557,7 +557,7 @@ def check_plan_state():
         missing_sha = [description for description in top_level if commit_pattern.search(description) is None]
         if missing_sha:
             raise ProbeError(f"completed Phase 3 task lacks commit SHA evidence: {missing_sha[0]}")
-        failed_review_heads = ("50d524c", "6e4bce2789471d5cb62673046b262e0c8a8464a5")
+        failed_review_heads = ("50d524c", "6e4bce2789471d5cb62673046b262e0c8a8464a5", "4d25234fb05a58a7de82295292196c87c63fea48")
         for description in top_level:
             sha = re.search(r"\bcommit(?:s)?\s*:\s*([0-9a-f]{7,40})\b", description, re.IGNORECASE)[1]
             resolved = subprocess.run(["git", "rev-parse", "--verify", sha + "^{commit}"], cwd=repo_root, capture_output=True)

@@ -129,10 +129,10 @@ Phase 2 and Phase 3 roles recorded their exact Red commands in `plan.md`.
 
 ```text
 RED_TEST_COMMAND='rc=0; for t in tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh; do bash "$t" || rc=1; done; exit "$rc"'
-GREEN_TEST_COMMAND='rc=0; for t in tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_graph.sh tests/gse_vocab_p3_review_safety.sh tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh; do bash "$t" || rc=1; done; exit "$rc"'
+GREEN_TEST_COMMAND='rc=0; for t in tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_graph.sh tests/gse_vocab_p3_review_safety.sh tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh tests/gse_vocab_p3_review_hardening.sh; do bash "$t" || rc=1; done; exit "$rc"'
 PROJECT_CHECKS="node english/cefr-vocabulary/scripts/validate-vocabulary-graph.js"
 PROJECT_LINT="git diff --check"
-PROJECT_TESTS='rc=0; for t in tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p2_fixtures.sh tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_graph.sh tests/gse_vocab_p3_review_safety.sh tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh; do bash "$t" || rc=1; done; exit "$rc"'
+PROJECT_TESTS='rc=0; for t in tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p2_fixtures.sh tests/gse_vocab_p3_extraction.sh tests/gse_vocab_p3_review_mapping.sh tests/gse_vocab_p3_review_graph.sh tests/gse_vocab_p3_review_safety.sh tests/gse_vocab_p3_review_realsource.sh tests/gse_vocab_p3_review_mutation.sh tests/gse_vocab_p3_review_destinations.sh tests/gse_vocab_p3_review_hardening.sh; do bash "$t" || rc=1; done; exit "$rc"'
 PROJECT_DEV_URL=""
 UX_REQUIRED="never"
 ```
@@ -163,6 +163,14 @@ UX_REQUIRED="never"
 - OI-2 changes those rules in Phase 4 only. Phase 3 reviews, adversarial testing, and acceptance must not block Phase 3 on OI-2.
 - The YLE probe runs the accepted generator procedure in temporary sandboxes only.
 - Its second control changes Cambridge CEFR in the prior graph. The comparison must detect that change.
+
+#### Review remediation (2026-10-26, reviewed HEAD `4d25234`)
+
+- Exact cycle `RED_TEST_COMMAND="bash tests/gse_vocab_p3_review_hardening.sh"` replaces the earlier Red command for this cycle.
+- The hardening harness tests RB-P3R-B1 to B3 with temporary paths and independent source checks.
+- It tests dangling links, tracked foreign destinations, foreign queues, rejected mapping outcomes, actual prior identity, citation hashes, duplicate entries, and supported audiences.
+- An agreeing duplicate remains accepted. Plus bands remain invalid, and `<A1` remains `A1` in this Phase 3 cycle.
+- RA-P3R2-B1 remains covered by `gse_vocab_p1_contracts.sh`. Green owns the plan correction and current aggregate evidence.
 
 ### 2.4 Phase 4 commands
 
