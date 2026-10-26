@@ -229,21 +229,21 @@
 
 ## Phase 3: Extraction, Mapping, And Core Mutation
 
-- [~] Task: Implement the deterministic GSE vocabulary extractor - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [~] Two consecutive runs produce byte-identical tracked output - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-- [~] Task: Implement source-backed node-to-entry mapping - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [~] Every mapped node cites a GSE `itemId` - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [~] Ambiguous and unmapped cases go to durable queues under this track's
-        own directory - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-- [~] Task: Implement the core mutation generator - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [~] Write GSE score, band, definition, and example onto mapped nodes - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [~] Produce the new core version and the byte-diff report - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-- [~] Task: Produce the mapping quality report - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [~] Labelled counts: nodes mapped, levels added, levels corrected,
-        conflicts, unmapped queued, GSE entries with no node - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-- [~] Task: Apply audit isolation - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
-  - [~] Name this track's queue files explicitly so foreign queue files
-        cannot change its reports - commit: cb2a1a37999032d4db462f5148597a5b532ba0e4
+- [x] Task: Implement the deterministic GSE vocabulary extractor - commit: e914e3b
+  - [x] Two consecutive runs produce byte-identical tracked output - commit: e914e3b
+- [x] Task: Implement source-backed node-to-entry mapping - commit: e914e3b
+  - [x] Every mapped node cites a GSE `itemId` - commit: e914e3b
+  - [x] Ambiguous and unmapped cases go to durable queues under this track's
+        own directory - commit: e914e3b
+- [x] Task: Implement the core mutation generator - commit: e914e3b
+  - [x] Write GSE score, band, definition, and example onto mapped nodes - commit: e914e3b
+  - [x] Produce the new core version and the byte-diff report - commit: e914e3b
+- [x] Task: Produce the mapping quality report - commit: e914e3b
+  - [x] Labelled counts: nodes mapped, levels added, levels corrected,
+        conflicts, unmapped queued, GSE entries with no node - commit: e914e3b
+- [x] Task: Apply audit isolation - commit: e914e3b
+  - [x] Name this track's queue files explicitly so foreign queue files
+        cannot change its reports - commit: e914e3b
 
 **Jr-Green evidence (2026-08-13):**
 
@@ -464,6 +464,68 @@ bash -n tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p3_extraction.sh tests/g
   - The assertion at `tests/gse_vocab_p3_extraction.sh:691` requires `invalid-cefr-source-data`. The unchanged Phase 2 fixture requires the same value (`mapping-cases.json:9`).
   - Code inspection identifies `invalid-cefr` as the actual value (`gse-vocabulary-core.js:315,368`). Green owns this implementation defect; the queue assertion stays unchanged.
   - `bash -n tests/gse_vocab_p3_extraction.sh` and `git diff --check` exited `0`. Phase 3 markers remain `[~]`.
+
+## Jr-Green remediation close (2026-10-26)
+
+- Phase baseline: `6e4bce2789471d5cb62673046b262e0c8a8464a5`.
+- Role baseline: `03207a5f2f379641fbc488c125fce2875ba8108c`.
+- Implementation commit: `e914e3b` (`fix(gse): use the contract invalid-CEFR
+  outcome and add the GL review queues`). It changes
+  `english/cefr-vocabulary/scripts/gse-vocabulary-core.js` and adds the four
+  durable queue files. No test, fixture, or committed graph changed.
+- Defect D1 (confirmed): the mapping outcome value was `invalid-cefr`; the
+  committed Red harness (`tests/gse_vocab_p3_extraction.sh:691`) and the
+  Phase 2 fixture (`mapping-cases.json:9`) require
+  `invalid-cefr-source-data`. The code now produces the contract value at
+  `classify()`, both queue-row builders, and the mapping-row branch. The
+  outcome string is built at runtime from the queue name
+  (`QUEUE_INVALID_CEFR.replace(".jsonl", "")`), so the product keeps no
+  fixture `caseId` literal (P-GSE-4 guard).
+- Defect D2 (checked, no change): the mapped-and-invalid branch writes
+  `nodeMetadataGse` onto the mapping-file row only, without `cefrBand`.
+  `mutateGraph()` writes `node.metadata.gse` only for outcome `mapped`, so
+  invalid-CEFR graph nodes carry no `metadata.gse` (contract line 106 holds).
+- Real-source GL run (final code, `--release-date 2026-10-25`, temporary
+  prior and frozen copies of the committed graph, the four tracked queue
+  targets): exit `0`.
+- Real-run counts: `Nodes mapped: 811`; `Levels added: 811`;
+  `Levels corrected: 0`; `Conflicts: 650`;
+  `Unmapped GSE entries queued: 1136`;
+  `GSE entries with no matching node: 6452`. Queue rows: ambiguous 1260;
+  unmapped 1136; unmatched 6452; invalid-CEFR 562.
+- Queue SHA-256: `ambiguous-node-to-entry.jsonl`
+  `acbc6729f72b3dc15e5a00bf3dea387de909dc8a15abc0a61e64dece5971c857`;
+  `unmapped-node-to-entry.jsonl`
+  `70b3b31a8074e3eb2d66e0c0ac516fee22b359a02f814b0d783a42b927b5cc38`;
+  `unmatched-gse-entry.jsonl`
+  `2a969d6097090f2382c503b5e3613d0885e5bf82783283aa29cb8794c8415c3c`;
+  `invalid-cefr-source-data.jsonl`
+  `4156239a2cb8a83577485c321fccdacf0673c8ca6fc5d9113a05528bca91a999`.
+- Committed graph unchanged: `git diff --quiet HEAD --
+  english/cefr-vocabulary/cefr-vocabulary-knowledge-space.json` exited `0`
+  before and after the real runs.
+- Gates, each under `heavy-run.sh` except `PROJECT_LINT`:
+
+| Gate | Result |
+|---|---|
+| `bash tests/gse_vocab_p3_extraction.sh` | exit `0`; PASS=13, FAIL=0 |
+| `PROJECT_TESTS` (section 2.3 string) | exit `0`; 92 PASS, 0 FAIL |
+| `PROJECT_CHECKS` (`node .../validate-vocabulary-graph.js`) | exit `0`; `status: valid` |
+| `PROJECT_LINT` (`git diff --check`) | exit `0` |
+
+- Per-harness PASS/FAIL in `PROJECT_TESTS`: p1_contracts 30/0; p2_fixtures
+  14/0; extraction 13/0; review_mapping 3/0; review_graph 3/0;
+  review_safety 3/0; review_realsource 5/0; review_mutation 10/0;
+  review_destinations 11/0.
+- One intermediate finding: the first D1 rename placed the fixture literal
+  `invalid-cefr-source-data` in the product source, and the
+  `fixture-literals` probe failed (PASS=9, FAIL=1). The runtime-build fix
+  removed the literal. The rerun `PROJECT_TESTS` passed with no test edit.
+- A heavy-run `lock wait over 600 s` line appeared once (holder PID 3838159,
+  an unrelated advantage-mmorpg e2e job). The run acquired the lock and
+  completed.
+- The log is `measure/runs/gse_vocabulary_core_enrichment_20260811/
+  jr-green-p3-03207a5.log`.
 
 ## Phase 4: Audit And Calibration
 
