@@ -457,6 +457,14 @@ bash -n tests/gse_vocab_p1_contracts.sh tests/gse_vocab_p3_extraction.sh tests/g
 - The orchestrator must obtain a substantive exit `1` from the Red command before Green starts.
 - The intended failures cover the finding map above. Runtime results must identify each confirmed failure and each already-satisfied check.
 
+- **2026-10-26 bounded harness correction:** The invented-definition probe selects an output node with a GSE object. It fails clearly when none exists.
+  - Command: `bash /home/daniebo/Desktop/advantage-pr/scripts/jobs/heavy-run.sh -c 'bash tests/gse_vocab_p3_extraction.sh > measure/runs/gse_vocabulary_core_enrichment_20260811/mid-red-p3-extraction-run.out 2>&1'`.
+  - The command exited `1`: `Total: 13 checks (PASS=12, FAIL=1)`. The rejection check passed.
+  - Only `check_queues` failed. Its stderr was `invalid CEFR mapping outcome is missing`.
+  - The assertion at `tests/gse_vocab_p3_extraction.sh:691` requires `invalid-cefr-source-data`. The unchanged Phase 2 fixture requires the same value (`mapping-cases.json:9`).
+  - Code inspection identifies `invalid-cefr` as the actual value (`gse-vocabulary-core.js:315,368`). Green owns this implementation defect; the queue assertion stays unchanged.
+  - `bash -n tests/gse_vocab_p3_extraction.sh` and `git diff --check` exited `0`. Phase 3 markers remain `[~]`.
+
 ## Phase 4: Audit And Calibration
 
 - [~] Task: Audit the node-to-entry mapping

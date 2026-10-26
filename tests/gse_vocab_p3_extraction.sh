@@ -855,7 +855,9 @@ def check_rejection():
 
     graph = load_graph(valid_run)
     nodes = graph_nodes(graph)
-    nodes["fixture:core:you"]["metadata"]["gse"]["definition"] = "invented fixture text"
+    mapped_node = next((node for node in nodes.values() if isinstance(node.get("metadata", {}).get("gse"), dict)), None)
+    need(mapped_node is not None, "output validation probe needs a node with GSE metadata")
+    mapped_node["metadata"]["gse"]["definition"] = "invented fixture text"
     inferred_text = temp_root / "malformed-output-inferred-text.json"
     write_json(inferred_text, graph)
     require_rejection(validate_output(inferred_text, fixture_root), "output with invented definition", ("definition", "source"))
